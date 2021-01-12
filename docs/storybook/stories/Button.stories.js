@@ -2,12 +2,12 @@ import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
-import Button from './Button';
+import { Button } from 'neeto-ui-rn';
 
 storiesOf('Button', module)
   .add('Cool', () => (
-    <Button title="Cool"/>
+    <Button text="Cool"/>
   ))
   .add('Nice', () => (
-    <Button title="Nice"/>
+    <Button text="Nice"/>
   ));

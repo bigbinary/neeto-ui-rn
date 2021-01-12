@@ -4,5 +4,14 @@
   "description": "A component library for react-native",
   "main": "src/index.js",
   "author": "BigBinary",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "styled-components": "*",
+    "styled-system": "*"
+  },
+  "files": [
+    "src"
+  ]
 }
