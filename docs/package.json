@@ -1,7 +1,6 @@
 {
-  "name": "docs",
+  "name": "@neeto-ui-rn/docs",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "android": "yarn run prestorybook && react-native run-android",
     "ios": "yarn run prestorybook && react-native run-ios",
@@ -12,11 +11,11 @@
     "storybook": "start-storybook -p 7007",
     "build-react": "webpack --mode production",
     "start-react": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
-    "storybook-web": "./node_modules/@storybook/react/bin/index.js"
+    "build-storybook-web": ".././node_modules/@storybook/react/bin/build.js",
+    "storybook-web": ".././node_modules/@storybook/react/bin/index.js"
   },
   "dependencies": {
-    "neeto-ui-rn": "file:..",
+    "@neeto-ui-rn/ui": "0.1.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-web": "^0.14.10",

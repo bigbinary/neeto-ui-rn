@@ -1,17 +1,11 @@
 {
+  "private": true,
   "name": "neeto-ui-rn",
-  "version": "0.1.0",
-  "description": "A component library for react-native",
-  "main": "src/index.js",
+  "version": "1.0.0",
+  "description": "A component library for react native",
+  "main": "index.js",
+  "repository": "https://github.com/bigbinary/neeto-ui-rn.git",
   "author": "BigBinary",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
-    "styled-components": "*",
-    "styled-system": "*"
-  },
-  "files": [
-    "src"
-  ]
+  "workspaces": ["ui", "docs"]
 }

@@ -14,7 +14,7 @@ const Button = ({
 }) => {
   return (
     <StyledButton {...otherProps}>
-      <Text style={{color: "white"}}>
+      <Text style={{color: "white", fontSize: 24}}>
         {text}
       </Text>
     </StyledButton>
