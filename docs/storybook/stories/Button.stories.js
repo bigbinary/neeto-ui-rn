@@ -6,8 +6,8 @@ import { Button } from 'neeto-ui-rn';
 
 storiesOf('Button', module)
   .add('Cool', () => (
-    <Button text="Cool"/>
+    <Button text="Cool" bg="red"/>
   ))
   .add('Nice', () => (
-    <Button text="Nice"/>
+    <Button text="Nice" backgroundColor="green"/>
   ));

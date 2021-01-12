@@ -16,6 +16,7 @@
     "storybook-web": "./node_modules/@storybook/react/bin/index.js"
   },
   "dependencies": {
+    "neeto-ui-rn": "file:..",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-web": "^0.14.10",
