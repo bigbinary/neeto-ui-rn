@@ -1,5 +1,6 @@
 // if you use expo remove this line
 import { AppRegistry } from 'react-native';
+import { loadStories } from './storyLoader'
 
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -12,7 +13,7 @@ addDecorator(withKnobs);
 
 // import stories
 configure(() => {
-  require('./stories');
+  loadStories()
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
