@@ -33,4 +33,9 @@ module.exports = {
     contentBase: './',
     hot: true,
   },
+  resolve: {
+    alias: {
+      'react-native$': 'react-native-web',
+    },
+  },
 }
