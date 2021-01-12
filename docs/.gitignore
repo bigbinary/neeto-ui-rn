@@ -60,3 +60,4 @@ buck-out/
 
 # Storybook
 storybook/storyLoader.js
+storybook-static
