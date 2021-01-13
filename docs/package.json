@@ -11,8 +11,8 @@
     "storybook": "start-storybook -p 7007",
     "build-react": "webpack --mode production",
     "start-react": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build-storybook-web": ".././node_modules/@storybook/react/bin/build.js",
-    "storybook-web": ".././node_modules/@storybook/react/bin/index.js",
+    "build-storybook-web": "../node_modules/@storybook/react/bin/build.js",
+    "storybook-web": "../node_modules/@storybook/react/bin/index.js",
     "haul": "haul start"
   },
   "dependencies": {
