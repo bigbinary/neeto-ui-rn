@@ -11,12 +11,10 @@
     "storybook": "start-storybook -p 7007",
     "build-react": "webpack --mode production",
     "start-react": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build-storybook-web": "../node_modules/@storybook/react/bin/build.js",
-    "storybook-web": "../node_modules/@storybook/react/bin/index.js",
-    "haul": "haul start"
+    "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
+    "storybook-web": "./node_modules/@storybook/react/bin/index.js"
   },
   "dependencies": {
-    "@neeto-ui-rn/ui": "0.1.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-web": "^0.14.10",
@@ -28,9 +26,6 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/runtime": "^7.8.4",
-    "@haul-bundler/babel-preset-react-native": "^0.16.0",
-    "@haul-bundler/cli": "^0.22.1",
-    "@haul-bundler/preset-0.60": "^0.18.0",
     "@react-native-community/eslint-config": "^1.1.0",
     "@storybook/addon-actions": "^6.1.12",
     "@storybook/addon-essentials": "^6.1.12",

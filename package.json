@@ -1,16 +1,12 @@
 {
   "private": true,
   "name": "neeto-ui-rn",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A component library for react native",
-  "main": "index.js",
+  "main": "docs/lib/index.js",
   "repository": "https://github.com/bigbinary/neeto-ui-rn.git",
   "author": "BigBinary",
   "license": "MIT",
-  "workspaces": [
-    "ui",
-    "docs"
-  ],
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
     "eslint": "^7.17.0",
@@ -19,6 +15,12 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "styled-components": "*",
+    "styled-system": "*"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -27,5 +29,8 @@
   "lint-staged": {
     "*.js": "eslint --fix",
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "files": [
+    "docs/lib"
+  ]
 }
