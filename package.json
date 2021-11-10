@@ -1,7 +1,9 @@
 {
-  "name": "neetouirn",
+  "name": "@bigbinary/neetouirn",
   "version": "0.0.1",
   "main": "lib/index.js",
+  "author": "BigBinary",
+  "license": "MIT",
   "scripts": {
     "android": "yarn run prestorybook && react-native run-android",
     "ios": "yarn run prestorybook && react-native run-ios",
@@ -55,6 +57,17 @@
       "<rootDir>/__mocks__/globalMock.js"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bigbinary/neeto-ui-rn.git"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "styles",
+    "layouts",
+    "react-native"
+  ],
   "config": {
     "react-native-storybook-loader": {
       "searchDir": [
