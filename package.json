@@ -1,8 +1,7 @@
 {
   "name": "neetouirn",
   "version": "0.0.1",
-  "private": true,
-  "main": "/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "android": "yarn run prestorybook && react-native run-android",
     "ios": "yarn run prestorybook && react-native run-ios",
@@ -16,11 +15,11 @@
     "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
     "storybook-web": "./node_modules/@storybook/react/bin/index.js"
   },
-  "dependencies": {
-    "react": "17.0.2",
-    "react-native": "0.66.2",
-    "react-native-web": "^0.17.5"
-  },
+  "files": [
+    "lib"
+  ],
+  "peerDependencies": {},
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
@@ -39,8 +38,11 @@
     "eslint": "7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-native": "0.66.2",
     "react-native-storybook-loader": "^2.0.4",
+    "react-native-web": "^0.17.5",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
