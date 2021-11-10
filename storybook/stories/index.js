@@ -1,1 +1,1 @@
-import './Typography.stories';
+import "./Typography.stories";

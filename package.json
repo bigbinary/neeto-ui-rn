@@ -8,12 +8,13 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
+    "format": "prettier --write .",
     "prestorybook": "rnstl",
     "storybook": "start-storybook -p 7007",
     "build-react": "webpack --mode production",
     "start-react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
-    "storybook-web": "./node_modules/@storybook/react/bin/index.js"
+    "storybook-web": "yarn run prestorybook && ./node_modules/@storybook/react/bin/index.js"
   },
   "files": [
     "lib"
