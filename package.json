@@ -1,0 +1,64 @@
+{
+  "name": "neetouirn",
+  "version": "0.0.1",
+  "private": true,
+  "main": "/index.js",
+  "scripts": {
+    "android": "yarn run prestorybook && react-native run-android",
+    "ios": "yarn run prestorybook && react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "prestorybook": "rnstl",
+    "storybook": "start-storybook -p 7007",
+    "build-react": "webpack --mode production",
+    "start-react": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build-storybook-web": "./node_modules/@storybook/react/bin/build.js",
+    "storybook-web": "./node_modules/@storybook/react/bin/index.js"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-native": "0.66.2",
+    "react-native-web": "^0.17.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.25",
+    "@storybook/cli": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@storybook/react-native": "^5.3.25",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.3",
+    "eslint": "7.14.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-dom": "17.0.2",
+    "react-native-storybook-loader": "^2.0.4",
+    "react-test-renderer": "17.0.2"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/globalMock.js"
+    ]
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "storybook/stories"
+      ],
+      "pattern": "**/*.stories.js",
+      "outputFile": "./storybook/storyLoader.js"
+    }
+  }
+}
