@@ -11,6 +11,7 @@
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "precommit": "lint-staged",
     "prestorybook": "rnstl",
     "storybook": "start-storybook -p 7007",
     "build-react": "webpack --mode production",
@@ -21,12 +22,26 @@
   "files": [
     "lib"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,es6,jsx,ts,tsx}": [
+      "./node_modules/prettier/bin-prettier.js --write",
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
   "peerDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
+    "@react-native-community/eslint-config": "^3.0.1",
     "@storybook/addon-actions": "^5.3",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-knobs": "^5.3",
@@ -38,7 +53,18 @@
     "@storybook/react-native": "^5.3.25",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "7.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-react-native": "^3.11.0",
+    "husky": "^7.0.4",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
     "react": "17.0.2",
