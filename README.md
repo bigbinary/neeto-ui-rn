@@ -22,11 +22,11 @@ You can create new components in the `lib/components` and export them from
 
 You can use below commands for running storybook in different platforms:
 
-|         |                      |
-| ------- | -------------------- |
-| Android | `yarn android`       |
-| iOS:    | `yarn ios`           |
-| Web     | `yarn storybook-web` |
+| Platform | Command              |
+| -------- | -------------------- |
+| Android  | `yarn android`       |
+| iOS:     | `yarn ios`           |
+| Web      | `yarn storybook-web` |
 
 ## Building
 
