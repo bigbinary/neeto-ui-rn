@@ -1,0 +1,29 @@
+name: "Publish"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    name: "Release"
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: yarn install
+      - run: yarn version --patch --no-git-tag-version
+      - run: git config core.hooksPath /dev/null
+      - uses: EndBug/add-and-commit@v7
+        with:
+          branch: master
+          message: 'New version release'
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - name: "Publish"
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          access: "public"
+          token: ${{ secrets.NPM_TOKEN }}
