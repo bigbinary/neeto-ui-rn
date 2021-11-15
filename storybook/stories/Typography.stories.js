@@ -1,13 +1,14 @@
 import React from "react";
 import { Typography } from "../../lib/components/Typography";
 
-export default {
+const TypographyStories = {
   title: "Foundation/Typography",
   component: Typography,
   parameters: {
     layout: "padded",
   },
 };
+export default TypographyStories;
 
 const Template = args => <Typography {...args} />;
 

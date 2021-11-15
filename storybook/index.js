@@ -20,7 +20,14 @@ configure(() => {
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
 // To find allowed options for getStorybookUI
-const StorybookUIRoot = getStorybookUI({});
+
+// Added async-storage because of https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#react-native-async-storage
+const StorybookUIRoot = getStorybookUI({
+  asyncStorage:
+    require("@react-native-async-storage/async-storage").default ||
+    require("react-native").AsyncStorage ||
+    null,
+});
 
 // If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
 // If you use Expo you should remove this line.
