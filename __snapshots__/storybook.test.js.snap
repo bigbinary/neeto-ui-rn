@@ -1,0 +1,479 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Foundation/Buttons Disabled 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#828282",
+        "color": "#FFFFFF",
+        "opacity": 1,
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      Disabled
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Buttons Primary 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2F3941",
+        "color": "#FFFFFF",
+        "opacity": 1,
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      color="white"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      Primary
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Buttons Secondary 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "color": "#2F3941",
+        "opacity": 1,
+        "paddingBottom": 15,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+        "paddingTop": 15,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      Secondary
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Body 1 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="body1"
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Body 2 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="body2"
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Body 3 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="body3"
+    style={
+      Array [
+        Object {
+          "fontSize": 12,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Danger 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    color="error"
+    style={
+      Array [
+        Object {
+          "color": "#FF6969",
+        },
+      ]
+    }
+  >
+    Typography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 1 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h1"
+    style={
+      Array [
+        Object {
+          "fontSize": 32,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 2 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h2"
+    style={
+      Array [
+        Object {
+          "fontSize": 24,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 3 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h3"
+    style={
+      Array [
+        Object {
+          "fontSize": 20,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 4 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h4"
+    style={
+      Array [
+        Object {
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 5 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h5"
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography H 6 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    fontSize="h6"
+    style={
+      Array [
+        Object {
+          "fontSize": 12,
+        },
+      ]
+    }
+  >
+    Typhography
+  </Text>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Primary 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+      },
+      Object {
+        "backgroundColor": "white",
+      },
+    ]
+  }
+>
+  <Text
+    color="primary"
+    style={
+      Array [
+        Object {
+          "color": "#1B1F23",
+        },
+      ]
+    }
+  >
+    Typography
+  </Text>
+</View>
+`;
