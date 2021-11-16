@@ -4,12 +4,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const appDirectory = path.resolve(__dirname);
-const rootDirectory = path.resolve(__dirname, "..", "..");
-
-const compileNodeModules = [
-  // "react-native-swipe-gestures",
-  // "react-native-modal-selector",
-].map(moduleName => path.resolve(rootDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.js/,

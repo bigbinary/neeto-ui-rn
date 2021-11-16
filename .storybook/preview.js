@@ -1,6 +1,17 @@
+import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
+import { ThemeProvider } from "styled-components/native";
+import { theme } from "../lib/theme";
 
-export const decorators = [withBackgrounds];
+export const decorators = [
+  withBackgrounds,
+  Story => (
+    <ThemeProvider theme={theme}>
+      <Story />
+    </ThemeProvider>
+  ),
+];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   backgrounds: [
