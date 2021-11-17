@@ -1,8 +1,6 @@
 const custom = require("../webpack.config.js");
 
 module.exports = {
-  stories: ["../storybook/**/*.stories.js"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   webpackFinal: config => {
     return {
       ...config,
@@ -10,4 +8,11 @@ module.exports = {
       module: { ...config.module, rules: custom.module.rules },
     };
   },
+  stories: ["../storybook/**/*.stories.?(ts|tsx|js|jsx)"],
+  addons: [
+    "@storybook/addon-ondevice-notes",
+    "@storybook/addon-ondevice-controls",
+    "@storybook/addon-ondevice-backgrounds",
+    "@storybook/addon-ondevice-actions",
+  ],
 };

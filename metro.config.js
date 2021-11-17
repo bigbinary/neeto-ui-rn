@@ -7,11 +7,14 @@
 
 module.exports = {
   transformer: {
-    getTransformOptions: () => ({
+    getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
         inlineRequires: true,
       },
     }),
+  },
+  resolver: {
+    resolverMainFields: ["sbmodern", "browser", "main"],
   },
 };

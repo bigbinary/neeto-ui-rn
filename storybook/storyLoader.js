@@ -3,11 +3,9 @@
 //
 // https://github.com/elderfo/react-native-storybook-loader.git
 
-function loadStories() {
-  require("./stories/Typography.stories");
-}
+function loadStories() {}
 
-const stories = ["./stories/Typography.stories"];
+const stories = [];
 
 module.exports = {
   loadStories,
