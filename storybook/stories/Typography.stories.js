@@ -7,8 +7,6 @@ import { Title3 } from "../../lib/components/Typography/Title3";
 import { Headline } from "../../lib/components/Typography/Headline";
 import { Body } from "../../lib/components/Typography/Body";
 import { Callout } from "../../lib/components/Typography/Callout";
-import { Subhead } from "../../lib/components/Typography/Subhead";
-import { Footnote } from "../../lib/components/Typography/Footnote";
 import { Caption1 } from "../../lib/components/Typography/Caption1";
 import { Caption2 } from "../../lib/components/Typography/Caption2";
 import { Typography } from "../../lib/components/Typography/Typography";
@@ -100,8 +98,6 @@ export const Defaults = () => {
       <Headline>This is Headline</Headline>
       <Body>This is Body</Body>
       <Callout>This is Callout</Callout>
-      <Subhead>This is Subhead</Subhead>
-      <Footnote>This is Footnote</Footnote>
       <Caption1>This is Caption1</Caption1>
       <Caption2>This is Caption2</Caption2>
     </View>
@@ -133,6 +129,22 @@ export const FontFamilies = () => {
       <LargeTitle fontFamily="bold">Bold</LargeTitle>
       <LargeTitle fontFamily="extraBold">Extra Bold</LargeTitle>
       <LargeTitle fontFamily="black">Black</LargeTitle>
+    </View>
+  );
+};
+
+export const ExampleText = () => {
+  return (
+    <View>
+      <LargeTitle>00:00:00</LargeTitle>
+      <Title1>3.7h</Title1>
+      <Title2>This is Title2</Title2>
+      <Title3>Neeto Chat</Title3>
+      <Headline>This is Headline</Headline>
+      <Body>This is Body</Body>
+      <Callout>This is Callout</Callout>
+      <Caption1>Daily Total</Caption1>
+      <Caption2 fontFamily="bold">aceinvoice-rn</Caption2>
     </View>
   );
 };
