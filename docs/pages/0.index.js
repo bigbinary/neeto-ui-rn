@@ -1,7 +1,7 @@
 /* @flow */
 
-import * as React from 'react';
-import Home from './src/Home';
+import * as React from "react";
+import Home from "./src/Home";
 
 export default class Index extends React.Component<{}> {
   render() {
@@ -10,7 +10,7 @@ export default class Index extends React.Component<{}> {
 }
 
 export const meta = {
-  title: 'Home',
-  description: 'Neeto UI RN Library',
-  link: 'index',
+  title: "Home",
+  description: "Neeto UI RN Library",
+  link: "index",
 };

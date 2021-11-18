@@ -1,36 +1,32 @@
 /* @flow */
 /* eslint-disable import/no-commonjs */
 
-import * as React from 'react';
-import { styled } from 'linaria/react';
-import { Link, Header } from 'component-docs/components';
-import ThemeIcon from '../../components/theme-icon';
+import * as React from "react";
+import { styled } from "linaria/react";
+import { Link, Header } from "component-docs/components";
 
-import color from 'color';
-import GooglePlayIcon from '../../components/google-play-icon';
-import IphoneIcon from '../../components/iphone-icon';
-import Content from './components/Content';
-import GithubIcon from '../../components/github-icon';
+import color from "color";
+import GooglePlayIcon from "../../components/google-play-icon";
+import IphoneIcon from "../../components/iphone-icon";
+import Content from "./components/Content";
+import GithubIcon from "../../components/github-icon";
 
-const data: Data[] = [
+const data = [
   {
-    color: '#49545c',
-    name: 'neetoInvice',
-    image: 'apps/neetoInvoice.jpg',
-    android:
-      'https://apps.apple.com/in/app/aceinvoice/id1457618272',
-    ios: 'https://apps.apple.com/in/app/aceinvoice/id1457618272',
+    color: "#49545c",
+    name: "neetoInvoice",
+    image: "apps/neetoInvoice.jpg",
+    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
   },
   {
-    color: '#49545c',
-    name: 'neetoInvice',
-    image: 'apps/neetoInvoice.jpg',
-    android:
-      'https://apps.apple.com/in/app/aceinvoice/id1457618272',
-    ios: 'https://apps.apple.com/in/app/aceinvoice/id1457618272',
+    color: "#49545c",
+    name: "neetoInvoice",
+    image: "apps/neetoInvoice.jpg",
+    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
   },
 ];
-
 
 export default class Home extends React.Component<{}> {
   constructor(props) {
@@ -43,14 +39,14 @@ export default class Home extends React.Component<{}> {
         <Header logo="images/neeto.svg" />
         <Content>
           <h1>
-           NeetoUI is the UI library that drives the experience in all{' '}
+            NeetoUI is the UI library that drives the experience in all{" "}
             <Highlighted target="_blank" href="https://neeto.com/">
-            neetoProducts
-            </Highlighted>
-            {' '}built at{' '}
+              neetoProducts
+            </Highlighted>{" "}
+            built at{" "}
             <Highlighted target="_blank" href="https://www.bigbinary.com/">
               BigBinary
-            </Highlighted>{' '}
+            </Highlighted>{" "}
           </h1>
           <Buttons>
             <Button className="primary" as={Link} to="getting-started">
@@ -64,11 +60,11 @@ export default class Home extends React.Component<{}> {
               GitHub
             </Button>
           </Buttons>
-        <Gallery>
-            {data.map((item) => {
+          <Gallery>
+            {data.map(item => {
               const tintColor = color(item.color).isLight()
-                ? '#000000'
-                : '#FFFFFF';
+                ? "#000000"
+                : "#FFFFFF";
               return (
                 <div key={item.image}>
                   <ImageContainer>
@@ -86,7 +82,9 @@ export default class Home extends React.Component<{}> {
                           href={item.android || null}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ opacity: item.android ? 1 : 0.4 }}
+                          className={
+                            item.android ? "anchor-active" : "anchor-inactive"
+                          }
                         >
                           <GooglePlayIcon color={tintColor} />
                         </a>
@@ -95,7 +93,9 @@ export default class Home extends React.Component<{}> {
                           href={item.ios || null}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ opacity: item.ios ? 1 : 0.4 }}
+                          className={
+                            item.ios ? "anchor-active" : "anchor-inactive"
+                          }
                         >
                           <IphoneIcon color={tintColor} />
                         </a>
@@ -104,7 +104,9 @@ export default class Home extends React.Component<{}> {
                           href={item.github || null}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ opacity: item.github ? 1 : 0.4 }}
+                          className={
+                            item.github ? "anchor-active" : "anchor-inactive"
+                          }
                         >
                           <GithubIcon color={tintColor} />
                         </a>
@@ -121,8 +123,8 @@ export default class Home extends React.Component<{}> {
   }
 }
 
-const PRIMARY_COLOR = '#6200ee';
-const RESTING_SHADOW = '0 1px 3px rgba(0, 0, 0, 0.12)';
+const PRIMARY_COLOR = "#6200ee";
+const RESTING_SHADOW = "0 1px 3px rgba(0, 0, 0, 0.12)";
 
 const Highlighted = styled.a`
   color: ${PRIMARY_COLOR};
@@ -191,7 +193,6 @@ const Button = styled.a`
     }
   }
 `;
-
 
 const AppName = styled.h3`
   font-size: 16px;

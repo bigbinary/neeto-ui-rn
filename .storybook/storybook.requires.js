@@ -17,14 +17,14 @@ import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addAr
 import { decorators, parameters } from "./preview";
 
 if (decorators) {
-  decorators.forEach((decorator) => addDecorator(decorator));
+  decorators.forEach(decorator => addDecorator(decorator));
 }
 
 if (parameters) {
   addParameters(parameters);
 }
 
-argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
+argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer));
 
 const getStories = () => {
   return [

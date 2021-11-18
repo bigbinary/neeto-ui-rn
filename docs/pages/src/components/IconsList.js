@@ -1,15 +1,15 @@
 /* @flow */
 
-import * as React from 'react';
-import { styled } from 'linaria/react';
-import icons from 'react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json';
+import * as React from "react";
+import { styled } from "linaria/react";
+import icons from "react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json";
 
 type State = {
   query: string,
 };
 
 export default class IconsList extends React.Component<{}, State> {
-  state = { query: '' };
+  state = { query: "" };
 
   _getIconCharacter = (name: string) => String.fromCharCode(icons[name]);
 
@@ -20,9 +20,9 @@ export default class IconsList extends React.Component<{}, State> {
       const query = this.state.query.toLowerCase();
 
       return iconNames.filter(
-        (item) =>
-          item.includes(query.replace(/\s/g, '-')) ||
-          item.replace(/-/g, '').includes(query)
+        item =>
+          item.includes(query.replace(/\s/g, "-")) ||
+          item.replace(/-/g, "").includes(query)
       );
     }
 
@@ -54,7 +54,7 @@ export default class IconsList extends React.Component<{}, State> {
         />
         {searchResults.length ? (
           <Results>
-            {searchResults.map((name) => (
+            {searchResults.map(name => (
               <IconContainer
                 key={name}
                 type="button"
@@ -97,7 +97,7 @@ const IconContainer = styled.button`
 const Icon = styled.span`
   display: block;
   margin: 16px;
-  font-family: 'MaterialCommunityIcons';
+  font-family: "MaterialCommunityIcons";
   font-size: 48px;
   color: var(--theme-text-color);
 `;

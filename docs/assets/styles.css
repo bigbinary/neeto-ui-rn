@@ -9,6 +9,14 @@ a {
   text-decoration: none;
 }
 
+.anchor-active {
+  opacity: 1;
+}
+
+.anchor-inactive {
+  opacity: 0.4;
+}
+
 a,
 a:hover {
   color: #6200ee;
@@ -62,7 +70,7 @@ a:hover {
 }
 
 @font-face {
-  font-family: 'MaterialCommunityIcons';
-  src: url('../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf')
-    format('truetype');
+  font-family: "MaterialCommunityIcons";
+  src: url("../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf")
+    format("truetype");
 }

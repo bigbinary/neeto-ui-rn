@@ -1,4 +1,4 @@
-import { styled } from 'linaria/react';
+import { styled } from "linaria/react";
 
 const Content = styled.div`
   padding: 64px 24px 24px;
