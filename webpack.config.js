@@ -31,6 +31,14 @@ const babelLoaderConfiguration = {
   },
 };
 
+const ttfLoaderConfiguration = {
+  test: /\.ttf$/,
+  use: {
+    loader: "url-loader",
+  },
+  include: [path.resolve(appDirectory, "./assets")],
+};
+
 const svgLoaderConfiguration = {
   test: /\.svg$/,
   use: [
@@ -71,6 +79,7 @@ module.exports = {
       babelLoaderConfiguration,
       imageLoaderConfiguration,
       svgLoaderConfiguration,
+      ttfLoaderConfiguration,
     ],
   },
   plugins: [

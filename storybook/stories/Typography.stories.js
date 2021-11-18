@@ -125,7 +125,7 @@ export const FontFamilies = () => {
   return (
     <View>
       <LargeTitle fontFamily="thin">Thin</LargeTitle>
-      <LargeTitle fontFamily="extraLight">Extra Thin</LargeTitle>
+      <LargeTitle fontFamily="extraLight">Extra Light</LargeTitle>
       <LargeTitle fontFamily="light">Light</LargeTitle>
       <LargeTitle fontFamily="regular">Regular</LargeTitle>
       <LargeTitle fontFamily="medium">Medium</LargeTitle>
