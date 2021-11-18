@@ -103,7 +103,7 @@ export const Defaults = () => {
       <Subhead>This is Subhead</Subhead>
       <Footnote>This is Footnote</Footnote>
       <Caption1>This is Caption1</Caption1>
-      <Caption2 color="font.danger">This is Caption2</Caption2>
+      <Caption2>This is Caption2</Caption2>
     </View>
   );
 };
@@ -117,6 +117,22 @@ export const FontColors = () => {
       <LargeTitle color="font.primary">Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>
       <LargeTitle color="font.danger">Danger</LargeTitle>
+    </View>
+  );
+};
+
+export const FontFamilies = () => {
+  return (
+    <View>
+      <LargeTitle fontFamily="thin">Thin</LargeTitle>
+      <LargeTitle fontFamily="extraLight">Extra Thin</LargeTitle>
+      <LargeTitle fontFamily="light">Light</LargeTitle>
+      <LargeTitle fontFamily="regular">Regular</LargeTitle>
+      <LargeTitle fontFamily="medium">Medium</LargeTitle>
+      <LargeTitle fontFamily="semiBold">Semi Bold</LargeTitle>
+      <LargeTitle fontFamily="bold">Bold</LargeTitle>
+      <LargeTitle fontFamily="extraBold">Extra Bold</LargeTitle>
+      <LargeTitle fontFamily="black">Black</LargeTitle>
     </View>
   );
 };
