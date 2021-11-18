@@ -1,9 +1,9 @@
 {
   "name": "neetoui-rn-docs",
   "version": "0.0.1",
-  "description": "Documentation for React Native Paper",
+  "description": "Documentation for neetoUIRN Library",
   "private": true,
-  "author": "",
+  "author": "BigBinary",
   "license": "MIT",
   "scripts": {
     "start": "component-docs serve",

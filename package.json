@@ -8,7 +8,6 @@
     "android": "yarn prestart && react-native run-android",
     "ios": "yarn prestart && react-native run-ios",
     "start": "react-native start",
-    "component-docs": "component-docs",
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -42,9 +41,7 @@
     ]
   },
   "peerDependencies": {},
-  "dependencies": {
-    "component-docs": "^0.24.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
