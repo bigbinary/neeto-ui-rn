@@ -1,3 +1,0 @@
-module.exports = [
-  {"filepath":"../lib/components/Button.js","title":"Button","description":"","link":"button","data":{"description":"","displayName":"Button","methods":[],"statics":[]},"type":"component","dependencies":["/Users/sangameshsomawar/Desktop/bbprojects/neeto-ui-rn/lib/components/Button.js"]},{"filepath":"../lib/components/Typography.js","title":"Typography","description":"","link":"typography","data":{"description":"","displayName":"Typography","methods":[],"statics":[],"props":{"label":{"type":{"name":"string"},"required":false,"description":""}}},"type":"component","dependencies":["/Users/sangameshsomawar/Desktop/bbprojects/neeto-ui-rn/lib/components/Typography.js"]},{"type":"separator"}
-]
