@@ -10,8 +10,7 @@ AppRegistry.runApplication(appName, {
   rootTag: document.getElementById("app-root"),
 });
 
-// Load Fonts
-// Ref: https://github.com/oblador/react-native-vector-icons#web-with-webpack
+// Loaded Fonts with this approach: https://github.com/oblador/react-native-vector-icons#web-with-webpack
 
 import interRegular from "./assets/fonts/Inter-Regular.ttf";
 import interBold from "./assets/fonts/Inter-Bold.ttf";
@@ -26,11 +25,8 @@ const iconFontStyles = `
   src: url(${interBold});
   font-family: Inter-Bold;
 }
-
-
 `;
 
-// Create stylesheet
 const style = document.createElement("style");
 style.type = "text/css";
 if (style.styleSheet) {
@@ -39,5 +35,4 @@ if (style.styleSheet) {
   style.appendChild(document.createTextNode(iconFontStyles));
 }
 
-// Inject stylesheet
 document.head.appendChild(style);
