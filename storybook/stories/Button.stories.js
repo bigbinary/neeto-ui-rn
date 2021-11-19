@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "../../lib/components/Button";
-import { Typography } from "../../lib/components/Typography/Typography";
+import { Button, Typography } from "@components";
 
 const ButtonMetaData = {
   title: "Foundation/Buttons",

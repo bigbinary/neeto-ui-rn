@@ -1,16 +1,19 @@
 import React from "react";
 import { View } from "react-native";
-import { LargeTitle } from "../../lib/";
-import { Title1 } from "../../lib";
-import { Title2 } from "../../lib";
-import { Title3 } from "../../lib";
-import { Headline } from "../../lib";
-import { Body } from "../../lib";
-import { Callout } from "../../lib";
-import { Caption1 } from "../../lib";
-import { Caption2 } from "../../lib";
-import { Typography } from "../../lib";
-import Container from "../../lib/components/Container";
+
+import {
+  LargeTitle,
+  Title1,
+  Title2,
+  Title3,
+  Headline,
+  Body,
+  Callout,
+  Caption1,
+  Caption2,
+  Typography,
+  Container,
+} from "@components";
 
 const TypographyStories = {
   title: "Foundation/Typography",
