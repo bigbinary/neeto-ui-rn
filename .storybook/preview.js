@@ -2,15 +2,16 @@ import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "@theme";
-import { View } from "react-native";
+import { Container } from "@components";
+import { moderateScale } from "react-native-size-matters";
 
 export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      <View style={{ padding: 10, flex: 1 }}>
+      <Container p={moderateScale(10)}>
         <Story />
-      </View>
+      </Container>
     </ThemeProvider>
   ),
 ];

@@ -1,6 +1,4 @@
 import React from "react";
-import { View } from "react-native";
-
 import {
   LargeTitle,
   Title1,
@@ -26,7 +24,7 @@ export default TypographyStories;
 
 export const Defaults = () => {
   return (
-    <View>
+    <Container>
       <LargeTitle>This is LargeTitle</LargeTitle>
       <Title1>This is Title1</Title1>
       <Title2>This is Title2</Title2>
@@ -36,7 +34,7 @@ export const Defaults = () => {
       <Callout>This is Callout</Callout>
       <Caption1>This is Caption1</Caption1>
       <Caption2>This is Caption2</Caption2>
-    </View>
+    </Container>
   );
 };
 
@@ -55,25 +53,9 @@ export const FontColors = () => {
 
 export const FontFamilies = () => {
   return (
-    <View>
+    <Container>
       <LargeTitle fontFamily="regular">Regular</LargeTitle>
       <LargeTitle fontFamily="bold">Bold</LargeTitle>
-    </View>
-  );
-};
-
-export const ExampleText = () => {
-  return (
-    <View>
-      <LargeTitle>00:00:00</LargeTitle>
-      <Title1>3.7h</Title1>
-      <Title2>This is Title2</Title2>
-      <Title3>Neeto Chat</Title3>
-      <Headline>This is Headline</Headline>
-      <Body>This is Body</Body>
-      <Callout>This is Callout</Callout>
-      <Caption1>Daily Total</Caption1>
-      <Caption2>aceinvoice-rn</Caption2>
-    </View>
+    </Container>
   );
 };
