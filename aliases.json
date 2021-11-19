@@ -1,3 +1,4 @@
 {
-  "@components": "./lib/components"
+  "@components": "./lib/components",
+  "@theme": "./lib/theme"
 }

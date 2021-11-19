@@ -1,7 +1,7 @@
 import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { ThemeProvider } from "styled-components/native";
-import { theme } from "../lib/theme";
+import { theme } from "@theme";
 import { View } from "react-native";
 
 export const decorators = [
