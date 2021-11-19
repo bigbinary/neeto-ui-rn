@@ -9,7 +9,7 @@ export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      <Container p={moderateScale(10)}>
+      <Container p={moderateScale(10)} flex={1}>
         <Story />
       </Container>
     </ThemeProvider>
