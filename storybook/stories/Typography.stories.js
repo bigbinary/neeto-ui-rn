@@ -20,74 +20,6 @@ const TypographyStories = {
 };
 export default TypographyStories;
 
-// const Template = args => <Typography {...args} />;
-
-// export const H1 = Template.bind({});
-// H1.args = {
-//   children: "Typhography",
-//   fontSize: "h1",
-// };
-
-// export const H2 = Template.bind({});
-// H2.args = {
-//   children: "Typhography",
-//   fontSize: "h2",
-// };
-
-// export const H3 = Template.bind({});
-// H3.args = {
-//   children: "Typhography",
-//   fontSize: "h3",
-// };
-
-// export const H4 = Template.bind({});
-// H4.args = {
-//   children: "Typhography",
-//   fontSize: "h4",
-// };
-
-// export const H5 = Template.bind({});
-// H5.args = {
-//   children: "Typhography",
-//   fontSize: "h5",
-// };
-
-// export const H6 = Template.bind({});
-// H6.args = {
-//   children: "Typhography",
-//   fontSize: "h6",
-// };
-
-// export const Body1 = Template.bind({});
-// Body1.args = {
-//   children: "Typhography",
-//   fontSize: "body1",
-// };
-
-// export const Body2 = Template.bind({});
-// Body2.args = {
-//   children: "Typhography",
-//   fontSize: "body2",
-// };
-
-// export const Body3 = Template.bind({});
-// Body3.args = {
-//   children: "Typhography",
-//   fontSize: "body3",
-// };
-
-// export const Primary = Template.bind({});
-// Primary.args = {
-//   children: "Typography",
-//   color: "primary",
-// };
-
-// export const Danger = Template.bind({});
-// Danger.args = {
-//   children: "Typography",
-//   color: "error",
-// };
-
 export const Defaults = () => {
   return (
     <View>
@@ -120,15 +52,8 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <View>
-      <LargeTitle fontFamily="thin">Thin</LargeTitle>
-      <LargeTitle fontFamily="extraLight">Extra Light</LargeTitle>
-      <LargeTitle fontFamily="light">Light</LargeTitle>
       <LargeTitle fontFamily="regular">Regular</LargeTitle>
-      <LargeTitle fontFamily="medium">Medium</LargeTitle>
-      <LargeTitle fontFamily="semiBold">Semi Bold</LargeTitle>
       <LargeTitle fontFamily="bold">Bold</LargeTitle>
-      <LargeTitle fontFamily="extraBold">Extra Bold</LargeTitle>
-      <LargeTitle fontFamily="black">Black</LargeTitle>
     </View>
   );
 };
@@ -144,7 +69,7 @@ export const ExampleText = () => {
       <Body>This is Body</Body>
       <Callout>This is Callout</Callout>
       <Caption1>Daily Total</Caption1>
-      <Caption2 fontFamily="bold">aceinvoice-rn</Caption2>
+      <Caption2>aceinvoice-rn</Caption2>
     </View>
   );
 };
