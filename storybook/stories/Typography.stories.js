@@ -43,7 +43,7 @@ export const FontColors = () => {
       <Container backgroundColor="background.base">
         <LargeTitle color="font.default">Default</LargeTitle>
       </Container>
-      <LargeTitle color="font.primary">Primary</LargeTitle>
+      <LargeTitle>Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>
       <LargeTitle color="font.danger">Danger</LargeTitle>
     </Container>
