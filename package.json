@@ -11,6 +11,7 @@
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "flow": "flow",
     "precommit": "lint-staged",
     "prestart": "sb-rn-get-stories",
     "storybook-watcher": "sb-rn-watcher",
