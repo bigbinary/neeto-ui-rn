@@ -2,12 +2,15 @@ import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "../lib/theme";
+import { View } from "react-native";
 
 export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      <Story />
+      <View style={{ padding: 10, flex: 1 }}>
+        <Story />
+      </View>
     </ThemeProvider>
   ),
 ];

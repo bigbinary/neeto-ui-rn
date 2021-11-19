@@ -1,15 +1,16 @@
 import React from "react";
 import { View } from "react-native";
-import { LargeTitle } from "../../lib/components/Typography/LargeTitle";
-import { Title1 } from "../../lib/components/Typography/Title1";
-import { Title2 } from "../../lib/components/Typography/Title2";
-import { Title3 } from "../../lib/components/Typography/Title3";
-import { Headline } from "../../lib/components/Typography/Headline";
-import { Body } from "../../lib/components/Typography/Body";
-import { Callout } from "../../lib/components/Typography/Callout";
-import { Caption1 } from "../../lib/components/Typography/Caption1";
-import { Caption2 } from "../../lib/components/Typography/Caption2";
-import { Typography } from "../../lib/components/Typography/Typography";
+import { LargeTitle } from "../../lib/";
+import { Title1 } from "../../lib";
+import { Title2 } from "../../lib";
+import { Title3 } from "../../lib";
+import { Headline } from "../../lib";
+import { Body } from "../../lib";
+import { Callout } from "../../lib";
+import { Caption1 } from "../../lib";
+import { Caption2 } from "../../lib";
+import { Typography } from "../../lib";
+import Container from "../../lib/components/Container";
 
 const TypographyStories = {
   title: "Foundation/Typography",
@@ -38,14 +39,14 @@ export const Defaults = () => {
 
 export const FontColors = () => {
   return (
-    <View>
-      <View style={{ backgroundColor: "black" }}>
+    <Container>
+      <Container backgroundColor="background.base">
         <LargeTitle color="font.default">Default</LargeTitle>
-      </View>
+      </Container>
       <LargeTitle color="font.primary">Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>
       <LargeTitle color="font.danger">Danger</LargeTitle>
-    </View>
+    </Container>
   );
 };
 
