@@ -103,7 +103,14 @@
     "webpack-dev-server": "^4.4.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native)/"
+    ],
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",
