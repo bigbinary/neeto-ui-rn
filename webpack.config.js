@@ -4,12 +4,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const appDirectory = path.resolve(__dirname);
-const rootDirectory = path.resolve(__dirname, "..", "..");
-
-const compileNodeModules = [
-  // "react-native-swipe-gestures",
-  // "react-native-modal-selector",
-].map(moduleName => path.resolve(rootDirectory, `node_modules/${moduleName}`));
 
 const babelLoaderConfiguration = {
   test: /\.js/,
@@ -21,7 +15,6 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./.storybook/preview.js"),
     path.resolve(__dirname, "./node_modules/react-native-modal-selector"),
     path.resolve(__dirname, "./node_modules/react-native-swipe-gestures"),
-    // ...compileNodeModules,
   ],
   use: {
     loader: "babel-loader",
@@ -35,6 +28,14 @@ const babelLoaderConfiguration = {
       plugins: ["react-native-web", "@babel/plugin-proposal-class-properties"],
     },
   },
+};
+
+const ttfLoaderConfiguration = {
+  test: /\.ttf$/,
+  use: {
+    loader: "url-loader",
+  },
+  include: [path.resolve(appDirectory, "./assets")],
 };
 
 const svgLoaderConfiguration = {
@@ -69,7 +70,6 @@ module.exports = {
     extensions: [".web.tsx", ".web.ts", ".tsx", ".ts", ".web.js", ".js"],
     alias: {
       "react-native$": "react-native-web",
-      // "@storybook/react-native$": "@storybook/react",
     },
   },
   module: {
@@ -77,6 +77,7 @@ module.exports = {
       babelLoaderConfiguration,
       imageLoaderConfiguration,
       svgLoaderConfiguration,
+      ttfLoaderConfiguration,
     ],
   },
   plugins: [
@@ -85,7 +86,6 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      // See: https://github.com/necolas/react-native-web/issues/349
       __DEV__: JSON.stringify(true),
     }),
   ],
