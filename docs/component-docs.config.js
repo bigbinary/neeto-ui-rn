@@ -12,7 +12,7 @@ const assets = [
 ];
 const styles = [path.join(__dirname, "assets", "styles.css")];
 const scripts = [path.join(__dirname, "assets", "snack.js")];
-const github = "https://github.com/bigbinary/neeto-ui-rn";
+const github = "https://github.com/bigbinary/neeto-ui-rn/tree/master/";
 
 if (!fs.existsSync(dist)) {
   fs.mkdirSync(dist);
@@ -55,7 +55,9 @@ function getPages() {
     })
     .reduce((acc, file) => {
       const content = fs.readFileSync(file).toString();
-      const groupMatch = /\/\/ @component-group (\w+)/gm.exec(content);
+      const groupMatch = /\/\/ @component-group ([a-zA-Z0-9_ ]*)/gm.exec(
+        content
+      );
       const group = groupMatch ? groupMatch[1] : undefined;
 
       if (/import \* as React/.test(content)) {
