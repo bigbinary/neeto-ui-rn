@@ -1,0 +1,617 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Foundation/Buttons Disabled 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "opacity": 1,
+          "paddingBottom": 15,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        }
+      }
+    >
+      <Text
+        color="font.primary"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+            },
+          ]
+        }
+      >
+        Disabled
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Buttons Primary 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "opacity": 1,
+          "paddingBottom": 15,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        }
+      }
+    >
+      <Text
+        color="white"
+        style={
+          Array [
+            Object {
+              "color": "white",
+            },
+          ]
+        }
+      >
+        Primary
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Buttons Secondary 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      nativeID="animatedComponent"
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "opacity": 1,
+          "paddingBottom": 15,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 15,
+        }
+      }
+    >
+      <Text
+        color="font.primary"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+            },
+          ]
+        }
+      >
+        Secondary
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Defaults 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      color="background.default"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        This is LargeTitle
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="title1"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 37.714285714285715,
+            },
+          ]
+        }
+      >
+        This is Title1
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="title2"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 28.285714285714285,
+            },
+          ]
+        }
+      >
+        This is Title2
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="regular"
+        fontSize="title3"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Regular",
+              "fontSize": 28.285714285714285,
+            },
+          ]
+        }
+      >
+        This is Title3
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="headline"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 22,
+            },
+          ]
+        }
+      >
+        This is Headline
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="regular"
+        fontSize="body"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Regular",
+              "fontSize": 22,
+            },
+          ]
+        }
+      >
+        This is Body
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="callout"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 18.857142857142858,
+            },
+          ]
+        }
+      >
+        This is Callout
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="regular"
+        fontSize="caption1"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Regular",
+              "fontSize": 18.857142857142858,
+            },
+          ]
+        }
+      >
+        This is Caption1
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="regular"
+        fontSize="caption2"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Regular",
+              "fontSize": 15.714285714285714,
+            },
+          ]
+        }
+      >
+        This is Caption2
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Font Colors 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      color="background.default"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      <View
+        backgroundColor="background.base"
+        color="background.default"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#2F3941",
+              "color": "#FFFFFF",
+            },
+          ]
+        }
+      >
+        <Text
+          color="font.default"
+          fontFamily="bold"
+          fontSize="largeTitle"
+          style={
+            Array [
+              Object {
+                "color": "#FFFFFF",
+                "fontFamily": "Inter-Bold",
+                "fontSize": 50.285714285714285,
+              },
+            ]
+          }
+        >
+          Default
+        </Text>
+      </View>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Primary
+      </Text>
+      <Text
+        color="font.secondary"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#676767",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Secondary
+      </Text>
+      <Text
+        color="font.danger"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#FE295C",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Danger
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Foundation/Typography Font Families 1`] = `
+<View
+  color="background.default"
+  flex={1}
+  p={15.714285714285714}
+  style={
+    Array [
+      Object {
+        "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 15.714285714285714,
+        "paddingLeft": 15.714285714285714,
+        "paddingRight": 15.714285714285714,
+        "paddingTop": 15.714285714285714,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  >
+    <View
+      color="background.default"
+      style={
+        Array [
+          Object {
+            "color": "#FFFFFF",
+          },
+        ]
+      }
+    >
+      <Text
+        color="font.primary"
+        fontFamily="regular"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Regular",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Regular
+      </Text>
+      <Text
+        color="font.primary"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#1B1F23",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Bold
+      </Text>
+    </View>
+  </View>
+</View>
+`;
