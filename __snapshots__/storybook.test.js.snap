@@ -3,11 +3,15 @@
 exports[`Storyshots Foundation/Buttons Disabled 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
@@ -72,11 +76,15 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
 exports[`Storyshots Foundation/Buttons Primary 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
@@ -141,11 +149,15 @@ exports[`Storyshots Foundation/Buttons Primary 1`] = `
 exports[`Storyshots Foundation/Buttons Secondary 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
@@ -210,11 +222,15 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
 exports[`Storyshots Foundation/Typography Defaults 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
@@ -398,11 +414,15 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
 exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
@@ -519,11 +539,15 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 exports[`Storyshots Foundation/Typography Font Families 1`] = `
 <View
   color="background.default"
+  flex={1}
   p={15.714285714285714}
   style={
     Array [
       Object {
         "color": "#FFFFFF",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
         "paddingBottom": 15.714285714285714,
         "paddingLeft": 15.714285714285714,
         "paddingRight": 15.714285714285714,
