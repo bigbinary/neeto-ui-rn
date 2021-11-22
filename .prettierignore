@@ -1,0 +1,6 @@
+/node_modules
+/android
+/ios
+/dist
+/docs/dist
+/.storybook/storybook.requires.js

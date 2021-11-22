@@ -11,6 +11,7 @@ module.exports = {
     "plugin:react/recommended",
     "eslint-config-prettier",
     "plugin:promise/recommended",
+    "plugin:flowtype/recommended",
   ],
   settings: {
     react: {
@@ -32,7 +33,14 @@ module.exports = {
     sourceType: "module",
   },
   parser: "babel-eslint",
-  plugins: ["react", "react-native", "jest", "import", "react-hooks"],
+  plugins: [
+    "react",
+    "react-native",
+    "jest",
+    "import",
+    "react-hooks",
+    "flowtype",
+  ],
   rules: {
     eqeqeq: ["error", "always"],
     "react-hooks/exhaustive-deps": "error",
