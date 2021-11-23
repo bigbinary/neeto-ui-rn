@@ -20,4 +20,4 @@ can also run the following commands manually:
 
 - `yarn lint`: lint files with `eslint`
 - `yarn format`: lint files with `prettier`.
-- `yarn test`: run unit & snapsshot tests with `jest`.
+- `yarn test`: run unit & snapshot tests with `jest`.
