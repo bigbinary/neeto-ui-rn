@@ -53,7 +53,7 @@ module.exports = {
       "error",
       { props: "never", children: "ignore" },
     ],
-    "react/prop-types": 0,
+    "react/prop-types": ["error", { ignore: ["navigation", "theme"] }],
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 1,
     "react-native/no-inline-styles": 1,
