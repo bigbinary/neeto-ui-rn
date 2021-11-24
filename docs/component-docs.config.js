@@ -11,7 +11,10 @@ const assets = [
   path.join(__dirname, "assets", "images"),
 ];
 const styles = [path.join(__dirname, "assets", "styles.css")];
-const scripts = [path.join(__dirname, "assets", "snack.js")];
+const scripts = [
+  path.join(__dirname, "assets", "snack.js"),
+  path.join(__dirname, "assets", "storybookLink.js"),
+];
 const github = "https://github.com/bigbinary/neeto-ui-rn/tree/master/";
 
 if (!fs.existsSync(dist)) {
