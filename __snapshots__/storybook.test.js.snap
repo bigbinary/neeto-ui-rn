@@ -522,7 +522,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         style={
           Array [
             Object {
-              "color": "#FE295C",
+              "color": "#FF6969",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },

@@ -1,6 +1,5 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1772e21c-61b9-4100-9b2e-9b0d1ce6a210/deploy-status)](https://app.netlify.com/sites/neetoui-rn/deploys) [![Netlify Status](https://api.netlify.com/api/v1/badges/717761ba-353e-4417-9860-86e49b78ac36/deploy-status)](https://app.netlify.com/sites/neetoui-rn-docs/deploys)
-
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1772e21c-61b9-4100-9b2e-9b0d1ce6a210/deploy-status)](https://app.netlify.com/sites/neetoui-rn/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/717761ba-353e-4417-9860-86e49b78ac36/deploy-status)](https://app.netlify.com/sites/neetoui-rn-docs/deploys)
 
 **NeetoUI-RN** is the library that drives the experience in all Neeto React
 Native products built at [BigBinary](https://www.bigbinary.com).
@@ -43,11 +42,10 @@ folder with static files.
 
 Run `yarn serve` to serve storybook locally.
 
+## Building Component Documentation
 
-## Building Component Documentation 
-
-Run `cd docs`, `yarn build` to build component documentation locally, this would create `dist`
-folder with static files in `docs` folder.
+Run `cd docs`, `yarn build` to build component documentation locally, this would
+create `dist` folder with static files in `docs` folder.
 
 ## Documentation
 
