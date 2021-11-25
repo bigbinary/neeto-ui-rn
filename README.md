@@ -10,6 +10,18 @@ Native products built at [BigBinary](https://www.bigbinary.com).
 yarn add @bigbinary/neetoui-rn
 ```
 
+To link the library, run:
+
+```sh
+react-native link
+```
+
+or
+
+```sh
+npx react-native link
+```
+
 ## Development
 
 Install all the dependencies by executing following command.
