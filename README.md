@@ -64,7 +64,3 @@ create `dist` folder with static files in `docs` folder.
 Read the docs here.
 
 https://neetoui-rn.netlify.app
-
-```
-
-```
