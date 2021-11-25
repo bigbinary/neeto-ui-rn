@@ -26,7 +26,9 @@
     "web": "yarn prestart && webpack serve --mode=development --config webpack.config.js"
   },
   "files": [
-    "lib"
+    "lib",
+    "react-native.config.js",
+    "assets"
   ],
   "husky": {
     "hooks": {
