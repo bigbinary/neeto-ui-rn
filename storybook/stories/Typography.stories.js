@@ -4,10 +4,7 @@ import {
   LargeTitle,
   Title1,
   Title2,
-  Title3,
-  Headline,
   Body,
-  Callout,
   Caption1,
   Caption2,
   Typography,
@@ -29,10 +26,7 @@ export const Defaults = () => {
       <LargeTitle>This is LargeTitle</LargeTitle>
       <Title1>This is Title1</Title1>
       <Title2>This is Title2</Title2>
-      <Title3>This is Title3</Title3>
-      <Headline>This is Headline</Headline>
       <Body>This is Body</Body>
-      <Callout>This is Callout</Callout>
       <Caption1>This is Caption1</Caption1>
       <Caption2>This is Caption2</Caption2>
     </Container>
@@ -43,7 +37,7 @@ export const FontColors = () => {
   return (
     <Container>
       <Container backgroundColor="background.base">
-        <LargeTitle color="font.default">Default</LargeTitle>
+        <LargeTitle color="font.white">White</LargeTitle>
       </Container>
       <LargeTitle>Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>

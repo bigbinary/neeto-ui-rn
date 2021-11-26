@@ -2,7 +2,7 @@
 
 exports[`Storyshots Foundation/Buttons Disabled 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -75,7 +75,7 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
 
 exports[`Storyshots Foundation/Buttons Primary 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -148,7 +148,7 @@ exports[`Storyshots Foundation/Buttons Primary 1`] = `
 
 exports[`Storyshots Foundation/Buttons Secondary 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -221,7 +221,7 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
 
 exports[`Storyshots Foundation/Typography Defaults 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -253,7 +253,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
     }
   >
     <View
-      color="background.default"
+      color="background.primary"
       style={
         Array [
           Object {
@@ -313,38 +313,6 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
       <Text
         color="font.primary"
         fontFamily="regular"
-        fontSize="title3"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 28.285714285714285,
-            },
-          ]
-        }
-      >
-        This is Title3
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="headline"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 22,
-            },
-          ]
-        }
-      >
-        This is Headline
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="regular"
         fontSize="body"
         style={
           Array [
@@ -357,22 +325,6 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         }
       >
         This is Body
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="callout"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 18.857142857142858,
-            },
-          ]
-        }
-      >
-        This is Callout
       </Text>
       <Text
         color="font.primary"
@@ -413,7 +365,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
 
 exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -445,7 +397,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
     }
   >
     <View
-      color="background.default"
+      color="background.primary"
       style={
         Array [
           Object {
@@ -456,7 +408,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
     >
       <View
         backgroundColor="background.base"
-        color="background.default"
+        color="background.primary"
         style={
           Array [
             Object {
@@ -467,7 +419,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         }
       >
         <Text
-          color="font.default"
+          color="font.white"
           fontFamily="bold"
           fontSize="largeTitle"
           style={
@@ -480,7 +432,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
             ]
           }
         >
-          Default
+          White
         </Text>
       </View>
       <Text
@@ -538,7 +490,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 
 exports[`Storyshots Foundation/Typography Font Families 1`] = `
 <View
-  color="background.default"
+  color="background.primary"
   flex={1}
   p={15.714285714285714}
   style={
@@ -570,7 +522,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
     }
   >
     <View
-      color="background.default"
+      color="background.primary"
       style={
         Array [
           Object {
