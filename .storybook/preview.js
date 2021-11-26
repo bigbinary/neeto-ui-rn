@@ -1,17 +1,20 @@
 import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { ThemeProvider } from "styled-components/native";
+import { ScrollView } from "react-native";
+
 import { theme } from "@theme";
 import { Container } from "@components";
-import { moderateScale } from "react-native-size-matters";
 
 export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      <Container p={moderateScale(10)} flex={1}>
-        <Story />
-      </Container>
+      <ScrollView>
+        <Container p={10} flex={1}>
+          <Story />
+        </Container>
+      </ScrollView>
     </ThemeProvider>
   ),
 ];

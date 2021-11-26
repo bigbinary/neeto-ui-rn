@@ -4,10 +4,7 @@ import {
   LargeTitle,
   Title1,
   Title2,
-  Title3,
-  Headline,
   Body,
-  Callout,
   Caption1,
   Caption2,
   Typography,
@@ -29,10 +26,7 @@ export const Defaults = () => {
       <LargeTitle>This is LargeTitle</LargeTitle>
       <Title1>This is Title1</Title1>
       <Title2>This is Title2</Title2>
-      <Title3>This is Title3</Title3>
-      <Headline>This is Headline</Headline>
       <Body>This is Body</Body>
-      <Callout>This is Callout</Callout>
       <Caption1>This is Caption1</Caption1>
       <Caption2>This is Caption2</Caption2>
     </Container>
@@ -43,11 +37,21 @@ export const FontColors = () => {
   return (
     <Container>
       <Container backgroundColor="background.base">
-        <LargeTitle color="font.default">Default</LargeTitle>
+        <LargeTitle color="font.white">White</LargeTitle>
       </Container>
+      <LargeTitle color="font.black">Black</LargeTitle>
+      <LargeTitle color="font.base">Base</LargeTitle>
       <LargeTitle>Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>
       <LargeTitle color="font.danger">Danger</LargeTitle>
+      <LargeTitle color="font.grey100">Grey</LargeTitle>
+      <LargeTitle color="font.grey100">Grey 100</LargeTitle>
+      <LargeTitle color="font.grey200">Grey 200</LargeTitle>
+      <LargeTitle color="font.grey300">Grey 300</LargeTitle>
+      <LargeTitle color="font.grey400">Grey 400</LargeTitle>
+      <LargeTitle color="font.grey500">Grey 500</LargeTitle>
+      <LargeTitle color="font.grey600">Grey 600</LargeTitle>
+      <LargeTitle color="font.grey800">Grey 800</LargeTitle>
     </Container>
   );
 };
@@ -55,8 +59,8 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <LargeTitle fontFamily="regular">Regular</LargeTitle>
-      <LargeTitle fontFamily="bold">Bold</LargeTitle>
+      <LargeTitle fontFamily="inter400">Inter Regular 400</LargeTitle>
+      <LargeTitle fontFamily="inter700">Inter Bold 700</LargeTitle>
     </Container>
   );
 };

@@ -1,617 +1,713 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Foundation/Buttons Disabled 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
+<RCTScrollView>
+  <View>
     <View
-      accessible={true}
-      collapsable={false}
-      focusable={false}
-      nativeID="animatedComponent"
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "opacity": 1,
-          "paddingBottom": 15,
-          "paddingLeft": 15,
-          "paddingRight": 15,
-          "paddingTop": 15,
-        }
-      }
-    >
-      <Text
-        color="font.primary"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-            },
-          ]
-        }
-      >
-        Disabled
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Foundation/Buttons Primary 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
-    <View
-      accessible={true}
-      collapsable={false}
-      focusable={false}
-      nativeID="animatedComponent"
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "opacity": 1,
-          "paddingBottom": 15,
-          "paddingLeft": 15,
-          "paddingRight": 15,
-          "paddingTop": 15,
-        }
-      }
-    >
-      <Text
-        color="white"
-        style={
-          Array [
-            Object {
-              "color": "white",
-            },
-          ]
-        }
-      >
-        Primary
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Foundation/Buttons Secondary 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
-    <View
-      accessible={true}
-      collapsable={false}
-      focusable={false}
-      nativeID="animatedComponent"
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "opacity": 1,
-          "paddingBottom": 15,
-          "paddingLeft": 15,
-          "paddingRight": 15,
-          "paddingTop": 15,
-        }
-      }
-    >
-      <Text
-        color="font.primary"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-            },
-          ]
-        }
-      >
-        Secondary
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Foundation/Typography Defaults 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
-    <View
-      color="background.default"
+      color="background.primary"
+      flex={1}
+      p={10}
       style={
         Array [
           Object {
-            "color": "#FFFFFF",
-          },
-        ]
-      }
-    >
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="largeTitle"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 50.285714285714285,
-            },
-          ]
-        }
-      >
-        This is LargeTitle
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="title1"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 37.714285714285715,
-            },
-          ]
-        }
-      >
-        This is Title1
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="title2"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 28.285714285714285,
-            },
-          ]
-        }
-      >
-        This is Title2
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="regular"
-        fontSize="title3"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 28.285714285714285,
-            },
-          ]
-        }
-      >
-        This is Title3
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="headline"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 22,
-            },
-          ]
-        }
-      >
-        This is Headline
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="regular"
-        fontSize="body"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 22,
-            },
-          ]
-        }
-      >
-        This is Body
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="callout"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 18.857142857142858,
-            },
-          ]
-        }
-      >
-        This is Callout
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="regular"
-        fontSize="caption1"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 18.857142857142858,
-            },
-          ]
-        }
-      >
-        This is Caption1
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="regular"
-        fontSize="caption2"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 15.714285714285714,
-            },
-          ]
-        }
-      >
-        This is Caption2
-      </Text>
-    </View>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Foundation/Typography Font Colors 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
-    <View
-      color="background.default"
-      style={
-        Array [
-          Object {
-            "color": "#FFFFFF",
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
           },
         ]
       }
     >
       <View
-        backgroundColor="background.base"
-        color="background.default"
         style={
           Array [
             Object {
-              "backgroundColor": "#2F3941",
-              "color": "#FFFFFF",
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
             },
           ]
         }
       >
-        <Text
-          color="font.default"
-          fontFamily="bold"
-          fontSize="largeTitle"
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "color": "#FFFFFF",
-                "fontFamily": "Inter-Bold",
-                "fontSize": 50.285714285714285,
-              },
-            ]
+            Object {
+              "alignItems": "center",
+              "opacity": 1,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            }
           }
         >
-          Default
-        </Text>
+          <Text
+            color="font.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+          >
+            Disabled
+          </Text>
+        </View>
       </View>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="largeTitle"
-        style={
-          Array [
-            Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 50.285714285714285,
-            },
-          ]
-        }
-      >
-        Primary
-      </Text>
-      <Text
-        color="font.secondary"
-        fontFamily="bold"
-        fontSize="largeTitle"
-        style={
-          Array [
-            Object {
-              "color": "#676767",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 50.285714285714285,
-            },
-          ]
-        }
-      >
-        Secondary
-      </Text>
-      <Text
-        color="font.danger"
-        fontFamily="bold"
-        fontSize="largeTitle"
-        style={
-          Array [
-            Object {
-              "color": "#FF6969",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 50.285714285714285,
-            },
-          ]
-        }
-      >
-        Danger
-      </Text>
     </View>
   </View>
-</View>
+</RCTScrollView>
 `;
 
-exports[`Storyshots Foundation/Typography Font Families 1`] = `
-<View
-  color="background.default"
-  flex={1}
-  p={15.714285714285714}
-  style={
-    Array [
-      Object {
-        "color": "#FFFFFF",
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "paddingBottom": 15.714285714285714,
-        "paddingLeft": 15.714285714285714,
-        "paddingRight": 15.714285714285714,
-        "paddingTop": 15.714285714285714,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-        },
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
-    }
-  >
+exports[`Storyshots Foundation/Buttons Primary 1`] = `
+<RCTScrollView>
+  <View>
     <View
-      color="background.default"
+      color="background.primary"
+      flex={1}
+      p={10}
       style={
         Array [
           Object {
-            "color": "#FFFFFF",
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
           },
         ]
       }
     >
-      <Text
-        color="font.primary"
-        fontFamily="regular"
-        fontSize="largeTitle"
+      <View
         style={
           Array [
             Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Regular",
-              "fontSize": 50.285714285714285,
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
             },
           ]
         }
       >
-        Regular
-      </Text>
-      <Text
-        color="font.primary"
-        fontFamily="bold"
-        fontSize="largeTitle"
-        style={
-          Array [
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
             Object {
-              "color": "#1B1F23",
-              "fontFamily": "Inter-Bold",
-              "fontSize": 50.285714285714285,
-            },
-          ]
-        }
-      >
-        Bold
-      </Text>
+              "alignItems": "center",
+              "opacity": 1,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            }
+          }
+        >
+          <Text
+            color="white"
+            style={
+              Array [
+                Object {
+                  "color": "white",
+                },
+              ]
+            }
+          >
+            Primary
+          </Text>
+        </View>
+      </View>
     </View>
   </View>
-</View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Foundation/Buttons Secondary 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      color="background.primary"
+      flex={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "opacity": 1,
+              "paddingBottom": 15,
+              "paddingLeft": 15,
+              "paddingRight": 15,
+              "paddingTop": 15,
+            }
+          }
+        >
+          <Text
+            color="font.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+          >
+            Secondary
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Foundation/Typography Defaults 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      color="background.primary"
+      flex={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            color="font.primary"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            This is LargeTitle
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="title1"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 24,
+                },
+              ]
+            }
+          >
+            This is Title1
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="title2"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            This is Title2
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="body"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+          >
+            This is Body
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="caption1"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                },
+              ]
+            }
+          >
+            This is Caption1
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="caption2"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 10,
+                },
+              ]
+            }
+          >
+            This is Caption2
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Foundation/Typography Font Colors 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      color="background.primary"
+      flex={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <View
+            backgroundColor="background.base"
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#2f3941",
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <Text
+              color="font.white"
+              fontSize="largeTitle"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 32,
+                  },
+                ]
+              }
+            >
+              White
+            </Text>
+          </View>
+          <Text
+            color="font.black"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#000000",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Black
+          </Text>
+          <Text
+            color="font.base"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Base
+          </Text>
+          <Text
+            color="font.primary"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Primary
+          </Text>
+          <Text
+            color="font.secondary"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#828282",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Secondary
+          </Text>
+          <Text
+            color="font.danger"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Danger
+          </Text>
+          <Text
+            color="font.grey100"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#f8f9f9",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey
+          </Text>
+          <Text
+            color="font.grey100"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#f8f9f9",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 100
+          </Text>
+          <Text
+            color="font.grey200"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#e9ebed",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 200
+          </Text>
+          <Text
+            color="font.grey300"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#d8dcde",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 300
+          </Text>
+          <Text
+            color="font.grey400"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#c2c8cc",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 400
+          </Text>
+          <Text
+            color="font.grey500"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#87929d",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 500
+          </Text>
+          <Text
+            color="font.grey600"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#68737d",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 600
+          </Text>
+          <Text
+            color="font.grey800"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Grey 800
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Foundation/Typography Font Families 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      color="background.primary"
+      flex={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            color="font.primary"
+            fontFamily="inter400"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontFamily": "Inter-Regular",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Inter Regular 400
+          </Text>
+          <Text
+            color="font.primary"
+            fontFamily="inter700"
+            fontSize="largeTitle"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 32,
+                },
+              ]
+            }
+          >
+            Inter Bold 700
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
 `;
