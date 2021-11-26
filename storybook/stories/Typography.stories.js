@@ -59,8 +59,8 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <LargeTitle fontFamily="regular">Regular(weight:400)</LargeTitle>
-      <LargeTitle fontFamily="bold">Bold(weight:700)</LargeTitle>
+      <LargeTitle fontFamily="inter400">Inter Regular 400</LargeTitle>
+      <LargeTitle fontFamily="inter700">Inter Bold 700</LargeTitle>
     </Container>
   );
 };

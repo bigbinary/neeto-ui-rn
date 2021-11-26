@@ -278,13 +278,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         >
           <Text
             color="font.primary"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -294,13 +292,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="bold"
             fontSize="title1"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 24,
                 },
               ]
@@ -310,13 +306,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="bold"
             fontSize="title2"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 18,
                 },
               ]
@@ -326,13 +320,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="regular"
             fontSize="body"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Regular",
                   "fontSize": 14,
                 },
               ]
@@ -342,13 +334,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="regular"
             fontSize="caption1"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Regular",
                   "fontSize": 12,
                 },
               ]
@@ -358,13 +348,11 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="regular"
             fontSize="caption2"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Regular",
                   "fontSize": 10,
                 },
               ]
@@ -438,13 +426,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           >
             <Text
               color="font.white"
-              fontFamily="bold"
               fontSize="largeTitle"
               style={
                 Array [
                   Object {
                     "color": "#ffffff",
-                    "fontFamily": "Inter-Bold",
                     "fontSize": 32,
                   },
                 ]
@@ -455,13 +441,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </View>
           <Text
             color="font.black"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#000000",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -471,13 +455,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.base"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -487,13 +469,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.primary"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -503,13 +483,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.secondary"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#828282",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -519,13 +497,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.danger"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#ff6969",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -535,13 +511,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey100"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#f8f9f9",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -551,13 +525,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey100"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#f8f9f9",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -567,13 +539,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey200"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#e9ebed",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -583,13 +553,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey300"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#d8dcde",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -599,13 +567,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey400"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#c2c8cc",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -615,13 +581,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey500"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#87929d",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -631,13 +595,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey600"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#68737d",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -647,13 +609,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey800"
-            fontFamily="bold"
             fontSize="largeTitle"
             style={
               Array [
                 Object {
                   "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
                   "fontSize": 32,
                 },
               ]
@@ -715,7 +675,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
         >
           <Text
             color="font.primary"
-            fontFamily="regular"
+            fontFamily="inter400"
             fontSize="largeTitle"
             style={
               Array [
@@ -727,11 +687,11 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
               ]
             }
           >
-            Regular(weight:400)
+            Inter Regular 400
           </Text>
           <Text
             color="font.primary"
-            fontFamily="bold"
+            fontFamily="inter700"
             fontSize="largeTitle"
             style={
               Array [
@@ -743,7 +703,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
               ]
             }
           >
-            Bold(weight:700)
+            Inter Bold 700
           </Text>
         </View>
       </View>
