@@ -8,7 +8,7 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -61,7 +61,7 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
             },
           ]
         }
@@ -81,7 +81,7 @@ exports[`Storyshots Foundation/Buttons Primary 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -154,7 +154,7 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -207,7 +207,7 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
             },
           ]
         }
@@ -227,7 +227,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -257,7 +257,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
       style={
         Array [
           Object {
-            "color": "#FFFFFF",
+            "color": "#ffffff",
           },
         ]
       }
@@ -269,7 +269,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },
@@ -285,7 +285,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Bold",
               "fontSize": 37.714285714285715,
             },
@@ -301,7 +301,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Bold",
               "fontSize": 28.285714285714285,
             },
@@ -317,7 +317,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Regular",
               "fontSize": 22,
             },
@@ -333,7 +333,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Regular",
               "fontSize": 18.857142857142858,
             },
@@ -349,7 +349,7 @@ exports[`Storyshots Foundation/Typography Defaults 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Regular",
               "fontSize": 15.714285714285714,
             },
@@ -371,7 +371,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -401,7 +401,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
       style={
         Array [
           Object {
-            "color": "#FFFFFF",
+            "color": "#ffffff",
           },
         ]
       }
@@ -412,8 +412,8 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         style={
           Array [
             Object {
-              "backgroundColor": "#2F3941",
-              "color": "#FFFFFF",
+              "backgroundColor": "#2f3941",
+              "color": "#ffffff",
             },
           ]
         }
@@ -425,7 +425,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           style={
             Array [
               Object {
-                "color": "#FFFFFF",
+                "color": "#ffffff",
                 "fontFamily": "Inter-Bold",
                 "fontSize": 50.285714285714285,
               },
@@ -436,13 +436,45 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         </Text>
       </View>
       <Text
+        color="font.black"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#000000",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Black
+      </Text>
+      <Text
+        color="font.base"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#2f3941",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Base
+      </Text>
+      <Text
         color="font.primary"
         fontFamily="bold"
         fontSize="largeTitle"
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },
@@ -458,7 +490,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         style={
           Array [
             Object {
-              "color": "#676767",
+              "color": "#828282",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },
@@ -474,7 +506,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         style={
           Array [
             Object {
-              "color": "#FF6969",
+              "color": "#ff6969",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },
@@ -482,6 +514,134 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
         }
       >
         Danger
+      </Text>
+      <Text
+        color="font.grey100"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#f8f9f9",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey
+      </Text>
+      <Text
+        color="font.grey100"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#f8f9f9",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 100
+      </Text>
+      <Text
+        color="font.grey200"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#e9ebed",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 200
+      </Text>
+      <Text
+        color="font.grey300"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#d8dcde",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 300
+      </Text>
+      <Text
+        color="font.grey400"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#c2c8cc",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 400
+      </Text>
+      <Text
+        color="font.grey500"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#87929d",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 500
+      </Text>
+      <Text
+        color="font.grey600"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#68737d",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 600
+      </Text>
+      <Text
+        color="font.grey800"
+        fontFamily="bold"
+        fontSize="largeTitle"
+        style={
+          Array [
+            Object {
+              "color": "#2f3941",
+              "fontFamily": "Inter-Bold",
+              "fontSize": 50.285714285714285,
+            },
+          ]
+        }
+      >
+        Grey 800
       </Text>
     </View>
   </View>
@@ -496,7 +656,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
   style={
     Array [
       Object {
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "flexBasis": 0,
         "flexGrow": 1,
         "flexShrink": 1,
@@ -526,7 +686,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
       style={
         Array [
           Object {
-            "color": "#FFFFFF",
+            "color": "#ffffff",
           },
         ]
       }
@@ -538,14 +698,14 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Regular",
               "fontSize": 50.285714285714285,
             },
           ]
         }
       >
-        Regular
+        Regular(weight:400)
       </Text>
       <Text
         color="font.primary"
@@ -554,14 +714,14 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
         style={
           Array [
             Object {
-              "color": "#1B1F23",
+              "color": "#1b1f23",
               "fontFamily": "Inter-Bold",
               "fontSize": 50.285714285714285,
             },
           ]
         }
       >
-        Bold
+        Bold(weight:700)
       </Text>
     </View>
   </View>
