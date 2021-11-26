@@ -39,9 +39,18 @@ export const FontColors = () => {
       <Container backgroundColor="background.base">
         <LargeTitle color="font.white">White</LargeTitle>
       </Container>
+      <LargeTitle color="font.base">Base</LargeTitle>
       <LargeTitle>Primary</LargeTitle>
       <LargeTitle color="font.secondary">Secondary</LargeTitle>
       <LargeTitle color="font.danger">Danger</LargeTitle>
+      <LargeTitle color="font.grey100">Grey</LargeTitle>
+      <LargeTitle color="font.grey100">Grey 100</LargeTitle>
+      <LargeTitle color="font.grey200">Grey 200</LargeTitle>
+      <LargeTitle color="font.grey300">Grey 300</LargeTitle>
+      <LargeTitle color="font.grey400">Grey 400</LargeTitle>
+      <LargeTitle color="font.grey500">Grey 500</LargeTitle>
+      <LargeTitle color="font.grey600">Grey 600</LargeTitle>
+      <LargeTitle color="font.grey800">Grey 800</LargeTitle>
     </Container>
   );
 };
@@ -49,8 +58,8 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <LargeTitle fontFamily="regular">Regular</LargeTitle>
-      <LargeTitle fontFamily="bold">Bold</LargeTitle>
+      <LargeTitle fontFamily="regular">Regular(weight:400)</LargeTitle>
+      <LargeTitle fontFamily="bold">Bold(weight:700)</LargeTitle>
     </Container>
   );
 };
