@@ -1,15 +1,6 @@
 import React from "react";
 
-import {
-  LargeTitle,
-  Title1,
-  Title2,
-  Body,
-  Caption1,
-  Caption2,
-  Typography,
-  Container,
-} from "@components";
+import { Typography, Container } from "@components";
 
 const TypographyStories = {
   title: "Foundation/Typography",
@@ -23,12 +14,22 @@ export default TypographyStories;
 export const Defaults = () => {
   return (
     <Container>
-      <LargeTitle>This is LargeTitle</LargeTitle>
-      <Title1>This is Title1</Title1>
-      <Title2>This is Title2</Title2>
-      <Body>This is Body</Body>
-      <Caption1>This is Caption1</Caption1>
-      <Caption2>This is Caption2</Caption2>
+      <Typography textStyle="header">Header</Typography>
+      <Typography textStyle="body">Body</Typography>
+      <Typography textStyle="subtext">Subtext</Typography>
+    </Container>
+  );
+};
+
+export const FontSizes = () => {
+  return (
+    <Container>
+      <Typography fontSize="xs">xs as 10px</Typography>
+      <Typography fontSize="s">s as 12px</Typography>
+      <Typography fontSize="m">m as 14px</Typography>
+      <Typography fontSize="l">l as 18px</Typography>
+      <Typography fontSize="xl">xl as 24px</Typography>
+      <Typography fontSize="xxl">xxl as 32px</Typography>
     </Container>
   );
 };
@@ -37,21 +38,21 @@ export const FontColors = () => {
   return (
     <Container>
       <Container backgroundColor="background.base">
-        <LargeTitle color="font.white">White</LargeTitle>
+        <Typography color="font.white">White</Typography>
       </Container>
-      <LargeTitle color="font.black">Black</LargeTitle>
-      <LargeTitle color="font.base">Base</LargeTitle>
-      <LargeTitle>Primary</LargeTitle>
-      <LargeTitle color="font.secondary">Secondary</LargeTitle>
-      <LargeTitle color="font.danger">Danger</LargeTitle>
-      <LargeTitle color="font.grey100">Grey</LargeTitle>
-      <LargeTitle color="font.grey100">Grey 100</LargeTitle>
-      <LargeTitle color="font.grey200">Grey 200</LargeTitle>
-      <LargeTitle color="font.grey300">Grey 300</LargeTitle>
-      <LargeTitle color="font.grey400">Grey 400</LargeTitle>
-      <LargeTitle color="font.grey500">Grey 500</LargeTitle>
-      <LargeTitle color="font.grey600">Grey 600</LargeTitle>
-      <LargeTitle color="font.grey800">Grey 800</LargeTitle>
+      <Typography color="font.black">Black</Typography>
+      <Typography color="font.base">Base</Typography>
+      <Typography>Primary</Typography>
+      <Typography color="font.secondary">Secondary</Typography>
+      <Typography color="font.danger">Danger</Typography>
+      <Typography color="font.grey100">Grey</Typography>
+      <Typography color="font.grey100">Grey 100</Typography>
+      <Typography color="font.grey200">Grey 200</Typography>
+      <Typography color="font.grey300">Grey 300</Typography>
+      <Typography color="font.grey400">Grey 400</Typography>
+      <Typography color="font.grey500">Grey 500</Typography>
+      <Typography color="font.grey600">Grey 600</Typography>
+      <Typography color="font.grey800">Grey 800</Typography>
     </Container>
   );
 };
@@ -59,8 +60,8 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <LargeTitle fontFamily="inter400">Inter Regular 400</LargeTitle>
-      <LargeTitle fontFamily="inter700">Inter Bold 700</LargeTitle>
+      <Typography fontFamily="inter400">Inter Regular 400</Typography>
+      <Typography fontFamily="inter700">Inter Bold 700</Typography>
     </Container>
   );
 };
