@@ -232,101 +232,6 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
 </RCTScrollView>
 `;
 
-exports[`Storyshots Foundation/Typography Defaults 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      color="background.primary"
-      flex={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          color="background.primary"
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-              },
-            ]
-          }
-        >
-          <Text
-            color="font.primary"
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 18,
-                },
-              ]
-            }
-            textStyle="header"
-          >
-            Header
-          </Text>
-          <Text
-            color="font.primary"
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontSize": 14,
-                },
-              ]
-            }
-            textStyle="body"
-          >
-            Body
-          </Text>
-          <Text
-            color="font.primary"
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontSize": 12,
-                },
-              ]
-            }
-            textStyle="subtext"
-          >
-            Subtext
-          </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
 exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 <RCTScrollView>
   <View>
@@ -386,10 +291,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           >
             <Text
               color="font.white"
+              fontSize="xxl"
               style={
                 Array [
                   Object {
                     "color": "#ffffff",
+                    "fontSize": 32,
                   },
                 ]
               }
@@ -399,10 +306,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </View>
           <Text
             color="font.black"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#000000",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -411,10 +320,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.base"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -423,10 +334,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.primary"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -435,10 +348,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.secondary"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#828282",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -447,10 +362,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.danger"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#ff6969",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -459,10 +376,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey100"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#f8f9f9",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -471,10 +390,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey100"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#f8f9f9",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -483,10 +404,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey200"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#e9ebed",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -495,10 +418,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey300"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#d8dcde",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -507,10 +432,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey400"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#c2c8cc",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -519,10 +446,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey500"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#87929d",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -531,10 +460,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey600"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#68737d",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -543,10 +474,12 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
           </Text>
           <Text
             color="font.grey800"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -608,11 +541,13 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
           <Text
             color="font.primary"
             fontFamily="inter400"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontFamily": "Inter-Regular",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -622,11 +557,13 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
           <Text
             color="font.primary"
             fontFamily="inter700"
+            fontSize="xxl"
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontFamily": "Inter-Bold",
+                  "fontSize": 32,
                 },
               ]
             }
@@ -768,6 +705,101 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
             }
           >
             xxl as 32px
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Foundation/Typography Text Styles 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      color="background.primary"
+      flex={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            color="font.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 18,
+                },
+              ]
+            }
+            textStyle="header"
+          >
+            Header
+          </Text>
+          <Text
+            color="font.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="body"
+          >
+            Body
+          </Text>
+          <Text
+            color="font.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Subtext
           </Text>
         </View>
       </View>

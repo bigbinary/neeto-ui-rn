@@ -11,7 +11,7 @@ const TypographyStories = {
 };
 export default TypographyStories;
 
-export const Defaults = () => {
+export const TextStyles = () => {
   return (
     <Container>
       <Typography textStyle="header">Header</Typography>
@@ -38,21 +38,47 @@ export const FontColors = () => {
   return (
     <Container>
       <Container backgroundColor="background.base">
-        <Typography color="font.white">White</Typography>
+        <Typography color="font.white" fontSize="xxl">
+          White
+        </Typography>
       </Container>
-      <Typography color="font.black">Black</Typography>
-      <Typography color="font.base">Base</Typography>
-      <Typography>Primary</Typography>
-      <Typography color="font.secondary">Secondary</Typography>
-      <Typography color="font.danger">Danger</Typography>
-      <Typography color="font.grey100">Grey</Typography>
-      <Typography color="font.grey100">Grey 100</Typography>
-      <Typography color="font.grey200">Grey 200</Typography>
-      <Typography color="font.grey300">Grey 300</Typography>
-      <Typography color="font.grey400">Grey 400</Typography>
-      <Typography color="font.grey500">Grey 500</Typography>
-      <Typography color="font.grey600">Grey 600</Typography>
-      <Typography color="font.grey800">Grey 800</Typography>
+      <Typography color="font.black" fontSize="xxl">
+        Black
+      </Typography>
+      <Typography color="font.base" fontSize="xxl">
+        Base
+      </Typography>
+      <Typography fontSize="xxl">Primary</Typography>
+      <Typography color="font.secondary" fontSize="xxl">
+        Secondary
+      </Typography>
+      <Typography color="font.danger" fontSize="xxl">
+        Danger
+      </Typography>
+      <Typography color="font.grey100" fontSize="xxl">
+        Grey
+      </Typography>
+      <Typography color="font.grey100" fontSize="xxl">
+        Grey 100
+      </Typography>
+      <Typography color="font.grey200" fontSize="xxl">
+        Grey 200
+      </Typography>
+      <Typography color="font.grey300" fontSize="xxl">
+        Grey 300
+      </Typography>
+      <Typography color="font.grey400" fontSize="xxl">
+        Grey 400
+      </Typography>
+      <Typography color="font.grey500" fontSize="xxl">
+        Grey 500
+      </Typography>
+      <Typography color="font.grey600" fontSize="xxl">
+        Grey 600
+      </Typography>
+      <Typography color="font.grey800" fontSize="xxl">
+        Grey 800
+      </Typography>
     </Container>
   );
 };
@@ -60,8 +86,12 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <Typography fontFamily="inter400">Inter Regular 400</Typography>
-      <Typography fontFamily="inter700">Inter Bold 700</Typography>
+      <Typography fontFamily="inter400" fontSize="xxl">
+        Inter Regular 400
+      </Typography>
+      <Typography fontFamily="inter700" fontSize="xxl">
+        Inter Bold 700
+      </Typography>
     </Container>
   );
 };
