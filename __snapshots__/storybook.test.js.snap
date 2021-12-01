@@ -66,11 +66,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -119,11 +123,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -167,11 +175,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -220,11 +232,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -270,11 +286,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -325,11 +345,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -372,11 +396,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -424,11 +452,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -486,11 +518,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
             👍
           </Text>
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -548,11 +584,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
             🔔
           </Text>
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
@@ -627,11 +667,15 @@ exports[`Storyshots Buttons Buttons 1`] = `
             🔕
           </Text>
           <Text
+            fontFamily="inter700"
+            fontSize="s"
             mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
                   "marginLeft": 4,
                   "marginRight": 4,
                   "textAlign": "center",
