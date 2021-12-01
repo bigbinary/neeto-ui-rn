@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@components";
+import { Button, Typography } from "@components";
 
 const ButtonMetaData = {
   title: "Buttons",
@@ -28,6 +28,34 @@ export const Buttons = () => {
       />
       <Button my={9} variant="text" label="Text Button" />
       <Button my={9} variant="text" disabled label="Text Button Disabled" />
+      <Button
+        my={9}
+        variant="inverse"
+        label="Like"
+        RightIcon={() => {
+          return <Typography>👍</Typography>;
+        }}
+      />
+      <Button
+        my={9}
+        variant="inverse"
+        label="Subscribe and Follow"
+        RightIcon={() => {
+          return <Typography>🔔</Typography>;
+        }}
+        LeftIcon={() => {
+          return <Typography>📣</Typography>;
+        }}
+      />
+      <Button
+        my={9}
+        variant="inverse"
+        disabled
+        label="Unsubscribe Disabled"
+        RightIcon={() => {
+          return <Typography>🔕</Typography>;
+        }}
+      />
     </>
   );
 };
