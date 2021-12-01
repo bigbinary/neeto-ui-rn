@@ -61,6 +61,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -72,9 +73,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#ffffff",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="solid"
           >
             Default is solid
@@ -111,6 +114,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -122,9 +126,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#ffffff",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="solid"
           >
             Default Disbaled
@@ -156,6 +162,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -167,9 +174,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#ffffff",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="solid"
           >
             Solid Button
@@ -206,6 +215,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -217,9 +227,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#ffffff",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="solid"
           >
             Solid Button Disabled
@@ -253,6 +265,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -264,9 +277,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="inverse"
           >
             Inverse Button
@@ -305,6 +320,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -316,9 +332,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="inverse"
           >
             Invese Button Disabled
@@ -349,6 +367,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -360,9 +379,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="text"
           >
             Text Button
@@ -398,6 +419,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -409,9 +431,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="text"
           >
             Text Button Disabled
@@ -445,6 +469,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -468,9 +493,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="inverse"
           >
             Like
@@ -504,6 +531,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -527,9 +555,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="inverse"
           >
             Subscribe and Follow
@@ -580,6 +610,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "paddingLeft": 12,
               "paddingRight": 12,
               "paddingTop": 12,
+              "width": 200,
             }
           }
         >
@@ -603,9 +634,11 @@ exports[`Storyshots Buttons Buttons 1`] = `
                   "color": "#2f3941",
                   "marginLeft": 4,
                   "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
             textStyle="inverse"
           >
             Unsubscribe Disabled
