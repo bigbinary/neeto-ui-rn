@@ -78,6 +78,27 @@ export const Buttons = () => {
           return <Typography>🔕</Typography>;
         }}
       />
+      <Button
+        my={9}
+        width="200"
+        bg="background.primary"
+        color="font.danger"
+        label="Logout"
+      />
+      <Button
+        my={9}
+        width="200"
+        bg="background.primary"
+        color="font.danger"
+        fontSize="xl"
+        label="Bigger Button"
+      />
+      <Button
+        my={9}
+        width="200"
+        fontFamily="inter400"
+        label="Regular inter 400"
+      />
     </>
   );
 };

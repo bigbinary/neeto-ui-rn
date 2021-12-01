@@ -688,6 +688,164 @@ exports[`Storyshots Buttons Buttons 1`] = `
             Unsubscribe Disabled
           </Text>
         </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            color="font.danger"
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Logout
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            color="font.danger"
+            fontFamily="inter700"
+            fontSize="xl"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 24,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Bigger Button
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter400"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Regular",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Regular inter 400
+          </Text>
+        </View>
       </View>
     </View>
   </View>
