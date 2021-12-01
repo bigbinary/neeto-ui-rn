@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Foundation/Buttons Disabled 1`] = `
+exports[`Storyshots Buttons Buttons 1`] = `
 <RCTScrollView>
   <View>
     <View
@@ -50,17 +50,462 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "color": "#00FF00",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
               "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
             }
           }
         >
           <Text
-            color="font.primary"
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Default is solid
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Default Disbaled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Solid Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Solid Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Inverse Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Invese Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="text"
+          >
+            Text Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="text"
+          >
+            Text Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
             style={
               Array [
                 Object {
@@ -68,128 +513,32 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
-            Disabled
+            👍
           </Text>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Foundation/Buttons Primary 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      color="background.primary"
-      flex={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
-            }
-          }
-        >
           <Text
-            color="white"
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
                 },
               ]
             }
+            textAlign="center"
+            textStyle="inverse"
           >
-            Primary
+            Like
           </Text>
         </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Foundation/Buttons Secondary 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      color="background.primary"
-      flex={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
         <View
           accessible={true}
           collapsable={false}
@@ -205,16 +554,24 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
               "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
             }
           }
         >
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
@@ -222,8 +579,271 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
-            Secondary
+            🔔
+          </Text>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Subscribe and Follow
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            📣
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            🔕
+          </Text>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Unsubscribe Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            color="font.danger"
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Logout
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ffffff",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            color="font.danger"
+            fontFamily="inter700"
+            fontSize="xl"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 24,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Bigger Button
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter400"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Regular",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Regular inter 400
           </Text>
         </View>
       </View>
@@ -300,6 +920,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                   },
                 ]
               }
+              textStyle="defaultTextStyle"
             >
               White
             </Text>
@@ -315,6 +936,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Black
           </Text>
@@ -329,11 +951,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Base
           </Text>
           <Text
-            color="font.primary"
             fontSize="xxl"
             style={
               Array [
@@ -343,6 +965,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Primary
           </Text>
@@ -357,6 +980,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Secondary
           </Text>
@@ -371,6 +995,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Danger
           </Text>
@@ -385,6 +1010,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey
           </Text>
@@ -399,6 +1025,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 100
           </Text>
@@ -413,6 +1040,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 200
           </Text>
@@ -427,6 +1055,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 300
           </Text>
@@ -441,6 +1070,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 400
           </Text>
@@ -455,6 +1085,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 500
           </Text>
@@ -469,6 +1100,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 600
           </Text>
@@ -483,6 +1115,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 800
           </Text>
@@ -539,7 +1172,6 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
           }
         >
           <Text
-            color="font.primary"
             fontFamily="inter400"
             fontSize="xxl"
             style={
@@ -551,11 +1183,11 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Inter Regular 400
           </Text>
           <Text
-            color="font.primary"
             fontFamily="inter700"
             fontSize="xxl"
             style={
@@ -567,6 +1199,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Inter Bold 700
           </Text>
@@ -623,7 +1256,6 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
           }
         >
           <Text
-            color="font.primary"
             fontSize="xs"
             style={
               Array [
@@ -633,11 +1265,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xs as 10px
           </Text>
           <Text
-            color="font.primary"
             fontSize="s"
             style={
               Array [
@@ -647,11 +1279,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             s as 12px
           </Text>
           <Text
-            color="font.primary"
             fontSize="m"
             style={
               Array [
@@ -661,11 +1293,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             m as 14px
           </Text>
           <Text
-            color="font.primary"
             fontSize="l"
             style={
               Array [
@@ -675,11 +1307,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             l as 18px
           </Text>
           <Text
-            color="font.primary"
             fontSize="xl"
             style={
               Array [
@@ -689,11 +1321,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xl as 24px
           </Text>
           <Text
-            color="font.primary"
             fontSize="xxl"
             style={
               Array [
@@ -703,6 +1335,7 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xxl as 32px
           </Text>
@@ -759,7 +1392,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
           }
         >
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
@@ -774,7 +1406,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
             Header
           </Text>
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
@@ -788,7 +1419,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
             Body
           </Text>
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
