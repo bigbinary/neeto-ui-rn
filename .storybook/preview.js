@@ -10,8 +10,8 @@ export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      <ScrollView>
-        <Container p={10} flex={1}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <Container p={10} flexGrow={1}>
           <Story />
         </Container>
       </ScrollView>

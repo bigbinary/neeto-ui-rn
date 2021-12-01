@@ -28,6 +28,7 @@ argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 
 const getStories = () => {
   return [
+    require("../storybook/stories/_Home.stories.js"),
     require("../storybook/stories/Button.stories.js"),
     require("../storybook/stories/Typography.stories.js"),
   ];
