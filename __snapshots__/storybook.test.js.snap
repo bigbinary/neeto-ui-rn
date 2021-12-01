@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Foundation/Buttons Disabled 1`] = `
+exports[`Storyshots Buttons Buttons 1`] = `
 <RCTScrollView>
   <View>
     <View
@@ -50,70 +50,37 @@ exports[`Storyshots Foundation/Buttons Disabled 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "color": "#00FF00",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
               "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
             }
           }
         >
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
-                  "color": "#1b1f23",
+                  "color": "#ffffff",
                 },
               ]
             }
+            textStyle="solid"
           >
-            Disabled
+            Default is solid
           </Text>
         </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Foundation/Buttons Primary 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      color="background.primary"
-      flex={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
         <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
           accessible={true}
           collapsable={false}
           focusable={false}
@@ -128,68 +95,31 @@ exports[`Storyshots Foundation/Buttons Primary 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
             }
           }
         >
           <Text
-            color="white"
             style={
               Array [
                 Object {
-                  "color": "white",
+                  "color": "#ffffff",
                 },
               ]
             }
+            textStyle="solid"
           >
-            Primary
+            Default Disbaled
           </Text>
         </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Foundation/Buttons Secondary 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      color="background.primary"
-      flex={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexBasis": 0,
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
         <View
           accessible={true}
           collapsable={false}
@@ -205,25 +135,246 @@ exports[`Storyshots Foundation/Buttons Secondary 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
               "opacity": 1,
-              "paddingBottom": 15,
-              "paddingLeft": 15,
-              "paddingRight": 15,
-              "paddingTop": 15,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
             }
           }
         >
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
-                  "color": "#1b1f23",
+                  "color": "#ffffff",
                 },
               ]
             }
+            textStyle="solid"
           >
-            Secondary
+            Solid Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+            textStyle="solid"
+          >
+            Solid Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                },
+              ]
+            }
+            textStyle="inverse"
+          >
+            Inverse Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                },
+              ]
+            }
+            textStyle="inverse"
+          >
+            Invese Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                },
+              ]
+            }
+            textStyle="text"
+          >
+            Text Button
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                },
+              ]
+            }
+            textStyle="text"
+          >
+            Text Button Disabled
           </Text>
         </View>
       </View>
@@ -300,6 +451,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                   },
                 ]
               }
+              textStyle="defaultTextStyle"
             >
               White
             </Text>
@@ -315,6 +467,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Black
           </Text>
@@ -329,11 +482,11 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Base
           </Text>
           <Text
-            color="font.primary"
             fontSize="xxl"
             style={
               Array [
@@ -343,6 +496,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Primary
           </Text>
@@ -357,6 +511,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Secondary
           </Text>
@@ -371,6 +526,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Danger
           </Text>
@@ -385,6 +541,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey
           </Text>
@@ -399,6 +556,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 100
           </Text>
@@ -413,6 +571,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 200
           </Text>
@@ -427,6 +586,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 300
           </Text>
@@ -441,6 +601,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 400
           </Text>
@@ -455,6 +616,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 500
           </Text>
@@ -469,6 +631,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 600
           </Text>
@@ -483,6 +646,7 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Grey 800
           </Text>
@@ -539,7 +703,6 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
           }
         >
           <Text
-            color="font.primary"
             fontFamily="inter400"
             fontSize="xxl"
             style={
@@ -551,11 +714,11 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Inter Regular 400
           </Text>
           <Text
-            color="font.primary"
             fontFamily="inter700"
             fontSize="xxl"
             style={
@@ -567,6 +730,7 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             Inter Bold 700
           </Text>
@@ -623,7 +787,6 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
           }
         >
           <Text
-            color="font.primary"
             fontSize="xs"
             style={
               Array [
@@ -633,11 +796,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xs as 10px
           </Text>
           <Text
-            color="font.primary"
             fontSize="s"
             style={
               Array [
@@ -647,11 +810,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             s as 12px
           </Text>
           <Text
-            color="font.primary"
             fontSize="m"
             style={
               Array [
@@ -661,11 +824,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             m as 14px
           </Text>
           <Text
-            color="font.primary"
             fontSize="l"
             style={
               Array [
@@ -675,11 +838,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             l as 18px
           </Text>
           <Text
-            color="font.primary"
             fontSize="xl"
             style={
               Array [
@@ -689,11 +852,11 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xl as 24px
           </Text>
           <Text
-            color="font.primary"
             fontSize="xxl"
             style={
               Array [
@@ -703,6 +866,7 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
                 },
               ]
             }
+            textStyle="defaultTextStyle"
           >
             xxl as 32px
           </Text>
@@ -759,7 +923,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
           }
         >
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
@@ -774,7 +937,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
             Header
           </Text>
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
@@ -788,7 +950,6 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
             Body
           </Text>
           <Text
-            color="font.primary"
             style={
               Array [
                 Object {
