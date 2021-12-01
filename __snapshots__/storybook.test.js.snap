@@ -52,6 +52,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "alignItems": "center",
               "backgroundColor": "#2f3941",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 1,
@@ -63,10 +65,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -97,6 +102,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "alignItems": "center",
               "backgroundColor": "#2f3941",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 0.5,
@@ -108,10 +115,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -137,6 +147,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "alignItems": "center",
               "backgroundColor": "#2f3941",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 1,
@@ -148,10 +160,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -182,6 +197,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "alignItems": "center",
               "backgroundColor": "#2f3941",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 0.5,
@@ -193,10 +210,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -224,6 +244,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 1,
@@ -235,10 +257,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -271,6 +296,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 0.5,
@@ -282,10 +309,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -310,6 +340,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
             Object {
               "alignItems": "center",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 1,
@@ -321,10 +353,13 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
+            mx={1}
             style={
               Array [
                 Object {
                   "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
                 },
               ]
             }
@@ -354,6 +389,190 @@ exports[`Storyshots Buttons Buttons 1`] = `
             Object {
               "alignItems": "center",
               "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+            textStyle="text"
+          >
+            Text Button Disabled
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            👍
+          </Text>
+          <Text
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+            textStyle="inverse"
+          >
+            Like
+          </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            🔔
+          </Text>
+          <Text
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+            textStyle="inverse"
+          >
+            Subscribe and Follow
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            📣
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
               "marginBottom": 9,
               "marginTop": 9,
               "opacity": 0.5,
@@ -368,13 +587,28 @@ exports[`Storyshots Buttons Buttons 1`] = `
             style={
               Array [
                 Object {
-                  "color": "#2f3941",
+                  "color": "#1b1f23",
                 },
               ]
             }
-            textStyle="text"
+            textStyle="defaultTextStyle"
           >
-            Text Button Disabled
+            🔕
+          </Text>
+          <Text
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+            textStyle="inverse"
+          >
+            Unsubscribe Disabled
           </Text>
         </View>
       </View>
