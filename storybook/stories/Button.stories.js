@@ -62,12 +62,8 @@ export const Buttons = () => {
         width={200}
         variant="inverse"
         label="Subscribe and Follow"
-        RightIcon={() => {
-          return <Typography>🔔</Typography>;
-        }}
-        LeftIcon={() => {
-          return <Typography>📣</Typography>;
-        }}
+        RightIcon={() => <Typography>🔔</Typography>}
+        LeftIcon={() => <Typography>📣</Typography>}
       />
       <Button
         my={9}
@@ -75,9 +71,7 @@ export const Buttons = () => {
         variant="inverse"
         disabled
         label="Unsubscribe Disabled"
-        RightIcon={() => {
-          return <Typography>🔕</Typography>;
-        }}
+        RightIcon={() => <Typography>🔕</Typography>}
       />
       <Button
         my={9}
@@ -117,18 +111,14 @@ export const Buttons = () => {
       <Button
         my={9}
         isLoading={true}
-        Loader={() => {
-          return <ActivityIndicator size="small" color="white" />;
-        }}
+        Loader={() => <ActivityIndicator size="small" color="white" />}
         width={200}
         label="Solid Loading "
       />
       <Button
         my={9}
         isLoading={true}
-        Loader={() => {
-          return <ActivityIndicator size="small" color="white" />;
-        }}
+        Loader={() => <ActivityIndicator size="small" color="white" />}
         width={200}
         loadingText=""
         label="Solid Loading "
@@ -136,9 +126,7 @@ export const Buttons = () => {
       <Button
         my={9}
         isLoading={true}
-        Loader={() => {
-          return <ActivityIndicator size="small" color="black" />;
-        }}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
         width={200}
         variant="inverse"
         label="Inverse Loading "
@@ -146,9 +134,7 @@ export const Buttons = () => {
       <Button
         my={9}
         isLoading={true}
-        Loader={() => {
-          return <ActivityIndicator size="small" color="black" />;
-        }}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
         width={200}
         variant="text"
         label="Text Loading"
@@ -156,9 +142,7 @@ export const Buttons = () => {
       <Button
         my={9}
         isLoading={true}
-        Loader={() => {
-          return <ActivityIndicator size="small" color="black" />;
-        }}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
         width={200}
         variant="text"
         loadingText="Ordering Pizza..."
