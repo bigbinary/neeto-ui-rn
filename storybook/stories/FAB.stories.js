@@ -75,6 +75,16 @@ export const FABS = () => {
         />
         <Typography>Default Button with shadow style</Typography>
       </Container>
+      <Container flexDirection="row" alignItems="center">
+        <FAB
+          m={9}
+          bg="font.danger"
+          Icon={() => {
+            return <Typography>🔔</Typography>;
+          }}
+        />
+        <Typography>Button with Background color</Typography>
+      </Container>
     </Container>
   );
 };
