@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Typography } from "@components";
+import { Button, Typography, Container } from "@components";
+import { ActivityIndicator } from "react-native";
 
 const ButtonMetaData = {
   title: "Buttons",
@@ -61,12 +62,8 @@ export const Buttons = () => {
         width={200}
         variant="inverse"
         label="Subscribe and Follow"
-        RightIcon={() => {
-          return <Typography>🔔</Typography>;
-        }}
-        LeftIcon={() => {
-          return <Typography>📣</Typography>;
-        }}
+        RightIcon={() => <Typography>🔔</Typography>}
+        LeftIcon={() => <Typography>📣</Typography>}
       />
       <Button
         my={9}
@@ -74,9 +71,7 @@ export const Buttons = () => {
         variant="inverse"
         disabled
         label="Unsubscribe Disabled"
-        RightIcon={() => {
-          return <Typography>🔕</Typography>;
-        }}
+        RightIcon={() => <Typography>🔕</Typography>}
       />
       <Button
         my={9}
@@ -98,6 +93,67 @@ export const Buttons = () => {
         width={200}
         fontFamily="inter400"
         label="Regular inter 400"
+      />
+      <Button
+        my={9}
+        width={200}
+        variant="inverse"
+        label="Icon in extreme right"
+        RightIcon={() => {
+          return (
+            <Container flex={1} alignItems="flex-end">
+              <Typography>🔔</Typography>
+            </Container>
+          );
+        }}
+      />
+
+      <Button
+        my={9}
+        isLoading={true}
+        Loader={() => <ActivityIndicator size="small" color="white" />}
+        width={200}
+        label="Solid Loading "
+      />
+      <Button
+        my={9}
+        isLoading={true}
+        Loader={() => <ActivityIndicator size="small" color="white" />}
+        width={200}
+        loadingText=""
+        label="Solid Loading "
+      />
+      <Button
+        my={9}
+        isLoading={true}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
+        width={200}
+        variant="inverse"
+        label="Inverse Loading "
+      />
+      <Button
+        my={9}
+        isLoading={true}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
+        width={200}
+        variant="text"
+        label="Text Loading"
+      />
+      <Button
+        my={9}
+        isLoading={true}
+        Loader={() => <ActivityIndicator size="small" color="black" />}
+        width={200}
+        variant="text"
+        loadingText="Ordering Pizza..."
+        label="Text Loading"
+        RightIcon={() => {
+          return (
+            <Container>
+              <Typography>🍕</Typography>
+            </Container>
+          );
+        }}
       />
     </>
   );
