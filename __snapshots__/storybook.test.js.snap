@@ -1337,6 +1337,500 @@ exports[`Storyshots Buttons Buttons 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots FABs FABS 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 28,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 1,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🔔
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Default Button
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "black",
+                  "borderRadius": 28,
+                  "borderStyle": "solid",
+                  "borderWidth": 2,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 1,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                ➕
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Inverse Button
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                Object {
+                  "disabled": true,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 28,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 0.5,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🔔
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Disabled Default Button
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                Object {
+                  "disabled": true,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "black",
+                  "borderRadius": 28,
+                  "borderStyle": "solid",
+                  "borderWidth": 2,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 0.5,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                ➕
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Disabled Inverse Button
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 28,
+                  "elevation": 5,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 1,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🔔
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Default Button with shadow style
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={false}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ff6969",
+                  "borderRadius": 28,
+                  "height": 56,
+                  "justifyContent": "center",
+                  "marginBottom": 9,
+                  "marginLeft": 9,
+                  "marginRight": 9,
+                  "marginTop": 9,
+                  "opacity": 1,
+                  "width": 56,
+                }
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🔔
+              </Text>
+            </View>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Button with Background color
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 <RCTScrollView
   contentContainerStyle={
