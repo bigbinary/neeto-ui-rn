@@ -30,16 +30,16 @@ Install all the dependencies by executing following command.
 yarn
 ```
 
-You can create new components in the `lib/components` and export them from
-`lib/index.js`. You can create stories in `storybook/stories`.
+You can create new components in the `src/components` and export them from
+`src/components/index.js`. You can create stories in `storybook/stories`.
 
 You can use below commands for running storybook in different platforms:
 
-| Platform | Command              |
-| -------- | -------------------- |
-| Android  | `yarn android`       |
-| iOS:     | `yarn ios`           |
-| Web      | `yarn storybook-web` |
+| Platform | Command        |
+| -------- | -------------- |
+| Android  | `yarn android` |
+| iOS:     | `yarn ios`     |
+| Web      | `yarn web`     |
 
 ## Auto Publish to NPM
 
@@ -54,6 +54,10 @@ folder with static files.
 
 Run `yarn serve` to serve storybook locally.
 
+## Running Component Documentation
+
+Run `cd docs`, `yarn start` to run component documentation locally.
+
 ## Building Component Documentation
 
 Run `cd docs`, `yarn build` to build component documentation locally, this would
@@ -63,4 +67,6 @@ create `dist` folder with static files in `docs` folder.
 
 Read the docs here.
 
-https://neetoui-rn.netlify.app
+Docs: https://neetoui-rn-docs.netlify.app/
+
+Storybook: https://neetoui-rn.netlify.app
