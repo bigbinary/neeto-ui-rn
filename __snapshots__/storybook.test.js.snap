@@ -1537,3 +1537,1284 @@ exports[`Storyshots Home Home 1`] = `
   </View>
 </RCTScrollView>
 `;
+
+exports[`Storyshots Input Inputs 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default Input
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            with placeholder
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                placeholder="Placeholder"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            with value
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+                value="has value"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Disabled
+          </Text>
+          <View
+            bg="#e4e4e7"
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            opacity={0.5}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#e4e4e7",
+                  "color": "#ffffff",
+                  "opacity": 0.5,
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={false}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            with error message
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#ff6969"
+                borderRadius={2}
+                color="#ff6969"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#ff6969",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+          <Text
+            color="#ff6969"
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontSize": 12,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            This is an error
+          </Text>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Email
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                keyboardType="email-address"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+                value="bigbinary@example.com"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Password
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                secureTextEntry={true}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+                value="password"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            flexDirection="row"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              alignSelf="flex-end"
+              color="background.primary"
+              maxWidth={100}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignSelf": "flex-end",
+                    "color": "#ffffff",
+                    "maxWidth": 100,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                mb="12px"
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginBottom": 12,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Inline
+              </Text>
+            </View>
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border={false}
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 2,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+          <View
+            backgroundColor="#e4e4e7"
+            color="background.primary"
+            height={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#e4e4e7",
+                  "color": "#ffffff",
+                  "height": 1,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            flexDirection="row"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              alignSelf="flex-end"
+              color="background.primary"
+              maxWidth={100}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignSelf": "flex-end",
+                    "color": "#ffffff",
+                    "maxWidth": 100,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                mb="12px"
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginBottom": 12,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Inline with error
+              </Text>
+            </View>
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border={false}
+                borderRadius={2}
+                color="#ff6969"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 2,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+          <View
+            backgroundColor="#e4e4e7"
+            color="background.primary"
+            height={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#e4e4e7",
+                  "color": "#ffffff",
+                  "height": 1,
+                },
+              ]
+            }
+          />
+          <Text
+            color="#ff6969"
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontSize": 12,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            
+          </Text>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            bg="#e4e4e7"
+            color="background.primary"
+            flexDirection="row"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            opacity={0.5}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#e4e4e7",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                  "opacity": 0.5,
+                },
+              ]
+            }
+          >
+            <View
+              alignSelf="flex-end"
+              color="background.primary"
+              maxWidth={100}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignSelf": "flex-end",
+                    "color": "#ffffff",
+                    "maxWidth": 100,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <Text
+                mb="12px"
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginBottom": 12,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                inline disabled input
+              </Text>
+            </View>
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border={false}
+                borderRadius={2}
+                color="#1b1f23"
+                editable={false}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderRadius": 2,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+          <View
+            backgroundColor="#e4e4e7"
+            color="background.primary"
+            height={1}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#e4e4e7",
+                  "color": "#ffffff",
+                  "height": 1,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Brand Left
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <View
+                bg="#f4f5f7"
+                color="background.primary"
+                justifyContent="center"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#f4f5f7",
+                      "color": "#ffffff",
+                      "justifyContent": "center",
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#1b1f23",
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  BRAND-LEFT
+                </Text>
+              </View>
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Brand Right
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+              <View
+                bg="#f4f5f7"
+                color="background.primary"
+                justifyContent="center"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#f4f5f7",
+                      "color": "#ffffff",
+                      "justifyContent": "center",
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "#1b1f23",
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  BRAND-RIGHT
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
