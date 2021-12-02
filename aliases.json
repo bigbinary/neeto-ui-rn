@@ -1,4 +1,4 @@
 {
-  "@components": "./lib/components",
-  "@theme": "./lib/theme"
+  "@components": "./src/components",
+  "@theme": "./src/theme"
 }

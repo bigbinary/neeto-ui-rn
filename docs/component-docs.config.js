@@ -35,14 +35,14 @@ function getType(file: string) {
 
 function getPages() {
   const components = fs
-    .readFileSync(path.join(__dirname, "../lib/components/index.js"))
+    .readFileSync(path.join(__dirname, "../src/components/index.js"))
     .toString()
     .split("\n")
     .map(line => line.split(" ").pop().replace(/("|;)/g, ""))
     .filter(line => line.startsWith("./"))
     .map(line => {
       const file = require.resolve(
-        path.join(__dirname, "../lib/components", line)
+        path.join(__dirname, "../src/components", line)
       );
       if (/\/index\.(js|tsx?)$/.test(file)) {
         const matches = fs
@@ -51,7 +51,7 @@ function getPages() {
           .match(/export \{ default \} from .+/);
         if (matches && matches.length) {
           const name = matches[0].split(" ").pop().replace(/('|;)/g, "");
-          return require.resolve(path.join(__dirname, "../lib", line, name));
+          return require.resolve(path.join(__dirname, "../src", line, name));
         }
       }
       return file;
