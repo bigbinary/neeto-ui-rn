@@ -9,6 +9,7 @@
     "ios": "yarn prestart && react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "build": "babel src --out-dir lib",
     "lint": "eslint .",
     "format": "prettier --write .",
     "flow": "flow",
@@ -27,6 +28,7 @@
   },
   "files": [
     "lib",
+    "src",
     "react-native.config.js",
     "assets"
   ],
@@ -49,6 +51,7 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-async-storage/async-storage": "^1.15.11",

@@ -4,3 +4,4 @@
 /dist
 /docs/dist
 /.storybook/storybook.requires.js
+/lib

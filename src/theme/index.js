@@ -3,6 +3,7 @@ const defaultColors = {
   black: "#000000",
   base: "#2f3941",
   danger: "#ff6969",
+  menubackground: "#f4f5f7",
 };
 
 const greyVarients = {
