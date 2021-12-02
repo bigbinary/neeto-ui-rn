@@ -1590,14 +1590,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -1607,6 +1607,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -1676,14 +1677,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -1693,6 +1694,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -1763,14 +1765,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -1780,6 +1782,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -1850,14 +1853,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -1868,6 +1871,7 @@ exports[`Storyshots Input Inputs 1`] = `
           <View
             bg="#e4e4e7"
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             opacity={0.5}
@@ -1940,14 +1944,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -1957,6 +1961,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -2040,14 +2045,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -2057,6 +2062,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -2128,14 +2134,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -2145,6 +2151,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -2247,14 +2254,14 @@ exports[`Storyshots Input Inputs 1`] = `
               }
             >
               <Text
-                mb="8px"
+                mb="12px"
                 numberOfLines={1}
                 style={
                   Array [
                     Object {
                       "color": "#1b1f23",
                       "fontSize": 12,
-                      "marginBottom": 8,
+                      "marginBottom": 12,
                     },
                   ]
                 }
@@ -2364,14 +2371,14 @@ exports[`Storyshots Input Inputs 1`] = `
               }
             >
               <Text
-                mb="8px"
+                mb="12px"
                 numberOfLines={1}
                 style={
                   Array [
                     Object {
                       "color": "#1b1f23",
                       "fontSize": 12,
-                      "marginBottom": 8,
+                      "marginBottom": 12,
                     },
                   ]
                 }
@@ -2499,14 +2506,14 @@ exports[`Storyshots Input Inputs 1`] = `
               }
             >
               <Text
-                mb="8px"
+                mb="12px"
                 numberOfLines={1}
                 style={
                   Array [
                     Object {
                       "color": "#1b1f23",
                       "fontSize": 12,
-                      "marginBottom": 8,
+                      "marginBottom": 12,
                     },
                   ]
                 }
@@ -2585,14 +2592,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -2602,6 +2609,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
@@ -2701,14 +2709,14 @@ exports[`Storyshots Input Inputs 1`] = `
           }
         >
           <Text
-            mb="8px"
+            mb="7px"
             numberOfLines={1}
             style={
               Array [
                 Object {
                   "color": "#1b1f23",
                   "fontSize": 12,
-                  "marginBottom": 8,
+                  "marginBottom": 7,
                 },
               ]
             }
@@ -2718,6 +2726,7 @@ exports[`Storyshots Input Inputs 1`] = `
           </Text>
           <View
             color="background.primary"
+            flexDirection={false}
             onBlur={[Function]}
             onFocus={[Function]}
             style={
