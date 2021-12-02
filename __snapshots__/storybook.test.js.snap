@@ -510,18 +510,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            👍
-          </Text>
-          <Text
             fontFamily="inter700"
             fontSize="s"
             mx={1}
@@ -541,6 +529,18 @@ exports[`Storyshots Buttons Buttons 1`] = `
             textStyle="inverse"
           >
             Like
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            👍
           </Text>
         </View>
         <View
@@ -585,7 +585,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
             }
             textStyle="defaultTextStyle"
           >
-            🔔
+            📣
           </Text>
           <Text
             fontFamily="inter700"
@@ -618,7 +618,7 @@ exports[`Storyshots Buttons Buttons 1`] = `
             }
             textStyle="defaultTextStyle"
           >
-            📣
+            🔔
           </Text>
         </View>
         <View
@@ -659,18 +659,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            🔕
-          </Text>
-          <Text
             fontFamily="inter700"
             fontSize="s"
             mx={1}
@@ -690,6 +678,18 @@ exports[`Storyshots Buttons Buttons 1`] = `
             textStyle="inverse"
           >
             Unsubscribe Disabled
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            🔕
           </Text>
         </View>
         <View
@@ -849,6 +849,487 @@ exports[`Storyshots Buttons Buttons 1`] = `
           >
             Regular inter 400
           </Text>
+        </View>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 1,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Icon in extreme right
+          </Text>
+          <View
+            alignItems="flex-end"
+            color="background.primary"
+            flex={1}
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-end",
+                  "color": "#ffffff",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              🔔
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <View
+            color="background.primary"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+          >
+            <ActivityIndicator
+              color="white"
+              size="small"
+            />
+          </View>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            Loading...
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#2f3941",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <View
+            color="background.primary"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+          >
+            <ActivityIndicator
+              color="white"
+              size="small"
+            />
+          </View>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="solid"
+          >
+            
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "black",
+              "borderRadius": 2,
+              "borderStyle": "solid",
+              "borderWidth": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <View
+            color="background.primary"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+          >
+            <ActivityIndicator
+              color="black"
+              size="small"
+            />
+          </View>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="inverse"
+          >
+            Loading...
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <View
+            color="background.primary"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+          >
+            <ActivityIndicator
+              color="black"
+              size="small"
+            />
+          </View>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="text"
+          >
+            Loading...
+          </Text>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "borderRadius": 2,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginBottom": 9,
+              "marginTop": 9,
+              "opacity": 0.5,
+              "paddingBottom": 12,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "paddingTop": 12,
+              "width": 200,
+            }
+          }
+        >
+          <View
+            color="background.primary"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                },
+              ]
+            }
+          >
+            <ActivityIndicator
+              color="black"
+              size="small"
+            />
+          </View>
+          <Text
+            fontFamily="inter700"
+            fontSize="s"
+            mx={1}
+            style={
+              Array [
+                Object {
+                  "color": "#2f3941",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginLeft": 4,
+                  "marginRight": 4,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="text"
+          >
+            Ordering Pizza...
+          </Text>
+          <View
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              🍕
+            </Text>
+          </View>
         </View>
       </View>
     </View>
