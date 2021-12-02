@@ -1,19 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots Buttons Buttons 1`] = `
-<RCTScrollView>
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <View>
     <View
       color="background.primary"
-      flex={1}
+      flexGrow={1}
       p={10}
       style={
         Array [
           Object {
             "color": "#ffffff",
-            "flexBasis": 0,
             "flexGrow": 1,
-            "flexShrink": 1,
             "paddingBottom": 10,
             "paddingLeft": 10,
             "paddingRight": 10,
@@ -853,19 +857,23 @@ exports[`Storyshots Buttons Buttons 1`] = `
 `;
 
 exports[`Storyshots Foundation/Typography Font Colors 1`] = `
-<RCTScrollView>
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <View>
     <View
       color="background.primary"
-      flex={1}
+      flexGrow={1}
       p={10}
       style={
         Array [
           Object {
             "color": "#ffffff",
-            "flexBasis": 0,
             "flexGrow": 1,
-            "flexShrink": 1,
             "paddingBottom": 10,
             "paddingLeft": 10,
             "paddingRight": 10,
@@ -1127,19 +1135,23 @@ exports[`Storyshots Foundation/Typography Font Colors 1`] = `
 `;
 
 exports[`Storyshots Foundation/Typography Font Families 1`] = `
-<RCTScrollView>
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <View>
     <View
       color="background.primary"
-      flex={1}
+      flexGrow={1}
       p={10}
       style={
         Array [
           Object {
             "color": "#ffffff",
-            "flexBasis": 0,
             "flexGrow": 1,
-            "flexShrink": 1,
             "paddingBottom": 10,
             "paddingLeft": 10,
             "paddingRight": 10,
@@ -1211,19 +1223,23 @@ exports[`Storyshots Foundation/Typography Font Families 1`] = `
 `;
 
 exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
-<RCTScrollView>
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <View>
     <View
       color="background.primary"
-      flex={1}
+      flexGrow={1}
       p={10}
       style={
         Array [
           Object {
             "color": "#ffffff",
-            "flexBasis": 0,
             "flexGrow": 1,
-            "flexShrink": 1,
             "paddingBottom": 10,
             "paddingLeft": 10,
             "paddingRight": 10,
@@ -1347,19 +1363,23 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
 `;
 
 exports[`Storyshots Foundation/Typography Text Styles 1`] = `
-<RCTScrollView>
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
   <View>
     <View
       color="background.primary"
-      flex={1}
+      flexGrow={1}
       p={10}
       style={
         Array [
           Object {
             "color": "#ffffff",
-            "flexBasis": 0,
             "flexGrow": 1,
-            "flexShrink": 1,
             "paddingBottom": 10,
             "paddingLeft": 10,
             "paddingRight": 10,
@@ -1430,6 +1450,86 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
             textStyle="subtext"
           >
             Subtext
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Home Home 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+            textStyle="defaultTextStyle"
+          >
+            Please open navigator from the bottom left tab and select a story to preview.
           </Text>
         </View>
       </View>
