@@ -10,7 +10,7 @@ const babelLoaderConfiguration = {
   include: [
     path.resolve(__dirname, "index.web.js"),
     path.resolve(__dirname, "App.web.js"),
-    path.resolve(__dirname, "lib"),
+    path.resolve(__dirname, "src"),
     path.resolve(__dirname, "./storybook/stories"),
     path.resolve(__dirname, "./.storybook/preview.js"),
     path.resolve(__dirname, "./node_modules/react-native-modal-selector"),

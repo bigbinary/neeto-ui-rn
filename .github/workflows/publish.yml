@@ -11,6 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - run: yarn install
+      - run: yarn build
       - run: yarn version --patch --no-git-tag-version
       - run: git config core.hooksPath /dev/null
       - uses: EndBug/add-and-commit@v7
