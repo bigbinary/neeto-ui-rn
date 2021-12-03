@@ -105,12 +105,12 @@ export const theme = {
     },
     inverse: {
       border: 2,
-      borderColor: baseTheme.colors.white,
-      backgroundColor: baseTheme.colors.white,
+      borderColor: baseTheme.colors.border.base,
+      backgroundColor: baseTheme.colors.background.white,
     },
     text: {
-      color: baseTheme.colors.grey800,
-      backgroundColor: baseTheme.colors.white,
+      color: baseTheme.colors.font.grey800,
+      backgroundColor: baseTheme.colors.background.white,
     },
   },
 };

@@ -7,18 +7,6 @@ const FABStories = {
 export default FABStories;
 
 export const FABS = () => {
-  const shadowStyle = {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
-  };
-
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
       <Container flexDirection="row" alignItems="center">
@@ -68,7 +56,6 @@ export const FABS = () => {
       <Container flexDirection="row" alignItems="center">
         <FAB
           m={9}
-          style={shadowStyle}
           Icon={() => {
             return <Typography>🔔</Typography>;
           }}
