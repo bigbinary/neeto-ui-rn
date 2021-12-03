@@ -62,6 +62,5 @@ FAB.propTypes = {
   ...propTypes.border,
   ...propTypes.layout,
   ...propTypes.color,
-  children: PropTypes.node.isRequired,
-  Icon: PropTypes.node.isRequired,
+  Icon: PropTypes.elementType.isRequired,
 };
