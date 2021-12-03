@@ -9,6 +9,7 @@ import {
 } from "styled-system";
 import styled from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
+import PropTypes from "prop-types";
 
 export const TouchableOpacity = styled.TouchableOpacity`
   ${buttonStyle}
@@ -61,5 +62,6 @@ FAB.propTypes = {
   ...propTypes.border,
   ...propTypes.layout,
   ...propTypes.color,
-  ...propTypes.elementType,
+  children: PropTypes.node.isRequired,
+  Icon: PropTypes.node.isRequired,
 };

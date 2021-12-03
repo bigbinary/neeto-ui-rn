@@ -272,7 +272,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -331,7 +332,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -385,7 +387,9 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#ffffff",
               "borderRadius": 2,
+              "color": "#2f3941",
               "flexDirection": "row",
               "justifyContent": "center",
               "marginBottom": 9,
@@ -441,7 +445,9 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#ffffff",
               "borderRadius": 2,
+              "color": "#2f3941",
               "flexDirection": "row",
               "justifyContent": "center",
               "marginBottom": 9,
@@ -492,7 +498,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -558,7 +565,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -641,7 +649,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -865,7 +874,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -1103,7 +1113,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
-              "borderColor": "black",
+              "backgroundColor": "#ffffff",
+              "borderColor": "#2f3941",
               "borderRadius": 2,
               "borderStyle": "solid",
               "borderWidth": 2,
@@ -1180,7 +1191,9 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#ffffff",
               "borderRadius": 2,
+              "color": "#2f3941",
               "flexDirection": "row",
               "justifyContent": "center",
               "marginBottom": 9,
@@ -1254,7 +1267,9 @@ exports[`Storyshots Buttons Buttons 1`] = `
           style={
             Object {
               "alignItems": "center",
+              "backgroundColor": "#ffffff",
               "borderRadius": 2,
+              "color": "#2f3941",
               "flexDirection": "row",
               "justifyContent": "center",
               "marginBottom": 9,
@@ -1425,6 +1440,7 @@ exports[`Storyshots FABs FABS 1`] = `
                   "alignItems": "center",
                   "backgroundColor": "#2f3941",
                   "borderRadius": 28,
+                  "elevation": 5,
                   "height": 56,
                   "justifyContent": "center",
                   "marginBottom": 9,
@@ -1432,6 +1448,13 @@ exports[`Storyshots FABs FABS 1`] = `
                   "marginRight": 9,
                   "marginTop": 9,
                   "opacity": 1,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
                   "width": 56,
                 }
               }
@@ -1491,10 +1514,12 @@ exports[`Storyshots FABs FABS 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "borderColor": "black",
+                  "backgroundColor": "#ffffff",
+                  "borderColor": "#2f3941",
                   "borderRadius": 28,
                   "borderStyle": "solid",
                   "borderWidth": 2,
+                  "elevation": 5,
                   "height": 56,
                   "justifyContent": "center",
                   "marginBottom": 9,
@@ -1502,6 +1527,13 @@ exports[`Storyshots FABs FABS 1`] = `
                   "marginRight": 9,
                   "marginTop": 9,
                   "opacity": 1,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
                   "width": 56,
                 }
               }
@@ -1568,6 +1600,7 @@ exports[`Storyshots FABs FABS 1`] = `
                   "alignItems": "center",
                   "backgroundColor": "#2f3941",
                   "borderRadius": 28,
+                  "elevation": 5,
                   "height": 56,
                   "justifyContent": "center",
                   "marginBottom": 9,
@@ -1575,6 +1608,13 @@ exports[`Storyshots FABs FABS 1`] = `
                   "marginRight": 9,
                   "marginTop": 9,
                   "opacity": 0.5,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
                   "width": 56,
                 }
               }
@@ -1639,10 +1679,12 @@ exports[`Storyshots FABs FABS 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "borderColor": "black",
+                  "backgroundColor": "#ffffff",
+                  "borderColor": "#2f3941",
                   "borderRadius": 28,
                   "borderStyle": "solid",
                   "borderWidth": 2,
+                  "elevation": 5,
                   "height": 56,
                   "justifyContent": "center",
                   "marginBottom": 9,
@@ -1650,6 +1692,13 @@ exports[`Storyshots FABs FABS 1`] = `
                   "marginRight": 9,
                   "marginTop": 9,
                   "opacity": 0.5,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
                   "width": 56,
                 }
               }
@@ -1787,6 +1836,7 @@ exports[`Storyshots FABs FABS 1`] = `
                   "alignItems": "center",
                   "backgroundColor": "#ff6969",
                   "borderRadius": 28,
+                  "elevation": 5,
                   "height": 56,
                   "justifyContent": "center",
                   "marginBottom": 9,
@@ -1794,6 +1844,13 @@ exports[`Storyshots FABs FABS 1`] = `
                   "marginRight": 9,
                   "marginTop": 9,
                   "opacity": 1,
+                  "shadowColor": "#000",
+                  "shadowOffset": Object {
+                    "height": 2,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.25,
+                  "shadowRadius": 3.84,
                   "width": 56,
                 }
               }
