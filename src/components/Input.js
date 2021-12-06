@@ -1,5 +1,13 @@
 import React, { useContext, useState } from "react";
-import { flexbox, space, border, buttonStyle, typography } from "styled-system";
+import {
+  flexbox,
+  space,
+  border,
+  buttonStyle,
+  typography,
+  color,
+  layout,
+} from "styled-system";
 import styled, { ThemeContext } from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -11,6 +19,14 @@ export const TextInput = styled.TextInput`
   ${border}
   ${buttonStyle}
   ${typography}
+`;
+
+const View = styled.View`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${color}
+  ${layout}
 `;
 
 const InputText = ({ theme, text }) => (
@@ -98,7 +114,7 @@ export const Input = ({
       <Container
         {...focusStyles}
         {...disabledStyles}
-        flexDirection={inline && "row"}
+        flexDirection={inline ? "row" : "column"}
         onBlur={handleBlur}
         onFocus={handleFocus}
       >
@@ -122,7 +138,7 @@ export const Input = ({
         </Container>
       </Container>
       {inline && (
-        <Container
+        <View
           backgroundColor={theme.colors.border.primary}
           height={1}
           {...inlineInputStyles}
@@ -159,7 +175,7 @@ LabelText.propTypes = {
 
 ErrorMessage.propTypes = {
   error: PropTypes.bool,
-  message: PropTypes.message,
+  message: PropTypes.string,
 };
 
 TextInput.defaultProps = {
