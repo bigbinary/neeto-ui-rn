@@ -47,6 +47,7 @@
   "peerDependencies": {},
   "dependencies": {
     "@styled-system/prop-types": "^5.1.5",
+    "react-native-switch-toggle": "^2.2.1",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },

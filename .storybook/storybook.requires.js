@@ -32,6 +32,7 @@ const getStories = () => {
     require("../storybook/stories/Button.stories.js"),
     require("../storybook/stories/FAB.stories.js"),
     require("../storybook/stories/Input.stories.js"),
+    require("../storybook/stories/ToggleSwitch.stories.js"),
     require("../storybook/stories/Typography.stories.js"),
   ];
 };
