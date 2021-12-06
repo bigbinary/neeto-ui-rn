@@ -15,6 +15,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./.storybook/preview.js"),
     path.resolve(__dirname, "./node_modules/react-native-modal-selector"),
     path.resolve(__dirname, "./node_modules/react-native-swipe-gestures"),
+    path.resolve(__dirname, "./node_modules/react-native-switch-toggle"),
   ],
   use: {
     loader: "babel-loader",
