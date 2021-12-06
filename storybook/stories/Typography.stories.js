@@ -20,25 +20,25 @@ const TypographyStories = {
   },
   argTypes: {
     textStyle: {
-      options: Object.values(textStyles),
+      options: textStyles,
       control: {
         type: "select",
       },
     },
     fontSize: {
-      options: Object.values(fontSizes),
+      options: fontSizes,
       control: {
         type: "select",
       },
     },
     color: {
-      options: Object.values(fontColors),
+      options: fontColors,
       control: {
         type: "select",
       },
     },
     fontFamily: {
-      options: Object.values(fonts),
+      options: fonts,
       control: {
         type: "select",
       },
