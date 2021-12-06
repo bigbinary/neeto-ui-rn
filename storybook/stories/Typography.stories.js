@@ -1,15 +1,62 @@
 import React from "react";
 
 import { Typography, Container } from "@components";
+import { theme } from "../../src/theme";
+
+const textStyles = ["header", "body", "subtext"];
+const fontSizes = Object.keys(theme.fontSizes);
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const fonts = Object.keys(theme.fonts);
 
 const TypographyStories = {
   title: "Foundation/Typography",
   component: Typography,
+  args: {
+    textStyle: textStyles[0],
+    fontSize: fontSizes[0],
+    color: fontColors[0],
+    fontFamily: fonts[0],
+    text: "Typography",
+  },
+  argTypes: {
+    textStyle: {
+      options: textStyles,
+      control: {
+        type: "select",
+      },
+    },
+    fontSize: {
+      options: fontSizes,
+      control: {
+        type: "select",
+      },
+    },
+    color: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    fontFamily: {
+      options: fonts,
+      control: {
+        type: "select",
+      },
+    },
+  },
   parameters: {
     layout: "padded",
   },
 };
 export default TypographyStories;
+
+export const TypographyDemo = args => {
+  return (
+    <Container>
+      <Typography {...args}>{args.text}</Typography>
+    </Container>
+  );
+};
 
 export const TextStyles = () => {
   return (

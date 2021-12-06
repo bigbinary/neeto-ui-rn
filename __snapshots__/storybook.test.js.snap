@@ -2507,6 +2507,80 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Foundation/Typography Typography Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            color="font.primary"
+            fontFamily="inter400"
+            fontSize="xs"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontFamily": "Inter-Regular",
+                  "fontSize": 10,
+                },
+              ]
+            }
+            text="Typography"
+            textStyle="header"
+          >
+            Typography
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Home Home 1`] = `
 <RCTScrollView
   contentContainerStyle={
