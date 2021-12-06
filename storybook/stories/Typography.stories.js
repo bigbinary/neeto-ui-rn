@@ -7,8 +7,13 @@ const textStyles = ["header", "body", "subtext"];
 const fontSizes = Object.keys(theme.fontSizes);
 const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
 const fonts = Object.keys(theme.fonts);
-const textDecoration = ["underline", "line-through", "underline line-through"];
-const textTransformation = ["uppercase", "lowercase", "capitalize"];
+const textDecoration = [
+  "none",
+  "underline",
+  "line-through",
+  "underline line-through",
+];
+const textTransformation = ["capitalize", "lowercase", "uppercase"];
 
 const TypographyStories = {
   title: "Foundation/Typography",
