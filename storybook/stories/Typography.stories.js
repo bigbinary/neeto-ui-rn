@@ -7,6 +7,8 @@ const textStyles = ["header", "body", "subtext"];
 const fontSizes = Object.keys(theme.fontSizes);
 const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
 const fonts = Object.keys(theme.fonts);
+const textDecoration = ["underline", "line-through", "underline line-through"];
+const textTransformation = ["uppercase", "lowercase", "capitalize"];
 
 const TypographyStories = {
   title: "Foundation/Typography",
@@ -17,6 +19,8 @@ const TypographyStories = {
     color: fontColors[0],
     fontFamily: fonts[0],
     text: "Typography",
+    textDecoration: textDecoration[0],
+    textTransform: textTransformation[0],
   },
   argTypes: {
     textStyle: {
@@ -39,6 +43,18 @@ const TypographyStories = {
     },
     fontFamily: {
       options: fonts,
+      control: {
+        type: "select",
+      },
+    },
+    textDecoration: {
+      options: textDecoration,
+      control: {
+        type: "select",
+      },
+    },
+    textTransform: {
+      options: textTransformation,
       control: {
         type: "select",
       },
@@ -138,6 +154,38 @@ export const FontFamilies = () => {
       </Typography>
       <Typography fontFamily="inter700" fontSize="xxl">
         Inter Bold 700
+      </Typography>
+    </Container>
+  );
+};
+
+export const TextDecoration = () => {
+  return (
+    <Container>
+      <Typography fontSize="xxl" textDecoration="underline">
+        Underline
+      </Typography>
+      <Typography fontSize="xxl" textDecoration="line-through">
+        Line through
+      </Typography>
+      <Typography fontSize="xxl" textDecoration="underline line-through">
+        Underline and line through
+      </Typography>
+    </Container>
+  );
+};
+
+export const TextTransformation = () => {
+  return (
+    <Container>
+      <Typography fontSize="xxl" textTransform="uppercase">
+        uppercase text
+      </Typography>
+      <Typography fontSize="xxl" textTransform="lowercase">
+        lowercase text
+      </Typography>
+      <Typography fontSize="xxl" textTransform="capitalize">
+        capitalized text
       </Typography>
     </Container>
   );

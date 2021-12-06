@@ -8,6 +8,7 @@ import {
   color,
   textStyle,
   position,
+  system,
 } from "styled-system";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -20,6 +21,13 @@ export const Text = styled.Text`
   ${typography}
   ${color}
   ${position}
+  ${system({
+    textDecoration: {
+      property: "textDecoration",
+      cssProperty: "textDecoration",
+    },
+    textTransform: { property: "textTransform", cssProperty: "textTransform" },
+  })}
 `;
 
 /**
