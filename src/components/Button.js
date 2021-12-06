@@ -47,7 +47,7 @@ export const Button = ({
       variant={variant}
       style={style}
     >
-      {Loader && (
+      {Loader && isLoading && (
         <Container mx={1}>
           <Loader />
         </Container>
