@@ -2411,6 +2411,116 @@ exports[`Storyshots Foundation/Typography Font Sizes 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Foundation/Typography Text Decoration 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textDecorationColor": "black",
+                  "textDecorationLine": "underline",
+                  "textDecorationStyle": "solid",
+                },
+              ]
+            }
+            textDecoration="underline"
+            textStyle="defaultTextStyle"
+          >
+            Underline
+          </Text>
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textDecorationColor": "black",
+                  "textDecorationLine": "line-through",
+                  "textDecorationStyle": "solid",
+                },
+              ]
+            }
+            textDecoration="line-through"
+            textStyle="defaultTextStyle"
+          >
+            Line through
+          </Text>
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textDecorationColor": "black",
+                  "textDecorationLine": "underline line-through",
+                  "textDecorationStyle": "solid",
+                },
+              ]
+            }
+            textDecoration="underline line-through"
+            textStyle="defaultTextStyle"
+          >
+            Underline and line through
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Foundation/Typography Text Styles 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -2507,6 +2617,110 @@ exports[`Storyshots Foundation/Typography Text Styles 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Foundation/Typography Text Transformation 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+            ]
+          }
+        >
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textTransform": "uppercase",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+            textTransform="uppercase"
+          >
+            uppercase text
+          </Text>
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textTransform": "lowercase",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+            textTransform="lowercase"
+          >
+            lowercase text
+          </Text>
+          <Text
+            fontSize="xxl"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 32,
+                  "textTransform": "capitalize",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+            textTransform="capitalize"
+          >
+            capitalized text
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Foundation/Typography Typography Demo 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -2566,11 +2780,17 @@ exports[`Storyshots Foundation/Typography Typography Demo 1`] = `
                   "color": "#1b1f23",
                   "fontFamily": "Inter-Regular",
                   "fontSize": 10,
+                  "textDecorationColor": "black",
+                  "textDecorationLine": "none",
+                  "textDecorationStyle": "solid",
+                  "textTransform": "none",
                 },
               ]
             }
             text="Typography"
+            textDecoration="none"
             textStyle="header"
+            textTransform="none"
           >
             Typography
           </Text>
