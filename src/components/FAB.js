@@ -59,7 +59,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
  * @extends StyledSystems props /styled-system
  */
 
-export const FAB = ({ Icon, bg, disabled, ...rest }) => {
+export const FAB = ({ Icon, bg, disabled, variant, ...rest }) => {
   const shadowStyle = {
     shadowColor: "#000",
     shadowOffset: {
@@ -77,10 +77,12 @@ export const FAB = ({ Icon, bg, disabled, ...rest }) => {
   }
   return (
     <TouchableOpacity
-      bg={bg}
+      bg={variant !== "inverse" && bg}
       disabled={disabled}
-      {...rest}
+      variant={variant}
       style={[style, shadowStyle]}
+      borderColor={variant === "inverse" && bg}
+      {...rest}
     >
       <Icon />
     </TouchableOpacity>

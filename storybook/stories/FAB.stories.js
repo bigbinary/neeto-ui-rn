@@ -9,6 +9,7 @@ const FABStories = {
   args: {
     variant: variants[0],
     disabled: false,
+    bg: "",
   },
   argTypes: {
     variant: {
@@ -29,12 +30,14 @@ export default FABStories;
 
 export const FABSDemo = args => {
   return (
-    <FAB
-      Icon={() => {
-        return <Typography>🔔</Typography>;
-      }}
-      {...args}
-    />
+    <Container flex={1} justifyContent="center" alignItems="center">
+      <FAB
+        Icon={() => {
+          return <Typography>🔔</Typography>;
+        }}
+        {...args}
+      />
+    </Container>
   );
 };
 
