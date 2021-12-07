@@ -28,7 +28,7 @@ const InputMetaData = {
         type: "boolean",
       },
     },
-    value: {
+    defaultValue: {
       control: {
         type: "text",
       },
@@ -58,7 +58,7 @@ const InputMetaData = {
     label: "Default",
     keyboardType: keyBoardTypes[0],
     secureTextEntry: false,
-    value: null,
+    defaultValue: null,
     placeholder: "placeholder",
     disabled: false,
     inline: false,

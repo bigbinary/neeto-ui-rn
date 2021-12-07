@@ -153,7 +153,7 @@ const InputText = ({ theme, text }) => (
     justifyContent="center"
     px={2}
   >
-    <Typography>{text}</Typography>
+    {text && <Typography>{text}</Typography>}
   </Container>
 );
 
