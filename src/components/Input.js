@@ -31,15 +31,14 @@ const View = styled.View`
 
 /**
  *
- * This component supports below props in addition to default TextInput props.
- *
+ * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
- * <li>message</li>
- * <li>error</li>
- * <li>inline</li>
- * <li>brandRight</li>
+ * <li>flexbox</li>
+ * <li>space</li>
+ * <li>border</li>
+ * <li>buttonStyle</li>
  * <li>brandLeft</li>
- * <li>disabled</li>
+ * <li>typography</li>
  * </ul>
  *
  *  ## Usage
@@ -183,6 +182,9 @@ Input.propTypes = {
   ...propTypes.space,
   ...propTypes.border,
   ...propTypes.buttonStyle,
+  /**
+   * this is label
+   */
   label: PropTypes.string.isRequired,
   message: PropTypes.string,
   error: PropTypes.bool,
