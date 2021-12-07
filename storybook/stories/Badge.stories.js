@@ -16,7 +16,7 @@ export const Badges = () => {
     <Container flex={1} alignItems="center" justifyContent="center">
       <Container flex={1} justifyContent="center">
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge content={3} />
+          <Badge />
           <Typography px={2} fontSize="l">
             Default size
           </Typography>
@@ -66,12 +66,6 @@ export const Badges = () => {
           />
           <Typography px={2} fontSize="l">
             custom font family
-          </Typography>
-        </Container>
-        <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge size={32} content="3" fontSize="12px" fontFamily="inter700" />
-          <Typography px={2} fontSize="l">
-            custom border radius
           </Typography>
         </Container>
       </Container>
