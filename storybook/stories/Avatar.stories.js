@@ -21,13 +21,12 @@ export const Avatars = () => {
           name="Oliver Smith"
           m={2}
           bgColor="background.black"
-          fontColor="font.white"
         />
-        <Typography fontSize="l">48 * 48 (custom color)</Typography>
+        <Typography fontSize="l">48 * 48</Typography>
       </Container>
 
       <Container flexDirection="row" alignItems="center">
-        <Avatar size={42} name="Oliver Smith" m={2} />
+        <Avatar size={42} name="Oliver Smith" m={2} fontColor="font.white" />
         <Typography fontSize="m">42 * 42</Typography>
       </Container>
 
