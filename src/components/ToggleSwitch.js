@@ -17,7 +17,7 @@ import { Typography, Container } from "@components";
  *
  *  ## Usage
  * ```js
- * import React, {useState} from 'react';
+ * import * as React, {useState} from 'react';
  * import { Typography, Container } from '@bigbinary/neetoui-rn';
  *
  * export default function Main() {
@@ -88,9 +88,21 @@ ToggleSwitch.defaultProps = {
 };
 
 ToggleSwitch.propTypes = {
+  /**
+   * The text to use for the floating label.
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * Value of the switch, true means 'on', false means 'off'.
+   */
   value: PropTypes.bool.isRequired,
+  /**
+   * Callback called with the new value when it changes.
+   */
   onValueChange: PropTypes.func,
+  /**
+   * Disable toggling the switch.
+   */
   disabled: PropTypes.bool,
 };
 
