@@ -13,7 +13,7 @@ const textDecoration = [
   "line-through",
   "underline line-through",
 ];
-const textTransformation = ["capitalize", "lowercase", "uppercase"];
+const textTransformation = ["none", "capitalize", "lowercase", "uppercase"];
 
 const TypographyStories = {
   title: "Foundation/Typography",
