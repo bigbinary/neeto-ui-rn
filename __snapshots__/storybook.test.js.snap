@@ -3241,6 +3241,143 @@ exports[`Storyshots Home Home 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Input Input Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                defaultValue={null}
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                keyboardType="default"
+                placeholder="placeholder"
+                px={2}
+                secureTextEntry={false}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Input Inputs 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -3306,7 +3443,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Default Input
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3340,12 +3477,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3394,7 +3535,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            with placeholder
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3428,13 +3569,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
-                placeholder="Placeholder"
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3483,7 +3627,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            with value
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3517,12 +3661,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3572,7 +3720,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Disabled
+            Default
           </Text>
           <View
             bg="#e4e4e7"
@@ -3610,12 +3758,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={false}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3664,7 +3816,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            with error message
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3698,12 +3850,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#ff6969"
                 borderRadius={2}
                 color="#ff6969"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3766,7 +3922,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Email
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3800,13 +3956,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
-                keyboardType="email-address"
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -3856,7 +4015,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Password
+            Default
           </Text>
           <View
             color="background.primary"
@@ -3890,11 +4049,14 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
                 secureTextEntry={true}
                 style={
@@ -3932,54 +4094,36 @@ exports[`Storyshots Input Inputs 1`] = `
             ]
           }
         >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
           <View
             color="background.primary"
-            flexDirection="row"
+            flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
-                  "flexDirection": "row",
+                  "flexDirection": "column",
                 },
               ]
             }
           >
-            <View
-              alignSelf="flex-end"
-              color="background.primary"
-              maxWidth={100}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignSelf": "flex-end",
-                    "color": "#ffffff",
-                    "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <Text
-                mb="12px"
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 12,
-                      "marginBottom": 12,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              >
-                Inline
-              </Text>
-            </View>
             <View
               color="background.primary"
               flexDirection="row"
@@ -3995,19 +4139,26 @@ exports[`Storyshots Input Inputs 1`] = `
               width="100%"
             >
               <TextInput
-                border={false}
+                border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
+                      "borderColor": "#e4e4e7",
                       "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
                       "flexBasis": 0,
                       "flexGrow": 1,
                       "flexShrink": 1,
@@ -4022,18 +4173,6 @@ exports[`Storyshots Input Inputs 1`] = `
               />
             </View>
           </View>
-          <View
-            backgroundColor="#e4e4e7"
-            height={1}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#e4e4e7",
-                  "height": 1,
-                },
-              ]
-            }
-          />
         </View>
         <View
           color="background.primary"
@@ -4047,54 +4186,36 @@ exports[`Storyshots Input Inputs 1`] = `
             ]
           }
         >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
           <View
             color="background.primary"
-            flexDirection="row"
+            flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
             style={
               Array [
                 Object {
                   "color": "#ffffff",
-                  "flexDirection": "row",
+                  "flexDirection": "column",
                 },
               ]
             }
           >
-            <View
-              alignSelf="flex-end"
-              color="background.primary"
-              maxWidth={100}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignSelf": "flex-end",
-                    "color": "#ffffff",
-                    "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <Text
-                mb="12px"
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 12,
-                      "marginBottom": 12,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              >
-                Inline with error
-              </Text>
-            </View>
             <View
               color="background.primary"
               flexDirection="row"
@@ -4110,19 +4231,26 @@ exports[`Storyshots Input Inputs 1`] = `
               width="100%"
             >
               <TextInput
-                border={false}
+                border="#ff6969"
                 borderRadius={2}
                 color="#ff6969"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
+                      "borderColor": "#ff6969",
                       "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
                       "flexBasis": 0,
                       "flexGrow": 1,
                       "flexShrink": 1,
@@ -4137,18 +4265,6 @@ exports[`Storyshots Input Inputs 1`] = `
               />
             </View>
           </View>
-          <View
-            backgroundColor="#e4e4e7"
-            height={1}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#e4e4e7",
-                  "height": 1,
-                },
-              ]
-            }
-          />
           <Text
             color="#ff6969"
             style={
@@ -4176,125 +4292,6 @@ exports[`Storyshots Input Inputs 1`] = `
             ]
           }
         >
-          <View
-            bg="#e4e4e7"
-            color="background.primary"
-            flexDirection="row"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            opacity={0.5}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#e4e4e7",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                  "opacity": 0.5,
-                },
-              ]
-            }
-          >
-            <View
-              alignSelf="flex-end"
-              color="background.primary"
-              maxWidth={100}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignSelf": "flex-end",
-                    "color": "#ffffff",
-                    "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <Text
-                mb="12px"
-                numberOfLines={1}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 12,
-                      "marginBottom": 12,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              >
-                inline disabled input
-              </Text>
-            </View>
-            <View
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "width": "100%",
-                  },
-                ]
-              }
-              width="100%"
-            >
-              <TextInput
-                border={false}
-                borderRadius={2}
-                color="#1b1f23"
-                editable={false}
-                flex={1}
-                fontFamily="inter400"
-                fontSize="14px"
-                height={40}
-                px={2}
-                style={
-                  Array [
-                    Object {
-                      "borderRadius": 2,
-                      "flexBasis": 0,
-                      "flexGrow": 1,
-                      "flexShrink": 1,
-                      "fontFamily": "Inter-Regular",
-                      "fontSize": 14,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              />
-            </View>
-          </View>
-          <View
-            backgroundColor="#e4e4e7"
-            height={1}
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "#e4e4e7",
-                  "height": 1,
-                },
-              ]
-            }
-          />
-        </View>
-        <View
-          color="background.primary"
-          mb={20}
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-                "marginBottom": 20,
-              },
-            ]
-          }
-        >
           <Text
             mb="7px"
             numberOfLines={1}
@@ -4309,7 +4306,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Brand Left
+            Default
           </Text>
           <View
             color="background.primary"
@@ -4339,46 +4336,20 @@ exports[`Storyshots Input Inputs 1`] = `
               }
               width="100%"
             >
-              <View
-                bg="#f4f5f7"
-                color="background.primary"
-                justifyContent="center"
-                px={2}
-                style={
-                  Array [
-                    Object {
-                      "backgroundColor": "#f4f5f7",
-                      "color": "#ffffff",
-                      "justifyContent": "center",
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#1b1f23",
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  BRAND-LEFT
-                </Text>
-              </View>
               <TextInput
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -4427,7 +4398,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
             textStyle="subtext"
           >
-            Brand Right
+            Default
           </Text>
           <View
             color="background.primary"
@@ -4461,12 +4432,16 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                defaultValue={null}
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
                 fontSize="14px"
                 height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -4486,36 +4461,98 @@ exports[`Storyshots Input Inputs 1`] = `
                 }
                 textStyle="subtext"
               />
-              <View
-                bg="#f4f5f7"
-                color="background.primary"
-                justifyContent="center"
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                defaultValue={null}
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                keyboardType="default"
+                placeholder="placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
-                      "backgroundColor": "#f4f5f7",
-                      "color": "#ffffff",
-                      "justifyContent": "center",
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
                       "paddingLeft": 8,
                       "paddingRight": 8,
                     },
                   ]
                 }
-              >
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "#1b1f23",
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  BRAND-RIGHT
-                </Text>
-              </View>
+                textStyle="subtext"
+              />
             </View>
           </View>
         </View>
@@ -4720,294 +4757,6 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   >
                     <Text />
                   </View>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            alignItems="center"
-            borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
-            color="background.primary"
-            flexDirection="row"
-            mt={3}
-            p={3}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                  "marginTop": 16,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
-                },
-              ]
-            }
-          >
-            <Text
-              flex={0.8}
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="subtext"
-            >
-              Disabled switched on toggle button
-            </Text>
-            <View
-              alignItems="flex-end"
-              color="background.primary"
-              flex={0.2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "flex-end",
-                    "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
-                  },
-                ]
-              }
-            >
-              <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                nativeID="animatedComponent"
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  collapsable={false}
-                  nativeID="animatedComponent"
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(0, 0, 0, 1)",
-                      "borderRadius": 10,
-                      "flexDirection": "row",
-                      "height": 18,
-                      "padding": 2,
-                      "width": 38,
-                    }
-                  }
-                >
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={Object {}}
-                  >
-                    <Text />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "left": 5,
-                        "position": "absolute",
-                      }
-                    }
-                  />
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={
-                      Object {
-                        "backgroundColor": "rgba(135, 146, 157, 1)",
-                        "borderRadius": 7,
-                        "height": 14,
-                        "transform": Array [
-                          Object {
-                            "translateX": 20,
-                          },
-                        ],
-                        "width": 14,
-                      }
-                    }
-                  >
-                    <View
-                      collapsable={false}
-                      nativeID="animatedComponent"
-                      style={Object {}}
-                    >
-                      <Text />
-                    </View>
-                  </View>
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={Object {}}
-                  >
-                    <Text />
-                  </View>
-                </View>
-              </View>
-            </View>
-          </View>
-          <View
-            alignItems="center"
-            borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
-            color="background.primary"
-            flexDirection="row"
-            mt={3}
-            p={3}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                  "marginTop": 16,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
-                },
-              ]
-            }
-          >
-            <Text
-              flex={0.8}
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="subtext"
-            >
-              Disabled switched off toggle button
-            </Text>
-            <View
-              alignItems="flex-end"
-              color="background.primary"
-              flex={0.2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "flex-end",
-                    "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
-                  },
-                ]
-              }
-            >
-              <View
-                accessible={true}
-                collapsable={false}
-                focusable={true}
-                nativeID="animatedComponent"
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
-              >
-                <View
-                  collapsable={false}
-                  nativeID="animatedComponent"
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(233, 235, 237, 1)",
-                      "borderRadius": 10,
-                      "flexDirection": "row",
-                      "height": 18,
-                      "padding": 2,
-                      "width": 38,
-                    }
-                  }
-                >
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={Object {}}
-                  >
-                    <Text />
-                  </View>
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={
-                      Object {
-                        "backgroundColor": "rgba(244, 245, 247, 1)",
-                        "borderRadius": 7,
-                        "height": 14,
-                        "transform": Array [
-                          Object {
-                            "translateX": 0,
-                          },
-                        ],
-                        "width": 14,
-                      }
-                    }
-                  >
-                    <View
-                      collapsable={false}
-                      nativeID="animatedComponent"
-                      style={Object {}}
-                    >
-                      <Text />
-                    </View>
-                  </View>
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={Object {}}
-                  >
-                    <Text />
-                  </View>
-                  <View
-                    style={
-                      Object {
-                        "position": "absolute",
-                        "right": 5,
-                      }
-                    }
-                  />
                 </View>
               </View>
             </View>

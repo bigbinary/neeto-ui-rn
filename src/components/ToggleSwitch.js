@@ -6,6 +6,38 @@ import PropTypes from "prop-types";
 
 import { Typography, Container } from "@components";
 
+/**
+ * ToggleSwitch component is a simple switch toggle component from react-native-switch-toggle along with a label which describes what is being switched ON/OFF.
+ *
+ * This component supports below props categories from [styled-system ](/styled-system).
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/toggleswitch/switchstyles.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React, {useState} from 'react';
+ * import { Typography, Container } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  const [switchOne, setSwitchOne] = useState(true);
+ *
+ *  return (
+ *    <Container>
+ *     <ToggleSwitch
+ *      value={switchOne}
+ *      setValue={() => setSwitchOne(prevValue => !prevValue)}
+ *      label="Conversation assigned to my group"
+ *     />
+ *   </Container>
+ *  );
+ * }
+ * ```
+ *
+ * @extends StyledSystems props /styled-system
+ */
+
 export const ToggleSwitch = ({
   value,
   onValueChange,
@@ -56,9 +88,21 @@ ToggleSwitch.defaultProps = {
 };
 
 ToggleSwitch.propTypes = {
+  /**
+   * The text to use for the floating label.
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * Value of the switch, true means 'on', false means 'off'.
+   */
   value: PropTypes.bool.isRequired,
+  /**
+   * Callback called with the new value when it changes.
+   */
   onValueChange: PropTypes.func,
+  /**
+   * Disable toggling the switch.
+   */
   disabled: PropTypes.bool,
 };
 
