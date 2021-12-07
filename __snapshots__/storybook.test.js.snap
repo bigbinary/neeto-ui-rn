@@ -1520,25 +1520,7 @@ exports[`Storyshots Badge Badges 1`] = `
                   ]
                 }
                 width={21}
-              >
-                <Text
-                  color="font.white"
-                  fontFamily="inter400"
-                  fontSize="xs"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                        "fontFamily": "Inter-Regular",
-                        "fontSize": 10,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  3
-                </Text>
-              </View>
+              />
               <Text
                 fontSize="l"
                 px={2}
@@ -2196,6 +2178,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 custom font family
               </Text>
             </View>
+<<<<<<< HEAD
             <View
               alignItems="center"
               color="background.primary"
@@ -2278,6 +2261,8 @@ exports[`Storyshots Badge Badges 1`] = `
 >>>>>>> 894a743 (snapshot update)
 =======
 >>>>>>> 8a24031 (rebase with master and updated snapshots)
+=======
+>>>>>>> 0df9568 (updated stories)
           </View>
         </View>
       </View>
