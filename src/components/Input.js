@@ -183,14 +183,32 @@ Input.propTypes = {
   ...propTypes.border,
   ...propTypes.buttonStyle,
   /**
-   * this is label
+   * The text to use for the floating label.
    */
   label: PropTypes.string.isRequired,
+  /**
+   * To display error/info messages
+   */
   message: PropTypes.string,
+  /**
+   * Whether to style the TextInput with error style.
+   */
   error: PropTypes.bool,
+  /**
+   * Changes input layout to inline
+   */
   inline: PropTypes.bool,
+  /**
+   * Display brand to the right of input
+   */
   brandRight: PropTypes.string,
+  /**
+   * Display brand to the left of input
+   */
   brandLeft: PropTypes.string,
+  /**
+   * If true, user won't be able to interact with the component.
+   */
   disabled: PropTypes.bool,
   children: PropTypes.node,
 };
