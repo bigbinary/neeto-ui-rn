@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`Storyshots Avatars Image Sizes 1`] = `
+=======
+<<<<<<< HEAD
+exports[`Storyshots Avatars Avatars 1`] = `
+=======
+exports[`Storyshots Badge Badges 1`] = `
+>>>>>>> 9099b8b (snapshot update)
+>>>>>>> 894a743 (snapshot update)
 <RCTScrollView
   contentContainerStyle={
     Object {
@@ -58,6 +66,7 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
           }
         >
           <View
+<<<<<<< HEAD
             alignItems="center"
             color="background.primary"
             flexDirection="row"
@@ -67,12 +76,26 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
                   "alignItems": "center",
                   "color": "#ffffff",
                   "flexDirection": "row",
+=======
+            color="background.primary"
+            flex={1}
+            justifyContent="center"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+>>>>>>> 9099b8b (snapshot update)
                 },
               ]
             }
           >
             <Image
               alignItems="center"
+<<<<<<< HEAD
               justifyContent="center"
               margin={2}
               source={
@@ -89,6 +112,121 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
                 }
               }
             />
+=======
+<<<<<<< HEAD
+              bg="background.grey200"
+              borderRadius={40}
+              color="background.primary"
+              height={80}
+              justifyContent="center"
+              m={2}
+=======
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+>>>>>>> 9099b8b (snapshot update)
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+<<<<<<< HEAD
+                    "backgroundColor": "#e9ebed",
+                    "borderRadius": 40,
+                    "color": "#ffffff",
+                    "height": 80,
+                    "justifyContent": "center",
+                    "marginBottom": 8,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 8,
+                    "width": 80,
+                  },
+                ]
+              }
+              width={80}
+            >
+              <Text
+                color="font.grey600"
+                fontFamily="inter700"
+                fontSize={32}
+                style={
+                  Array [
+                    Object {
+                      "color": "#68737d",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 32,
+=======
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={7.875}
+                color="background.primary"
+                height={15.75}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 7.875,
+                      "color": "#ffffff",
+                      "height": 15.75,
+                      "justifyContent": "center",
+                      "width": 21,
+                    },
+                  ]
+                }
+                width={21}
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter400"
+                  fontSize="xs"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 10,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+>>>>>>> 9099b8b (snapshot update)
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+<<<<<<< HEAD
+                OS
+              </Text>
+            </View>
+>>>>>>> 894a743 (snapshot update)
             <Text
               fontSize="xl"
               style={
@@ -121,6 +259,7 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
             <Image
               alignItems="center"
               justifyContent="center"
+<<<<<<< HEAD
               margin={3}
               source={
                 Object {
@@ -136,6 +275,197 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
                 }
               }
             />
+=======
+              m={2}
+=======
+                Default size
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter400"
+                  fontSize="xs"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 10,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                Custom size 32.
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+>>>>>>> 9099b8b (snapshot update)
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+<<<<<<< HEAD
+                    "backgroundColor": "#000000",
+                    "borderRadius": 24,
+                    "color": "#ffffff",
+                    "height": 48,
+                    "justifyContent": "center",
+                    "marginBottom": 8,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 8,
+                    "width": 48,
+                  },
+                ]
+              }
+              width={48}
+            >
+              <Text
+                color="font.white"
+                fontFamily="inter700"
+                fontSize={16}
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 16,
+=======
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter400"
+                  fontSize="16px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 16,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+>>>>>>> 9099b8b (snapshot update)
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+<<<<<<< HEAD
+                OS
+              </Text>
+            </View>
+>>>>>>> 894a743 (snapshot update)
             <Text
               fontSize="l"
               style={
@@ -167,6 +497,7 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
           >
             <Image
               alignItems="center"
+<<<<<<< HEAD
               justifyContent="center"
               margin={3}
               source={
@@ -183,6 +514,183 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
                 }
               }
             />
+=======
+              bg="background.grey200"
+              borderRadius={21}
+              color="background.primary"
+              height={42}
+              justifyContent="center"
+              m={2}
+=======
+                Custom fontSize
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              />
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                without content
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+>>>>>>> 9099b8b (snapshot update)
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+<<<<<<< HEAD
+                    "backgroundColor": "#e9ebed",
+                    "borderRadius": 21,
+                    "color": "#ffffff",
+                    "height": 42,
+                    "justifyContent": "center",
+                    "marginBottom": 8,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 8,
+                    "width": 42,
+                  },
+                ]
+              }
+              width={42}
+            >
+              <Text
+                color="font.grey600"
+                fontFamily="inter700"
+                fontSize={14}
+                style={
+                  Array [
+                    Object {
+                      "color": "#68737d",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 14,
+=======
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.secondary"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#e4e4e7",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.secondary"
+                  fontFamily="inter400"
+                  fontSize="12px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#828282",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 12,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  test
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+>>>>>>> 9099b8b (snapshot update)
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+<<<<<<< HEAD
+                OS
+              </Text>
+            </View>
             <Text
               fontSize="m"
               style={
@@ -197,6 +705,233 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
             >
               42 * 42
             </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <View
+              alignItems="center"
+              bg="background.grey200"
+              borderRadius={16}
+              color="background.primary"
+              height={32}
+              justifyContent="center"
+              m={2}
+=======
+                custom background color
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.danger"
+                  fontFamily="inter400"
+                  fontSize="12px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ff6969",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 12,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  test
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                custom font color
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+>>>>>>> 9099b8b (snapshot update)
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+<<<<<<< HEAD
+                    "backgroundColor": "#e9ebed",
+                    "borderRadius": 16,
+                    "color": "#ffffff",
+                    "height": 32,
+                    "justifyContent": "center",
+                    "marginBottom": 8,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 8,
+                    "width": 32,
+                  },
+                ]
+              }
+              width={32}
+            >
+              <Text
+                color="font.grey600"
+                fontFamily="inter700"
+                fontSize={14}
+                style={
+                  Array [
+                    Object {
+                      "color": "#68737d",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 14,
+=======
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter700"
+                  fontSize="12px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Bold",
+                        "fontSize": 12,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  test
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+>>>>>>> 9099b8b (snapshot update)
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+<<<<<<< HEAD
+                OS
+              </Text>
+            </View>
+>>>>>>> 894a743 (snapshot update)
+            <Text
+              fontSize="s"
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontSize": 12,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              32 * 32
+            </Text>
+<<<<<<< HEAD
           </View>
           <View
             alignItems="center"
@@ -244,6 +979,90 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
             >
               32 * 32
             </Text>
+=======
+=======
+                custom font family
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={12}
+                color="background.primary"
+                height={24}
+                justifyContent="center"
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 12,
+                      "color": "#ffffff",
+                      "height": 24,
+                      "justifyContent": "center",
+                      "width": 32,
+                    },
+                  ]
+                }
+                width={32}
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter700"
+                  fontSize="12px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Bold",
+                        "fontSize": 12,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                custom border radius
+              </Text>
+            </View>
+>>>>>>> 9099b8b (snapshot update)
+>>>>>>> 894a743 (snapshot update)
           </View>
         </View>
       </View>
@@ -5082,6 +5901,143 @@ exports[`Storyshots Input Input Demo 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Input Input Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                defaultValue={null}
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                keyboardType="default"
+                placeholder="placeholder"
+                px={2}
+                secureTextEntry={false}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Input Inputs 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -6088,6 +7044,8 @@ exports[`Storyshots Input Inputs 1`] = `
             ]
           }
         >
+<<<<<<< HEAD
+=======
           <Text
             mb="7px"
             numberOfLines={1}
@@ -6133,9 +7091,9 @@ exports[`Storyshots Input Inputs 1`] = `
               width="100%"
             >
               <TextInput
-                border="#e4e4e7"
+                border="#ff6969"
                 borderRadius={2}
-                color="#1b1f23"
+                color="#ff6969"
                 defaultValue={null}
                 editable={true}
                 flex={1}
@@ -6149,7 +7107,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 style={
                   Array [
                     Object {
-                      "borderColor": "#e4e4e7",
+                      "borderColor": "#ff6969",
                       "borderRadius": 2,
                       "borderStyle": "solid",
                       "borderWidth": 1,
@@ -6167,6 +7125,158 @@ exports[`Storyshots Input Inputs 1`] = `
               />
             </View>
           </View>
+>>>>>>> 894a743 (snapshot update)
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
+<<<<<<< HEAD
+=======
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Default
+          </Text>
+>>>>>>> 894a743 (snapshot update)
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+<<<<<<< HEAD
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+=======
+<<<<<<< HEAD
+                border="#ff6969"
+                borderRadius={2}
+                color="#ff6969"
+=======
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+>>>>>>> 894a743 (snapshot update)
+>>>>>>> f9c12c9 (snapshot update)
+                defaultValue={null}
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                keyboardType="default"
+                placeholder="placeholder"
+                px={2}
+                secureTextEntry={false}
+                style={
+                  Array [
+                    Object {
+<<<<<<< HEAD
+                      "borderColor": "#e4e4e7",
+=======
+<<<<<<< HEAD
+                      "borderColor": "#ff6969",
+=======
+                      "borderColor": "#e4e4e7",
+>>>>>>> 894a743 (snapshot update)
+>>>>>>> f9c12c9 (snapshot update)
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          <Text
+            color="#ff6969"
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontSize": 12,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            
+          </Text>
+=======
+>>>>>>> 894a743 (snapshot update)
+>>>>>>> f9c12c9 (snapshot update)
         </View>
         <View
           color="background.primary"
