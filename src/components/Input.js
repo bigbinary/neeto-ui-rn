@@ -29,36 +29,34 @@ const View = styled.View`
   ${layout}
 `;
 
-const InputText = ({ theme, text }) => (
-  <Container
-    bg={theme.colors.background.menubackground}
-    justifyContent="center"
-    px={2}
-  >
-    <Typography>{text}</Typography>
-  </Container>
-);
-
-const LabelText = ({ inline, label }) => (
-  <Typography
-    numberOfLines={1}
-    textStyle="subtext"
-    mb={inline ? "12px" : "7px"}
-  >
-    {label}
-  </Typography>
-);
-
-const ErrorMessage = ({ error, message, theme }) => {
-  if (error) {
-    return (
-      <Typography textStyle="subtext" color={theme.colors.font.danger}>
-        {message}
-      </Typography>
-    );
-  }
-  return null;
-};
+/**
+ *
+ * This component supports below props in addition to default TextInput props.
+ *
+ * <ul>
+ * <li>message</li>
+ * <li>error</li>
+ * <li>inline</li>
+ * <li>brandRight</li>
+ * <li>brandLeft</li>
+ * <li>disabled</li>
+ * </ul>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Input, Container } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  return (
+ *    <Container>
+ *     <Input brandLeft="example" error={true} message="example error" />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ *
+ */
 
 export const Input = ({
   label = "",
@@ -147,6 +145,37 @@ export const Input = ({
       <ErrorMessage theme={theme} error={error} message={message} />
     </Container>
   );
+};
+
+const InputText = ({ theme, text }) => (
+  <Container
+    bg={theme.colors.background.menubackground}
+    justifyContent="center"
+    px={2}
+  >
+    <Typography>{text}</Typography>
+  </Container>
+);
+
+const LabelText = ({ inline, label }) => (
+  <Typography
+    numberOfLines={1}
+    textStyle="subtext"
+    mb={inline ? "12px" : "7px"}
+  >
+    {label}
+  </Typography>
+);
+
+const ErrorMessage = ({ error, message, theme }) => {
+  if (error) {
+    return (
+      <Typography textStyle="subtext" color={theme.colors.font.danger}>
+        {message}
+      </Typography>
+    );
+  }
+  return null;
 };
 
 Input.propTypes = {
