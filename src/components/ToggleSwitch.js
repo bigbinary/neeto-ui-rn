@@ -6,7 +6,13 @@ import PropTypes from "prop-types";
 
 import { Typography, Container } from "@components";
 
-export const ToggleSwitch = ({ value, setValue, label, disabled, ...rest }) => {
+export const ToggleSwitch = ({
+  value,
+  onValueChange,
+  label,
+  disabled,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext);
 
   const circleColorOn = disabled
@@ -29,7 +35,7 @@ export const ToggleSwitch = ({ value, setValue, label, disabled, ...rest }) => {
       <Container flex={0.2} alignItems="flex-end">
         <SwitchToggle
           switchOn={value}
-          onPress={() => !disabled && setValue()}
+          onPress={() => !disabled && onValueChange()}
           circleColorOn={circleColorOn}
           circleColorOff={circleColorOff}
           backgroundColorOff={theme.colors.background.grey200}
@@ -52,7 +58,7 @@ ToggleSwitch.defaultProps = {
 ToggleSwitch.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.bool.isRequired,
-  setValue: PropTypes.func,
+  onValueChange: PropTypes.func,
   disabled: PropTypes.bool,
 };
 

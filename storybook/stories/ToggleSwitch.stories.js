@@ -5,7 +5,7 @@ const ToggleSwitchMetaData = {
   title: "ToggleSwitches",
   component: ToggleSwitch,
   argTypes: {
-    setValue: { action: "pressed the button" },
+    onValueChange: { action: "pressed the button" },
   },
   args: {},
 };
@@ -19,7 +19,7 @@ export const ToggleSwitches = () => {
     <Container flex={1} justifyContent="center" alignItems="center">
       <ToggleSwitch
         value={switchOne}
-        setValue={() => setSwitchOne(prevValue => !prevValue)}
+        onValueChange={() => setSwitchOne(prevValue => !prevValue)}
         label="Conversation assigned to my group"
       />
       <ToggleSwitch
