@@ -14,7 +14,8 @@ export const Avatar = ({
 }) => {
   const acronym = name
     .split(/\s/)
-    .reduce((response, word) => (response += word.slice(0, 1)), "");
+    .reduce((response, word) => (response += word.slice(0, 1)), "")
+    .slice(0, 2);
   const fontSize = size / 2 - 8;
 
   const styles = {
