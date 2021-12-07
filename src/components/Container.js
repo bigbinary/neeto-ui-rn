@@ -26,5 +26,5 @@ Container.propTypes = {
   ...propTypes.border,
   ...propTypes.color,
   ...propTypes.layout,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };

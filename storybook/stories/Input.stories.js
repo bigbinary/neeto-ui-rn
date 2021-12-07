@@ -14,7 +14,7 @@ const keyBoardTypes = [
 
 const InputMetaData = {
   title: "Input",
-  component: InputMetaData,
+  component: Input,
   argTypes: {
     keyboardType: {
       options: keyBoardTypes,
