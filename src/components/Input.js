@@ -29,36 +29,33 @@ const View = styled.View`
   ${layout}
 `;
 
-const InputText = ({ theme, text }) => (
-  <Container
-    bg={theme.colors.background.menubackground}
-    justifyContent="center"
-    px={2}
-  >
-    <Typography>{text}</Typography>
-  </Container>
-);
-
-const LabelText = ({ inline, label }) => (
-  <Typography
-    numberOfLines={1}
-    textStyle="subtext"
-    mb={inline ? "12px" : "7px"}
-  >
-    {label}
-  </Typography>
-);
-
-const ErrorMessage = ({ error, message, theme }) => {
-  if (error) {
-    return (
-      <Typography textStyle="subtext" color={theme.colors.font.danger}>
-        {message}
-      </Typography>
-    );
-  }
-  return null;
-};
+/**
+ *
+ * This component supports below props categories from [styled-system ](/styled-system).
+ * <ul>
+ * <li>flexbox</li>
+ * <li>space</li>
+ * <li>border</li>
+ * <li>buttonStyle</li>
+ * <li>brandLeft</li>
+ * <li>typography</li>
+ * </ul>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Input, Container } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  return (
+ *    <Container>
+ *     <Input brandLeft="example" error={true} message="example error" />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ *
+ */
 
 export const Input = ({
   label = "",
@@ -149,17 +146,69 @@ export const Input = ({
   );
 };
 
+const InputText = ({ theme, text }) => (
+  <Container
+    bg={theme.colors.background.menubackground}
+    justifyContent="center"
+    px={2}
+  >
+    {text && <Typography>{text}</Typography>}
+  </Container>
+);
+
+const LabelText = ({ inline, label }) => (
+  <Typography
+    numberOfLines={1}
+    textStyle="subtext"
+    mb={inline ? "12px" : "7px"}
+  >
+    {label}
+  </Typography>
+);
+
+const ErrorMessage = ({ error, message, theme }) => {
+  if (error) {
+    return (
+      <Typography textStyle="subtext" color={theme.colors.font.danger}>
+        {message}
+      </Typography>
+    );
+  }
+  return null;
+};
+
 Input.propTypes = {
   ...propTypes.flexbox,
   ...propTypes.space,
   ...propTypes.border,
   ...propTypes.buttonStyle,
+  /**
+   * The text to use for the floating label.
+   */
   label: PropTypes.string.isRequired,
+  /**
+   * To display error/info messages
+   */
   message: PropTypes.string,
+  /**
+   * Whether to style the TextInput with error style.
+   */
   error: PropTypes.bool,
+  /**
+   * Changes input layout to inline
+   */
   inline: PropTypes.bool,
+  /**
+   * Display brand to the right of input
+   */
   brandRight: PropTypes.string,
+  /**
+   * Display brand to the left of input
+   */
   brandLeft: PropTypes.string,
+  /**
+   * If true, user won't be able to interact with the component.
+   */
   disabled: PropTypes.bool,
   children: PropTypes.node,
 };
