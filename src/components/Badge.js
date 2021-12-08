@@ -13,10 +13,10 @@ export const Badge = ({
 }) => {
   return (
     <Container
-      width={size}
-      height={size * 0.75}
+      width={`${size}px`}
+      height={`${size * 0.75}px`}
       bg={badgeColor}
-      borderRadius={size * 0.375}
+      borderRadius={`${size * 0.375}px`}
       justifyContent="center"
       alignItems="center"
       {...rest}

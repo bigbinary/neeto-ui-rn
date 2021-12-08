@@ -1,12 +1,54 @@
 import React from "react";
 import { Badge, Container } from "@components";
-import { Typography } from "../../src/components/Typography";
+import { Typography } from "@components/Typography";
+
+const fontTypes = ["xs", "s", "m", "l", "xl", "xxl"];
 
 const BadgeMetaData = {
   title: "Badge",
   component: Badge,
-  args: {},
-  argTypes: {},
+  args: {
+    content: "test",
+    size: 36,
+    fontSize: "xs",
+    badgeColor: "background.base",
+    color: "font.white",
+    fontFamily: "inter400",
+  },
+  argTypes: {
+    content: {
+      control: {
+        type: "text",
+      },
+    },
+    size: {
+      control: {
+        type: "number",
+      },
+    },
+    fontSize: {
+      options: fontTypes,
+      control: {
+        type: "select",
+      },
+    },
+    badgeColor: {
+      control: {
+        type: "color",
+      },
+    },
+    color: {
+      control: {
+        type: "color",
+      },
+    },
+    fontFamily: {
+      options: ["inter400", "inter700"],
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
 export default BadgeMetaData;
@@ -69,6 +111,15 @@ export const Badges = () => {
           </Typography>
         </Container>
       </Container>
+    </Container>
+  );
+};
+
+export const BadgeDemo = args => {
+  return (
+    <Container justifyContent="center" alignItems="center">
+      <Typography>Default</Typography>
+      <Badge {...args} />
     </Container>
   );
 };
