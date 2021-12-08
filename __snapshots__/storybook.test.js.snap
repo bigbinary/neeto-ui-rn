@@ -1454,13 +1454,13 @@ exports[`Storyshots Badge Badge Demo 1`] = `
             width="36px"
           >
             <Text
-              color="font.white"
+              color="font.primary"
               fontFamily="inter400"
               fontSize="xs"
               style={
                 Array [
                   Object {
-                    "color": "#ffffff",
+                    "color": "#1b1f23",
                     "fontFamily": "Inter-Regular",
                     "fontSize": 10,
                   },

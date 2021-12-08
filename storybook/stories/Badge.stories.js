@@ -1,8 +1,11 @@
 import React from "react";
 import { Badge, Container } from "@components";
 import { Typography } from "@components/Typography";
+import { theme } from "../../src/theme";
 
-const fontTypes = ["xs", "s", "m", "l", "xl", "xxl"];
+const fontSizes = Object.keys(theme.fontSizes);
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const fonts = Object.keys(theme.fonts);
 
 const BadgeMetaData = {
   title: "Badge",
@@ -10,10 +13,10 @@ const BadgeMetaData = {
   args: {
     content: "test",
     size: 36,
-    fontSize: "xs",
+    fontSize: fontSizes[0],
     badgeColor: "background.base",
-    color: "font.white",
-    fontFamily: "inter400",
+    color: fontColors[0],
+    fontFamily: fonts[0],
   },
   argTypes: {
     content: {
@@ -27,23 +30,25 @@ const BadgeMetaData = {
       },
     },
     fontSize: {
-      options: fontTypes,
+      options: fontSizes,
       control: {
         type: "select",
       },
     },
     badgeColor: {
+      options: fontColors,
       control: {
-        type: "color",
+        type: "select",
       },
     },
     color: {
+      options: fontColors,
       control: {
-        type: "color",
+        type: "select",
       },
     },
     fontFamily: {
-      options: ["inter400", "inter700"],
+      options: fonts,
       control: {
         type: "select",
       },
