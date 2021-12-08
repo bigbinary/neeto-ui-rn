@@ -1,16 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-exports[`Storyshots Avatars Image Sizes 1`] = `
-=======
-<<<<<<< HEAD
-exports[`Storyshots Avatars Avatars 1`] = `
-=======
-exports[`Storyshots Badge Badges 1`] = `
->>>>>>> 9099b8b (snapshot update)
->>>>>>> ab1fee0 (snapshot update)
-=======
 exports[`Storyshots Avatars Image Sizes 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -1378,7 +1367,6 @@ exports[`Storyshots Avatars Text Sizes 1`] = `
 `;
 
 exports[`Storyshots Badge Badges 1`] = `
->>>>>>> 975cc2e (rebase with master and updated snapshots)
 <RCTScrollView
   contentContainerStyle={
     Object {
@@ -1451,37 +1439,8 @@ exports[`Storyshots Badge Badges 1`] = `
               ]
             }
           >
-            <Image
+            <View
               alignItems="center"
-<<<<<<< HEAD
-<<<<<<< HEAD
-              justifyContent="center"
-              margin={2}
-              source={
-                Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
-                }
-              }
-              style={
-                Object {
-                  "alignSelf": "center",
-                  "borderRadius": 40,
-                  "height": 80,
-                  "width": 80,
-                }
-              }
-            />
-=======
-<<<<<<< HEAD
-              bg="background.grey200"
-              borderRadius={40}
-              color="background.primary"
-              height={80}
-              justifyContent="center"
-              m={2}
-=======
-=======
->>>>>>> 975cc2e (rebase with master and updated snapshots)
               color="background.primary"
               flexDirection="row"
               mb={4}
@@ -1536,65 +1495,6 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-<<<<<<< HEAD
-<<<<<<< HEAD
-                OS
-              </Text>
-            </View>
->>>>>>> ab1fee0 (snapshot update)
-            <Text
-              fontSize="xl"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 24,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              82 * 82 (Default size)
-            </Text>
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <Image
-              alignItems="center"
-              justifyContent="center"
-<<<<<<< HEAD
-              margin={3}
-              source={
-                Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
-                }
-              }
-              style={
-                Object {
-                  "alignSelf": "center",
-                  "borderRadius": 24,
-                  "height": 48,
-                  "width": 48,
-                }
-              }
-            />
-=======
-              m={2}
-=======
-=======
->>>>>>> 975cc2e (rebase with master and updated snapshots)
                 Default size
               </Text>
             </View>
@@ -1749,70 +1649,6 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-<<<<<<< HEAD
-<<<<<<< HEAD
-                OS
-              </Text>
-            </View>
->>>>>>> ab1fee0 (snapshot update)
-            <Text
-              fontSize="l"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 18,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              48 * 48
-            </Text>
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <Image
-              alignItems="center"
-<<<<<<< HEAD
-              justifyContent="center"
-              margin={3}
-              source={
-                Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
-                }
-              }
-              style={
-                Object {
-                  "alignSelf": "center",
-                  "borderRadius": 21,
-                  "height": 42,
-                  "width": 42,
-                }
-              }
-            />
-=======
-              bg="background.grey200"
-              borderRadius={21}
-              color="background.primary"
-              height={42}
-              justifyContent="center"
-              m={2}
-=======
-=======
->>>>>>> 975cc2e (rebase with master and updated snapshots)
                 Custom fontSize
               </Text>
             </View>
@@ -2103,1280 +1939,9 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-<<<<<<< HEAD
-<<<<<<< HEAD
-                OS
-              </Text>
-            </View>
->>>>>>> ab1fee0 (snapshot update)
-            <Text
-              fontSize="s"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              32 * 32
-            </Text>
-<<<<<<< HEAD
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <Image
-              alignItems="center"
-              justifyContent="center"
-              margin={3}
-              source={
-                Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
-                }
-              }
-              style={
-                Object {
-                  "alignSelf": "center",
-                  "borderRadius": 16,
-                  "height": 32,
-                  "width": 32,
-                }
-              }
-            />
-            <Text
-              fontSize="s"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              32 * 32
-            </Text>
-=======
-=======
-=======
->>>>>>> 975cc2e (rebase with master and updated snapshots)
                 custom font family
               </Text>
             </View>
-<<<<<<< HEAD
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              mb={4}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "marginBottom": 32,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.base"
-                borderRadius={12}
-                color="background.primary"
-                height={24}
-                justifyContent="center"
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
-                      "color": "#ffffff",
-                      "height": 24,
-                      "justifyContent": "center",
-                      "width": 32,
-                    },
-                  ]
-                }
-                width={32}
-              >
-                <Text
-                  color="font.white"
-                  fontFamily="inter700"
-                  fontSize="12px"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 12,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  3
-                </Text>
-              </View>
-              <Text
-                fontSize="l"
-                px={2}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 18,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                custom border radius
-              </Text>
-            </View>
-<<<<<<< HEAD
->>>>>>> 9099b8b (snapshot update)
->>>>>>> ab1fee0 (snapshot update)
-=======
->>>>>>> 975cc2e (rebase with master and updated snapshots)
-=======
->>>>>>> fb93d47 (updated stories)
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Avatars Text BG Colors 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "flexGrow": 1,
-    }
-  }
->
-  <View>
-    <View
-      color="background.primary"
-      flexGrow={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexGrow": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          alignItems="center"
-          color="background.primary"
-          flex={1}
-          justifyContent="center"
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "color": "#ffffff",
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "justifyContent": "center",
-              },
-            ]
-          }
-        >
-          <View
-            color="background.primary"
-            flex={1}
-            justifyContent="center"
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "flexBasis": 0,
-                  "flexGrow": 1,
-                  "flexShrink": 1,
-                  "justifyContent": "center",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.white"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ffffff",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.grey600"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#68737d",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                BG White
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.black"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#000000",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.grey600"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#68737d",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                BG Black
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.secondary"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#e4e4e7",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.grey600"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#68737d",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                BG Secondary
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.danger"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#ff6969",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.grey600"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#68737d",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                BG Danger
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Avatars Text Colors 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "flexGrow": 1,
-    }
-  }
->
-  <View>
-    <View
-      color="background.primary"
-      flexGrow={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexGrow": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          alignItems="center"
-          color="background.primary"
-          flex={1}
-          justifyContent="center"
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "color": "#ffffff",
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "justifyContent": "center",
-              },
-            ]
-          }
-        >
-          <View
-            color="background.primary"
-            flex={1}
-            justifyContent="center"
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "flexBasis": 0,
-                  "flexGrow": 1,
-                  "flexShrink": 1,
-                  "justifyContent": "center",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.grey200"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#e9ebed",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.white"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                Font White
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.grey200"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#e9ebed",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.black"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#000000",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                Font Black
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.grey200"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#e9ebed",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.secondary"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#828282",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                Font Secondary
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.grey200"
-                borderRadius={21}
-                color="background.primary"
-                height={42}
-                justifyContent="center"
-                m={2}
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#e9ebed",
-                      "borderRadius": 21,
-                      "color": "#ffffff",
-                      "height": 42,
-                      "justifyContent": "center",
-                      "marginBottom": 8,
-                      "marginLeft": 8,
-                      "marginRight": 8,
-                      "marginTop": 8,
-                      "width": 42,
-                    },
-                  ]
-                }
-                width={42}
-              >
-                <Text
-                  color="font.danger"
-                  fontFamily="inter700"
-                  fontSize={14}
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ff6969",
-                        "fontFamily": "Inter-Bold",
-                        "fontSize": 14,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  OS
-                </Text>
-              </View>
-              <Text
-                fontSize="m"
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                Font Danger
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
-exports[`Storyshots Avatars Text Sizes 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "flexGrow": 1,
-    }
-  }
->
-  <View>
-    <View
-      color="background.primary"
-      flexGrow={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexGrow": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          alignItems="center"
-          color="background.primary"
-          flex={1}
-          justifyContent="center"
-          style={
-            Array [
-              Object {
-                "alignItems": "center",
-                "color": "#ffffff",
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "justifyContent": "center",
-              },
-            ]
-          }
-        >
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              bg="background.grey200"
-              borderRadius={40}
-              color="background.primary"
-              height={80}
-              justifyContent="center"
-              m={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#e9ebed",
-                    "borderRadius": 40,
-                    "color": "#ffffff",
-                    "height": 80,
-                    "justifyContent": "center",
-                    "marginBottom": 8,
-                    "marginLeft": 8,
-                    "marginRight": 8,
-                    "marginTop": 8,
-                    "width": 80,
-                  },
-                ]
-              }
-              width={80}
-            >
-              <Text
-                color="font.grey600"
-                fontFamily="inter700"
-                fontSize={32}
-                style={
-                  Array [
-                    Object {
-                      "color": "#68737d",
-                      "fontFamily": "Inter-Bold",
-                      "fontSize": 32,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                OS
-              </Text>
-            </View>
-            <Text
-              fontSize="xl"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 24,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              82 * 82 (Default size)
-            </Text>
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              bg="background.grey200"
-              borderRadius={24}
-              color="background.primary"
-              height={48}
-              justifyContent="center"
-              m={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#e9ebed",
-                    "borderRadius": 24,
-                    "color": "#ffffff",
-                    "height": 48,
-                    "justifyContent": "center",
-                    "marginBottom": 8,
-                    "marginLeft": 8,
-                    "marginRight": 8,
-                    "marginTop": 8,
-                    "width": 48,
-                  },
-                ]
-              }
-              width={48}
-            >
-              <Text
-                color="font.grey600"
-                fontFamily="inter700"
-                fontSize={16}
-                style={
-                  Array [
-                    Object {
-                      "color": "#68737d",
-                      "fontFamily": "Inter-Bold",
-                      "fontSize": 16,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                OS
-              </Text>
-            </View>
-            <Text
-              fontSize="l"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 18,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              48 * 48
-            </Text>
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              bg="background.grey200"
-              borderRadius={21}
-              color="background.primary"
-              height={42}
-              justifyContent="center"
-              m={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#e9ebed",
-                    "borderRadius": 21,
-                    "color": "#ffffff",
-                    "height": 42,
-                    "justifyContent": "center",
-                    "marginBottom": 8,
-                    "marginLeft": 8,
-                    "marginRight": 8,
-                    "marginTop": 8,
-                    "width": 42,
-                  },
-                ]
-              }
-              width={42}
-            >
-              <Text
-                color="font.grey600"
-                fontFamily="inter700"
-                fontSize={14}
-                style={
-                  Array [
-                    Object {
-                      "color": "#68737d",
-                      "fontFamily": "Inter-Bold",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                OS
-              </Text>
-            </View>
-            <Text
-              fontSize="m"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 14,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              42 * 42
-            </Text>
-          </View>
-          <View
-            alignItems="center"
-            color="background.primary"
-            flexDirection="row"
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "color": "#ffffff",
-                  "flexDirection": "row",
-                },
-              ]
-            }
-          >
-            <View
-              alignItems="center"
-              bg="background.grey200"
-              borderRadius={16}
-              color="background.primary"
-              height={32}
-              justifyContent="center"
-              m={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#e9ebed",
-                    "borderRadius": 16,
-                    "color": "#ffffff",
-                    "height": 32,
-                    "justifyContent": "center",
-                    "marginBottom": 8,
-                    "marginLeft": 8,
-                    "marginRight": 8,
-                    "marginTop": 8,
-                    "width": 32,
-                  },
-                ]
-              }
-              width={32}
-            >
-              <Text
-                color="font.grey600"
-                fontFamily="inter700"
-                fontSize={14}
-                style={
-                  Array [
-                    Object {
-                      "color": "#68737d",
-                      "fontFamily": "Inter-Bold",
-                      "fontSize": 14,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                OS
-              </Text>
-            </View>
-            <Text
-              fontSize="s"
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="defaultTextStyle"
-            >
-              32 * 32
-            </Text>
           </View>
         </View>
       </View>
@@ -6517,143 +5082,6 @@ exports[`Storyshots Input Input Demo 1`] = `
 </RCTScrollView>
 `;
 
-exports[`Storyshots Input Input Demo 1`] = `
-<RCTScrollView
-  contentContainerStyle={
-    Object {
-      "flexGrow": 1,
-    }
-  }
->
-  <View>
-    <View
-      color="background.primary"
-      flexGrow={1}
-      p={10}
-      style={
-        Array [
-          Object {
-            "color": "#ffffff",
-            "flexGrow": 1,
-            "paddingBottom": 10,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "paddingTop": 10,
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "flex": 1,
-            },
-            Object {
-              "backgroundColor": "white",
-            },
-          ]
-        }
-      >
-        <View
-          color="background.primary"
-          mb={20}
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-                "marginBottom": 20,
-              },
-            ]
-          }
-        >
-          <Text
-            mb="7px"
-            numberOfLines={1}
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontSize": 12,
-                  "marginBottom": 7,
-                },
-              ]
-            }
-            textStyle="subtext"
-          >
-            Default
-          </Text>
-          <View
-            color="background.primary"
-            flexDirection="column"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "flexDirection": "column",
-                },
-              ]
-            }
-          >
-            <View
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "width": "100%",
-                  },
-                ]
-              }
-              width="100%"
-            >
-              <TextInput
-                border="#e4e4e7"
-                borderRadius={2}
-                color="#1b1f23"
-                defaultValue={null}
-                editable={true}
-                flex={1}
-                fontFamily="inter400"
-                fontSize="14px"
-                height={40}
-                keyboardType="default"
-                placeholder="placeholder"
-                px={2}
-                secureTextEntry={false}
-                style={
-                  Array [
-                    Object {
-                      "borderColor": "#e4e4e7",
-                      "borderRadius": 2,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexBasis": 0,
-                      "flexGrow": 1,
-                      "flexShrink": 1,
-                      "fontFamily": "Inter-Regular",
-                      "fontSize": 14,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              />
-            </View>
-          </View>
-        </View>
-      </View>
-    </View>
-  </View>
-</RCTScrollView>
-`;
-
 exports[`Storyshots Input Inputs 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -7462,8 +5890,6 @@ exports[`Storyshots Input Inputs 1`] = `
             ]
           }
         >
-<<<<<<< HEAD
-=======
           <Text
             mb="7px"
             numberOfLines={1}
@@ -7543,129 +5969,6 @@ exports[`Storyshots Input Inputs 1`] = `
               />
             </View>
           </View>
->>>>>>> ab1fee0 (snapshot update)
-          <Text
-            mb="7px"
-            numberOfLines={1}
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontSize": 12,
-                  "marginBottom": 7,
-                },
-              ]
-            }
-            textStyle="subtext"
-          >
-            Default
-          </Text>
-<<<<<<< HEAD
-=======
-        </View>
-        <View
-          color="background.primary"
-          mb={20}
-          style={
-            Array [
-              Object {
-                "color": "#ffffff",
-                "marginBottom": 20,
-              },
-            ]
-          }
-        >
-          <Text
-            mb="7px"
-            numberOfLines={1}
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                  "fontSize": 12,
-                  "marginBottom": 7,
-                },
-              ]
-            }
-            textStyle="subtext"
-          >
-            Default
-          </Text>
->>>>>>> ab1fee0 (snapshot update)
-          <View
-            color="background.primary"
-            flexDirection="column"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "flexDirection": "column",
-                },
-              ]
-            }
-          >
-            <View
-              color="background.primary"
-              flexDirection="row"
-              style={
-                Array [
-                  Object {
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "width": "100%",
-                  },
-                ]
-              }
-              width="100%"
-            >
-              <TextInput
-<<<<<<< HEAD
-                border="#ff6969"
-                borderRadius={2}
-                color="#ff6969"
-=======
-                border="#e4e4e7"
-                borderRadius={2}
-                color="#1b1f23"
->>>>>>> ab1fee0 (snapshot update)
-                defaultValue={null}
-                editable={true}
-                flex={1}
-                fontFamily="inter400"
-                fontSize="14px"
-                height={40}
-                keyboardType="default"
-                placeholder="placeholder"
-                px={2}
-                secureTextEntry={false}
-                style={
-                  Array [
-                    Object {
-<<<<<<< HEAD
-                      "borderColor": "#ff6969",
-=======
-                      "borderColor": "#e4e4e7",
->>>>>>> ab1fee0 (snapshot update)
-                      "borderRadius": 2,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "flexBasis": 0,
-                      "flexGrow": 1,
-                      "flexShrink": 1,
-                      "fontFamily": "Inter-Regular",
-                      "fontSize": 14,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="subtext"
-              />
-            </View>
-          </View>
-<<<<<<< HEAD
           <Text
             color="#ff6969"
             style={
@@ -7680,8 +5983,6 @@ exports[`Storyshots Input Inputs 1`] = `
           >
             
           </Text>
-=======
->>>>>>> ab1fee0 (snapshot update)
         </View>
         <View
           color="background.primary"
@@ -7965,6 +6266,212 @@ exports[`Storyshots Input Inputs 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            alignItems="center"
+            borderColor="#e4e4e7"
+            borderRadius={2}
+            borderWidth={1}
+            color="background.primary"
+            flexDirection="row"
+            p={3}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#e4e4e7",
+                  "borderRadius": 2,
+                  "borderWidth": 1,
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              flex={0.8}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "flexBasis": 0,
+                    "flexGrow": 0.8,
+                    "flexShrink": 1,
+                    "fontSize": 12,
+                  },
+                ]
+              }
+              textStyle="subtext"
+            >
+              Toggle Switch Demo
+            </Text>
+            <View
+              alignItems="flex-end"
+              color="background.primary"
+              flex={0.2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-end",
+                    "color": "#ffffff",
+                    "flexBasis": 0,
+                    "flexGrow": 0.2,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "rgba(0, 0, 0, 1)",
+                      "borderRadius": 10,
+                      "flexDirection": "row",
+                      "height": 18,
+                      "padding": 2,
+                      "width": 38,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "left": 5,
+                        "position": "absolute",
+                      }
+                    }
+                  />
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(255, 255, 255, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
+                        "transform": Array [
+                          Object {
+                            "translateX": 20,
+                          },
+                        ],
+                        "width": 14,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <Text />
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -8160,6 +6667,294 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   >
                     <Text />
                   </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            alignItems="center"
+            borderColor="#e4e4e7"
+            borderRadius={2}
+            borderWidth={1}
+            color="background.primary"
+            flexDirection="row"
+            mt={3}
+            p={3}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#e4e4e7",
+                  "borderRadius": 2,
+                  "borderWidth": 1,
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                  "marginTop": 16,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              flex={0.8}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "flexBasis": 0,
+                    "flexGrow": 0.8,
+                    "flexShrink": 1,
+                    "fontSize": 12,
+                  },
+                ]
+              }
+              textStyle="subtext"
+            >
+              Disabled switched on toggle button
+            </Text>
+            <View
+              alignItems="flex-end"
+              color="background.primary"
+              flex={0.2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-end",
+                    "color": "#ffffff",
+                    "flexBasis": 0,
+                    "flexGrow": 0.2,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "rgba(0, 0, 0, 1)",
+                      "borderRadius": 10,
+                      "flexDirection": "row",
+                      "height": 18,
+                      "padding": 2,
+                      "width": 38,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "left": 5,
+                        "position": "absolute",
+                      }
+                    }
+                  />
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(135, 146, 157, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
+                        "transform": Array [
+                          Object {
+                            "translateX": 20,
+                          },
+                        ],
+                        "width": 14,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <Text />
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            alignItems="center"
+            borderColor="#e4e4e7"
+            borderRadius={2}
+            borderWidth={1}
+            color="background.primary"
+            flexDirection="row"
+            mt={3}
+            p={3}
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderColor": "#e4e4e7",
+                  "borderRadius": 2,
+                  "borderWidth": 1,
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                  "marginTop": 16,
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
+                },
+              ]
+            }
+          >
+            <Text
+              flex={0.8}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "flexBasis": 0,
+                    "flexGrow": 0.8,
+                    "flexShrink": 1,
+                    "fontSize": 12,
+                  },
+                ]
+              }
+              textStyle="subtext"
+            >
+              Disabled switched off toggle button
+            </Text>
+            <View
+              alignItems="flex-end"
+              color="background.primary"
+              flex={0.2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-end",
+                    "color": "#ffffff",
+                    "flexBasis": 0,
+                    "flexGrow": 0.2,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "rgba(233, 235, 237, 1)",
+                      "borderRadius": 10,
+                      "flexDirection": "row",
+                      "height": 18,
+                      "padding": 2,
+                      "width": 38,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(244, 245, 247, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
+                        "transform": Array [
+                          Object {
+                            "translateX": 0,
+                          },
+                        ],
+                        "width": 14,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <Text />
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "right": 5,
+                      }
+                    }
+                  />
                 </View>
               </View>
             </View>
