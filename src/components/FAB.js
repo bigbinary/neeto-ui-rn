@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   flexbox,
+  position,
   space,
   border,
   buttonStyle,
@@ -13,6 +14,7 @@ import PropTypes from "prop-types";
 
 export const TouchableOpacity = styled.TouchableOpacity`
   ${buttonStyle}
+  ${position}
   ${flexbox}
   ${space}
   ${border}
@@ -100,6 +102,7 @@ FAB.defaultProps = {
 
 FAB.propTypes = {
   ...propTypes.flexbox,
+  ...propTypes.position,
   ...propTypes.space,
   ...propTypes.border,
   ...propTypes.layout,
