@@ -1,6 +1,6 @@
 {
   "name": "@bigbinary/neetoui-rn",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "main": "lib/index.js",
   "author": "BigBinary",
   "license": "MIT",
