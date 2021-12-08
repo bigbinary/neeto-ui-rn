@@ -21,7 +21,7 @@ export default TypographyStories;
 
 export const BottomSheetDemo = args => {
   const [bottomSheetVisibility, setBottomSheetVisibility] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItemIndex, setSelectedItemIndex] = useState();
 
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
@@ -35,12 +35,13 @@ export const BottomSheetDemo = args => {
           setBottomSheetVisibility(false);
         }}
         onItemPress={index => {
-          setSelectedItem(args.data[index]);
+          setSelectedItemIndex(index);
         }}
         title="PROJECT"
         data={args.data}
+        selectedItemIndex={selectedItemIndex}
       />
-      {selectedItem && (
+      {selectedItemIndex !== null && (
         <Typography
           py={50}
           alignText="center"
@@ -48,7 +49,7 @@ export const BottomSheetDemo = args => {
           color="font.secondary"
           fontFamily="inter700"
         >
-          {`Selected Item: ${selectedItem}`}
+          {`Selected Item: ${args.data[selectedItemIndex]}`}
         </Typography>
       )}
     </Container>

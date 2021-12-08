@@ -61,7 +61,7 @@ Title.propTypes = {
   bg: PropTypes.string,
 };
 
-const ContentRow = React.memo(({ label, onPress, bg }) => {
+const ContentRow = React.memo(({ label, onPress, bg, isSelected }) => {
   return (
     <>
       <TouchableOpacity
@@ -71,7 +71,12 @@ const ContentRow = React.memo(({ label, onPress, bg }) => {
         borderRadius={20}
         onPress={onPress}
       >
-        <Typography textStyle="body">{label}</Typography>
+        <Typography
+          textStyle="body"
+          fontFamily={isSelected ? "inter700" : "inter400"}
+        >
+          {label}
+        </Typography>
       </TouchableOpacity>
       <Border />
     </>
@@ -82,6 +87,7 @@ ContentRow.propTypes = {
   label: PropTypes.string,
   onPress: PropTypes.func,
   bg: PropTypes.string,
+  isSelected: PropTypes.bool,
 };
 
 /**
@@ -112,6 +118,7 @@ export const BottomSheet = ({
   hide,
   isVisible,
   onItemPress,
+  selectedItemIndex,
   bg,
 }) => {
   return (
@@ -132,6 +139,7 @@ export const BottomSheet = ({
             renderItem={({ item, index }) => {
               return (
                 <ContentRow
+                  isSelected={index === selectedItemIndex}
                   bg={bg}
                   key={index}
                   onPress={() => {
@@ -177,6 +185,10 @@ BottomSheet.propTypes = {
    * Callback which returns the index of selected item.
    */
   onItemPress: PropTypes.func,
+  /**
+   * Index of selected Item.
+   */
+  selectedItemIndex: PropTypes.number,
   /**
    * Background color.
    */
