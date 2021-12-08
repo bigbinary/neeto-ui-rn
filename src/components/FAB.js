@@ -20,7 +20,46 @@ export const TouchableOpacity = styled.TouchableOpacity`
   ${color}
 `;
 
-export const FAB = ({ Icon, bg, disabled, ...rest }) => {
+/**
+ * FAB component is a floating action button which represents the primary action in an application and is built on top of styled-system.
+ *
+ * This component supports below props categories from [styled-system ](/styled-system).
+ *
+ * <ul>
+ * <li>space</li>
+ * <li>layout</li>
+ * <li>flexbox</li>
+ * <li>color</li>
+ * <li>textStyle</li>
+ * <li>buttonStyle</li>
+ * </ul>
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/fab/buttonstyles.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { FAB, Container, Typography } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  return (
+ *    <Container>
+ *        <FAB
+ *          Icon={() => {
+ *            return <Typography>🔔</Typography>;
+ *          }}
+ *        />
+ *     </Container>
+ *  );
+ * }
+ * ```
+ *
+ * @extends StyledSystems props /styled-system
+ */
+
+export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: "#000",
     shadowOffset: {
@@ -38,10 +77,13 @@ export const FAB = ({ Icon, bg, disabled, ...rest }) => {
   }
   return (
     <TouchableOpacity
-      bg={bg}
+      bg={variant !== "inverse" && bg}
       disabled={disabled}
-      {...rest}
+      variant={variant}
+      onPress={onPress}
       style={[style, shadowStyle]}
+      borderColor={variant === "inverse" && bg}
+      {...rest}
     >
       <Icon />
     </TouchableOpacity>
@@ -62,5 +104,12 @@ FAB.propTypes = {
   ...propTypes.border,
   ...propTypes.layout,
   ...propTypes.color,
+  /**
+   * Icon to display for the Button.
+   */
   Icon: PropTypes.elementType.isRequired,
+  /**
+   * Function to execute on press.
+   */
+  onPress: PropTypes.func.isRequired,
 };

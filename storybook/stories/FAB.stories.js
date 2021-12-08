@@ -1,10 +1,46 @@
 import React from "react";
 import { Container, Typography, FAB } from "@components";
 
+const variants = ["solid", "inverse"];
+
 const FABStories = {
   title: "FABs",
+  component: FAB,
+  args: {
+    variant: variants[0],
+    disabled: false,
+    bg: "",
+  },
+  argTypes: {
+    variant: {
+      options: variants,
+      control: { type: "radios" },
+    },
+    disabled: {
+      options: [true, false],
+    },
+    onPress: { action: "pressed the button" },
+  },
+  parameters: {
+    notes: "Checkout the different props in controls section",
+  },
 };
+
 export default FABStories;
+
+export const FABSDemo = args => {
+  return (
+    <Container flex={1} justifyContent="center" alignItems="center">
+      <FAB
+        Icon={() => {
+          return <Typography>🔔</Typography>;
+        }}
+        onPress={() => alert("FAB clicked")}
+        {...args}
+      />
+    </Container>
+  );
+};
 
 export const FABS = () => {
   return (
@@ -16,6 +52,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Default Button</Typography>
         </Container>
@@ -27,6 +64,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>➕</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Inverse Button</Typography>
         </Container>
@@ -38,6 +76,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Disabled Default Button</Typography>
         </Container>
@@ -50,6 +89,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>➕</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Disabled Inverse Button</Typography>
         </Container>
@@ -60,6 +100,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Default Button with shadow style</Typography>
         </Container>
@@ -70,6 +111,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Button with Background color</Typography>
         </Container>
