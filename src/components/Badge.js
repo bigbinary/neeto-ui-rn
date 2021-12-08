@@ -45,21 +45,23 @@ export const Badge = ({
   ...rest
 }) => {
   return (
-    <Container
-      width={`${size}px`}
-      height={`${size * 0.75}px`}
-      bg={badgeColor}
-      borderRadius={`${size * 0.375}px`}
-      justifyContent="center"
-      alignItems="center"
-      {...rest}
-    >
-      {content && (
-        <Typography fontSize={fontSize} fontFamily={fontFamily} color={color}>
-          {content}
-        </Typography>
-      )}
-    </Container>
+    size > 0 && (
+      <Container
+        width={`${size}px`}
+        height={`${size * 0.75}px`}
+        bg={badgeColor}
+        borderRadius={`${size * 0.375}px`}
+        justifyContent="center"
+        alignItems="center"
+        {...rest}
+      >
+        {content?.length > 0 && (
+          <Typography fontSize={fontSize} fontFamily={fontFamily} color={color}>
+            {content}
+          </Typography>
+        )}
+      </Container>
+    )
   );
 };
 
