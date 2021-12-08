@@ -121,7 +121,13 @@ export const Input = ({
           </Container>
         )}
         <Container flexDirection="row" width="100%">
-          {brandLeft && <InputText theme={theme} text={brandLeft} />}
+          {brandLeft && (
+            <InputText
+              theme={theme}
+              text={brandLeft}
+              borderColor={borderColor}
+            />
+          )}
           <TextInput
             height={40}
             flex={1}
@@ -131,7 +137,13 @@ export const Input = ({
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
           />
-          {brandRight && <InputText theme={theme} text={brandRight} />}
+          {brandRight && (
+            <InputText
+              theme={theme}
+              text={brandRight}
+              borderColor={borderColor}
+            />
+          )}
         </Container>
       </Container>
       {inline && (
@@ -146,11 +158,13 @@ export const Input = ({
   );
 };
 
-const InputText = ({ theme, text }) => (
+const InputText = ({ theme, text, borderColor }) => (
   <Container
     bg={theme.colors.background.menubackground}
     justifyContent="center"
     px={2}
+    borderColor={borderColor}
+    borderWidth="1px"
   >
     {text && <Typography>{text}</Typography>}
   </Container>
@@ -215,6 +229,7 @@ Input.propTypes = {
 
 InputText.propTypes = {
   text: PropTypes.string,
+  borderColor: PropTypes.string,
 };
 
 LabelText.propTypes = {
