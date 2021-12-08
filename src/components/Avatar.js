@@ -4,6 +4,40 @@ import { Image } from "react-native";
 
 import { Typography, Container } from "@components";
 
+/**
+ * Avatars can be used to represent people in a graphical way.
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/avatar/bgcolors.png" />
+ *   <img src="screenshots/avatar/fontcolors.png" />
+ * </div>
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/avatar/imagesizes.png" />
+ *   <img src="screenshots/avatar/textsizes.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Typography, Avatar } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  return (
+ *    <Container>
+ *     <Avatar
+ *      size={42}
+ *      name="Oliver Smith"
+ *      bgColor="background.black"
+ *      fontColor="font.white"
+ *      imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+ *     />
+ *   </Container>
+ *  );
+ * }
+ * ```
+ */
+
 export const Avatar = ({
   name,
   size = 80,
@@ -61,9 +95,24 @@ Avatar.defaultProps = {
 };
 
 Avatar.propTypes = {
+  /**
+   * Name to obtain user initials to show as the text in the Avatar.
+   */
   name: PropTypes.string.isRequired,
+  /**
+   * Size of the avatar.
+   */
   size: PropTypes.number,
+  /**
+   * Custom color for the avatar.
+   */
   bgColor: PropTypes.string,
+  /**
+   * Custom color for the text.
+   */
   fontColor: PropTypes.string,
+  /**
+   * Image to display for the Avatar. It accepts a standard React Native Image source prop Or a function that returns an Image.
+   */
   imageUrl: PropTypes.string,
 };
