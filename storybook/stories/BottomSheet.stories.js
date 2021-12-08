@@ -21,7 +21,7 @@ export default TypographyStories;
 
 export const BottomSheetDemo = args => {
   const [bottomSheetVisibility, setBottomSheetVisibility] = useState(false);
-  const [selectedItemIndex, setSelectedItemIndex] = useState();
+  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
 
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
