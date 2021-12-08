@@ -6,3 +6,4 @@ export { FAB } from "./FAB";
 export { ToggleSwitch } from "./ToggleSwitch";
 export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
+export { BottomSheet } from "./BottomSheet";
