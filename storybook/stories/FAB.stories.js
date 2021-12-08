@@ -35,6 +35,7 @@ export const FABSDemo = args => {
         Icon={() => {
           return <Typography>🔔</Typography>;
         }}
+        onPress={() => alert("FAB clicked")}
         {...args}
       />
     </Container>
@@ -51,6 +52,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Default Button</Typography>
         </Container>
@@ -62,6 +64,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>➕</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Inverse Button</Typography>
         </Container>
@@ -73,6 +76,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Disabled Default Button</Typography>
         </Container>
@@ -85,6 +89,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>➕</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Disabled Inverse Button</Typography>
         </Container>
@@ -95,6 +100,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Default Button with shadow style</Typography>
         </Container>
@@ -105,6 +111,7 @@ export const FABS = () => {
             Icon={() => {
               return <Typography>🔔</Typography>;
             }}
+            onPress={() => alert("FAB clicked")}
           />
           <Typography>Button with Background color</Typography>
         </Container>

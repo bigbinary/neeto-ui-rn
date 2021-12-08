@@ -59,7 +59,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
  * @extends StyledSystems props /styled-system
  */
 
-export const FAB = ({ Icon, bg, disabled, variant, ...rest }) => {
+export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: "#000",
     shadowOffset: {
@@ -80,6 +80,7 @@ export const FAB = ({ Icon, bg, disabled, variant, ...rest }) => {
       bg={variant !== "inverse" && bg}
       disabled={disabled}
       variant={variant}
+      onPress={onPress}
       style={[style, shadowStyle]}
       borderColor={variant === "inverse" && bg}
       {...rest}
@@ -103,5 +104,12 @@ FAB.propTypes = {
   ...propTypes.border,
   ...propTypes.layout,
   ...propTypes.color,
+  /**
+   * Icon to display for the Button.
+   */
   Icon: PropTypes.elementType.isRequired,
+  /**
+   * Function to execute on press.
+   */
+  onPress: PropTypes.func.isRequired,
 };
