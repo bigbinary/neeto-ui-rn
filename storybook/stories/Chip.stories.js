@@ -43,7 +43,7 @@ export const Chips = () => {
       </Container>
       <Container my={1}>
         <Chip
-          label="Outlined chip with icon"
+          label="Outlined chip disabled"
           LeftIcon={() => <Typography>📣</Typography>}
           variant="outlined"
           onChipPress={() => {

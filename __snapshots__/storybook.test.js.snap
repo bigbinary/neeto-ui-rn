@@ -4476,7 +4476,7 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-                Outlined chip with icon
+                Outlined chip disabled
               </Text>
               <View
                 accessibilityState={
