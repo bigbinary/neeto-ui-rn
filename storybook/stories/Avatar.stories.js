@@ -1,11 +1,49 @@
 import React from "react";
+
 import { Container, Avatar, Typography } from "@components";
+import { theme } from "../../src/theme";
+
+const name = "Oliver Smith";
+const size = 84;
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const bgColors = Object.keys(theme.colors.background).map(
+  color => `background.${color}`
+);
 
 const AvatarStories = {
   title: "Avatars",
   component: Avatar,
+  args: {
+    name,
+    size,
+    fontColor: fontColors[0],
+    bgColor: bgColors[0],
+    imageUrl: "",
+  },
+  argTypes: {
+    fontColor: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    bgColor: {
+      options: bgColors,
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 export default AvatarStories;
+
+export const AvatarDemo = args => {
+  return (
+    <Container flex={1} justifyContent="center" alignItems="center">
+      <Avatar {...args} size={parseInt(args.size) || 80} />
+    </Container>
+  );
+};
 
 export const TextSizes = () => {
   return (
