@@ -14,7 +14,7 @@ const keyBoardTypes = [
 
 const InputMetaData = {
   title: "Input",
-  component: Input,
+  component: InputDemo,
   argTypes: {
     keyboardType: {
       options: keyBoardTypes,
@@ -69,16 +69,15 @@ const InputMetaData = {
 
 export default InputMetaData;
 
-export const Inputs = props => {
+export const Inputs = () => {
   return (
     <>
-      <Input label="Default Input" {...props} />
-      <Input label="with placeholder" placeholder="Placeholder" {...props} />
-      <Input label="with value" value="has value" {...props} />
-      <Input label="Disabled" {...props} disabled={true} />
+      <Input label="Default Input" />
+      <Input label="with placeholder" placeholder="Placeholder" />
+      <Input label="with value" value="has value" />
+      <Input label="Disabled" disabled={true} />
       <Input
         label="with error message"
-        {...props}
         message="This is an error"
         error={true}
       />
@@ -86,24 +85,13 @@ export const Inputs = props => {
         label="Email"
         value="bigbinary@example.com"
         keyboardType="email-address"
-        {...props}
       />
-      <Input
-        label="Password"
-        {...props}
-        value="password"
-        secureTextEntry={true}
-      />
-      <Input label="Inline" inline={true} {...props} />
-      <Input label="Inline with error" inline={true} error {...props} />
-      <Input
-        label="inline disabled input"
-        inline={true}
-        disabled={true}
-        {...props}
-      />
-      <Input label="Brand Left" brandLeft="BRAND-LEFT" {...props} />
-      <Input label="Brand Right" brandRight="BRAND-RIGHT" {...props} />
+      <Input label="Password" value="password" secureTextEntry={true} />
+      <Input label="Inline" inline={true} />
+      <Input label="Inline with error" inline={true} error />
+      <Input label="inline disabled input" inline={true} disabled={true} />
+      <Input label="Brand Left" brandLeft="BRAND-LEFT" />
+      <Input label="Brand Right" brandRight="BRAND-RIGHT" />
     </>
   );
 };
