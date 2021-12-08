@@ -2808,7 +2808,7 @@ exports[`Storyshots FABs FABS 1`] = `
               <View
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -2884,7 +2884,7 @@ exports[`Storyshots FABs FABS 1`] = `
               <View
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -2968,7 +2968,7 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -3049,7 +3049,7 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -3128,7 +3128,7 @@ exports[`Storyshots FABs FABS 1`] = `
               <View
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -3204,7 +3204,7 @@ exports[`Storyshots FABs FABS 1`] = `
               <View
                 accessible={true}
                 collapsable={false}
-                focusable={false}
+                focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
                 onResponderGrant={[Function]}
@@ -3336,7 +3336,7 @@ exports[`Storyshots FABs FABS Demo 1`] = `
             }
             accessible={true}
             collapsable={false}
-            focusable={false}
+            focusable={true}
             nativeID="animatedComponent"
             onClick={[Function]}
             onResponderGrant={[Function]}
