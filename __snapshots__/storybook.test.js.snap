@@ -1366,6 +1366,118 @@ exports[`Storyshots Avatars Text Sizes 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Badge Badge Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Default
+          </Text>
+          <View
+            alignItems="center"
+            bg="background.base"
+            borderRadius="13.5px"
+            color="background.primary"
+            height="27px"
+            justifyContent="center"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 13.5,
+                  "color": "#ffffff",
+                  "height": 27,
+                  "justifyContent": "center",
+                  "width": 36,
+                },
+              ]
+            }
+            width="36px"
+          >
+            <Text
+              color="font.primary"
+              fontFamily="inter400"
+              fontSize="xs"
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontFamily": "Inter-Regular",
+                    "fontSize": 10,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              test
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Badge Badges 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -1461,9 +1573,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={7.875}
+                borderRadius="7.875px"
                 color="background.primary"
-                height={15.75}
+                height="15.75px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1478,7 +1590,7 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={21}
+                width="21px"
               />
               <Text
                 fontSize="l"
@@ -1520,9 +1632,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1537,26 +1649,8 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
-              >
-                <Text
-                  color="font.white"
-                  fontFamily="inter400"
-                  fontSize="xs"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                        "fontFamily": "Inter-Regular",
-                        "fontSize": 10,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  3
-                </Text>
-              </View>
+                width="32px"
+              />
               <Text
                 fontSize="l"
                 px={2}
@@ -1597,9 +1691,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1614,26 +1708,8 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
-              >
-                <Text
-                  color="font.white"
-                  fontFamily="inter400"
-                  fontSize="16px"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                        "fontFamily": "Inter-Regular",
-                        "fontSize": 16,
-                      },
-                    ]
-                  }
-                  textStyle="defaultTextStyle"
-                >
-                  3
-                </Text>
-              </View>
+                width="32px"
+              />
               <Text
                 fontSize="l"
                 px={2}
@@ -1674,9 +1750,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1691,7 +1767,7 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
+                width="32px"
               />
               <Text
                 fontSize="l"
@@ -1733,9 +1809,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.secondary"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1750,7 +1826,7 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
+                width="32px"
               >
                 <Text
                   color="font.secondary"
@@ -1810,9 +1886,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1827,7 +1903,7 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
+                width="32px"
               >
                 <Text
                   color="font.danger"
@@ -1887,9 +1963,9 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius={12}
+                borderRadius="12px"
                 color="background.primary"
-                height={24}
+                height="24px"
                 justifyContent="center"
                 style={
                   Array [
@@ -1904,7 +1980,7 @@ exports[`Storyshots Badge Badges 1`] = `
                     },
                   ]
                 }
-                width={32}
+                width="32px"
               >
                 <Text
                   color="font.white"

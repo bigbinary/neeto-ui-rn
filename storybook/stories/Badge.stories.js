@@ -1,12 +1,59 @@
 import React from "react";
 import { Badge, Container } from "@components";
-import { Typography } from "../../src/components/Typography";
+import { Typography } from "@components/Typography";
+import { theme } from "../../src/theme";
+
+const fontSizes = Object.keys(theme.fontSizes);
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const fonts = Object.keys(theme.fonts);
 
 const BadgeMetaData = {
   title: "Badge",
   component: Badge,
-  args: {},
-  argTypes: {},
+  args: {
+    content: "test",
+    size: 36,
+    fontSize: fontSizes[0],
+    badgeColor: "background.base",
+    color: fontColors[0],
+    fontFamily: fonts[0],
+  },
+  argTypes: {
+    content: {
+      control: {
+        type: "text",
+      },
+    },
+    size: {
+      control: {
+        type: "number",
+      },
+    },
+    fontSize: {
+      options: fontSizes,
+      control: {
+        type: "select",
+      },
+    },
+    badgeColor: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    color: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    fontFamily: {
+      options: fonts,
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 
 export default BadgeMetaData;
@@ -69,6 +116,15 @@ export const Badges = () => {
           </Typography>
         </Container>
       </Container>
+    </Container>
+  );
+};
+
+export const BadgeDemo = args => {
+  return (
+    <Container justifyContent="center" alignItems="center">
+      <Typography>Default</Typography>
+      <Badge {...args} />
     </Container>
   );
 };
