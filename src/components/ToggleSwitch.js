@@ -9,8 +9,6 @@ import { Typography, Container } from "@components";
 /**
  * ToggleSwitch component is a simple switch toggle component from react-native-switch-toggle along with a label which describes what is being switched ON/OFF.
  *
- * This component supports below props categories from [styled-system ](/styled-system).
- *
  * <div class="screenshots">
  *   <img src="screenshots/toggleswitch/switchstyles.png" />
  * </div>
@@ -34,8 +32,6 @@ import { Typography, Container } from "@components";
  *  );
  * }
  * ```
- *
- * @extends StyledSystems props /styled-system
  */
 
 export const ToggleSwitch = ({

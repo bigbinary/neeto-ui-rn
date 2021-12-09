@@ -1,11 +1,49 @@
 import React from "react";
+
 import { Container, Avatar, Typography } from "@components";
+import { theme } from "../../src/theme";
+
+const name = "Oliver Smith";
+const size = 84;
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const bgColors = Object.keys(theme.colors.background).map(
+  color => `background.${color}`
+);
 
 const AvatarStories = {
   title: "Avatars",
   component: Avatar,
+  args: {
+    name,
+    size,
+    fontColor: fontColors[0],
+    bgColor: bgColors[0],
+    imageUrl: "",
+  },
+  argTypes: {
+    fontColor: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    bgColor: {
+      options: bgColors,
+      control: {
+        type: "select",
+      },
+    },
+  },
 };
 export default AvatarStories;
+
+export const AvatarDemo = args => {
+  return (
+    <Container flex={1} justifyContent="center" alignItems="center">
+      <Avatar {...args} size={parseInt(args.size) || 80} />
+    </Container>
+  );
+};
 
 export const TextSizes = () => {
   return (
@@ -119,8 +157,8 @@ export const ImageSizes = () => {
     <Container flex={1} alignItems="center" justifyContent="center">
       <Container flexDirection="row" alignItems="center">
         <Avatar
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
-          name="Emma Watson"
+          imageUrl="https://picsum.photos/100"
+          name="John Doe"
           margin={2}
         />
         <Typography fontSize="xl">82 * 82 (Default size)</Typography>
@@ -129,8 +167,8 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={48}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
-          name="Emma Watson"
+          imageUrl="https://picsum.photos/100"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="l">48 * 48</Typography>
@@ -139,8 +177,8 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={42}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
-          name="Emma Watson"
+          imageUrl="https://picsum.photos/100"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="m">42 * 42</Typography>
@@ -149,8 +187,8 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={32}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
-          name="Emma Watson"
+          imageUrl="https://picsum.photos/100"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="s">32 * 32</Typography>
