@@ -157,7 +157,7 @@ export const ImageSizes = () => {
     <Container flex={1} alignItems="center" justifyContent="center">
       <Container flexDirection="row" alignItems="center">
         <Avatar
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+          imageUrl="https://picsum.photos/100"
           name="Emma Watson"
           margin={2}
         />
@@ -167,7 +167,7 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={48}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+          imageUrl="https://picsum.photos/100"
           name="Emma Watson"
           margin={3}
         />
@@ -177,7 +177,7 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={42}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+          imageUrl="https://picsum.photos/100"
           name="Emma Watson"
           margin={3}
         />
@@ -187,7 +187,7 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           size={32}
-          imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
+          imageUrl="https://picsum.photos/100"
           name="Emma Watson"
           margin={3}
         />
