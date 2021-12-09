@@ -66,6 +66,8 @@ export const Input = ({
   inline = false,
   brandRight,
   brandLeft,
+  brandColor = "font.grey600",
+  brandBackground = "background.menubackground",
   disabled = false,
   ...rest
 }) => {
@@ -121,7 +123,14 @@ export const Input = ({
           </Container>
         )}
         <Container flexDirection="row" width="100%">
-          {brandLeft && <InputText theme={theme} text={brandLeft} />}
+          {brandLeft && (
+            <InputText
+              text={brandLeft}
+              borderColor={borderColor}
+              brandColor={brandColor}
+              brandBackground={brandBackground}
+            />
+          )}
           <TextInput
             height={40}
             flex={1}
@@ -131,7 +140,14 @@ export const Input = ({
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
           />
-          {brandRight && <InputText theme={theme} text={brandRight} />}
+          {brandRight && (
+            <InputText
+              text={brandRight}
+              borderColor={borderColor}
+              brandColor={brandColor}
+              brandBackground={brandBackground}
+            />
+          )}
         </Container>
       </Container>
       {inline && (
@@ -146,13 +162,15 @@ export const Input = ({
   );
 };
 
-const InputText = ({ theme, text }) => (
+const InputText = ({ text, borderColor, brandColor, brandBackground }) => (
   <Container
-    bg={theme.colors.background.menubackground}
+    bg={brandBackground}
     justifyContent="center"
     px={2}
+    borderColor={borderColor}
+    borderWidth="1px"
   >
-    {text && <Typography>{text}</Typography>}
+    {text && <Typography color={brandColor}>{text}</Typography>}
   </Container>
 );
 
@@ -210,11 +228,22 @@ Input.propTypes = {
    * If true, user won't be able to interact with the component.
    */
   disabled: PropTypes.bool,
+  /**
+   * To change the color of brand text
+   */
+  brandColor: PropTypes.string,
+  /**
+   * To change the color of brand text
+   */
+  brandBackground: PropTypes.string,
   children: PropTypes.node,
 };
 
 InputText.propTypes = {
   text: PropTypes.string,
+  borderColor: PropTypes.string,
+  brandColor: PropTypes.string,
+  brandBackground: PropTypes.string,
 };
 
 LabelText.propTypes = {
