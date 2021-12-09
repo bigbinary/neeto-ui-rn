@@ -158,7 +158,7 @@ export const ImageSizes = () => {
       <Container flexDirection="row" alignItems="center">
         <Avatar
           imageUrl="https://picsum.photos/100"
-          name="Emma Watson"
+          name="John Doe"
           margin={2}
         />
         <Typography fontSize="xl">82 * 82 (Default size)</Typography>
@@ -168,7 +168,7 @@ export const ImageSizes = () => {
         <Avatar
           size={48}
           imageUrl="https://picsum.photos/100"
-          name="Emma Watson"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="l">48 * 48</Typography>
@@ -178,7 +178,7 @@ export const ImageSizes = () => {
         <Avatar
           size={42}
           imageUrl="https://picsum.photos/100"
-          name="Emma Watson"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="m">42 * 42</Typography>
@@ -188,7 +188,7 @@ export const ImageSizes = () => {
         <Avatar
           size={32}
           imageUrl="https://picsum.photos/100"
-          name="Emma Watson"
+          name="John Doe"
           margin={3}
         />
         <Typography fontSize="s">32 * 32</Typography>
