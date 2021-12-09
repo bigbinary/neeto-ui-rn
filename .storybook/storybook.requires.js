@@ -31,6 +31,7 @@ const getStories = () => {
     require("../storybook/stories/_Home.stories.js"),
     require("../storybook/stories/Avatar.stories.js"),
     require("../storybook/stories/Badge.stories.js"),
+    require("../storybook/stories/BottomSheet.stories.js"),
     require("../storybook/stories/Button.stories.js"),
     require("../storybook/stories/FAB.stories.js"),
     require("../storybook/stories/Input.stories.js"),
