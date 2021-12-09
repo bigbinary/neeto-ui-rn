@@ -6257,7 +6257,7 @@ exports[`Storyshots Input Inputs 1`] = `
               width="100%"
             >
               <View
-                bg="#f4f5f7"
+                bg="background.menubackground"
                 borderColor="#e4e4e7"
                 borderWidth="1px"
                 color="background.primary"
@@ -6278,10 +6278,11 @@ exports[`Storyshots Input Inputs 1`] = `
                 }
               >
                 <Text
+                  color="font.grey600"
                   style={
                     Array [
                       Object {
-                        "color": "#1b1f23",
+                        "color": "#68737d",
                       },
                     ]
                   }
@@ -6408,7 +6409,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 textStyle="subtext"
               />
               <View
-                bg="#f4f5f7"
+                bg="background.menubackground"
                 borderColor="#e4e4e7"
                 borderWidth="1px"
                 color="background.primary"
@@ -6429,10 +6430,134 @@ exports[`Storyshots Input Inputs 1`] = `
                 }
               >
                 <Text
+                  color="font.grey600"
                   style={
                     Array [
                       Object {
-                        "color": "#1b1f23",
+                        "color": "#68737d",
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  BRAND-RIGHT
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Custom brand color and background
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
+              <View
+                bg="background.danger"
+                borderColor="#e4e4e7"
+                borderWidth="1px"
+                color="background.primary"
+                justifyContent="center"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "#ff6969",
+                      "borderColor": "#e4e4e7",
+                      "borderWidth": 1,
+                      "color": "#ffffff",
+                      "justifyContent": "center",
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  color="font.white"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
                       },
                     ]
                   }

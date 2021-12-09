@@ -1,5 +1,11 @@
 import React from "react";
 import { Input } from "@components";
+import { theme } from "../../src/theme";
+
+const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
+const backgroundColors = Object.keys(theme.colors.background).map(
+  color => `background.${color}`
+);
 
 const keyBoardTypes = [
   "default",
@@ -53,6 +59,18 @@ const InputMetaData = {
         type: "text",
       },
     },
+    brandColor: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
+    brandBackground: {
+      options: backgroundColors,
+      control: {
+        type: "select",
+      },
+    },
   },
   args: {
     label: "Default",
@@ -64,6 +82,8 @@ const InputMetaData = {
     inline: false,
     brandLeft: null,
     brandRight: null,
+    brandColor: null,
+    brandBackground: null,
   },
 };
 
@@ -92,6 +112,12 @@ export const Inputs = () => {
       <Input label="inline disabled input" inline={true} disabled={true} />
       <Input label="Brand Left" brandLeft="BRAND-LEFT" />
       <Input label="Brand Right" brandRight="BRAND-RIGHT" />
+      <Input
+        label="Custom brand color and background"
+        brandRight="BRAND-RIGHT"
+        brandColor="font.white"
+        brandBackground="background.danger"
+      />
     </>
   );
 };
