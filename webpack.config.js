@@ -18,6 +18,8 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./node_modules/react-native-switch-toggle"),
     path.resolve(__dirname, "./node_modules/react-native-modal"),
     path.resolve(__dirname, "./node_modules/react-native-animatable"),
+    path.resolve(__dirname, "./node_modules/react-native-remix-icon"),
+    path.resolve(__dirname, "./node_modules/react-native-svg"),
   ],
   use: {
     loader: "babel-loader",
