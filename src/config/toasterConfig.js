@@ -7,11 +7,7 @@ import { theme } from "@theme";
 
 const CloseButton = () => {
   return (
-    <Pressable
-      style={styles.closeButtonStyle}
-      bg={theme.colors.background.grey800}
-      onPress={() => Toast.hide()}
-    >
+    <Pressable style={styles.closeButtonStyle} onPress={() => Toast.hide()}>
       <Icon
         name="ri-close-fill"
         size={25}
