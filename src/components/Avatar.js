@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Image } from "react-native";
 
@@ -46,6 +46,7 @@ export const Avatar = ({
   imageUrl,
   ...rest
 }) => {
+  const [fallback, setFallback] = useState(false);
   const acronym = name
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
@@ -60,15 +61,12 @@ export const Avatar = ({
       borderRadius: size / 2,
     },
   };
+
+  const renderFallbackText = fallback || !imageUrl;
+
   return (
     <>
-      {imageUrl ? (
-        <Image
-          style={styles.profileImage}
-          source={{ uri: imageUrl }}
-          {...rest}
-        />
-      ) : (
+      {renderFallbackText ? (
         <Container
           bg={bgColor}
           width={size}
@@ -84,6 +82,13 @@ export const Avatar = ({
             {acronym}
           </Typography>
         </Container>
+      ) : (
+        <Image
+          style={styles.profileImage}
+          source={{ uri: imageUrl }}
+          onError={() => setFallback(true)}
+          {...rest}
+        />
       )}
     </>
   );
