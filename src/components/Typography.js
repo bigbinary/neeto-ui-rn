@@ -84,7 +84,7 @@ Typography.propTypes = {
   ...propTypes.typography,
   ...propTypes.color,
   ...propTypes.textStyle,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 Typography.defaultProps = {

@@ -47,7 +47,7 @@ export const Avatar = ({
   ...rest
 }) => {
   const acronym = name
-    .split(/\s/)
+    ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
     .slice(0, 2);
   const fontSize = size / 2 - 8;
@@ -98,7 +98,7 @@ Avatar.propTypes = {
   /**
    * Name to obtain user initials to show as the text in the Avatar.
    */
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   /**
    * Size of the avatar.
    */
