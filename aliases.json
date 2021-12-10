@@ -1,4 +1,5 @@
 {
   "@components": "./src/components",
-  "@theme": "./src/theme"
+  "@theme": "./src/theme",
+  "@config": "./src/config"
 }

@@ -20,6 +20,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./node_modules/react-native-animatable"),
     path.resolve(__dirname, "./node_modules/react-native-remix-icon"),
     path.resolve(__dirname, "./node_modules/react-native-svg"),
+    path.resolve(__dirname, "./node_modules/react-native-toast-message"),
   ],
   use: {
     loader: "babel-loader",

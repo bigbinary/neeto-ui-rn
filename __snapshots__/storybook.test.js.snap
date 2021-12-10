@@ -8557,6 +8557,447 @@ exports[`Storyshots Input Inputs 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots ToastMessage Toast Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          flex={1}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <View
+            onLayout={[Function]}
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "transform": Array [
+                  Object {
+                    "translateY": 0,
+                  },
+                ],
+              }
+            }
+            testID="toastAnimatedContainer"
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderLeftColor": "#69C779",
+                  "borderLeftWidth": 5,
+                  "borderRadius": 6,
+                  "elevation": 2,
+                  "flexDirection": "row",
+                  "height": 60,
+                  "opacity": 1,
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.1,
+                  "shadowRadius": 6,
+                  "width": 340,
+                }
+              }
+              testID="toastTouchableContainer"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flex": 1,
+                      "justifyContent": "center",
+                      "paddingHorizontal": 25,
+                    },
+                    Object {
+                      "backgroundColor": "#2f3941",
+                      "paddingHorizontal": 15,
+                    },
+                  ]
+                }
+                testID="toastContentContainer"
+              />
+            </View>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 10,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Show Toast
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots ToastMessage Toasts 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          flex={1}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <View
+            onLayout={[Function]}
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "transform": Array [
+                  Object {
+                    "translateY": 0,
+                  },
+                ],
+              }
+            }
+            testID="toastAnimatedContainer"
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#FFF",
+                  "borderLeftColor": "#69C779",
+                  "borderLeftWidth": 5,
+                  "borderRadius": 6,
+                  "elevation": 2,
+                  "flexDirection": "row",
+                  "height": 60,
+                  "opacity": 1,
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.1,
+                  "shadowRadius": 6,
+                  "width": 340,
+                }
+              }
+              testID="toastTouchableContainer"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flex": 1,
+                      "justifyContent": "center",
+                      "paddingHorizontal": 25,
+                    },
+                    Object {
+                      "backgroundColor": "#2f3941",
+                      "paddingHorizontal": 15,
+                    },
+                  ]
+                }
+                testID="toastContentContainer"
+              />
+            </View>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 10,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Error Toast
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 10,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Success Toast
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
 <RCTScrollView
   contentContainerStyle={

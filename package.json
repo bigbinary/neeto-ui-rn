@@ -52,6 +52,7 @@
     "react-native-modal": "^13.0.0",
     "react-native-remix-icon": "^0.3.0",
     "react-native-switch-toggle": "^2.2.1",
+    "react-native-toast-message": "^2.1.0",
     "styled-components": "^5.3.3",
     "styled-system": "^5.1.5"
   },
