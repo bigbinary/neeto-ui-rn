@@ -8627,12 +8627,12 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
                 "opacity": 0,
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
                 "transform": Array [
                   Object {
                     "translateY": 0,
@@ -8692,6 +8692,91 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
                 }
                 testID="toastContentContainer"
               />
+              <View
+                accessible={true}
+                bg="#2f3941"
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#2f3941",
+                    "borderBottomRightRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "elevation": 2,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingRight": 10,
+                    "shadowColor": "#2f3941",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.1,
+                    "shadowRadius": 6,
+                  }
+                }
+              >
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight={25}
+                  bbWidth={25}
+                  fill="#ffffff"
+                  focusable={false}
+                  height={25}
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderWidth": 0,
+                      },
+                      Object {
+                        "flex": 0,
+                        "height": 25,
+                        "width": 25,
+                      },
+                    ]
+                  }
+                  vbHeight={24}
+                  vbWidth={24}
+                  width={25}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <RNSVGGroup
+                    fill={4294967295}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                  >
+                    <RNSVGPath
+                      d="M0 0h24v24H0z"
+                      fill={null}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                    />
+                    <RNSVGPath
+                      d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+                    />
+                  </RNSVGGroup>
+                </RNSVGSvgView>
+              </View>
             </View>
           </View>
           <View
@@ -8822,12 +8907,12 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
                 "opacity": 0,
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
                 "transform": Array [
                   Object {
                     "translateY": 0,
@@ -8887,6 +8972,91 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                 }
                 testID="toastContentContainer"
               />
+              <View
+                accessible={true}
+                bg="#2f3941"
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#2f3941",
+                    "borderBottomRightRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "elevation": 2,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingRight": 10,
+                    "shadowColor": "#2f3941",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.1,
+                    "shadowRadius": 6,
+                  }
+                }
+              >
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight={25}
+                  bbWidth={25}
+                  fill="#ffffff"
+                  focusable={false}
+                  height={25}
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderWidth": 0,
+                      },
+                      Object {
+                        "flex": 0,
+                        "height": 25,
+                        "width": 25,
+                      },
+                    ]
+                  }
+                  vbHeight={24}
+                  vbWidth={24}
+                  width={25}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <RNSVGGroup
+                    fill={4294967295}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                  >
+                    <RNSVGPath
+                      d="M0 0h24v24H0z"
+                      fill={null}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                    />
+                    <RNSVGPath
+                      d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+                    />
+                  </RNSVGGroup>
+                </RNSVGSvgView>
+              </View>
             </View>
           </View>
           <View
@@ -8937,7 +9107,7 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
               textAlign="center"
               textStyle="solid"
             >
-              Error Toast
+              Success Toast
             </Text>
           </View>
           <View
@@ -8988,7 +9158,7 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
               textAlign="center"
               textStyle="solid"
             >
-              Success Toast
+              Error Toast
             </Text>
           </View>
         </View>

@@ -1,21 +1,32 @@
 import React from "react";
 import Toast, { SuccessToast, ErrorToast } from "react-native-toast-message";
-import { StyleSheet } from "react-native";
-import { Button, Typography } from "@components";
+import { Pressable, StyleSheet } from "react-native";
+import Icon from "react-native-remix-icon";
 
 import { theme } from "@theme";
+
+const CloseButton = () => {
+  return (
+    <Pressable
+      style={styles.closeButtonStyle}
+      bg={theme.colors.background.grey800}
+      onPress={() => Toast.hide()}
+    >
+      <Icon
+        name="ri-close-fill"
+        size={25}
+        color={theme.colors.background.white}
+      />
+    </Pressable>
+  );
+};
 
 export const toasterConfig = {
   success: props => (
     <SuccessToast
       {...props}
       leadingIconContainerStyle={styles.toasterBGColor}
-      trailingIcon={() => {
-        return <Button label="x" />;
-      }}
-      // trailingIcon={require("@assets/images/close.png")}
-      trailingIconContainerStyle={styles.toasterBGColor}
-      onTrailingIconPress={() => Toast.hide()}
+      renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
@@ -25,12 +36,7 @@ export const toasterConfig = {
     <ErrorToast
       {...props}
       leadingIconContainerStyle={styles.toasterBGColor}
-      renderTrailingIcon={() => {
-        return <Typography> X </Typography>;
-      }}
-      // trailingIcon={require("@assets/images/close.png")}
-      trailingIconContainerStyle={styles.toasterBGColor}
-      onTrailingIconPress={() => Toast.hide()}
+      renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
@@ -56,5 +62,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: theme.fonts.inter700,
     color: theme.colors.font.white,
+  },
+  closeButtonStyle: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingRight: 10,
+    backgroundColor: theme.colors.background.grey800,
+    shadowColor: theme.colors.background.grey800,
+    flexDirection: "row",
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 2,
   },
 });

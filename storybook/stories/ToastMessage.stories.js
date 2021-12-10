@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Button } from "@components";
-import Toast from "react-native-toast-message";
+import { Container, Button, Toast } from "@components";
 import { toasterConfig } from "../../src/config/toasterConfig";
 
 const types = ["success", "error"];
@@ -34,7 +33,7 @@ export default ToastMessage;
 export const ToastDemo = props => {
   return (
     <Container flex={1}>
-      <Toast config={toasterConfig} ref={ref => Toast.setRef(ref)} />
+      <Toast config={toasterConfig} />
       <Button
         my={10}
         label="Show Toast"
@@ -51,7 +50,19 @@ export const ToastDemo = props => {
 export const Toasts = () => {
   return (
     <Container flex={1}>
-      <Toast config={toasterConfig} ref={ref => Toast.setRef(ref)} />
+      <Toast config={toasterConfig} />
+      <Button
+        my={10}
+        label="Success Toast"
+        onPress={() => {
+          Toast.show({
+            type: "success",
+            position: "bottom",
+            text1: "Yay!",
+            text2: "Showing Sucess Toast Message!",
+          });
+        }}
+      />
 
       <Button
         my={10}
@@ -60,20 +71,8 @@ export const Toasts = () => {
           Toast.show({
             type: "error",
             position: "bottom",
-            text2: "san",
-          });
-        }}
-      />
-
-      <Button
-        my={10}
-        label="Success Toast"
-        onPress={() => {
-          Toast.show({
-            type: "success",
-            position: "bottom",
-            text2: "san",
-            text1: "sam",
+            text1: "Ohh!",
+            text2: "Showing Error Toast Message!",
           });
         }}
       />

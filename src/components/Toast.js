@@ -12,7 +12,7 @@ import T from "react-native-toast-message";
  * export function App(props) {
  *  return (
  *  <>
- *    // Render at root level.
+ *    // Render at root component.
  *    <Toast />
  *  </>
  * );
@@ -30,7 +30,8 @@ import T from "react-native-toast-message";
  *            Toast.show({
  *            type: "error",
  *            position: "bottom",
- *            text2: "This is the toast message",
+ *            text1: "Yay!",
+ *            text2: "Have a nice day! 😄",
  *         });
  *       }}
  *     />
@@ -45,6 +46,9 @@ export const Toast = ({ ...rest }) => {
   return <T {...rest} />;
 };
 
+Toast.show = T.show;
+Toast.hide = T.hide;
+
 Toast.defaultProps = {
   position: "bottom",
   type: "success",
@@ -54,13 +58,13 @@ Toast.propTypes = {
   /**
    * First line of text
    */
-  text1: PropTypes.string.isRequired,
+  text1: PropTypes.string,
   /**
    * Second line of text
    */
   text2: PropTypes.string,
   /**
-   * Supports 3 Types: `success`, `error`, `info`
+   * Supports 3 Types: `success`, `error`
    */
   type: PropTypes.string,
   /**
