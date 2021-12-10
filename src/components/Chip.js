@@ -35,6 +35,8 @@ export const Chip = ({
   onClose,
   onChipPress,
   isDisabled,
+  closeIconSize,
+  closeIcon,
   ...rest
 }) => {
   return (
@@ -61,7 +63,7 @@ export const Chip = ({
           onPress={onClose}
           {...rest.closeIconContainerStyle}
         >
-          <Icon name="ri-close-fill" size="14" color={closeIconColor} />
+          <Icon name={closeIcon} size={closeIconSize} color={closeIconColor} />
         </TouchableOpacity>
       )}
     </TouchableOpacity>
@@ -74,6 +76,8 @@ Chip.defaultProps = {
   closeIconBackground: "background.grey500",
   closeIconColor: "white",
   isDisabled: false,
+  closeIconSize: 14,
+  closeIcon: "ri-close-fill",
 };
 
 Chip.propTypes = {
@@ -86,4 +90,6 @@ Chip.propTypes = {
   onClose: PropTypes.func,
   onChipPress: PropTypes.func,
   isDisabled: PropTypes.bool,
+  closeIconSize: PropTypes.number,
+  closeIcon: PropTypes.string,
 };
