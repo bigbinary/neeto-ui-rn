@@ -163,6 +163,15 @@ export const ImageSizes = () => {
         />
         <Typography fontSize="xl">82 * 82 (Default size)</Typography>
       </Container>
+      <Container flexDirection="row" alignItems="center">
+        <Avatar
+          size={60}
+          imageUrl="broken url test"
+          name="John Doe"
+          margin={3}
+        />
+        <Typography fontSize="l">Broken image url</Typography>
+      </Container>
 
       <Container flexDirection="row" alignItems="center">
         <Avatar
