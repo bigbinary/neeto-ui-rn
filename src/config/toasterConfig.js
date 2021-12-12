@@ -1,5 +1,5 @@
 import React from "react";
-import Toast, { SuccessToast, ErrorToast } from "react-native-toast-message";
+import Toast, { BaseToast } from "react-native-toast-message";
 import { Pressable, StyleSheet } from "react-native";
 import Icon from "react-native-remix-icon";
 
@@ -19,8 +19,9 @@ const CloseButton = () => {
 
 export const toasterConfig = {
   success: props => (
-    <SuccessToast
+    <BaseToast
       {...props}
+      style={styles.successStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
@@ -29,8 +30,9 @@ export const toasterConfig = {
     />
   ),
   error: props => (
-    <ErrorToast
+    <BaseToast
       {...props}
+      style={styles.errorStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
@@ -44,6 +46,14 @@ toasterConfig.success.displayName = "Success";
 toasterConfig.error.displayName = "Error";
 
 const styles = StyleSheet.create({
+  successStyle: {
+    borderLeftColor: "#69C779",
+    backgroundColor: theme.colors.background.grey800,
+  },
+  errorStyle: {
+    borderLeftColor: "#FE6301",
+    backgroundColor: theme.colors.background.grey800,
+  },
   toasterBGColor: { backgroundColor: theme.colors.background.grey800 },
   contentContainerStyle: {
     paddingHorizontal: 15,
