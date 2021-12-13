@@ -47,11 +47,11 @@ toasterConfig.error.displayName = "Error";
 
 const styles = StyleSheet.create({
   successStyle: {
-    borderLeftColor: "#69C779",
+    borderLeftColor: theme.colors.toast.success,
     backgroundColor: theme.colors.background.grey800,
   },
   errorStyle: {
-    borderLeftColor: "#FE6301",
+    borderLeftColor: theme.colors.toast.error,
     backgroundColor: theme.colors.background.grey800,
   },
   toasterBGColor: { backgroundColor: theme.colors.background.grey800 },
