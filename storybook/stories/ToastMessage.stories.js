@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Button, Toast } from "@components";
-import { toasterConfig } from "../../src/config/toasterConfig";
 
 const types = ["success", "error"];
 const positions = ["bottom", "top"];
@@ -33,7 +32,7 @@ export default ToastMessage;
 export const ToastDemo = props => {
   return (
     <Container flex={1}>
-      <Toast config={toasterConfig} />
+      <Toast />
       <Button
         my={10}
         label="Show Toast"
@@ -50,7 +49,7 @@ export const ToastDemo = props => {
 export const Toasts = () => {
   return (
     <Container flex={1}>
-      <Toast config={toasterConfig} />
+      <Toast />
       <Button
         my={10}
         label="Success Toast"
