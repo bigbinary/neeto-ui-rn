@@ -110,6 +110,7 @@ export const Inputs = () => {
       <Input
         label="inline input with password type"
         value="test"
+        inline={true}
         secureTextEntry
       />
       <Input label="Inline" inline={true} />

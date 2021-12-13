@@ -164,7 +164,7 @@ export const Input = ({
           >
             <Icon
               name={isPasswordVisible ? "eye-line" : "eye-off-line"}
-              color="black"
+              color="background.grey500"
               onPress={() => setIsPasswordVisible(!isPasswordVisible)}
             />
           </Container>
