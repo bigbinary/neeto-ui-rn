@@ -70,11 +70,11 @@ export const Input = ({
   brandColor = "font.grey600",
   brandBackground = "background.menubackground",
   disabled = false,
-  inputPassword = false,
+  secureTextEntry = false,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
-  const [showPassword, setShowPassword] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
   const borderColor = error
     ? theme.colors.border.danger
@@ -143,7 +143,7 @@ export const Input = ({
             border={!inline && borderColor}
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
-            secureTextEntry={inputPassword && !showPassword}
+            secureTextEntry={secureTextEntry && !isPasswordVisible}
           />
 
           {brandRight && (
@@ -155,7 +155,7 @@ export const Input = ({
             />
           )}
         </Container>
-        {inputPassword && (
+        {secureTextEntry && (
           <Container
             position="absolute"
             left="90%"
@@ -163,9 +163,9 @@ export const Input = ({
             justifyContent="center"
           >
             <Icon
-              name={showPassword ? "eye-line" : "eye-off-line"}
+              name={isPasswordVisible ? "eye-line" : "eye-off-line"}
               color="black"
-              onPress={() => setShowPassword(!showPassword)}
+              onPress={() => setIsPasswordVisible(!isPasswordVisible)}
             />
           </Container>
         )}
@@ -259,7 +259,7 @@ Input.propTypes = {
   /**
    * To hide and show password and enable secure text entry
    */
-  inputPassword: PropTypes.bool,
+  secureTextEntry: PropTypes.bool,
   children: PropTypes.node,
 };
 
