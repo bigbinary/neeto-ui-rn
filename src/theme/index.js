@@ -6,6 +6,11 @@ const defaultColors = {
   menubackground: "#f4f5f7",
 };
 
+const toastBorderColors = {
+  success: "#69C779",
+  error: "#FE6301",
+};
+
 const greyVarients = {
   grey: "#828282",
   grey100: "#f8f9f9",
@@ -34,6 +39,9 @@ const colors = {
     primary: "#e4e4e7",
     ...greyVarients,
     ...defaultColors,
+  },
+  toast: {
+    ...toastBorderColors,
   },
 };
 
