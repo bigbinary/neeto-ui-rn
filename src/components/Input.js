@@ -58,21 +58,23 @@ const View = styled.View`
  *
  */
 
-export const Input = ({
-  label = "",
-  message = "",
-  error = false,
-  onFocus,
-  onBlur,
-  inline = false,
-  brandRight,
-  brandLeft,
-  brandColor = "font.grey600",
-  brandBackground = "background.menubackground",
-  disabled = false,
-  secureTextEntry = false,
-  ...rest
-}) => {
+export const Input = React.forwardRef((props, ref) => {
+  const {
+    label = "",
+    message = "",
+    error = false,
+    onFocus,
+    onBlur,
+    inline = false,
+    brandRight,
+    brandLeft,
+    brandColor = "font.grey600",
+    brandBackground = "background.menubackground",
+    disabled = false,
+    secureTextEntry = false,
+    ...rest
+  } = props;
+
   const theme = useContext(ThemeContext);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
@@ -136,6 +138,7 @@ export const Input = ({
             />
           )}
           <TextInput
+            ref={ref}
             height={40}
             flex={1}
             textStyle="subtext"
@@ -180,7 +183,7 @@ export const Input = ({
       <ErrorMessage theme={theme} error={error} message={message} />
     </Container>
   );
-};
+});
 
 const InputText = ({ text, borderColor, brandColor, brandBackground }) => (
   <Container
