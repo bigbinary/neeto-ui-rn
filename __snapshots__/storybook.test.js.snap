@@ -1,5 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Avatars Avatar Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            alignItems="center"
+            bg="background.primary"
+            borderRadius={42}
+            color="background.primary"
+            height={84}
+            justifyContent="center"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderRadius": 42,
+                  "color": "#ffffff",
+                  "height": 84,
+                  "justifyContent": "center",
+                  "width": 84,
+                },
+              ]
+            }
+            width={84}
+          >
+            <Text
+              color="font.primary"
+              fontFamily="inter700"
+              fontSize={34}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 34,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              OS
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Avatars Image Sizes 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -75,9 +179,10 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
               alignItems="center"
               justifyContent="center"
               margin={2}
+              onError={[Function]}
               source={
                 Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
+                  "uri": "https://picsum.photos/100",
                 }
               }
               style={
@@ -122,9 +227,58 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
               alignItems="center"
               justifyContent="center"
               margin={3}
+              onError={[Function]}
               source={
                 Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
+                  "uri": "broken url test",
+                }
+              }
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "borderRadius": 30,
+                  "height": 60,
+                  "width": 60,
+                }
+              }
+            />
+            <Text
+              fontSize="l"
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Broken image url
+            </Text>
+          </View>
+          <View
+            alignItems="center"
+            color="background.primary"
+            flexDirection="row"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "color": "#ffffff",
+                  "flexDirection": "row",
+                },
+              ]
+            }
+          >
+            <Image
+              alignItems="center"
+              justifyContent="center"
+              margin={3}
+              onError={[Function]}
+              source={
+                Object {
+                  "uri": "https://picsum.photos/100",
                 }
               }
               style={
@@ -169,9 +323,10 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
               alignItems="center"
               justifyContent="center"
               margin={3}
+              onError={[Function]}
               source={
                 Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
+                  "uri": "https://picsum.photos/100",
                 }
               }
               style={
@@ -216,9 +371,10 @@ exports[`Storyshots Avatars Image Sizes 1`] = `
               alignItems="center"
               justifyContent="center"
               margin={3}
+              onError={[Function]}
               source={
                 Object {
-                  "uri": "https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png",
+                  "uri": "https://picsum.photos/100",
                 }
               }
               style={
@@ -4043,11 +4199,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4066,7 +4222,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -4198,11 +4354,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4221,7 +4377,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -4350,11 +4506,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4373,7 +4529,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -4505,11 +4661,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4528,7 +4684,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -4648,11 +4804,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4671,7 +4827,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -4788,11 +4944,11 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 <RNSVGSvgView
                   align="xMidYMid"
-                  bbHeight="14"
-                  bbWidth="14"
+                  bbHeight={14}
+                  bbWidth={14}
                   fill="white"
                   focusable={false}
-                  height="14"
+                  height={14}
                   meetOrSlice={0}
                   minX={0}
                   minY={0}
@@ -4811,7 +4967,7 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                   vbHeight={24}
                   vbWidth={24}
-                  width="14"
+                  width={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <RNSVGGroup
@@ -6625,6 +6781,7 @@ exports[`Storyshots Input Input Demo 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -6762,6 +6919,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -6795,6 +6953,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -6850,6 +7009,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -6884,6 +7044,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 height={40}
                 placeholder="Placeholder"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -6939,6 +7100,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -6972,6 +7134,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7030,6 +7193,7 @@ exports[`Storyshots Input Inputs 1`] = `
             onBlur={[Function]}
             onFocus={[Function]}
             opacity={0.5}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7065,6 +7229,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7120,6 +7285,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7153,6 +7319,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7222,6 +7389,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7256,6 +7424,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 height={40}
                 keyboardType="email-address"
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7312,6 +7481,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7367,6 +7537,247 @@ exports[`Storyshots Input Inputs 1`] = `
                 value="password"
               />
             </View>
+            <View
+              color="background.primary"
+              height="100%"
+              justifyContent="center"
+              left="90%"
+              position="absolute"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "height": "100%",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={24}
+                bbWidth={24}
+                fill="black"
+                focusable={false}
+                height={24}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                onPress={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                responsible={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    Object {
+                      "flex": 0,
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <RNSVGGroup
+                  fill={4278190080}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                  />
+                  <RNSVGPath
+                    d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            inline input with password type
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            position="relative"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                px={2}
+                secureTextEntry={true}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+                value="test"
+              />
+            </View>
+            <View
+              color="background.primary"
+              height="100%"
+              justifyContent="center"
+              left="90%"
+              position="absolute"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "height": "100%",
+                    "justifyContent": "center",
+                  },
+                ]
+              }
+            >
+              <RNSVGSvgView
+                align="xMidYMid"
+                bbHeight={24}
+                bbWidth={24}
+                fill="black"
+                focusable={false}
+                height={24}
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                onPress={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                responsible={true}
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    Object {
+                      "flex": 0,
+                      "height": 24,
+                      "width": 24,
+                    },
+                  ]
+                }
+                vbHeight={24}
+                vbWidth={24}
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <RNSVGGroup
+                  fill={4278190080}
+                  propList={
+                    Array [
+                      "fill",
+                    ]
+                  }
+                >
+                  <RNSVGPath
+                    d="M0 0h24v24H0z"
+                    fill={null}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                  />
+                  <RNSVGPath
+                    d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+            </View>
           </View>
         </View>
         <View
@@ -7386,6 +7797,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="row"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7453,6 +7865,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7501,6 +7914,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="row"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7568,6 +7982,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7632,6 +8047,7 @@ exports[`Storyshots Input Inputs 1`] = `
             onBlur={[Function]}
             onFocus={[Function]}
             opacity={0.5}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7701,6 +8117,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7765,6 +8182,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7833,6 +8251,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -7888,6 +8307,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -7921,6 +8341,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {
@@ -8011,6 +8432,7 @@ exports[`Storyshots Input Inputs 1`] = `
             flexDirection="column"
             onBlur={[Function]}
             onFocus={[Function]}
+            position="relative"
             style={
               Array [
                 Object {
@@ -8044,6 +8466,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 fontSize="14px"
                 height={40}
                 px={2}
+                secureTextEntry={false}
                 style={
                   Array [
                     Object {

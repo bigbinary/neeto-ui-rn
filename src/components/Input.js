@@ -8,6 +8,7 @@ import {
   color,
   layout,
 } from "styled-system";
+import Icon from "react-native-remix-icon";
 import styled, { ThemeContext } from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -69,9 +70,11 @@ export const Input = ({
   brandColor = "font.grey600",
   brandBackground = "background.menubackground",
   disabled = false,
+  inputPassword = false,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
+  const [showPassword, setShowPassword] = useState(false);
   const [isFocus, setIsFocus] = useState(false);
   const borderColor = error
     ? theme.colors.border.danger
@@ -116,6 +119,7 @@ export const Input = ({
         flexDirection={inline ? "row" : "column"}
         onBlur={handleBlur}
         onFocus={handleFocus}
+        position="relative"
       >
         {inline && (
           <Container alignSelf="flex-end" maxWidth={100} px={2}>
@@ -139,7 +143,9 @@ export const Input = ({
             border={!inline && borderColor}
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
+            secureTextEntry={inputPassword && !showPassword}
           />
+
           {brandRight && (
             <InputText
               text={brandRight}
@@ -149,6 +155,20 @@ export const Input = ({
             />
           )}
         </Container>
+        {inputPassword && (
+          <Container
+            position="absolute"
+            left="90%"
+            height="100%"
+            justifyContent="center"
+          >
+            <Icon
+              name={showPassword ? "eye-line" : "eye-off-line"}
+              color="black"
+              onPress={() => setShowPassword(!showPassword)}
+            />
+          </Container>
+        )}
       </Container>
       {inline && (
         <View
@@ -236,6 +256,10 @@ Input.propTypes = {
    * To change the color of brand text
    */
   brandBackground: PropTypes.string,
+  /**
+   * To hide and show password and enable secure text entry
+   */
+  inputPassword: PropTypes.bool,
   children: PropTypes.node,
 };
 
