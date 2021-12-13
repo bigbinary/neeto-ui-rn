@@ -17,7 +17,7 @@ const CloseButton = () => {
   );
 };
 
-export const toasterConfig = {
+export const defaultToasterConfig = {
   success: props => (
     <BaseToast
       {...props}
@@ -42,8 +42,8 @@ export const toasterConfig = {
   ),
 };
 
-toasterConfig.success.displayName = "Success";
-toasterConfig.error.displayName = "Error";
+defaultToasterConfig.success.displayName = "Success";
+defaultToasterConfig.error.displayName = "Error";
 
 const styles = StyleSheet.create({
   successStyle: {
