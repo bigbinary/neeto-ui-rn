@@ -75,7 +75,6 @@ const InputMetaData = {
   args: {
     label: "Default",
     keyboardType: keyBoardTypes[0],
-    secureTextEntry: false,
     defaultValue: null,
     placeholder: "placeholder",
     disabled: false,
@@ -84,6 +83,7 @@ const InputMetaData = {
     brandRight: null,
     brandColor: null,
     brandBackground: null,
+    secureTextEntry: false,
   },
 };
 
@@ -106,7 +106,13 @@ export const Inputs = () => {
         value="bigbinary@example.com"
         keyboardType="email-address"
       />
-      <Input label="Password" value="password" secureTextEntry={true} />
+      <Input label="Password" value="password" secureTextEntry />
+      <Input
+        label="inline input with password type"
+        value="test"
+        inline={true}
+        secureTextEntry
+      />
       <Input label="Inline" inline={true} />
       <Input label="Inline with error" inline={true} error />
       <Input label="inline disabled input" inline={true} disabled={true} />
