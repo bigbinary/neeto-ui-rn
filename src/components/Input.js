@@ -61,7 +61,7 @@ const View = styled.View`
 export const Input = React.forwardRef((props, ref) => {
   const {
     label = "",
-    labelColor = "font.primary",
+    labelStyles,
     message = "",
     error = false,
     onFocus,
@@ -117,7 +117,7 @@ export const Input = React.forwardRef((props, ref) => {
   return (
     <Container mb={20}>
       {!inline && (
-        <LabelText labelColor={labelColor} inline={inline} label={label} />
+        <LabelText labelStyles={labelStyles} inline={inline} label={label} />
       )}
       <Container
         {...focusStyles}
@@ -129,7 +129,11 @@ export const Input = React.forwardRef((props, ref) => {
       >
         {inline && (
           <Container alignSelf="flex-end" maxWidth={100}>
-            <LabelText labelColor={labelColor} inline={inline} label={label} />
+            <LabelText
+              labelStyles={labelStyles}
+              inline={inline}
+              label={label}
+            />
           </Container>
         )}
         <Container flexDirection="row" width="100%">
@@ -202,12 +206,12 @@ const InputText = ({ text, borderColor, brandColor, brandBackground }) => (
   </Container>
 );
 
-const LabelText = ({ inline, label, labelColor }) => (
+const LabelText = ({ inline, label, labelStyles }) => (
   <Typography
     numberOfLines={1}
     textStyle="subtext"
     mb={inline ? "12px" : "7px"}
-    color={labelColor}
+    {...labelStyles}
   >
     {label}
   </Typography>
@@ -234,9 +238,9 @@ Input.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * To change the color of label
+   * To change the styles of label
    */
-  labelColor: PropTypes.string,
+  labelStyles: PropTypes.object,
   /**
    * To display error/info messages
    */
@@ -286,7 +290,7 @@ InputText.propTypes = {
 LabelText.propTypes = {
   inline: PropTypes.bool,
   label: PropTypes.string,
-  labelColor: PropTypes.string,
+  labelStyles: PropTypes.object,
 };
 
 ErrorMessage.propTypes = {

@@ -22,12 +22,6 @@ const InputMetaData = {
   title: "Input",
   component: InputDemo,
   argTypes: {
-    labelColor: {
-      options: fontColors,
-      control: {
-        type: "select",
-      },
-    },
     keyboardType: {
       options: keyBoardTypes,
       control: {
@@ -97,13 +91,14 @@ const InputMetaData = {
 export default InputMetaData;
 
 export const Inputs = () => {
+  const customStyles = { color: "font.danger", fontFamily: "inter700" };
   return (
     <>
       <Input label="Default Input" />
       <Input label="with placeholder" placeholder="Placeholder" />
       <Input
-        label="with custom label color"
-        labelColor="font.danger"
+        label="with custom label styles"
+        labelStyles={customStyles}
         placeholder="Placeholder"
         color="red"
       />
