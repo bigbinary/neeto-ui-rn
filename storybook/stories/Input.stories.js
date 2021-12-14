@@ -124,6 +124,8 @@ export const Inputs = () => {
         brandColor="font.white"
         brandBackground="background.danger"
       />
+
+      <Input label="Notes" height={100} multiline={true} />
     </>
   );
 };

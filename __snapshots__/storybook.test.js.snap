@@ -7579,7 +7579,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 align="xMidYMid"
                 bbHeight={24}
                 bbWidth={24}
-                fill="background.grey500"
+                fill="#87929d"
                 focusable={false}
                 height={24}
                 meetOrSlice={0}
@@ -7612,7 +7612,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <RNSVGGroup
-                  fill={null}
+                  fill={4287074973}
                   propList={
                     Array [
                       "fill",
@@ -7760,7 +7760,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 align="xMidYMid"
                 bbHeight={24}
                 bbWidth={24}
-                fill="background.grey500"
+                fill="#87929d"
                 focusable={false}
                 height={24}
                 meetOrSlice={0}
@@ -7793,7 +7793,7 @@ exports[`Storyshots Input Inputs 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <RNSVGGroup
-                  fill={null}
+                  fill={4287074973}
                   propList={
                     Array [
                       "fill",
@@ -8570,6 +8570,97 @@ exports[`Storyshots Input Inputs 1`] = `
                   BRAND-RIGHT
                 </Text>
               </View>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            Notes
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            position="relative"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={100}
+                multiline={true}
+                px={2}
+                secureTextEntry={false}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
             </View>
           </View>
         </View>

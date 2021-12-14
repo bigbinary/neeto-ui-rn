@@ -167,7 +167,7 @@ export const Input = React.forwardRef((props, ref) => {
           >
             <Icon
               name={isPasswordVisible ? "eye-line" : "eye-off-line"}
-              color="background.grey500"
+              color={theme.colors.background.grey500}
               onPress={() => setIsPasswordVisible(!isPasswordVisible)}
             />
           </Container>
