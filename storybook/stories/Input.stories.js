@@ -90,10 +90,17 @@ const InputMetaData = {
 export default InputMetaData;
 
 export const Inputs = () => {
+  const customStyles = { color: "font.danger", fontFamily: "inter700" };
   return (
     <>
       <Input label="Default Input" />
       <Input label="with placeholder" placeholder="Placeholder" />
+      <Input
+        label="with custom label styles"
+        labelStyles={customStyles}
+        placeholder="Placeholder"
+        color="red"
+      />
       <Input label="with value" value="has value" />
       <Input label="Disabled" disabled={true} />
       <Input

@@ -6837,6 +6837,7 @@ exports[`Storyshots Input Input Demo 1`] = `
                 fontSize="14px"
                 height={40}
                 keyboardType="default"
+                labelColor="font.primary"
                 placeholder="placeholder"
                 px={2}
                 secureTextEntry={false}
@@ -7061,6 +7062,101 @@ exports[`Storyshots Input Inputs 1`] = `
                 border="#e4e4e7"
                 borderRadius={2}
                 color="#1b1f23"
+                editable={true}
+                flex={1}
+                fontFamily="inter400"
+                fontSize="14px"
+                height={40}
+                placeholder="Placeholder"
+                px={2}
+                secureTextEntry={false}
+                style={
+                  Array [
+                    Object {
+                      "borderColor": "#e4e4e7",
+                      "borderRadius": 2,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "flexBasis": 0,
+                      "flexGrow": 1,
+                      "flexShrink": 1,
+                      "fontFamily": "Inter-Regular",
+                      "fontSize": 14,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textAlignVertical="top"
+                textStyle="subtext"
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <Text
+            color="font.danger"
+            fontFamily="inter700"
+            mb="7px"
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "color": "#ff6969",
+                  "fontFamily": "Inter-Bold",
+                  "fontSize": 12,
+                  "marginBottom": 7,
+                },
+              ]
+            }
+            textStyle="subtext"
+          >
+            with custom label styles
+          </Text>
+          <View
+            color="background.primary"
+            flexDirection="column"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            position="relative"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexDirection": "column",
+                },
+              ]
+            }
+          >
+            <View
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "width": "100%",
+                  },
+                ]
+              }
+              width="100%"
+            >
+              <TextInput
+                border="#e4e4e7"
+                borderRadius={2}
+                color="red"
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
@@ -7675,15 +7771,12 @@ exports[`Storyshots Input Inputs 1`] = `
               alignSelf="flex-end"
               color="background.primary"
               maxWidth={100}
-              px={2}
               style={
                 Array [
                   Object {
                     "alignSelf": "flex-end",
                     "color": "#ffffff",
                     "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
                   },
                 ]
               }
@@ -7869,15 +7962,12 @@ exports[`Storyshots Input Inputs 1`] = `
               alignSelf="flex-end"
               color="background.primary"
               maxWidth={100}
-              px={2}
               style={
                 Array [
                   Object {
                     "alignSelf": "flex-end",
                     "color": "#ffffff",
                     "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
                   },
                 ]
               }
@@ -7987,15 +8077,12 @@ exports[`Storyshots Input Inputs 1`] = `
               alignSelf="flex-end"
               color="background.primary"
               maxWidth={100}
-              px={2}
               style={
                 Array [
                   Object {
                     "alignSelf": "flex-end",
                     "color": "#ffffff",
                     "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
                   },
                 ]
               }
@@ -8123,15 +8210,12 @@ exports[`Storyshots Input Inputs 1`] = `
               alignSelf="flex-end"
               color="background.primary"
               maxWidth={100}
-              px={2}
               style={
                 Array [
                   Object {
                     "alignSelf": "flex-end",
                     "color": "#ffffff",
                     "maxWidth": 100,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
                   },
                 ]
               }
