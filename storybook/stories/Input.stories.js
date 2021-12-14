@@ -74,7 +74,6 @@ const InputMetaData = {
   },
   args: {
     label: "Default",
-    labelColor: "font.primary",
     keyboardType: keyBoardTypes[0],
     defaultValue: null,
     placeholder: "placeholder",
