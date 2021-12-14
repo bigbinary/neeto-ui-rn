@@ -72,6 +72,7 @@ export const Input = React.forwardRef((props, ref) => {
     brandBackground = "background.menubackground",
     disabled = false,
     secureTextEntry = false,
+    textAlignVertical = "top",
     ...rest
   } = props;
 
@@ -147,6 +148,7 @@ export const Input = React.forwardRef((props, ref) => {
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
             secureTextEntry={secureTextEntry && !isPasswordVisible}
+            textAlignVertical={textAlignVertical}
           />
 
           {brandRight && (
