@@ -61,6 +61,7 @@ const View = styled.View`
 export const Input = React.forwardRef((props, ref) => {
   const {
     label = "",
+    labelColor = "font.primary",
     message = "",
     error = false,
     onFocus,
@@ -115,7 +116,9 @@ export const Input = React.forwardRef((props, ref) => {
 
   return (
     <Container mb={20}>
-      {!inline && <LabelText inline={inline} label={label} />}
+      {!inline && (
+        <LabelText labelColor={labelColor} inline={inline} label={label} />
+      )}
       <Container
         {...focusStyles}
         {...disabledStyles}
@@ -125,8 +128,8 @@ export const Input = React.forwardRef((props, ref) => {
         position="relative"
       >
         {inline && (
-          <Container alignSelf="flex-end" maxWidth={100} px={2}>
-            <LabelText inline={inline} label={label} />
+          <Container alignSelf="flex-end" maxWidth={100}>
+            <LabelText labelColor={labelColor} inline={inline} label={label} />
           </Container>
         )}
         <Container flexDirection="row" width="100%">
@@ -143,12 +146,12 @@ export const Input = React.forwardRef((props, ref) => {
             height={40}
             flex={1}
             textStyle="subtext"
-            {...rest}
             border={!inline && borderColor}
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
             secureTextEntry={secureTextEntry && !isPasswordVisible}
             textAlignVertical={textAlignVertical}
+            {...rest}
           />
 
           {brandRight && (
@@ -199,11 +202,12 @@ const InputText = ({ text, borderColor, brandColor, brandBackground }) => (
   </Container>
 );
 
-const LabelText = ({ inline, label }) => (
+const LabelText = ({ inline, label, labelColor }) => (
   <Typography
     numberOfLines={1}
     textStyle="subtext"
     mb={inline ? "12px" : "7px"}
+    color={labelColor}
   >
     {label}
   </Typography>
@@ -228,7 +232,11 @@ Input.propTypes = {
   /**
    * The text to use for the floating label.
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  /**
+   * To change the color of label
+   */
+  labelColor: PropTypes.string,
   /**
    * To display error/info messages
    */
@@ -278,6 +286,7 @@ InputText.propTypes = {
 LabelText.propTypes = {
   inline: PropTypes.bool,
   label: PropTypes.string,
+  labelColor: PropTypes.string,
 };
 
 ErrorMessage.propTypes = {

@@ -22,6 +22,12 @@ const InputMetaData = {
   title: "Input",
   component: InputDemo,
   argTypes: {
+    labelColor: {
+      options: fontColors,
+      control: {
+        type: "select",
+      },
+    },
     keyboardType: {
       options: keyBoardTypes,
       control: {
@@ -74,6 +80,7 @@ const InputMetaData = {
   },
   args: {
     label: "Default",
+    labelColor: "font.primary",
     keyboardType: keyBoardTypes[0],
     defaultValue: null,
     placeholder: "placeholder",
@@ -94,6 +101,12 @@ export const Inputs = () => {
     <>
       <Input label="Default Input" />
       <Input label="with placeholder" placeholder="Placeholder" />
+      <Input
+        label="with custom label color"
+        labelColor="font.danger"
+        placeholder="Placeholder"
+        color="red"
+      />
       <Input label="with value" value="has value" />
       <Input label="Disabled" disabled={true} />
       <Input
