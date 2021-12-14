@@ -66,7 +66,7 @@ let rootLevelRef = null;
  *}
  *
  *import * as React from "react";
- *import { Typography, Button } from "@bigbinary/neetoui-rn";
+ *import { Alert, Button } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {
  *  return (
