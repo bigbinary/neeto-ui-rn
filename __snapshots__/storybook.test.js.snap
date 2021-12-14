@@ -6857,6 +6857,7 @@ exports[`Storyshots Input Input Demo 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -6993,6 +6994,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -7084,6 +7086,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -7174,6 +7177,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
                 value="has value"
               />
@@ -7269,6 +7273,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -7359,6 +7364,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -7464,6 +7470,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
                 value="bigbinary@example.com"
               />
@@ -7555,6 +7562,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
                 value="password"
               />
@@ -7736,6 +7744,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
                 value="test"
               />
@@ -7929,6 +7938,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -8046,6 +8056,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -8181,6 +8192,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -8318,6 +8330,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
@@ -8408,6 +8421,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
               <View
@@ -8533,6 +8547,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
               <View
@@ -8659,6 +8674,7 @@ exports[`Storyshots Input Inputs 1`] = `
                     },
                   ]
                 }
+                textAlignVertical="top"
                 textStyle="subtext"
               />
             </View>
