@@ -147,6 +147,7 @@ export const Input = React.forwardRef((props, ref) => {
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
             secureTextEntry={secureTextEntry && !isPasswordVisible}
+            textAlignVertical="top"
           />
 
           {brandRight && (
