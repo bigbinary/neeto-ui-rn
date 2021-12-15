@@ -7,6 +7,7 @@ exports[`Storyshots Alert Alert Demo 1`] = `
       "flexGrow": 1,
     }
   }
+  disableScrollViewPanResponder={true}
 >
   <View>
     <View
@@ -7406,7 +7407,6 @@ exports[`Storyshots Input Input Demo 1`] = `
                 fontSize="14px"
                 height={40}
                 keyboardType="default"
-                labelColor="font.primary"
                 placeholder="placeholder"
                 px={2}
                 secureTextEntry={false}
