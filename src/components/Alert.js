@@ -191,7 +191,7 @@ export const Alert = () => {
               height={35}
               p={0}
               onPress={() => {
-                button2.onPress();
+                button2.onPress?.();
                 hide();
               }}
               label={button2.label}
@@ -204,7 +204,7 @@ export const Alert = () => {
               borderRadius={50}
               minWidth={110}
               onPress={() => {
-                button1.onPress();
+                button1.onPress?.();
                 hide();
               }}
               label={button1.label}
@@ -223,7 +223,7 @@ export const Alert = () => {
             borderRadius={50}
             minWidth={110}
             onPress={() => {
-              button3.onPress();
+              button3.onPress?.();
               hide();
             }}
             label={button3.label}
