@@ -7,5 +7,6 @@ export { ToggleSwitch } from "./ToggleSwitch";
 export { Avatar } from "./Avatar";
 export { Badge } from "./Badge";
 export { Toast } from "./Toast";
+export { Alert } from "./Alert";
 export { BottomSheet } from "./BottomSheet";
 export { Chip } from "./Chip";
