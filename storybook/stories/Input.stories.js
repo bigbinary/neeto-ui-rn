@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "@components";
+import { Input, Container } from "@components";
 import { theme } from "../../src/theme";
 
 const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
@@ -93,47 +93,78 @@ export const Inputs = () => {
   const customStyles = { color: "font.danger", fontFamily: "inter700" };
   return (
     <>
-      <Input label="Default Input" />
-      <Input label="with placeholder" placeholder="Placeholder" />
-      <Input
-        label="with custom label styles"
-        labelStyles={customStyles}
-        placeholder="Placeholder"
-        color="red"
-      />
-      <Input label="with value" value="has value" />
-      <Input label="Disabled" disabled={true} />
-      <Input
-        label="with error message"
-        message="This is an error"
-        error={true}
-      />
-      <Input
-        label="Email"
-        color="font.primary"
-        value="bigbinary@example.com"
-        keyboardType="email-address"
-      />
-      <Input label="Password" value="password" secureTextEntry />
-      <Input
-        label="inline input with password type"
-        value="test"
-        inline={true}
-        secureTextEntry
-      />
-      <Input label="Inline" inline={true} />
-      <Input label="Inline with error" inline={true} error />
-      <Input label="inline disabled input" inline={true} disabled={true} />
-      <Input label="Brand Left" brandLeft="BRAND-LEFT" />
-      <Input label="Brand Right" brandRight="BRAND-RIGHT" />
-      <Input
-        label="Custom brand color and background"
-        brandRight="BRAND-RIGHT"
-        brandColor="font.white"
-        brandBackground="background.danger"
-      />
-
-      <Input label="Notes" height={100} multiline={true} />
+      <Container mb={20}>
+        <Input label="Default Input" />
+      </Container>
+      <Container mb={20}>
+        <Input label="with placeholder" placeholder="Placeholder" />
+      </Container>
+      <Container mb={20}>
+        <Input
+          label="with custom label styles"
+          labelStyles={customStyles}
+          placeholder="Placeholder"
+          color="red"
+        />
+      </Container>
+      <Container mb={20}>
+        <Input label="with value" value="has value" />
+      </Container>
+      <Container mb={20}>
+        <Input label="Disabled" disabled={true} />
+      </Container>
+      <Container mb={20}>
+        <Input
+          label="with error message"
+          message="This is an error"
+          error={true}
+        />
+      </Container>
+      <Container mb={20}>
+        <Input
+          label="Email"
+          color="font.primary"
+          value="bigbinary@example.com"
+          keyboardType="email-address"
+        />
+      </Container>
+      <Container mb={20}>
+        <Input label="Password" value="password" secureTextEntry />
+      </Container>
+      <Container mb={20}>
+        <Input
+          label="inline input with password type"
+          value="test"
+          inline={true}
+          secureTextEntry
+        />
+      </Container>
+      <Container mb={20}>
+        <Input label="Inline" inline={true} />
+      </Container>
+      <Container mb={20}>
+        <Input label="Inline with error" inline={true} error />
+      </Container>
+      <Container mb={20}>
+        <Input label="inline disabled input" inline={true} disabled={true} />
+      </Container>
+      <Container mb={20}>
+        <Input label="Brand Left" brandLeft="BRAND-LEFT" />
+      </Container>
+      <Container mb={20}>
+        <Input label="Brand Right" brandRight="BRAND-RIGHT" />
+      </Container>
+      <Container mb={20}>
+        <Input
+          label="Custom brand color and background"
+          brandRight="BRAND-RIGHT"
+          brandColor="font.white"
+          brandBackground="background.danger"
+        />
+      </Container>
+      <Container mb={20}>
+        <Input label="Notes" height={100} multiline={true} />
+      </Container>
     </>
   );
 };
