@@ -10,3 +10,4 @@ export { Toast } from "./Toast";
 export { Alert } from "./Alert";
 export { BottomSheet } from "./BottomSheet";
 export { Chip } from "./Chip";
+export { ParentView } from "./ParentView";
