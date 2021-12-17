@@ -55,7 +55,7 @@ export const Badge = ({
         alignItems="center"
         {...rest}
       >
-        {content?.length > 0 && (
+        {!!content && (
           <Typography fontSize={fontSize} fontFamily={fontFamily} color={color}>
             {content}
           </Typography>
