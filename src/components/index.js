@@ -11,3 +11,4 @@ export { Alert } from "./Alert";
 export { BottomSheet } from "./BottomSheet";
 export { Chip } from "./Chip";
 export { ParentView } from "./ParentView";
+export { Icon } from "./Icon";
