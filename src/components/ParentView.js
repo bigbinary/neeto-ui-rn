@@ -41,7 +41,7 @@ export const ParentView = ({
 
 ParentView.propTypes = {
   barStyle: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.node,
 };
 
 const styles = StyleSheet.create({
