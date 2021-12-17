@@ -20,6 +20,7 @@ export const TextInput = styled.TextInput`
   ${border}
   ${buttonStyle}
   ${typography}
+  ${color}
 `;
 
 const View = styled.View`
