@@ -116,7 +116,7 @@ export const Input = React.forwardRef((props, ref) => {
   };
 
   return (
-    <Container mb={20}>
+    <Container>
       {!inline && (
         <LabelText labelStyles={labelStyles} inline={inline} label={label} />
       )}
