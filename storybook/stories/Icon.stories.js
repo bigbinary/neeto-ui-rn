@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Chip, Typography, Icon } from "@components";
+import { Container, Icon } from "@components";
 
 const IconStories = {
-  title: "Iconstories",
+  title: "Icon",
 };
 
 export default IconStories;
