@@ -110,6 +110,7 @@ export const Inputs = () => {
       />
       <Input
         label="Email"
+        color="font.primary"
         value="bigbinary@example.com"
         keyboardType="email-address"
       />
