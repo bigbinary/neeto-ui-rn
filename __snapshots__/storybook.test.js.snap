@@ -178,13 +178,13 @@ exports[`Storyshots Alert Alert Demo 1`] = `
               >
                 <Text
                   color="font.grey800"
-                  fontFamily="inter400"
+                  fontFamily="inter700"
                   fontSize="l"
                   style={
                     Array [
                       Object {
                         "color": "#2f3941",
-                        "fontFamily": "Inter-Regular",
+                        "fontFamily": "Inter-Bold",
                         "fontSize": 18,
                       },
                     ]
@@ -196,14 +196,12 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 <View
                   alignItems="center"
                   color="background.primary"
-                  height={100}
                   justifyContent="center"
                   style={
                     Array [
                       Object {
                         "alignItems": "center",
                         "color": "#ffffff",
-                        "height": 100,
                         "justifyContent": "center",
                       },
                     ]
@@ -2383,7 +2381,25 @@ exports[`Storyshots Badge Badges 1`] = `
                   ]
                 }
                 width="32px"
-              />
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter400"
+                  fontSize="xs"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 10,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
               <Text
                 fontSize="l"
                 px={2}
@@ -2442,7 +2458,25 @@ exports[`Storyshots Badge Badges 1`] = `
                   ]
                 }
                 width="32px"
-              />
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter400"
+                  fontSize="16px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 16,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  3
+                </Text>
+              </View>
               <Text
                 fontSize="l"
                 px={2}
