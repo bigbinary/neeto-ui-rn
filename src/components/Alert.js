@@ -160,10 +160,10 @@ export const Alert = () => {
         padding={20}
         borderRadius={20}
       >
-        <Typography fontFamily="inter400" fontSize="l" color="font.grey800">
+        <Typography fontFamily="inter700" fontSize="l" color="font.grey800">
           {title}
         </Typography>
-        <Container height={100} alignItems="center" justifyContent="center">
+        <Container alignItems="center" justifyContent="center">
           <Typography
             textAlign="center"
             py={20}
