@@ -130,6 +130,7 @@ export const BottomSheet = ({
   bg,
   alignItems = "center",
   maxHeight,
+  children,
 }) => {
   return (
     <Modal
@@ -147,29 +148,32 @@ export const BottomSheet = ({
             title={title}
             hide={hide}
           ></Title>
-          <FlatList
-            contentContainerStyle={styles.flatListContentContainerStyle}
-            initialNumToRender={data.length}
-            data={data}
-            renderItem={({ item, index }) => {
-              return (
-                <ContentRow
-                  alignItems={alignItems}
-                  isSelected={index === selectedItemIndex}
-                  bg={bg}
-                  key={index}
-                  onPress={() => {
-                    hide();
-                    onItemPress(index);
-                  }}
-                  label={item}
-                />
-              );
-            }}
-            keyExtractor={(item, index) => {
-              return index;
-            }}
-          />
+          {data && (
+            <FlatList
+              contentContainerStyle={styles.flatListContentContainerStyle}
+              initialNumToRender={data.length}
+              data={data}
+              renderItem={({ item, index }) => {
+                return (
+                  <ContentRow
+                    alignItems={alignItems}
+                    isSelected={index === selectedItemIndex}
+                    bg={bg}
+                    key={index}
+                    onPress={() => {
+                      hide();
+                      onItemPress(index);
+                    }}
+                    label={item}
+                  />
+                );
+              }}
+              keyExtractor={(item, index) => {
+                return index;
+              }}
+            />
+          )}
+          {children}
         </Container>
       </Container>
     </Modal>
@@ -217,6 +221,7 @@ BottomSheet.propTypes = {
    * To set the maximum height of bottom sheet.
    */
   maxHeight: PropTypes.number,
+  children: PropTypes.node,
 };
 
 const styles = StyleSheet.create({
