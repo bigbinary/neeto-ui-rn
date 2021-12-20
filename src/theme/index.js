@@ -32,6 +32,7 @@ const colors = {
     ...greyVarients,
   },
   background: {
+    parentView: "#ffffff",
     primary: "#ffffff",
     secondary: "#e4e4e7",
     ...defaultColors,
