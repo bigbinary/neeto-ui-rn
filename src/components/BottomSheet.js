@@ -63,23 +63,25 @@ Title.propTypes = {
 
 const ContentRow = React.memo(({ label, onPress, bg, isSelected }) => {
   return (
-    <>
-      <TouchableOpacity
-        alignItems="center"
-        bg={bg}
-        py={12}
-        borderRadius={20}
-        onPress={onPress}
-      >
-        <Typography
-          textStyle="body"
-          fontFamily={isSelected ? "inter700" : "inter400"}
+    !!label && (
+      <>
+        <TouchableOpacity
+          alignItems="center"
+          bg={bg}
+          py={12}
+          borderRadius={20}
+          onPress={onPress}
         >
-          {label}
-        </Typography>
-      </TouchableOpacity>
-      <Border />
-    </>
+          <Typography
+            textStyle="body"
+            fontFamily={isSelected ? "inter700" : "inter400"}
+          >
+            {label}
+          </Typography>
+        </TouchableOpacity>
+        <Border />
+      </>
+    )
   );
 });
 ContentRow.displayName = "ContentRow";

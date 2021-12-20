@@ -5,7 +5,7 @@ const TypographyStories = {
   title: "Bottom Sheet",
   component: BottomSheet,
   args: {
-    data: ["neeto-ui-rn", "aceinvoice-rn", "reactnative-hq"],
+    data: ["neeto-ui-rn", "aceinvoice-rn", "reactnative-hq", ""],
   },
   argTypes: {
     data: {
