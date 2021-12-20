@@ -9665,7 +9665,7 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
               style={
                 Object {
                   "backgroundColor": "#2f3941",
-                  "borderLeftColor": "#69C779",
+                  "borderLeftColor": "#5cb85c",
                   "borderLeftWidth": 5,
                   "borderRadius": 6,
                   "elevation": 2,
@@ -9945,7 +9945,7 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
               style={
                 Object {
                   "backgroundColor": "#2f3941",
-                  "borderLeftColor": "#69C779",
+                  "borderLeftColor": "#5cb85c",
                   "borderLeftWidth": 5,
                   "borderRadius": 6,
                   "elevation": 2,
@@ -10166,6 +10166,108 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
               textStyle="solid"
             >
               Error Toast
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 10,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Info Toast
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 10,
+                "marginTop": 10,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Warning Toast
             </Text>
           </View>
         </View>
