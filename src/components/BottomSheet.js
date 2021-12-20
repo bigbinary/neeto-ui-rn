@@ -43,13 +43,15 @@ const Title = ({ title, bg, hide, alignItems }) => {
         borderRadius={20}
         style={{}}
       >
-        <Typography
-          color="font.secondary"
-          fontFamily="inter700"
-          textStyle="subtext"
-        >
-          {title}
-        </Typography>
+        {title && (
+          <Typography
+            color="font.secondary"
+            fontFamily="inter700"
+            textStyle="subtext"
+          >
+            {title}
+          </Typography>
+        )}
       </Container>
       <Border />
     </>
@@ -148,6 +150,7 @@ export const BottomSheet = ({
             title={title}
             hide={hide}
           ></Title>
+
           {data && (
             <FlatList
               contentContainerStyle={styles.flatListContentContainerStyle}
