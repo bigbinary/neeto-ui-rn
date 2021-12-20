@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Button, Toast } from "@components";
 
-const types = ["success", "error"];
+const types = ["success", "error", "info", "warning"];
 const positions = ["bottom", "top"];
 const ToastMessage = {
   title: "ToastMessage",
@@ -58,11 +58,10 @@ export const Toasts = () => {
             type: "success",
             position: "bottom",
             text1: "Yay!",
-            text2: "Showing Sucess Toast Message!",
+            text2: "Showing Success Toast Message!",
           });
         }}
       />
-
       <Button
         my={10}
         label="Error Toast"
@@ -72,6 +71,30 @@ export const Toasts = () => {
             position: "bottom",
             text1: "Ohh!",
             text2: "Showing Error Toast Message!",
+          });
+        }}
+      />
+      <Button
+        my={10}
+        label="Info Toast"
+        onPress={() => {
+          Toast.show({
+            type: "info",
+            position: "bottom",
+            text1: "Ohh!",
+            text2: "Showing Info Toast Message!",
+          });
+        }}
+      />
+      <Button
+        my={10}
+        label="Warning Toast"
+        onPress={() => {
+          Toast.show({
+            type: "warning",
+            position: "bottom",
+            text1: "Ohh!",
+            text2: "Showing Warning Toast Message!",
           });
         }}
       />
