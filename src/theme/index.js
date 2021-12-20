@@ -7,8 +7,10 @@ const defaultColors = {
 };
 
 const toastBorderColors = {
-  success: "#69C779",
-  error: "#FE6301",
+  success: "#5cb85c",
+  error: "#d9534f",
+  info: "#5bc0de",
+  warning: "#f0ad4e",
 };
 
 const greyVarients = {

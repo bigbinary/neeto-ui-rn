@@ -40,6 +40,28 @@ export const defaultToasterConfig = {
       text2Style={styles.text2Style}
     />
   ),
+  info: props => (
+    <BaseToast
+      {...props}
+      style={styles.infoStyle}
+      leadingIconContainerStyle={styles.toasterBGColor}
+      renderTrailingIcon={() => <CloseButton />}
+      contentContainerStyle={styles.contentContainerStyle}
+      text1Style={styles.text1Style}
+      text2Style={styles.text2Style}
+    />
+  ),
+  warning: props => (
+    <BaseToast
+      {...props}
+      style={styles.warningStyle}
+      leadingIconContainerStyle={styles.toasterBGColor}
+      renderTrailingIcon={() => <CloseButton />}
+      contentContainerStyle={styles.contentContainerStyle}
+      text1Style={styles.text1Style}
+      text2Style={styles.text2Style}
+    />
+  ),
 };
 
 defaultToasterConfig.success.displayName = "Success";
@@ -52,6 +74,14 @@ const styles = StyleSheet.create({
   },
   errorStyle: {
     borderLeftColor: theme.colors.toast.error,
+    backgroundColor: theme.colors.background.grey800,
+  },
+  infoStyle: {
+    borderLeftColor: theme.colors.toast.info,
+    backgroundColor: theme.colors.background.grey800,
+  },
+  warningStyle: {
+    borderLeftColor: theme.colors.toast.warning,
     backgroundColor: theme.colors.background.grey800,
   },
   toasterBGColor: { backgroundColor: theme.colors.background.grey800 },
