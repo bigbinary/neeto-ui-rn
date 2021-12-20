@@ -26,18 +26,19 @@ const Border = () => {
   return <Container bg="border.primary" height="1px" width="100%" />;
 };
 
-const Title = ({ title, bg, hide }) => {
+const Title = ({ title, bg, hide, alignItems }) => {
   let touchY;
   return (
     <>
       <Container
+        px={2}
         bg={bg}
         onTouchStart={e => (touchY = e.nativeEvent.pageY)}
         onTouchEnd={e => {
           // Swipe Down Detection
           if (e.nativeEvent.pageY - touchY > 20) hide();
         }}
-        alignItems="center"
+        alignItems={alignItems}
         py={20}
         borderRadius={20}
         style={{}}
@@ -59,37 +60,42 @@ Title.propTypes = {
   title: PropTypes.string,
   hide: PropTypes.func,
   bg: PropTypes.string,
+  alignItems: PropTypes.string,
 };
 
-const ContentRow = React.memo(({ label, onPress, bg, isSelected }) => {
-  return (
-    !!label && (
-      <>
-        <TouchableOpacity
-          alignItems="center"
-          bg={bg}
-          py={12}
-          borderRadius={20}
-          onPress={onPress}
-        >
-          <Typography
-            textStyle="body"
-            fontFamily={isSelected ? "inter700" : "inter400"}
+const ContentRow = React.memo(
+  ({ label, onPress, bg, isSelected, alignItems }) => {
+    return (
+      !!label && (
+        <>
+          <TouchableOpacity
+            alignItems={alignItems}
+            bg={bg}
+            py={12}
+            borderRadius={20}
+            onPress={onPress}
+            px={2}
           >
-            {label}
-          </Typography>
-        </TouchableOpacity>
-        <Border />
-      </>
-    )
-  );
-});
+            <Typography
+              textStyle="body"
+              fontFamily={isSelected ? "inter700" : "inter400"}
+            >
+              {label}
+            </Typography>
+          </TouchableOpacity>
+          <Border />
+        </>
+      )
+    );
+  }
+);
 ContentRow.displayName = "ContentRow";
 ContentRow.propTypes = {
   label: PropTypes.string,
   onPress: PropTypes.func,
   bg: PropTypes.string,
   isSelected: PropTypes.bool,
+  alignItems: PropTypes.string,
 };
 
 /**
@@ -122,6 +128,8 @@ export const BottomSheet = ({
   onItemPress,
   selectedItemIndex,
   bg,
+  alignItems = "center",
+  maxHeight,
 }) => {
   return (
     <Modal
@@ -132,8 +140,13 @@ export const BottomSheet = ({
       hideModalContentWhileAnimating
     >
       <Container bg={bg} flex={1} borderRadius={20}>
-        <Container>
-          <Title bg={bg} title={title} hide={hide}></Title>
+        <Container maxHeight={maxHeight}>
+          <Title
+            alignItems={alignItems}
+            bg={bg}
+            title={title}
+            hide={hide}
+          ></Title>
           <FlatList
             contentContainerStyle={styles.flatListContentContainerStyle}
             initialNumToRender={data.length}
@@ -141,6 +154,7 @@ export const BottomSheet = ({
             renderItem={({ item, index }) => {
               return (
                 <ContentRow
+                  alignItems={alignItems}
                   isSelected={index === selectedItemIndex}
                   bg={bg}
                   key={index}
@@ -195,6 +209,14 @@ BottomSheet.propTypes = {
    * Background color.
    */
   bg: PropTypes.string,
+  /**
+   * Alignment of children within bottom sheet.
+   */
+  alignItems: PropTypes.string,
+  /**
+   * To set the maximum height of bottom sheet.
+   */
+  maxHeight: PropTypes.number,
 };
 
 const styles = StyleSheet.create({

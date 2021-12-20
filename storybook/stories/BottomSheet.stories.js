@@ -5,7 +5,7 @@ const TypographyStories = {
   title: "Bottom Sheet",
   component: BottomSheet,
   args: {
-    data: ["neeto-ui-rn", "aceinvoice-rn", "reactnative-hq", ""],
+    data: ["neeto-ui-rn", "aceinvoice-rn", "", "reactnative-hq"],
   },
   argTypes: {
     data: {
@@ -30,6 +30,7 @@ export const BottomSheetDemo = args => {
         onPress={() => setBottomSheetVisibility(true)}
       />
       <BottomSheet
+        maxHeight={200}
         isVisible={bottomSheetVisibility}
         hide={() => {
           setBottomSheetVisibility(false);
