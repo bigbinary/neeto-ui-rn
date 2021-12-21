@@ -34,7 +34,7 @@ export const ParentView = ({
   const theme = useContext(ThemeContext);
 
   const newBackgroundColor =
-    backgroundColor || bg || theme.background.parentView;
+    backgroundColor || bg || theme.colors.background.parentView;
 
   const statusBarColors = {
     default: theme.colors.background.white,
@@ -77,7 +77,7 @@ ParentView.propTypes = {
   /**
    * Sets the background color
    */
-  bg: PropTypes.strings,
+  bg: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
