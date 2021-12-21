@@ -49,7 +49,7 @@ export const Badge = ({
       <Container
         width={`${size}px`}
         height={`${size * 0.75}px`}
-        maxHeight={`${25}px`}
+        maxHeight="25px"
         bg={badgeColor}
         borderRadius={`${size * 0.375}px`}
         justifyContent="center"
