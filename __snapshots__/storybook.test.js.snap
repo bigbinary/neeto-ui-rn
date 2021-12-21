@@ -2168,6 +2168,7 @@ exports[`Storyshots Badge Badge Demo 1`] = `
             color="background.primary"
             height="27px"
             justifyContent="center"
+            maxHeight="25px"
             style={
               Array [
                 Object {
@@ -2177,6 +2178,7 @@ exports[`Storyshots Badge Badge Demo 1`] = `
                   "color": "#ffffff",
                   "height": 27,
                   "justifyContent": "center",
+                  "maxHeight": 25,
                   "width": 36,
                 },
               ]
@@ -2308,6 +2310,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="15.75px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2317,6 +2320,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 15.75,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 21,
                     },
                   ]
@@ -2367,6 +2371,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2376,6 +2381,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
@@ -2444,6 +2450,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2453,6 +2460,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
@@ -2521,6 +2529,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2530,6 +2539,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
@@ -2580,6 +2590,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2589,6 +2600,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
@@ -2657,6 +2669,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2666,6 +2679,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
@@ -2734,6 +2748,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 color="background.primary"
                 height="24px"
                 justifyContent="center"
+                maxHeight="25px"
                 style={
                   Array [
                     Object {
@@ -2743,6 +2758,7 @@ exports[`Storyshots Badge Badges 1`] = `
                       "color": "#ffffff",
                       "height": 24,
                       "justifyContent": "center",
+                      "maxHeight": 25,
                       "width": 32,
                     },
                   ]
