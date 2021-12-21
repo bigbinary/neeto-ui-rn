@@ -26,7 +26,7 @@ const Border = () => {
   return <Container bg="border.primary" height="1px" width="100%" />;
 };
 
-const Title = ({ title, bg, hide, alignItems }) => {
+const Title = ({ title, bg, hide, titleContainerStyle, titleTextStyle }) => {
   let touchY;
   return (
     <>
@@ -38,16 +38,17 @@ const Title = ({ title, bg, hide, alignItems }) => {
           // Swipe Down Detection
           if (e.nativeEvent.pageY - touchY > 20) hide();
         }}
-        alignItems={alignItems}
+        alignItems="center"
         py={20}
         borderRadius={20}
-        style={{}}
+        {...titleContainerStyle}
       >
         {title && (
           <Typography
             color="font.secondary"
             fontFamily="inter700"
             textStyle="subtext"
+            {...titleTextStyle}
           >
             {title}
           </Typography>
@@ -62,25 +63,28 @@ Title.propTypes = {
   title: PropTypes.string,
   hide: PropTypes.func,
   bg: PropTypes.string,
-  alignItems: PropTypes.string,
+  titleContainerStyle: PropTypes.object,
+  titleTextStyle: PropTypes.object,
 };
 
 const ContentRow = React.memo(
-  ({ label, onPress, bg, isSelected, alignItems }) => {
+  ({ label, onPress, bg, isSelected, itemContainerStyle, itemTextStyle }) => {
     return (
       !!label && (
         <>
           <TouchableOpacity
-            alignItems={alignItems}
+            alignItems="center"
             bg={bg}
             py={12}
             borderRadius={20}
             onPress={onPress}
             px={2}
+            {...itemContainerStyle}
           >
             <Typography
               textStyle="body"
               fontFamily={isSelected ? "inter700" : "inter400"}
+              {...itemTextStyle}
             >
               {label}
             </Typography>
@@ -97,7 +101,8 @@ ContentRow.propTypes = {
   onPress: PropTypes.func,
   bg: PropTypes.string,
   isSelected: PropTypes.bool,
-  alignItems: PropTypes.string,
+  itemContainerStyle: PropTypes.object,
+  itemTextStyle: PropTypes.object,
 };
 
 /**
@@ -130,9 +135,12 @@ export const BottomSheet = ({
   onItemPress,
   selectedItemIndex,
   bg,
-  alignItems = "center",
-  maxHeight,
   children,
+  titleContainerStyle,
+  titleTextStyle,
+  itemContainerStyle,
+  itemTextStyle,
+  ...rest
 }) => {
   return (
     <Modal
@@ -142,13 +150,14 @@ export const BottomSheet = ({
       useNativeDriver
       hideModalContentWhileAnimating
     >
-      <Container bg={bg} flex={1} borderRadius={20}>
-        <Container maxHeight={maxHeight}>
+      <Container bg={bg} flex={1} borderRadius={20} {...rest}>
+        <Container>
           <Title
-            alignItems={alignItems}
             bg={bg}
             title={title}
             hide={hide}
+            titleContainerStyle={titleContainerStyle}
+            titleTextStyle={titleTextStyle}
           ></Title>
 
           {data && (
@@ -159,7 +168,6 @@ export const BottomSheet = ({
               renderItem={({ item, index }) => {
                 return (
                   <ContentRow
-                    alignItems={alignItems}
                     isSelected={index === selectedItemIndex}
                     bg={bg}
                     key={index}
@@ -168,6 +176,8 @@ export const BottomSheet = ({
                       onItemPress(index);
                     }}
                     label={item}
+                    itemContainerStyle={itemContainerStyle}
+                    itemTextStyle={itemTextStyle}
                   />
                 );
               }}
@@ -217,13 +227,21 @@ BottomSheet.propTypes = {
    */
   bg: PropTypes.string,
   /**
-   * Alignment of children within bottom sheet.
+   * To customise title container styles.
    */
-  alignItems: PropTypes.string,
+  titleContainerStyle: PropTypes.object,
   /**
-   * To set the maximum height of bottom sheet.
+   * To customise title text styles.
    */
-  maxHeight: PropTypes.number,
+  titleTextStyle: PropTypes.object,
+  /**
+   * To customise item container styles.
+   */
+  itemContainerStyle: PropTypes.object,
+  /**
+   * To customise item text styles.
+   */
+  itemTextStyle: PropTypes.object,
   children: PropTypes.node,
 };
 

@@ -628,7 +628,7 @@ exports[`Storyshots Avatars Avatar Demo 1`] = `
         >
           <View
             alignItems="center"
-            bg="background.primary"
+            bg="background.parentView"
             borderRadius={42}
             color="background.primary"
             height={84}
@@ -3015,6 +3015,7 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                 borderRadius={20}
                 color="background.primary"
                 flex={1}
+                maxHeight={200}
                 style={
                   Array [
                     Object {
@@ -3024,6 +3025,7 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                       "flexBasis": 0,
                       "flexGrow": 1,
                       "flexShrink": 1,
+                      "maxHeight": 200,
                     },
                   ]
                 }
@@ -3045,6 +3047,7 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                     color="background.primary"
                     onTouchEnd={[Function]}
                     onTouchStart={[Function]}
+                    px={2}
                     py={20}
                     style={
                       Array [
@@ -3054,9 +3057,10 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                           "borderRadius": 20,
                           "color": "#ffffff",
                           "paddingBottom": 20,
+                          "paddingLeft": 8,
+                          "paddingRight": 8,
                           "paddingTop": 20,
                         },
-                        Object {},
                       ]
                     }
                   >
@@ -3103,12 +3107,13 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                       Array [
                         "neeto-ui-rn",
                         "aceinvoice-rn",
+                        "",
                         "reactnative-hq",
                       ]
                     }
                     getItem={[Function]}
                     getItemCount={[Function]}
-                    initialNumToRender={3}
+                    initialNumToRender={4}
                     keyExtractor={[Function]}
                     onContentSizeChange={[Function]}
                     onLayout={[Function]}
@@ -3147,6 +3152,8 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                               "borderRadius": 20,
                               "opacity": 1,
                               "paddingBottom": 12,
+                              "paddingLeft": 8,
+                              "paddingRight": 8,
                               "paddingTop": 12,
                             }
                           }
@@ -3207,6 +3214,8 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                               "borderRadius": 20,
                               "opacity": 1,
                               "paddingBottom": 12,
+                              "paddingLeft": 8,
+                              "paddingRight": 8,
                               "paddingTop": 12,
                             }
                           }
@@ -3247,6 +3256,10 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                       <View
                         onLayout={[Function]}
                         style={null}
+                      />
+                      <View
+                        onLayout={[Function]}
+                        style={null}
                       >
                         <View
                           accessible={true}
@@ -3267,6 +3280,8 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                               "borderRadius": 20,
                               "opacity": 1,
                               "paddingBottom": 12,
+                              "paddingLeft": 8,
+                              "paddingRight": 8,
                               "paddingTop": 12,
                             }
                           }
