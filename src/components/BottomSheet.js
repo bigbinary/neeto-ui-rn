@@ -26,11 +26,12 @@ const Border = () => {
   return <Container bg="border.primary" height="1px" width="100%" />;
 };
 
-const Title = ({ title, bg, hide }) => {
+const Title = ({ title, bg, hide, titleContainerStyle, titleTextStyle }) => {
   let touchY;
   return (
     <>
       <Container
+        px={2}
         bg={bg}
         onTouchStart={e => (touchY = e.nativeEvent.pageY)}
         onTouchEnd={e => {
@@ -40,15 +41,18 @@ const Title = ({ title, bg, hide }) => {
         alignItems="center"
         py={20}
         borderRadius={20}
-        style={{}}
+        {...titleContainerStyle}
       >
-        <Typography
-          color="font.secondary"
-          fontFamily="inter700"
-          textStyle="subtext"
-        >
-          {title}
-        </Typography>
+        {title && (
+          <Typography
+            color="font.secondary"
+            fontFamily="inter700"
+            textStyle="subtext"
+            {...titleTextStyle}
+          >
+            {title}
+          </Typography>
+        )}
       </Container>
       <Border />
     </>
@@ -59,35 +63,46 @@ Title.propTypes = {
   title: PropTypes.string,
   hide: PropTypes.func,
   bg: PropTypes.string,
+  titleContainerStyle: PropTypes.object,
+  titleTextStyle: PropTypes.object,
 };
 
-const ContentRow = React.memo(({ label, onPress, bg, isSelected }) => {
-  return (
-    <>
-      <TouchableOpacity
-        alignItems="center"
-        bg={bg}
-        py={12}
-        borderRadius={20}
-        onPress={onPress}
-      >
-        <Typography
-          textStyle="body"
-          fontFamily={isSelected ? "inter700" : "inter400"}
-        >
-          {label}
-        </Typography>
-      </TouchableOpacity>
-      <Border />
-    </>
-  );
-});
+const ContentRow = React.memo(
+  ({ label, onPress, bg, isSelected, itemContainerStyle, itemTextStyle }) => {
+    return (
+      !!label && (
+        <>
+          <TouchableOpacity
+            alignItems="center"
+            bg={bg}
+            py={12}
+            borderRadius={20}
+            onPress={onPress}
+            px={2}
+            {...itemContainerStyle}
+          >
+            <Typography
+              textStyle="body"
+              fontFamily={isSelected ? "inter700" : "inter400"}
+              {...itemTextStyle}
+            >
+              {label}
+            </Typography>
+          </TouchableOpacity>
+          <Border />
+        </>
+      )
+    );
+  }
+);
 ContentRow.displayName = "ContentRow";
 ContentRow.propTypes = {
   label: PropTypes.string,
   onPress: PropTypes.func,
   bg: PropTypes.string,
   isSelected: PropTypes.bool,
+  itemContainerStyle: PropTypes.object,
+  itemTextStyle: PropTypes.object,
 };
 
 /**
@@ -120,6 +135,12 @@ export const BottomSheet = ({
   onItemPress,
   selectedItemIndex,
   bg,
+  children,
+  titleContainerStyle,
+  titleTextStyle,
+  itemContainerStyle,
+  itemTextStyle,
+  ...rest
 }) => {
   return (
     <Modal
@@ -129,31 +150,43 @@ export const BottomSheet = ({
       useNativeDriver
       hideModalContentWhileAnimating
     >
-      <Container bg={bg} flex={1} borderRadius={20}>
+      <Container bg={bg} flex={1} borderRadius={20} {...rest}>
         <Container>
-          <Title bg={bg} title={title} hide={hide}></Title>
-          <FlatList
-            contentContainerStyle={styles.flatListContentContainerStyle}
-            initialNumToRender={data.length}
-            data={data}
-            renderItem={({ item, index }) => {
-              return (
-                <ContentRow
-                  isSelected={index === selectedItemIndex}
-                  bg={bg}
-                  key={index}
-                  onPress={() => {
-                    hide();
-                    onItemPress(index);
-                  }}
-                  label={item}
-                />
-              );
-            }}
-            keyExtractor={(item, index) => {
-              return index;
-            }}
-          />
+          <Title
+            bg={bg}
+            title={title}
+            hide={hide}
+            titleContainerStyle={titleContainerStyle}
+            titleTextStyle={titleTextStyle}
+          ></Title>
+
+          {data && (
+            <FlatList
+              contentContainerStyle={styles.flatListContentContainerStyle}
+              initialNumToRender={data.length}
+              data={data}
+              renderItem={({ item, index }) => {
+                return (
+                  <ContentRow
+                    isSelected={index === selectedItemIndex}
+                    bg={bg}
+                    key={index}
+                    onPress={() => {
+                      hide();
+                      onItemPress(index);
+                    }}
+                    label={item}
+                    itemContainerStyle={itemContainerStyle}
+                    itemTextStyle={itemTextStyle}
+                  />
+                );
+              }}
+              keyExtractor={(item, index) => {
+                return index;
+              }}
+            />
+          )}
+          {children}
         </Container>
       </Container>
     </Modal>
@@ -193,6 +226,23 @@ BottomSheet.propTypes = {
    * Background color.
    */
   bg: PropTypes.string,
+  /**
+   * To customise title container styles.
+   */
+  titleContainerStyle: PropTypes.object,
+  /**
+   * To customise title text styles.
+   */
+  titleTextStyle: PropTypes.object,
+  /**
+   * To customise item container styles.
+   */
+  itemContainerStyle: PropTypes.object,
+  /**
+   * To customise item text styles.
+   */
+  itemTextStyle: PropTypes.object,
+  children: PropTypes.node,
 };
 
 const styles = StyleSheet.create({
