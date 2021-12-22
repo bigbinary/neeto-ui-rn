@@ -11,18 +11,30 @@ import { space, flexbox, border, layout } from "styled-system";
 import { useKeyboard } from "@hooks";
 import { Container } from "@components";
 
+export const ScrollView = styled.ScrollView.attrs(() => ({
+  keyboardShouldPersistTaps: "handled",
+  showsVerticalScrollIndicator: true,
+  showsHorizontalScrollIndicator: false,
+  contentContainerStyle: { flexGrow: 1 },
+}))`
+  ${space}
+  ${flexbox}
+  ${border}
+  ${layout}
+`;
+
 /**
  * RichTextEditor component is wrapper created around react-native-pell-rich-editor. This has dependency on react-native-webview, so make sure add that as well.
  *
  *  ## Usage
  * ```js
- * import React, {useState} from "react";
+ * import * as React from "react";
  * import { Container, RichTextEditor } from "@components";
  * import { theme } from "@theme";
- * 
+ *
  * export default function Main() {
- * const [message, setMessage] = useState('');
- * 
+ * const [message, setMessage] = React.useState('');
+ *
  * const editorProps = {
  *   initialContentHTML: "Rich Text Component...",
  *   initialFocus: true,
@@ -30,7 +42,7 @@ import { Container } from "@components";
  *     color: theme.colors.font.grey,
  *   },
  * };
- * 
+ *
  * return (
  *   <Container flex={1}>
  *     <RichTextEditor*
@@ -56,18 +68,6 @@ import { Container } from "@components";
  *
  * ```
  */
-
-export const ScrollView = styled.ScrollView.attrs(() => ({
-  keyboardShouldPersistTaps: "handled",
-  showsVerticalScrollIndicator: true,
-  showsHorizontalScrollIndicator: false,
-  contentContainerStyle: { flexGrow: 1 },
-}))`
-  ${space}
-  ${flexbox}
-  ${border}
-  ${layout}
-`;
 
 export const RichTextEditor = ({
   onChange,
