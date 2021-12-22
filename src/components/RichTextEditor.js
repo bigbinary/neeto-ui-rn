@@ -91,7 +91,6 @@ export const RichTextEditor = ({
 
     return actionItems;
   };
-  const editorPropsReceived = { ...editorProps };
 
   return (
     <>
@@ -109,7 +108,7 @@ export const RichTextEditor = ({
             setToolbar(false);
             editorProps?.onBlurFn();
           }}
-          {...editorPropsReceived}
+          {...editorProps}
         />
 
         {children}
@@ -119,12 +118,17 @@ export const RichTextEditor = ({
           <RichToolbar
             editor={richTextRef}
             actions={computeToolbarActions()}
-            {...(toolBarProps && { ...toolBarProps })}
+            {...toolBarProps}
           />
         </Container>
       )}
     </>
   );
+};
+
+RichTextEditor.defaultProps = {
+  editorProps: {},
+  toolBarProps: {},
 };
 
 RichTextEditor.propTypes = {

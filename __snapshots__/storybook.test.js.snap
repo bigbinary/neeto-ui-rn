@@ -9564,7 +9564,7 @@ exports[`Storyshots Input Inputs 1`] = `
 </RCTScrollView>
 `;
 
-exports[`Storyshots Rich Text Editor Rich Text Editors Component 1`] = `
+exports[`Storyshots Rich Text Editor Rich Text Editor Component 1`] = `
 <RCTScrollView
   contentContainerStyle={
     Object {
