@@ -129,7 +129,7 @@ export const RichTextEditor = ({
 
 RichTextEditor.propTypes = {
   /**
-   * Callback that is called when the text input's text changes. 
+   * Callback that is called when the text input's text changes.
    */
   onChange: PropTypes.func.isRequired,
   children: PropTypes.node,
