@@ -24,7 +24,7 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
 `;
 
 /**
- * RichTextEditor component is wrapper created around react-native-pell-rich-editor. This has dependency on react-native-webview, so make sure add that as well.
+ * RichTextEditor component is wrapper created around react-native-pell-rich-editor. This has dependency on react-native-webview, so make sure to add that as well.
  *
  *  ## Usage
  * ```js
@@ -45,7 +45,7 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
  *
  * return (
  *   <Container flex={1}>
- *     <RichTextEditor*
+ *     <RichTextEditor
  *       onChange={setMessage}
  *       toolbarActions={[
  *         "keyboard",
@@ -128,10 +128,25 @@ export const RichTextEditor = ({
 };
 
 RichTextEditor.propTypes = {
+  /**
+   * Callback that is called when the text input's text changes. 
+   */
   onChange: PropTypes.func.isRequired,
   children: PropTypes.node,
+  /**
+   * Placeholder for the input.
+   */
   placeholderText: PropTypes.string,
+  /**
+   * An array of actions to be provided by this toolbar. Check react-native-pell-rich-editor for list of supported actions.
+   */
   toolbarActions: PropTypes.array.isRequired,
+  /**
+   * Object which can be used to pass other supported props by the Editor.
+   */
   editorProps: PropTypes.object,
+  /**
+   * Object which can be used to pass other supported props by the RichToolbar.
+   */
   toolBarProps: PropTypes.object,
 };

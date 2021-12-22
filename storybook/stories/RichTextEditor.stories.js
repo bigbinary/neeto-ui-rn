@@ -8,7 +8,7 @@ const RichTextEditorStories = {
 
 export default RichTextEditorStories;
 
-export const RichTextEditorsComponent = () => {
+export const RichTextEditorComponent = () => {
   const editorProps = {
     initialContentHTML: "Rich Text Component...",
     initialFocus: true,
