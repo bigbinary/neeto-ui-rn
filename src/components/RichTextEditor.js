@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   RichEditor,
   RichToolbar,
@@ -10,6 +10,52 @@ import { space, flexbox, border, layout } from "styled-system";
 
 import { useKeyboard } from "@hooks";
 import { Container } from "@components";
+
+/**
+ * RichTextEditor component is wrapper created around react-native-pell-rich-editor. This has dependency on react-native-webview, so make sure add that as well.
+ *
+ *  ## Usage
+ * ```js
+ * import React, {useState} from "react";
+ * import { Container, RichTextEditor } from "@components";
+ * import { theme } from "@theme";
+ * 
+ * export default function Main() {
+ * const [message, setMessage] = useState('');
+ * 
+ * const editorProps = {
+ *   initialContentHTML: "Rich Text Component...",
+ *   initialFocus: true,
+ *   editorStyle: {
+ *     color: theme.colors.font.grey,
+ *   },
+ * };
+ * 
+ * return (
+ *   <Container flex={1}>
+ *     <RichTextEditor*
+ *       onChange={setMessage}
+ *       toolbarActions={[
+ *         "keyboard",
+ *         "setBold",
+ *         "setItalic",
+ *         "insertBulletsList",
+ *         "insertOrderedList",
+ *         "setStrikethrough",
+ *         "setUnderline",
+ *         "undo",
+ *         "redo",
+ *       ]}
+ *       toolbarWrapperStyle={{bottom: 0}}
+ *       editorProps={editorProps}
+ *       toolBarProps={{}}
+ *     />
+ *   </Container>
+ *  );
+ * };
+ *
+ * ```
+ */
 
 export const ScrollView = styled.ScrollView.attrs(() => ({
   keyboardShouldPersistTaps: "handled",
@@ -37,10 +83,6 @@ export const RichTextEditor = ({
   const [toolbarVisible, setToolbar] = useState(true);
   const showToolbar = keyboardHeight > 0 && toolbarVisible;
 
-  useEffect(() => {
-    richTextRef.current.setContentHTML("");
-  }, []);
-
   const computeToolbarActions = () => {
     const actionItems = [];
     toolbarActions?.map(actionItem => {
@@ -49,6 +91,7 @@ export const RichTextEditor = ({
 
     return actionItems;
   };
+  const editorPropsReceived = { ...editorProps };
 
   return (
     <>
@@ -66,7 +109,7 @@ export const RichTextEditor = ({
             setToolbar(false);
             editorProps?.onBlurFn();
           }}
-          {...(editorProps && { ...editorProps })}
+          {...editorPropsReceived}
         />
 
         {children}
