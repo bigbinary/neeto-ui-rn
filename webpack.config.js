@@ -25,6 +25,8 @@ const babelLoaderConfiguration = {
       __dirname,
       "./node_modules/react-native-keyboard-aware-scroll-view"
     ),
+    path.resolve(__dirname, "./node_modules/react-native-pell-rich-editor"),
+    path.resolve(__dirname, "./node_modules/react-native-webview"),
   ],
   use: {
     loader: "babel-loader",
