@@ -57,6 +57,11 @@ const ChipStories = {
         type: "object",
       },
     },
+    closeIconContainerStyle: {
+      control: {
+        type: "object",
+      },
+    },
     labelColor: {
       options: labelColors,
       control: { type: "select" },
