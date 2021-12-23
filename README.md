@@ -4,10 +4,18 @@
 **NeetoUI-RN** is the library that drives the experience in all Neeto React
 Native products built at [BigBinary](https://www.bigbinary.com).
 
+## Documentation
+
+Read the docs here.
+
+Docs: https://neetoui-rn-docs.netlify.app/
+
+Storybook: https://neetoui-rn.netlify.app
+
 ## Installation
 
 ```
-yarn add @bigbinary/neetoui-rn
+yarn add @bigbinary/neetoui-rn react-native-svg react-native-webview
 ```
 
 To link the library, run:
@@ -63,10 +71,6 @@ Run `cd docs`, `yarn start` to run component documentation locally.
 Run `cd docs`, `yarn build` to build component documentation locally, this would
 create `dist` folder with static files in `docs` folder.
 
-## Documentation
+## Learn more about contributing to this repository
 
-Read the docs here.
-
-Docs: https://neetoui-rn-docs.netlify.app/
-
-Storybook: https://neetoui-rn.netlify.app
+https://github.com/bigbinary/neeto-ui-rn/blob/master/CONTRIBUTING.md

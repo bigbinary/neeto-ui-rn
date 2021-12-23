@@ -18,6 +18,26 @@ https://github.com/bigbinary/neeto-ui-rn/issues
 Our pre-commit hooks verify that the linter and tests pass when commiting. You
 can also run the following commands manually:
 
-- `yarn lint`: lint files with `eslint`
+- `yarn lint`: lint files with `eslint`.
 - `yarn format`: lint files with `prettier`.
 - `yarn test`: run unit & snapshot tests with `jest`.
+- `yarn test -u`: to update new snapshots.
+
+### Linting and tests:
+
+Our pre-commit hooks verify that the linter and tests pass when commiting. You
+can also run the following commands manually:
+
+- `yarn lint`: lint files with `eslint`.
+- `yarn format`: lint files with `prettier`.
+- `yarn test`: run unit & snapshot tests with `jest`.
+- `yarn test -u`: to update new snapshots.
+
+## Auto Publish to NPM
+
+NeetoUI-RN version gets patched, auto-incremented and auto-published to npm on
+new commit to master. You can checkout the `publish` workflow in git actions to
+get a live update.
+
+Don't push build folder manually, Github workflow automatically builds project
+and pushes build folder to master on new commit to master.
