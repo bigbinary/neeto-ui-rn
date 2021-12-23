@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Container } from "@components";
 
 /**
- *ParentView wraps the childrens with SafeAreaview and KeyboardAwareScrollView.
+ *ParentView wraps the childrens with SafeAreaview.
  *
  *  ## Usage
  * ```js
@@ -46,21 +45,16 @@ export const ParentView = ({
     statusBarColors[barStyle] || statusBarColors["default"];
 
   return (
-    <KeyboardAwareScrollView
-      enableOnAndroid={true}
-      contentContainerStyle={styles.scrollView}
-      showsVerticalScrollIndicator={false}
-      style={{ backgroundColor: newBackgroundColor }}
-    >
+    <Container flex={1}>
       <Container backgroundColor={statusBarColor}>
         <SafeAreaView>
-          <StatusBar barStyle={barStyle} />
+          <StatusBar barStyle={barStyle} backgroundColor={statusBarColor} />
         </SafeAreaView>
       </Container>
       <Container flex={1} backgroundColor={newBackgroundColor} {...rest}>
         {children}
       </Container>
-    </KeyboardAwareScrollView>
+    </Container>
   );
 };
 
@@ -79,9 +73,3 @@ ParentView.propTypes = {
    */
   bg: PropTypes.string,
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    flexGrow: 1,
-  },
-});
