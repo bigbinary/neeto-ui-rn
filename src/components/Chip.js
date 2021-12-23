@@ -7,16 +7,17 @@ import Icon from "react-native-remix-icon";
 import { Typography } from "@components";
 
 /**
+ *
  * Chips are compact elements that represent an input, attribute, or action.
  *
  * <div class="screenshots">
  *   <img src="screenshots/chip/chip.png" />
  * </div>
- * 
+ *
  *   ## Usage
  * ```js
- * import * as React from "react";
- * import { Chip, Container, Typography } from "@components";
+ * import * as React from 'react';
+ * import { Chip, Container, Typography } from '@components';
  *
  * export default function Main(){
  *  return (
@@ -35,8 +36,8 @@ import { Typography } from "@components";
  *   </Container>
  *  );
  * }
- *
  * ```
+ *
  */
 
 export const TouchableOpacity = styled.TouchableOpacity`
