@@ -7,7 +7,7 @@ const labelColors = Object.keys(theme.colors.font).map(
   color => `font.${color}`
 );
 const iconBackground = Object.keys(theme.colors.background).map(
-  color => `font.${color}`
+  color => `background.${color}`
 );
 
 const ChipStories = {
