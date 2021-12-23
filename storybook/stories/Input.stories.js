@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, Container } from "@components";
 import { theme } from "../../src/theme";
+import Icon from "react-native-remix-icon";
 
 const fontColors = Object.keys(theme.colors.font).map(color => `font.${color}`);
 const backgroundColors = Object.keys(theme.colors.background).map(
@@ -97,6 +98,9 @@ export const Inputs = () => {
         <Input label="Default Input" />
       </Container>
       <Container mb={20}>
+        <Input label="Input with Focus styles" enableFocusStyle={true} />
+      </Container>
+      <Container mb={20}>
         <Input label="with placeholder" placeholder="Placeholder" />
       </Container>
       <Container mb={20}>
@@ -129,7 +133,11 @@ export const Inputs = () => {
         />
       </Container>
       <Container mb={20}>
-        <Input label="Password" value="password" secureTextEntry />
+        <Input
+          label="Password"
+          value="passwordpasswordpasswordpasswordpasswordpasswordpasswordpasswordpassword"
+          secureTextEntry
+        />
       </Container>
       <Container mb={20}>
         <Input
@@ -164,6 +172,46 @@ export const Inputs = () => {
       </Container>
       <Container mb={20}>
         <Input label="Notes" height={100} multiline={true} />
+      </Container>
+      <Container mb={20}>
+        <Input
+          placeholder="Search"
+          // eslint-disable-next-line react-native/no-inline-styles
+          containerStyles={{
+            backgroundColor: "background.grey200",
+            borderRadius: 10,
+          }}
+          LeftIcon={() => {
+            return (
+              <Container flexDirection="row">
+                <Icon
+                  name="ri-search-line"
+                  size={20}
+                  color={theme.colors.background.grey800}
+                />
+              </Container>
+            );
+          }}
+        />
+      </Container>
+      <Container mb={20}>
+        <Input
+          // eslint-disable-next-line react-native/no-inline-styles
+          containerStyles={{
+            backgroundColor: "background.grey200",
+          }}
+          RightIcon={() => {
+            return (
+              <Container flexDirection="row">
+                <Icon
+                  name="ri-search-line"
+                  size={20}
+                  color={theme.colors.background.grey800}
+                />
+              </Container>
+            );
+          }}
+        />
       </Container>
     </>
   );

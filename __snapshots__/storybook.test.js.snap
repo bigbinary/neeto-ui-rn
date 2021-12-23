@@ -7431,6 +7431,9 @@ exports[`Storyshots Input Input Demo 1`] = `
             Default
           </Text>
           <View
+            border={true}
+            borderColor="#e4e4e7"
+            borderRadius={2}
             color="background.primary"
             flexDirection="column"
             onBlur={[Function]}
@@ -7439,6 +7442,10 @@ exports[`Storyshots Input Input Demo 1`] = `
             style={
               Array [
                 Object {
+                  "borderColor": "#e4e4e7",
+                  "borderRadius": 2,
+                  "borderStyle": "solid",
+                  "borderWidth": 1,
                   "color": "#ffffff",
                   "flexDirection": "column",
                 },
@@ -7460,8 +7467,6 @@ exports[`Storyshots Input Input Demo 1`] = `
               width="100%"
             >
               <TextInput
-                border="#e4e4e7"
-                borderRadius={2}
                 color="#1b1f23"
                 defaultValue={null}
                 editable={true}
@@ -7476,10 +7481,6 @@ exports[`Storyshots Input Input Demo 1`] = `
                 style={
                   Array [
                     Object {
-                      "borderColor": "#e4e4e7",
-                      "borderRadius": 2,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
                       "color": "#1b1f23",
                       "flexBasis": 0,
                       "flexGrow": 1,
@@ -7582,6 +7583,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Default Input
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -7590,6 +7594,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -7611,8 +7619,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -7624,10 +7630,110 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
+                        "color": "#1b1f23",
+                        "flexBasis": 0,
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 14,
+                        "paddingLeft": 8,
+                        "paddingRight": 8,
+                      },
+                    ]
+                  }
+                  textAlignVertical="top"
+                  textStyle="subtext"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <Text
+              mb="7px"
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontSize": 12,
+                    "marginBottom": 7,
+                  },
+                ]
+              }
+              textStyle="subtext"
+            >
+              Input with Focus styles
+            </Text>
+            <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
+              color="background.primary"
+              flexDirection="column"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              position="relative"
+              style={
+                Array [
+                  Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "color": "#ffffff",
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View
+                color="background.primary"
+                flexDirection="row"
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "flexDirection": "row",
+                      "width": "100%",
+                    },
+                  ]
+                }
+                width="100%"
+              >
+                <TextInput
+                  color="#1b1f23"
+                  editable={true}
+                  flex={1}
+                  fontFamily="inter400"
+                  fontSize="14px"
+                  height={40}
+                  px={2}
+                  secureTextEntry={false}
+                  style={
+                    Array [
+                      Object {
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -7685,6 +7791,9 @@ exports[`Storyshots Input Inputs 1`] = `
               with placeholder
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -7693,6 +7802,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -7714,8 +7827,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -7728,10 +7839,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -7792,6 +7899,9 @@ exports[`Storyshots Input Inputs 1`] = `
               with custom label styles
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -7800,6 +7910,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -7821,8 +7935,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="red"
                   editable={true}
                   flex={1}
@@ -7835,10 +7947,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "red",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -7896,6 +8004,9 @@ exports[`Storyshots Input Inputs 1`] = `
               with value
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -7904,6 +8015,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -7925,8 +8040,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -7938,10 +8051,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8001,6 +8110,9 @@ exports[`Storyshots Input Inputs 1`] = `
             </Text>
             <View
               bg="#e4e4e7"
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -8011,6 +8123,10 @@ exports[`Storyshots Input Inputs 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "#e4e4e7",
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                     "opacity": 0.5,
@@ -8033,8 +8149,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={false}
                   flex={1}
@@ -8046,10 +8160,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8107,6 +8217,9 @@ exports[`Storyshots Input Inputs 1`] = `
               with error message
             </Text>
             <View
+              border={true}
+              borderColor="#ff6969"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -8115,6 +8228,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#ff6969",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -8136,8 +8253,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#ff6969"
-                  borderRadius={2}
                   color="#ff6969"
                   editable={true}
                   flex={1}
@@ -8149,10 +8264,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#ff6969",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#ff6969",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8224,6 +8335,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Email
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -8232,6 +8346,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -8253,8 +8371,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="font.primary"
                   editable={true}
                   flex={1}
@@ -8267,10 +8383,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8329,6 +8441,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Password
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -8337,6 +8452,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -8358,8 +8477,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -8371,10 +8488,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8388,83 +8501,82 @@ exports[`Storyshots Input Inputs 1`] = `
                   }
                   textAlignVertical="top"
                   textStyle="subtext"
-                  value="password"
+                  value="passwordpasswordpasswordpasswordpasswordpasswordpasswordpasswordpassword"
                 />
-              </View>
-              <View
-                color="background.primary"
-                height="100%"
-                justifyContent="center"
-                left="90%"
-                position="absolute"
-                style={
-                  Array [
-                    Object {
-                      "color": "#ffffff",
-                      "height": "100%",
-                      "justifyContent": "center",
-                    },
-                  ]
-                }
-              >
-                <RNSVGSvgView
-                  align="xMidYMid"
-                  bbHeight={24}
-                  bbWidth={24}
-                  fill="#87929d"
-                  focusable={false}
-                  height={24}
-                  meetOrSlice={0}
-                  minX={0}
-                  minY={0}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  responsible={true}
+                <View
+                  color="background.primary"
+                  justifyContent="center"
+                  mx="4px"
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "borderWidth": 0,
-                      },
-                      Object {
-                        "flex": 0,
-                        "height": 24,
-                        "width": 24,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginLeft": 4,
+                        "marginRight": 4,
                       },
                     ]
                   }
-                  vbHeight={24}
-                  vbWidth={24}
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <RNSVGGroup
-                    fill={4287074973}
-                    propList={
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight={24}
+                    bbWidth={24}
+                    fill="#87929d"
+                    focusable={false}
+                    height={24}
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    onPress={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    responsible={true}
+                    style={
                       Array [
-                        "fill",
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderWidth": 0,
+                        },
+                        Object {
+                          "flex": 0,
+                          "height": 24,
+                          "width": 24,
+                        },
                       ]
                     }
+                    vbHeight={24}
+                    vbWidth={24}
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <RNSVGPath
-                      d="M0 0h24v24H0z"
-                      fill={null}
+                    <RNSVGGroup
+                      fill={4287074973}
                       propList={
                         Array [
                           "fill",
                         ]
                       }
-                    />
-                    <RNSVGPath
-                      d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
-                    />
-                  </RNSVGGroup>
-                </RNSVGSvgView>
+                    >
+                      <RNSVGPath
+                        d="M0 0h24v24H0z"
+                        fill={null}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                      />
+                      <RNSVGPath
+                        d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
+                      />
+                    </RNSVGGroup>
+                  </RNSVGSvgView>
+                </View>
               </View>
             </View>
           </View>
@@ -8492,6 +8604,9 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
+              border={false}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="row"
               onBlur={[Function]}
@@ -8500,6 +8615,8 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -8552,8 +8669,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border={false}
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -8565,7 +8680,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderRadius": 2,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8581,81 +8695,80 @@ exports[`Storyshots Input Inputs 1`] = `
                   textStyle="subtext"
                   value="test"
                 />
-              </View>
-              <View
-                color="background.primary"
-                height="100%"
-                justifyContent="center"
-                left="90%"
-                position="absolute"
-                style={
-                  Array [
-                    Object {
-                      "color": "#ffffff",
-                      "height": "100%",
-                      "justifyContent": "center",
-                    },
-                  ]
-                }
-              >
-                <RNSVGSvgView
-                  align="xMidYMid"
-                  bbHeight={24}
-                  bbWidth={24}
-                  fill="#87929d"
-                  focusable={false}
-                  height={24}
-                  meetOrSlice={0}
-                  minX={0}
-                  minY={0}
-                  onPress={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
-                  responsible={true}
+                <View
+                  color="background.primary"
+                  justifyContent="center"
+                  mx="4px"
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "transparent",
-                        "borderWidth": 0,
-                      },
-                      Object {
-                        "flex": 0,
-                        "height": 24,
-                        "width": 24,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginLeft": 4,
+                        "marginRight": 4,
                       },
                     ]
                   }
-                  vbHeight={24}
-                  vbWidth={24}
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <RNSVGGroup
-                    fill={4287074973}
-                    propList={
+                  <RNSVGSvgView
+                    align="xMidYMid"
+                    bbHeight={24}
+                    bbWidth={24}
+                    fill="#87929d"
+                    focusable={false}
+                    height={24}
+                    meetOrSlice={0}
+                    minX={0}
+                    minY={0}
+                    onPress={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    responsible={true}
+                    style={
                       Array [
-                        "fill",
+                        Object {
+                          "backgroundColor": "transparent",
+                          "borderWidth": 0,
+                        },
+                        Object {
+                          "flex": 0,
+                          "height": 24,
+                          "width": 24,
+                        },
                       ]
                     }
+                    vbHeight={24}
+                    vbWidth={24}
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <RNSVGPath
-                      d="M0 0h24v24H0z"
-                      fill={null}
+                    <RNSVGGroup
+                      fill={4287074973}
                       propList={
                         Array [
                           "fill",
                         ]
                       }
-                    />
-                    <RNSVGPath
-                      d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
-                    />
-                  </RNSVGGroup>
-                </RNSVGSvgView>
+                    >
+                      <RNSVGPath
+                        d="M0 0h24v24H0z"
+                        fill={null}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                      />
+                      <RNSVGPath
+                        d="M17.882 19.297A10.949 10.949 0 0112 21c-5.392 0-9.878-3.88-10.819-9a10.982 10.982 0 013.34-6.066L1.392 2.808l1.415-1.415 19.799 19.8-1.415 1.414-3.31-3.31zM5.935 7.35A8.965 8.965 0 003.223 12a9.005 9.005 0 0013.201 5.838l-2.028-2.028A4.5 4.5 0 018.19 9.604L5.935 7.35zm6.979 6.978l-3.242-3.242a2.5 2.5 0 003.241 3.241zm7.893 2.264l-1.431-1.43A8.935 8.935 0 0020.777 12 9.005 9.005 0 009.552 5.338L7.974 3.76C9.221 3.27 10.58 3 12 3c5.392 0 9.878 3.88 10.819 9a10.947 10.947 0 01-2.012 4.592zm-9.084-9.084a4.5 4.5 0 014.769 4.769l-4.77-4.769z"
+                      />
+                    </RNSVGGroup>
+                  </RNSVGSvgView>
+                </View>
               </View>
             </View>
             <View
@@ -8695,6 +8808,9 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
+              border={false}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="row"
               onBlur={[Function]}
@@ -8703,6 +8819,8 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -8755,8 +8873,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border={false}
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -8768,7 +8884,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderRadius": 2,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8822,6 +8937,9 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
+              border={false}
+              borderColor="#ff6969"
+              borderRadius={2}
               color="background.primary"
               flexDirection="row"
               onBlur={[Function]}
@@ -8830,6 +8948,8 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#ff6969",
+                    "borderRadius": 2,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -8882,8 +9002,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border={false}
-                  borderRadius={2}
                   color="#ff6969"
                   editable={true}
                   flex={1}
@@ -8895,7 +9013,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderRadius": 2,
                         "color": "#ff6969",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -8964,6 +9081,9 @@ exports[`Storyshots Input Inputs 1`] = `
           >
             <View
               bg="#e4e4e7"
+              border={false}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="row"
               onBlur={[Function]}
@@ -8974,6 +9094,8 @@ exports[`Storyshots Input Inputs 1`] = `
                 Array [
                   Object {
                     "backgroundColor": "#e4e4e7",
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
                     "color": "#ffffff",
                     "flexDirection": "row",
                     "opacity": 0.5,
@@ -9027,8 +9149,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border={false}
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={false}
                   flex={1}
@@ -9040,7 +9160,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderRadius": 2,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -9110,6 +9229,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Brand Left
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -9118,6 +9240,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -9140,8 +9266,6 @@ exports[`Storyshots Input Inputs 1`] = `
               >
                 <View
                   bg="background.menubackground"
-                  borderColor="#e4e4e7"
-                  borderWidth="1px"
                   color="background.primary"
                   justifyContent="center"
                   px={2}
@@ -9149,8 +9273,6 @@ exports[`Storyshots Input Inputs 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "#f4f5f7",
-                        "borderColor": "#e4e4e7",
-                        "borderWidth": 1,
                         "color": "#ffffff",
                         "justifyContent": "center",
                         "paddingLeft": 8,
@@ -9174,8 +9296,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   </Text>
                 </View>
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -9187,10 +9307,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -9248,6 +9364,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Brand Right
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -9256,6 +9375,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -9277,8 +9400,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -9290,10 +9411,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -9310,8 +9427,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 />
                 <View
                   bg="background.menubackground"
-                  borderColor="#e4e4e7"
-                  borderWidth="1px"
                   color="background.primary"
                   justifyContent="center"
                   px={2}
@@ -9319,8 +9434,6 @@ exports[`Storyshots Input Inputs 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "#f4f5f7",
-                        "borderColor": "#e4e4e7",
-                        "borderWidth": 1,
                         "color": "#ffffff",
                         "justifyContent": "center",
                         "paddingLeft": 8,
@@ -9386,6 +9499,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Custom brand color and background
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -9394,6 +9510,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -9415,8 +9535,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -9428,10 +9546,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -9448,8 +9562,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 />
                 <View
                   bg="background.danger"
-                  borderColor="#e4e4e7"
-                  borderWidth="1px"
                   color="background.primary"
                   justifyContent="center"
                   px={2}
@@ -9457,8 +9569,6 @@ exports[`Storyshots Input Inputs 1`] = `
                     Array [
                       Object {
                         "backgroundColor": "#ff6969",
-                        "borderColor": "#e4e4e7",
-                        "borderWidth": 1,
                         "color": "#ffffff",
                         "justifyContent": "center",
                         "paddingLeft": 8,
@@ -9524,6 +9634,9 @@ exports[`Storyshots Input Inputs 1`] = `
               Notes
             </Text>
             <View
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
               color="background.primary"
               flexDirection="column"
               onBlur={[Function]}
@@ -9532,6 +9645,10 @@ exports[`Storyshots Input Inputs 1`] = `
               style={
                 Array [
                   Object {
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
                     "color": "#ffffff",
                     "flexDirection": "column",
                   },
@@ -9553,8 +9670,6 @@ exports[`Storyshots Input Inputs 1`] = `
                 width="100%"
               >
                 <TextInput
-                  border="#e4e4e7"
-                  borderRadius={2}
                   color="#1b1f23"
                   editable={true}
                   flex={1}
@@ -9567,10 +9682,6 @@ exports[`Storyshots Input Inputs 1`] = `
                   style={
                     Array [
                       Object {
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 2,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
                         "color": "#1b1f23",
                         "flexBasis": 0,
                         "flexGrow": 1,
@@ -9585,6 +9696,345 @@ exports[`Storyshots Input Inputs 1`] = `
                   textAlignVertical="top"
                   textStyle="subtext"
                 />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              backgroundColor="background.grey200"
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={10}
+              color="background.primary"
+              flexDirection="column"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              position="relative"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#e9ebed",
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "color": "#ffffff",
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View
+                color="background.primary"
+                flexDirection="row"
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "flexDirection": "row",
+                      "width": "100%",
+                    },
+                  ]
+                }
+                width="100%"
+              >
+                <View
+                  alignSelf="center"
+                  color="background.primary"
+                  mx="4px"
+                  style={
+                    Array [
+                      Object {
+                        "alignSelf": "center",
+                        "color": "#ffffff",
+                        "marginLeft": 4,
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    color="background.primary"
+                    flexDirection="row"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                          "flexDirection": "row",
+                        },
+                      ]
+                    }
+                  >
+                    <RNSVGSvgView
+                      align="xMidYMid"
+                      bbHeight={20}
+                      bbWidth={20}
+                      fill="#2f3941"
+                      focusable={false}
+                      height={20}
+                      meetOrSlice={0}
+                      minX={0}
+                      minY={0}
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderWidth": 0,
+                          },
+                          Object {
+                            "flex": 0,
+                            "height": 20,
+                            "width": 20,
+                          },
+                        ]
+                      }
+                      vbHeight={24}
+                      vbWidth={24}
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <RNSVGGroup
+                        fill={4281284929}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                      >
+                        <RNSVGPath
+                          d="M0 0h24v24H0z"
+                          fill={null}
+                          propList={
+                            Array [
+                              "fill",
+                            ]
+                          }
+                        />
+                        <RNSVGPath
+                          d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                        />
+                      </RNSVGGroup>
+                    </RNSVGSvgView>
+                  </View>
+                </View>
+                <TextInput
+                  color="#1b1f23"
+                  editable={true}
+                  flex={1}
+                  fontFamily="inter400"
+                  fontSize="14px"
+                  height={40}
+                  placeholder="Search"
+                  px={2}
+                  secureTextEntry={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#1b1f23",
+                        "flexBasis": 0,
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 14,
+                        "paddingLeft": 8,
+                        "paddingRight": 8,
+                      },
+                    ]
+                  }
+                  textAlignVertical="top"
+                  textStyle="subtext"
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          color="background.primary"
+          mb={20}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "marginBottom": 20,
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+              ]
+            }
+          >
+            <View
+              backgroundColor="background.grey200"
+              border={true}
+              borderColor="#e4e4e7"
+              borderRadius={2}
+              color="background.primary"
+              flexDirection="column"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              position="relative"
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#e9ebed",
+                    "borderColor": "#e4e4e7",
+                    "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "color": "#ffffff",
+                    "flexDirection": "column",
+                  },
+                ]
+              }
+            >
+              <View
+                color="background.primary"
+                flexDirection="row"
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "flexDirection": "row",
+                      "width": "100%",
+                    },
+                  ]
+                }
+                width="100%"
+              >
+                <TextInput
+                  color="#1b1f23"
+                  editable={true}
+                  flex={1}
+                  fontFamily="inter400"
+                  fontSize="14px"
+                  height={40}
+                  px={2}
+                  secureTextEntry={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "#1b1f23",
+                        "flexBasis": 0,
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "fontFamily": "Inter-Regular",
+                        "fontSize": 14,
+                        "paddingLeft": 8,
+                        "paddingRight": 8,
+                      },
+                    ]
+                  }
+                  textAlignVertical="top"
+                  textStyle="subtext"
+                />
+                <View
+                  alignSelf="center"
+                  color="background.primary"
+                  mx="4px"
+                  style={
+                    Array [
+                      Object {
+                        "alignSelf": "center",
+                        "color": "#ffffff",
+                        "marginLeft": 4,
+                        "marginRight": 4,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    color="background.primary"
+                    flexDirection="row"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                          "flexDirection": "row",
+                        },
+                      ]
+                    }
+                  >
+                    <RNSVGSvgView
+                      align="xMidYMid"
+                      bbHeight={20}
+                      bbWidth={20}
+                      fill="#2f3941"
+                      focusable={false}
+                      height={20}
+                      meetOrSlice={0}
+                      minX={0}
+                      minY={0}
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "borderWidth": 0,
+                          },
+                          Object {
+                            "flex": 0,
+                            "height": 20,
+                            "width": 20,
+                          },
+                        ]
+                      }
+                      vbHeight={24}
+                      vbWidth={24}
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <RNSVGGroup
+                        fill={4281284929}
+                        propList={
+                          Array [
+                            "fill",
+                          ]
+                        }
+                      >
+                        <RNSVGPath
+                          d="M0 0h24v24H0z"
+                          fill={null}
+                          propList={
+                            Array [
+                              "fill",
+                            ]
+                          }
+                        />
+                        <RNSVGPath
+                          d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"
+                        />
+                      </RNSVGGroup>
+                    </RNSVGSvgView>
+                  </View>
+                </View>
               </View>
             </View>
           </View>

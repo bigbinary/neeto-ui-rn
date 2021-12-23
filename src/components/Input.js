@@ -63,11 +63,14 @@ export const Input = React.forwardRef((props, ref) => {
   const {
     label = "",
     labelStyles,
+    containerStyles,
     message = "",
     error = false,
     onFocus,
     onBlur,
     inline = false,
+    LeftIcon,
+    RightIcon,
     brandRight,
     brandLeft,
     brandColor = "font.grey600",
@@ -75,6 +78,7 @@ export const Input = React.forwardRef((props, ref) => {
     disabled = false,
     secureTextEntry = false,
     textAlignVertical = "top",
+    enableFocusStyle = false,
     ...rest
   } = props;
 
@@ -95,38 +99,44 @@ export const Input = React.forwardRef((props, ref) => {
     setIsFocus(false);
   };
 
-  const focusStyles = isFocus && {
-    borderRadius: 4,
-    borderColor: error
-      ? "rgba(255, 105, 105, 0.3)"
-      : theme.colors.border.grey400,
-    borderWidth: inline ? "0px" : "3px",
-    borderStyle: "solid",
-  };
+  const focusStyles = enableFocusStyle &&
+    isFocus && {
+      borderRadius: 4,
+      borderColor: error
+        ? "rgba(255, 105, 105, 0.3)"
+        : theme.colors.border.grey400,
+      borderWidth: inline ? "0px" : "3px",
+      borderStyle: "solid",
+    };
 
   const disabledStyles = disabled && {
     opacity: 0.5,
     bg: theme.colors.background.secondary,
   };
 
-  const inlineInputStyles = isFocus && {
-    backgroundColor: error
-      ? theme.colors.border.danger
-      : theme.colors.border.base,
-  };
+  const inlineInputStyles = enableFocusStyle &&
+    isFocus && {
+      backgroundColor: error
+        ? theme.colors.border.danger
+        : theme.colors.border.base,
+    };
 
   return (
     <Container>
-      {!inline && (
+      {!inline && !!label && (
         <LabelText labelStyles={labelStyles} inline={inline} label={label} />
       )}
       <Container
+        border={!inline}
+        borderColor={borderColor}
+        borderRadius={2}
         {...focusStyles}
         {...disabledStyles}
         flexDirection={inline ? "row" : "column"}
         onBlur={handleBlur}
         onFocus={handleFocus}
         position="relative"
+        {...containerStyles}
       >
         {inline && (
           <Container alignSelf="flex-end" maxWidth={100}>
@@ -138,10 +148,14 @@ export const Input = React.forwardRef((props, ref) => {
           </Container>
         )}
         <Container flexDirection="row" width="100%">
+          {LeftIcon && (
+            <Container alignSelf="center" mx="4px">
+              <LeftIcon />
+            </Container>
+          )}
           {brandLeft && (
             <InputText
               text={brandLeft}
-              borderColor={borderColor}
               brandColor={brandColor}
               brandBackground={brandBackground}
             />
@@ -151,7 +165,6 @@ export const Input = React.forwardRef((props, ref) => {
             height={40}
             flex={1}
             textStyle="subtext"
-            border={!inline && borderColor}
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
             secureTextEntry={secureTextEntry && !isPasswordVisible}
@@ -162,26 +175,27 @@ export const Input = React.forwardRef((props, ref) => {
           {brandRight && (
             <InputText
               text={brandRight}
-              borderColor={borderColor}
               brandColor={brandColor}
               brandBackground={brandBackground}
             />
           )}
+
+          {RightIcon && (
+            <Container alignSelf="center" mx="4px">
+              <RightIcon />
+            </Container>
+          )}
+
+          {secureTextEntry && (
+            <Container justifyContent="center" mx="4px">
+              <Icon
+                name={isPasswordVisible ? "eye-line" : "eye-off-line"}
+                color={theme.colors.background.grey500}
+                onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+              />
+            </Container>
+          )}
         </Container>
-        {secureTextEntry && (
-          <Container
-            position="absolute"
-            left="90%"
-            height="100%"
-            justifyContent="center"
-          >
-            <Icon
-              name={isPasswordVisible ? "eye-line" : "eye-off-line"}
-              color={theme.colors.background.grey500}
-              onPress={() => setIsPasswordVisible(!isPasswordVisible)}
-            />
-          </Container>
-        )}
       </Container>
       {inline && (
         <View
@@ -195,14 +209,8 @@ export const Input = React.forwardRef((props, ref) => {
   );
 });
 
-const InputText = ({ text, borderColor, brandColor, brandBackground }) => (
-  <Container
-    bg={brandBackground}
-    justifyContent="center"
-    px={2}
-    borderColor={borderColor}
-    borderWidth="1px"
-  >
+const InputText = ({ text, brandColor, brandBackground }) => (
+  <Container bg={brandBackground} justifyContent="center" px={2}>
     {text && <Typography color={brandColor}>{text}</Typography>}
   </Container>
 );
@@ -239,9 +247,13 @@ Input.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * To change the styles of label
+   * To change the styles of label.
    */
   labelStyles: PropTypes.object,
+  /**
+   * To change the styles of input text container.
+   */
+  containerStyles: PropTypes.object,
   /**
    * To display error/info messages
    */
@@ -251,15 +263,15 @@ Input.propTypes = {
    */
   error: PropTypes.bool,
   /**
-   * Changes input layout to inline
+   * Changes input layout to inline.
    */
   inline: PropTypes.bool,
   /**
-   * Display brand to the right of input
+   * Display brand to the right of input.
    */
   brandRight: PropTypes.string,
   /**
-   * Display brand to the left of input
+   * Display brand to the left of input.
    */
   brandLeft: PropTypes.string,
   /**
@@ -267,17 +279,29 @@ Input.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * To change the color of brand text
+   * To change the color of brand text.
    */
   brandColor: PropTypes.string,
   /**
-   * To change the color of brand text
+   * To change the color of brand text.
    */
   brandBackground: PropTypes.string,
   /**
-   * To hide and show password and enable secure text entry
+   * To hide and show password and enable secure text entry.
    */
   secureTextEntry: PropTypes.bool,
+  /**
+   * If true, shows border on focus.
+   */
+  enableFocusStyle: PropTypes.bool,
+  /**
+   * Display Icon to the left of input.
+   */
+  LeftIcon: PropTypes.func,
+  /**
+   * Display Icon to the Right of input.
+   */
+  RightIcon: PropTypes.func,
   children: PropTypes.node,
 };
 
@@ -301,9 +325,7 @@ ErrorMessage.propTypes = {
 
 TextInput.defaultProps = {
   height: 40,
-  border: 1,
   px: 2,
   fontFamily: "inter400",
   fontSize: "14px",
-  borderRadius: 2,
 };
