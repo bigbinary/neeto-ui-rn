@@ -6,6 +6,25 @@ import Icon from "react-native-remix-icon";
 
 import { Typography } from "@components";
 
+export const TouchableOpacity = styled.TouchableOpacity`
+  ${space}
+  ${border}
+  ${color}
+  ${flexbox}
+  ${layout}
+`;
+
+const variantStyleObj = {
+  solid: {
+    bg: "background.grey200",
+  },
+  outlined: {
+    bg: "background.white",
+    border: "1px solid",
+    borderColor: "border.grey400",
+  },
+};
+
 /**
  *
  * Chips are compact elements that represent an input, attribute, or action.
@@ -17,7 +36,7 @@ import { Typography } from "@components";
  *   ## Usage
  * ```js
  * import * as React from 'react';
- * import { Chip, Container, Typography } from '@components';
+ * import { Chip, Container, Typography } from '@bigbinary/neetoui-rn';
  *
  * export default function Main(){
  *  return (
@@ -39,25 +58,6 @@ import { Typography } from "@components";
  * ```
  *
  */
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${space}
-  ${border}
-  ${color}
-  ${flexbox}
-  ${layout}
-`;
-
-const variantStyleObj = {
-  solid: {
-    bg: "background.grey200",
-  },
-  outlined: {
-    bg: "background.white",
-    border: "1px solid",
-    borderColor: "border.grey400",
-  },
-};
 
 export const Chip = ({
   label,

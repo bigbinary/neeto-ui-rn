@@ -4685,6 +4685,124 @@ exports[`Storyshots Buttons Buttons 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Chip Chip Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f8f9f9",
+                "borderColor": "#c2c8cc",
+                "borderRadius": 20,
+                "borderStyle": "solid",
+                "borderWidth": 1,
+                "flexDirection": "row",
+                "opacity": 1,
+                "paddingBottom": 10,
+                "paddingLeft": 10,
+                "paddingRight": 10,
+                "paddingTop": 10,
+              }
+            }
+          >
+            <Text
+              color="font.primary"
+              fontFamily="inter400"
+              mx={2}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontFamily": "Inter-Regular",
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Chip Component
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Chip Chips 1`] = `
 <RCTScrollView
   contentContainerStyle={
