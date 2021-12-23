@@ -3332,6 +3332,129 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Buttons Button Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+              }
+            }
+          >
+            <Text
+              color="font.black"
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Button Component
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Buttons Buttons 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -3373,895 +3496,599 @@ exports[`Storyshots Buttons Buttons 1`] = `
         }
       >
         <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+          alignItems="center"
+          color="background.primary"
           style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+              },
+            ]
           }
         >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Default is solid
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Default Disbaled
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Solid Button
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Solid Button Disabled
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Inverse Button
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Invese Button Disabled
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "color": "#2f3941",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="text"
-          >
-            Text Button
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "color": "#2f3941",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="text"
-          >
-            Text Button Disabled
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Like
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            👍
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            📣
-          </Text>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Subscribe and Follow
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            🔔
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Unsubscribe Disabled
-          </Text>
-          <Text
-            style={
-              Array [
-                Object {
-                  "color": "#1b1f23",
-                },
-              ]
-            }
-            textStyle="defaultTextStyle"
-          >
-            🔕
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            color="font.danger"
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ff6969",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Logout
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            color="font.danger"
-            fontFamily="inter700"
-            fontSize="xl"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ff6969",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 24,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Bigger Button
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter400"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Regular",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Regular inter 400
-          </Text>
-        </View>
-        <View
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 1,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Icon in extreme right
-          </Text>
           <View
-            alignItems="flex-end"
-            color="background.primary"
-            flex={1}
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "alignItems": "flex-end",
-                  "color": "#ffffff",
-                  "flexBasis": 0,
-                  "flexGrow": 1,
-                  "flexShrink": 1,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
             }
           >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Default is solid
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Default Disabled
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Solid Button
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Solid Button Disabled
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Inverse Button
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Invese Button Disabled
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "color": "#2f3941",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="text"
+            >
+              Text Button
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "color": "#2f3941",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="text"
+            >
+              Text Button Disabled
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Like
+            </Text>
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              👍
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              📣
+            </Text>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Subscribe and Follow
+            </Text>
             <Text
               style={
                 Array [
@@ -4275,396 +4102,65 @@ exports[`Storyshots Buttons Buttons 1`] = `
               🔔
             </Text>
           </View>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
           <View
-            color="background.primary"
-            mx={1}
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                },
-              ]
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
             }
           >
-            <ActivityIndicator
-              color="white"
-              size="small"
-            />
-          </View>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            Loading…
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#2f3941",
-              "borderRadius": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <View
-            color="background.primary"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                },
-              ]
-            }
-          >
-            <ActivityIndicator
-              color="white"
-              size="small"
-            />
-          </View>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="solid"
-          >
-            
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderColor": "#2f3941",
-              "borderRadius": 2,
-              "borderStyle": "solid",
-              "borderWidth": 2,
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <View
-            color="background.primary"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                },
-              ]
-            }
-          >
-            <ActivityIndicator
-              color="black"
-              size="small"
-            />
-          </View>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="inverse"
-          >
-            Loading…
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "color": "#2f3941",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <View
-            color="background.primary"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                },
-              ]
-            }
-          >
-            <ActivityIndicator
-              color="black"
-              size="small"
-            />
-          </View>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="text"
-          >
-            Loading…
-          </Text>
-        </View>
-        <View
-          accessibilityState={
-            Object {
-              "disabled": true,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={false}
-          nativeID="animatedComponent"
-          onClick={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#ffffff",
-              "borderRadius": 2,
-              "color": "#2f3941",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "marginBottom": 9,
-              "marginTop": 9,
-              "opacity": 0.5,
-              "paddingBottom": 12,
-              "paddingLeft": 12,
-              "paddingRight": 12,
-              "paddingTop": 12,
-              "width": 200,
-            }
-          }
-        >
-          <View
-            color="background.primary"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                },
-              ]
-            }
-          >
-            <ActivityIndicator
-              color="black"
-              size="small"
-            />
-          </View>
-          <Text
-            fontFamily="inter700"
-            fontSize="s"
-            mx={1}
-            style={
-              Array [
-                Object {
-                  "color": "#2f3941",
-                  "fontFamily": "Inter-Bold",
-                  "fontSize": 12,
-                  "marginLeft": 4,
-                  "marginRight": 4,
-                  "textAlign": "center",
-                },
-              ]
-            }
-            textAlign="center"
-            textStyle="text"
-          >
-            Ordering Pizza...
-          </Text>
-          <View
-            color="background.primary"
-            style={
-              Array [
-                Object {
-                  "color": "#ffffff",
-                },
-              ]
-            }
-          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Unsubscribe Disabled
+            </Text>
             <Text
               style={
                 Array [
@@ -4675,8 +4171,653 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
               textStyle="defaultTextStyle"
             >
-              🍕
+              🔕
             </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              color="font.danger"
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ff6969",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Logout
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              color="font.danger"
+              fontFamily="inter700"
+              fontSize="xl"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ff6969",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 24,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Bigger Button
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter400"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Regular",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Regular inter 400
+            </Text>
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 1,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Icon in extreme right
+            </Text>
+            <View
+              alignItems="flex-end"
+              color="background.primary"
+              flex={1}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-end",
+                    "color": "#ffffff",
+                    "flexBasis": 0,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🔔
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <View
+              color="background.primary"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                color="white"
+                size="small"
+              />
+            </View>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              Loading…
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2f3941",
+                "borderRadius": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <View
+              color="background.primary"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                color="white"
+                size="small"
+              />
+            </View>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="solid"
+            >
+              
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#2f3941",
+                "borderRadius": 2,
+                "borderStyle": "solid",
+                "borderWidth": 2,
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <View
+              color="background.primary"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                color="black"
+                size="small"
+              />
+            </View>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="inverse"
+            >
+              Loading…
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "color": "#2f3941",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <View
+              color="background.primary"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                color="black"
+                size="small"
+              />
+            </View>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="text"
+            >
+              Loading…
+            </Text>
+          </View>
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={false}
+            nativeID="animatedComponent"
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#ffffff",
+                "borderRadius": 2,
+                "color": "#2f3941",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "marginBottom": 9,
+                "marginTop": 9,
+                "opacity": 0.5,
+                "paddingBottom": 12,
+                "paddingLeft": 12,
+                "paddingRight": 12,
+                "paddingTop": 12,
+                "width": 200,
+              }
+            }
+          >
+            <View
+              color="background.primary"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                  },
+                ]
+              }
+            >
+              <ActivityIndicator
+                color="black"
+                size="small"
+              />
+            </View>
+            <Text
+              fontFamily="inter700"
+              fontSize="s"
+              mx={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#2f3941",
+                    "fontFamily": "Inter-Bold",
+                    "fontSize": 12,
+                    "marginLeft": 4,
+                    "marginRight": 4,
+                    "textAlign": "center",
+                  },
+                ]
+              }
+              textAlign="center"
+              textStyle="text"
+            >
+              Ordering Pizza...
+            </Text>
+            <View
+              color="background.primary"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                  },
+                ]
+              }
+            >
+              <Text
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                🍕
+              </Text>
+            </View>
           </View>
         </View>
       </View>
