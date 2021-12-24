@@ -7690,7 +7690,7 @@ exports[`Storyshots Input Input Demo 1`] = `
             Default
           </Text>
           <View
-            border={true}
+            border="1px"
             borderColor="#e4e4e7"
             borderRadius={2}
             color="background.primary"
@@ -7842,7 +7842,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Default Input
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -7946,7 +7946,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Input with Focus styles
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8050,7 +8050,7 @@ exports[`Storyshots Input Inputs 1`] = `
               with placeholder
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8158,7 +8158,7 @@ exports[`Storyshots Input Inputs 1`] = `
               with custom label styles
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8263,7 +8263,7 @@ exports[`Storyshots Input Inputs 1`] = `
               with value
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8369,7 +8369,7 @@ exports[`Storyshots Input Inputs 1`] = `
             </Text>
             <View
               bg="#e4e4e7"
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8476,7 +8476,7 @@ exports[`Storyshots Input Inputs 1`] = `
               with error message
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#ff6969"
               borderRadius={2}
               color="background.primary"
@@ -8594,7 +8594,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Email
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8700,7 +8700,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Password
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8863,7 +8863,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
-              border={false}
+              border="0"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -8876,6 +8876,8 @@ exports[`Storyshots Input Inputs 1`] = `
                   Object {
                     "borderColor": "#e4e4e7",
                     "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -9067,7 +9069,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
-              border={false}
+              border="0"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9080,6 +9082,8 @@ exports[`Storyshots Input Inputs 1`] = `
                   Object {
                     "borderColor": "#e4e4e7",
                     "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -9196,7 +9200,7 @@ exports[`Storyshots Input Inputs 1`] = `
             }
           >
             <View
-              border={false}
+              border="0"
               borderColor="#ff6969"
               borderRadius={2}
               color="background.primary"
@@ -9209,6 +9213,8 @@ exports[`Storyshots Input Inputs 1`] = `
                   Object {
                     "borderColor": "#ff6969",
                     "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
                     "color": "#ffffff",
                     "flexDirection": "row",
                   },
@@ -9340,7 +9346,7 @@ exports[`Storyshots Input Inputs 1`] = `
           >
             <View
               bg="#e4e4e7"
-              border={false}
+              border="0"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9355,6 +9361,8 @@ exports[`Storyshots Input Inputs 1`] = `
                     "backgroundColor": "#e4e4e7",
                     "borderColor": "#e4e4e7",
                     "borderRadius": 2,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
                     "color": "#ffffff",
                     "flexDirection": "row",
                     "opacity": 0.5,
@@ -9488,7 +9496,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Brand Left
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9623,7 +9631,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Brand Right
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9758,7 +9766,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Custom brand color and background
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9893,7 +9901,7 @@ exports[`Storyshots Input Inputs 1`] = `
               Notes
             </Text>
             <View
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"
@@ -9983,7 +9991,7 @@ exports[`Storyshots Input Inputs 1`] = `
           >
             <View
               backgroundColor="background.grey200"
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={10}
               color="background.primary"
@@ -10153,7 +10161,7 @@ exports[`Storyshots Input Inputs 1`] = `
           >
             <View
               backgroundColor="background.grey200"
-              border={true}
+              border="1px"
               borderColor="#e4e4e7"
               borderRadius={2}
               color="background.primary"

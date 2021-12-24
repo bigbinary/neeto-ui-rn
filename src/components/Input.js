@@ -127,7 +127,7 @@ export const Input = React.forwardRef((props, ref) => {
         <LabelText labelStyles={labelStyles} inline={inline} label={label} />
       )}
       <Container
-        border={!inline}
+        border={!inline ? "1px" : "0"}
         borderColor={borderColor}
         borderRadius={2}
         {...focusStyles}
