@@ -23,7 +23,10 @@ export const TouchableOpacity = styled.TouchableOpacity`
 
 /**
  * ButtonGroup is a linear set of segments, each of which function as a button that can display a different view/or perform a different action.
- *
+ * <div class="screenshots">
+ *   <img src="screenshots/buttonGroup/buttonGroup.png" />
+ * </div>
+ * 
  * ## Usage
  * ```js
  * import React, { useState } from 'react';
