@@ -29,8 +29,7 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
  *  ## Usage
  * ```js
  * import * as React from "react";
- * import { Container, RichTextEditor } from "@components";
- * import { theme } from "@theme";
+ * import { Container, RichTextEditor, theme } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
  * const [message, setMessage] = React.useState('');
