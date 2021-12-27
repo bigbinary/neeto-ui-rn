@@ -42,7 +42,7 @@ const ButtonGroupStories = {
     wrapperStyle: {
       control: { type: "object" },
     },
-    onPressFunc: { action: "pressed the button" },
+    onPress: { action: "pressed the button" },
   },
   parameters: {
     notes:
@@ -73,14 +73,14 @@ export const ButtonGroups = () => {
       <Container my={2}>
         <ButtonGroup
           buttonItems={buttonItems1}
-          onPressFunc={setActiveButton1}
+          onPress={setActiveButton1}
           currentActiveBtn={activeButton1}
         />
       </Container>
       <Container my={2}>
         <ButtonGroup
           buttonItems={buttonItems2}
-          onPressFunc={setActiveButton2}
+          onPress={setActiveButton2}
           currentActiveBtn={activeButton2}
           buttonStyle={{ border: theme.colors.font.grey600 }}
         />
@@ -90,7 +90,7 @@ export const ButtonGroups = () => {
           activeColor={theme.colors.font.danger}
           inActiveColor={theme.colors.font.grey200}
           buttonItems={buttonItems3}
-          onPressFunc={setActiveButton3}
+          onPress={setActiveButton3}
           currentActiveBtn={activeButton3}
           buttonStyle={{ border: theme.colors.font.grey600 }}
           wrapperStyle={{ borderColor: theme.colors.font.grey600 }}

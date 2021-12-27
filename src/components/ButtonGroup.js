@@ -52,7 +52,7 @@ export const ButtonGroup = ({
   activeColor,
   inActiveColor,
   buttonItems,
-  onPressFunc,
+  onPress,
   currentActiveBtn,
   ...rest
 }) => {
@@ -76,7 +76,7 @@ export const ButtonGroup = ({
             px={3}
             onPress={() => {
               if (item !== currentActiveBtn) {
-                onPressFunc(item);
+                onPress(item);
               }
             }}
             {...rest.buttonStyle}
@@ -98,7 +98,7 @@ ButtonGroup.defaultProps = {
   activeColor: "background.grey600",
   inActiveColor: "background.white",
   wrapperStyle: {},
-  buttonTextStyle: {},
+  buttonTextStyle: { ellipsizeMode: "tail", numberOfLines: 1 },
   buttonStyle: {},
 };
 
@@ -114,7 +114,7 @@ ButtonGroup.propTypes = {
   /**
    * Returns the current selected item on button press.
    */
-  onPressFunc: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
   /**
    * Array of button text.
    */

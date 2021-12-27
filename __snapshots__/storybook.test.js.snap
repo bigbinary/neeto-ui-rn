@@ -3618,6 +3618,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="background.white"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3655,6 +3657,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="background.grey600"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3736,6 +3740,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="background.white"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3776,6 +3782,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="background.grey600"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3816,6 +3824,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="background.grey600"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3897,6 +3907,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="#ff6969"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3937,6 +3949,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="#ff6969"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
@@ -3977,6 +3991,8 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               >
                 <Text
                   color="#e9ebed"
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
                   style={
                     Array [
                       Object {
