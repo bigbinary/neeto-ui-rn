@@ -12,3 +12,4 @@ export { BottomSheet } from "./BottomSheet";
 export { Chip } from "./Chip";
 export { ParentView } from "./ParentView";
 export { RichTextEditor } from "./RichTextEditor";
+export { ButtonGroup } from "./ButtonGroup";
