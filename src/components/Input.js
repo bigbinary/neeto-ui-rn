@@ -327,5 +327,5 @@ TextInput.defaultProps = {
   height: 40,
   px: 2,
   fontFamily: "inter400",
-  fontSize: "14px",
+  fontSize: "16px",
 };
