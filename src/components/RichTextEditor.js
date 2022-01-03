@@ -95,7 +95,7 @@ export const RichTextEditor = ({
     <>
       <ScrollView {...rest?.editorWrapperStyle}>
         <RichEditor
-          placeholder={placeholderText || "Type here..."}
+          placeholder={placeholderText}
           ref={richTextRef}
           onChange={onChange}
           useContainer={false}
@@ -128,6 +128,7 @@ export const RichTextEditor = ({
 RichTextEditor.defaultProps = {
   editorProps: {},
   toolBarProps: {},
+  placeholderText: "Type here...",
 };
 
 RichTextEditor.propTypes = {
