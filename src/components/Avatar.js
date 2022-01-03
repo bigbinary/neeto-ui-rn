@@ -79,7 +79,7 @@ export const Avatar = ({
             fontSize={fontSize > 14 ? fontSize : 14}
             color={fontColor}
           >
-            {acronym}
+            {acronym.toUpperCase()}
           </Typography>
         </Container>
       ) : (
