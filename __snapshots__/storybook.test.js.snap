@@ -8413,7 +8413,7 @@ exports[`Storyshots Input Input Demo 1`] = `
                 editable={true}
                 flex={1}
                 fontFamily="inter400"
-                fontSize="14px"
+                fontSize="16px"
                 height={40}
                 keyboardType="default"
                 placeholder="placeholder"
@@ -8427,7 +8427,7 @@ exports[`Storyshots Input Input Demo 1`] = `
                       "flexGrow": 1,
                       "flexShrink": 1,
                       "fontFamily": "Inter-Regular",
-                      "fontSize": 14,
+                      "fontSize": 16,
                       "paddingLeft": 8,
                       "paddingRight": 8,
                     },
@@ -8564,7 +8564,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -8576,7 +8576,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -8668,7 +8668,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -8680,7 +8680,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -8772,7 +8772,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   placeholder="Placeholder"
                   px={2}
@@ -8785,7 +8785,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -8880,7 +8880,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   placeholder="Placeholder"
                   px={2}
@@ -8893,7 +8893,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -8985,7 +8985,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -8997,7 +8997,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9094,7 +9094,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={false}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -9106,7 +9106,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9198,7 +9198,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -9210,7 +9210,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9316,7 +9316,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   keyboardType="email-address"
                   px={2}
@@ -9329,7 +9329,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9422,7 +9422,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={true}
@@ -9434,7 +9434,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9616,7 +9616,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={true}
@@ -9628,7 +9628,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9822,7 +9822,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -9834,7 +9834,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -9953,7 +9953,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -9965,7 +9965,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10102,7 +10102,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={false}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -10114,7 +10114,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10249,7 +10249,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -10261,7 +10261,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10353,7 +10353,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -10365,7 +10365,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10488,7 +10488,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -10500,7 +10500,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10623,7 +10623,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={100}
                   multiline={true}
                   px={2}
@@ -10636,7 +10636,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10793,7 +10793,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   placeholder="Search"
                   px={2}
@@ -10806,7 +10806,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
@@ -10884,7 +10884,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   editable={true}
                   flex={1}
                   fontFamily="inter400"
-                  fontSize="14px"
+                  fontSize="16px"
                   height={40}
                   px={2}
                   secureTextEntry={false}
@@ -10896,7 +10896,7 @@ exports[`Storyshots Input Inputs 1`] = `
                         "flexGrow": 1,
                         "flexShrink": 1,
                         "fontFamily": "Inter-Regular",
-                        "fontSize": 14,
+                        "fontSize": 16,
                         "paddingLeft": 8,
                         "paddingRight": 8,
                       },
