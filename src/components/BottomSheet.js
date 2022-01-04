@@ -110,16 +110,30 @@ ContentRow.propTypes = {
  *
  * ## Usage
  * ```js
- * import * as React from 'react';
- * import { Typography, Container } from '@bigbinary/neetoui-rn';
+ * import React, { useState } from 'react';
+ * import { Container, BottomSheet } from '@bigbinary/neetoui-rn';
  *
  * export default function Main() {
+ *  const [isBottomSheetVisible, setBottomSheetVisibility] = useState(false);
+ *  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+ *  const data = ["neeto-ui-rn", "neeto-desk-rn", "neeto-hq"];
+ *
  *  return (
  *    <Container>
- *     <Typography>
- *         This is basic example of Typography
- *      </Typography>
- *     </Container>
+ *     <BottomSheet
+ *       maxHeight={200}
+ *       isVisible={isBottomSheetVisible}
+ *       hide={() => {
+ *         setBottomSheetVisibility(false);
+ *       }}
+ *       onItemPress={index => {
+ *         setSelectedItemIndex(index);
+ *       }}
+ *       title="PROJECT"
+ *       data={data}
+ *       selectedItemIndex={selectedItemIndex}
+ *      />
+ *   </Container>
  *  );
  * }
  * ```
