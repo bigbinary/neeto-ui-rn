@@ -114,7 +114,7 @@ ContentRow.propTypes = {
  * import { Container, BottomSheet } from '@bigbinary/neetoui-rn';
  *
  * export default function Main() {
- *  const [bottomSheetVisibility, setBottomSheetVisibility] = useState(false);
+ *  const [isBottomSheetVisible, setBottomSheetVisibility] = useState(false);
  *  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
  *  const data = ["neeto-ui-rn", "neeto-desk-rn", "neeto-hq"];
  *
@@ -122,7 +122,7 @@ ContentRow.propTypes = {
  *    <Container>
  *     <BottomSheet
  *       maxHeight={200}
- *       isVisible={bottomSheetVisibility}
+ *       isVisible={isBottomSheetVisible}
  *       hide={() => {
  *         setBottomSheetVisibility(false);
  *       }}
