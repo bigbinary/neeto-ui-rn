@@ -43,12 +43,13 @@ export const OtpInputs = ({
   secureTextEntry = false,
   error = false,
   code = "",
-  containerStyle,
+  textContainerStyle,
+  textStyle,
 }) => {
   const inputRef = React.useRef();
 
   return (
-    <Container style={[styles.container, containerStyle]}>
+    <Container style={styles.container}>
       <TouchableOpacity
         onPress={() => {
           Keyboard.dismiss();
@@ -60,17 +61,22 @@ export const OtpInputs = ({
             .fill()
             .map((number, index) => {
               return (
-                <Text
-                  testID="otp"
-                  accessibilityLabel="otp"
+                <Container
                   key={index}
-                  style={[
-                    styles.otpInput,
-                    error === true ? { color: theme.colors.font.danger } : {},
-                  ]}
+                  style={[styles.textContainer, textContainerStyle]}
                 >
-                  {code[index] || ""}
-                </Text>
+                  <Text
+                    testID="otp"
+                    accessibilityLabel="otp"
+                    style={[
+                      styles.otpInput,
+                      error === true ? { color: theme.colors.font.danger } : {},
+                      textStyle,
+                    ]}
+                  >
+                    {code[index] || ""}
+                  </Text>
+                </Container>
               );
             })}
           <TextInput
@@ -119,9 +125,13 @@ OtpInputs.propTypes = {
    */
   secureTextEntry: PropTypes.bool,
   /**
-   * To change the styles main container.
+   * To change the styles of main container.
    */
-  containerStyle: PropTypes.object,
+  textContainerStyle: PropTypes.object,
+  /**
+   * To change the styles of OTP text.
+   */
+  textStyle: PropTypes.object,
 };
 
 export const styles = StyleSheet.create({
@@ -138,17 +148,20 @@ export const styles = StyleSheet.create({
     minWidth: 40,
     textAlignVertical: "center",
     alignItems: "center",
-    backgroundColor: theme.colors.background.white,
-    borderRadius: 6,
-    borderWidth: 1,
     ...Platform.select({
       ios: {
         paddingTop: 5,
       },
       android: {},
     }),
+    backgroundColor: "transparent",
+  },
+  textContainer: {
     margin: 5,
+    borderRadius: 6,
+    borderWidth: 1,
     borderColor: theme.colors.background.secondary,
+    backgroundColor: theme.colors.background.white,
   },
   inputsContainer: {
     flexDirection: "row",
