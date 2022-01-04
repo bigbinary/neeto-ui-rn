@@ -40,7 +40,6 @@ import { Container } from "@components";
 export const OtpInputs = ({
   handleChange = () => {},
   numberOfInputs = 4,
-  secureTextEntry = false,
   error = false,
   code = "",
   textContainerStyle,
@@ -81,7 +80,6 @@ export const OtpInputs = ({
             })}
           <TextInput
             keyboardType="phone-pad"
-            secureTextEntry={secureTextEntry}
             selectionColor="transparent"
             onChangeText={value => {
               if (!isNaN(value)) {
@@ -120,10 +118,6 @@ OtpInputs.propTypes = {
    * If true, code will be shown in red color.
    */
   error: PropTypes.bool,
-  /**
-   * If true, code will shown as hidden.
-   */
-  secureTextEntry: PropTypes.bool,
   /**
    * To change the styles of main container.
    */

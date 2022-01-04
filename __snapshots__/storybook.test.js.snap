@@ -11360,7 +11360,6 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 <TextInput
                   keyboardType="phone-pad"
                   onChangeText={[Function]}
-                  secureTextEntry={false}
                   selectionColor="transparent"
                   style={
                     Object {
@@ -11759,7 +11758,6 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   <TextInput
                     keyboardType="phone-pad"
                     onChangeText={[Function]}
-                    secureTextEntry={false}
                     selectionColor="transparent"
                     style={
                       Object {
