@@ -10994,6 +10994,794 @@ exports[`Storyshots Input Inputs 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                },
+                Object {
+                  "marginBottom": 5,
+                  "marginTop": 5,
+                },
+              ]
+            }
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "opacity": 1,
+                }
+              }
+            >
+              <View
+                color="background.primary"
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                    },
+                    Object {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                  ]
+                }
+              >
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "margin": 5,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                          "minHeight": 40,
+                          "minWidth": 40,
+                          "paddingTop": 5,
+                          "textAlign": "center",
+                          "textAlignVertical": "center",
+                        },
+                        Object {},
+                        undefined,
+                      ]
+                    }
+                    testID="otp"
+                  >
+                    
+                  </Text>
+                </View>
+                <TextInput
+                  keyboardType="phone-pad"
+                  onChangeText={[Function]}
+                  selectionColor="transparent"
+                  style={
+                    Object {
+                      "backgroundColor": "transparent",
+                      "color": "transparent",
+                      "fontSize": 0,
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                  value=""
+                />
+              </View>
+            </View>
+          </View>
+          <Text
+            fontSize="xl"
+            py={10}
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 24,
+                  "paddingBottom": 10,
+                  "paddingTop": 10,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Your entered OTP is 
+          </Text>
+          <View
+            alignItems="center"
+            bg="background.grey500"
+            color="background.primary"
+            justifyContent="center"
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#87929d",
+                  "color": "#ffffff",
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              fontSize="xl"
+              py={10}
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                    "fontSize": 24,
+                    "paddingBottom": 10,
+                    "paddingTop": 10,
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              With Custom Styles
+            </Text>
+            <View
+              color="background.primary"
+              style={
+                Array [
+                  Object {
+                    "color": "#ffffff",
+                  },
+                  Object {
+                    "marginBottom": 5,
+                    "marginTop": 5,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  color="background.primary"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                      },
+                      Object {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    color="background.primary"
+                    style={
+                      Array [
+                        Object {
+                          "color": "#ffffff",
+                        },
+                        Object {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "margin": 5,
+                        },
+                        Object {
+                          "backgroundColor": "#2f3941",
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      style={
+                        Array [
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "color": "#828282",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                            "minHeight": 40,
+                            "minWidth": 40,
+                            "paddingTop": 5,
+                            "textAlign": "center",
+                            "textAlignVertical": "center",
+                          },
+                          Object {},
+                          Object {
+                            "color": "#ffffff",
+                          },
+                        ]
+                      }
+                      testID="otp"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <TextInput
+                    keyboardType="phone-pad"
+                    onChangeText={[Function]}
+                    selectionColor="transparent"
+                    style={
+                      Object {
+                        "backgroundColor": "transparent",
+                        "color": "transparent",
+                        "fontSize": 0,
+                        "height": "100%",
+                        "position": "absolute",
+                        "width": "100%",
+                      }
+                    }
+                    value=""
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Rich Text Editor Rich Text Editor Component 1`] = `
 <RCTScrollView
   contentContainerStyle={

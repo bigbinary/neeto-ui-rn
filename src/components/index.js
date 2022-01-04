@@ -13,3 +13,4 @@ export { Chip } from "./Chip";
 export { ParentView } from "./ParentView";
 export { RichTextEditor } from "./RichTextEditor";
 export { ButtonGroup } from "./ButtonGroup";
+export { OtpInputs } from "./OtpInputs";
