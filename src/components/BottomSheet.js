@@ -162,9 +162,16 @@ export const BottomSheet = ({
       isVisible={isVisible}
       onBackdropPress={hide}
       useNativeDriver
+      avoidKeyboard
       hideModalContentWhileAnimating
     >
-      <Container bg={bg} flex={1} borderRadius={20} {...rest}>
+      <Container
+        bg={bg}
+        flex={1}
+        borderTopRightRadius={20}
+        borderTopLeftRadius={20}
+        {...rest}
+      >
         <Container>
           <Title
             bg={bg}
