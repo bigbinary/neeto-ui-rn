@@ -50,7 +50,6 @@ export const OtpInputs = ({
   return (
     <Container style={[styles.container, containerStyle]}>
       <TouchableOpacity
-        onLongPress={async () => {}}
         onPress={() => {
           Keyboard.dismiss();
           inputRef && inputRef.current.focus();
@@ -157,8 +156,11 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   emptyViewStyle: {
+    fontSize: 0,
+    backgroundColor: "transparent",
     color: "transparent",
-    maxWidth: 1,
-    maxHeight: 1,
+    width: "100%",
+    height: "100%",
+    position: "absolute",
   },
 });
