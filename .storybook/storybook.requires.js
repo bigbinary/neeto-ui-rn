@@ -38,6 +38,7 @@ const getStories = () => {
     require("../storybook/stories/Chip.stories.js"),
     require("../storybook/stories/FAB.stories.js"),
     require("../storybook/stories/Input.stories.js"),
+    require("../storybook/stories/OtpInputs.stories.js"),
     require("../storybook/stories/RichTextEditor.stories.js"),
     require("../storybook/stories/ToastMessage.stories.js"),
     require("../storybook/stories/ToggleSwitch.stories.js"),
