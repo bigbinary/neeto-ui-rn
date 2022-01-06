@@ -89,7 +89,6 @@ export const ToggleSwitches = () => {
       </Container>
       <Container my={3}>
         <ToggleSwitch
-          mt={3}
           value={true}
           label="Disabled switched on toggle button"
           disabled
@@ -97,7 +96,6 @@ export const ToggleSwitches = () => {
       </Container>
       <Container my={3}>
         <ToggleSwitch
-          mt={3}
           value={false}
           label="Disabled switched off toggle button"
           labelPosition="right"
@@ -107,7 +105,6 @@ export const ToggleSwitches = () => {
       </Container>
       <Container my={3}>
         <ToggleSwitch
-          mt={3}
           value={switchThree}
           onValueChange={() => setSwitchThree(prevValue => !prevValue)}
           label="Toggle switch button with custom styles"
