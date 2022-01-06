@@ -14259,6 +14259,11 @@ react-native-pell-rich-editor@^1.8.6:
   resolved "https://registry.yarnpkg.com/react-native-pell-rich-editor/-/react-native-pell-rich-editor-1.8.6.tgz#fdd8e0430dfea015198ff8aa1e08769fd0efb375"
   integrity sha512-FCoLnBlsu/CfgDMUfAb+rb0QSZOB/X0S2Ph98PHWuDoS4FKzGozzyXLVeeLMROrzD5V7q18EIs19LQhZLxOqnw==
 
+react-native-popover-view@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-popover-view/-/react-native-popover-view-4.1.0.tgz#15ce307ac62f22673c15a054477301071c1d934f"
+  integrity sha512-tfCdOaBwR9R0gFxdhyRdndTT43dkg7mvsOQSf1G96xfv+p1d0sgiJN5bhMhLKfmnDIVGEhQJXAflL0t/3CT9Vg==
+
 react-native-remix-icon@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-native-remix-icon/-/react-native-remix-icon-0.3.0.tgz#1b594dc7703f42eff9c016b3150764701d59ebd2"

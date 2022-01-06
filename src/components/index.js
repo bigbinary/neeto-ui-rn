@@ -14,3 +14,4 @@ export { ParentView } from "./ParentView";
 export { RichTextEditor } from "./RichTextEditor";
 export { ButtonGroup } from "./ButtonGroup";
 export { OtpInputs } from "./OtpInputs";
+export { Popover } from "./Popover";

@@ -47,6 +47,7 @@
     "@styled-system/prop-types": "^5.1.5",
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
+    "react-native-popover-view": "^4.1.0",
     "react-native-remix-icon": "^0.3.0",
     "react-native-switch-toggle": "^2.2.1",
     "react-native-toast-message": "^2.1.0",
