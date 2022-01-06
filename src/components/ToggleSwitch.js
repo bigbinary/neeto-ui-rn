@@ -34,11 +34,20 @@ import { Typography, Container } from "@components";
  * ```
  */
 
+const Label = ({ label, textStyles }) => {
+  return (
+    <Typography textStyle="subtext" {...textStyles}>
+      {label}
+    </Typography>
+  );
+};
+
 export const ToggleSwitch = ({
   value,
   onValueChange,
   label,
   disabled,
+  labelPosition,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -55,39 +64,45 @@ export const ToggleSwitch = ({
       flexDirection="row"
       borderColor={theme.colors.border.primary}
       alignItems="center"
-      {...rest}
+      {...rest.wrapperStyles}
     >
-      <Typography flex={0.8} textStyle="subtext">
-        {label}
-      </Typography>
-      <Container flex={0.2} alignItems="flex-end">
-        <SwitchToggle
-          switchOn={value}
-          onPress={() => !disabled && onValueChange()}
-          circleColorOn={circleColorOn}
-          circleColorOff={circleColorOff}
-          backgroundColorOff={theme.colors.background.grey200}
-          backgroundColor={theme.colors.background.grey800}
-          containerStyle={styles.containerStyle}
-          circleStyle={styles.circleStyle}
-          {...rest}
-        />
-      </Container>
+      {labelPosition === "left" && (
+        <Label label={label} textStyles={rest.textStyles} />
+      )}
+      <SwitchToggle
+        switchOn={value}
+        onPress={() => !disabled && onValueChange()}
+        circleColorOn={circleColorOn}
+        circleColorOff={circleColorOff}
+        backgroundColorOff={theme.colors.background.grey200}
+        backgroundColorOn={theme.colors.background.grey800}
+        containerStyle={styles.containerStyle}
+        circleStyle={styles.circleStyle}
+        {...rest.switchStyles}
+      />
+      {labelPosition === "right" && (
+        <Label label={label} textStyles={rest.textStyles} />
+      )}
     </Container>
   );
 };
 
 ToggleSwitch.defaultProps = {
-  borderWidth: 1,
-  borderRadius: 2,
-  p: 3,
+  labelPosition: "left",
+  wrapperStyles: {},
+  switchStyles: {},
+  textStyles: { mr: 2 },
 };
 
 ToggleSwitch.propTypes = {
   /**
    * The text to use for the floating label.
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  /**
+   * Prop that handles the label position.
+   */
+  labelPosition: PropTypes.string,
   /**
    * Value of the switch, true means 'on', false means 'off'.
    */
@@ -100,6 +115,23 @@ ToggleSwitch.propTypes = {
    * Disable toggling the switch.
    */
   disabled: PropTypes.bool,
+  /**
+   * Prop to handle custom wrapper styles.
+   */
+  wrapperStyles: PropTypes.object,
+  /**
+   * Prop to handle custom switch styles.
+   */
+  switchStyles: PropTypes.object,
+  /**
+   * Prop to handle custom text styles.
+   */
+  textStyles: PropTypes.object,
+};
+
+Label.propTypes = {
+  label: PropTypes.string,
+  textStyles: PropTypes.object,
 };
 
 const styles = StyleSheet.create({
