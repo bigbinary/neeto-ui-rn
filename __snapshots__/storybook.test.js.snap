@@ -13349,16 +13349,25 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
         >
           <View
             alignItems="center"
-            borderColor="#e4e4e7"
+            borderColor="grey"
+            borderRadius={5}
+            borderWidth={1}
             color="background.primary"
             flexDirection="row"
+            p={3}
             style={
               Array [
                 Object {
                   "alignItems": "center",
-                  "borderColor": "#e4e4e7",
+                  "borderColor": "grey",
+                  "borderRadius": 5,
+                  "borderWidth": 1,
                   "color": "#ffffff",
                   "flexDirection": "row",
+                  "paddingBottom": 16,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 16,
                 },
               ]
             }
@@ -13402,7 +13411,7 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
                 style={
                   Object {
                     "alignItems": "center",
-                    "backgroundColor": "rgba(47, 57, 65, 1)",
+                    "backgroundColor": "rgba(255, 105, 105, 1)",
                     "borderRadius": 10,
                     "flexDirection": "row",
                     "height": 18,
@@ -14051,7 +14060,7 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
           >
             <View
               alignItems="center"
-              borderColor="grey"
+              borderColor="#d8dcde"
               borderRadius={5}
               borderWidth={1}
               color="background.primary"
@@ -14061,7 +14070,7 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                 Array [
                   Object {
                     "alignItems": "center",
-                    "borderColor": "grey",
+                    "borderColor": "#d8dcde",
                     "borderRadius": 5,
                     "borderWidth": 1,
                     "color": "#ffffff",

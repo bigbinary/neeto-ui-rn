@@ -112,7 +112,7 @@ export const ToggleSwitches = () => {
           textStyles={{ ml: 2 }}
           wrapperStyles={{
             borderWidth: 1,
-            borderColor: "grey",
+            borderColor: theme.colors.border.grey300,
             p: 3,
             borderRadius: 5,
           }}
