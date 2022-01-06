@@ -53,9 +53,11 @@ const ButtonGroupStories = {
 export default ButtonGroupStories;
 
 export const ButtonGroupDemo = args => {
+  const [activeButton, setActiveButton] = useState(args.buttonItems[0]);
+
   return (
     <Container>
-      <ButtonGroup {...args} />
+      <ButtonGroup {...args} onPress={setActiveButton} currentActiveBtn={activeButton} />
     </Container>
   );
 };
