@@ -39,7 +39,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
  *  return(
  *   <ButtonGroup
  *     buttonItems={buttonItems}
- *     onPressFunc={setActiveButton}
+ *     onPress={setActiveButton}
  *     currentActiveBtn={activeButton}
  *    />    
  *  );

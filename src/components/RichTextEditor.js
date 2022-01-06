@@ -57,9 +57,7 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
  *         "undo",
  *         "redo",
  *       ]}
- *       toolbarWrapperStyle={{bottom: 0}}
  *       editorProps={editorProps}
- *       toolBarProps={{}}
  *     />
  *   </Container>
  *  );
@@ -113,7 +111,12 @@ export const RichTextEditor = ({
         {children}
       </ScrollView>
       {showToolbar && (
-        <Container bottom={keyboardHeight} {...rest?.toolbarWrapperStyle}>
+        <Container
+          bottom={keyboardHeight}
+          position="absolute"
+          width="100%"
+          {...rest?.toolbarWrapperStyle}
+        >
           <RichToolbar
             editor={richTextRef}
             actions={computeToolbarActions()}
@@ -128,6 +131,7 @@ export const RichTextEditor = ({
 RichTextEditor.defaultProps = {
   editorProps: {},
   toolBarProps: {},
+  toolbarWrapperStyle: {},
   placeholderText: "Type here...",
 };
 
