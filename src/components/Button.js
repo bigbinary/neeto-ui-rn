@@ -52,19 +52,20 @@ export const TouchableOpacity = styled.TouchableOpacity`
  *
  */
 
-export const Button = ({
-  RightIcon,
-  LeftIcon,
-  fontFamily,
-  color,
-  fontSize,
-  loadingText,
-  isLoading,
-  Loader,
-  disabled,
-  variant,
-  ...rest
-}) => {
+export const Button = React.forwardRef((props, ref) => {
+  const {
+    RightIcon,
+    LeftIcon,
+    fontFamily,
+    color,
+    fontSize,
+    loadingText,
+    isLoading,
+    Loader,
+    disabled,
+    variant,
+    ...rest
+  } = props;
   let style = rest.style || {};
   if (disabled || isLoading) {
     style = { ...style, opacity: 0.5 };
@@ -72,6 +73,7 @@ export const Button = ({
 
   return (
     <TouchableOpacity
+      ref={ref}
       flexDirection="row"
       disabled={disabled || isLoading}
       {...rest}
@@ -97,7 +99,7 @@ export const Button = ({
       {RightIcon && <RightIcon />}
     </TouchableOpacity>
   );
-};
+});
 
 Button.defaultProps = {
   variant: "solid",
