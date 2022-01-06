@@ -1,15 +1,50 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Container, ToggleSwitch } from "@components";
-import { ThemeContext } from "styled-components/native";
+import { theme } from "@theme";
+
+const labelPositions = ["left", "right"];
 
 const ToggleSwitchStories = {
   title: "ToggleSwitches",
   component: ToggleSwitch,
-  argTypes: {
-    onValueChange: { action: "pressed the button" },
-  },
   args: {
+    label: "Toggle Switch Demo",
+    labelPosition: labelPositions[0],
     disabled: false,
+    switchStyles: {
+      backgroundColorOn: theme.colors.background.danger,
+      backgroundColorOff: theme.colors.background.base,
+    },
+    textStyles: {
+      mr: 2,
+    },
+    wrapperStyles: {
+      borderWidth: 1,
+      borderColor: "grey",
+      p: 3,
+      borderRadius: 5,
+    },
+  },
+  argTypes: {
+    label: {
+      control: { type: "text" },
+    },
+    labelPosition: {
+      options: labelPositions,
+      control: { type: "select" },
+    },
+    onValueChange: {
+      action: "pressed the button",
+    },
+    switchStyles: {
+      control: { type: "object" },
+    },
+    textStyles: {
+      control: { type: "object" },
+    },
+    wrapperStyles: {
+      control: { type: "object" },
+    },
   },
   parameters: {
     notes: "Checkout the different props in controls section",
@@ -27,14 +62,12 @@ export const ToggleSwitchDemo = args => {
         {...args}
         value={demoSwitch}
         onValueChange={() => setDemoSwitch(prevValue => !prevValue)}
-        label="Toggle Switch Demo"
       />
     </Container>
   );
 };
 
 export const ToggleSwitches = () => {
-  const theme = useContext(ThemeContext);
   const [switchOne, setSwitchOne] = useState(true);
   const [switchTwo, setSwitchTwo] = useState(true);
   const [switchThree, setSwitchThree] = useState(true);
