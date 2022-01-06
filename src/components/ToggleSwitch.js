@@ -34,6 +34,14 @@ import { Typography, Container } from "@components";
  * ```
  */
 
+const Label = ({ label, textStyles }) => {
+  return (
+    <Typography textStyle="subtext" {...textStyles}>
+      {label}
+    </Typography>
+  );
+};
+
 export const ToggleSwitch = ({
   value,
   onValueChange,
@@ -51,12 +59,6 @@ export const ToggleSwitch = ({
     ? theme.colors.background.menubackground
     : theme.colors.background.white;
 
-  const renderLabel = () => (
-    <Typography textStyle="subtext" {...rest.textStyles}>
-      {label}
-    </Typography>
-  );
-
   return (
     <Container
       flexDirection="row"
@@ -64,7 +66,9 @@ export const ToggleSwitch = ({
       alignItems="center"
       {...rest.wrapperStyles}
     >
-      {labelPosition === "left" && renderLabel()}
+      {labelPosition === "left" && (
+        <Label label={label} textStyles={rest.textStyles} />
+      )}
       <SwitchToggle
         switchOn={value}
         onPress={() => !disabled && onValueChange()}
@@ -76,7 +80,9 @@ export const ToggleSwitch = ({
         circleStyle={styles.circleStyle}
         {...rest.switchStyles}
       />
-      {labelPosition === "right" && renderLabel()}
+      {labelPosition === "right" && (
+        <Label label={label} textStyles={rest.textStyles} />
+      )}
     </Container>
   );
 };
@@ -110,16 +116,21 @@ ToggleSwitch.propTypes = {
    */
   disabled: PropTypes.bool,
   /**
-   * Prop to handle custom wrapper styles
+   * Prop to handle custom wrapper styles.
    */
   wrapperStyles: PropTypes.object,
   /**
-   * Prop to handle custom switch styles
+   * Prop to handle custom switch styles.
    */
   switchStyles: PropTypes.object,
   /**
-   * Prop to handle custom text styles
+   * Prop to handle custom text styles.
    */
+  textStyles: PropTypes.object,
+};
+
+Label.propTypes = {
+  label: PropTypes.string,
   textStyles: PropTypes.object,
 };
 
