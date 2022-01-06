@@ -75,8 +75,8 @@ ParentView.propTypes = {
    * Sets the background color
    */
   bg: PropTypes.string,
-  safeAreaViewProps: PropTypes.object,
   /**
    * Sets the props for SafeAreaView
    */
+  safeAreaViewProps: PropTypes.object,
 };
