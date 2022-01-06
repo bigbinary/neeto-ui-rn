@@ -19,8 +19,6 @@ export const Touchables = () => {
         height="30px"
         justifyContent="center"
         alignItems="center"
-        rippleOpacity={0.09}
-        rippleDuration={600}
         rippleContainerBorderRadius={50}
       >
         <Typography fontSize="14px">Touchable</Typography>

@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  Keyboard,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Platform,
-} from "react-native";
+import { Keyboard, StyleSheet, Text, TextInput, Platform } from "react-native";
 import { theme } from "../theme";
 import PropTypes from "prop-types";
-import { Container } from "@components";
+import { Container, Touchable } from "@components";
 
 /**
  *
@@ -49,7 +42,7 @@ export const OtpInputs = ({
 
   return (
     <Container style={styles.container}>
-      <TouchableOpacity
+      <Touchable
         onPress={() => {
           Keyboard.dismiss();
           inputRef && inputRef.current.focus();
@@ -96,7 +89,7 @@ export const OtpInputs = ({
             value={code || ""}
           />
         </Container>
-      </TouchableOpacity>
+      </Touchable>
     </Container>
   );
 };

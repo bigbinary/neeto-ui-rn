@@ -1,25 +1,7 @@
 import * as React from "react";
-import {
-  flexbox,
-  space,
-  border,
-  buttonStyle,
-  color,
-  layout,
-} from "styled-system";
-import styled from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
-import { Typography, Container } from "@components";
+import { Typography, Container, Touchable } from "@components";
 import PropTypes from "prop-types";
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${buttonStyle}
-  ${flexbox}
-  ${space}
-  ${border}
-  ${layout}
-  ${color}
-`;
 
 /**
  *
@@ -72,7 +54,7 @@ export const Button = React.forwardRef((props, ref) => {
   }
 
   return (
-    <TouchableOpacity
+    <Touchable
       ref={ref}
       flexDirection="row"
       disabled={disabled || isLoading}
@@ -97,7 +79,7 @@ export const Button = React.forwardRef((props, ref) => {
         {isLoading ? loadingText : rest.label}
       </Typography>
       {RightIcon && <RightIcon />}
-    </TouchableOpacity>
+    </Touchable>
   );
 });
 

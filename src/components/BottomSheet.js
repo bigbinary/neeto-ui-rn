@@ -1,26 +1,8 @@
 import * as React from "react";
 import { StyleSheet, FlatList } from "react-native";
-import {
-  flexbox,
-  space,
-  border,
-  buttonStyle,
-  color,
-  layout,
-} from "styled-system";
-import styled from "styled-components/native";
 import PropTypes from "prop-types";
-import { Typography, Container } from "@components";
+import { Typography, Container, Touchable } from "@components";
 import Modal from "react-native-modal";
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${buttonStyle}
-  ${flexbox}
-  ${space}
-  ${border}
-  ${layout}
-  ${color}
-`;
 
 const Border = () => {
   return <Container bg="border.primary" height="1px" width="100%" />;
@@ -72,7 +54,7 @@ const ContentRow = React.memo(
     return (
       !!label && (
         <>
-          <TouchableOpacity
+          <Touchable
             alignItems="center"
             bg={bg}
             py={12}
@@ -88,7 +70,7 @@ const ContentRow = React.memo(
             >
               {label}
             </Typography>
-          </TouchableOpacity>
+          </Touchable>
           <Border />
         </>
       )

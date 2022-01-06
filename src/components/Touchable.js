@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Container } from "@components";
 import PropTypes from "prop-types";
 import propTypes from "@styled-system/prop-types";
 import Ripple from "react-native-material-ripple";
@@ -60,8 +59,13 @@ const StyledRipple = styled(Ripple)`
 
 export const Touchable = ({ children, ...rest }) => {
   return (
-    <StyledRipple {...rest}>
-      <Container>{children}</Container>
+    <StyledRipple
+      rippleOpacity={0.09}
+      rippleDuration={600}
+      rippleContainerBorderRadius={rest.borderRadius ? rest.borderRadius : 0}
+      {...rest}
+    >
+      {children}
     </StyledRipple>
   );
 };
