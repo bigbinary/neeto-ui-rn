@@ -13350,38 +13350,27 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
           <View
             alignItems="center"
             borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
             color="background.primary"
             flexDirection="row"
-            p={3}
             style={
               Array [
                 Object {
                   "alignItems": "center",
                   "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
                   "color": "#ffffff",
                   "flexDirection": "row",
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
                 },
               ]
             }
           >
             <Text
-              flex={0.8}
+              mr={2}
               style={
                 Array [
                   Object {
                     "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
                     "fontSize": 12,
+                    "marginRight": 8,
                   },
                 ]
               }
@@ -13390,51 +13379,67 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
               Toggle Switch Demo
             </Text>
             <View
-              alignItems="flex-end"
-              color="background.primary"
-              flex={0.2}
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
               style={
-                Array [
-                  Object {
-                    "alignItems": "flex-end",
-                    "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
-                  },
-                ]
+                Object {
+                  "opacity": 1,
+                }
               }
             >
               <View
-                accessible={true}
                 collapsable={false}
-                focusable={true}
                 nativeID="animatedComponent"
-                onClick={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "opacity": 1,
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(47, 57, 65, 1)",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 18,
+                    "padding": 2,
+                    "width": 38,
                   }
                 }
               >
                 <View
                   collapsable={false}
                   nativeID="animatedComponent"
+                  style={Object {}}
+                >
+                  <Text />
+                </View>
+                <View
                   style={
                     Object {
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(0, 0, 0, 1)",
-                      "borderRadius": 10,
-                      "flexDirection": "row",
-                      "height": 18,
-                      "padding": 2,
-                      "width": 38,
+                      "left": 5,
+                      "position": "absolute",
+                    }
+                  }
+                />
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "backgroundColor": "rgba(255, 255, 255, 1)",
+                      "borderRadius": 7,
+                      "height": 14,
+                      "transform": Array [
+                        Object {
+                          "translateX": 20,
+                        },
+                      ],
+                      "width": 14,
                     }
                   }
                 >
@@ -13445,46 +13450,13 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
                   >
                     <Text />
                   </View>
-                  <View
-                    style={
-                      Object {
-                        "left": 5,
-                        "position": "absolute",
-                      }
-                    }
-                  />
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={
-                      Object {
-                        "backgroundColor": "rgba(255, 255, 255, 1)",
-                        "borderRadius": 7,
-                        "height": 14,
-                        "transform": Array [
-                          Object {
-                            "translateX": 20,
-                          },
-                        ],
-                        "width": 14,
-                      }
-                    }
-                  >
-                    <View
-                      collapsable={false}
-                      nativeID="animatedComponent"
-                      style={Object {}}
-                    >
-                      <Text />
-                    </View>
-                  </View>
-                  <View
-                    collapsable={false}
-                    nativeID="animatedComponent"
-                    style={Object {}}
-                  >
-                    <Text />
-                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={Object {}}
+                >
+                  <Text />
                 </View>
               </View>
             </View>
@@ -13555,63 +13527,47 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
           }
         >
           <View
-            alignItems="center"
-            borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
             color="background.primary"
-            flexDirection="row"
-            p={3}
+            my={3}
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
                   "color": "#ffffff",
-                  "flexDirection": "row",
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
+                  "marginBottom": 16,
+                  "marginTop": 16,
                 },
               ]
             }
           >
-            <Text
-              flex={0.8}
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="subtext"
-            >
-              Conversation assigned to my group
-            </Text>
             <View
-              alignItems="flex-end"
+              alignItems="center"
+              borderColor="#e4e4e7"
               color="background.primary"
-              flex={0.2}
+              flexDirection="row"
               style={
                 Array [
                   Object {
-                    "alignItems": "flex-end",
+                    "alignItems": "center",
+                    "borderColor": "#e4e4e7",
                     "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
+                    "flexDirection": "row",
                   },
                 ]
               }
             >
+              <Text
+                mr={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              />
               <View
                 accessible={true}
                 collapsable={false}
@@ -13636,7 +13592,7 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "backgroundColor": "rgba(0, 0, 0, 1)",
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
                       "borderRadius": 10,
                       "flexDirection": "row",
                       "height": 18,
@@ -13697,65 +13653,49 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
             </View>
           </View>
           <View
-            alignItems="center"
-            borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
             color="background.primary"
-            flexDirection="row"
-            mt={3}
-            p={3}
+            my={3}
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
                   "color": "#ffffff",
-                  "flexDirection": "row",
+                  "marginBottom": 16,
                   "marginTop": 16,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
                 },
               ]
             }
           >
-            <Text
-              flex={0.8}
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="subtext"
-            >
-              Disabled switched on toggle button
-            </Text>
             <View
-              alignItems="flex-end"
+              alignItems="center"
+              borderColor="#e4e4e7"
               color="background.primary"
-              flex={0.2}
+              flexDirection="row"
               style={
                 Array [
                   Object {
-                    "alignItems": "flex-end",
+                    "alignItems": "center",
+                    "borderColor": "#e4e4e7",
                     "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
+                    "flexDirection": "row",
                   },
                 ]
               }
             >
+              <Text
+                mr={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Conversation assigned to my group
+              </Text>
               <View
                 accessible={true}
                 collapsable={false}
@@ -13780,7 +13720,135 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "backgroundColor": "rgba(0, 0, 0, 1)",
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
+                      "borderRadius": 10,
+                      "flexDirection": "row",
+                      "height": 18,
+                      "padding": 2,
+                      "width": 38,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "left": 5,
+                        "position": "absolute",
+                      }
+                    }
+                  />
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(255, 255, 255, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
+                        "transform": Array [
+                          Object {
+                            "translateX": 20,
+                          },
+                        ],
+                        "width": 14,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <Text />
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            color="background.primary"
+            my={3}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginBottom": 16,
+                  "marginTop": 16,
+                },
+              ]
+            }
+          >
+            <View
+              alignItems="center"
+              borderColor="#e4e4e7"
+              color="background.primary"
+              flexDirection="row"
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderColor": "#e4e4e7",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                  },
+                ]
+              }
+            >
+              <Text
+                mr={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginRight": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Disabled switched on toggle button
+              </Text>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
                       "borderRadius": 10,
                       "flexDirection": "row",
                       "height": 18,
@@ -13841,61 +13909,30 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
             </View>
           </View>
           <View
-            alignItems="center"
-            borderColor="#e4e4e7"
-            borderRadius={2}
-            borderWidth={1}
             color="background.primary"
-            flexDirection="row"
-            mt={3}
-            p={3}
+            my={3}
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "borderColor": "#e4e4e7",
-                  "borderRadius": 2,
-                  "borderWidth": 1,
                   "color": "#ffffff",
-                  "flexDirection": "row",
+                  "marginBottom": 16,
                   "marginTop": 16,
-                  "paddingBottom": 16,
-                  "paddingLeft": 16,
-                  "paddingRight": 16,
-                  "paddingTop": 16,
                 },
               ]
             }
           >
-            <Text
-              flex={0.8}
-              style={
-                Array [
-                  Object {
-                    "color": "#1b1f23",
-                    "flexBasis": 0,
-                    "flexGrow": 0.8,
-                    "flexShrink": 1,
-                    "fontSize": 12,
-                  },
-                ]
-              }
-              textStyle="subtext"
-            >
-              Disabled switched off toggle button
-            </Text>
             <View
-              alignItems="flex-end"
+              alignItems="center"
+              borderColor="#e4e4e7"
               color="background.primary"
-              flex={0.2}
+              flexDirection="row"
               style={
                 Array [
                   Object {
-                    "alignItems": "flex-end",
+                    "alignItems": "center",
+                    "borderColor": "#e4e4e7",
                     "color": "#ffffff",
-                    "flexBasis": 0,
-                    "flexGrow": 0.2,
-                    "flexShrink": 1,
+                    "flexDirection": "row",
                   },
                 ]
               }
@@ -13982,6 +14019,158 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   />
                 </View>
               </View>
+              <Text
+                ml={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginLeft": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Disabled switched off toggle button
+              </Text>
+            </View>
+          </View>
+          <View
+            color="background.primary"
+            my={3}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "marginBottom": 16,
+                  "marginTop": 16,
+                },
+              ]
+            }
+          >
+            <View
+              alignItems="center"
+              borderColor="grey"
+              borderRadius={5}
+              borderWidth={1}
+              color="background.primary"
+              flexDirection="row"
+              p={3}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderColor": "grey",
+                    "borderRadius": 5,
+                    "borderWidth": 1,
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "paddingBottom": 16,
+                    "paddingLeft": 16,
+                    "paddingRight": 16,
+                    "paddingTop": 16,
+                  },
+                ]
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                nativeID="animatedComponent"
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "opacity": 1,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  nativeID="animatedComponent"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "rgba(255, 105, 105, 1)",
+                      "borderRadius": 10,
+                      "flexDirection": "row",
+                      "height": 18,
+                      "padding": 2,
+                      "width": 38,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                  <View
+                    style={
+                      Object {
+                        "left": 5,
+                        "position": "absolute",
+                      }
+                    }
+                  />
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(255, 255, 255, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
+                        "transform": Array [
+                          Object {
+                            "translateX": 20,
+                          },
+                        ],
+                        "width": 14,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      nativeID="animatedComponent"
+                      style={Object {}}
+                    >
+                      <Text />
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    nativeID="animatedComponent"
+                    style={Object {}}
+                  >
+                    <Text />
+                  </View>
+                </View>
+              </View>
+              <Text
+                ml={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 12,
+                      "marginLeft": 8,
+                    },
+                  ]
+                }
+                textStyle="subtext"
+              >
+                Toggle switch button with custom styles
+              </Text>
             </View>
           </View>
         </View>
