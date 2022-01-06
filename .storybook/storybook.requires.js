@@ -43,6 +43,7 @@ const getStories = () => {
     require("../storybook/stories/RichTextEditor.stories.js"),
     require("../storybook/stories/ToastMessage.stories.js"),
     require("../storybook/stories/ToggleSwitch.stories.js"),
+    require("../storybook/stories/Touchable.stories.js"),
     require("../storybook/stories/Typography.stories.js"),
   ];
 };

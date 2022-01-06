@@ -15,3 +15,4 @@ export { RichTextEditor } from "./RichTextEditor";
 export { ButtonGroup } from "./ButtonGroup";
 export { OtpInputs } from "./OtpInputs";
 export { Popover } from "./Popover";
+export { Touchable } from "./Touchable";
