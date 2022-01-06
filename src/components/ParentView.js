@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { SafeAreaView, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import { Container } from "@components";
 
 /**
@@ -28,6 +30,7 @@ export const ParentView = ({
   children,
   backgroundColor,
   bg,
+  safeAreaViewProps,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -47,7 +50,7 @@ export const ParentView = ({
   return (
     <Container flex={1}>
       <Container backgroundColor={statusBarColor}>
-        <SafeAreaView>
+        <SafeAreaView {...safeAreaViewProps}>
           <StatusBar barStyle={barStyle} backgroundColor={statusBarColor} />
         </SafeAreaView>
       </Container>
@@ -72,4 +75,8 @@ ParentView.propTypes = {
    * Sets the background color
    */
   bg: PropTypes.string,
+  safeAreaViewProps: PropTypes.object,
+  /**
+   * Sets the props for SafeAreaView
+   */
 };
