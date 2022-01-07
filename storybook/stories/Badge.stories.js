@@ -63,12 +63,6 @@ export const Badges = () => {
     <Container flex={1} alignItems="center" justifyContent="center">
       <Container flex={1} justifyContent="center">
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge />
-          <Typography px={2} fontSize="l">
-            Default size
-          </Typography>
-        </Container>
-        <Container flexDirection="row" alignItems="center" mb={4} px={2}>
           <Badge content={3} size={32} />
           <Typography px={2} fontSize="l">
             Custom size 32.
@@ -81,12 +75,6 @@ export const Badges = () => {
           </Typography>
         </Container>
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge size={32} fontSize="12px" />
-          <Typography px={2} fontSize="l">
-            without content
-          </Typography>
-        </Container>
-        <Container flexDirection="row" alignItems="center" mb={4} px={2}>
           <Badge
             content="test"
             size={32}
@@ -95,13 +83,13 @@ export const Badges = () => {
             color="font.secondary"
           />
           <Typography px={2} fontSize="l">
-            custom background color
+            Custom background color
           </Typography>
         </Container>
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
           <Badge size={32} content="test" fontSize="12px" color="font.danger" />
           <Typography px={2} fontSize="l">
-            custom font color
+            Custom font color
           </Typography>
         </Container>
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
@@ -112,7 +100,13 @@ export const Badges = () => {
             fontFamily="inter700"
           />
           <Typography px={2} fontSize="l">
-            custom font family
+            Custom font family
+          </Typography>
+        </Container>
+        <Container flexDirection="row" alignItems="center" mb={4} px={2}>
+          <Badge content="Comment" fontSize="12px" fontFamily="inter700" />
+          <Typography px={2} fontSize="l">
+            Long Text
           </Typography>
         </Container>
       </Container>
