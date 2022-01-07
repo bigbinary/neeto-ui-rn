@@ -30,6 +30,34 @@ or
 npx react-native link
 ```
 
+## Getting Started
+
+## react-native-safe-area-context
+
+We are using SafeAreaView from
+[`react-native-safe-area-context`](https://github.com/th3rdwave/react-native-safe-area-context)
+in our `ParentView` component to handle safe area. Follow the instructions under
+`SafeAreaProvider` for the `ParentView` component to work.
+
+### SafeAreaProvider
+
+You should add `SafeAreaProvider` in your app root component. You may need to
+add it in other places like the root of modals and routes when using
+[`react-native-screens`](https://github.com/software-mansion/react-native-screens).
+
+Note that providers should not be inside a `View` that is animated with
+`Animated` or inside a `ScrollView` since it can cause very frequent updates.
+
+#### Example
+
+```js
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
+function App() {
+  return <SafeAreaProvider>...</SafeAreaProvider>;
+}
+```
+
 ## Development
 
 Install all the dependencies by executing following command.
