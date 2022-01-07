@@ -13,6 +13,10 @@ import { Typography, Container } from "@components";
  * <li>layout</li>
  * </ul>
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/badge/badges.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  * import * as React from 'react';
