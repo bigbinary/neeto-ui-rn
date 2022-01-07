@@ -1,18 +1,8 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { space, border, color, layout, flexbox } from "styled-system";
-import styled from "styled-components/native";
 import Icon from "react-native-remix-icon";
 
-import { Typography } from "@components";
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${space}
-  ${border}
-  ${color}
-  ${flexbox}
-  ${layout}
-`;
+import { Typography, Touchable } from "@components";
 
 const variantStyleObj = {
   solid: {
@@ -74,7 +64,7 @@ export const Chip = ({
   ...rest
 }) => {
   return (
-    <TouchableOpacity
+    <Touchable
       flexDirection="row"
       p={2}
       borderRadius={20}
@@ -90,7 +80,7 @@ export const Chip = ({
         {label}
       </Typography>
       {onClose && (
-        <TouchableOpacity
+        <Touchable
           bg={closeIconBackground}
           borderRadius={10}
           disabled={isDisabled}
@@ -98,9 +88,9 @@ export const Chip = ({
           {...rest.closeIconContainerStyle}
         >
           <Icon name={closeIcon} size={closeIconSize} color={closeIconColor} />
-        </TouchableOpacity>
+        </Touchable>
       )}
-    </TouchableOpacity>
+    </Touchable>
   );
 };
 

@@ -247,17 +247,32 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                   width="100%"
                 >
                   <View
+                    accessibilityState={
+                      Object {
+                        "disabled": false,
+                      }
+                    }
                     accessible={true}
+                    alignItems="center"
+                    borderRadius={50}
                     collapsable={false}
+                    flexDirection="row"
                     focusable={true}
+                    height={35}
+                    justifyContent="center"
+                    label="OK"
+                    minWidth={110}
                     nativeID="animatedComponent"
                     onClick={[Function]}
+                    onLayout={[Function]}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
                     onResponderRelease={[Function]}
                     onResponderTerminate={[Function]}
                     onResponderTerminationRequest={[Function]}
                     onStartShouldSetResponder={[Function]}
+                    p={0}
+                    pointerEvents="box-only"
                     style={
                       Object {
                         "alignItems": "center",
@@ -267,13 +282,13 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                         "height": 35,
                         "justifyContent": "center",
                         "minWidth": 110,
-                        "opacity": 1,
                         "paddingBottom": 0,
                         "paddingLeft": 0,
                         "paddingRight": 0,
                         "paddingTop": 0,
                       }
                     }
+                    variant="solid"
                   >
                     <Text
                       fontFamily="inter400"
@@ -296,23 +311,55 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                     >
                       OK
                     </Text>
+                    <View
+                      style={
+                        Array [
+                          Object {
+                            "backgroundColor": "transparent",
+                            "bottom": 0,
+                            "left": 0,
+                            "overflow": "hidden",
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          Object {
+                            "borderRadius": 50,
+                          },
+                        ]
+                      }
+                    />
                   </View>
                 </View>
               </View>
             </View>
           </Modal>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="With Default Button"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -322,7 +369,6 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -330,6 +376,8 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -352,19 +400,51 @@ exports[`Storyshots Alert Alert Demo 1`] = `
             >
               With Default Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Single Button"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -374,7 +454,6 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -382,6 +461,8 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -404,19 +485,51 @@ exports[`Storyshots Alert Alert Demo 1`] = `
             >
               Single Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Two Buttons"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -426,7 +539,6 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -434,6 +546,8 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -456,19 +570,51 @@ exports[`Storyshots Alert Alert Demo 1`] = `
             >
               Two Buttons
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Three Buttons"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -478,7 +624,6 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -486,6 +631,8 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -508,19 +655,51 @@ exports[`Storyshots Alert Alert Demo 1`] = `
             >
               Three Buttons
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Non Cancelable "
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -530,7 +709,6 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -538,6 +716,8 @@ exports[`Storyshots Alert Alert Demo 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -560,6 +740,24 @@ exports[`Storyshots Alert Alert Demo 1`] = `
             >
               Non Cancelable 
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -2868,17 +3066,30 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Select Project"
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -2886,13 +3097,13 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                 "borderRadius": 2,
                 "flexDirection": "row",
                 "justifyContent": "center",
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -2915,6 +3126,24 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
             >
               Select Project
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <Modal
             animationType="none"
@@ -3169,23 +3398,34 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                           style={null}
                         >
                           <View
+                            accessibilityState={
+                              Object {
+                                "disabled": false,
+                              }
+                            }
                             accessible={true}
+                            alignItems="center"
+                            bg="background.primary"
+                            borderRadius={20}
                             collapsable={false}
                             focusable={true}
                             nativeID="animatedComponent"
                             onClick={[Function]}
+                            onLayout={[Function]}
                             onResponderGrant={[Function]}
                             onResponderMove={[Function]}
                             onResponderRelease={[Function]}
                             onResponderTerminate={[Function]}
                             onResponderTerminationRequest={[Function]}
                             onStartShouldSetResponder={[Function]}
+                            pointerEvents="box-only"
+                            px={2}
+                            py={12}
                             style={
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "#ffffff",
                                 "borderRadius": 20,
-                                "opacity": 1,
                                 "paddingBottom": 12,
                                 "paddingLeft": 8,
                                 "paddingRight": 8,
@@ -3208,6 +3448,24 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                             >
                               neeto-ui-rn
                             </Text>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "overflow": "hidden",
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                  Object {
+                                    "borderRadius": 20,
+                                  },
+                                ]
+                              }
+                            />
                           </View>
                           <View
                             bg="border.primary"
@@ -3231,23 +3489,34 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                           style={null}
                         >
                           <View
+                            accessibilityState={
+                              Object {
+                                "disabled": false,
+                              }
+                            }
                             accessible={true}
+                            alignItems="center"
+                            bg="background.primary"
+                            borderRadius={20}
                             collapsable={false}
                             focusable={true}
                             nativeID="animatedComponent"
                             onClick={[Function]}
+                            onLayout={[Function]}
                             onResponderGrant={[Function]}
                             onResponderMove={[Function]}
                             onResponderRelease={[Function]}
                             onResponderTerminate={[Function]}
                             onResponderTerminationRequest={[Function]}
                             onStartShouldSetResponder={[Function]}
+                            pointerEvents="box-only"
+                            px={2}
+                            py={12}
                             style={
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "#ffffff",
                                 "borderRadius": 20,
-                                "opacity": 1,
                                 "paddingBottom": 12,
                                 "paddingLeft": 8,
                                 "paddingRight": 8,
@@ -3270,6 +3539,24 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                             >
                               aceinvoice-rn
                             </Text>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "overflow": "hidden",
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                  Object {
+                                    "borderRadius": 20,
+                                  },
+                                ]
+                              }
+                            />
                           </View>
                           <View
                             bg="border.primary"
@@ -3297,23 +3584,34 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                           style={null}
                         >
                           <View
+                            accessibilityState={
+                              Object {
+                                "disabled": false,
+                              }
+                            }
                             accessible={true}
+                            alignItems="center"
+                            bg="background.primary"
+                            borderRadius={20}
                             collapsable={false}
                             focusable={true}
                             nativeID="animatedComponent"
                             onClick={[Function]}
+                            onLayout={[Function]}
                             onResponderGrant={[Function]}
                             onResponderMove={[Function]}
                             onResponderRelease={[Function]}
                             onResponderTerminate={[Function]}
                             onResponderTerminationRequest={[Function]}
                             onStartShouldSetResponder={[Function]}
+                            pointerEvents="box-only"
+                            px={2}
+                            py={12}
                             style={
                               Object {
                                 "alignItems": "center",
                                 "backgroundColor": "#ffffff",
                                 "borderRadius": 20,
-                                "opacity": 1,
                                 "paddingBottom": 12,
                                 "paddingLeft": 8,
                                 "paddingRight": 8,
@@ -3336,6 +3634,24 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                             >
                               reactnative-hq
                             </Text>
+                            <View
+                              style={
+                                Array [
+                                  Object {
+                                    "backgroundColor": "transparent",
+                                    "bottom": 0,
+                                    "left": 0,
+                                    "overflow": "hidden",
+                                    "position": "absolute",
+                                    "right": 0,
+                                    "top": 0,
+                                  },
+                                  Object {
+                                    "borderRadius": 20,
+                                  },
+                                ]
+                              }
+                            />
                           </View>
                           <View
                             bg="border.primary"
@@ -3445,22 +3761,32 @@ exports[`Storyshots Button Group Button Group Demo 1`] = `
             }
           >
             <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
               accessible={true}
+              bg="background.grey500"
+              borderColor="background.grey500"
               collapsable={false}
               focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
+              px={3}
               style={
                 Object {
                   "backgroundColor": "#87929d",
                   "borderColor": "#87929d",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 16,
                   "paddingRight": 16,
@@ -3483,24 +3809,52 @@ exports[`Storyshots Button Group Button Group Demo 1`] = `
               >
                 Button1
               </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 0,
+                    },
+                  ]
+                }
+              />
             </View>
             <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
               accessible={true}
+              bg="background.primary"
+              borderColor="background.grey500"
               collapsable={false}
               focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
+              px={3}
               style={
                 Object {
                   "backgroundColor": "#ffffff",
                   "borderColor": "#87929d",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 16,
                   "paddingRight": 16,
@@ -3523,6 +3877,24 @@ exports[`Storyshots Button Group Button Group Demo 1`] = `
               >
                 Button2
               </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 0,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
         </View>
@@ -3630,21 +4002,30 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="background.grey600"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#68737d",
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3667,23 +4048,50 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button1
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="background.white"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#ffffff",
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3706,6 +4114,24 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button2
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
@@ -3749,24 +4175,34 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="background.grey600"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#68737d",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3789,26 +4225,54 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button1
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="background.white"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#ffffff",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3831,26 +4295,54 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button2
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="background.white"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#ffffff",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3873,6 +4365,24 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button3
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
@@ -3916,24 +4426,34 @@ exports[`Storyshots Button Group Button Groups 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="#e9ebed"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#e9ebed",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3956,26 +4476,54 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button1
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="#e9ebed"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#e9ebed",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -3998,26 +4546,54 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button2
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                bg="#ff6969"
+                border="#68737d"
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                p={2}
+                pointerEvents="box-only"
+                px={3}
                 style={
                   Object {
                     "backgroundColor": "#ff6969",
                     "borderColor": "#68737d",
                     "borderStyle": "solid",
                     "borderWidth": 1,
-                    "opacity": 1,
                     "paddingBottom": 8,
                     "paddingLeft": 16,
                     "paddingRight": 16,
@@ -4040,6 +4616,24 @@ exports[`Storyshots Button Group Button Groups 1`] = `
                 >
                   Button3
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
           </View>
@@ -4115,16 +4709,25 @@ exports[`Storyshots Buttons Button Demo 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            backgroundColor="background.primary"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Button Component"
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4135,13 +4738,13 @@ exports[`Storyshots Buttons Button Demo 1`] = `
                 "borderWidth": 2,
                 "flexDirection": "row",
                 "justifyContent": "center",
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="inverse"
           >
             <Text
               color="font.black"
@@ -4165,6 +4768,24 @@ exports[`Storyshots Buttons Button Demo 1`] = `
             >
               Button Component
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -4226,17 +4847,31 @@ exports[`Storyshots Buttons Buttons 1`] = `
           }
         >
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Default is solid"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4246,7 +4881,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4254,6 +4888,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4276,6 +4912,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Default is solid
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4284,16 +4938,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Default Disabled"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4311,6 +4974,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4333,6 +4998,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Default Disabled
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4341,16 +5024,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Solid Button"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4368,6 +5060,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4390,6 +5084,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Solid Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4398,16 +5110,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Solid Button Disabled"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4425,6 +5146,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4447,19 +5170,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Solid Button Disabled
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Inverse Button"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4472,7 +5227,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4480,6 +5234,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4502,6 +5258,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Inverse Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4510,16 +5284,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Invese Button Disabled"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4540,6 +5323,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4562,19 +5347,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Invese Button Disabled
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Text Button"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4585,7 +5402,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4593,6 +5409,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="text"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4615,6 +5433,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Text Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4623,16 +5459,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Text Button Disabled"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4651,6 +5496,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="text"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4673,19 +5520,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Text Button Disabled
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Like"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4698,7 +5577,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4706,6 +5584,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4740,19 +5620,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               👍
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Subscribe and Follow"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4765,7 +5677,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4773,6 +5684,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               style={
@@ -4819,6 +5732,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               🔔
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -4827,16 +5758,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Unsubscribe Disabled"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4857,6 +5797,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -4891,19 +5833,52 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               🔕
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            bg="background.primary"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Logout"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4913,7 +5888,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4921,6 +5895,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               color="font.danger"
@@ -4944,19 +5920,52 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Logout
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            bg="background.primary"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Bigger Button"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -4966,7 +5975,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -4974,6 +5982,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               color="font.danger"
@@ -4997,19 +6007,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Bigger Button
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Regular inter 400"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5019,7 +6061,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -5027,6 +6068,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <Text
               fontFamily="inter400"
@@ -5049,19 +6092,51 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Regular inter 400
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Icon in extreme right"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5074,7 +6149,6 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 9,
                 "marginTop": 9,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
@@ -5082,6 +6156,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <Text
               fontFamily="inter700"
@@ -5133,6 +6209,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 🔔
               </Text>
             </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -5141,16 +6235,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Solid Loading "
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5168,6 +6271,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <View
               color="background.primary"
@@ -5208,6 +6313,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Loading…
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -5216,16 +6339,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Solid Loading "
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5243,6 +6375,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="solid"
+            width={200}
           >
             <View
               color="background.primary"
@@ -5283,6 +6417,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -5291,16 +6443,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Inverse Loading "
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5321,6 +6482,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="inverse"
+            width={200}
           >
             <View
               color="background.primary"
@@ -5361,6 +6524,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Loading…
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -5369,16 +6550,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Text Loading"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5397,6 +6587,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="text"
+            width={200}
           >
             <View
               color="background.primary"
@@ -5437,6 +6629,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
             >
               Loading…
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
             accessibilityState={
@@ -5445,16 +6655,25 @@ exports[`Storyshots Buttons Buttons 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
+            justifyContent="center"
+            label="Text Loading"
+            my={9}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5473,6 +6692,8 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 "width": 200,
               }
             }
+            variant="text"
+            width={200}
           >
             <View
               color="background.primary"
@@ -5536,6 +6757,24 @@ exports[`Storyshots Buttons Buttons 1`] = `
                 🍕
               </Text>
             </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -5609,16 +6848,27 @@ exports[`Storyshots Chip Chip Demo 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            backgroundColor="#f8f9f9"
+            bg="background.white"
+            border="1px solid"
+            borderColor="border.grey400"
+            borderRadius={20}
             collapsable={false}
-            focusable={false}
+            flexDirection="row"
+            focusable={true}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={2}
+            padding={10}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -5628,7 +6878,6 @@ exports[`Storyshots Chip Chip Demo 1`] = `
                 "borderStyle": "solid",
                 "borderWidth": 1,
                 "flexDirection": "row",
-                "opacity": 1,
                 "paddingBottom": 10,
                 "paddingLeft": 10,
                 "paddingRight": 10,
@@ -5654,6 +6903,24 @@ exports[`Storyshots Chip Chip Demo 1`] = `
             >
               Chip Component
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 20,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -5740,23 +7007,29 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.grey200"
+              borderRadius={20}
               collapsable={false}
-              focusable={false}
+              flexDirection="row"
+              focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#e9ebed",
                   "borderRadius": 20,
                   "flexDirection": "row",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 8,
                   "paddingRight": 8,
@@ -5801,21 +7074,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -5869,7 +7145,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -5892,16 +7204,25 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.white"
+              border="1px solid"
+              borderColor="border.grey400"
+              borderRadius={20}
               collapsable={false}
-              focusable={false}
+              flexDirection="row"
+              focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
@@ -5911,7 +7232,6 @@ exports[`Storyshots Chip Chips 1`] = `
                   "borderStyle": "solid",
                   "borderWidth": 1,
                   "flexDirection": "row",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 8,
                   "paddingRight": 8,
@@ -5956,21 +7276,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -6024,7 +7347,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -6047,16 +7406,24 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.grey200"
+              borderRadius={20}
               collapsable={false}
-              focusable={false}
+              flexDirection="row"
+              focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              opacity={0.5}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
@@ -6108,21 +7475,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -6176,7 +7546,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -6199,16 +7605,26 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.white"
+              border="1px solid"
+              borderColor="border.grey400"
+              borderRadius={20}
               collapsable={false}
+              flexDirection="row"
               focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              opacity={0.5}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
@@ -6263,21 +7679,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -6331,7 +7750,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -6354,16 +7809,25 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.white"
+              border="1px solid"
+              borderColor="border.grey400"
+              borderRadius={20}
               collapsable={false}
-              focusable={false}
+              flexDirection="row"
+              focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
@@ -6373,7 +7837,6 @@ exports[`Storyshots Chip Chips 1`] = `
                   "borderStyle": "solid",
                   "borderWidth": 1,
                   "flexDirection": "row",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 8,
                   "paddingRight": 8,
@@ -6406,21 +7869,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -6474,7 +7940,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -6497,23 +7999,29 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.grey200"
+              borderRadius={20}
               collapsable={false}
-              focusable={false}
+              flexDirection="row"
+              focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#e9ebed",
                   "borderRadius": 20,
                   "flexDirection": "row",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 8,
                   "paddingRight": 8,
@@ -6546,21 +8054,24 @@ exports[`Storyshots Chip Chips 1`] = `
                   }
                 }
                 accessible={true}
+                bg="background.grey500"
+                borderRadius={10}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
                 style={
                   Object {
                     "backgroundColor": "#87929d",
                     "borderRadius": 10,
-                    "opacity": 1,
                   }
                 }
               >
@@ -6614,7 +8125,43 @@ exports[`Storyshots Chip Chips 1`] = `
                     />
                   </RNSVGGroup>
                 </RNSVGSvgView>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <View
@@ -6637,23 +8184,29 @@ exports[`Storyshots Chip Chips 1`] = `
                 }
               }
               accessible={true}
+              alignItems="center"
+              bg="background.grey200"
+              borderRadius={20}
               collapsable={false}
+              flexDirection="row"
               focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
+              p={2}
+              pointerEvents="box-only"
               style={
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#e9ebed",
                   "borderRadius": 20,
                   "flexDirection": "row",
-                  "opacity": 1,
                   "paddingBottom": 8,
                   "paddingLeft": 8,
                   "paddingRight": 8,
@@ -6679,6 +8232,24 @@ exports[`Storyshots Chip Chips 1`] = `
               >
                 Default Chip
               </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 20,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
         </View>
@@ -6777,17 +8348,30 @@ exports[`Storyshots FABs FABS 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                alignItems="center"
+                borderColor={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -6800,7 +8384,6 @@ exports[`Storyshots FABs FABS 1`] = `
                     "marginLeft": 9,
                     "marginRight": 9,
                     "marginTop": 9,
-                    "opacity": 1,
                     "shadowColor": "#000",
                     "shadowOffset": Object {
                       "height": 2,
@@ -6811,6 +8394,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="solid"
               >
                 <Text
                   style={
@@ -6824,6 +8408,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   🔔
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -6853,17 +8455,30 @@ exports[`Storyshots FABs FABS 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                alignItems="center"
+                bg={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -6879,7 +8494,6 @@ exports[`Storyshots FABs FABS 1`] = `
                     "marginLeft": 9,
                     "marginRight": 9,
                     "marginTop": 9,
-                    "opacity": 1,
                     "shadowColor": "#000",
                     "shadowOffset": Object {
                       "height": 2,
@@ -6890,6 +8504,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="inverse"
               >
                 <Text
                   style={
@@ -6903,6 +8518,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   ➕
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -6938,16 +8571,24 @@ exports[`Storyshots FABs FABS 1`] = `
                   }
                 }
                 accessible={true}
+                alignItems="center"
+                borderColor={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -6971,6 +8612,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="solid"
               >
                 <Text
                   style={
@@ -6984,6 +8626,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   🔔
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -7019,16 +8679,24 @@ exports[`Storyshots FABs FABS 1`] = `
                   }
                 }
                 accessible={true}
+                alignItems="center"
+                bg={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -7055,6 +8723,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="inverse"
               >
                 <Text
                   style={
@@ -7068,6 +8737,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   ➕
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -7097,17 +8784,30 @@ exports[`Storyshots FABs FABS 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                alignItems="center"
+                borderColor={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -7120,7 +8820,6 @@ exports[`Storyshots FABs FABS 1`] = `
                     "marginLeft": 9,
                     "marginRight": 9,
                     "marginTop": 9,
-                    "opacity": 1,
                     "shadowColor": "#000",
                     "shadowOffset": Object {
                       "height": 2,
@@ -7131,6 +8830,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="solid"
               >
                 <Text
                   style={
@@ -7144,6 +8844,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   🔔
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -7173,17 +8891,31 @@ exports[`Storyshots FABs FABS 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
+                alignItems="center"
+                bg="font.danger"
+                borderColor={false}
+                borderRadius={28}
                 collapsable={false}
                 focusable={true}
+                justifyContent="center"
+                m={9}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
+                pointerEvents="box-only"
+                size={56}
                 style={
                   Object {
                     "alignItems": "center",
@@ -7196,7 +8928,6 @@ exports[`Storyshots FABs FABS 1`] = `
                     "marginLeft": 9,
                     "marginRight": 9,
                     "marginTop": 9,
-                    "opacity": 1,
                     "shadowColor": "#000",
                     "shadowOffset": Object {
                       "height": 2,
@@ -7207,6 +8938,7 @@ exports[`Storyshots FABs FABS 1`] = `
                     "width": 56,
                   }
                 }
+                variant="solid"
               >
                 <Text
                   style={
@@ -7220,6 +8952,24 @@ exports[`Storyshots FABs FABS 1`] = `
                 >
                   🔔
                 </Text>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 28,
+                      },
+                    ]
+                  }
+                />
               </View>
               <Text
                 style={
@@ -7307,16 +9057,24 @@ exports[`Storyshots FABs FABS Demo 1`] = `
               }
             }
             accessible={true}
+            alignItems="center"
+            bg=""
+            borderColor={false}
+            borderRadius={28}
             collapsable={false}
             focusable={true}
+            justifyContent="center"
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            pointerEvents="box-only"
+            size={56}
             style={
               Object {
                 "alignItems": "center",
@@ -7325,7 +9083,6 @@ exports[`Storyshots FABs FABS Demo 1`] = `
                 "elevation": 5,
                 "height": 56,
                 "justifyContent": "center",
-                "opacity": 1,
                 "shadowColor": "#000",
                 "shadowOffset": Object {
                   "height": 2,
@@ -7336,6 +9093,7 @@ exports[`Storyshots FABs FABS Demo 1`] = `
                 "width": 56,
               }
             }
+            variant="solid"
           >
             <Text
               style={
@@ -7349,6 +9107,24 @@ exports[`Storyshots FABs FABS Demo 1`] = `
             >
               🔔
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 28,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -11103,22 +12879,25 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
             }
           >
             <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
               accessible={true}
               collapsable={false}
               focusable={true}
               nativeID="animatedComponent"
               onClick={[Function]}
+              onLayout={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
               onResponderTerminate={[Function]}
               onResponderTerminationRequest={[Function]}
               onStartShouldSetResponder={[Function]}
-              style={
-                Object {
-                  "opacity": 1,
-                }
-              }
+              pointerEvents="box-only"
+              style={Object {}}
             >
               <View
                 color="background.primary"
@@ -11410,6 +13189,24 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   value=""
                 />
               </View>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 0,
+                    },
+                  ]
+                }
+              />
             </View>
           </View>
           <Text
@@ -11477,22 +13274,25 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
               }
             >
               <View
+                accessibilityState={
+                  Object {
+                    "disabled": false,
+                  }
+                }
                 accessible={true}
                 collapsable={false}
                 focusable={true}
                 nativeID="animatedComponent"
                 onClick={[Function]}
+                onLayout={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
                 onResponderTerminate={[Function]}
                 onResponderTerminationRequest={[Function]}
                 onStartShouldSetResponder={[Function]}
-                style={
-                  Object {
-                    "opacity": 1,
-                  }
-                }
+                pointerEvents="box-only"
+                style={Object {}}
               >
                 <View
                   color="background.primary"
@@ -11808,8 +13608,421 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                     value=""
                   />
                 </View>
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "bottom": 0,
+                        "left": 0,
+                        "overflow": "hidden",
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      },
+                      Object {
+                        "borderRadius": 0,
+                      },
+                    ]
+                  }
+                />
               </View>
             </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots PopOver Popovers 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            p={2}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
+              accessible={true}
+              alignItems="center"
+              borderRadius={2}
+              collapsable={false}
+              flexDirection="row"
+              focusable={true}
+              justifyContent="center"
+              label="With Data"
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onLayout={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              p={12}
+              pointerEvents="box-only"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 2,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                }
+              }
+              variant="solid"
+            >
+              <Text
+                fontFamily="inter700"
+                fontSize="s"
+                mx={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 12,
+                      "marginLeft": 4,
+                      "marginRight": 4,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                textAlign="center"
+                textStyle="solid"
+              >
+                With Data
+              </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 2,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Modal
+              hardwareAccelerated={true}
+              onRequestClose={[Function]}
+              onShow={[Function]}
+              supportedOrientations={
+                Array [
+                  "portrait",
+                  "portrait-upside-down",
+                  "landscape",
+                ]
+              }
+              transparent={true}
+              visible={false}
+            />
+          </View>
+          <View
+            color="background.primary"
+            p={2}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
+              accessible={true}
+              alignItems="center"
+              borderRadius={2}
+              collapsable={false}
+              flexDirection="row"
+              focusable={true}
+              justifyContent="center"
+              label="With Custom Popup Content"
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onLayout={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              p={12}
+              pointerEvents="box-only"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 2,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                }
+              }
+              variant="solid"
+            >
+              <Text
+                fontFamily="inter700"
+                fontSize="s"
+                mx={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 12,
+                      "marginLeft": 4,
+                      "marginRight": 4,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                textAlign="center"
+                textStyle="solid"
+              >
+                With Custom Popup Content
+              </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 2,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Modal
+              hardwareAccelerated={true}
+              onRequestClose={[Function]}
+              onShow={[Function]}
+              supportedOrientations={
+                Array [
+                  "portrait",
+                  "portrait-upside-down",
+                  "landscape",
+                ]
+              }
+              transparent={true}
+              visible={false}
+            />
+          </View>
+          <View
+            color="background.primary"
+            p={2}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
+                },
+              ]
+            }
+          >
+            <View
+              accessibilityState={
+                Object {
+                  "disabled": false,
+                }
+              }
+              accessible={true}
+              alignItems="center"
+              borderRadius={2}
+              collapsable={false}
+              flexDirection="row"
+              focusable={true}
+              justifyContent="center"
+              label="With Custom Popup Content and data"
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onLayout={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              p={12}
+              pointerEvents="box-only"
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#2f3941",
+                  "borderRadius": 2,
+                  "flexDirection": "row",
+                  "justifyContent": "center",
+                  "paddingBottom": 12,
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                  "paddingTop": 12,
+                }
+              }
+              variant="solid"
+            >
+              <Text
+                fontFamily="inter700"
+                fontSize="s"
+                mx={1}
+                style={
+                  Array [
+                    Object {
+                      "color": "#ffffff",
+                      "fontFamily": "Inter-Bold",
+                      "fontSize": 12,
+                      "marginLeft": 4,
+                      "marginRight": 4,
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+                textAlign="center"
+                textStyle="solid"
+              >
+                With Custom Popup Content and data
+              </Text>
+              <View
+                style={
+                  Array [
+                    Object {
+                      "backgroundColor": "transparent",
+                      "bottom": 0,
+                      "left": 0,
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    },
+                    Object {
+                      "borderRadius": 2,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Modal
+              hardwareAccelerated={true}
+              onRequestClose={[Function]}
+              onShow={[Function]}
+              supportedOrientations={
+                Array [
+                  "portrait",
+                  "portrait-upside-down",
+                  "landscape",
+                ]
+              }
+              transparent={true}
+              visible={false}
+            />
           </View>
         </View>
       </View>
@@ -12799,17 +15012,31 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Show Toast"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -12819,13 +15046,13 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -12848,6 +15075,24 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
             >
               Show Toast
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -13079,17 +15324,31 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             </View>
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Success Toast"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -13099,13 +15358,13 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -13128,19 +15387,51 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             >
               Success Toast
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Error Toast"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -13150,13 +15441,13 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -13179,19 +15470,51 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             >
               Error Toast
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Info Toast"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -13201,13 +15524,13 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -13230,19 +15553,51 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             >
               Info Toast
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
           <View
+            accessibilityState={
+              Object {
+                "disabled": false,
+              }
+            }
             accessible={true}
+            alignItems="center"
+            borderRadius={2}
             collapsable={false}
+            flexDirection="row"
             focusable={true}
+            justifyContent="center"
+            label="Warning Toast"
+            my={10}
             nativeID="animatedComponent"
             onClick={[Function]}
+            onLayout={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
+            p={12}
+            pointerEvents="box-only"
             style={
               Object {
                 "alignItems": "center",
@@ -13252,13 +15607,13 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                 "justifyContent": "center",
                 "marginBottom": 10,
                 "marginTop": 10,
-                "opacity": 1,
                 "paddingBottom": 12,
                 "paddingLeft": 12,
                 "paddingRight": 12,
                 "paddingTop": 12,
               }
             }
+            variant="solid"
           >
             <Text
               fontFamily="inter700"
@@ -13281,6 +15636,24 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             >
               Warning Toast
             </Text>
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                    "bottom": 0,
+                    "left": 0,
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  },
+                  Object {
+                    "borderRadius": 2,
+                  },
+                ]
+              }
+            />
           </View>
         </View>
       </View>
@@ -14182,6 +16555,205 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
               </Text>
             </View>
           </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Touchable Touchable Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          style={Object {}}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 0,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Touchable Touchables 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          alignItems="center"
+          bg="background.secondary"
+          collapsable={false}
+          focusable={true}
+          height="30px"
+          justifyContent="center"
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#e4e4e7",
+              "height": 30,
+              "justifyContent": "center",
+              "width": 100,
+            }
+          }
+          width="100px"
+        >
+          <Text
+            fontSize="14px"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Touchable
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 50,
+                },
+              ]
+            }
+          />
         </View>
       </View>
     </View>

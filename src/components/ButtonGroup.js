@@ -1,25 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 
-import {
-  flexbox,
-  space,
-  border,
-  buttonStyle,
-  color,
-  layout,
-} from "styled-system";
-import styled from "styled-components/native";
-import { Container, Typography } from "@components";
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${buttonStyle}
-  ${flexbox}
-  ${space}
-  ${border}
-  ${layout}
-  ${color}
-`;
+import { Container, Typography, Touchable } from "@components";
 
 /**
  * ButtonGroup is a linear set of segments, each of which function as a button that can display a different view/or perform a different action.
@@ -69,7 +51,7 @@ export const ButtonGroup = ({
     >
       {buttonItems.map(item => {
         return (
-          <TouchableOpacity
+          <Touchable
             key={item}
             bg={item === currentActiveBtn ? activeColor : inActiveColor}
             p={2}
@@ -87,7 +69,7 @@ export const ButtonGroup = ({
             >
               {item}
             </Typography>
-          </TouchableOpacity>
+          </Touchable>
         );
       })}
     </Container>

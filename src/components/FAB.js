@@ -1,26 +1,7 @@
 import * as React from "react";
-import {
-  flexbox,
-  position,
-  space,
-  border,
-  buttonStyle,
-  color,
-  layout,
-} from "styled-system";
-import styled from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
-
-export const TouchableOpacity = styled.TouchableOpacity`
-  ${buttonStyle}
-  ${position}
-  ${flexbox}
-  ${space}
-  ${border}
-  ${layout}
-  ${color}
-`;
+import { Touchable } from "@components";
 
 /**
  * FAB component is a floating action button which represents the primary action in an application and is built on top of styled-system.
@@ -78,7 +59,7 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
     style = { ...style, opacity: 0.5 };
   }
   return (
-    <TouchableOpacity
+    <Touchable
       bg={variant !== "inverse" && bg}
       disabled={disabled}
       variant={variant}
@@ -88,7 +69,7 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
       {...rest}
     >
       <Icon />
-    </TouchableOpacity>
+    </Touchable>
   );
 };
 

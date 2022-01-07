@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@styled-system/prop-types": "^5.1.5",
+    "react-native-material-ripple": "^0.9.1",
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
     "react-native-popover-view": "^4.1.0",
