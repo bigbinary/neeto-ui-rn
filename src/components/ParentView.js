@@ -30,7 +30,7 @@ export const ParentView = ({
   children,
   backgroundColor,
   bg,
-  safeAreaViewProps,
+  safeAreaViewProps = { edges: ["top", "right", "left"] },
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -48,16 +48,16 @@ export const ParentView = ({
     statusBarColors[barStyle] || statusBarColors["default"];
 
   return (
-    <Container flex={1}>
-      <Container backgroundColor={statusBarColor}>
-        <SafeAreaView {...safeAreaViewProps}>
-          <StatusBar barStyle={barStyle} backgroundColor={statusBarColor} />
-        </SafeAreaView>
-      </Container>
+    <SafeAreaView
+      flex={1}
+      {...safeAreaViewProps}
+      style={{ backgroundColor: statusBarColor }}
+    >
+      <StatusBar barStyle={barStyle} backgroundColor={statusBarColor} />
       <Container flex={1} backgroundColor={newBackgroundColor} {...rest}>
         {children}
       </Container>
-    </Container>
+    </SafeAreaView>
   );
 };
 
