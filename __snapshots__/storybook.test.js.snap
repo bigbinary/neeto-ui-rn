@@ -6740,6 +6740,245 @@ exports[`Storyshots Buttons Buttons 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Card Card Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+              },
+              Object {
+                "elevation": 5,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.25,
+                "shadowRadius": 3.84,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Card Cards 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          bg="background.danger"
+          color="background.primary"
+          height="100px"
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ff6969",
+                "color": "#ffffff",
+                "height": 100,
+                "width": 100,
+              },
+              Object {
+                "elevation": 5,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.25,
+                "shadowRadius": 3.84,
+              },
+            ]
+          }
+          width="100px"
+        >
+          <Text
+            fontSize="14px"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Card
+          </Text>
+        </View>
+        <View
+          bg="background.danger"
+          color="background.primary"
+          height="100px"
+          mt={10}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ff6969",
+                "color": "#ffffff",
+                "height": 100,
+                "marginTop": 10,
+                "width": 100,
+              },
+              Object {
+                "elevation": 5,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 2,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.25,
+                "shadowRadius": 3.84,
+              },
+            ]
+          }
+          width="100px"
+        >
+          <Text
+            fontSize="14px"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Card
+          </Text>
+        </View>
+        <View
+          bg="background.danger"
+          color="background.primary"
+          height="100px"
+          mt={10}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ff6969",
+                "color": "#ffffff",
+                "height": 100,
+                "marginTop": 10,
+                "width": 100,
+              },
+              Object {
+                "elevation": 20,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 10,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.51,
+                "shadowRadius": 13.16,
+              },
+            ]
+          }
+          width="100px"
+        >
+          <Text
+            fontSize="14px"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Card
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots Chip Chip Demo 1`] = `
 <RCTScrollView
   contentContainerStyle={
@@ -8312,7 +8551,6 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 alignItems="center"
-                borderColor={false}
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8419,7 +8657,6 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 alignItems="center"
-                bg={false}
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8529,7 +8766,6 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 alignItems="center"
-                borderColor={false}
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8637,7 +8873,6 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 alignItems="center"
-                bg={false}
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8748,7 +8983,6 @@ exports[`Storyshots FABs FABS 1`] = `
                 }
                 accessible={true}
                 alignItems="center"
-                borderColor={false}
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8856,7 +9090,7 @@ exports[`Storyshots FABs FABS 1`] = `
                 accessible={true}
                 alignItems="center"
                 bg="font.danger"
-                borderColor={false}
+                borderColor="font.danger"
                 borderRadius={28}
                 collapsable={false}
                 focusable={true}
@@ -8877,6 +9111,7 @@ exports[`Storyshots FABs FABS 1`] = `
                   Object {
                     "alignItems": "center",
                     "backgroundColor": "#ff6969",
+                    "borderColor": "#ff6969",
                     "borderRadius": 28,
                     "elevation": 5,
                     "height": 56,
@@ -9016,7 +9251,7 @@ exports[`Storyshots FABs FABS Demo 1`] = `
             accessible={true}
             alignItems="center"
             bg=""
-            borderColor={false}
+            borderColor=""
             borderRadius={28}
             collapsable={false}
             focusable={true}
@@ -16692,6 +16927,82 @@ exports[`Storyshots Touchable Touchables 1`] = `
             textStyle="defaultTextStyle"
           >
             Touchable
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "transparent",
+                  "bottom": 0,
+                  "left": 0,
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                },
+                Object {
+                  "borderRadius": 50,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": false,
+            }
+          }
+          accessible={true}
+          alignItems="center"
+          bg="background.secondary"
+          collapsable={false}
+          focusable={true}
+          height="30px"
+          justifyContent="center"
+          mt={10}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onLayout={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          pointerEvents="box-only"
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#e4e4e7",
+              "elevation": 10,
+              "height": 30,
+              "justifyContent": "center",
+              "marginTop": 10,
+              "shadowOffset": Object {
+                "height": 5,
+                "width": 0,
+              },
+              "shadowOpacity": 0.34,
+              "shadowRadius": 6.27,
+              "width": 200,
+            }
+          }
+          width="200px"
+        >
+          <Text
+            fontSize="14px"
+            style={
+              Array [
+                Object {
+                  "color": "#1b1f23",
+                  "fontSize": 14,
+                },
+              ]
+            }
+            textStyle="defaultTextStyle"
+          >
+            Touchable with elevation
           </Text>
           <View
             style={

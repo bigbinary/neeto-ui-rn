@@ -23,6 +23,18 @@ export const Touchables = () => {
       >
         <Typography fontSize="14px">Touchable</Typography>
       </Touchable>
+      <Touchable
+        bg="background.secondary"
+        width="200px"
+        height="30px"
+        justifyContent="center"
+        alignItems="center"
+        rippleContainerBorderRadius={50}
+        elevation={10}
+        mt={10}
+      >
+        <Typography fontSize="14px">Touchable with elevation</Typography>
+      </Touchable>
     </>
   );
 };
