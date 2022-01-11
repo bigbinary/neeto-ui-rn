@@ -58,14 +58,15 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   if (disabled) {
     style = { ...style, opacity: 0.5 };
   }
+
   return (
     <Touchable
-      bg={variant !== "inverse" && bg}
+      {...(variant !== "inverse" ? { bg } : {})}
       disabled={disabled}
       variant={variant}
       onPress={onPress}
       style={[style, shadowStyle]}
-      borderColor={variant === "inverse" && bg}
+      {...(variant !== "inverse" ? { borderColor: bg } : {})}
       {...rest}
     >
       <Icon />

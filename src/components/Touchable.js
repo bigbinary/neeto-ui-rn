@@ -11,6 +11,7 @@ import {
   color,
   layout,
 } from "styled-system";
+import { getShadowStyles } from "../utils/utils";
 
 const StyledRipple = styled(Ripple)`
   ${buttonStyle}
@@ -57,12 +58,14 @@ const StyledRipple = styled(Ripple)`
  *
  */
 
-export const Touchable = ({ children, ...rest }) => {
+export const Touchable = ({ children, elevation, ...rest }) => {
+  const shadowStyles = elevation ? getShadowStyles(elevation) : {};
   return (
     <StyledRipple
       rippleOpacity={0.09}
       rippleDuration={600}
       rippleContainerBorderRadius={rest.borderRadius ? rest.borderRadius : 0}
+      style={shadowStyles}
       {...rest}
     >
       {children}
