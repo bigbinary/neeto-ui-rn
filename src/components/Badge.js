@@ -13,6 +13,10 @@ import { Typography, Container } from "@components";
  * <li>layout</li>
  * </ul>
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/badge/badges.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  * import * as React from 'react';
@@ -47,11 +51,10 @@ export const Badge = ({
   return (
     size > 0 && (
       <Container
-        width={`${size}px`}
-        height={`${size * 0.75}px`}
-        maxHeight="25px"
+        px={3}
+        py={1}
         bg={badgeColor}
-        borderRadius={`${size * 0.375}px`}
+        borderRadius={15}
         justifyContent="center"
         alignItems="center"
         {...rest}

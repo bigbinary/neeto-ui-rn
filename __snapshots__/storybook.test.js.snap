@@ -2362,26 +2362,26 @@ exports[`Storyshots Badge Badge Demo 1`] = `
           <View
             alignItems="center"
             bg="background.base"
-            borderRadius="13.5px"
+            borderRadius={15}
             color="background.primary"
-            height="27px"
             justifyContent="center"
-            maxHeight="25px"
+            px={3}
+            py={1}
             style={
               Array [
                 Object {
                   "alignItems": "center",
                   "backgroundColor": "#2f3941",
-                  "borderRadius": 13.5,
+                  "borderRadius": 15,
                   "color": "#ffffff",
-                  "height": 27,
                   "justifyContent": "center",
-                  "maxHeight": 25,
-                  "width": 36,
+                  "paddingBottom": 4,
+                  "paddingLeft": 16,
+                  "paddingRight": 16,
+                  "paddingTop": 4,
                 },
               ]
             }
-            width="36px"
           >
             <Text
               color="font.primary"
@@ -2504,87 +2504,26 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius="7.875px"
+                borderRadius={15}
                 color="background.primary"
-                height="15.75px"
                 justifyContent="center"
-                maxHeight="25px"
+                px={3}
+                py={1}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "#2f3941",
-                      "borderRadius": 7.875,
+                      "borderRadius": 15,
                       "color": "#ffffff",
-                      "height": 15.75,
                       "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 21,
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
                     },
                   ]
                 }
-                width="21px"
-              />
-              <Text
-                fontSize="l"
-                px={2}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 18,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                Default size
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              mb={4}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "marginBottom": 32,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
-                bg="background.base"
-                borderRadius="12px"
-                color="background.primary"
-                height="24px"
-                justifyContent="center"
-                maxHeight="25px"
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
-                      "color": "#ffffff",
-                      "height": 24,
-                      "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
-                    },
-                  ]
-                }
-                width="32px"
               >
                 <Text
                   color="font.white"
@@ -2644,26 +2583,26 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius="12px"
+                borderRadius={15}
                 color="background.primary"
-                height="24px"
                 justifyContent="center"
-                maxHeight="25px"
+                px={3}
+                py={1}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
+                      "borderRadius": 15,
                       "color": "#ffffff",
-                      "height": 24,
                       "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
                     },
                   ]
                 }
-                width="32px"
               >
                 <Text
                   color="font.white"
@@ -2722,88 +2661,27 @@ exports[`Storyshots Badge Badges 1`] = `
             >
               <View
                 alignItems="center"
-                bg="background.base"
-                borderRadius="12px"
-                color="background.primary"
-                height="24px"
-                justifyContent="center"
-                maxHeight="25px"
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
-                      "color": "#ffffff",
-                      "height": 24,
-                      "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
-                    },
-                  ]
-                }
-                width="32px"
-              />
-              <Text
-                fontSize="l"
-                px={2}
-                style={
-                  Array [
-                    Object {
-                      "color": "#1b1f23",
-                      "fontSize": 18,
-                      "paddingLeft": 8,
-                      "paddingRight": 8,
-                    },
-                  ]
-                }
-                textStyle="defaultTextStyle"
-              >
-                without content
-              </Text>
-            </View>
-            <View
-              alignItems="center"
-              color="background.primary"
-              flexDirection="row"
-              mb={4}
-              px={2}
-              style={
-                Array [
-                  Object {
-                    "alignItems": "center",
-                    "color": "#ffffff",
-                    "flexDirection": "row",
-                    "marginBottom": 32,
-                    "paddingLeft": 8,
-                    "paddingRight": 8,
-                  },
-                ]
-              }
-            >
-              <View
-                alignItems="center"
                 bg="background.secondary"
-                borderRadius="12px"
+                borderRadius={15}
                 color="background.primary"
-                height="24px"
                 justifyContent="center"
-                maxHeight="25px"
+                px={3}
+                py={1}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "#e4e4e7",
-                      "borderRadius": 12,
+                      "borderRadius": 15,
                       "color": "#ffffff",
-                      "height": 24,
                       "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
                     },
                   ]
                 }
-                width="32px"
               >
                 <Text
                   color="font.secondary"
@@ -2838,7 +2716,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-                custom background color
+                Custom background color
               </Text>
             </View>
             <View
@@ -2863,26 +2741,26 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius="12px"
+                borderRadius={15}
                 color="background.primary"
-                height="24px"
                 justifyContent="center"
-                maxHeight="25px"
+                px={3}
+                py={1}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
+                      "borderRadius": 15,
                       "color": "#ffffff",
-                      "height": 24,
                       "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
                     },
                   ]
                 }
-                width="32px"
               >
                 <Text
                   color="font.danger"
@@ -2917,7 +2795,7 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-                custom font color
+                Custom font color
               </Text>
             </View>
             <View
@@ -2942,26 +2820,26 @@ exports[`Storyshots Badge Badges 1`] = `
               <View
                 alignItems="center"
                 bg="background.base"
-                borderRadius="12px"
+                borderRadius={15}
                 color="background.primary"
-                height="24px"
                 justifyContent="center"
-                maxHeight="25px"
+                px={3}
+                py={1}
                 style={
                   Array [
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "#2f3941",
-                      "borderRadius": 12,
+                      "borderRadius": 15,
                       "color": "#ffffff",
-                      "height": 24,
                       "justifyContent": "center",
-                      "maxHeight": 25,
-                      "width": 32,
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
                     },
                   ]
                 }
-                width="32px"
               >
                 <Text
                   color="font.white"
@@ -2996,7 +2874,86 @@ exports[`Storyshots Badge Badges 1`] = `
                 }
                 textStyle="defaultTextStyle"
               >
-                custom font family
+                Custom font family
+              </Text>
+            </View>
+            <View
+              alignItems="center"
+              color="background.primary"
+              flexDirection="row"
+              mb={4}
+              px={2}
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "color": "#ffffff",
+                    "flexDirection": "row",
+                    "marginBottom": 32,
+                    "paddingLeft": 8,
+                    "paddingRight": 8,
+                  },
+                ]
+              }
+            >
+              <View
+                alignItems="center"
+                bg="background.base"
+                borderRadius={15}
+                color="background.primary"
+                justifyContent="center"
+                px={3}
+                py={1}
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#2f3941",
+                      "borderRadius": 15,
+                      "color": "#ffffff",
+                      "justifyContent": "center",
+                      "paddingBottom": 4,
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                      "paddingTop": 4,
+                    },
+                  ]
+                }
+              >
+                <Text
+                  color="font.white"
+                  fontFamily="inter700"
+                  fontSize="12px"
+                  style={
+                    Array [
+                      Object {
+                        "color": "#ffffff",
+                        "fontFamily": "Inter-Bold",
+                        "fontSize": 12,
+                      },
+                    ]
+                  }
+                  textStyle="defaultTextStyle"
+                >
+                  Comment
+                </Text>
+              </View>
+              <Text
+                fontSize="l"
+                px={2}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1b1f23",
+                      "fontSize": 18,
+                      "paddingLeft": 8,
+                      "paddingRight": 8,
+                    },
+                  ]
+                }
+                textStyle="defaultTextStyle"
+              >
+                Long Text
               </Text>
             </View>
           </View>
