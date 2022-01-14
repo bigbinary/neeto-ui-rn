@@ -21,45 +21,61 @@ export const defaultToasterConfig = {
   success: props => (
     <BaseToast
       {...props}
-      style={styles.successStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
+      text1NumberOfLines={10}
+      text2NumberOfLines={10}
+      touchableContainerProps={{
+        style: [styles.touchableContainerProps, styles.successStyle],
+      }}
     />
   ),
   error: props => (
     <BaseToast
       {...props}
-      style={styles.errorStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
+      text1NumberOfLines={10}
+      text2NumberOfLines={10}
+      touchableContainerProps={{
+        style: [styles.touchableContainerProps, styles.errorStyle],
+      }}
     />
   ),
   info: props => (
     <BaseToast
       {...props}
-      style={styles.infoStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
+      text1NumberOfLines={10}
+      text2NumberOfLines={10}
+      touchableContainerProps={{
+        style: [styles.touchableContainerProps, styles.infoStyle],
+      }}
     />
   ),
   warning: props => (
     <BaseToast
       {...props}
-      style={styles.warningStyle}
       leadingIconContainerStyle={styles.toasterBGColor}
       renderTrailingIcon={() => <CloseButton />}
       contentContainerStyle={styles.contentContainerStyle}
       text1Style={styles.text1Style}
       text2Style={styles.text2Style}
+      text1NumberOfLines={10}
+      text2NumberOfLines={10}
+      touchableContainerProps={{
+        style: [styles.touchableContainerProps, styles.warningStyle],
+      }}
     />
   ),
 };
@@ -68,6 +84,20 @@ defaultToasterConfig.success.displayName = "Success";
 defaultToasterConfig.error.displayName = "Error";
 
 const styles = StyleSheet.create({
+  touchableContainerProps: {
+    flexDirection: "row",
+    flex: 1,
+    paddingVertical: 10,
+    width: 340,
+    borderRadius: 6,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 2,
+    backgroundColor: "#FFF",
+    borderLeftWidth: 5,
+    borderLeftColor: "#D8D8D8",
+  },
   successStyle: {
     borderLeftColor: theme.colors.toast.success,
     backgroundColor: theme.colors.background.grey800,
