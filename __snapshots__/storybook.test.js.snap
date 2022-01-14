@@ -15086,9 +15086,10 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
                   "borderLeftWidth": 5,
                   "borderRadius": 6,
                   "elevation": 2,
+                  "flex": 1,
                   "flexDirection": "row",
-                  "height": 60,
                   "opacity": 1,
+                  "paddingVertical": 10,
                   "shadowOffset": Object {
                     "height": 0,
                     "width": 0,
@@ -15398,9 +15399,10 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
                   "borderLeftWidth": 5,
                   "borderRadius": 6,
                   "elevation": 2,
+                  "flex": 1,
                   "flexDirection": "row",
-                  "height": 60,
                   "opacity": 1,
+                  "paddingVertical": 10,
                   "shadowOffset": Object {
                     "height": 0,
                     "width": 0,
