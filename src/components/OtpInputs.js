@@ -1,7 +1,8 @@
 import React from "react";
 import { Keyboard } from "react-native";
-import { theme } from "../theme";
 import PropTypes from "prop-types";
+
+import { theme } from "../theme";
 import { Container, Touchable, Typography, Input } from "@components";
 
 /**
@@ -30,30 +31,30 @@ import { Container, Touchable, Typography, Input } from "@components";
  * ```
  */
 
-const inputStyles = {
-  fontSize: 0,
-  backgroundColor: "transparent",
-  color: "transparent",
-  width: "100%",
-  height: "100%",
-  position: "absolute",
-};
-
-const defaultContainerStyles = {
-  margin: 2,
-  borderRadius: 6,
-  borderWidth: 1,
-  borderColor: theme.colors.background.secondary,
-  backgroundColor: theme.colors.background.white,
-  justifyContent: "center",
-  alignItems: "center",
-  minHeight: 45,
-  minWidth: 45,
-};
-
-const defaultTextStyles = {
-  fontSize: theme.fontSizes.xl,
-  fontFamily: theme.fonts.inter700,
+const styles = {
+  inputStyles: {
+    fontSize: 0,
+    backgroundColor: "transparent",
+    color: "transparent",
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+  },
+  defaultContainerStyles: {
+    margin: 2,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: theme.colors.background.secondary,
+    backgroundColor: theme.colors.background.white,
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: 45,
+    minWidth: 45,
+  },
+  defaultTextStyles: {
+    fontSize: theme.fontSizes.xl,
+    fontFamily: theme.fonts.inter700,
+  },
 };
 
 export const OtpInputs = ({
@@ -84,7 +85,7 @@ export const OtpInputs = ({
               return (
                 <Container
                   key={index}
-                  {...defaultContainerStyles}
+                  {...styles.defaultContainerStyles}
                   {...containerStyles}
                 >
                   <Typography
@@ -94,7 +95,7 @@ export const OtpInputs = ({
                         ? theme.colors.font.danger
                         : theme.colors.font.secondary
                     }
-                    {...defaultTextStyles}
+                    {...styles.defaultTextStyles}
                     {...textStyles}
                   >
                     {code[index] || ""}
@@ -117,7 +118,7 @@ export const OtpInputs = ({
             }}
             ref={inputRef}
             value={code || ""}
-            {...inputStyles}
+            {...styles.inputStyles}
           />
         </Container>
       </Touchable>
