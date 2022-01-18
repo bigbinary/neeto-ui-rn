@@ -13673,7 +13673,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 >
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13686,7 +13686,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
@@ -13723,7 +13723,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   </View>
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13736,7 +13736,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
@@ -13773,7 +13773,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   </View>
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13786,7 +13786,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
@@ -13823,7 +13823,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   </View>
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13836,7 +13836,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
@@ -13873,7 +13873,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   </View>
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13886,7 +13886,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
@@ -13923,7 +13923,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   </View>
                   <View
                     alignItems="center"
-                    backgroundColor="#ff6969"
+                    backgroundColor="#2f3941"
                     borderColor="#e4e4e7"
                     borderRadius={6}
                     borderWidth={1}
@@ -13936,7 +13936,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Array [
                         Object {
                           "alignItems": "center",
-                          "backgroundColor": "#ff6969",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,

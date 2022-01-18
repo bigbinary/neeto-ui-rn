@@ -31,7 +31,7 @@ export const OtpInputsDemo = () => {
           code={code2}
           numberOfInputs={6}
           handleChange={setCode2}
-          containerStyles={{ backgroundColor: theme.colors.background.danger }}
+          containerStyles={{ backgroundColor: theme.colors.background.base }}
           textStyles={{
             color: theme.colors.font.white,
           }}
