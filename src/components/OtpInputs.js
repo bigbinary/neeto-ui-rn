@@ -1,8 +1,8 @@
 import React from "react";
-import { Keyboard, StyleSheet, Text, TextInput, Platform } from "react-native";
+import { Keyboard } from "react-native";
 import { theme } from "../theme";
 import PropTypes from "prop-types";
-import { Container, Touchable } from "@components";
+import { Container, Touchable, Typography, Input } from "@components";
 
 /**
  *
@@ -30,48 +30,79 @@ import { Container, Touchable } from "@components";
  * ```
  */
 
+const inputStyles = {
+  fontSize: 0,
+  backgroundColor: "transparent",
+  color: "transparent",
+  width: "100%",
+  height: "100%",
+  position: "absolute",
+};
+
+const defaultContainerStyles = {
+  margin: 2,
+  borderRadius: 6,
+  borderWidth: 1,
+  borderColor: theme.colors.background.secondary,
+  backgroundColor: theme.colors.background.white,
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: 45,
+  minWidth: 45,
+};
+
+const defaultTextStyles = {
+  fontSize: theme.fontSizes.xl,
+  fontFamily: theme.fonts.inter700,
+};
+
 export const OtpInputs = ({
   handleChange = () => {},
   numberOfInputs = 4,
   error = false,
   code = "",
-  textContainerStyle,
-  textStyle,
+  containerStyles,
+  textStyles,
 }) => {
   const inputRef = React.useRef();
 
   return (
-    <Container style={styles.container}>
+    <Container>
       <Touchable
         onPress={() => {
-          Keyboard.dismiss();
           inputRef && inputRef.current.focus();
         }}
       >
-        <Container style={styles.inputsContainer}>
+        <Container
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="center"
+        >
           {Array(numberOfInputs)
             .fill()
             .map((number, index) => {
               return (
                 <Container
                   key={index}
-                  style={[styles.textContainer, textContainerStyle]}
+                  {...defaultContainerStyles}
+                  {...containerStyles}
                 >
-                  <Text
-                    testID="otp"
+                  <Typography
                     accessibilityLabel="otp"
-                    style={[
-                      styles.otpInput,
-                      error === true ? { color: theme.colors.font.danger } : {},
-                      textStyle,
-                    ]}
+                    color={
+                      error
+                        ? theme.colors.font.danger
+                        : theme.colors.font.secondary
+                    }
+                    {...defaultTextStyles}
+                    {...textStyles}
                   >
                     {code[index] || ""}
-                  </Text>
+                  </Typography>
                 </Container>
               );
             })}
-          <TextInput
+          <Input
             keyboardType="phone-pad"
             selectionColor="transparent"
             onChangeText={value => {
@@ -85,13 +116,18 @@ export const OtpInputs = ({
               }
             }}
             ref={inputRef}
-            style={styles.emptyViewStyle}
             value={code || ""}
+            {...inputStyles}
           />
         </Container>
       </Touchable>
     </Container>
   );
+};
+
+OtpInputs.defaultProps = {
+  containerStyles: {},
+  textStyles: {},
 };
 
 OtpInputs.propTypes = {
@@ -114,53 +150,9 @@ OtpInputs.propTypes = {
   /**
    * To change the styles of main container.
    */
-  textContainerStyle: PropTypes.object,
+  containerStyles: PropTypes.object,
   /**
    * To change the styles of OTP text.
    */
-  textStyle: PropTypes.object,
+  textStyles: PropTypes.object,
 };
-
-export const styles = StyleSheet.create({
-  container: {
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  otpInput: {
-    color: theme.colors.font.secondary,
-    fontSize: theme.fontSizes.xl,
-    fontFamily: theme.fonts.inter700,
-    textAlign: "center",
-    minHeight: 40,
-    minWidth: 40,
-    textAlignVertical: "center",
-    alignItems: "center",
-    ...Platform.select({
-      ios: {
-        paddingTop: 5,
-      },
-      android: {},
-    }),
-    backgroundColor: "transparent",
-  },
-  textContainer: {
-    margin: 5,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: theme.colors.background.secondary,
-    backgroundColor: theme.colors.background.white,
-  },
-  inputsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  emptyViewStyle: {
-    fontSize: 0,
-    backgroundColor: "transparent",
-    color: "transparent",
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-  },
-});

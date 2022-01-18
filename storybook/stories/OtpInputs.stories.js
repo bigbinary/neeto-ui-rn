@@ -21,17 +21,18 @@ export const OtpInputsDemo = () => {
       <Container
         justifyContent="center"
         alignItems="center"
-        bg="background.grey500"
+        bg="background.grey300"
+        p={2}
       >
-        <Typography py={10} fontSize="xl">
+        <Typography py={10} fontSize="l">
           With Custom Styles
         </Typography>
         <OtpInputs
           code={code2}
           numberOfInputs={6}
           handleChange={setCode2}
-          textContainerStyle={{ backgroundColor: theme.colors.background.base }}
-          textStyle={{
+          containerStyles={{ backgroundColor: theme.colors.background.danger }}
+          textStyles={{
             color: theme.colors.font.white,
           }}
         />
