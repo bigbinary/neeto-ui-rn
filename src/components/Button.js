@@ -55,6 +55,7 @@ export const Button = React.forwardRef((props, ref) => {
 
   return (
     <Touchable
+      {...(variant === "solid" && { rippleColor: "white" })}
       ref={ref}
       flexDirection="row"
       disabled={disabled || isLoading}
