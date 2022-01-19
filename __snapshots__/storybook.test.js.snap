@@ -13125,10 +13125,6 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 Object {
                   "color": "#ffffff",
                 },
-                Object {
-                  "marginBottom": 5,
-                  "marginTop": 5,
-                },
               ]
             }
           >
@@ -13154,14 +13150,15 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
               style={Object {}}
             >
               <View
+                alignItems="center"
                 color="background.primary"
+                flexDirection="row"
+                justifyContent="center"
                 style={
                   Array [
                     Object {
-                      "color": "#ffffff",
-                    },
-                    Object {
                       "alignItems": "center",
+                      "color": "#ffffff",
                       "flexDirection": "row",
                       "justifyContent": "center",
                     },
@@ -13169,44 +13166,301 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 }
               >
                 <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
                   color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
                   style={
                     Array [
                       Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
+                        "alignItems": "center",
                         "backgroundColor": "#ffffff",
                         "borderColor": "#e4e4e7",
                         "borderRadius": 6,
                         "borderWidth": 1,
-                        "margin": 5,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
                       },
-                      undefined,
                     ]
                   }
                 >
                   <Text
                     accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
                     style={
                       Array [
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
                           "color": "#828282",
                           "fontFamily": "Inter-Bold",
                           "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
                         },
-                        Object {},
-                        undefined,
                       ]
                     }
-                    testID="otp"
+                    textStyle="defaultTextStyle"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
+                  color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                        },
+                      ]
+                    }
+                    textStyle="defaultTextStyle"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
+                  color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                        },
+                      ]
+                    }
+                    textStyle="defaultTextStyle"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
+                  color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                        },
+                      ]
+                    }
+                    textStyle="defaultTextStyle"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
+                  color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                        },
+                      ]
+                    }
+                    textStyle="defaultTextStyle"
+                  >
+                    
+                  </Text>
+                </View>
+                <View
+                  alignItems="center"
+                  backgroundColor="#ffffff"
+                  borderColor="#e4e4e7"
+                  borderRadius={6}
+                  borderWidth={1}
+                  color="background.primary"
+                  justifyContent="center"
+                  margin={2}
+                  minHeight={45}
+                  minWidth={45}
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#ffffff",
+                        "borderColor": "#e4e4e7",
+                        "borderRadius": 6,
+                        "borderWidth": 1,
+                        "color": "#ffffff",
+                        "justifyContent": "center",
+                        "marginBottom": 8,
+                        "marginLeft": 8,
+                        "marginRight": 8,
+                        "marginTop": 8,
+                        "minHeight": 45,
+                        "minWidth": 45,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    accessibilityLabel="otp"
+                    color="#828282"
+                    fontFamily="Inter-Bold"
+                    fontSize={24}
+                    style={
+                      Array [
+                        Object {
+                          "color": "#828282",
+                          "fontFamily": "Inter-Bold",
+                          "fontSize": 24,
+                        },
+                      ]
+                    }
+                    textStyle="defaultTextStyle"
                   >
                     
                   </Text>
@@ -13218,230 +13472,82 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                       Object {
                         "color": "#ffffff",
                       },
-                      Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 6,
-                        "borderWidth": 1,
-                        "margin": 5,
-                      },
-                      undefined,
                     ]
                   }
                 >
-                  <Text
-                    accessibilityLabel="otp"
+                  <View
+                    border="1px"
+                    borderColor="#e4e4e7"
+                    borderRadius={2}
+                    color="background.primary"
+                    flexDirection="column"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    position="relative"
                     style={
                       Array [
                         Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "color": "#828282",
-                          "fontFamily": "Inter-Bold",
-                          "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 2,
+                          "borderStyle": "solid",
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "flexDirection": "column",
                         },
-                        Object {},
-                        undefined,
                       ]
                     }
-                    testID="otp"
                   >
-                    
-                  </Text>
+                    <View
+                      color="background.primary"
+                      flexDirection="row"
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "flexDirection": "row",
+                            "width": "100%",
+                          },
+                        ]
+                      }
+                      width="100%"
+                    >
+                      <TextInput
+                        backgroundColor="transparent"
+                        color="transparent"
+                        editable={true}
+                        flex={1}
+                        fontFamily="inter400"
+                        fontSize={0}
+                        height="100%"
+                        keyboardType="phone-pad"
+                        onChangeText={[Function]}
+                        position="absolute"
+                        px={2}
+                        secureTextEntry={false}
+                        selectionColor="transparent"
+                        style={
+                          Array [
+                            Object {
+                              "backgroundColor": "transparent",
+                              "color": "transparent",
+                              "flexBasis": 0,
+                              "flexGrow": 1,
+                              "flexShrink": 1,
+                              "fontFamily": "Inter-Regular",
+                              "fontSize": 0,
+                              "paddingLeft": 8,
+                              "paddingRight": 8,
+                            },
+                          ]
+                        }
+                        textAlignVertical="top"
+                        textStyle="subtext"
+                        value=""
+                        width="100%"
+                      />
+                    </View>
+                  </View>
                 </View>
-                <View
-                  color="background.primary"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 6,
-                        "borderWidth": 1,
-                        "margin": 5,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    accessibilityLabel="otp"
-                    style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "color": "#828282",
-                          "fontFamily": "Inter-Bold",
-                          "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
-                        },
-                        Object {},
-                        undefined,
-                      ]
-                    }
-                    testID="otp"
-                  >
-                    
-                  </Text>
-                </View>
-                <View
-                  color="background.primary"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 6,
-                        "borderWidth": 1,
-                        "margin": 5,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    accessibilityLabel="otp"
-                    style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "color": "#828282",
-                          "fontFamily": "Inter-Bold",
-                          "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
-                        },
-                        Object {},
-                        undefined,
-                      ]
-                    }
-                    testID="otp"
-                  >
-                    
-                  </Text>
-                </View>
-                <View
-                  color="background.primary"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 6,
-                        "borderWidth": 1,
-                        "margin": 5,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    accessibilityLabel="otp"
-                    style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "color": "#828282",
-                          "fontFamily": "Inter-Bold",
-                          "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
-                        },
-                        Object {},
-                        undefined,
-                      ]
-                    }
-                    testID="otp"
-                  >
-                    
-                  </Text>
-                </View>
-                <View
-                  color="background.primary"
-                  style={
-                    Array [
-                      Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#e4e4e7",
-                        "borderRadius": 6,
-                        "borderWidth": 1,
-                        "margin": 5,
-                      },
-                      undefined,
-                    ]
-                  }
-                >
-                  <Text
-                    accessibilityLabel="otp"
-                    style={
-                      Array [
-                        Object {
-                          "alignItems": "center",
-                          "backgroundColor": "transparent",
-                          "color": "#828282",
-                          "fontFamily": "Inter-Bold",
-                          "fontSize": 24,
-                          "minHeight": 40,
-                          "minWidth": 40,
-                          "paddingTop": 5,
-                          "textAlign": "center",
-                          "textAlignVertical": "center",
-                        },
-                        Object {},
-                        undefined,
-                      ]
-                    }
-                    testID="otp"
-                  >
-                    
-                  </Text>
-                </View>
-                <TextInput
-                  keyboardType="phone-pad"
-                  onChangeText={[Function]}
-                  selectionColor="transparent"
-                  style={
-                    Object {
-                      "backgroundColor": "transparent",
-                      "color": "transparent",
-                      "fontSize": 0,
-                      "height": "100%",
-                      "position": "absolute",
-                      "width": "100%",
-                    }
-                  }
-                  value=""
-                />
               </View>
               <View
                 style={
@@ -13482,28 +13588,33 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
           </Text>
           <View
             alignItems="center"
-            bg="background.grey500"
+            bg="background.grey300"
             color="background.primary"
             justifyContent="center"
+            p={2}
             style={
               Array [
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": "#87929d",
+                  "backgroundColor": "#d8dcde",
                   "color": "#ffffff",
                   "justifyContent": "center",
+                  "paddingBottom": 8,
+                  "paddingLeft": 8,
+                  "paddingRight": 8,
+                  "paddingTop": 8,
                 },
               ]
             }
           >
             <Text
-              fontSize="xl"
+              fontSize="l"
               py={10}
               style={
                 Array [
                   Object {
                     "color": "#1b1f23",
-                    "fontSize": 24,
+                    "fontSize": 18,
                     "paddingBottom": 10,
                     "paddingTop": 10,
                   },
@@ -13519,10 +13630,6 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 Array [
                   Object {
                     "color": "#ffffff",
-                  },
-                  Object {
-                    "marginBottom": 5,
-                    "marginTop": 5,
                   },
                 ]
               }
@@ -13549,14 +13656,15 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                 style={Object {}}
               >
                 <View
+                  alignItems="center"
                   color="background.primary"
+                  flexDirection="row"
+                  justifyContent="center"
                   style={
                     Array [
                       Object {
-                        "color": "#ffffff",
-                      },
-                      Object {
                         "alignItems": "center",
+                        "color": "#ffffff",
                         "flexDirection": "row",
                         "justifyContent": "center",
                       },
@@ -13564,48 +13672,301 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                   }
                 >
                   <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
                     color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
                     style={
                       Array [
                         Object {
-                          "color": "#ffffff",
-                        },
-                        Object {
-                          "backgroundColor": "#ffffff",
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
                           "borderColor": "#e4e4e7",
                           "borderRadius": 6,
                           "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
                         },
                       ]
                     }
                   >
                     <Text
                       accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
+                            "color": "#ffffff",
                             "fontFamily": "Inter-Bold",
                             "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
-                            "color": "#ffffff",
                           },
                         ]
                       }
-                      testID="otp"
+                      textStyle="defaultTextStyle"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
+                    color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                          },
+                        ]
+                      }
+                      textStyle="defaultTextStyle"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
+                    color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                          },
+                        ]
+                      }
+                      textStyle="defaultTextStyle"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
+                    color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                          },
+                        ]
+                      }
+                      textStyle="defaultTextStyle"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
+                    color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                          },
+                        ]
+                      }
+                      textStyle="defaultTextStyle"
+                    >
+                      
+                    </Text>
+                  </View>
+                  <View
+                    alignItems="center"
+                    backgroundColor="#2f3941"
+                    borderColor="#e4e4e7"
+                    borderRadius={6}
+                    borderWidth={1}
+                    color="background.primary"
+                    justifyContent="center"
+                    margin={2}
+                    minHeight={45}
+                    minWidth={45}
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#2f3941",
+                          "borderColor": "#e4e4e7",
+                          "borderRadius": 6,
+                          "borderWidth": 1,
+                          "color": "#ffffff",
+                          "justifyContent": "center",
+                          "marginBottom": 8,
+                          "marginLeft": 8,
+                          "marginRight": 8,
+                          "marginTop": 8,
+                          "minHeight": 45,
+                          "minWidth": 45,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      accessibilityLabel="otp"
+                      color="#ffffff"
+                      fontFamily="Inter-Bold"
+                      fontSize={24}
+                      style={
+                        Array [
+                          Object {
+                            "color": "#ffffff",
+                            "fontFamily": "Inter-Bold",
+                            "fontSize": 24,
+                          },
+                        ]
+                      }
+                      textStyle="defaultTextStyle"
                     >
                       
                     </Text>
@@ -13617,250 +13978,82 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                         Object {
                           "color": "#ffffff",
                         },
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderColor": "#e4e4e7",
-                          "borderRadius": 6,
-                          "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
-                        },
                       ]
                     }
                   >
-                    <Text
-                      accessibilityLabel="otp"
+                    <View
+                      border="1px"
+                      borderColor="#e4e4e7"
+                      borderRadius={2}
+                      color="background.primary"
+                      flexDirection="column"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      position="relative"
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
-                            "fontFamily": "Inter-Bold",
-                            "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
+                            "borderColor": "#e4e4e7",
+                            "borderRadius": 2,
+                            "borderStyle": "solid",
+                            "borderWidth": 1,
                             "color": "#ffffff",
+                            "flexDirection": "column",
                           },
                         ]
                       }
-                      testID="otp"
                     >
-                      
-                    </Text>
+                      <View
+                        color="background.primary"
+                        flexDirection="row"
+                        style={
+                          Array [
+                            Object {
+                              "color": "#ffffff",
+                              "flexDirection": "row",
+                              "width": "100%",
+                            },
+                          ]
+                        }
+                        width="100%"
+                      >
+                        <TextInput
+                          backgroundColor="transparent"
+                          color="transparent"
+                          editable={true}
+                          flex={1}
+                          fontFamily="inter400"
+                          fontSize={0}
+                          height="100%"
+                          keyboardType="phone-pad"
+                          onChangeText={[Function]}
+                          position="absolute"
+                          px={2}
+                          secureTextEntry={false}
+                          selectionColor="transparent"
+                          style={
+                            Array [
+                              Object {
+                                "backgroundColor": "transparent",
+                                "color": "transparent",
+                                "flexBasis": 0,
+                                "flexGrow": 1,
+                                "flexShrink": 1,
+                                "fontFamily": "Inter-Regular",
+                                "fontSize": 0,
+                                "paddingLeft": 8,
+                                "paddingRight": 8,
+                              },
+                            ]
+                          }
+                          textAlignVertical="top"
+                          textStyle="subtext"
+                          value=""
+                          width="100%"
+                        />
+                      </View>
+                    </View>
                   </View>
-                  <View
-                    color="background.primary"
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                        },
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderColor": "#e4e4e7",
-                          "borderRadius": 6,
-                          "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      accessibilityLabel="otp"
-                      style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
-                            "fontFamily": "Inter-Bold",
-                            "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
-                            "color": "#ffffff",
-                          },
-                        ]
-                      }
-                      testID="otp"
-                    >
-                      
-                    </Text>
-                  </View>
-                  <View
-                    color="background.primary"
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                        },
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderColor": "#e4e4e7",
-                          "borderRadius": 6,
-                          "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      accessibilityLabel="otp"
-                      style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
-                            "fontFamily": "Inter-Bold",
-                            "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
-                            "color": "#ffffff",
-                          },
-                        ]
-                      }
-                      testID="otp"
-                    >
-                      
-                    </Text>
-                  </View>
-                  <View
-                    color="background.primary"
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                        },
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderColor": "#e4e4e7",
-                          "borderRadius": 6,
-                          "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      accessibilityLabel="otp"
-                      style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
-                            "fontFamily": "Inter-Bold",
-                            "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
-                            "color": "#ffffff",
-                          },
-                        ]
-                      }
-                      testID="otp"
-                    >
-                      
-                    </Text>
-                  </View>
-                  <View
-                    color="background.primary"
-                    style={
-                      Array [
-                        Object {
-                          "color": "#ffffff",
-                        },
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "borderColor": "#e4e4e7",
-                          "borderRadius": 6,
-                          "borderWidth": 1,
-                          "margin": 5,
-                        },
-                        Object {
-                          "backgroundColor": "#2f3941",
-                        },
-                      ]
-                    }
-                  >
-                    <Text
-                      accessibilityLabel="otp"
-                      style={
-                        Array [
-                          Object {
-                            "alignItems": "center",
-                            "backgroundColor": "transparent",
-                            "color": "#828282",
-                            "fontFamily": "Inter-Bold",
-                            "fontSize": 24,
-                            "minHeight": 40,
-                            "minWidth": 40,
-                            "paddingTop": 5,
-                            "textAlign": "center",
-                            "textAlignVertical": "center",
-                          },
-                          Object {},
-                          Object {
-                            "color": "#ffffff",
-                          },
-                        ]
-                      }
-                      testID="otp"
-                    >
-                      
-                    </Text>
-                  </View>
-                  <TextInput
-                    keyboardType="phone-pad"
-                    onChangeText={[Function]}
-                    selectionColor="transparent"
-                    style={
-                      Object {
-                        "backgroundColor": "transparent",
-                        "color": "transparent",
-                        "fontSize": 0,
-                        "height": "100%",
-                        "position": "absolute",
-                        "width": "100%",
-                      }
-                    }
-                    value=""
-                  />
                 </View>
                 <View
                   style={
