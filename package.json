@@ -25,7 +25,7 @@
     "preweb": "yarn get-stories",
     "web": "yarn prestart && webpack serve --mode=development --config webpack.config.js",
     "prepare": "husky install",
-    "svgr": "npx @svgr/cli --native -d src/icons icons"
+    "svgr": "npx @svgr/cli --icon --native -d src/icons icons"
   },
   "files": [
     "lib",

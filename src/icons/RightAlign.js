@@ -3,8 +3,9 @@ import Svg, { G, Rect, Mask, Path, Defs, ClipPath } from "react-native-svg";
 
 const SvgRightAlign = props => (
   <Svg
-    width={18}
-    height={19}
+    width={24}
+    height={24}
+    viewBox="0 0 18 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

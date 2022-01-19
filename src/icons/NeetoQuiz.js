@@ -4,8 +4,9 @@ import Svg, { G, Path, Circle, Defs } from "react-native-svg";
 
 const SvgNeetoQuiz = props => (
   <Svg
-    width={26}
-    height={26}
+    width={24}
+    height={24}
+    viewBox="0 0 26 26"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

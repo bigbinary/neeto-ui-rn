@@ -3,8 +3,9 @@ import Svg, { Path } from "react-native-svg";
 
 const SvgNeetoWireframe = props => (
   <Svg
-    width={19}
-    height={21}
+    width={24}
+    height={24}
+    viewBox="0 0 19 21"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
