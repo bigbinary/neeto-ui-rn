@@ -30,7 +30,7 @@ export const ParentView = ({
   children,
   backgroundColor,
   bg,
-  safeAreaViewProps = { edges: ["top", "right", "left"] },
+  safeAreaViewProps = { edges: ["top", "right", "bottom", "left"] },
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
