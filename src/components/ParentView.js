@@ -33,10 +33,17 @@ export const ParentView = ({
   children,
   backgroundColor,
   bg,
-  safeAreaViewProps = { edges: ["top", "right", "left"] },
+  topInset = true,
+  rightInset = true,
+  leftInset = true,
+  bottomInset = true,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
+
+  const safeAreaViewProps = {
+    edges: [topInset && "top", rightInset && "right", leftInset && "left"],
+  };
 
   const newBackgroundColor =
     backgroundColor || bg || theme.colors.background.parentView;
@@ -63,7 +70,7 @@ export const ParentView = ({
         flex={1}
         backgroundColor={newBackgroundColor}
         {...rest}
-        pb={insets.bottom}
+        {...(bottomInset && { pb: insets.bottom })}
       >
         {children}
       </Container>
@@ -86,7 +93,19 @@ ParentView.propTypes = {
    */
   bg: PropTypes.string,
   /**
-   * Sets the props for SafeAreaView
+   * Sets Top Inset
    */
-  safeAreaViewProps: PropTypes.object,
+  topInset: PropTypes.bool,
+  /**
+   * Sets Right Inset
+   */
+  rightInset: PropTypes.bool,
+  /**
+   * Sets Left Inset
+   */
+  leftInset: PropTypes.bool,
+  /**
+   * Sets Bottom Inset
+   */
+  bottomInset: PropTypes.bool,
 };
