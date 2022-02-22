@@ -11,6 +11,6 @@ export default class Index extends React.Component<{}> {
 
 export const meta = {
   title: "Home",
-  description: "Neeto UI RN Library",
+  description: "neetoUI-RN Library",
   link: "index",
 };

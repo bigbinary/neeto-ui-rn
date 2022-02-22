@@ -39,7 +39,7 @@ export default class Home extends React.Component<{}> {
         <Header logo="images/neeto.svg" />
         <Content>
           <h1>
-            NeetoUI is the UI library that drives the experience in all{" "}
+            neetoUI is the UI library that drives the experience in all{" "}
             <Highlighted target="_blank" href="https://neeto.com/">
               neetoProducts
             </Highlighted>{" "}
