@@ -18,7 +18,13 @@ export const TouchableOpacity = styled.TouchableOpacity`
 const PopOverItem = ({ item }) => {
   const { Icon, label, onPress } = item;
   return (
-    <TouchableOpacity onPress={onPress} flexDirection="row" p={2} px={3}>
+    <TouchableOpacity
+      onPress={onPress}
+      flexDirection="row"
+      p={2}
+      px={3}
+      alignItems="center"
+    >
       <Icon />
       <Typography
         px={2}
