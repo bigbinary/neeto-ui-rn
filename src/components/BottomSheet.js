@@ -250,7 +250,7 @@ BottomSheet.propTypes = {
 
 const styles = StyleSheet.create({
   flatListContentContainerStyle: {
-    paddingBottom: 40,
+    paddingBottom: 70,
   },
   modalStyle: {
     margin: 0,
