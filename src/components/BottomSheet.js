@@ -136,16 +136,19 @@ export const BottomSheet = ({
   titleTextStyle,
   itemContainerStyle,
   itemTextStyle,
+  modalParams,
   ...rest
 }) => {
   return (
     <Modal
       style={styles.modalStyle}
-      isVisible={isVisible}
+      visible={isVisible}
       onBackdropPress={hide}
       useNativeDriver
       avoidKeyboard
       hideModalContentWhileAnimating
+      onRequestClose={hide}
+      {...modalParams}
     >
       <Container
         bg={bg}
@@ -245,6 +248,10 @@ BottomSheet.propTypes = {
    * To customise item text styles.
    */
   itemTextStyle: PropTypes.object,
+  /**
+   * To support more Modal params.
+   */
+  modalParams: PropTypes.object,
   children: PropTypes.node,
 };
 
