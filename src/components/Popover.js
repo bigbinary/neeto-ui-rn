@@ -15,7 +15,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
   ${layout}
 `;
 
-const PopOverItem = ({ item }) => {
+const PopOverItem = ({ item, fontFamily, fontSize }) => {
   const { Icon, label, onPress } = item;
   return (
     <TouchableOpacity
@@ -28,9 +28,9 @@ const PopOverItem = ({ item }) => {
       <Icon />
       <Typography
         px={2}
-        fontSize="l"
+        fontSize={fontSize}
         fontColor="font.primary"
-        fontFamily="inter700"
+        fontFamily={fontFamily}
       >
         {label}
       </Typography>
@@ -40,6 +40,11 @@ const PopOverItem = ({ item }) => {
 
 PopOverItem.propTypes = {
   item: PropTypes.object,
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(["xs", "s", "m", "l", "xl", "xxl"]),
+  ]),
 };
 
 /**
@@ -123,11 +128,24 @@ PopOverItem.propTypes = {
  * ```
  */
 
-export const Popover = ({ children, data, ...rest }) => {
+export const Popover = ({
+  children,
+  data,
+  fontFamily = null,
+  fontSize = "l",
+  ...rest
+}) => {
   return (
     <OriginalPopover popoverStyle={styles.popoverStyle} {...rest}>
       {data?.map((item, index) => {
-        return <PopOverItem key={index} item={item} />;
+        return (
+          <PopOverItem
+            key={index}
+            item={item}
+            fontFamily={fontFamily}
+            fontSize={fontSize}
+          />
+        );
       })}
       {children}
     </OriginalPopover>
@@ -145,6 +163,11 @@ Popover.propTypes = {
    * }.
    */
   data: PropTypes.array,
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.oneOf(["xs", "s", "m", "l", "xl", "xxl"]),
+  ]),
 };
 
 const styles = StyleSheet.create({
