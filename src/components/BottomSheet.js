@@ -142,7 +142,7 @@ export const BottomSheet = ({
   return (
     <Modal
       style={styles.modalStyle}
-      visible={isVisible}
+      isVisible={isVisible}
       onBackdropPress={hide}
       useNativeDriver
       avoidKeyboard
