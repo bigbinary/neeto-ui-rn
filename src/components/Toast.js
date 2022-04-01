@@ -57,8 +57,8 @@ export const Toast = ({ toasterConfig, ...rest }) => {
   return (
     <T
       {...rest}
-      config={{ ...defaultToasterConfig, ...toasterConfig, position: "top" }}
-      position="top"
+      config={{ ...defaultToasterConfig, ...toasterConfig }}
+      position="bottom"
     />
   );
 };
