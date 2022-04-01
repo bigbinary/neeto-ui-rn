@@ -136,6 +136,7 @@ export const BottomSheet = ({
   titleTextStyle,
   itemContainerStyle,
   itemTextStyle,
+  modalParams,
   ...rest
 }) => {
   return (
@@ -146,6 +147,8 @@ export const BottomSheet = ({
       useNativeDriver
       avoidKeyboard
       hideModalContentWhileAnimating
+      onRequestClose={hide}
+      {...modalParams}
     >
       <Container
         bg={bg}
@@ -245,12 +248,16 @@ BottomSheet.propTypes = {
    * To customise item text styles.
    */
   itemTextStyle: PropTypes.object,
+  /**
+   * To support more Modal params.
+   */
+  modalParams: PropTypes.object,
   children: PropTypes.node,
 };
 
 const styles = StyleSheet.create({
   flatListContentContainerStyle: {
-    paddingBottom: 40,
+    paddingBottom: 70,
   },
   modalStyle: {
     margin: 0,
