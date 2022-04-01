@@ -15316,12 +15316,12 @@ exports[`Storyshots ToastMessage Toast Demo 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
                 "opacity": 0,
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
                 "transform": Array [
                   Object {
                     "translateY": 0,
@@ -15632,12 +15632,12 @@ exports[`Storyshots ToastMessage Toasts 1`] = `
             style={
               Object {
                 "alignItems": "center",
+                "bottom": 0,
                 "justifyContent": "center",
                 "left": 0,
                 "opacity": 0,
                 "position": "absolute",
                 "right": 0,
-                "top": 0,
                 "transform": Array [
                   Object {
                     "translateY": 0,
