@@ -22,6 +22,10 @@ export const TopBar = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedIndex]);
 
+  useEffect(() => {
+    setSelectedIndex(activeIndex);
+  }, [activeIndex]);
+
   return (
     <Container
       height={50}

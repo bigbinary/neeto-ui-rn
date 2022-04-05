@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { TopBar } from "@components";
+import { Button, TopBar } from "@components";
 
 const itemList = ["All", "Active", "Expired"];
 
@@ -14,16 +14,24 @@ const TopBarStoriesMetaData = {
 export default TopBarStoriesMetaData;
 
 export const TopBarStories = () => {
+  const [activeTab, setActiveTab] = useState(0)
+
+  useEffect(() => {
+    console.log("Active tab index is ", activeTab);
+    console.log("Active tab is ", itemList[activeTab]);
+  }, [activeTab])
+  
   return (
     <>
       <TopBar
         data={itemList}
-        activeIndex={0}
-        // eslint-disable-next-line no-unused-vars
+        activeIndex={activeTab}
         onActiveTabChange={index => {
-          // console.log(index, "index");
+          setActiveTab(index)
         }}
       />
+
+      <Button label="Switch to `Expired` tab" onPress={() => setActiveTab(2)} />
     </>
   );
 };
