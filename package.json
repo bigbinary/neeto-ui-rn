@@ -34,7 +34,7 @@
     "assets"
   ],
   "lint-staged": {
-    "src/**/*.{js,es6,jsx,ts,tsx}": [
+    "src/**/*.{js,es6,jsx,ts,tsx}|storybook/stories**/*.js": [
       "./node_modules/prettier/bin-prettier.js --write",
       "prettier --write",
       "eslint --fix"

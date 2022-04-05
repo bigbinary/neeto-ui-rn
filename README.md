@@ -1,8 +1,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1772e21c-61b9-4100-9b2e-9b0d1ce6a210/deploy-status)](https://app.netlify.com/sites/neetoui-rn/deploys)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/717761ba-353e-4417-9860-86e49b78ac36/deploy-status)](https://app.netlify.com/sites/neetoui-rn-docs/deploys)
 
-**neetoUI-RN** is the library that drives the experience in all [neeto product's](https://neeto.com/) React
-Native application built at [BigBinary](https://www.bigbinary.com).
+**neetoUI-RN** is the library that drives the experience in all
+[neeto product's](https://neeto.com/) React Native application built at
+[BigBinary](https://www.bigbinary.com).
 
 ## Documentation
 
@@ -80,8 +81,8 @@ You can use below commands for running storybook in different platforms:
 ## Auto Publish to NPM
 
 neetoUI-RN version gets patched, auto-incremented and auto-published to npm on
-new commit to master. You can checkout the `publish` workflow in Github actions to
-get a live update.
+new commit to master. You can checkout the `publish` workflow in Github actions
+to get a live update.
 
 ## Building Storybook
 

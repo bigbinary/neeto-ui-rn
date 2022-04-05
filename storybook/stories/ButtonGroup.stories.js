@@ -57,7 +57,11 @@ export const ButtonGroupDemo = args => {
 
   return (
     <Container>
-      <ButtonGroup {...args} onPress={setActiveButton} currentActiveBtn={activeButton} />
+      <ButtonGroup
+        {...args}
+        onPress={setActiveButton}
+        currentActiveBtn={activeButton}
+      />
     </Container>
   );
 };
