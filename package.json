@@ -38,6 +38,11 @@
       "./node_modules/prettier/bin-prettier.js --write",
       "prettier --write",
       "eslint --fix"
+    ],
+    "storybook/**/*.{js,es6,jsx,ts,tsx}": [
+      "./node_modules/prettier/bin-prettier.js --write",
+      "prettier --write",
+      "eslint --fix"
     ]
   },
   "peerDependencies": {
