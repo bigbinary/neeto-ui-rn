@@ -1,29 +1,29 @@
-import React from 'react';
+import React from "react";
 
-import { ParentView, TopBar } from '@components';
+import { TopBar } from "@components";
 
-const itemList = [
-    "All",
-    "Active",
-    "Expired"
-  ];
+const itemList = ["All", "Active", "Expired"];
 
-const TopBarStories = () => {
-  
-    return (
-      <ParentView barStyle="dark-content" flex={1}>
-        <TopBar
-          data={itemList}
-          activeIndex={0}
-          // eslint-disable-next-line no-unused-vars
-          onActiveTabChange={index => {
-            // console.log(index, "index");
-          }}
-        />
-      </ParentView>
-    );
+const TopBarStoriesMetaData = {
+  title: "TopBar",
+  component: TopBarStories,
+  argTypes: {},
+  args: {},
 };
 
-TopBarStories.propTypes={
-}
-export default TopBarStories;
+export default TopBarStoriesMetaData;
+
+export const TopBarStories = () => {
+  return (
+    <>
+      <TopBar
+        data={itemList}
+        activeIndex={0}
+        // eslint-disable-next-line no-unused-vars
+        onActiveTabChange={index => {
+          // console.log(index, "index");
+        }}
+      />
+    </>
+  );
+};
