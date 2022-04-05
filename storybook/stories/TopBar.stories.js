@@ -14,20 +14,22 @@ const TopBarStoriesMetaData = {
 export default TopBarStoriesMetaData;
 
 export const TopBarStories = () => {
-  const [activeTab, setActiveTab] = useState(0)
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log("Active tab index is ", activeTab);
+    // eslint-disable-next-line no-console
     console.log("Active tab is ", itemList[activeTab]);
-  }, [activeTab])
-  
+  }, [activeTab]);
+
   return (
     <>
       <TopBar
         data={itemList}
         activeIndex={activeTab}
         onActiveTabChange={index => {
-          setActiveTab(index)
+          setActiveTab(index);
         }}
       />
 
