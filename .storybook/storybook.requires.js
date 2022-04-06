@@ -41,6 +41,7 @@ const getStories = () => {
     require("../storybook/stories/Input.stories.js"),
     require("../storybook/stories/OtpInputs.stories.js"),
     require("../storybook/stories/Popover.stories.js"),
+    require("../storybook/stories/RadioButton.stories.js"),
     require("../storybook/stories/RichTextEditor.stories.js"),
     require("../storybook/stories/ToastMessage.stories.js"),
     require("../storybook/stories/ToggleSwitch.stories.js"),
