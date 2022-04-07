@@ -4,15 +4,15 @@ import Proptypes from "prop-types";
 import { Container, Typography, Touchable } from "@components";
 
 export const CheckBox = ({
-  checked = false,
-  onCheck = () => {},
+  selected = false,
+  onSelect = () => {},
   checkedComponent = null,
   containerStyle = {},
   checkedItemStyle = {},
 }) => {
   return (
     <Touchable
-      onPress={onCheck}
+      onPress={onSelect}
       borderColor="background.base"
       borderWidth={1}
       borderRadius={5}
@@ -23,7 +23,7 @@ export const CheckBox = ({
       mr={2}
       {...containerStyle}
     >
-      {checked && (
+      {selected && (
         <Container>
           {checkedComponent || <Typography {...checkedItemStyle}>✓</Typography>}
         </Container>
@@ -33,8 +33,8 @@ export const CheckBox = ({
 };
 
 CheckBox.propTypes = {
-  checked: Proptypes.bool.isRequired,
-  onCheck: Proptypes.func.isRequired,
+  selected: Proptypes.bool.isRequired,
+  onSelect: Proptypes.func.isRequired,
   checkedComponent: Proptypes.element,
   containerStyle: Proptypes.object,
   checkedItemStyle: Proptypes.object,

@@ -32,16 +32,16 @@ export const CheckBoxComponent = () => {
     <Container>
       <Container flexDirection="row">
         <CheckBox
-          checked={selectedValues.indexOf(0) !== -1}
-          onCheck={() => handleCheckbox(0)}
+          selected={selectedValues.indexOf(0) !== -1}
+          onSelect={() => handleCheckbox(0)}
           containerStyle={containerStyle}
         />
         <Typography>Custom border color</Typography>
       </Container>
       <Container flexDirection="row" my={2}>
         <CheckBox
-          checked={selectedValues.indexOf(1) !== -1}
-          onCheck={() => handleCheckbox(1)}
+          selected={selectedValues.indexOf(1) !== -1}
+          onSelect={() => handleCheckbox(1)}
           checkedComponent={
             <Container width={10} height={10} bg="background.base" />
           }
@@ -50,8 +50,8 @@ export const CheckBoxComponent = () => {
       </Container>
       <Container flexDirection="row">
         <CheckBox
-          checked={selectedValues.indexOf(2) !== -1}
-          onCheck={() => handleCheckbox(2)}
+          selected={selectedValues.indexOf(2) !== -1}
+          onSelect={() => handleCheckbox(2)}
           checkedItemStyle={checkedItemStyle}
         />
         <Typography>Custom color</Typography>
