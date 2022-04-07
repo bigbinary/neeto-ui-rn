@@ -2,7 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Touchable, Typography } from "@components";
+const LABELPOSITIONS = ["left", "right"];
 
+const LabelComponent = ({ label, labelComponent, labelProp }) => {
+  return (
+    labelComponent || (
+      <Typography mx={2} {...labelProp}>
+        {label}
+      </Typography>
+    )
+  );
+};
 export const RadioButton = ({
   outerWidth = 20,
   innerWidth = 10,
@@ -16,10 +26,18 @@ export const RadioButton = ({
   labelComponent = null,
   labelProp = {},
   containerProp = {},
+  labelPosition = "right",
 }) => {
   return (
-    <Container flexDirection="row" alignItems="center" {...containerProp}>
-      <Touchable height={outerWidth} width={outerWidth} onPress={onSelect}>
+    <Touchable onPress={onSelect}>
+      <Container flexDirection="row" alignItems="center" {...containerProp}>
+        {labelPosition === LABELPOSITIONS[0] ? (
+          <LabelComponent
+            label={label}
+            labelComponent={labelComponent}
+            labelProp={labelProp}
+          />
+        ) : null}
         <Container
           bg={containerBg}
           height={outerWidth}
@@ -45,13 +63,15 @@ export const RadioButton = ({
             />
           </Container>
         </Container>
-      </Touchable>
-      {labelComponent || (
-        <Typography ml={2} {...labelProp}>
-          {label}
-        </Typography>
-      )}
-    </Container>
+        {labelPosition === LABELPOSITIONS[1] ? (
+          <LabelComponent
+            label={label}
+            labelComponent={labelComponent}
+            labelProp={labelProp}
+          />
+        ) : null}
+      </Container>
+    </Touchable>
   );
 };
 
@@ -68,4 +88,11 @@ RadioButton.propTypes = {
   labelComponent: PropTypes.element,
   labelProp: PropTypes.object,
   containerProp: PropTypes.object,
+  labelPosition: PropTypes.oneOf(LABELPOSITIONS),
+};
+
+LabelComponent.propTypes = {
+  label: PropTypes.string,
+  labelComponent: PropTypes.element,
+  labelProp: PropTypes.object,
 };

@@ -24,6 +24,7 @@ export const RadioButtonComponent = () => {
         selected={selected === 0}
         onSelect={() => setSelected(0)}
         label="option label 1"
+        labelPosition="left"
       />
       <RadioButton
         selected={selected === 1}
