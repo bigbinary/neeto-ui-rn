@@ -13,6 +13,50 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
     )
   );
 };
+
+/**
+ *
+ * This component supports below props categories from [styled-system ](/styled-system).
+ * <ul>
+ * <li>outerWidth</li>
+ * <li>innerWidth</li>
+ * <li>containerBg</li>
+ * <li>innerActive</li>
+ * <li>innerInActiveBg</li>
+ * <li>onSelect</li>
+ * <li>selected</li>
+ * <li>innerOuterCircleDelta</li>
+ * <li>label</li>
+ * <li>labelComponent</li>
+ * <li>labelProp</li>
+ * <li>containerProp</li>
+ * <li>labelPosition</li>
+ * <li>disabled</li>
+ * </ul>
+ *
+ *  ## Usage
+ * ```js
+ * import React, { useEffect, useState } from "react";
+ * import { Container, RadioButton, Typography } from "@bigbinary/neetoui-rn";
+ *
+ * export default function Main() {
+ * useEffect(() => {
+ * // console.log("selected is ", selected);
+ * }, [selected]);
+ *  return (
+ *    <Container>
+ *     <RadioButton
+ *      selected={selected === 0}
+ *      onSelect={() => setSelected(0)}
+ *      label="option label 1"
+ *      labelPosition="left"
+ *     />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ *
+ */
 export const RadioButton = ({
   outerWidth = 20,
   innerWidth = 10,
