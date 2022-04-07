@@ -18,7 +18,7 @@ export const RadioButton = ({
   containerProp = {},
 }) => {
   return (
-    <Container flexDirection="row" {...containerProp}>
+    <Container flexDirection="row" alignItems="center" {...containerProp}>
       <Touchable height={outerWidth} width={outerWidth} onPress={onSelect}>
         <Container
           bg={containerBg}
