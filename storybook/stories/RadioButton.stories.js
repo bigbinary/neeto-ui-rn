@@ -40,6 +40,7 @@ export const RadioButtonComponent = () => {
         selected={selected === 2}
         onSelect={() => setSelected(2)}
         labelProp={{ fontFamily: "inter700", color: "font.danger" }}
+        disabled
       />
     </Container>
   );

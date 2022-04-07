@@ -27,9 +27,14 @@ export const RadioButton = ({
   labelProp = {},
   containerProp = {},
   labelPosition = "right",
+  disabled = false,
 }) => {
   return (
-    <Touchable onPress={onSelect}>
+    <Touchable
+      disabled={disabled}
+      opacity={disabled ? 0.5 : 1}
+      onPress={onSelect}
+    >
       <Container flexDirection="row" alignItems="center" {...containerProp}>
         {labelPosition === LABELPOSITIONS[0] ? (
           <LabelComponent
@@ -89,6 +94,7 @@ RadioButton.propTypes = {
   labelProp: PropTypes.object,
   containerProp: PropTypes.object,
   labelPosition: PropTypes.oneOf(LABELPOSITIONS),
+  disabled: PropTypes.bool,
 };
 
 LabelComponent.propTypes = {
