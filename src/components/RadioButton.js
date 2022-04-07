@@ -11,7 +11,6 @@ export const RadioButton = ({
   innerInActiveBg = "background.secondary",
   onSelect = () => {},
   selected = null,
-  value,
   innerOuterCircleDelta = 5,
   label = "Option",
   labelComponent = null,
@@ -20,11 +19,7 @@ export const RadioButton = ({
 }) => {
   return (
     <Container flexDirection="row" {...containerProp}>
-      <Touchable
-        height={outerWidth}
-        width={outerWidth}
-        onPress={() => onSelect(value)}
-      >
+      <Touchable height={outerWidth} width={outerWidth} onPress={onSelect}>
         <Container
           bg={containerBg}
           height={outerWidth}
@@ -63,7 +58,6 @@ export const RadioButton = ({
 RadioButton.propTypes = {
   onSelect: PropTypes.func.isRequired,
   selected: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
   outerWidth: PropTypes.number,
   innerWidth: PropTypes.number,
   containerBg: PropTypes.string,

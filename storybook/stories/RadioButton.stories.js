@@ -21,15 +21,13 @@ export const RadioButtonComponent = () => {
   return (
     <Container>
       <RadioButton
-        value={0}
         selected={selected === 0}
-        onSelect={setSelected}
+        onSelect={() => setSelected(0)}
         label="option label 1"
       />
       <RadioButton
-        value={1}
         selected={selected === 1}
-        onSelect={setSelected}
+        onSelect={() => setSelected(1)}
         labelComponent={
           <Typography color="font.grey200" fontFamily="inter700">
             Option 1
@@ -38,9 +36,8 @@ export const RadioButtonComponent = () => {
         containerProp={{ my: 5 }}
       />
       <RadioButton
-        value={2}
         selected={selected === 2}
-        onSelect={setSelected}
+        onSelect={() => setSelected(2)}
         labelProp={{ fontFamily: "inter700", color: "font.danger" }}
       />
     </Container>
