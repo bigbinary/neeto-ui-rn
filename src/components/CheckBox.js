@@ -38,8 +38,8 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  *          checkedComponent={
  *            <Container width={10} height={10} bg="background.base" />
  *          }
+ *          label="Agree"
  *        />
- *        <Typography>With Custom Checked Component</Typography>
  *      </Container>
  *    </Container>
  *  );
