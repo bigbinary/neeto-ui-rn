@@ -3,6 +3,11 @@ import Proptypes from "prop-types";
 
 import { Container, Typography, Touchable } from "@components";
 const LABEL_POSITIONS = ["left", "right"];
+
+const LabelComponent = ({ label, labelComponent, labelProp }) => {
+  return labelComponent || <Typography {...labelProp}>{label}</Typography>;
+};
+
 /**
  *
  * This component supports below props categories from [styled-system ](/styled-system).
@@ -52,10 +57,6 @@ const LABEL_POSITIONS = ["left", "right"];
  * ```
  *
  */
-
-const LabelComponent = ({ label, labelComponent, labelProp }) => {
-  return labelComponent || <Typography {...labelProp}>{label}</Typography>;
-};
 
 export const CheckBox = ({
   selected = false,
