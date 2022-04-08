@@ -5,13 +5,7 @@ import { Container, Touchable, Typography } from "@components";
 const LABEL_POSITIONS = ["left", "right"];
 
 const LabelComponent = ({ label, labelComponent, labelProp }) => {
-  return (
-    labelComponent || (
-      <Typography mx={2} {...labelProp}>
-        {label}
-      </Typography>
-    )
-  );
+  return labelComponent || <Typography {...labelProp}>{label}</Typography>;
 };
 
 /**
@@ -79,7 +73,7 @@ export const RadioButton = ({
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
-          labelProp={labelProp}
+          labelProp={{ mr: 2, ...labelProp }}
         />
       ) : null}
       <Container
@@ -111,7 +105,7 @@ export const RadioButton = ({
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
-          labelProp={labelProp}
+          labelProp={{ ml: 2, ...labelProp }}
         />
       ) : null}
     </Touchable>
