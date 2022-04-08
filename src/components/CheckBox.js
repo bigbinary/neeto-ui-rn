@@ -26,25 +26,15 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  * import { Container, CheckBox, Typography } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
- *  const [selectedValues, setSelectedValues] = useState([]);
+ *  const [selected, setSelected] = useState(false);
  *
- *  const handleCheckbox = index => {
- *    const oldData = [...selectedValues];
- *    const itemIndex = selectedValues.indexOf(index);
- *    if (itemIndex === -1) {
- *      oldData.push(index);
- *    } else {
- *      oldData.splice(itemIndex, 1);
- *    }
- *    setSelectedValues(oldData);
- *  };
  *
  *  return (
  *    <Container>
  *      <Container flexDirection="row" my={2}>
  *        <CheckBox
- *          selected={selectedValues.indexOf(1) !== -1}
- *          onSelect={() => handleCheckbox(1)}
+ *          selected={selected}
+ *          onSelect={() => setSelected(!selected)}
  *          checkedComponent={
  *            <Container width={10} height={10} bg="background.base" />
  *          }
