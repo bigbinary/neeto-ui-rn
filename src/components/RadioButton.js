@@ -50,14 +50,14 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  */
 
 export const RadioButton = ({
-  outerWidth = 20,
-  innerWidth = 10,
+  radioButtonWidth = 20,
+  radioButtonSelectedWidth = 10,
   containerBg = "background.grey",
   innerActiveBg = "background.base",
   innerInActiveBg = "background.secondary",
   onSelect = () => {},
   selected = null,
-  innerOuterCircleDelta = 5,
+  density = 5,
   label = "Option",
   labelComponent = null,
   labelProp = {},
@@ -84,25 +84,25 @@ export const RadioButton = ({
       ) : null}
       <Container
         bg={containerBg}
-        height={outerWidth}
-        width={outerWidth}
-        borderRadius={outerWidth / 2}
+        height={radioButtonWidth}
+        width={radioButtonWidth}
+        borderRadius={radioButtonWidth / 2}
         justifyContent="center"
         alignItems="center"
       >
         <Container
-          height={innerWidth + innerOuterCircleDelta}
-          width={innerWidth + innerOuterCircleDelta}
-          borderRadius={(innerWidth + innerOuterCircleDelta) / 2}
+          height={radioButtonSelectedWidth + density}
+          width={radioButtonSelectedWidth + density}
+          borderRadius={(radioButtonSelectedWidth + density) / 2}
           bg="background.white"
           justifyContent="center"
           alignItems="center"
         >
           <Container
             bg={selected ? innerActiveBg : innerInActiveBg}
-            height={innerWidth}
-            width={innerWidth}
-            borderRadius={innerWidth / 2}
+            height={radioButtonSelectedWidth}
+            width={radioButtonSelectedWidth}
+            borderRadius={radioButtonSelectedWidth / 2}
             m={1}
           />
         </Container>
@@ -147,12 +147,30 @@ RadioButton.propTypes = {
    * Whether radio is disabled.
    */
   disabled: PropTypes.bool,
-  outerWidth: PropTypes.number,
-  innerWidth: PropTypes.number,
+  /**
+   * Size of radio button.
+   */
+  radioButtonWidth: PropTypes.number,
+  /**
+   * Size of radio button when selected.
+   */
+  radioButtonSelectedWidth: PropTypes.number,
+  /**
+   * Background color of radio button.
+   */
   containerBg: PropTypes.string,
+  /**
+   * Color of radio button when selected.
+   */
   innerActiveBg: PropTypes.string,
+  /**
+   * Color of radio button when not selected.
+   */
   innerInActiveBg: PropTypes.string,
-  innerOuterCircleDelta: PropTypes.number,
+  /**
+   * Thickness of radio button container component.
+   */
+  density: PropTypes.number,
 };
 
 LabelComponent.propTypes = {
