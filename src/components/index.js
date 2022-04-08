@@ -18,3 +18,5 @@ export { Popover } from "./Popover";
 export { Touchable } from "./Touchable";
 export { Card } from "./Card";
 export { TopBar } from "./TopBar";
+export { RadioButton } from "./RadioButton";
+export { CheckBox } from "./CheckBox";
