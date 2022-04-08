@@ -26,7 +26,7 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  * import { Container, CheckBox, Typography } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
- *  const [selected, setSelected] = useState(false);
+ *  const [selected, setSelected] = React.useState(false);
  *
  *
  *  return (
