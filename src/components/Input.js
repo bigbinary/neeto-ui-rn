@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useContext, useState } from "react";
 import {
   flexbox,
@@ -162,7 +163,7 @@ export const Input = React.forwardRef((props, ref) => {
           )}
           <TextInput
             ref={ref}
-            height={40}
+            height={45}
             flex={1}
             textStyle="subtext"
             editable={!disabled}
