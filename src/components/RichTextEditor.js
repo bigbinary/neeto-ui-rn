@@ -92,6 +92,15 @@ export const RichTextEditor = ({
   return (
     <>
       <ScrollView {...rest?.editorWrapperStyle}>
+        {showToolbar && (
+          <Container width="100%" {...rest?.toolbarWrapperStyle}>
+            <RichToolbar
+              editor={richTextRef}
+              actions={computeToolbarActions()}
+              {...toolBarProps}
+            />
+          </Container>
+        )}
         <RichEditor
           placeholder={placeholderText}
           ref={richTextRef}
@@ -110,20 +119,6 @@ export const RichTextEditor = ({
 
         {children}
       </ScrollView>
-      {showToolbar && (
-        <Container
-          bottom={keyboardHeight}
-          position="absolute"
-          width="100%"
-          {...rest?.toolbarWrapperStyle}
-        >
-          <RichToolbar
-            editor={richTextRef}
-            actions={computeToolbarActions()}
-            {...toolBarProps}
-          />
-        </Container>
-      )}
     </>
   );
 };
