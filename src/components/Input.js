@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useContext, useState } from "react";
 import {
   flexbox,
@@ -9,6 +10,7 @@ import {
   layout,
 } from "styled-system";
 import Icon from "react-native-remix-icon";
+import { Platform } from "react-native";
 import styled, { ThemeContext } from "styled-components/native";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -84,6 +86,7 @@ export const Input = React.forwardRef((props, ref) => {
 
   const theme = useContext(ThemeContext);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [height, setHeight] = useState(0);
   const [isFocus, setIsFocus] = useState(false);
   const borderColor = error
     ? theme.colors.border.danger
@@ -162,8 +165,16 @@ export const Input = React.forwardRef((props, ref) => {
           )}
           <TextInput
             ref={ref}
-            height={40}
             flex={1}
+            {...Platform.select({
+              ios: {},
+              android: {
+                height,
+                onContentSizeChange: event => {
+                  setHeight(event.nativeEvent.contentSize.height);
+                },
+              },
+            })}
             textStyle="subtext"
             editable={!disabled}
             color={error ? theme.colors.font.danger : theme.colors.font.primary}
@@ -324,8 +335,8 @@ ErrorMessage.propTypes = {
 };
 
 TextInput.defaultProps = {
-  height: 40,
   px: 2,
+  minHeight: 45,
   fontFamily: "inter400",
   fontSize: "16px",
 };
