@@ -2,6 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import T from "react-native-toast-message";
 import { defaultToasterConfig } from "@config";
+import { useKeyboard } from "@react-native-community/hooks";
 
 /**
  * Toast component is a wrapper over https://github.com/calintamas/react-native-toast-message.
@@ -44,11 +45,43 @@ import { defaultToasterConfig } from "@config";
  * @extends StyledSystems props /styled-system
  */
 
+let globalKeyboardState;
+// let toastOffsetValue;
+
 export const Toast = ({ toasterConfig, ...rest }) => {
-  return <T {...rest} config={{ ...defaultToasterConfig, ...toasterConfig }} />;
+  const keyboard = useKeyboard();
+  // const screenDimensions = useDimensions().screen;
+
+  React.useEffect(() => {
+    globalKeyboardState = keyboard;
+    // toastOffsetValue =
+    //   Platform.OS === "ios"
+    //     ? screenDimensions.height - (globalKeyboardState.keyboardHeight + 50)
+    //     : screenDimensions.height - (globalKeyboardState.keyboardHeight + 130);
+  }, [keyboard]);
+
+  return (
+    <T
+      {...rest}
+      config={{ ...defaultToasterConfig, ...toasterConfig }}
+      position="bottom"
+    />
+  );
 };
 
-Toast.show = T.show;
+Toast.show = params => {
+  // Rendering Toasts on top whenever keyboard is active.
+  if (globalKeyboardState.keyboardShown) {
+    T.show({
+      ...params,
+      position: "top",
+      // topOffset: toastOffsetValue,
+    });
+  } else {
+    T.show(params);
+  }
+};
+
 Toast.hide = T.hide;
 
 Toast.propTypes = {

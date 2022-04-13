@@ -46,6 +46,7 @@
     "react-native-webview": "11.14.4"
   },
   "dependencies": {
+    "@react-native-community/hooks": "^2.8.1",
     "@styled-system/prop-types": "^5.1.5",
     "react-native-material-ripple": "^0.9.1",
     "react-native-modal": "^13.0.0",
