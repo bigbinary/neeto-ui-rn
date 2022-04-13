@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Platform } from "react-native";
 import PropTypes from "prop-types";
 import T from "react-native-toast-message";
 import { defaultToasterConfig } from "@config";
-import { useKeyboard, useDimensions } from "@react-native-community/hooks";
+import { useKeyboard } from "@react-native-community/hooks";
 
 /**
  * Toast component is a wrapper over https://github.com/calintamas/react-native-toast-message.
@@ -47,18 +46,18 @@ import { useKeyboard, useDimensions } from "@react-native-community/hooks";
  */
 
 let globalKeyboardState;
-let toastOffsetValue;
+// let toastOffsetValue;
 
 export const Toast = ({ toasterConfig, ...rest }) => {
   const keyboard = useKeyboard();
-  const screenDimensions = useDimensions().screen;
+  // const screenDimensions = useDimensions().screen;
 
   React.useEffect(() => {
     globalKeyboardState = keyboard;
-    toastOffsetValue =
-      Platform.OS === "ios"
-        ? screenDimensions.height - (globalKeyboardState.keyboardHeight + 50)
-        : screenDimensions.height - (globalKeyboardState.keyboardHeight + 130);
+    // toastOffsetValue =
+    //   Platform.OS === "ios"
+    //     ? screenDimensions.height - (globalKeyboardState.keyboardHeight + 50)
+    //     : screenDimensions.height - (globalKeyboardState.keyboardHeight + 130);
   }, [keyboard]);
 
   return (
@@ -76,7 +75,7 @@ Toast.show = params => {
     T.show({
       ...params,
       position: "top",
-      topOffset: toastOffsetValue,
+      // topOffset: toastOffsetValue,
     });
   } else {
     T.show(params);
