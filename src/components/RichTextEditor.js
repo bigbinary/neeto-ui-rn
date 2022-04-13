@@ -106,6 +106,7 @@ export const RichTextEditor = ({
           ref={richTextRef}
           onChange={onChange}
           useContainer={false}
+          androidLayerType="software"
           onFocus={() => {
             setToolbar(true);
             editorProps?.onFocusFn();
