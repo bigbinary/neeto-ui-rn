@@ -11107,8 +11107,8 @@ exports[`Storyshots Input Input Demo 1`] = `
                 flex={1}
                 fontFamily="inter400"
                 fontSize="16px"
-                height={40}
                 keyboardType="default"
+                minHeight={45}
                 placeholder="placeholder"
                 px={2}
                 secureTextEntry={false}
@@ -11258,7 +11258,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -11362,7 +11362,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -11466,7 +11466,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   placeholder="Placeholder"
                   px={2}
                   secureTextEntry={false}
@@ -11574,7 +11574,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   placeholder="Placeholder"
                   px={2}
                   secureTextEntry={false}
@@ -11679,7 +11679,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -11788,7 +11788,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -11892,7 +11892,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -12010,8 +12010,8 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
                   keyboardType="email-address"
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -12116,7 +12116,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={true}
                   style={
@@ -12310,7 +12310,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={true}
                   style={
@@ -12516,7 +12516,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -12647,7 +12647,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -12796,7 +12796,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -12943,7 +12943,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -13047,7 +13047,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -13182,7 +13182,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -13318,6 +13318,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   fontFamily="inter400"
                   fontSize="16px"
                   height={100}
+                  minHeight={45}
                   multiline={true}
                   px={2}
                   secureTextEntry={false}
@@ -13487,7 +13488,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   placeholder="Search"
                   px={2}
                   secureTextEntry={false}
@@ -13578,7 +13579,7 @@ exports[`Storyshots Input Inputs 1`] = `
                   flex={1}
                   fontFamily="inter400"
                   fontSize="16px"
-                  height={40}
+                  minHeight={45}
                   px={2}
                   secureTextEntry={false}
                   style={
@@ -14147,6 +14148,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                         fontSize={0}
                         height="100%"
                         keyboardType="phone-pad"
+                        minHeight={45}
                         onChangeText={[Function]}
                         position="absolute"
                         px={2}
@@ -14653,6 +14655,7 @@ exports[`Storyshots OtpInputs Otp Inputs Demo 1`] = `
                           fontSize={0}
                           height="100%"
                           keyboardType="phone-pad"
+                          minHeight={45}
                           onChangeText={[Function]}
                           position="absolute"
                           px={2}
@@ -14768,6 +14771,175 @@ exports[`Storyshots PopOver Popovers 1`] = `
             ]
           }
         >
+          <View
+            onLayout={[Function]}
+            onMoveShouldSetResponder={[Function]}
+            onMoveShouldSetResponderCapture={[Function]}
+            onResponderEnd={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderReject={[Function]}
+            onResponderRelease={[Function]}
+            onResponderStart={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            onStartShouldSetResponderCapture={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 0,
+                "justifyContent": "center",
+                "left": 0,
+                "opacity": 0,
+                "position": "absolute",
+                "right": 0,
+                "transform": Array [
+                  Object {
+                    "translateY": 0,
+                  },
+                ],
+              }
+            }
+            testID="toastAnimatedContainer"
+          >
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              nativeID="animatedComponent"
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#2f3941",
+                  "borderLeftColor": "#5cb85c",
+                  "borderLeftWidth": 5,
+                  "borderRadius": 6,
+                  "elevation": 2,
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "opacity": 1,
+                  "paddingVertical": 10,
+                  "shadowOffset": Object {
+                    "height": 0,
+                    "width": 0,
+                  },
+                  "shadowOpacity": 0.1,
+                  "shadowRadius": 6,
+                  "width": 340,
+                }
+              }
+              testID="toastTouchableContainer"
+            >
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flex": 1,
+                      "justifyContent": "center",
+                      "paddingHorizontal": 25,
+                    },
+                    Object {
+                      "backgroundColor": "#2f3941",
+                      "paddingHorizontal": 15,
+                    },
+                  ]
+                }
+                testID="toastContentContainer"
+              />
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#2f3941",
+                    "borderBottomRightRadius": 6,
+                    "borderTopRightRadius": 6,
+                    "elevation": 2,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "paddingRight": 10,
+                    "shadowColor": "#2f3941",
+                    "shadowOffset": Object {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.1,
+                    "shadowRadius": 6,
+                  }
+                }
+              >
+                <RNSVGSvgView
+                  align="xMidYMid"
+                  bbHeight={25}
+                  bbWidth={25}
+                  fill="#ffffff"
+                  focusable={false}
+                  height={25}
+                  meetOrSlice={0}
+                  minX={0}
+                  minY={0}
+                  style={
+                    Array [
+                      Object {
+                        "backgroundColor": "transparent",
+                        "borderWidth": 0,
+                      },
+                      Object {
+                        "flex": 0,
+                        "height": 25,
+                        "width": 25,
+                      },
+                    ]
+                  }
+                  vbHeight={24}
+                  vbWidth={24}
+                  width={25}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <RNSVGGroup
+                    fill={4294967295}
+                    propList={
+                      Array [
+                        "fill",
+                      ]
+                    }
+                  >
+                    <RNSVGPath
+                      d="M0 0h24v24H0z"
+                      fill={null}
+                      propList={
+                        Array [
+                          "fill",
+                        ]
+                      }
+                    />
+                    <RNSVGPath
+                      d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"
+                    />
+                  </RNSVGGroup>
+                </RNSVGSvgView>
+              </View>
+            </View>
+          </View>
           <View
             color="background.primary"
             p={2}
@@ -15992,6 +16164,7 @@ exports[`Storyshots Rich Text Editor Rich Text Editor Component 1`] = `
                 }
               >
                 <RNCWebView
+                  androidLayerType="software"
                   autoCapitalize="off"
                   bounces={false}
                   cacheEnabled={true}

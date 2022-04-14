@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import OriginalPopover from "react-native-popover-view";
 import PropTypes from "prop-types";
 import styled from "styled-components/native";
@@ -15,11 +15,14 @@ export const TouchableOpacity = styled.TouchableOpacity`
   ${layout}
 `;
 
-const PopOverItem = ({ item, fontFamily, fontSize }) => {
+const PopOverItem = ({ item, fontFamily, fontSize, hidePopOver }) => {
   const { Icon, label, onPress } = item;
   return (
     <TouchableOpacity
-      onPress={onPress}
+      onPress={() => {
+        hidePopOver();
+        onPress();
+      }}
       flexDirection="row"
       p={2}
       px={3}
@@ -45,6 +48,7 @@ PopOverItem.propTypes = {
     PropTypes.number,
     PropTypes.oneOf(["xs", "s", "m", "l", "xl", "xxl"]),
   ]),
+  hidePopOver: PropTypes.func,
 };
 
 /**
@@ -135,8 +139,13 @@ export const Popover = ({
   fontSize = "l",
   ...rest
 }) => {
+  const popoverRef = useRef();
   return (
-    <OriginalPopover popoverStyle={styles.popoverStyle} {...rest}>
+    <OriginalPopover
+      ref={popoverRef}
+      popoverStyle={styles.popoverStyle}
+      {...rest}
+    >
       {data?.map((item, index) => {
         return (
           <PopOverItem
@@ -144,6 +153,9 @@ export const Popover = ({
             item={item}
             fontFamily={fontFamily}
             fontSize={fontSize}
+            hidePopOver={() => {
+              popoverRef?.current?.setState({ isVisible: false });
+            }}
           />
         );
       })}

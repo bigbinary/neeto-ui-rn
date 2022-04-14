@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import Icon from "react-native-remix-icon";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Button, Popover } from "@components";
+import { Container, Button, Toast, Popover } from "@components";
 
 const PopoverStories = {
   title: "PopOver",
@@ -28,7 +28,11 @@ export const Popovers = () => {
         );
       },
       onPress: () => {
-        alert("Clicked here");
+        Toast.show({
+          type: "success",
+          position: "bottom",
+          text1: "Clicked on `Search Product`",
+        });
       },
     },
     {
@@ -43,12 +47,17 @@ export const Popovers = () => {
         );
       },
       onPress: () => {
-        alert("Clicked here");
+        Toast.show({
+          type: "success",
+          position: "bottom",
+          text1: "Clicked on `Create Product`",
+        });
       },
     },
   ];
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
+      <Toast />
       <Container p={2}>
         <Popover data={data} from={<Button label="With Data" />} />
       </Container>
