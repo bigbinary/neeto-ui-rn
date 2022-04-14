@@ -113,7 +113,7 @@ export const theme = {
   buttons: {
     solid: {
       border: 2,
-      borderColor: "transparent",
+      borderColor: baseTheme.colors.background.base,
       backgroundColor: baseTheme.colors.background.base,
     },
     inverse: {
