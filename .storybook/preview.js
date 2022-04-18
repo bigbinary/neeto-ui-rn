@@ -10,31 +10,15 @@ export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
-      {/* <FlatList
-        data={[null]}
-        contentContainerStyle={{ flexGrow: 1 }}
-        disableScrollViewPanResponder={true}
-        renderItem={(_, index) => {
-          return (
-            <Container key={index} height="100%" p={10}>
-              <Story />
-            </Container>
-          );
-        }}
-      /> */}
-      <NeetoUIRNProvider>
-        <Container height="100%" p={10}>
-          <Story />
-        </Container>
-      </NeetoUIRNProvider>
-      {/* <ScrollView
+      <ScrollView
+      nestedScrollEnabled={true}
         contentContainerStyle={{ flexGrow: 1 }}
         disableScrollViewPanResponder={true}
       >
-        <Container p={10} flexGrow={1}>
+        <Container height="100%" p={10}>
           <Story />
         </Container>
-      </ScrollView> */}
+      </ScrollView>
     </ThemeProvider>
   ),
 ];

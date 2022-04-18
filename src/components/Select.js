@@ -1,17 +1,9 @@
-import React, {
-  useState,
-  useContext,
-  useMemo,
-  useCallback,
-  useRef,
-  useEffect,
-} from "react";
+import React, { useState, useContext, useCallback, useRef } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { ActivityIndicator, FlatList, View } from "react-native";
+import { ActivityIndicator, ScrollView, View } from "react-native";
 import { ThemeContext } from "styled-components/native";
 
-import { RootViewContext } from "@contexts";
 import { Container, Input, Touchable, Typography } from "@components";
 
 /**
@@ -24,21 +16,6 @@ import { Container, Input, Touchable, Typography } from "@components";
  * </div>
  *
  *  ## Usage
- *
- *  ### Wrap your root View usually App.js with NeetoUIRNProvider component.
- *
- * ```js
- * import * as React from 'react';
- * import { NeetoUIRNProvider } from '@bigbinary/neetoui-rn';
- *
- * export default function App() {
- *  return (
- *    <NeetoUIRNProvider>...</NeetoUIRNProvider>
- *  );
- * }
- * ```
- *
- *  ### Import and use Select component.
  *
  * ```js
  * import * as React, { useState } from 'react';
@@ -92,17 +69,10 @@ export const Select = ({
 }) => {
   const [options, setOptions] = useState(data);
   const [showDropdown, setShowDropdown] = useState(false);
-  const { rootViewEvent } = useContext(RootViewContext);
   const containerRef = useRef(null);
   const theme = useContext(ThemeContext);
   const selectedItemIndex = data?.findIndex(item => item?.value === value);
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
-
-  useEffect(() => {
-    rootViewEvent?.on("pressed", () => setShowDropdown(false));
-
-    return () => rootViewEvent?.removeAllListeners();
-  }, [rootViewEvent]);
 
   const handleItemSelection = (item, index) => {
     setShowDropdown(false);
@@ -122,26 +92,18 @@ export const Select = ({
     [data]
   );
 
-  const Search = useMemo(
-    () => (
-      <Container p={1}>
-        <Input
-          placeholder="Search"
-          onChangeText={handleSearchOption}
-          fontSize="s"
-        />
-      </Container>
-    ),
-    [handleSearchOption]
-  );
-
-  const dropdownItem = ({ item, index }) => {
+  const DropdownItem = ({ item, index }) => {
     const isSelectedItem = index === selectedItemIndex;
     return (
-      <Touchable onPress={() => handleItemSelection(item, index)}>
+      <Touchable
+        key={index}
+        bg={isSelectedItem ? "background.base" : "background.white"}
+        onPress={() => {
+          handleItemSelection(item, index);
+        }}
+      >
         <Container
           height={defaultDropdownItemHeight}
-          bg={isSelectedItem ? "background.base" : "background.white"}
           p={2}
           {...itemContainerStyle}
           {...(isSelectedItem && selectedItemContainerStyle)}
@@ -158,6 +120,11 @@ export const Select = ({
         </Container>
       </Touchable>
     );
+  };
+
+  DropdownItem.propTypes = {
+    item: PropTypes.object,
+    index: PropTypes.number,
   };
 
   return (
@@ -224,12 +191,20 @@ export const Select = ({
           elevation={5}
           {...dropdownContainerStyle}
         >
-          <FlatList
-            data={options}
-            renderItem={dropdownItem}
-            keyExtractor={(_, index) => index}
-            ListHeaderComponent={isSearchable && Search}
-          />
+          {isSearchable && (
+            <Container p={1}>
+              <Input
+                placeholder="Search"
+                onChangeText={handleSearchOption}
+                fontSize="s"
+              />
+            </Container>
+          )}
+          <ScrollView nestedScrollEnabled={true}>
+            {options.map((item, index) => {
+              return <DropdownItem key={index} item={item} index={index} />;
+            })}
+          </ScrollView>
         </Container>
       )}
     </Container>

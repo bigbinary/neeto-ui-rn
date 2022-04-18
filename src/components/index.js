@@ -21,4 +21,3 @@ export { TopBar } from "./TopBar";
 export { RadioButton } from "./RadioButton";
 export { CheckBox } from "./CheckBox";
 export { Select } from "./Select";
-export { NeetoUIRNProvider } from "./NeetoUIRNProvider";
