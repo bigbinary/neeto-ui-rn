@@ -47,16 +47,20 @@
   },
   "dependencies": {
     "@styled-system/prop-types": "^5.1.5",
+    "add": "^2.0.6",
+    "react-native-gesture-handler": "^2.4.0",
     "react-native-material-ripple": "^0.9.1",
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
     "react-native-popover-view": "^4.1.0",
+    "react-native-reanimated": "^2.7.0",
     "react-native-remix-icon": "^0.3.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-switch-toggle": "^2.2.1",
     "react-native-toast-message": "^2.1.0",
     "styled-components": "^5.3.3",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "yarn": "^1.22.18"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",

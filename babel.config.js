@@ -8,6 +8,7 @@ module.exports = api => {
         alias: require("./aliases.json"),
       },
     ],
+    ["react-native-reanimated/plugin"],
   ];
   if (babelEnv === "production") {
     plugins.push("transform-remove-console");

@@ -83,6 +83,7 @@ export const Select = ({
   isSearchable,
   labelStyle,
   containerStyle,
+  dropdownContainerStyle,
   itemContainerStyle,
   itemTextStyle,
   selectedItemContainerStyle,
@@ -95,6 +96,7 @@ export const Select = ({
   const containerRef = useRef(null);
   const theme = useContext(ThemeContext);
   const selectedItemIndex = data?.findIndex(item => item?.value === value);
+  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
 
   useEffect(() => {
     rootViewEvent?.on("pressed", () => setShowDropdown(false));
@@ -138,6 +140,7 @@ export const Select = ({
     return (
       <Touchable onPress={() => handleItemSelection(item, index)}>
         <Container
+          height={defaultDropdownItemHeight}
           bg={isSelectedItem ? "background.base" : "background.white"}
           p={2}
           {...itemContainerStyle}
@@ -210,7 +213,7 @@ export const Select = ({
           left={0}
           right={0}
           top="100%"
-          // maxHeight={80}
+          maxHeight={defaultDropdownItemHeight * 6}
           shadowOpacity={0.25}
           shadowRadius={3.84}
           shadow-color="#000"
@@ -219,6 +222,7 @@ export const Select = ({
             height: 2,
           }}
           elevation={5}
+          {...dropdownContainerStyle}
         >
           <FlatList
             data={options}
@@ -274,6 +278,10 @@ Select.propTypes = {
    * To customise Select input container styles.
    */
   containerStyle: PropTypes.object,
+  /**
+   * To customise dropdown container styles.
+   */
+  dropdownContainerStyle: PropTypes.object,
   /**
    * To customise dropdown item container styles.
    */
