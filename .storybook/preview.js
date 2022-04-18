@@ -15,8 +15,8 @@ export const decorators = [
         contentContainerStyle={{ flexGrow: 1 }}
         disableScrollViewPanResponder={true}
       >
-        <Container height="100%" p={10}>
-          <Story />
+        <Container p={10} flexGrow={1}> 
+                 <Story />
         </Container>
       </ScrollView>
     </ThemeProvider>

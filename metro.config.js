@@ -5,25 +5,17 @@
  * @format
  */
 
-const { getDefaultConfig } = require("metro-config");
-
-module.exports = async () => {
-  const {
-    resolver: { sourceExts },
-  } = await getDefaultConfig();
-  return {
-    transformer: {
-      // eslint-disable-next-line require-await
-      getTransformOptions: async () => ({
-        transform: {
-          experimentalImportSupport: false,
-          inlineRequires: true,
-        },
-      }),
-    },
-    resolver: {
-      resolverMainFields: ["sbmodern", "browser", "main"],
-      sourceExts: [...sourceExts, "cjs"],
-    },
-  };
+module.exports = {
+  transformer: {
+    // eslint-disable-next-line require-await
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
+      },
+    }),
+  },
+  resolver: {
+    resolverMainFields: ["sbmodern", "browser", "main"],
+  },
 };
