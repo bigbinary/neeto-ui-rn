@@ -2,5 +2,6 @@
   "@components": "./src/components",
   "@theme": "./src/theme",
   "@config": "./src/config",
-  "@hooks": "./src/hooks"
+  "@hooks": "./src/hooks",
+  "@contexts": "./src/contexts"
 }

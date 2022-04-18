@@ -11,6 +11,7 @@ export const decorators = [
   Story => (
     <ThemeProvider theme={theme}>
       <ScrollView
+        nestedScrollEnabled={true}
         contentContainerStyle={{ flexGrow: 1 }}
         disableScrollViewPanResponder={true}
       >

@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import { getStorybookUI } from "@storybook/react-native";
 
 import "./storybook.requires";

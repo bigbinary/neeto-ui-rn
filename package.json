@@ -34,7 +34,7 @@
     "assets"
   ],
   "lint-staged": {
-    "src/**/*.{js,es6,jsx,ts,tsx}|storybook/stories**/*.js": [
+    "src/**/*.{js,es6,jsx,ts,tsx}|storybook/stories**/*.js|.storybook/preview.js|.storybook/main.js|.storybook/Storybook.js": [
       "./node_modules/prettier/bin-prettier.js --write",
       "prettier --write",
       "eslint --fix"
@@ -48,10 +48,12 @@
   "dependencies": {
     "@react-native-community/hooks": "^2.8.1",
     "@styled-system/prop-types": "^5.1.5",
+    "react-native-gesture-handler": "^2.4.0",
     "react-native-material-ripple": "^0.9.1",
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
     "react-native-popover-view": "^4.1.0",
+    "react-native-reanimated": "^2.7.0",
     "react-native-remix-icon": "^0.3.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-switch-toggle": "^2.2.1",
