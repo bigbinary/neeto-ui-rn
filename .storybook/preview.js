@@ -1,17 +1,17 @@
 import React from "react";
 import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import { ThemeProvider } from "styled-components/native";
-import { FlatList, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 
 import { theme } from "@theme";
-import { NeetoUIRNProvider, Container } from "@components";
+import { Container } from "@components";
 
 export const decorators = [
   withBackgrounds,
   Story => (
     <ThemeProvider theme={theme}>
       <ScrollView
-      nestedScrollEnabled={true}
+        nestedScrollEnabled={true}
         contentContainerStyle={{ flexGrow: 1 }}
         disableScrollViewPanResponder={true}
       >
