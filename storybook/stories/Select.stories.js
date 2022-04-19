@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import { Container, Select } from "@components";
+import { Container } from "@components";
+import { Select } from "../../src/components/Select2";
+// import {  Select } from "@components";
 
 const SelectStories = {
   title: "Select",
@@ -40,13 +42,18 @@ export const Selects = () => {
   const [selectedOption1, setSelectedOption1] = useState(null);
   const [selectedOption2, setSelectedOption2] = useState(data[0]);
   const [selectedOption3, setSelectedOption3] = useState(null);
-  const [selectedOptions4, setSelectedOptions4] = useState([]);
+  const [selectedOptions4, setSelectedOptions4] = useState([
+    {
+      label: "Option 1",
+      value: "option_1",
+    },
+  ]);
 
   return (
     <>
       <Container width="100%" mb={4} zIndex={4}>
         <Select
-          data={data}
+          options={data}
           value={selectedOption1?.value}
           onSelect={setSelectedOption1}
           label="Default Select"
@@ -54,7 +61,7 @@ export const Selects = () => {
       </Container>
       <Container width="100%" mb={4} zIndex={3}>
         <Select
-          data={data}
+          options={data}
           value={selectedOption2?.value}
           onSelect={setSelectedOption2}
           label="Select with loading"
@@ -63,7 +70,7 @@ export const Selects = () => {
       </Container>
       <Container width="100%" mb={4} zIndex={2}>
         <Select
-          data={data}
+          options={data}
           value={selectedOption3?.value}
           onSelect={setSelectedOption3}
           label="Searchable Select"
@@ -72,9 +79,11 @@ export const Selects = () => {
       </Container>
       <Container width="100%" mb={4} zIndex={1}>
         <Select
-          data={data}
+          options={data}
           value={selectedOptions4}
-          onSelect={setSelectedOptions4}
+          onSelect={values => {
+            setSelectedOptions4(values);
+          }}
           label="Multi Select"
           isSearchable
           isMultiSelect
