@@ -11,51 +11,6 @@ import { ThemeContext } from "styled-components/native";
 
 import { Container, Input, Touchable, Typography, Card } from "@components";
 
-/**
- *
- * Select can be used to select an option from a list of options.
- *
- * <div class="screenshots">
- *   <img src="screenshots/select/select1.png" />
- *   <img src="screenshots/select/select2.png" />
- *   <img src="screenshots/select/select3.png" />
- * </div>
- *
- *  ## Usage
- *
- * ```js
- * import * as React, { useState } from 'react';
- * import { Select, Container } from '@bigbinary/neetoui-rn';
- *
- * const OPTIONS = [
- *  {
- *    label: "Option 1",
- *    value: "option_1"
- *  },
- *  {
- *    label: "Option 2",
- *    value: "option_2"
- *  },
- * ]
- *
- * export default function Main() {
- *  const [selectedOption, setSelectedOption] = useState(null)
- *
- *  return (
- *    <Container>
- *      <Select
- *        label="Select"
- *        options={OPTIONS}
- *        value={selectedOption?.value}
- *        onSelect={setSelectedOption}
- *      />
- *    </Container>
- *  );
- * }
- * ```
- *
- */
-
 const MultiSelectItem = ({
   item,
   onUnselect,
@@ -70,7 +25,6 @@ const MultiSelectItem = ({
     flexDirection="row"
     alignItems="center"
     p={1}
-    pl={2}
     m={1}
     {...multiSelectedItemContainerStyle}
   >
@@ -99,31 +53,22 @@ const DropdownItem = ({
   item,
   index,
   onPress,
-  itemContainerStyle,
   defaultDropdownItemHeight,
-  isSelectedItem,
-  selectedItemContainerStyle,
-  selectedItemTextStyle,
+  itemContainerStyle,
   itemTextStyle,
 }) => {
   return (
-    <Touchable
-      key={index}
-      bg={isSelectedItem ? "background.base" : "background.white"}
-      onPress={onPress}
-    >
+    <Touchable key={index} bg="background.white" onPress={onPress}>
       <Container
         height={defaultDropdownItemHeight}
         p={2}
         {...itemContainerStyle}
-        {...(isSelectedItem && selectedItemContainerStyle)}
       >
         <Typography
           fontFamily="inter400"
           fontSize="s"
-          color={isSelectedItem ? "font.white" : "font.grey"}
+          color="font.grey"
           {...itemTextStyle}
-          {...(isSelectedItem && selectedItemTextStyle)}
         >
           {item?.label}
         </Typography>
@@ -135,16 +80,56 @@ const DropdownItem = ({
 DropdownItem.propTypes = {
   item: PropTypes.object,
   index: PropTypes.number,
-  isSelectedItem: PropTypes.bool,
   onPress: PropTypes.func,
   defaultDropdownItemHeight: PropTypes.number,
   itemContainerStyle: PropTypes.object,
-  selectedItemContainerStyle: PropTypes.object,
-  selectedItemTextStyle: PropTypes.object,
   itemTextStyle: PropTypes.object,
 };
 
-export const Select = ({
+/**
+ *
+ * MultiSelect can be used to select multiple options from a list of options.
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/multiSelect/multiSelect.png" />
+ * </div>
+ *
+ *  ## Usage
+ *
+ * ```js
+ * import * as React, { useState } from 'react';
+ * import { MultiSelect, Container } from '@bigbinary/neetoui-rn';
+ *
+ * const OPTIONS = [
+ *  {
+ *    label: "Option 1",
+ *    value: "option_1"
+ *  },
+ *  {
+ *    label: "Option 2",
+ *    value: "option_2"
+ *  },
+ * ]
+ *
+ * export default function Main() {
+ *  const [selectedOptions, setSelectedOptions] = useState([])
+ *
+ *  return (
+ *    <Container>
+ *      <MultiSelect
+ *        label="Select"
+ *        options={OPTIONS}
+ *        value={selectedOptions}
+ *        onSelect={setSelectedOptions}
+ *      />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ *
+ */
+
+export const MultiSelect = ({
   options,
   label,
   value,
@@ -152,26 +137,29 @@ export const Select = ({
   onSelect,
   isLoading,
   isSearchable,
-  isMultiSelect,
   labelStyle,
   containerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
   itemTextStyle,
-  selectedItemContainerStyle,
-  selectedItemTextStyle,
   multiSelectedItemContainerStyle,
   multiSelectedItemTextStyle,
   ...rest
 }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
   const theme = useContext(ThemeContext);
-  const selectedItemIndex = options?.findIndex(item => item?.value === value);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const multipleOptionsSelected = value?.length > 0;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const formatStr = str => str?.toLowerCase()?.trim();
-  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleUnselection = item => {
+    const newValue = value.filter(
+      selectedItem => selectedItem.value !== item.value
+    );
+    onSelect(newValue);
+  };
 
   return (
     <Container elevation={0}>
@@ -195,33 +183,27 @@ export const Select = ({
           <Container
             borderWidth={1}
             borderColor="border.grey400"
-            p={2}
+            p={multipleOptionsSelected ? 1 : 2}
+            pr={2}
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
             {...containerStyle}
             {...rest}
           >
-            {(!isMultiSelect || !multipleOptionsSelected) && (
+            {!multipleOptionsSelected && (
               <Typography fontFamily="inter400" fontSize="s" color="font.grey">
-                {!isMultiSelect &&
-                  (options?.[selectedItemIndex]?.label || placeholder)}
-                {isMultiSelect && !multipleOptionsSelected && placeholder}
+                {!multipleOptionsSelected && placeholder}
               </Typography>
             )}
-            {isMultiSelect && (
+            {multipleOptionsSelected && (
               <Container flexWrap="wrap" flexDirection="row" maxWidth="85%">
                 {value?.map((item, index) => (
                   <MultiSelectItem
                     key={index}
                     item={item}
                     index={index}
-                    onUnselect={() => {
-                      const newValue = value.filter(selectedItem => {
-                        return selectedItem.value !== item.value;
-                      });
-                      onSelect(newValue);
-                    }}
+                    onUnselect={() => handleUnselection(item)}
                     multiSelectedItemContainerStyle={
                       multiSelectedItemContainerStyle
                     }
@@ -236,13 +218,11 @@ export const Select = ({
                 color={theme.colors.background.base}
               />
             ) : (
-              <Container pb={isMultiSelect && multipleOptionsSelected ? 2 : 0}>
-                <Icon
-                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                  size="20"
-                  color="grey"
-                />
-              </Container>
+              <Icon
+                name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                size="20"
+                color="grey"
+              />
             )}
           </Container>
         </View>
@@ -273,54 +253,26 @@ export const Select = ({
           <ScrollView nestedScrollEnabled={true}>
             {options
               .filter(item => {
-                // Hiding items in flat list if already selected.
-
-                if (isMultiSelect) {
-                  const isItemAlreadySelected = Boolean(
-                    value.find(selectedItem => {
-                      return selectedItem.value === item.value;
-                    })
-                  );
-                  return !isItemAlreadySelected;
-                } else {
-                  return true;
-                  // return value === item.value;
-                }
+                const isItemAlreadySelected = Boolean(
+                  value.find(selectedItem => selectedItem.value === item.value)
+                );
+                return !isItemAlreadySelected;
               })
               .filter(item => {
-                // Hiding items in flat list if search does not match
                 if (searchQuery.length === 0) return true;
                 return formatStr(item.label).includes(formatStr(searchQuery));
               })
-              .map((item, index) => {
-                let isSelectedItem = false;
-
-                if (!isMultiSelect && item.value === value) {
-                  isSelectedItem = true;
-                }
-
-                return (
-                  <DropdownItem
-                    key={index}
-                    item={item}
-                    index={index}
-                    onPress={() => {
-                      if (isMultiSelect) {
-                        onSelect([...value, item]);
-                      } else {
-                        onSelect(item);
-                        setShowDropdown(!showDropdown);
-                      }
-                    }}
-                    itemContainerStyle={itemContainerStyle}
-                    defaultDropdownItemHeight={defaultDropdownItemHeight}
-                    isSelectedItem={isSelectedItem}
-                    selectedItemContainerStyle={selectedItemContainerStyle}
-                    selectedItemTextStyle={selectedItemTextStyle}
-                    itemTextStyle={itemTextStyle}
-                  />
-                );
-              })}
+              .map((item, index) => (
+                <DropdownItem
+                  key={index}
+                  item={item}
+                  index={index}
+                  onPress={() => onSelect([...value, item])}
+                  itemContainerStyle={itemContainerStyle}
+                  defaultDropdownItemHeight={defaultDropdownItemHeight}
+                  itemTextStyle={itemTextStyle}
+                />
+              ))}
           </ScrollView>
         </Card>
       )}
@@ -328,7 +280,7 @@ export const Select = ({
   );
 };
 
-Select.propTypes = {
+MultiSelect.propTypes = {
   /**
    * The text to use for the floating label.
    */
@@ -363,10 +315,6 @@ Select.propTypes = {
    */
   isSearchable: PropTypes.bool,
   /**
-   * Enable multiselection option.
-   */
-  isMultiSelect: PropTypes.bool,
-  /**
    * To customise floating label styles.
    */
   labelStyle: PropTypes.object,
@@ -387,14 +335,6 @@ Select.propTypes = {
    */
   itemTextStyle: PropTypes.object,
   /**
-   * To customise dropdown item container styles for selected item.
-   */
-  selectedItemContainerStyle: PropTypes.object,
-  /**
-   * To customise dropdown item text styles for selected item.
-   */
-  selectedItemTextStyle: PropTypes.object,
-  /**
    * To customise item container styles for multi selected items.
    */
   multiSelectedItemContainerStyle: PropTypes.object,
@@ -404,7 +344,7 @@ Select.propTypes = {
   multiSelectedItemTextStyle: PropTypes.object,
 };
 
-Select.defaultProps = {
+MultiSelect.defaultProps = {
   label: null,
   placeholder: "Select Option",
   value: null,

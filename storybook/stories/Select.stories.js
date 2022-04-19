@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-import { Container } from "@components";
-import { Select } from "../../src/components/Select2";
-// import {  Select } from "@components";
+import { Container, Select } from "@components";
 
 const SelectStories = {
   title: "Select",
@@ -42,16 +40,10 @@ export const Selects = () => {
   const [selectedOption1, setSelectedOption1] = useState(null);
   const [selectedOption2, setSelectedOption2] = useState(data[0]);
   const [selectedOption3, setSelectedOption3] = useState(null);
-  const [selectedOptions4, setSelectedOptions4] = useState([
-    {
-      label: "Option 1",
-      value: "option_1",
-    },
-  ]);
 
   return (
     <>
-      <Container width="100%" mb={4} zIndex={4}>
+      <Container width="100%" mb={4} zIndex={3}>
         <Select
           options={data}
           value={selectedOption1?.value}
@@ -59,7 +51,7 @@ export const Selects = () => {
           label="Default Select"
         />
       </Container>
-      <Container width="100%" mb={4} zIndex={3}>
+      <Container width="100%" mb={4} zIndex={2}>
         <Select
           options={data}
           value={selectedOption2?.value}
@@ -68,25 +60,13 @@ export const Selects = () => {
           isLoading
         />
       </Container>
-      <Container width="100%" mb={4} zIndex={2}>
+      <Container width="100%" mb={4} zIndex={1}>
         <Select
           options={data}
           value={selectedOption3?.value}
           onSelect={setSelectedOption3}
           label="Searchable Select"
           isSearchable
-        />
-      </Container>
-      <Container width="100%" mb={4} zIndex={1}>
-        <Select
-          options={data}
-          value={selectedOptions4}
-          onSelect={values => {
-            setSelectedOptions4(values);
-          }}
-          label="Multi Select"
-          isSearchable
-          isMultiSelect
         />
       </Container>
     </>
