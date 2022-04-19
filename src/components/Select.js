@@ -90,11 +90,12 @@ export const Select = ({
       const updatedOptions = [...options];
       updatedOptions[index].isSelected = true;
       setOptions(updatedOptions);
+      onSelect([...value, item], index);
     }
     if (!isMultiSelect) {
       setShowDropdown(false);
+      onSelect(item, index);
     }
-    onSelect(isMultiSelect ? [...value, item] : item, index);
   };
 
   const handleItemUnselection = index => {
