@@ -5,21 +5,24 @@ import { ScrollView } from "react-native";
 
 import { theme } from "@theme";
 import { Container } from "@components";
+import { NeetoUIRNProvider } from "@components";
 
 export const decorators = [
   withBackgrounds,
   Story => (
-    <ThemeProvider theme={theme}>
-      <ScrollView
-        nestedScrollEnabled={true}
-        contentContainerStyle={{ flexGrow: 1 }}
-        disableScrollViewPanResponder={true}
-      >
-        <Container p={10} flexGrow={1}>
-          <Story />
-        </Container>
-      </ScrollView>
-    </ThemeProvider>
+    <NeetoUIRNProvider>
+      <ThemeProvider theme={theme}>
+        <ScrollView
+          nestedScrollEnabled={true}
+          contentContainerStyle={{ flexGrow: 1 }}
+          disableScrollViewPanResponder={true}
+        >
+          <Container p={10} flexGrow={1}>
+            <Story />
+          </Container>
+        </ScrollView>
+      </ThemeProvider>
+    </NeetoUIRNProvider>
   ),
 ];
 

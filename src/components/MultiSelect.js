@@ -6,13 +6,14 @@ import {
   ScrollView,
   View,
   TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Input, Touchable, Typography, Card } from "@components";
 
 const MultiSelectItem = ({
-  item,
+  label,
   onUnselect,
   multiSelectedItemContainerStyle,
   multiSelectedItemTextStyle,
@@ -24,6 +25,7 @@ const MultiSelectItem = ({
     borderRadius={2}
     flexDirection="row"
     alignItems="center"
+    justifyContent="space-between"
     p={1}
     m={1}
     {...multiSelectedItemContainerStyle}
@@ -32,9 +34,10 @@ const MultiSelectItem = ({
       fontFamily="inter400"
       fontSize="s"
       mr={2}
+      maxWidth="90%"
       {...multiSelectedItemTextStyle}
     >
-      {item?.label}
+      {label}
     </Typography>
     <Touchable onPress={onUnselect}>
       <Icon name="ri-close-line" size="20" color="grey" />
@@ -43,22 +46,21 @@ const MultiSelectItem = ({
 );
 
 MultiSelectItem.propTypes = {
-  item: PropTypes.object,
+  label: PropTypes.string,
   onUnselect: PropTypes.func,
   multiSelectedItemContainerStyle: PropTypes.object,
   multiSelectedItemTextStyle: PropTypes.object,
 };
 
 const DropdownItem = ({
-  item,
-  index,
+  label,
   onPress,
   defaultDropdownItemHeight,
   itemContainerStyle,
   itemTextStyle,
 }) => {
   return (
-    <Touchable key={index} bg="background.white" onPress={onPress}>
+    <Touchable bg="background.white" onPress={onPress}>
       <Container
         height={defaultDropdownItemHeight}
         p={2}
@@ -70,7 +72,7 @@ const DropdownItem = ({
           color="font.grey"
           {...itemTextStyle}
         >
-          {item?.label}
+          {label}
         </Typography>
       </Container>
     </Touchable>
@@ -78,8 +80,7 @@ const DropdownItem = ({
 };
 
 DropdownItem.propTypes = {
-  item: PropTypes.object,
-  index: PropTypes.number,
+  label: PropTypes.string,
   onPress: PropTypes.func,
   defaultDropdownItemHeight: PropTypes.number,
   itemContainerStyle: PropTypes.object,
@@ -134,6 +135,8 @@ export const MultiSelect = ({
   label,
   value,
   placeholder,
+  labelExtractor,
+  valueExtractor,
   onSelect,
   isLoading,
   isSearchable,
@@ -175,6 +178,7 @@ export const MultiSelect = ({
       <TouchableWithoutFeedback
         disabled={isLoading}
         onPress={() => {
+          Keyboard.dismiss();
           setShowDropdown(!showDropdown);
           setSearchQuery("");
         }}
@@ -188,6 +192,7 @@ export const MultiSelect = ({
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
+            maxHeight={120}
             {...containerStyle}
             {...rest}
           >
@@ -197,20 +202,29 @@ export const MultiSelect = ({
               </Typography>
             )}
             {multipleOptionsSelected && (
-              <Container flexWrap="wrap" flexDirection="row" maxWidth="85%">
-                {value?.map((item, index) => (
-                  <MultiSelectItem
-                    key={index}
-                    item={item}
-                    index={index}
-                    onUnselect={() => handleUnselection(item)}
-                    multiSelectedItemContainerStyle={
-                      multiSelectedItemContainerStyle
-                    }
-                    multiSelectedItemTextStyle={multiSelectedItemTextStyle}
-                  />
-                ))}
-              </Container>
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <Container
+                  flexWrap="wrap"
+                  flexDirection="row"
+                  maxWidth="85%"
+                  onStartShouldSetResponder={() => true}
+                >
+                  {value?.map((item, index) => {
+                    const optionLabel = labelExtractor(item, index);
+                    return (
+                      <MultiSelectItem
+                        key={index}
+                        label={optionLabel}
+                        onUnselect={() => handleUnselection(item)}
+                        multiSelectedItemContainerStyle={
+                          multiSelectedItemContainerStyle
+                        }
+                        multiSelectedItemTextStyle={multiSelectedItemTextStyle}
+                      />
+                    );
+                  })}
+                </Container>
+              </ScrollView>
             )}
             {isLoading ? (
               <ActivityIndicator
@@ -252,27 +266,31 @@ export const MultiSelect = ({
           )}
           <ScrollView nestedScrollEnabled={true}>
             {options
-              .filter(item => {
+              .filter((item, index) => {
+                const optionValue = valueExtractor(item, index);
                 const isItemAlreadySelected = Boolean(
-                  value.find(selectedItem => selectedItem.value === item.value)
+                  value.find(selectedItem => selectedItem.value === optionValue)
                 );
                 return !isItemAlreadySelected;
               })
-              .filter(item => {
+              .filter((item, index) => {
+                const optionLabel = labelExtractor(item, index);
                 if (searchQuery.length === 0) return true;
-                return formatStr(item.label).includes(formatStr(searchQuery));
+                return formatStr(optionLabel).includes(formatStr(searchQuery));
               })
-              .map((item, index) => (
-                <DropdownItem
-                  key={index}
-                  item={item}
-                  index={index}
-                  onPress={() => onSelect([...value, item])}
-                  itemContainerStyle={itemContainerStyle}
-                  defaultDropdownItemHeight={defaultDropdownItemHeight}
-                  itemTextStyle={itemTextStyle}
-                />
-              ))}
+              .map((item, index) => {
+                const optionLabel = labelExtractor(item, index);
+                return (
+                  <DropdownItem
+                    key={index}
+                    label={optionLabel}
+                    onPress={() => onSelect([...value, item])}
+                    itemContainerStyle={itemContainerStyle}
+                    defaultDropdownItemHeight={defaultDropdownItemHeight}
+                    itemTextStyle={itemTextStyle}
+                  />
+                );
+              })}
           </ScrollView>
         </Card>
       )}
@@ -298,6 +316,14 @@ MultiSelect.propTypes = {
    * The text to be displayed if no option is selected.
    */
   placeholder: PropTypes.string,
+  /**
+   * Use custom key as label.
+   */
+  labelExtractor: PropTypes.func,
+  /**
+   * Use custom key as value.
+   */
+  valueExtractor: PropTypes.func,
   /**
    * The selected value to show for the Select input.
    */
@@ -347,6 +373,8 @@ MultiSelect.propTypes = {
 MultiSelect.defaultProps = {
   label: null,
   placeholder: "Select Option",
+  labelExtractor: option => option?.label,
+  valueExtractor: option => option?.value,
   value: null,
   onSelect: () => {},
   isLoading: false,

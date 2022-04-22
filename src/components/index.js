@@ -25,3 +25,4 @@ export { MultiSelect } from "./MultiSelect";
 export { Divider } from "./Divider";
 export { FlatList } from "./FlatList";
 export { ScrollView } from "./ScrollView";
+export { NeetoUIRNProvider } from "./NeetoRNUIProvider";
