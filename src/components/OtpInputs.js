@@ -1,5 +1,5 @@
-import React from "react";
-import { Keyboard } from "react-native";
+import React, { useEffect } from "react";
+import { InteractionManager, Keyboard } from "react-native";
 import PropTypes from "prop-types";
 
 import { theme } from "../theme";
@@ -66,6 +66,14 @@ export const OtpInputs = ({
   textStyles,
 }) => {
   const inputRef = React.useRef();
+  useEffect(() => {
+    // Must run after animations for keyboard to automatically open
+    InteractionManager.runAfterInteractions(() => {
+      if (inputRef?.current) {
+        inputRef.current.focus();
+      }
+    });
+  }, [inputRef]);
 
   return (
     <Container>
@@ -106,6 +114,7 @@ export const OtpInputs = ({
           <Input
             keyboardType="phone-pad"
             selectionColor="transparent"
+            autoFocus={true}
             onChangeText={value => {
               if (!isNaN(value)) {
                 if (value.length <= numberOfInputs) {
