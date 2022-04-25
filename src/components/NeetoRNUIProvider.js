@@ -9,9 +9,7 @@ import { ProviderContext } from "@contexts";
 export const NeetoUIRNProvider = ({ children }) => {
   const providerEvent = new EventEmitter();
   const emitEvent = eventName => providerEvent.emit(eventName);
-  const gesture = Gesture.Tap().onFinalize(() => {
-    runOnJS(emitEvent)("pressed");
-  });
+  const gesture = Gesture.Tap().onFinalize(() => runOnJS(emitEvent)("pressed"));
 
   return (
     <ProviderContext.Provider value={{ providerEvent }}>

@@ -1,14 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
 import {
   ActivityIndicator,
   ScrollView,
   TouchableWithoutFeedback,
-  View,
   Keyboard,
 } from "react-native";
 import { ThemeContext } from "styled-components/native";
+import { GestureDetector, Gesture } from "react-native-gesture-handler";
+import { runOnJS } from "react-native-reanimated";
 
 import { ProviderContext } from "@contexts";
 import { Container, Input, Touchable, Typography } from "@components";
@@ -126,6 +127,13 @@ export const Select = ({
   const selectedOptionLabel = labelExtractor(value || {});
   const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
+  const isPressedInside = useRef(false);
+
+  const setPressedInside = () => {
+    isPressedInside.current = true;
+  };
+
+  const gesture = Gesture.Tap().onBegin(runOnJS(setPressedInside));
 
   const handleItemSelection = (item, index) => {
     setShowDropdown(false);
@@ -133,7 +141,12 @@ export const Select = ({
   };
 
   useEffect(() => {
-    providerEvent?.on("pressed", () => setShowDropdown(false));
+    providerEvent?.on("pressed", () => {
+      if (!isPressedInside.current) {
+        setShowDropdown(false);
+      }
+      isPressedInside.current = false;
+    });
 
     return () => providerEvent?.removeAllListeners();
   }, [providerEvent]);
@@ -185,7 +198,7 @@ export const Select = ({
         </Container>
       </Touchable>
       {showDropdown && (
-        <View onStartShouldSetResponder={() => true}>
+        <GestureDetector gesture={gesture}>
           <Container
             bg="background.white"
             borderWidth={1}
@@ -203,6 +216,7 @@ export const Select = ({
               height: 2,
             }}
             elevation={5}
+            zIndex={100}
             {...dropdownContainerStyle}
           >
             {isSearchable && (
@@ -242,7 +256,7 @@ export const Select = ({
                 })}
             </ScrollView>
           </Container>
-        </View>
+        </GestureDetector>
       )}
     </>
   );
