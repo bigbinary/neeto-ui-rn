@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
 import {
@@ -9,7 +9,10 @@ import {
   Keyboard,
 } from "react-native";
 import { ThemeContext } from "styled-components/native";
+import { GestureDetector, Gesture } from "react-native-gesture-handler";
+import { runOnJS } from "react-native-reanimated";
 
+import { ProviderContext } from "@contexts";
 import { Container, Input, Touchable, Typography, Card } from "@components";
 
 const MultiSelectItem = ({
@@ -152,10 +155,18 @@ export const MultiSelect = ({
   const theme = useContext(ThemeContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { providerEvent } = useContext(ProviderContext);
 
+  const isPressedInside = useRef(false);
   const multipleOptionsSelected = value?.length > 0;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const formatStr = str => str?.toLowerCase()?.trim();
+
+  const setPressedInside = () => {
+    isPressedInside.current = true;
+  };
+
+  const gesture = Gesture.Tap().onBegin(runOnJS(setPressedInside));
 
   const handleUnselection = item => {
     const newValue = value.filter(
@@ -164,8 +175,19 @@ export const MultiSelect = ({
     onSelect(newValue);
   };
 
+  useEffect(() => {
+    providerEvent?.on("pressed", () => {
+      if (!isPressedInside.current) {
+        setShowDropdown(false);
+      }
+      isPressedInside.current = false;
+    });
+
+    return () => providerEvent?.removeAllListeners();
+  }, [providerEvent]);
+
   return (
-    <Container elevation={0}>
+    <>
       <Typography
         fontFamily="inter400"
         mb={1}
@@ -243,58 +265,64 @@ export const MultiSelect = ({
       </TouchableWithoutFeedback>
 
       {showDropdown && (
-        <Card
-          bg="background.white"
-          borderWidth={1}
-          borderColor="border.grey400"
-          position="absolute"
-          left={0}
-          right={0}
-          top="100%"
-          maxHeight={defaultDropdownItemHeight * 6}
-          elevation={5}
-          {...dropdownContainerStyle}
-        >
-          {isSearchable && (
-            <Container p={1}>
-              <Input
-                placeholder="Search"
-                onChangeText={setSearchQuery}
-                fontSize="s"
-              />
-            </Container>
-          )}
-          <ScrollView nestedScrollEnabled={true}>
-            {options
-              .filter((item, index) => {
-                const optionValue = valueExtractor(item, index);
-                const isItemAlreadySelected = Boolean(
-                  value.find(selectedItem => selectedItem.value === optionValue)
-                );
-                return !isItemAlreadySelected;
-              })
-              .filter((item, index) => {
-                const optionLabel = labelExtractor(item, index);
-                if (searchQuery.length === 0) return true;
-                return formatStr(optionLabel).includes(formatStr(searchQuery));
-              })
-              .map((item, index) => {
-                const optionLabel = labelExtractor(item, index);
-                return (
-                  <DropdownItem
-                    key={index}
-                    label={optionLabel}
-                    onPress={() => onSelect([...value, item])}
-                    itemContainerStyle={itemContainerStyle}
-                    defaultDropdownItemHeight={defaultDropdownItemHeight}
-                    itemTextStyle={itemTextStyle}
-                  />
-                );
-              })}
-          </ScrollView>
-        </Card>
+        <GestureDetector gesture={gesture}>
+          <Card
+            bg="background.white"
+            borderWidth={1}
+            borderColor="border.grey400"
+            position="absolute"
+            left={0}
+            right={0}
+            top="100%"
+            maxHeight={defaultDropdownItemHeight * 6}
+            elevation={5}
+            {...dropdownContainerStyle}
+          >
+            {isSearchable && (
+              <Container p={1}>
+                <Input
+                  placeholder="Search"
+                  onChangeText={setSearchQuery}
+                  fontSize="s"
+                />
+              </Container>
+            )}
+            <ScrollView nestedScrollEnabled={true}>
+              {options
+                .filter((item, index) => {
+                  const optionValue = valueExtractor(item, index);
+                  const isItemAlreadySelected = Boolean(
+                    value.find(
+                      selectedItem => selectedItem.value === optionValue
+                    )
+                  );
+                  return !isItemAlreadySelected;
+                })
+                .filter((item, index) => {
+                  const optionLabel = labelExtractor(item, index);
+                  if (searchQuery.length === 0) return true;
+                  return formatStr(optionLabel).includes(
+                    formatStr(searchQuery)
+                  );
+                })
+                .map((item, index) => {
+                  const optionLabel = labelExtractor(item, index);
+                  return (
+                    <DropdownItem
+                      key={index}
+                      label={optionLabel}
+                      onPress={() => onSelect([...value, item])}
+                      itemContainerStyle={itemContainerStyle}
+                      defaultDropdownItemHeight={defaultDropdownItemHeight}
+                      itemTextStyle={itemTextStyle}
+                    />
+                  );
+                })}
+            </ScrollView>
+          </Card>
+        </GestureDetector>
       )}
-    </Container>
+    </>
   );
 };
 
