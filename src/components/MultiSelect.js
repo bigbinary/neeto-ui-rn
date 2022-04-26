@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {
   ActivityIndicator,
   ScrollView,
-  View,
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
@@ -42,9 +41,9 @@ const MultiSelectItem = ({
     >
       {label}
     </Typography>
-    <Touchable onPress={onUnselect}>
+    <TouchableWithoutFeedback onPress={onUnselect}>
       <Icon name="ri-close-line" size="20" color="grey" />
-    </Touchable>
+    </TouchableWithoutFeedback>
   </Container>
 );
 
@@ -166,7 +165,10 @@ export const MultiSelect = ({
     isPressedInside.current = true;
   };
 
-  const gesture = Gesture.Tap().onBegin(runOnJS(setPressedInside));
+  const gestures = [
+    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
+    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
+  ];
 
   const handleUnselection = item => {
     const newValue = value.filter(
@@ -197,15 +199,15 @@ export const MultiSelect = ({
       >
         {label}
       </Typography>
-      <TouchableWithoutFeedback
-        disabled={isLoading}
-        onPress={() => {
-          Keyboard.dismiss();
-          setShowDropdown(!showDropdown);
-          setSearchQuery("");
-        }}
-      >
-        <View>
+      <GestureDetector gesture={gestures[0]}>
+        <TouchableWithoutFeedback
+          disabled={isLoading}
+          onPress={() => {
+            Keyboard.dismiss();
+            setShowDropdown(!showDropdown);
+            setSearchQuery("");
+          }}
+        >
           <Container
             borderWidth={1}
             borderColor="border.grey400"
@@ -225,12 +227,7 @@ export const MultiSelect = ({
             )}
             {multipleOptionsSelected && (
               <ScrollView showsVerticalScrollIndicator={false}>
-                <Container
-                  flexWrap="wrap"
-                  flexDirection="row"
-                  maxWidth="85%"
-                  onStartShouldSetResponder={() => true}
-                >
+                <Container flexWrap="wrap" flexDirection="row" maxWidth="85%">
                   {value?.map((item, index) => {
                     const optionLabel = labelExtractor(item, index);
                     return (
@@ -261,11 +258,11 @@ export const MultiSelect = ({
               />
             )}
           </Container>
-        </View>
-      </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>
+      </GestureDetector>
 
       {showDropdown && (
-        <GestureDetector gesture={gesture}>
+        <GestureDetector gesture={gestures[1]}>
           <Card
             bg="background.white"
             borderWidth={1}
