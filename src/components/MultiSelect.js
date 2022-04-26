@@ -6,13 +6,21 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
   Keyboard,
+  View,
+  useWindowDimensions,
 } from "react-native";
 import { ThemeContext } from "styled-components/native";
 import { GestureDetector, Gesture } from "react-native-gesture-handler";
 import { runOnJS } from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ProviderContext } from "@contexts";
 import { Container, Input, Touchable, Typography, Card } from "@components";
+
+const DIRECTIONS = {
+  TOP: "top",
+  BOTTOM: "bottom",
+};
 
 const MultiSelectItem = ({
   label,
@@ -97,7 +105,22 @@ DropdownItem.propTypes = {
  *   <img src="screenshots/multiSelect/multiSelect.png" />
  * </div>
  *
- *  ## Usage
+ * ## Usage
+ *
+ * ### Wrap your root View usually App.js with NeetoUIRNProvider component.
+ *
+ * ```js
+ * import * as React from 'react';
+ * import { NeetoUIRNProvider } from '@bigbinary/neetoui-rn';
+ *
+ * export default function App() {
+ *  return (
+ *    <NeetoUIRNProvider>...</NeetoUIRNProvider>
+ *  );
+ * }
+ * ```
+ *
+ * ### Import and use MultiSelect component.
  *
  * ```js
  * import * as React, { useState } from 'react';
@@ -118,18 +141,15 @@ DropdownItem.propTypes = {
  *  const [selectedOptions, setSelectedOptions] = useState([])
  *
  *  return (
- *    <Container>
- *      <MultiSelect
- *        label="Select"
- *        options={OPTIONS}
- *        value={selectedOptions}
- *        onSelect={setSelectedOptions}
- *      />
- *    </Container>
+ *    <MultiSelect
+ *      label="Select"
+ *      options={OPTIONS}
+ *      value={selectedOptions}
+ *      onSelect={setSelectedOptions}
+ *    />
  *  );
  * }
  * ```
- *
  */
 
 export const MultiSelect = ({
@@ -154,21 +174,41 @@ export const MultiSelect = ({
   const theme = useContext(ThemeContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { height } = useWindowDimensions();
+  const { bottom } = useSafeAreaInsets();
   const { providerEvent } = useContext(ProviderContext);
 
+  const containerRef = useRef(null);
+  const dropdownDirection = useRef(DIRECTIONS.TOP);
   const isPressedInside = useRef(false);
+
+  const showDropdownAtTop = dropdownDirection.current === DIRECTIONS.TOP;
   const multipleOptionsSelected = value?.length > 0;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
+  const dropdownHeight =
+    dropdownContainerStyle?.height ||
+    dropdownContainerStyle?.maxHeight ||
+    defaultDropdownItemHeight * 6;
   const formatStr = str => str?.toLowerCase()?.trim();
 
   const setPressedInside = () => {
     isPressedInside.current = true;
   };
 
-  const gestures = [
-    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
-    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
-  ];
+  const handleOpenDropdown = () => {
+    Keyboard.dismiss();
+    setSearchQuery("");
+    containerRef?.current?.measureInWindow((x, y, w, h) => {
+      const viewPortBottomEdge = height - bottom;
+      const dropdownBottomEdge = y + h;
+      if (viewPortBottomEdge - dropdownBottomEdge < dropdownHeight + 10) {
+        dropdownDirection.current = DIRECTIONS.TOP;
+      } else {
+        dropdownDirection.current = DIRECTIONS.BOTTOM;
+      }
+      setShowDropdown(!showDropdown);
+    });
+  };
 
   const handleUnselection = item => {
     const newValue = value.filter(
@@ -176,6 +216,11 @@ export const MultiSelect = ({
     );
     onSelect(newValue);
   };
+
+  const gestures = [
+    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
+    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
+  ];
 
   useEffect(() => {
     providerEvent?.on("pressed", () => {
@@ -189,7 +234,7 @@ export const MultiSelect = ({
   }, [providerEvent]);
 
   return (
-    <>
+    <Container zIndex={showDropdown ? 1 : 0}>
       <Typography
         fontFamily="inter400"
         mb={1}
@@ -199,127 +244,140 @@ export const MultiSelect = ({
       >
         {label}
       </Typography>
-      <GestureDetector gesture={gestures[0]}>
-        <TouchableWithoutFeedback
-          disabled={isLoading}
-          onPress={() => {
-            Keyboard.dismiss();
-            setShowDropdown(!showDropdown);
-            setSearchQuery("");
-          }}
-        >
-          <Container
-            borderWidth={1}
-            borderColor="border.grey400"
-            p={multipleOptionsSelected ? 1 : 2}
-            pr={2}
-            flexDirection="row"
-            justifyContent="space-between"
-            alignItems="center"
-            maxHeight={120}
-            {...containerStyle}
-            {...rest}
+      <Container>
+        <GestureDetector gesture={gestures[0]}>
+          <TouchableWithoutFeedback
+            disabled={isLoading}
+            onPress={handleOpenDropdown}
           >
-            {!multipleOptionsSelected && (
-              <Typography fontFamily="inter400" fontSize="s" color="font.grey">
-                {!multipleOptionsSelected && placeholder}
-              </Typography>
-            )}
-            {multipleOptionsSelected && (
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <Container flexWrap="wrap" flexDirection="row" maxWidth="85%">
-                  {value?.map((item, index) => {
+            <View ref={containerRef}>
+              <Container
+                borderWidth={1}
+                borderColor="border.grey400"
+                flexDirection="row"
+                justifyContent="space-between"
+                alignItems="center"
+                p={multipleOptionsSelected ? 1 : 2}
+                pr={2}
+                maxHeight={120}
+                {...containerStyle}
+                {...rest}
+              >
+                {!multipleOptionsSelected && (
+                  <Typography
+                    fontFamily="inter400"
+                    fontSize="s"
+                    color="font.grey"
+                  >
+                    {!multipleOptionsSelected && placeholder}
+                  </Typography>
+                )}
+                {multipleOptionsSelected && (
+                  <ScrollView showsVerticalScrollIndicator={false}>
+                    <Container
+                      flexWrap="wrap"
+                      flexDirection="row"
+                      maxWidth="85%"
+                      onStartShouldSetResponder={() => true}
+                    >
+                      {value?.map((item, index) => {
+                        const optionLabel = labelExtractor(item, index);
+                        return (
+                          <MultiSelectItem
+                            key={index}
+                            label={optionLabel}
+                            onUnselect={() => handleUnselection(item)}
+                            multiSelectedItemContainerStyle={
+                              multiSelectedItemContainerStyle
+                            }
+                            multiSelectedItemTextStyle={
+                              multiSelectedItemTextStyle
+                            }
+                          />
+                        );
+                      })}
+                    </Container>
+                  </ScrollView>
+                )}
+                {isLoading ? (
+                  <ActivityIndicator
+                    size="small"
+                    color={theme.colors.background.base}
+                  />
+                ) : (
+                  <Icon
+                    name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                    size="20"
+                    color="grey"
+                  />
+                )}
+              </Container>
+            </View>
+          </TouchableWithoutFeedback>
+        </GestureDetector>
+        {showDropdown && (
+          <GestureDetector gesture={gestures[1]}>
+            <Card
+              bg="background.white"
+              borderWidth={1}
+              borderColor="border.grey400"
+              position="absolute"
+              left={0}
+              right={0}
+              bottom={showDropdownAtTop ? "100%" : null}
+              top={!showDropdownAtTop ? "100%" : null}
+              maxHeight={dropdownHeight}
+              elevation={5}
+              mt={-(containerStyle?.m || containerStyle?.mb) || 0}
+              mb={-(containerStyle?.m || containerStyle?.mt) || 0}
+              {...dropdownContainerStyle}
+            >
+              {isSearchable && (
+                <Container p={1}>
+                  <Input
+                    placeholder="Search"
+                    onChangeText={setSearchQuery}
+                    fontSize="s"
+                  />
+                </Container>
+              )}
+              <ScrollView nestedScrollEnabled={true}>
+                {options
+                  .filter((item, index) => {
+                    const optionValue = valueExtractor(item, index);
+                    const isItemAlreadySelected = Boolean(
+                      value.find(
+                        selectedItem => selectedItem.value === optionValue
+                      )
+                    );
+                    return !isItemAlreadySelected;
+                  })
+                  .filter((item, index) => {
+                    const optionLabel = labelExtractor(item, index);
+                    if (searchQuery.length === 0) return true;
+                    return formatStr(optionLabel).includes(
+                      formatStr(searchQuery)
+                    );
+                  })
+                  .map((item, index) => {
                     const optionLabel = labelExtractor(item, index);
                     return (
-                      <MultiSelectItem
+                      <DropdownItem
                         key={index}
                         label={optionLabel}
-                        onUnselect={() => handleUnselection(item)}
-                        multiSelectedItemContainerStyle={
-                          multiSelectedItemContainerStyle
-                        }
-                        multiSelectedItemTextStyle={multiSelectedItemTextStyle}
+                        onPress={() => onSelect([...value, item])}
+                        itemContainerStyle={itemContainerStyle}
+                        defaultDropdownItemHeight={defaultDropdownItemHeight}
+                        itemTextStyle={itemTextStyle}
                       />
                     );
                   })}
-                </Container>
               </ScrollView>
-            )}
-            {isLoading ? (
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.background.base}
-              />
-            ) : (
-              <Icon
-                name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                size="20"
-                color="grey"
-              />
-            )}
-          </Container>
-        </TouchableWithoutFeedback>
-      </GestureDetector>
-
-      {showDropdown && (
-        <GestureDetector gesture={gestures[1]}>
-          <Card
-            bg="background.white"
-            borderWidth={1}
-            borderColor="border.grey400"
-            position="absolute"
-            left={0}
-            right={0}
-            top="100%"
-            maxHeight={defaultDropdownItemHeight * 6}
-            elevation={5}
-            {...dropdownContainerStyle}
-          >
-            {isSearchable && (
-              <Container p={1}>
-                <Input
-                  placeholder="Search"
-                  onChangeText={setSearchQuery}
-                  fontSize="s"
-                />
-              </Container>
-            )}
-            <ScrollView nestedScrollEnabled={true}>
-              {options
-                .filter((item, index) => {
-                  const optionValue = valueExtractor(item, index);
-                  const isItemAlreadySelected = Boolean(
-                    value.find(
-                      selectedItem => selectedItem.value === optionValue
-                    )
-                  );
-                  return !isItemAlreadySelected;
-                })
-                .filter((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  if (searchQuery.length === 0) return true;
-                  return formatStr(optionLabel).includes(
-                    formatStr(searchQuery)
-                  );
-                })
-                .map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  return (
-                    <DropdownItem
-                      key={index}
-                      label={optionLabel}
-                      onPress={() => onSelect([...value, item])}
-                      itemContainerStyle={itemContainerStyle}
-                      defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      itemTextStyle={itemTextStyle}
-                    />
-                  );
-                })}
-            </ScrollView>
-          </Card>
-        </GestureDetector>
-      )}
-    </>
+            </Card>
+          </GestureDetector>
+        )}
+      </Container>
+    </Container>
   );
 };
 

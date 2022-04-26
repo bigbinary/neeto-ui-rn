@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, MultiSelect } from "@components";
+import { MultiSelect } from "@components";
 
 const MultiSelectStories = {
   title: "MultiSelect",
@@ -45,16 +45,12 @@ export const MultiSelects = () => {
   ]);
 
   return (
-    <>
-      <Container width="100%" mb={4} zIndex={1}>
-        <MultiSelect
-          options={data}
-          value={selectedOptions}
-          onSelect={setSelectedOptions}
-          label="Multi Select"
-          isSearchable
-        />
-      </Container>
-    </>
+    <MultiSelect
+      options={data}
+      value={selectedOptions}
+      onSelect={setSelectedOptions}
+      label="Multi Select"
+      isSearchable
+    />
   );
 };

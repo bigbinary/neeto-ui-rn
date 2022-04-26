@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { EventEmitter } from "events";
 import { GestureDetector, Gesture } from "react-native-gesture-handler";
 import { runOnJS } from "react-native-reanimated";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ProviderContext } from "@contexts";
 
@@ -12,9 +13,11 @@ export const NeetoUIRNProvider = ({ children }) => {
   const gesture = Gesture.Tap().onFinalize(() => runOnJS(emitEvent)("pressed"));
 
   return (
-    <ProviderContext.Provider value={{ providerEvent }}>
-      <GestureDetector gesture={gesture}>{children}</GestureDetector>
-    </ProviderContext.Provider>
+    <SafeAreaProvider>
+      <ProviderContext.Provider value={{ providerEvent }}>
+        <GestureDetector gesture={gesture}>{children}</GestureDetector>
+      </ProviderContext.Provider>
+    </SafeAreaProvider>
   );
 };
 

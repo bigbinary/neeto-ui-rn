@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, Select } from "@components";
+import { Select } from "@components";
 
 const SelectStories = {
   title: "Select",
@@ -36,33 +36,6 @@ const data = [
   },
 ];
 
-// const data2 = [
-//   {
-//     customLabel: "Option 1",
-//     customValue: "option_1",
-//   },
-//   {
-//     customLabel: "Option 2",
-//     customValue: "option_2",
-//   },
-//   {
-//     customLabel: "Option 3",
-//     customValue: "option_3",
-//   },
-//   {
-//     customLabel: "Option 4",
-//     customValue: "option_4",
-//   },
-//   {
-//     customLabel: "Option 5",
-//     customValue: "option_5",
-//   },
-//   {
-//     customLabel: "Option 6",
-//     customValue: "option_6",
-//   },
-// ];
-
 export const Selects = () => {
   const [selectedOption1, setSelectedOption1] = useState(null);
   const [selectedOption2, setSelectedOption2] = useState(data[0]);
@@ -70,32 +43,29 @@ export const Selects = () => {
 
   return (
     <>
-      <Container width="100%" mb={4} zIndex={3}>
-        <Select
-          options={data}
-          value={selectedOption1}
-          onSelect={setSelectedOption1}
-          label="Default Select"
-        />
-      </Container>
-      <Container width="100%" mb={4} zIndex={2}>
-        <Select
-          options={data}
-          value={selectedOption2}
-          onSelect={setSelectedOption2}
-          label="Select with loading"
-          isLoading
-        />
-      </Container>
-      <Container width="100%" mb={4} zIndex={1}>
-        <Select
-          options={data}
-          value={selectedOption3}
-          onSelect={setSelectedOption3}
-          label="Searchable Select"
-          isSearchable
-        />
-      </Container>
+      <Select
+        options={data}
+        value={selectedOption1}
+        onSelect={setSelectedOption1}
+        label="Default Select"
+        containerStyle={{ mb: 4 }}
+      />
+      <Select
+        options={data}
+        value={selectedOption2}
+        onSelect={setSelectedOption2}
+        label="Select with loading"
+        containerStyle={{ mb: 4 }}
+        isLoading
+      />
+      <Select
+        options={data}
+        value={selectedOption3}
+        onSelect={setSelectedOption3}
+        label="Searchable Select"
+        containerStyle={{ mb: 4 }}
+        isSearchable
+      />
     </>
   );
 };

@@ -103,9 +103,7 @@ module.exports = {
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(true),
     }),
-    new webpack.ProvidePlugin({
-      process: "process/browser",
-    }),
+    new webpack.DefinePlugin({ process: { env: {} } }),
   ],
   devServer: {
     open: true,

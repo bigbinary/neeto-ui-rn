@@ -4,8 +4,7 @@ import { ThemeProvider } from "styled-components/native";
 import { ScrollView } from "react-native";
 
 import { theme } from "@theme";
-import { Container } from "@components";
-import { NeetoUIRNProvider } from "@components";
+import { Container, NeetoUIRNProvider } from "@components";
 
 export const decorators = [
   withBackgrounds,
