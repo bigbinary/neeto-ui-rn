@@ -23,3 +23,5 @@ export { CheckBox } from "./CheckBox";
 export { Select } from "./Select";
 export { MultiSelect } from "./MultiSelect";
 export { Divider } from "./Divider";
+export { FlatList } from "./FlatList";
+export { ScrollView } from "./ScrollView";
