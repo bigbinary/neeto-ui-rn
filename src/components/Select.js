@@ -3,14 +3,17 @@ import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
 import {
   ActivityIndicator,
-  ScrollView,
   TouchableWithoutFeedback,
   Keyboard,
   View,
   useWindowDimensions,
 } from "react-native";
 import { ThemeContext } from "styled-components/native";
-import { GestureDetector, Gesture } from "react-native-gesture-handler";
+import {
+  GestureDetector,
+  Gesture,
+  ScrollView,
+} from "react-native-gesture-handler";
 import { runOnJS } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -277,7 +280,7 @@ export const Select = ({
                   />
                 </Container>
               )}
-              <ScrollView nestedScrollEnabled={true}>
+              <ScrollView>
                 {options
                   .filter((item, index) => {
                     const label = labelExtractor(item, index);
