@@ -349,8 +349,9 @@ export const MultiSelect = ({
                   .filter((item, index) => {
                     const optionValue = valueExtractor(item, index);
                     const isItemAlreadySelected = Boolean(
-                      value.find(
-                        selectedItem => selectedItem.value === optionValue
+                      value?.find(
+                        selectedItem =>
+                          valueExtractor(selectedItem) === optionValue
                       )
                     );
                     return !isItemAlreadySelected;
@@ -394,8 +395,8 @@ MultiSelect.propTypes = {
    */
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      value: PropTypes.string,
     })
   ).isRequired,
   /**
