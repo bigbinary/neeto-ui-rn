@@ -36,7 +36,7 @@ export const Divider = ({ ...rest }) => {
 };
 
 Divider.defaultProps = {
-  color: "background.grey400",
+  bg: "background.grey400",
 };
 
 Divider.propTypes = {
