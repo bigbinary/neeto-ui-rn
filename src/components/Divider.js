@@ -31,8 +31,19 @@ const View = styled.View`
   ${layout}
 `;
 
-export const Divider = ({ ...rest }) => {
-  return <View {...rest} />;
+const Divider = ({ thickness, orientation, bg, ...rest }) => {
+  const isHorizontal = orientation === "horizontal";
+  const lineStyles = isHorizontal
+    ? {
+        ...rest,
+        height: thickness,
+      }
+    : {
+        ...rest,
+        width: thickness,
+      };
+
+  return <View bg={bg} {...lineStyles} />;
 };
 
 Divider.defaultProps = {
@@ -45,11 +56,15 @@ Divider.propTypes = {
   ...propTypes.color,
   ...propTypes.layout,
   /**
-   * Specify the height of the divider line to render it horizontally
+   * To specify whether the line needs to horizontal or vertical
    */
-  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
   /**
-   * Specify the width of the divider line to render it vertically
+   * To specify the thickness of divider
    */
-  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  thickness: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * To specify the color of divider
+   */
+  bg: PropTypes.string,
 };
