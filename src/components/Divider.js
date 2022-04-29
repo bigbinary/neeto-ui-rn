@@ -48,6 +48,8 @@ const Divider = ({ thickness, orientation, bg, ...rest }) => {
 
 Divider.defaultProps = {
   bg: "background.grey400",
+  orientation: "horizontal",
+  thickness: 1,
 };
 
 Divider.propTypes = {
