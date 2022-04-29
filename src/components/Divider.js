@@ -45,11 +45,11 @@ Divider.propTypes = {
   ...propTypes.color,
   ...propTypes.layout,
   /**
-   * To specify the height of the divider line
+   * Specify the height of the divider line to render it horizontally
    */
-  height: PropTypes.number,
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
-   * To specify the width of the divider line
+   * Specify the width of the divider line to render it vertically
    */
-  width: PropTypes.number,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
