@@ -9,9 +9,9 @@
 
 Read the docs here.
 
-Docs: https://neetoui-rn-docs.netlify.app/
+Docs: https://neetoui-rn-docs.onrender.com/
 
-Storybook: https://neetoui-rn.netlify.app
+Storybook: https://neetoui-rn.onrender.com/
 
 ## Installation
 
