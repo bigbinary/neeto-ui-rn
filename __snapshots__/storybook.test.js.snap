@@ -9149,6 +9149,235 @@ exports[`Storyshots Chip Chips 1`] = `
 </RCTScrollView>
 `;
 
+exports[`Storyshots Dividers Divider Demo 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+  nestedScrollEnabled={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          color="background.primary"
+          flex={1}
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <View
+            bg="background.black"
+            height={10}
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "#000000",
+                  "height": 10,
+                },
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`Storyshots Dividers Dividers 1`] = `
+<RCTScrollView
+  contentContainerStyle={
+    Object {
+      "flexGrow": 1,
+    }
+  }
+  disableScrollViewPanResponder={true}
+  nestedScrollEnabled={true}
+>
+  <View>
+    <View
+      color="background.primary"
+      flexGrow={1}
+      p={10}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "flexGrow": 1,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "flex": 1,
+            },
+            Object {
+              "backgroundColor": "white",
+            },
+          ]
+        }
+      >
+        <View
+          alignItems="center"
+          color="background.primary"
+          flex={1}
+          flexDirection="row"
+          justifyContent="center"
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "color": "#ffffff",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "center",
+              },
+            ]
+          }
+        >
+          <View
+            color="background.primary"
+            flex={5}
+            justifyContent="center"
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexBasis": 0,
+                  "flexGrow": 5,
+                  "flexShrink": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <View
+              bg="background.danger"
+              height={5}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#ff6969",
+                    "height": 5,
+                  },
+                ]
+              }
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Horizontal Line
+            </Text>
+          </View>
+          <View
+            color="background.primary"
+            flex={5}
+            mx={20}
+            style={
+              Array [
+                Object {
+                  "color": "#ffffff",
+                  "flexBasis": 0,
+                  "flexGrow": 5,
+                  "flexShrink": 1,
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                },
+              ]
+            }
+          >
+            <View
+              bg="background.danger"
+              flex={1}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#ff6969",
+                    "flexBasis": 0,
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                    "width": 5,
+                  },
+                ]
+              }
+              width={5}
+            />
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "#1b1f23",
+                  },
+                ]
+              }
+              textStyle="defaultTextStyle"
+            >
+              Vertical Line
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`Storyshots FABs FABS 1`] = `
 <RCTScrollView
   contentContainerStyle={
