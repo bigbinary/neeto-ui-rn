@@ -8,6 +8,10 @@ import PropTypes from "prop-types";
  *
  * Divider is a separator line that can be used between two different sections.
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/divider/divider.png" />
+ * </div>
+ *
  *   ## Usage
  * ```js
  * import * as React from 'react';
@@ -16,7 +20,7 @@ import PropTypes from "prop-types";
  * export default function Main(){
  *  return (
  *   <Container>
- *     <Divider flex={1} height={1}/>
+ *     <Divider orientation="vertical" thickness={1}/>
  *   </Container>
  *  );
  * }
@@ -31,7 +35,7 @@ const View = styled.View`
   ${layout}
 `;
 
-const Divider = ({ thickness, orientation, bg, ...rest }) => {
+export const Divider = ({ thickness, orientation, bg, ...rest }) => {
   const isHorizontal = orientation === "horizontal";
   const lineStyles = isHorizontal
     ? {
@@ -41,6 +45,7 @@ const Divider = ({ thickness, orientation, bg, ...rest }) => {
     : {
         ...rest,
         width: thickness,
+        flex: 1,
       };
 
   return <View bg={bg} {...lineStyles} />;
