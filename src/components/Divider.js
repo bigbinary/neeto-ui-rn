@@ -48,7 +48,7 @@ export const Divider = ({ thickness, orientation, bg, ...rest }) => {
         flex: 1,
       };
 
-  return <View bg={bg} {...lineStyles} />;
+  return thickness > 0 && <View bg={bg} {...lineStyles} />;
 };
 
 Divider.defaultProps = {
