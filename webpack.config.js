@@ -30,6 +30,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./node_modules/react-native-pell-rich-editor"),
     path.resolve(__dirname, "./node_modules/react-native-webview"),
     path.resolve(__dirname, "./node_modules/react-native-material-ripple"),
+    path.resolve(__dirname, "./node_modules/nanoid"),
   ],
   use: {
     loader: "babel-loader",

@@ -7,18 +7,19 @@ import {
   Keyboard,
   View,
   useWindowDimensions,
+  Platform,
 } from "react-native";
+import { nanoid } from "nanoid/non-secure";
 import { ThemeContext } from "styled-components/native";
-import {
-  GestureDetector,
-  Gesture,
-  ScrollView,
-} from "react-native-gesture-handler";
-import { runOnJS } from "react-native-reanimated";
+import { ScrollView } from "react-native-gesture-handler";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { ProviderContext } from "@contexts";
 import { Card, Container, Input, Typography } from "@components";
+import { useSingleton } from "@hooks";
+
+const [currentOpenSelectId, setCurrentOpenSelectId] = useSingleton(null);
+
+export { currentOpenSelectId, setCurrentOpenSelectId };
 
 const DIRECTIONS = {
   TOP: "top",
@@ -143,15 +144,15 @@ export const Select = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
+  const _currentOpenSelectId = currentOpenSelectId();
+  const [selectId, setSelectId] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const { height } = useWindowDimensions();
   const { bottom } = useSafeAreaInsets();
-  const { providerEvent } = useContext(ProviderContext);
 
   const containerRef = useRef(null);
   const dropdownDirection = useRef(DIRECTIONS.TOP);
-  const isPressedInside = useRef(false);
 
   const showDropdownAtBottom = dropdownDirection.current === DIRECTIONS.BOTTOM;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
@@ -163,11 +164,8 @@ export const Select = ({
   const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
 
-  const setPressedInside = () => {
-    isPressedInside.current = true;
-  };
-
   const handleOpenDropdown = () => {
+    setCurrentOpenSelectId(selectId);
     Keyboard.dismiss();
     setSearchQuery("");
     containerRef?.current?.measureInWindow((x, y, w, h) => {
@@ -187,24 +185,21 @@ export const Select = ({
     onSelect(item, index);
   };
 
-  const gestures = [
-    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
-    Gesture.Tap().onBegin(runOnJS(setPressedInside)),
-  ];
+  useEffect(() => {
+    const getSelectId = async () => {
+      setSelectId(await nanoid());
+    };
+    getSelectId();
+  }, []);
 
   useEffect(() => {
-    providerEvent?.on("pressed", () => {
-      if (!isPressedInside.current) {
-        setShowDropdown(false);
-      }
-      isPressedInside.current = false;
-    });
-
-    return () => providerEvent?.removeAllListeners();
-  }, [providerEvent]);
+    if (currentOpenSelectId && _currentOpenSelectId !== selectId) {
+      setShowDropdown(false);
+    }
+  }, [_currentOpenSelectId, selectId]);
 
   return (
-    <Container zIndex={showDropdown ? 1 : 0}>
+    <View style={Platform.OS === "ios" && { zIndex: showDropdown ? 1 : 0 }}>
       <Typography
         fontFamily="inter400"
         mb={1}
@@ -214,105 +209,97 @@ export const Select = ({
       >
         {label}
       </Typography>
-      <Container>
-        <GestureDetector gesture={gestures[0]}>
-          <TouchableWithoutFeedback
-            disabled={isLoading}
-            onPress={handleOpenDropdown}
-          >
-            <View ref={containerRef}>
-              <Container
-                borderWidth={1}
-                borderColor="border.grey400"
-                p={2}
-                flexDirection="row"
-                justifyContent="space-between"
-                alignItems="center"
-                {...containerStyle}
-                {...rest}
-              >
-                <Typography
-                  fontFamily="inter400"
-                  fontSize="s"
-                  color="font.grey"
-                >
-                  {selectedOptionLabel || placeholder}
-                </Typography>
-                {isLoading ? (
-                  <ActivityIndicator
-                    size="small"
-                    color={theme.colors.background.base}
-                  />
-                ) : (
-                  <Icon
-                    name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                    size="20"
-                    color="grey"
-                  />
-                )}
-              </Container>
-            </View>
-          </TouchableWithoutFeedback>
-        </GestureDetector>
-        {showDropdown && (
-          <GestureDetector gesture={gestures[1]}>
-            <Card
-              bg="background.white"
+      <View>
+        <TouchableWithoutFeedback
+          disabled={isLoading}
+          onPress={handleOpenDropdown}
+        >
+          <View ref={containerRef}>
+            <Container
               borderWidth={1}
               borderColor="border.grey400"
-              position="absolute"
-              left={0}
-              right={0}
-              bottom={!showDropdownAtBottom ? "100%" : null}
-              top={showDropdownAtBottom ? "100%" : null}
-              maxHeight={dropdownHeight}
-              elevation={5}
-              mt={-(containerStyle?.m || containerStyle?.mb) || 0}
-              mb={-(containerStyle?.m || containerStyle?.mt) || 0}
-              {...dropdownContainerStyle}
+              p={2}
+              flexDirection="row"
+              justifyContent="space-between"
+              alignItems="center"
+              {...containerStyle}
+              {...rest}
             >
-              {isSearchable && (
-                <Container p={1}>
-                  <Input
-                    placeholder="Search"
-                    onChangeText={setSearchQuery}
-                    fontSize="s"
-                  />
-                </Container>
+              <Typography fontFamily="inter400" fontSize="s" color="font.grey">
+                {selectedOptionLabel || placeholder}
+              </Typography>
+              {isLoading ? (
+                <ActivityIndicator
+                  size="small"
+                  color={theme.colors.background.base}
+                />
+              ) : (
+                <Icon
+                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                  size="20"
+                  color="grey"
+                />
               )}
-              <ScrollView>
-                {options
-                  .filter((item, index) => {
-                    const label = labelExtractor(item, index);
-                    if (searchQuery?.length === 0) return true;
-                    return formatStr(label).includes(formatStr(searchQuery));
-                  })
-                  .map((item, index) => {
-                    const optionLabel = labelExtractor(item, index);
-                    const optionValue = valueExtractor(item, index);
-                    const isSelectedItem =
-                      selectedOptionValue &&
-                      selectedOptionValue === optionValue;
-                    return (
-                      <DropdownItem
-                        key={index}
-                        label={optionLabel}
-                        isSelectedItem={isSelectedItem}
-                        defaultDropdownItemHeight={defaultDropdownItemHeight}
-                        onPress={() => handleItemSelection(item, index)}
-                        itemContainerStyle={itemContainerStyle}
-                        selectedItemContainerStyle={selectedItemContainerStyle}
-                        itemTextStyle={itemTextStyle}
-                        selectedItemTextStyle={selectedItemTextStyle}
-                      />
-                    );
-                  })}
-              </ScrollView>
-            </Card>
-          </GestureDetector>
+            </Container>
+          </View>
+        </TouchableWithoutFeedback>
+        {showDropdown && (
+          <Card
+            flex={1}
+            bg="background.white"
+            borderWidth={1}
+            borderColor="border.grey400"
+            position="absolute"
+            left={0}
+            right={0}
+            bottom={!showDropdownAtBottom ? "100%" : null}
+            top={showDropdownAtBottom ? "100%" : null}
+            maxHeight={dropdownHeight}
+            elevation={5}
+            mt={-(containerStyle?.m || containerStyle?.mb) || 0}
+            mb={-(containerStyle?.m || containerStyle?.mt) || 0}
+            {...dropdownContainerStyle}
+          >
+            {isSearchable && (
+              <Container p={1}>
+                <Input
+                  placeholder="Search"
+                  onChangeText={setSearchQuery}
+                  fontSize="s"
+                />
+              </Container>
+            )}
+            <ScrollView>
+              {options
+                .filter((item, index) => {
+                  const label = labelExtractor(item, index);
+                  if (searchQuery?.length === 0) return true;
+                  return formatStr(label).includes(formatStr(searchQuery));
+                })
+                .map((item, index) => {
+                  const optionLabel = labelExtractor(item, index);
+                  const optionValue = valueExtractor(item, index);
+                  const isSelectedItem =
+                    selectedOptionValue && selectedOptionValue === optionValue;
+                  return (
+                    <DropdownItem
+                      key={index}
+                      label={optionLabel}
+                      isSelectedItem={isSelectedItem}
+                      defaultDropdownItemHeight={defaultDropdownItemHeight}
+                      onPress={() => handleItemSelection(item, index)}
+                      itemContainerStyle={itemContainerStyle}
+                      selectedItemContainerStyle={selectedItemContainerStyle}
+                      itemTextStyle={itemTextStyle}
+                      selectedItemTextStyle={selectedItemTextStyle}
+                    />
+                  );
+                })}
+            </ScrollView>
+          </Card>
         )}
-      </Container>
-    </Container>
+      </View>
+    </View>
   );
 };
 
