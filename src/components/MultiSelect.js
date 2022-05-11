@@ -201,7 +201,7 @@ export const MultiSelect = ({
 
   const handleUnselection = item => {
     const newValue = value.filter(
-      selectedItem => selectedItem.value !== item.value
+      selectedItem => valueExtractor(selectedItem) !== valueExtractor(item)
     );
     onSelect(newValue);
   };
