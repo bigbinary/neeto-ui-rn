@@ -110,18 +110,7 @@ DropdownItem.propTypes = {
  *
  * ## Usage
  *
- * ### Wrap your root View usually App.js with NeetoUIRNProvider component.
- *
- * ```js
- * import * as React from 'react';
- * import { NeetoUIRNProvider } from '@bigbinary/neetoui-rn';
- *
- * export default function App() {
- *  return (
- *    <NeetoUIRNProvider>...</NeetoUIRNProvider>
- *  );
- * }
- * ```
+ * ### Follow our [Getting Started](getting-started.html#usage-with-parentview-select-and-multiselect-components) guide first towards usage of MultiSelect component.
  *
  * ### Import and use MultiSelect component.
  *
