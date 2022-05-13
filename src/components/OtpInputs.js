@@ -79,6 +79,7 @@ export const OtpInputs = ({
     <Container>
       <Touchable
         onPress={() => {
+          Keyboard.dismiss();
           inputRef && inputRef.current.focus();
         }}
       >
