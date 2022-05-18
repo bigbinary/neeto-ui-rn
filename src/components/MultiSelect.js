@@ -135,6 +135,8 @@ export const MultiSelect = ({
   value,
   placeholder,
   onSelect,
+  selectedValue,
+  deletedValue,
   isLoading,
   isSearchable,
   labelStyle,
@@ -159,6 +161,12 @@ export const MultiSelect = ({
       selectedItem => selectedItem.value !== item.value
     );
     onSelect(newValue);
+    deletedValue(item);
+  };
+
+  const handleSelection = item => {
+    onSelect([...value, item]);
+    selectedValue(item);
   };
 
   return (
@@ -267,7 +275,7 @@ export const MultiSelect = ({
                   key={index}
                   item={item}
                   index={index}
-                  onPress={() => onSelect([...value, item])}
+                  onPress={() => handleSelection(item)}
                   itemContainerStyle={itemContainerStyle}
                   defaultDropdownItemHeight={defaultDropdownItemHeight}
                   itemTextStyle={itemTextStyle}
@@ -303,9 +311,17 @@ MultiSelect.propTypes = {
    */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   /**
-   * Callback function when an option is selected, receives the select option object.
+   * Callback function when an option is selected, receives an array of object of options selected.
    */
   onSelect: PropTypes.func,
+  /**
+   * Callback function when an option is selected, receives the selected option object.
+   */
+  selectedValue: PropTypes.func,
+  /**
+   * Callback function when an option is selected, receives the deleted option object.
+   */
+  deletedValue: PropTypes.func,
   /**
    * Used to show if the dropdown is loading state, while loading Select input will be disabled.
    */
@@ -349,6 +365,8 @@ MultiSelect.defaultProps = {
   placeholder: "Select Option",
   value: null,
   onSelect: () => {},
+  selectedValue: () => {},
+  deletedValue: () => {},
   isLoading: false,
   isSearchable: false,
 };

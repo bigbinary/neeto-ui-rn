@@ -86,7 +86,7 @@ DropdownItem.propTypes = {
  *    <Container>
  *      <Select
  *        label="Select"
- *        data={OPTIONS}
+ *        options={OPTIONS}
  *        value={selectedOption?.value}
  *        onSelect={setSelectedOption}
  *      />
