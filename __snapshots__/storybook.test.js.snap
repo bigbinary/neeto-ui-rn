@@ -6844,23 +6844,29 @@ exports[`Storyshots Card Card Demo 1`] = `
         }
       >
         <View
-          color="background.primary"
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "color": "#ffffff",
+            Object {
+              "elevation": 5,
+              "opacity": 1,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
               },
-              Object {
-                "elevation": 5,
-                "shadowColor": "#000",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.25,
-                "shadowRadius": 3.84,
-              },
-            ]
+              "shadowOpacity": 0.25,
+              "shadowRadius": 3.84,
+            }
           }
         />
       </View>
@@ -6911,30 +6917,33 @@ exports[`Storyshots Card Cards 1`] = `
         }
       >
         <View
-          bg="background.danger"
-          color="background.primary"
-          height="100px"
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ff6969",
-                "color": "#ffffff",
-                "height": 100,
-                "width": 100,
+            Object {
+              "backgroundColor": "#ff6969",
+              "elevation": 5,
+              "height": 100,
+              "opacity": 1,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
               },
-              Object {
-                "elevation": 5,
-                "shadowColor": "#000",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.25,
-                "shadowRadius": 3.84,
-              },
-            ]
+              "shadowOpacity": 0.25,
+              "shadowRadius": 3.84,
+              "width": 100,
+            }
           }
-          width="100px"
         >
           <Text
             fontSize="14px"
@@ -6952,32 +6961,34 @@ exports[`Storyshots Card Cards 1`] = `
           </Text>
         </View>
         <View
-          bg="background.danger"
-          color="background.primary"
-          height="100px"
-          mt={10}
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ff6969",
-                "color": "#ffffff",
-                "height": 100,
-                "marginTop": 10,
-                "width": 100,
+            Object {
+              "backgroundColor": "#ff6969",
+              "elevation": 5,
+              "height": 100,
+              "marginTop": 10,
+              "opacity": 1,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 2,
+                "width": 0,
               },
-              Object {
-                "elevation": 5,
-                "shadowColor": "#000",
-                "shadowOffset": Object {
-                  "height": 2,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.25,
-                "shadowRadius": 3.84,
-              },
-            ]
+              "shadowOpacity": 0.25,
+              "shadowRadius": 3.84,
+              "width": 100,
+            }
           }
-          width="100px"
         >
           <Text
             fontSize="14px"
@@ -6995,32 +7006,34 @@ exports[`Storyshots Card Cards 1`] = `
           </Text>
         </View>
         <View
-          bg="background.danger"
-          color="background.primary"
-          height="100px"
-          mt={10}
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          nativeID="animatedComponent"
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
-            Array [
-              Object {
-                "backgroundColor": "#ff6969",
-                "color": "#ffffff",
-                "height": 100,
-                "marginTop": 10,
-                "width": 100,
+            Object {
+              "backgroundColor": "#ff6969",
+              "elevation": 20,
+              "height": 100,
+              "marginTop": 10,
+              "opacity": 1,
+              "shadowColor": "#000",
+              "shadowOffset": Object {
+                "height": 10,
+                "width": 0,
               },
-              Object {
-                "elevation": 20,
-                "shadowColor": "#000",
-                "shadowOffset": Object {
-                  "height": 10,
-                  "width": 0,
-                },
-                "shadowOpacity": 0.51,
-                "shadowRadius": 13.16,
-              },
-            ]
+              "shadowOpacity": 0.51,
+              "shadowRadius": 13.16,
+              "width": 100,
+            }
           }
-          width="100px"
         >
           <Text
             fontSize="14px"

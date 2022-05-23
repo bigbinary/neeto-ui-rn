@@ -1,6 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, Pressable } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
@@ -39,7 +39,7 @@ import { getShadowStyles } from "../utils/utils";
  *
  */
 
-const StyledPressable = styled(Pressable)`
+const StyledTouchableOpacity = styled(TouchableOpacity)`
   ${flexbox}
   ${space}
  ${border}
@@ -52,9 +52,9 @@ export const Card = ({ children, elevation, ...rest }) => {
 
   const cardStyles = { ...styles.defaultShadows, ...shadowStyles };
   return (
-    <StyledPressable style={cardStyles} {...rest}>
+    <StyledTouchableOpacity style={cardStyles} {...rest}>
       {children}
-    </StyledPressable>
+    </StyledTouchableOpacity>
   );
 };
 
