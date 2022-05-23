@@ -52,7 +52,11 @@ export const Card = ({ children, elevation, ...rest }) => {
 
   const cardStyles = { ...styles.defaultShadows, ...shadowStyles };
   return (
-    <StyledTouchableOpacity style={cardStyles} {...rest}>
+    <StyledTouchableOpacity
+      style={cardStyles}
+      activeOpacity={rest.onPress ? 0.2 : 1}
+      {...rest}
+    >
       {children}
     </StyledTouchableOpacity>
   );
