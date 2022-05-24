@@ -1,14 +1,24 @@
 import React, { useState, useContext } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { ActivityIndicator, ScrollView } from "react-native";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from "react-native-reanimated";
+import {
+  ActivityIndicator,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import { ThemeContext } from "styled-components/native";
+import { ScrollView } from "react-native-gesture-handler";
 
-import { Container, Input, Touchable, Typography } from "@components";
+import { Card, Container, Input, Typography } from "@components";
 
 const DropdownItem = ({
-  item,
-  index,
+  label,
   isSelectedItem,
   defaultDropdownItemHeight,
   onPress,
@@ -17,12 +27,9 @@ const DropdownItem = ({
   itemTextStyle,
   selectedItemTextStyle,
 }) => (
-  <Touchable
-    key={index}
-    bg={isSelectedItem ? "background.base" : "background.white"}
-    onPress={onPress}
-  >
+  <TouchableWithoutFeedback onPress={onPress}>
     <Container
+      bg={isSelectedItem ? "background.base" : "background.white"}
       height={defaultDropdownItemHeight}
       p={2}
       {...itemContainerStyle}
@@ -35,15 +42,14 @@ const DropdownItem = ({
         {...itemTextStyle}
         {...(isSelectedItem && selectedItemTextStyle)}
       >
-        {item?.label}
+        {label}
       </Typography>
     </Container>
-  </Touchable>
+  </TouchableWithoutFeedback>
 );
 
 DropdownItem.propTypes = {
-  item: PropTypes.object,
-  index: PropTypes.number,
+  label: PropTypes.string.isRequired,
   isSelectedItem: PropTypes.bool,
   defaultDropdownItemHeight: PropTypes.number,
   onPress: PropTypes.func,
@@ -62,7 +68,9 @@ DropdownItem.propTypes = {
  *   <img src="screenshots/select/select2.png" />
  * </div>
  *
- *  ## Usage
+ * ## Usage
+ *
+ * ### Import and use Select component.
  *
  * ```js
  * import * as React, { useState } from 'react';
@@ -83,18 +91,15 @@ DropdownItem.propTypes = {
  *  const [selectedOption, setSelectedOption] = useState(null)
  *
  *  return (
- *    <Container>
- *      <Select
- *        label="Select"
- *        options={OPTIONS}
- *        value={selectedOption?.value}
- *        onSelect={setSelectedOption}
- *      />
- *    </Container>
+ *    <Select
+ *      label="Select"
+ *      options={OPTIONS}
+ *      value={selectedOption}
+ *      onSelect={setSelectedOption}
+ *    />
  *  );
  * }
  * ```
- *
  */
 
 export const Select = ({
@@ -102,11 +107,14 @@ export const Select = ({
   label,
   value,
   placeholder,
+  labelExtractor,
+  valueExtractor,
   onSelect,
   isLoading,
   isSearchable,
   labelStyle,
   containerStyle,
+  inputContainerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
   itemTextStyle,
@@ -114,20 +122,49 @@ export const Select = ({
   selectedItemTextStyle,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const theme = useContext(ThemeContext);
-  const selectedItemIndex = options?.findIndex(item => item?.value === value);
+  const dropdownAnimatedHeight = useSharedValue(0);
+
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
+  const dropdownHeight =
+    dropdownContainerStyle?.height ||
+    dropdownContainerStyle?.maxHeight ||
+    defaultDropdownItemHeight * 6;
+  const selectedOptionLabel = labelExtractor(value || {});
+  const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      height: withTiming(dropdownAnimatedHeight.value, {
+        duration: 100,
+        easing: Easing.ease,
+      }),
+    };
+  });
+
+  const toggleAnimation = () => {
+    dropdownAnimatedHeight.value =
+      dropdownAnimatedHeight.value === 0 ? dropdownHeight : 0;
+  };
+
+  const handleOpenDropdown = () => {
+    Keyboard.dismiss();
+    setSearchQuery("");
+    setShowDropdown(!showDropdown);
+    toggleAnimation();
+  };
 
   const handleItemSelection = (item, index) => {
     setShowDropdown(false);
+    toggleAnimation();
     onSelect(item, index);
   };
 
   return (
-    <Container elevation={0}>
+    <Container {...containerStyle}>
       <Typography
         fontFamily="inter400"
         mb={1}
@@ -137,12 +174,9 @@ export const Select = ({
       >
         {label}
       </Typography>
-      <Touchable
+      <TouchableWithoutFeedback
         disabled={isLoading}
-        onPress={() => {
-          setShowDropdown(!showDropdown);
-          setSearchQuery("");
-        }}
+        onPress={handleOpenDropdown}
       >
         <Container
           borderWidth={1}
@@ -151,11 +185,11 @@ export const Select = ({
           flexDirection="row"
           justifyContent="space-between"
           alignItems="center"
-          {...containerStyle}
+          {...inputContainerStyle}
           {...rest}
         >
           <Typography fontFamily="inter400" fontSize="s" color="font.grey">
-            {options?.[selectedItemIndex]?.label || placeholder}
+            {selectedOptionLabel || placeholder}
           </Typography>
           {isLoading ? (
             <ActivityIndicator
@@ -170,59 +204,55 @@ export const Select = ({
             />
           )}
         </Container>
-      </Touchable>
-      {showDropdown && (
-        <Container
-          bg="background.white"
-          borderWidth={1}
-          borderColor="border.grey400"
-          position="absolute"
-          left={0}
-          right={0}
-          top="100%"
-          maxHeight={defaultDropdownItemHeight * 6}
-          shadowOpacity={0.25}
-          shadowRadius={3.84}
-          shadow-color="#000"
-          shadowOffset={{
-            width: 0,
-            height: 2,
-          }}
-          elevation={5}
-          {...dropdownContainerStyle}
-        >
-          {isSearchable && (
-            <Container p={1}>
-              <Input
-                placeholder="Search"
-                onChangeText={setSearchQuery}
-                fontSize="s"
-              />
-            </Container>
-          )}
-          <ScrollView nestedScrollEnabled={true}>
-            {options
-              .filter(item => {
-                if (searchQuery?.length === 0) return true;
-                return formatStr(item.label).includes(formatStr(searchQuery));
-              })
-              .map((item, index) => (
-                <DropdownItem
-                  key={index}
-                  item={item}
-                  index={index}
-                  isSelectedItem={item?.value === value}
-                  defaultDropdownItemHeight={defaultDropdownItemHeight}
-                  onPress={() => handleItemSelection(item, index)}
-                  itemContainerStyle={itemContainerStyle}
-                  selectedItemContainerStyle={selectedItemContainerStyle}
-                  itemTextStyle={itemTextStyle}
-                  selectedItemTextStyle={selectedItemTextStyle}
+      </TouchableWithoutFeedback>
+      <Container overflow="hidden">
+        <Animated.View style={animatedStyles}>
+          <Card
+            bg="background.white"
+            borderWidth={1}
+            borderColor="border.grey400"
+            maxHeight={dropdownHeight}
+            {...dropdownContainerStyle}
+          >
+            {isSearchable && (
+              <Container p={1}>
+                <Input
+                  placeholder="Search"
+                  onChangeText={setSearchQuery}
+                  fontSize="s"
                 />
-              ))}
-          </ScrollView>
-        </Container>
-      )}
+              </Container>
+            )}
+            <ScrollView>
+              {options
+                .filter((item, index) => {
+                  const label = labelExtractor(item, index);
+                  if (searchQuery?.length === 0) return true;
+                  return formatStr(label).includes(formatStr(searchQuery));
+                })
+                .map((item, index) => {
+                  const optionLabel = labelExtractor(item, index);
+                  const optionValue = valueExtractor(item, index);
+                  const isSelectedItem =
+                    selectedOptionValue && selectedOptionValue === optionValue;
+                  return (
+                    <DropdownItem
+                      key={index}
+                      label={optionLabel}
+                      isSelectedItem={isSelectedItem}
+                      defaultDropdownItemHeight={defaultDropdownItemHeight}
+                      onPress={() => handleItemSelection(item, index)}
+                      itemContainerStyle={itemContainerStyle}
+                      selectedItemContainerStyle={selectedItemContainerStyle}
+                      itemTextStyle={itemTextStyle}
+                      selectedItemTextStyle={selectedItemTextStyle}
+                    />
+                  );
+                })}
+            </ScrollView>
+          </Card>
+        </Animated.View>
+      </Container>
     </Container>
   );
 };
@@ -237,8 +267,8 @@ Select.propTypes = {
    */
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
+      label: PropTypes.string,
+      value: PropTypes.string,
     })
   ).isRequired,
   /**
@@ -246,9 +276,17 @@ Select.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * Use custom key as label.
+   */
+  labelExtractor: PropTypes.func,
+  /**
+   * Use custom key as value.
+   */
+  valueExtractor: PropTypes.func,
+  /**
    * The selected value to show for the Select input.
    */
-  value: PropTypes.string,
+  value: PropTypes.object,
   /**
    * Callback function when an option is selected, receives the select option object.
    */
@@ -266,9 +304,13 @@ Select.propTypes = {
    */
   labelStyle: PropTypes.object,
   /**
-   * To customise Select input container styles.
+   * To customise outermost container style.
    */
   containerStyle: PropTypes.object,
+  /**
+   * To customise Select input container styles.
+   */
+  inputContainerStyle: PropTypes.object,
   /**
    * To customise dropdown container styles.
    */
@@ -294,6 +336,8 @@ Select.propTypes = {
 Select.defaultProps = {
   label: null,
   placeholder: "Select Option",
+  labelExtractor: option => option?.label,
+  valueExtractor: option => option?.value,
   value: null,
   onSelect: () => {},
   isLoading: false,

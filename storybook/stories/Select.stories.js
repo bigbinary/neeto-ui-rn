@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, Select } from "@components";
+import { Select } from "@components";
 
 const SelectStories = {
   title: "Select",
@@ -43,32 +43,29 @@ export const Selects = () => {
 
   return (
     <>
-      <Container width="100%" mb={4} zIndex={3}>
-        <Select
-          options={data}
-          value={selectedOption1?.value}
-          onSelect={setSelectedOption1}
-          label="Default Select"
-        />
-      </Container>
-      <Container width="100%" mb={4} zIndex={2}>
-        <Select
-          options={data}
-          value={selectedOption2?.value}
-          onSelect={setSelectedOption2}
-          label="Select with loading"
-          isLoading
-        />
-      </Container>
-      <Container width="100%" mb={4} zIndex={1}>
-        <Select
-          options={data}
-          value={selectedOption3?.value}
-          onSelect={setSelectedOption3}
-          label="Searchable Select"
-          isSearchable
-        />
-      </Container>
+      <Select
+        options={data}
+        value={selectedOption1}
+        onSelect={setSelectedOption1}
+        label="Default Select"
+        containerStyle={{ mb: 4 }}
+      />
+      <Select
+        options={data}
+        value={selectedOption2}
+        onSelect={setSelectedOption2}
+        label="Select with loading"
+        containerStyle={{ mb: 4 }}
+        isLoading
+      />
+      <Select
+        options={data}
+        value={selectedOption3}
+        onSelect={setSelectedOption3}
+        label="Searchable Select"
+        containerStyle={{ mb: 4 }}
+        isSearchable
+      />
     </>
   );
 };
