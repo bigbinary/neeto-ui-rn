@@ -138,16 +138,16 @@ export const Popover = ({
   ...rest
 }) => {
   const popoverRef = useRef();
-  const onPressItem = useRef(() => {});
+  const onPressItemRef = useRef(() => {});
 
   return (
     <OriginalPopover
       ref={popoverRef}
       popoverStyle={styles.popoverStyle}
       onOpenStart={() => {
-        onPressItem.current = () => {};
+        onPressItemRef.current = () => {};
       }}
-      onCloseComplete={() => onPressItem.current()}
+      onCloseComplete={() => onPressItemRef.current()}
       {...rest}
     >
       {data?.map((item, index) => {
@@ -159,7 +159,7 @@ export const Popover = ({
             fontSize={fontSize}
             onPress={() => {
               popoverRef?.current?.setState({ isVisible: false });
-              onPressItem.current = item.onPress;
+              onPressItemRef.current = item.onPress;
             }}
           />
         );
