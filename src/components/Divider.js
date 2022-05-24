@@ -8,6 +8,10 @@ import PropTypes from "prop-types";
  *
  * Divider is a separator line that can be used between two different sections.
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/divider/divider.png" />
+ * </div>
+ *
  *   ## Usage
  * ```js
  * import * as React from 'react';
@@ -16,7 +20,7 @@ import PropTypes from "prop-types";
  * export default function Main(){
  *  return (
  *   <Container>
- *     <Divider flex={1} height={1}/>
+ *     <Divider orientation="vertical" thickness={1}/>
  *   </Container>
  *  );
  * }
@@ -31,12 +35,26 @@ const View = styled.View`
   ${layout}
 `;
 
-export const Divider = ({ ...rest }) => {
-  return <View {...rest} />;
+export const Divider = ({ thickness, orientation, bg, ...rest }) => {
+  const isHorizontal = orientation === "horizontal";
+  const lineStyles = isHorizontal
+    ? {
+        ...rest,
+        height: thickness,
+      }
+    : {
+        ...rest,
+        width: thickness,
+        flex: 1,
+      };
+
+  return thickness > 0 && <View bg={bg} {...lineStyles} />;
 };
 
 Divider.defaultProps = {
-  color: "background.grey400",
+  bg: "background.grey400",
+  orientation: "horizontal",
+  thickness: 1,
 };
 
 Divider.propTypes = {
@@ -45,11 +63,15 @@ Divider.propTypes = {
   ...propTypes.color,
   ...propTypes.layout,
   /**
-   * To specify the height of the divider line
+   * To specify whether the line needs to horizontal or vertical
    */
-  height: PropTypes.number,
+  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
   /**
-   * To specify the width of the divider line
+   * To specify the thickness of divider
    */
-  width: PropTypes.number,
+  thickness: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * To specify the color of divider
+   */
+  bg: PropTypes.string,
 };
