@@ -15,14 +15,12 @@ export const TouchableOpacity = styled.TouchableOpacity`
   ${layout}
 `;
 
-const PopOverItem = ({ item, fontFamily, fontSize, hidePopOver }) => {
-  const { Icon, label, onPress } = item;
+const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
+  const { Icon, label } = item;
+
   return (
     <TouchableOpacity
-      onPress={() => {
-        hidePopOver();
-        onPress();
-      }}
+      onPress={onPress}
       flexDirection="row"
       p={2}
       px={3}
@@ -43,12 +41,12 @@ const PopOverItem = ({ item, fontFamily, fontSize, hidePopOver }) => {
 
 PopOverItem.propTypes = {
   item: PropTypes.object,
+  onPress: PropTypes.func,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.oneOf(["xs", "s", "m", "l", "xl", "xxl"]),
   ]),
-  hidePopOver: PropTypes.func,
 };
 
 /**
@@ -140,10 +138,16 @@ export const Popover = ({
   ...rest
 }) => {
   const popoverRef = useRef();
+  const onPressItemRef = useRef(() => {});
+
   return (
     <OriginalPopover
       ref={popoverRef}
       popoverStyle={styles.popoverStyle}
+      onOpenStart={() => {
+        onPressItemRef.current = () => {};
+      }}
+      onCloseComplete={() => onPressItemRef.current()}
       {...rest}
     >
       {data?.map((item, index) => {
@@ -153,8 +157,9 @@ export const Popover = ({
             item={item}
             fontFamily={fontFamily}
             fontSize={fontSize}
-            hidePopOver={() => {
+            onPress={() => {
               popoverRef?.current?.setState({ isVisible: false });
+              onPressItemRef.current = item.onPress;
             }}
           />
         );
