@@ -1,30 +1,21 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useState, useContext } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from "react-native-reanimated";
 import {
   ActivityIndicator,
   TouchableWithoutFeedback,
   Keyboard,
-  View,
-  useWindowDimensions,
-  Platform,
 } from "react-native";
-import { nanoid } from "nanoid/non-secure";
 import { ThemeContext } from "styled-components/native";
 import { ScrollView } from "react-native-gesture-handler";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Card, Container, Input, Typography } from "@components";
-import { useSingleton } from "@hooks";
-
-const [currentOpenSelectId, setCurrentOpenSelectId] = useSingleton(null);
-
-export { currentOpenSelectId, setCurrentOpenSelectId };
-
-const DIRECTIONS = {
-  TOP: "top",
-  BOTTOM: "bottom",
-};
 
 const DropdownItem = ({
   label,
@@ -79,8 +70,6 @@ DropdownItem.propTypes = {
  *
  * ## Usage
  *
- * ### Follow our [Getting Started](getting-started.html#usage-with-parentview-select-and-multiselect-components) guide first towards usage of Select component.
- *
  * ### Import and use Select component.
  *
  * ```js
@@ -125,6 +114,7 @@ export const Select = ({
   isSearchable,
   labelStyle,
   containerStyle,
+  inputContainerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
   itemTextStyle,
@@ -133,17 +123,10 @@ export const Select = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
-  const _currentOpenSelectId = currentOpenSelectId();
-  const [selectId, setSelectId] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const { height } = useWindowDimensions();
-  const { bottom } = useSafeAreaInsets();
+  const dropdownAnimatedHeight = useSharedValue(0);
 
-  const containerRef = useRef(null);
-  const dropdownDirection = useRef(DIRECTIONS.TOP);
-
-  const showDropdownAtBottom = dropdownDirection.current === DIRECTIONS.BOTTOM;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const dropdownHeight =
     dropdownContainerStyle?.height ||
@@ -153,42 +136,35 @@ export const Select = ({
   const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
 
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      height: withTiming(dropdownAnimatedHeight.value, {
+        duration: 100,
+        easing: Easing.ease,
+      }),
+    };
+  });
+
+  const toggleAnimation = () => {
+    dropdownAnimatedHeight.value =
+      dropdownAnimatedHeight.value === 0 ? dropdownHeight : 0;
+  };
+
   const handleOpenDropdown = () => {
-    setCurrentOpenSelectId(selectId);
     Keyboard.dismiss();
     setSearchQuery("");
-    containerRef?.current?.measureInWindow((x, y, w, h) => {
-      const viewPortBottomEdge = height - bottom;
-      const dropdownBottomEdge = y + h;
-      if (viewPortBottomEdge - dropdownBottomEdge < dropdownHeight + 10) {
-        dropdownDirection.current = DIRECTIONS.TOP;
-      } else {
-        dropdownDirection.current = DIRECTIONS.BOTTOM;
-      }
-      setShowDropdown(!showDropdown);
-    });
+    setShowDropdown(!showDropdown);
+    toggleAnimation();
   };
 
   const handleItemSelection = (item, index) => {
     setShowDropdown(false);
+    toggleAnimation();
     onSelect(item, index);
   };
 
-  useEffect(() => {
-    const getSelectId = async () => {
-      setSelectId(await nanoid());
-    };
-    getSelectId();
-  }, []);
-
-  useEffect(() => {
-    if (currentOpenSelectId && _currentOpenSelectId !== selectId) {
-      setShowDropdown(false);
-    }
-  }, [_currentOpenSelectId, selectId]);
-
   return (
-    <View style={Platform.OS === "ios" && { zIndex: showDropdown ? 1 : 0 }}>
+    <Container {...containerStyle}>
       <Typography
         fontFamily="inter400"
         mb={1}
@@ -198,55 +174,44 @@ export const Select = ({
       >
         {label}
       </Typography>
-      <View>
-        <TouchableWithoutFeedback
-          disabled={isLoading}
-          onPress={handleOpenDropdown}
+      <TouchableWithoutFeedback
+        disabled={isLoading}
+        onPress={handleOpenDropdown}
+      >
+        <Container
+          borderWidth={1}
+          borderColor="border.grey400"
+          p={2}
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+          {...inputContainerStyle}
+          {...rest}
         >
-          <View ref={containerRef}>
-            <Container
-              borderWidth={1}
-              borderColor="border.grey400"
-              p={2}
-              flexDirection="row"
-              justifyContent="space-between"
-              alignItems="center"
-              {...containerStyle}
-              {...rest}
-            >
-              <Typography fontFamily="inter400" fontSize="s" color="font.grey">
-                {selectedOptionLabel || placeholder}
-              </Typography>
-              {isLoading ? (
-                <ActivityIndicator
-                  size="small"
-                  color={theme.colors.background.base}
-                />
-              ) : (
-                <Icon
-                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                  size="20"
-                  color="grey"
-                />
-              )}
-            </Container>
-          </View>
-        </TouchableWithoutFeedback>
-        {showDropdown && (
+          <Typography fontFamily="inter400" fontSize="s" color="font.grey">
+            {selectedOptionLabel || placeholder}
+          </Typography>
+          {isLoading ? (
+            <ActivityIndicator
+              size="small"
+              color={theme.colors.background.base}
+            />
+          ) : (
+            <Icon
+              name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+              size="20"
+              color="grey"
+            />
+          )}
+        </Container>
+      </TouchableWithoutFeedback>
+      <Container overflow="hidden">
+        <Animated.View style={animatedStyles}>
           <Card
-            flex={1}
             bg="background.white"
             borderWidth={1}
             borderColor="border.grey400"
-            position="absolute"
-            left={0}
-            right={0}
-            bottom={!showDropdownAtBottom ? "100%" : null}
-            top={showDropdownAtBottom ? "100%" : null}
             maxHeight={dropdownHeight}
-            elevation={5}
-            mt={-(containerStyle?.m || containerStyle?.mb) || 0}
-            mb={-(containerStyle?.m || containerStyle?.mt) || 0}
             {...dropdownContainerStyle}
           >
             {isSearchable && (
@@ -286,9 +251,9 @@ export const Select = ({
                 })}
             </ScrollView>
           </Card>
-        )}
-      </View>
-    </View>
+        </Animated.View>
+      </Container>
+    </Container>
   );
 };
 
@@ -339,9 +304,13 @@ Select.propTypes = {
    */
   labelStyle: PropTypes.object,
   /**
-   * To customise Select input container styles.
+   * To customise outermost container style.
    */
   containerStyle: PropTypes.object,
+  /**
+   * To customise Select input container styles.
+   */
+  inputContainerStyle: PropTypes.object,
   /**
    * To customise dropdown container styles.
    */
