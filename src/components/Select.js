@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
 import Animated, {
@@ -6,6 +6,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
   Easing,
+  runOnJS,
 } from "react-native-reanimated";
 import {
   ActivityIndicator,
@@ -127,21 +128,31 @@ export const Select = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
+  const searchInputHeight = 35;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
-    defaultDropdownItemHeight * 6;
+    defaultDropdownItemHeight * Math.min(options?.length, 6) +
+      (isSearchable ? searchInputHeight + 10 : 0);
   const selectedOptionLabel = labelExtractor(value || {});
   const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
-      height: withTiming(dropdownAnimatedHeight.value, {
-        duration: 100,
-        easing: Easing.ease,
-      }),
+      height: withTiming(
+        dropdownAnimatedHeight.value,
+        {
+          duration: 100,
+          easing: Easing.ease,
+        },
+        () => {
+          if (dropdownAnimatedHeight.value === 0) {
+            runOnJS(setShowDropdown)(false);
+          }
+        }
+      ),
     };
   });
 
@@ -153,15 +164,25 @@ export const Select = ({
   const handleOpenDropdown = () => {
     Keyboard.dismiss();
     setSearchQuery("");
-    setShowDropdown(!showDropdown);
-    toggleAnimation();
+    if (!showDropdown) {
+      setShowDropdown(true);
+    }
+    if (showDropdown) {
+      toggleAnimation();
+    }
   };
 
   const handleItemSelection = (item, index) => {
-    setShowDropdown(false);
     toggleAnimation();
     onSelect(item, index);
   };
+
+  useEffect(() => {
+    if (showDropdown) {
+      toggleAnimation();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showDropdown]);
 
   return (
     <Container {...containerStyle}>
@@ -205,54 +226,62 @@ export const Select = ({
           )}
         </Container>
       </TouchableWithoutFeedback>
-      <Container overflow="hidden">
-        <Animated.View style={animatedStyles}>
-          <Card
-            bg="background.white"
-            borderWidth={1}
-            borderColor="border.grey400"
-            maxHeight={dropdownHeight}
-            {...dropdownContainerStyle}
-          >
-            {isSearchable && (
-              <Container p={1}>
-                <Input
-                  placeholder="Search"
-                  onChangeText={setSearchQuery}
-                  fontSize="s"
-                />
-              </Container>
-            )}
-            <ScrollView>
-              {options
-                .filter((item, index) => {
-                  const label = labelExtractor(item, index);
-                  if (searchQuery?.length === 0) return true;
-                  return formatStr(label).includes(formatStr(searchQuery));
-                })
-                .map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  const optionValue = valueExtractor(item, index);
-                  const isSelectedItem =
-                    selectedOptionValue && selectedOptionValue === optionValue;
-                  return (
-                    <DropdownItem
-                      key={index}
-                      label={optionLabel}
-                      isSelectedItem={isSelectedItem}
-                      defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      onPress={() => handleItemSelection(item, index)}
-                      itemContainerStyle={itemContainerStyle}
-                      selectedItemContainerStyle={selectedItemContainerStyle}
-                      itemTextStyle={itemTextStyle}
-                      selectedItemTextStyle={selectedItemTextStyle}
-                    />
-                  );
-                })}
-            </ScrollView>
-          </Card>
-        </Animated.View>
-      </Container>
+      {showDropdown && (
+        <Container overflow="hidden">
+          <Animated.View style={animatedStyles}>
+            <Card
+              bg="background.white"
+              borderWidth={1}
+              borderColor="border.grey400"
+              maxHeight={dropdownHeight}
+              {...dropdownContainerStyle}
+            >
+              {isSearchable && (
+                <Container p={1}>
+                  <Input
+                    placeholder="Search"
+                    onChangeText={setSearchQuery}
+                    fontSize="s"
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    containerStyles={{
+                      height: searchInputHeight,
+                      justifyContent: "center",
+                    }}
+                  />
+                </Container>
+              )}
+              <ScrollView>
+                {options
+                  .filter((item, index) => {
+                    const label = labelExtractor(item, index);
+                    if (searchQuery?.length === 0) return true;
+                    return formatStr(label).includes(formatStr(searchQuery));
+                  })
+                  .map((item, index) => {
+                    const optionLabel = labelExtractor(item, index);
+                    const optionValue = valueExtractor(item, index);
+                    const isSelectedItem =
+                      selectedOptionValue &&
+                      selectedOptionValue === optionValue;
+                    return (
+                      <DropdownItem
+                        key={index}
+                        label={optionLabel}
+                        isSelectedItem={isSelectedItem}
+                        defaultDropdownItemHeight={defaultDropdownItemHeight}
+                        onPress={() => handleItemSelection(item, index)}
+                        itemContainerStyle={itemContainerStyle}
+                        selectedItemContainerStyle={selectedItemContainerStyle}
+                        itemTextStyle={itemTextStyle}
+                        selectedItemTextStyle={selectedItemTextStyle}
+                      />
+                    );
+                  })}
+              </ScrollView>
+            </Card>
+          </Animated.View>
+        </Container>
+      )}
     </Container>
   );
 };
