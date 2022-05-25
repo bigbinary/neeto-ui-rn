@@ -1,7 +1,9 @@
 import * as React from "react";
-import { Container } from "@components";
 import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+import { flexbox, space, border, color, layout } from "styled-system";
+
 import { getShadowStyles } from "../utils/utils";
 
 /**
@@ -37,14 +39,26 @@ import { getShadowStyles } from "../utils/utils";
  *
  */
 
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  ${flexbox}
+  ${space}
+ ${border}
+ ${color}
+ ${layout}
+`;
+
 export const Card = ({ children, elevation, ...rest }) => {
   const shadowStyles = elevation ? getShadowStyles(elevation) : {};
 
   const cardStyles = { ...styles.defaultShadows, ...shadowStyles };
   return (
-    <Container style={cardStyles} {...rest}>
+    <StyledTouchableOpacity
+      style={cardStyles}
+      activeOpacity={rest.onPress ? 0.2 : 1}
+      {...rest}
+    >
       {children}
-    </Container>
+    </StyledTouchableOpacity>
   );
 };
 
