@@ -250,6 +250,10 @@ export const Select = ({
                   />
                 </Container>
               )}
+              {/* Animation not working without this hidden input */}
+              <Container height={0}>
+                <Input />
+              </Container>
               <ScrollView>
                 {options
                   .filter((item, index) => {

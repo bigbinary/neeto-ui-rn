@@ -332,6 +332,10 @@ export const MultiSelect = ({
                   />
                 </Container>
               )}
+              {/* Animation not working without this hidden input */}
+              <Container height={0}>
+                <Input />
+              </Container>
               <ScrollView>
                 {filteredOptions.map((item, index) => {
                   const optionLabel = labelExtractor(item, index);
