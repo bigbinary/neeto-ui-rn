@@ -108,6 +108,7 @@ export const Select = ({
   label,
   value,
   placeholder,
+  emptyOptionsPlaceholder,
   labelExtractor,
   valueExtractor,
   onSelect,
@@ -121,6 +122,10 @@ export const Select = ({
   itemTextStyle,
   selectedItemContainerStyle,
   selectedItemTextStyle,
+  searchInputContainerStyle,
+  searchInputStyle,
+  emptyOptionsContainerStyle,
+  emptyOptionsTextStyle,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -128,13 +133,16 @@ export const Select = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
+  const isOptionsEmpty = !options || options?.length === 0;
+  const emptyOptionsPlaceholderHeight = 40;
   const searchInputHeight = 35;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
     defaultDropdownItemHeight * Math.min(options?.length, 6) +
-      (isSearchable ? searchInputHeight + 10 : 0);
+      (isSearchable ? searchInputHeight + 10 : 0) +
+      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0);
   const selectedOptionLabel = labelExtractor(value || {});
   const selectedOptionValue = valueExtractor(value || {});
   const formatStr = str => str?.toLowerCase()?.trim();
@@ -237,7 +245,7 @@ export const Select = ({
               {...dropdownContainerStyle}
             >
               {isSearchable && (
-                <Container p={1}>
+                <Container p={1} {...searchInputContainerStyle}>
                   <Input
                     placeholder="Search"
                     onChangeText={setSearchQuery}
@@ -247,7 +255,25 @@ export const Select = ({
                       height: searchInputHeight,
                       justifyContent: "center",
                     }}
+                    {...searchInputStyle}
                   />
+                </Container>
+              )}
+              {isOptionsEmpty && (
+                <Container
+                  height={emptyOptionsPlaceholderHeight}
+                  justifyContent="center"
+                  alignItems="center"
+                  {...emptyOptionsContainerStyle}
+                >
+                  <Typography
+                    fontFamily="inter400"
+                    fontSize="s"
+                    color="font.grey"
+                    {...emptyOptionsTextStyle}
+                  >
+                    {emptyOptionsPlaceholder || "No Options"}
+                  </Typography>
                 </Container>
               )}
               {/* Animation not working without this hidden input */}
@@ -309,6 +335,10 @@ Select.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * The text to be displayed if no options are provided.
+   */
+  emptyOptionsPlaceholder: PropTypes.string,
+  /**
    * Use custom key as label.
    */
   labelExtractor: PropTypes.func,
@@ -364,6 +394,22 @@ Select.propTypes = {
    * To customise dropdown item text styles for selected item.
    */
   selectedItemTextStyle: PropTypes.object,
+  /**
+   * To customise search input containerr style.
+   */
+  searchInputContainerStyle: PropTypes.object,
+  /**
+   * To customise search input style.
+   */
+  searchInputStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  emptyOptionsContainerStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  emptyOptionsTextStyle: PropTypes.object,
 };
 
 Select.defaultProps = {
