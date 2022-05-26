@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
 import Animated, {
@@ -6,6 +6,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
   Easing,
+  runOnJS,
 } from "react-native-reanimated";
 import {
   ActivityIndicator,
@@ -161,33 +162,59 @@ export const MultiSelect = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
+  const searchInputHeight = 35;
   const multipleOptionsSelected = value?.length > 0;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
+  const formatStr = str => str?.toLowerCase()?.trim();
+
+  const filteredOptions = options
+    .filter((item, index) => {
+      const optionValue = valueExtractor(item, index);
+      const isItemAlreadySelected = Boolean(
+        value?.find(
+          selectedItem => valueExtractor(selectedItem) === optionValue
+        )
+      );
+      return !isItemAlreadySelected;
+    })
+    .filter((item, index) => {
+      const optionLabel = labelExtractor(item, index);
+      if (searchQuery.length === 0) return true;
+      return formatStr(optionLabel).includes(formatStr(searchQuery));
+    });
+
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
-    defaultDropdownItemHeight * 6;
-  const formatStr = str => str?.toLowerCase()?.trim();
+    defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
+      (isSearchable ? searchInputHeight + 10 : 0);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
-      height: withTiming(dropdownAnimatedHeight.value, {
-        duration: 100,
-        easing: Easing.ease,
-      }),
+      height: withTiming(
+        dropdownAnimatedHeight.value,
+        {
+          duration: 100,
+          easing: Easing.ease,
+        },
+        () => {
+          if (dropdownAnimatedHeight.value === 0) {
+            runOnJS(setShowDropdown)(false);
+          }
+        }
+      ),
     };
   });
-
-  const toggleAnimation = () => {
-    dropdownAnimatedHeight.value =
-      dropdownAnimatedHeight.value === 0 ? dropdownHeight : 0;
-  };
 
   const handleOpenDropdown = () => {
     Keyboard.dismiss();
     setSearchQuery("");
-    setShowDropdown(!showDropdown);
-    toggleAnimation();
+    if (!showDropdown) {
+      setShowDropdown(true);
+    }
+    if (showDropdown) {
+      dropdownAnimatedHeight.value = 0;
+    }
   };
 
   const handleUnselection = item => {
@@ -202,6 +229,13 @@ export const MultiSelect = ({
     onSelect([...value, item]);
     selectedValue(item);
   };
+
+  useEffect(() => {
+    if (showDropdown) {
+      dropdownAnimatedHeight.value = dropdownHeight;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showDropdown, dropdownHeight]);
 
   return (
     <Container {...containerStyle}>
@@ -274,44 +308,36 @@ export const MultiSelect = ({
           )}
         </Container>
       </TouchableWithoutFeedback>
-      <Container overflow="hidden">
-        <Animated.View style={animatedStyles}>
-          <Card
-            bg="background.white"
-            borderWidth={1}
-            borderColor="border.grey400"
-            maxHeight={dropdownHeight}
-            {...dropdownContainerStyle}
-          >
-            {isSearchable && (
-              <Container p={1}>
-                <Input
-                  placeholder="Search"
-                  onChangeText={setSearchQuery}
-                  fontSize="s"
-                />
+      {showDropdown && (
+        <Container overflow="hidden">
+          <Animated.View style={animatedStyles}>
+            <Card
+              bg="background.white"
+              borderWidth={1}
+              borderColor="border.grey400"
+              maxHeight={dropdownHeight}
+              {...dropdownContainerStyle}
+            >
+              {isSearchable && (
+                <Container p={1}>
+                  <Input
+                    placeholder="Search"
+                    onChangeText={setSearchQuery}
+                    fontSize="s"
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    containerStyles={{
+                      height: searchInputHeight,
+                      justifyContent: "center",
+                    }}
+                  />
+                </Container>
+              )}
+              {/* Animation not working without this hidden input */}
+              <Container height={0}>
+                <Input />
               </Container>
-            )}
-            <ScrollView>
-              {options
-                .filter((item, index) => {
-                  const optionValue = valueExtractor(item, index);
-                  const isItemAlreadySelected = Boolean(
-                    value?.find(
-                      selectedItem =>
-                        valueExtractor(selectedItem) === optionValue
-                    )
-                  );
-                  return !isItemAlreadySelected;
-                })
-                .filter((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  if (searchQuery.length === 0) return true;
-                  return formatStr(optionLabel).includes(
-                    formatStr(searchQuery)
-                  );
-                })
-                .map((item, index) => {
+              <ScrollView>
+                {filteredOptions.map((item, index) => {
                   const optionLabel = labelExtractor(item, index);
                   return (
                     <DropdownItem
@@ -324,10 +350,11 @@ export const MultiSelect = ({
                     />
                   );
                 })}
-            </ScrollView>
-          </Card>
-        </Animated.View>
-      </Container>
+              </ScrollView>
+            </Card>
+          </Animated.View>
+        </Container>
+      )}
     </Container>
   );
 };
