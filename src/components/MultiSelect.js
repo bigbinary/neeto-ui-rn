@@ -140,6 +140,7 @@ export const MultiSelect = ({
   label,
   value,
   placeholder,
+  emptyOptionsPlaceholder,
   labelExtractor,
   valueExtractor,
   onSelect,
@@ -155,6 +156,10 @@ export const MultiSelect = ({
   itemTextStyle,
   multiSelectedItemContainerStyle,
   multiSelectedItemTextStyle,
+  searchInputContainerStyle,
+  searchInputStyle,
+  emptyOptionsContainerStyle,
+  emptyOptionsTextStyle,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -162,6 +167,8 @@ export const MultiSelect = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
+  const isOptionsEmpty = !options || options?.length === 0;
+  const emptyOptionsPlaceholderHeight = 40;
   const searchInputHeight = 35;
   const multipleOptionsSelected = value?.length > 0;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
@@ -187,7 +194,8 @@ export const MultiSelect = ({
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
     defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
-      (isSearchable ? searchInputHeight + 10 : 0);
+      (isSearchable ? searchInputHeight + 10 : 0) +
+      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -319,7 +327,7 @@ export const MultiSelect = ({
               {...dropdownContainerStyle}
             >
               {isSearchable && (
-                <Container p={1}>
+                <Container p={1} {...searchInputContainerStyle}>
                   <Input
                     placeholder="Search"
                     onChangeText={setSearchQuery}
@@ -329,7 +337,25 @@ export const MultiSelect = ({
                       height: searchInputHeight,
                       justifyContent: "center",
                     }}
+                    {...searchInputStyle}
                   />
+                </Container>
+              )}
+              {isOptionsEmpty && (
+                <Container
+                  height={emptyOptionsPlaceholderHeight}
+                  justifyContent="center"
+                  alignItems="center"
+                  {...emptyOptionsContainerStyle}
+                >
+                  <Typography
+                    fontFamily="inter400"
+                    fontSize="s"
+                    color="font.grey"
+                    {...emptyOptionsTextStyle}
+                  >
+                    {emptyOptionsPlaceholder || "No Options"}
+                  </Typography>
                 </Container>
               )}
               {/* Animation not working without this hidden input */}
@@ -377,6 +403,10 @@ MultiSelect.propTypes = {
    * The text to be displayed if no option is selected.
    */
   placeholder: PropTypes.string,
+  /**
+   * The text to be displayed if no options are provided.
+   */
+  emptyOptionsPlaceholder: PropTypes.string,
   /**
    * Use custom key as label.
    */
@@ -441,6 +471,22 @@ MultiSelect.propTypes = {
    * To customise item text styles for multi selected item.
    */
   multiSelectedItemTextStyle: PropTypes.object,
+  /**
+   * To customise search input containerr style.
+   */
+  searchInputContainerStyle: PropTypes.object,
+  /**
+   * To customise search input style.
+   */
+  searchInputStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  emptyOptionsContainerStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  emptyOptionsTextStyle: PropTypes.object,
 };
 
 MultiSelect.defaultProps = {
