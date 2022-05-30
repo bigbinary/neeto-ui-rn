@@ -16,7 +16,7 @@ import {
 import { ThemeContext } from "styled-components/native";
 import { ScrollView } from "react-native-gesture-handler";
 
-import { Card, Container, Input, Typography } from "@components";
+import { Card, Container, Input, Touchable, Typography } from "@components";
 
 const DropdownItem = ({
   label,
@@ -25,8 +25,8 @@ const DropdownItem = ({
   onPress,
   itemContainerStyle,
   selectedItemContainerStyle,
-  itemTextStyle,
-  selectedItemTextStyle,
+  itemLabelStyle,
+  selectedItemLabelStyle,
 }) => (
   <TouchableWithoutFeedback onPress={onPress}>
     <Container
@@ -40,8 +40,8 @@ const DropdownItem = ({
         fontFamily="inter400"
         fontSize="s"
         color={isSelectedItem ? "font.white" : "font.grey"}
-        {...itemTextStyle}
-        {...(isSelectedItem && selectedItemTextStyle)}
+        {...itemLabelStyle}
+        {...(isSelectedItem && selectedItemLabelStyle)}
       >
         {label}
       </Typography>
@@ -56,8 +56,8 @@ DropdownItem.propTypes = {
   onPress: PropTypes.func,
   itemContainerStyle: PropTypes.object,
   selectedItemContainerStyle: PropTypes.object,
-  itemTextStyle: PropTypes.object,
-  selectedItemTextStyle: PropTypes.object,
+  itemLabelStyle: PropTypes.object,
+  selectedItemLabelStyle: PropTypes.object,
 };
 
 /**
@@ -114,18 +114,24 @@ export const Select = ({
   onSelect,
   isLoading,
   isSearchable,
+  showCreateOption,
+  showCreateOptionLoader,
+  createOptionLabel,
+  onPressCreateOption,
   labelStyle,
   containerStyle,
   inputContainerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
-  itemTextStyle,
+  itemLabelStyle,
   selectedItemContainerStyle,
-  selectedItemTextStyle,
+  selectedItemLabelStyle,
   searchInputContainerStyle,
   searchInputStyle,
   emptyOptionsContainerStyle,
-  emptyOptionsTextStyle,
+  emptyOptionsLabelStyle,
+  createSearchedOptionContainerStyle,
+  createSearchedOptionLabelStyle,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -133,19 +139,31 @@ export const Select = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
+  const formatStr = str => str?.toLowerCase()?.trim();
+  const filteredOptions = options.filter((item, index) => {
+    const label = labelExtractor(item, index);
+    if (searchQuery?.length === 0) return true;
+    return formatStr(label).includes(formatStr(searchQuery));
+  });
+
   const isOptionsEmpty = !options || options?.length === 0;
+  const isSearchedOptionsEmpty =
+    searchQuery.length > 0 && filteredOptions.length === 0;
   const emptyOptionsPlaceholderHeight = 40;
+  const emptySearchedOptionsHeight = 40;
   const searchInputHeight = 35;
   const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
-    defaultDropdownItemHeight * Math.min(options?.length, 6) +
+    defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
       (isSearchable ? searchInputHeight + 10 : 0) +
-      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0);
+      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0) +
+      (isSearchedOptionsEmpty && showCreateOption
+        ? emptySearchedOptionsHeight
+        : 0);
   const selectedOptionLabel = labelExtractor(value || {});
   const selectedOptionValue = valueExtractor(value || {});
-  const formatStr = str => str?.toLowerCase()?.trim();
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -162,7 +180,7 @@ export const Select = ({
         }
       ),
     };
-  });
+  }, []);
 
   const toggleAnimation = () => {
     dropdownAnimatedHeight.value =
@@ -187,10 +205,10 @@ export const Select = ({
 
   useEffect(() => {
     if (showDropdown) {
-      toggleAnimation();
+      dropdownAnimatedHeight.value = dropdownHeight;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showDropdown]);
+  }, [showDropdown, dropdownHeight]);
 
   return (
     <Container {...containerStyle}>
@@ -270,43 +288,61 @@ export const Select = ({
                     fontFamily="inter400"
                     fontSize="s"
                     color="font.grey"
-                    {...emptyOptionsTextStyle}
+                    {...emptyOptionsLabelStyle}
                   >
                     {emptyOptionsPlaceholder || "No Options"}
                   </Typography>
                 </Container>
+              )}
+              {isSearchedOptionsEmpty && showCreateOption && (
+                <Touchable
+                  height={emptySearchedOptionsHeight}
+                  justifyContent="center"
+                  alignItems="center"
+                  onPress={() => onPressCreateOption(searchQuery)}
+                  {...createSearchedOptionContainerStyle}
+                >
+                  {showCreateOptionLoader ? (
+                    <ActivityIndicator
+                      size="small"
+                      color={theme.colors.background.base}
+                    />
+                  ) : (
+                    <Typography
+                      fontFamily="inter400"
+                      fontSize="s"
+                      color="font.grey"
+                      {...createSearchedOptionLabelStyle}
+                    >
+                      {createOptionLabel || `Create ${searchQuery} option`}
+                    </Typography>
+                  )}
+                </Touchable>
               )}
               {/* Animation not working without this hidden input */}
               <Container height={0}>
                 <Input />
               </Container>
               <ScrollView>
-                {options
-                  .filter((item, index) => {
-                    const label = labelExtractor(item, index);
-                    if (searchQuery?.length === 0) return true;
-                    return formatStr(label).includes(formatStr(searchQuery));
-                  })
-                  .map((item, index) => {
-                    const optionLabel = labelExtractor(item, index);
-                    const optionValue = valueExtractor(item, index);
-                    const isSelectedItem =
-                      selectedOptionValue &&
-                      selectedOptionValue === optionValue;
-                    return (
-                      <DropdownItem
-                        key={index}
-                        label={optionLabel}
-                        isSelectedItem={isSelectedItem}
-                        defaultDropdownItemHeight={defaultDropdownItemHeight}
-                        onPress={() => handleItemSelection(item, index)}
-                        itemContainerStyle={itemContainerStyle}
-                        selectedItemContainerStyle={selectedItemContainerStyle}
-                        itemTextStyle={itemTextStyle}
-                        selectedItemTextStyle={selectedItemTextStyle}
-                      />
-                    );
-                  })}
+                {filteredOptions.map((item, index) => {
+                  const optionLabel = labelExtractor(item, index);
+                  const optionValue = valueExtractor(item, index);
+                  const isSelectedItem =
+                    selectedOptionValue && selectedOptionValue === optionValue;
+                  return (
+                    <DropdownItem
+                      key={index}
+                      label={optionLabel}
+                      isSelectedItem={isSelectedItem}
+                      defaultDropdownItemHeight={defaultDropdownItemHeight}
+                      onPress={() => handleItemSelection(item, index)}
+                      itemContainerStyle={itemContainerStyle}
+                      selectedItemContainerStyle={selectedItemContainerStyle}
+                      itemLabelStyle={itemLabelStyle}
+                      selectedItemLabelStyle={selectedItemLabelStyle}
+                    />
+                  );
+                })}
               </ScrollView>
             </Card>
           </Animated.View>
@@ -363,6 +399,22 @@ Select.propTypes = {
    */
   isSearchable: PropTypes.bool,
   /**
+   * Show option to create the searched label if not present in the options list
+   */
+  showCreateOption: PropTypes.bool,
+  /**
+   * Show loader while creating a searched option not present in the options list
+   */
+  showCreateOptionLoader: PropTypes.bool,
+  /**
+   * Custom label for creating searched option not present in the options list
+   */
+  createOptionLabel: PropTypes.string,
+  /**
+   * Callback when create searched option is pressed
+   */
+  onPressCreateOption: PropTypes.func,
+  /**
    * To customise floating label styles.
    */
   labelStyle: PropTypes.object,
@@ -385,7 +437,7 @@ Select.propTypes = {
   /**
    * To customise dropdown item text styles.
    */
-  itemTextStyle: PropTypes.object,
+  itemLabelStyle: PropTypes.object,
   /**
    * To customise dropdown item container styles for selected item.
    */
@@ -393,7 +445,7 @@ Select.propTypes = {
   /**
    * To customise dropdown item text styles for selected item.
    */
-  selectedItemTextStyle: PropTypes.object,
+  selectedItemLabelStyle: PropTypes.object,
   /**
    * To customise search input containerr style.
    */
@@ -409,16 +461,29 @@ Select.propTypes = {
   /**
    * To customise empty options placeholder text style.
    */
-  emptyOptionsTextStyle: PropTypes.object,
+  emptyOptionsLabelStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  createSearchedOptionContainerStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  createSearchedOptionLabelStyle: PropTypes.object,
 };
 
 Select.defaultProps = {
   label: null,
   placeholder: "Select Option",
+  emptyOptionsPlaceholder: null,
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
   onSelect: () => {},
   isLoading: false,
   isSearchable: false,
+  showCreateOption: false,
+  showCreateOptionLoader: false,
+  createOptionLabel: null,
+  onPressCreateOption: () => {},
 };

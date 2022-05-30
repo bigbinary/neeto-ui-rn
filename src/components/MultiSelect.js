@@ -22,7 +22,7 @@ const MultiSelectItem = ({
   label,
   onUnselect,
   multiSelectedItemContainerStyle,
-  multiSelectedItemTextStyle,
+  multiSelectedItemLabelStyle,
 }) => (
   <Container
     borderWidth={1}
@@ -41,7 +41,7 @@ const MultiSelectItem = ({
       fontSize="s"
       mr={2}
       maxWidth="90%"
-      {...multiSelectedItemTextStyle}
+      {...multiSelectedItemLabelStyle}
     >
       {label}
     </Typography>
@@ -55,7 +55,7 @@ MultiSelectItem.propTypes = {
   label: PropTypes.string,
   onUnselect: PropTypes.func,
   multiSelectedItemContainerStyle: PropTypes.object,
-  multiSelectedItemTextStyle: PropTypes.object,
+  multiSelectedItemLabelStyle: PropTypes.object,
 };
 
 const DropdownItem = ({
@@ -63,7 +63,7 @@ const DropdownItem = ({
   onPress,
   defaultDropdownItemHeight,
   itemContainerStyle,
-  itemTextStyle,
+  itemLabelStyle,
 }) => {
   return (
     <Touchable bg="background.white" onPress={onPress}>
@@ -76,7 +76,7 @@ const DropdownItem = ({
           fontFamily="inter400"
           fontSize="s"
           color="font.grey"
-          {...itemTextStyle}
+          {...itemLabelStyle}
         >
           {label}
         </Typography>
@@ -90,7 +90,7 @@ DropdownItem.propTypes = {
   onPress: PropTypes.func,
   defaultDropdownItemHeight: PropTypes.number,
   itemContainerStyle: PropTypes.object,
-  itemTextStyle: PropTypes.object,
+  itemLabelStyle: PropTypes.object,
 };
 
 /**
@@ -148,18 +148,24 @@ export const MultiSelect = ({
   deletedValue,
   isLoading,
   isSearchable,
+  showCreateOption,
+  showCreateOptionLoader,
+  createOptionLabel,
+  onPressCreateOption,
   labelStyle,
   containerStyle,
   inputContainerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
-  itemTextStyle,
+  itemLabelStyle,
   multiSelectedItemContainerStyle,
-  multiSelectedItemTextStyle,
+  multiSelectedItemLabelStyle,
   searchInputContainerStyle,
   searchInputStyle,
   emptyOptionsContainerStyle,
-  emptyOptionsTextStyle,
+  emptyOptionsLabelStyle,
+  createSearchedOptionContainerStyle,
+  createSearchedOptionLabelStyle,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -167,13 +173,7 @@ export const MultiSelect = ({
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
 
-  const isOptionsEmpty = !options || options?.length === 0;
-  const emptyOptionsPlaceholderHeight = 40;
-  const searchInputHeight = 35;
-  const multipleOptionsSelected = value?.length > 0;
-  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const formatStr = str => str?.toLowerCase()?.trim();
-
   const filteredOptions = options
     .filter((item, index) => {
       const optionValue = valueExtractor(item, index);
@@ -190,12 +190,23 @@ export const MultiSelect = ({
       return formatStr(optionLabel).includes(formatStr(searchQuery));
     });
 
+  const isOptionsEmpty = !options || options?.length === 0;
+  const isSearchedOptionsEmpty =
+    searchQuery.length > 0 && filteredOptions.length === 0;
+  const emptyOptionsPlaceholderHeight = 40;
+  const emptySearchedOptionsHeight = 40;
+  const searchInputHeight = 35;
+  const multipleOptionsSelected = value?.length > 0;
+  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
     defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
       (isSearchable ? searchInputHeight + 10 : 0) +
-      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0);
+      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0) +
+      (isSearchedOptionsEmpty && showCreateOption
+        ? emptySearchedOptionsHeight
+        : 0);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
@@ -212,7 +223,7 @@ export const MultiSelect = ({
         }
       ),
     };
-  });
+  }, []);
 
   const handleOpenDropdown = () => {
     Keyboard.dismiss();
@@ -295,7 +306,7 @@ export const MultiSelect = ({
                       multiSelectedItemContainerStyle={
                         multiSelectedItemContainerStyle
                       }
-                      multiSelectedItemTextStyle={multiSelectedItemTextStyle}
+                      multiSelectedItemLabelStyle={multiSelectedItemLabelStyle}
                     />
                   );
                 })}
@@ -352,11 +363,37 @@ export const MultiSelect = ({
                     fontFamily="inter400"
                     fontSize="s"
                     color="font.grey"
-                    {...emptyOptionsTextStyle}
+                    {...emptyOptionsLabelStyle}
                   >
                     {emptyOptionsPlaceholder || "No Options"}
                   </Typography>
                 </Container>
+              )}
+
+              {isSearchedOptionsEmpty && showCreateOption && (
+                <Touchable
+                  height={emptySearchedOptionsHeight}
+                  justifyContent="center"
+                  alignItems="center"
+                  onPress={() => onPressCreateOption(searchQuery)}
+                  {...createSearchedOptionContainerStyle}
+                >
+                  {showCreateOptionLoader ? (
+                    <ActivityIndicator
+                      size="small"
+                      color={theme.colors.background.base}
+                    />
+                  ) : (
+                    <Typography
+                      fontFamily="inter400"
+                      fontSize="s"
+                      color="font.grey"
+                      {...createSearchedOptionLabelStyle}
+                    >
+                      {createOptionLabel || `Create ${searchQuery} option`}
+                    </Typography>
+                  )}
+                </Touchable>
               )}
               {/* Animation not working without this hidden input */}
               <Container height={0}>
@@ -372,7 +409,7 @@ export const MultiSelect = ({
                       onPress={() => handleSelection(item)}
                       itemContainerStyle={itemContainerStyle}
                       defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      itemTextStyle={itemTextStyle}
+                      itemLabelStyle={itemLabelStyle}
                     />
                   );
                 })}
@@ -440,6 +477,22 @@ MultiSelect.propTypes = {
    */
   isSearchable: PropTypes.bool,
   /**
+   * Show option to create the searched label if not present in the options list
+   */
+  showCreateOption: PropTypes.bool,
+  /**
+   * Show loader while creating a searched option not present in the options list
+   */
+  showCreateOptionLoader: PropTypes.bool,
+  /**
+   * Custom label for creating searched option not present in the options list
+   */
+  createOptionLabel: PropTypes.string,
+  /**
+   * Callback when create searched option is pressed
+   */
+  onPressCreateOption: PropTypes.func,
+  /**
    * To customise floating label styles.
    */
   labelStyle: PropTypes.object,
@@ -462,7 +515,7 @@ MultiSelect.propTypes = {
   /**
    * To customise dropdown item text styles.
    */
-  itemTextStyle: PropTypes.object,
+  itemLabelStyle: PropTypes.object,
   /**
    * To customise item container styles for multi selected items.
    */
@@ -470,7 +523,7 @@ MultiSelect.propTypes = {
   /**
    * To customise item text styles for multi selected item.
    */
-  multiSelectedItemTextStyle: PropTypes.object,
+  multiSelectedItemLabelStyle: PropTypes.object,
   /**
    * To customise search input containerr style.
    */
@@ -486,12 +539,21 @@ MultiSelect.propTypes = {
   /**
    * To customise empty options placeholder text style.
    */
-  emptyOptionsTextStyle: PropTypes.object,
+  emptyOptionsLabelStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  createSearchedOptionContainerStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  createSearchedOptionLabelStyle: PropTypes.object,
 };
 
 MultiSelect.defaultProps = {
   label: null,
   placeholder: "Select Option",
+  emptyOptionsPlaceholder: null,
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
@@ -500,4 +562,8 @@ MultiSelect.defaultProps = {
   deletedValue: () => {},
   isLoading: false,
   isSearchable: false,
+  showCreateOption: false,
+  showCreateOptionLoader: false,
+  createOptionLabel: null,
+  onPressCreateOption: () => {},
 };
