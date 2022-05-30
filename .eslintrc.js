@@ -40,9 +40,13 @@ module.exports = {
     "import",
     "react-hooks",
     "flowtype",
+    "neeto",
   ],
   rules: {
     eqeqeq: ["error", "always"],
+    "neeto/no-dangling-constants": 2,
+    "neeto/no-jsx-string-templates": 2,
+    "neeto/use-constant-case": 2,
     "react-hooks/exhaustive-deps": "error",
     "import/no-unresolved": 2,
     "no-console": ["error", { allow: ["error"] }],

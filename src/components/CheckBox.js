@@ -2,7 +2,8 @@ import React from "react";
 import Proptypes from "prop-types";
 
 import { Container, Typography, Touchable } from "@components";
-const LABEL_POSITIONS = ["left", "right"];
+
+const labelPositions = ["left", "right"];
 
 const LabelComponent = ({ label, labelComponent, labelProp }) => {
   return labelComponent || <Typography {...labelProp}>{label}</Typography>;
@@ -70,7 +71,7 @@ export const CheckBox = ({
       alignItems="center"
       {...rest}
     >
-      {labelPosition === LABEL_POSITIONS[0] ? (
+      {labelPosition === labelPositions[0] ? (
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
@@ -95,7 +96,7 @@ export const CheckBox = ({
           </Container>
         )}
       </Container>
-      {labelPosition === LABEL_POSITIONS[1] ? (
+      {labelPosition === labelPositions[1] ? (
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
@@ -142,7 +143,7 @@ CheckBox.propTypes = {
   /**
    * Position of label relative to the radio button. It can be either `left` or `right`
    */
-  labelPosition: Proptypes.oneOf(LABEL_POSITIONS),
+  labelPosition: Proptypes.oneOf(labelPositions),
   /**
    * Extra param to customize checkbox container
    */

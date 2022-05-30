@@ -50,7 +50,7 @@ export const BottomSheetDemo = args => {
           color="font.secondary"
           fontFamily="inter700"
         >
-          {`Selected Item: ${args.data[selectedItemIndex]}`}
+          Selected Item: {args.data[selectedItemIndex]}
         </Typography>
       )}
     </Container>

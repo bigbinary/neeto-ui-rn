@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Touchable, Typography } from "@components";
-const LABEL_POSITIONS = ["left", "right"];
+const labelPositions = ["left", "right"];
 
 const LabelComponent = ({ label, labelComponent, labelProp }) => {
   return labelComponent || <Typography {...labelProp}>{label}</Typography>;
@@ -69,7 +69,7 @@ export const RadioButton = ({
       py={1}
       {...rest}
     >
-      {labelPosition === LABEL_POSITIONS[0] ? (
+      {labelPosition === labelPositions[0] ? (
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
@@ -101,7 +101,7 @@ export const RadioButton = ({
           />
         </Container>
       </Container>
-      {labelPosition === LABEL_POSITIONS[1] ? (
+      {labelPosition === labelPositions[1] ? (
         <LabelComponent
           label={label}
           labelComponent={labelComponent}
@@ -136,7 +136,7 @@ RadioButton.propTypes = {
   /**
    * Position of label relative to the radio button. It can be either `left` or `right`
    */
-  labelPosition: PropTypes.oneOf(LABEL_POSITIONS),
+  labelPosition: PropTypes.oneOf(labelPositions),
   /**
    * Whether radio is disabled.
    */

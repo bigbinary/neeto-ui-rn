@@ -123,16 +123,16 @@ export default class Home extends React.Component<{}> {
   }
 }
 
-const PRIMARY_COLOR = "#6200ee";
-const RESTING_SHADOW = "0 1px 3px rgba(0, 0, 0, 0.12)";
+const primaryColor = "#6200ee";
+const restingShadow = "0 1px 3px rgba(0, 0, 0, 0.12)";
 
 const Highlighted = styled.a`
-  color: ${PRIMARY_COLOR};
+  color: ${primaryColor};
 
   &:hover,
   &:focus,
   &:active {
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor};
   }
 `;
 
@@ -169,25 +169,25 @@ const Button = styled.a`
 
   background-color: transparent;
   border-color: rgba(0, 0, 0, 0.24);
-  color: ${PRIMARY_COLOR};
+  color: ${primaryColor};
 
   &:hover,
   &:focus,
   &:active {
     background-color: rgba(98, 0, 238, 0.08);
-    color: ${PRIMARY_COLOR};
+    color: ${primaryColor};
   }
 
   &.primary {
-    box-shadow: ${RESTING_SHADOW};
-    background-color: ${PRIMARY_COLOR};
-    border-color: ${PRIMARY_COLOR};
+    box-shadow: ${restingShadow};
+    background-color: ${primaryColor};
+    border-color: ${primaryColor};
     color: #fff;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: ${PRIMARY_COLOR};
+      background-color: ${primaryColor};
       color: #fff;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.24);
     }

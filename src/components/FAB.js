@@ -42,6 +42,7 @@ import { Touchable } from "@components";
  * @extends StyledSystems props /styled-system
  */
 
+// eslint-disable-next-line neeto/no-dangling-constants
 export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: "#000",

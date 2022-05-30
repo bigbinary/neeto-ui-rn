@@ -16,7 +16,7 @@ export const OtpInputsDemo = () => {
     <Container flex={1} justifyContent="center" alignItems="center">
       <OtpInputs code={code} numberOfInputs={6} handleChange={setCode} />
       <Typography py={10} fontSize="xl">
-        {`Your entered OTP is ${code}`}
+        Your entered OTP is {code}
       </Typography>
       <Container
         justifyContent="center"
