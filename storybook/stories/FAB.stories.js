@@ -42,6 +42,7 @@ export const FABSDemo = args => {
   );
 };
 
+// eslint-disable-next-line neeto/no-dangling-constants
 export const FABS = () => {
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
