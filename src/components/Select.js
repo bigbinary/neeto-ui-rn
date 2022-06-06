@@ -158,7 +158,9 @@ export const Select = ({
     dropdownContainerStyle?.maxHeight ||
     defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
       (isSearchable ? searchInputHeight + 10 : 0) +
-      (isOptionsEmpty ? emptyOptionsPlaceholderHeight : 0) +
+      (isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption)
+        ? emptyOptionsPlaceholderHeight
+        : 0) +
       (isSearchedOptionsEmpty && showCreateOption
         ? emptySearchedOptionsHeight
         : 0);
@@ -277,7 +279,7 @@ export const Select = ({
                   />
                 </Container>
               )}
-              {isOptionsEmpty && (
+              {isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption) && (
                 <Container
                   height={emptyOptionsPlaceholderHeight}
                   justifyContent="center"
