@@ -45,8 +45,8 @@ export const Text = styled.Text`
  * </ul>
  *
  * <div class="screenshots">
- *   <img src="screenshots/typography/fontsizes.png" />
- *   <img src="screenshots/typography/textstyles.png" />
+ *   <img src="screenshots/typography/colors.png" />
+ *   <img src="screenshots/typography/fontfamilies.png" />
  * </div>
  *
  * <div class="screenshots">
