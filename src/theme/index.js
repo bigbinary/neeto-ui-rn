@@ -1,19 +1,19 @@
 const defaultColors = {
   white: "#ffffff",
   black: "#000000",
-  base: "#2f3941",
+  base: "#4557F8",
   danger: "#ff6969",
-  menubackground: "#f4f5f7",
+  menubackground: "#F6F6FA",
 };
 
 const toastBorderColors = {
-  success: "#5cb85c",
-  error: "#d9534f",
-  info: "#5bc0de",
-  warning: "#f0ad4e",
+  success: "#00BA88",
+  error: "#F56A58",
+  info: "#276EF1",
+  warning: "#F3CD82",
 };
 
-const greyVarients = {
+const greyVariants = {
   grey: "#828282",
   grey100: "#f8f9f9",
   grey200: "#e9ebed",
@@ -21,27 +21,46 @@ const greyVarients = {
   grey400: "#c2c8cc",
   grey500: "#87929d",
   grey600: "#68737d",
+  grey700: "#49545C",
   grey800: "#2f3941",
+};
+
+const purpleVariants = {
+  purple800: "#342DF4",
+  purple700: "#4557F8",
+  purple600: "#7280FA",
+};
+
+const greenVariants = {
+  green800: "#00956D",
+  green700: "#00BA88",
+  green600: "#33C8A0",
 };
 
 const colors = {
   font: {
-    primary: "#1b1f23",
-    secondary: "#828282",
+    primary: "#2F3941",
+    secondary: "#5E5CE6",
     ...defaultColors,
-    ...greyVarients,
+    ...greyVariants,
+    ...purpleVariants,
+    ...greenVariants,
   },
   background: {
     parentView: "#ffffff",
     primary: "#ffffff",
-    secondary: "#e4e4e7",
+    secondary: "#F6F6FA",
     ...defaultColors,
-    ...greyVarients,
+    ...greyVariants,
+    ...purpleVariants,
+    ...greenVariants,
   },
   border: {
-    primary: "#e4e4e7",
-    ...greyVarients,
+    primary: "#E9EBED",
+    secondary: "#C2C8CC",
+    ...greyVariants,
     ...defaultColors,
+    ...purpleVariants,
   },
   toast: {
     ...toastBorderColors,
@@ -54,25 +73,30 @@ const baseTheme = {
     // We can add below commented fonts later as follows. Also add font faces in index.web.js for the web.
     // https://www.bigbinary.com/learn-react-native/adding-custom-fonats
 
-    // inter100: "Inter-Thin",
-    // inter200: "Inter-ExtraLight",
-    // inter300: "Inter-Light",
-    // inter500: "Inter-Medium",
-    // inter600: "Inter-SemiBold",
-    // inter800: "Inter-ExtraBold",
-    // inter900: "Inter-Black",
+    // SFProText100: "SFProText-Thin",
+    // SFProText200: "SFProText-ExtraLight",
+    // SFProText300: "SFProText-Light",
+    // SFProText800: "SFProText-ExtraBold",
+    // SFProText900: "SFProText-Black",
 
-    inter400: "Inter-Regular",
-    inter700: "Inter-Bold",
+    SFProText400: "SFProText-Regular",
+    SFProText500: "SFProText-Medium",
+    SFProText600: "SFProText-Semibold",
+    SFProText700: "SFProText-Bold",
   },
   lineHeights: [24],
   fontSizes: {
-    xs: 10,
-    s: 12,
-    m: 14,
-    l: 18,
-    xl: 24,
-    xxl: 32,
+    "3xs": 10,
+    "2xs": 12,
+    xs: 13,
+    s: 14,
+    m: 15,
+    l: 16,
+    xl: 17,
+    "2xl": 18,
+    "3xl": 20,
+    "4xl": 22,
+    "5xl": 30,
   },
 };
 
@@ -87,16 +111,16 @@ export const theme = {
     },
     header: {
       color: baseTheme.colors.font.primary,
-      fontSize: baseTheme.fontSizes.l,
+      fontSize: baseTheme.fontSizes["3xl"],
       fontFamily: baseTheme.fonts.inter700,
     },
     body: {
-      color: baseTheme.colors.font.primary,
-      fontSize: baseTheme.fontSizes.m,
+      color: baseTheme.colors.font.grey500,
+      fontSize: baseTheme.fontSizes.s,
     },
     subtext: {
       color: baseTheme.colors.font.primary,
-      fontSize: baseTheme.fontSizes.s,
+      fontSize: baseTheme.fontSizes["2xs"],
     },
 
     // buttonTextStyles
