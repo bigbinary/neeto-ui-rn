@@ -3,33 +3,16 @@ import { Container, SegmentPicker } from "@components";
 import { theme } from "@theme";
 
 const labelPositions = ["left", "right"];
-const backgroundColors = Object.keys(theme.colors.background).map(
-  color => `${color}`
-);
 
 const SegmentPickerStories = {
   title: "SegmentPickers",
   component: SegmentPicker,
   args: {
     label: "Segment Picker Demo",
-    segmentedControlBackgroundColor: backgroundColors[2],
-    activeSegmentBackgroundColor: backgroundColors[3],
   },
   argTypes: {
     onValueChange: {
       action: "pressed the button",
-    },
-    activeSegmentBackgroundColor: {
-      options: backgroundColors,
-      control: {
-        type: "select",
-      },
-    },
-    segmentedControlBackgroundColor: {
-      options: backgroundColors,
-      control: {
-        type: "select",
-      },
     },
   },
   parameters: {
@@ -49,12 +32,6 @@ export const SegmentPickerDemo = args => {
     <Container flex={1} justifyContent="center" alignItems="center">
       <SegmentPicker
         {...args}
-        activeSegmentBackgroundColor={
-          theme.colors.background[`${args.activeSegmentBackgroundColor}`]
-        }
-        segmentedControlBackgroundColor={
-          theme.colors.background[`${args.segmentedControlBackgroundColor}`]
-        }
         tabs={labelPositions}
         currentIndex={tabIndex}
         onChange={handleTabsChange}
@@ -97,9 +74,13 @@ export const SegmentPickers = () => {
           tabs={["Shop", "Discover", "Brands"]}
           currentIndex={tab4Index}
           onChange={setTab4Index}
-          segmentedControlBackgroundColor={theme.colors.background.purple600}
-          activeSegmentBackgroundColor={theme.colors.background.purple800}
-          activeTextColor={theme.colors.font.white}
+          inactiveSegmentStyle={{
+            backgroundColor: theme.colors.background.purple600,
+          }}
+          activeSegmentStyle={{
+            backgroundColor: theme.colors.background.purple800,
+          }}
+          activeTextStyle={{ color: theme.colors.font.white }}
           paddingVertical={18}
         />
       </Container>

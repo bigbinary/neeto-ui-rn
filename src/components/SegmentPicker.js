@@ -1,17 +1,21 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
 import PropTypes from "prop-types";
 import propTypes from "@styled-system/prop-types";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useCallback, useContext } from "react";
 import {
-  Animated,
+  View,
   Dimensions,
   StyleSheet,
   Text,
   TouchableOpacity,
 } from "react-native";
+import Animated, {
+  useAnimatedStyle,
+  useSharedValue,
+  withSpring,
+} from "react-native-reanimated";
+import { ThemeContext } from "styled-components/native";
 
-const shadow = {
+const defaultShadowStyle = {
   shadowColor: "#000",
   shadowOffset: {
     width: 0,
@@ -21,6 +25,16 @@ const shadow = {
   shadowRadius: 2.62,
 
   elevation: 4,
+};
+
+// eslint-disable-next-line neeto/no-dangling-constants
+const DEFAULT_SPRING_CONFIG = {
+  stiffness: 150,
+  damping: 20,
+  mass: 1,
+  overshootClamping: false,
+  restSpeedThreshold: 0.001,
+  restDisplacementThreshold: 0.001,
 };
 
 // So that it stretches in landscape mode.
@@ -61,64 +75,71 @@ export const SegmentPicker = ({
   tabs,
   onChange,
   currentIndex,
-  segmentedControlBackgroundColor,
-  activeSegmentBackgroundColor,
-  activeTextColor,
-  labelStyles,
+  inactiveSegmentStyle,
+  activeSegmentStyle,
+  activeTextStyle,
+  inactiveTextStyle,
   paddingVertical,
 }) => {
   const translateValue = (width - 4) / tabs?.length;
-  const [tabTranslate, setTabTranslate] = useState(new Animated.Value(0));
+  const tabTranslateValue = useSharedValue(0);
+  const theme = useContext(ThemeContext);
 
   // useCallBack with an empty array as input, which will call inner lambda only once and memoize the reference for future calls
-  const memoizedTabPressCallback = useCallback(index => {
-    onChange(index);
-  }, []);
+  const memoizedTabPressCallback = useCallback(
+    index => {
+      onChange(index);
+    },
+    [onChange]
+  );
 
   useEffect(() => {
-    // Animating the active index based current index
-    Animated.spring(tabTranslate, {
-      toValue: currentIndex * translateValue,
-      stiffness: 180,
-      damping: 20,
-      mass: 1,
-      useNativeDriver: true,
-    }).start();
+    tabTranslateValue.value = withSpring(
+      currentIndex * (translateValue * 1),
+      DEFAULT_SPRING_CONFIG
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
-  const activeSegmentStyles = {
-    ...StyleSheet.absoluteFill,
-    position: "absolute",
-    width: (width - 4) / tabs?.length,
-    top: 0,
-    marginVertical: 2,
-    marginHorizontal: 2,
-    backgroundColor: activeSegmentBackgroundColor,
-    borderRadius: 8,
-    ...shadow,
+  const finalisedActiveTextStyle = {
+    fontSize: theme.fontSizes.m,
+    textAlign: "center",
+    color: theme.colors.font.grey800,
+    fontFamily: theme.fonts.SFProText500,
+    ...activeTextStyle,
   };
+
+  const finalisedInActiveTextStyle = {
+    fontSize: theme.fontSizes.m,
+    textAlign: "center",
+    color: theme.colors.font.grey800,
+    fontFamily: theme.fonts.SFProText500,
+    ...inactiveTextStyle,
+  };
+
+  const tabTranslateAnimatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateX: tabTranslateValue.value }],
+    };
+  });
 
   return (
     <Animated.View
-      style={[
-        styles.segmentedControlWrapper,
-        {
-          backgroundColor: segmentedControlBackgroundColor,
-        },
-      ]}
+      style={[styles.defaultSegmentedControlWrapper, inactiveSegmentStyle]}
     >
       <Animated.View
         style={[
-          activeSegmentStyles,
+          styles.movingSegmentStyle,
+          activeSegmentStyle,
+          defaultShadowStyle,
+          StyleSheet.absoluteFill,
           {
-            transform: [
-              {
-                translateX: tabTranslate,
-              },
-            ],
+            width: width / tabs?.length,
           },
+          tabTranslateAnimatedStyles,
         ]}
-      ></Animated.View>
+      />
+
       {tabs.map((tab, index) => {
         const isCurrentIndex = currentIndex === index;
         return (
@@ -128,16 +149,17 @@ export const SegmentPicker = ({
             onPress={() => memoizedTabPressCallback(index)}
             activeOpacity={0.7}
           >
-            <Text
-              numberOfLines={1}
-              style={[
-                styles.textStyles,
-                labelStyles,
-                isCurrentIndex && { color: activeTextColor },
-              ]}
-            >
-              {tab}
-            </Text>
+            <View style={styles.textWrapper}>
+              <Text
+                style={
+                  isCurrentIndex
+                    ? finalisedActiveTextStyle
+                    : finalisedInActiveTextStyle
+                }
+              >
+                {tab}
+              </Text>
+            </View>
           </TouchableOpacity>
         );
       })}
@@ -153,10 +175,25 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: width,
   },
+  defaultSegmentedControlWrapper: {
+    position: "relative",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    borderRadius: 8,
+    backgroundColor: "#E5E5EA",
+    width: width,
+  },
+  movingSegmentStyle: {
+    top: 0,
+    marginVertical: 2,
+    marginHorizontal: 2,
+    borderRadius: 6,
+    backgroundColor: "#FFFFFF",
+  },
   textWrapper: {
     flex: 1,
     elevation: 9,
-    paddingHorizontal: 5,
   },
   textStyles: {
     fontSize: 13,
@@ -184,21 +221,21 @@ SegmentPicker.propTypes = {
    */
   currentIndex: PropTypes.number.isRequired,
   /**
-   * Background for the inactive segments.
+   * To change the inactive segment container style.
    */
-  segmentedControlBackgroundColor: PropTypes.string,
+  inactiveSegmentStyle: PropTypes.object,
   /**
-   * Background for the active segment.
+   * To change the active segment container style.
    */
-  activeSegmentBackgroundColor: PropTypes.string,
+  activeSegmentStyle: PropTypes.object,
   /**
-   * Font style object for the labels in segment.
+   * To change the inactive segment font style.
    */
-  labelStyles: PropTypes.object,
+  inactiveTextStyle: PropTypes.object,
   /**
-   * Font color for the active segment.
+   * To change the active segment font style.
    */
-  activeTextColor: PropTypes.string,
+  activeTextStyle: PropTypes.object,
   paddingVertical: PropTypes.number,
 };
 
@@ -206,11 +243,5 @@ SegmentPicker.defaultProps = {
   tabs: [],
   onChange: () => {},
   currentIndex: 0,
-  segmentedControlBackgroundColor: "#E5E5EA",
-  activeSegmentBackgroundColor: "white",
-  activeTextColor: "black",
   paddingVertical: 12,
-  labelStyles: {
-    color: "black",
-  },
 };
