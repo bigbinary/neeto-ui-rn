@@ -73,7 +73,7 @@ export const Button = React.forwardRef((props, ref) => {
         textAlign="center"
         mx={1}
         color={color}
-        fontFamily={fontFamily || "inter700"}
+        fontFamily={fontFamily || "SFProText700"}
         fontSize={fontSize || "s"}
         textStyle={variant}
       >
