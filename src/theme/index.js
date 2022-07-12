@@ -40,7 +40,7 @@ const greenVariants = {
 const colors = {
   font: {
     primary: "#2F3941",
-    secondary: "#5E5CE6",
+    secondary: "#49545C",
     ...defaultColors,
     ...greyVariants,
     ...purpleVariants,
