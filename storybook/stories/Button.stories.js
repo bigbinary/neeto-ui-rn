@@ -157,7 +157,7 @@ export const Buttons = () => {
       <Button
         my={9}
         width={200}
-        fontFamily="inter400"
+        fontFamily="SFProText400"
         label="Regular inter 400"
       />
       <Button
