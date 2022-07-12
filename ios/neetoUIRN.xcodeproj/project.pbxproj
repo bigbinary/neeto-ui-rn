@@ -11,11 +11,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		32CEDA4AA355406B9FB7730E /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0FAE1B8DDC49A4B845AAFD /* Inter-Bold.ttf */; };
+		621296961FB944F8A32DB0DB /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBEABEAAFC404399A8758C01 /* SFProText-Medium.ttf */; };
+		6642A0D65FE44EAEB48C54A3 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8A4710EAA6A47F9825534BA /* SFProText-Regular.ttf */; };
 		6FBB88AC20EA059EE2BE5E2A /* libPods-neetoUIRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9440B83400F6F44C74BB55 /* libPods-neetoUIRN.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8C044EDDF06A4EA8B3004B0F /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60E28010B68C432481C927DE /* Inter-Regular.ttf */; };
+		82C9863936214E0F873CB5AC /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E6775CE049C6AEA7C8C7 /* SFProText-Bold.ttf */; };
 		B7A3E3E7DED42F89E0585294 /* libPods-neetoUIRN-neetoUIRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9E8828BAB421DAF6D54890 /* libPods-neetoUIRN-neetoUIRNTests.a */; };
+		F37888B50D1E4D43BC6738C8 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D15EE3A934D44535A3572101 /* SFProText-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,21 +35,25 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* neetoUIRNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = neetoUIRNTests.m; sourceTree = "<group>"; };
 		0A9440B83400F6F44C74BB55 /* libPods-neetoUIRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-neetoUIRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F22E6775CE049C6AEA7C8C7 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Bold.ttf"; path = "../assets/fonts/SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* neetoUIRN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neetoUIRN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = neetoUIRN/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = neetoUIRN/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = neetoUIRN/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = neetoUIRN/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = neetoUIRN/main.m; sourceTree = "<group>"; };
-		1F0FAE1B8DDC49A4B845AAFD /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		1F0FAE1B8DDC49A4B845AAFD /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		5C747BB630FA7BA7D86BAC4E /* Pods-neetoUIRN-neetoUIRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neetoUIRN-neetoUIRNTests.debug.xcconfig"; path = "Target Support Files/Pods-neetoUIRN-neetoUIRNTests/Pods-neetoUIRN-neetoUIRNTests.debug.xcconfig"; sourceTree = "<group>"; };
-		60E28010B68C432481C927DE /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		60E28010B68C432481C927DE /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		6DD5CA59A809FBE33EAA7B36 /* Pods-neetoUIRN-neetoUIRNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neetoUIRN-neetoUIRNTests.release.xcconfig"; path = "Target Support Files/Pods-neetoUIRN-neetoUIRNTests/Pods-neetoUIRN-neetoUIRNTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A9087E75FD27731837E6E52 /* Pods-neetoUIRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neetoUIRN.release.xcconfig"; path = "Target Support Files/Pods-neetoUIRN/Pods-neetoUIRN.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = neetoUIRN/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA9E8828BAB421DAF6D54890 /* libPods-neetoUIRN-neetoUIRNTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-neetoUIRN-neetoUIRNTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C71DE737E0B4244036DF8ED4 /* Pods-neetoUIRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-neetoUIRN.debug.xcconfig"; path = "Target Support Files/Pods-neetoUIRN/Pods-neetoUIRN.debug.xcconfig"; sourceTree = "<group>"; };
+		D15EE3A934D44535A3572101 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Semibold.ttf"; path = "../assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; };
+		D8A4710EAA6A47F9825534BA /* SFProText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Regular.ttf"; path = "../assets/fonts/SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		FBEABEAAFC404399A8758C01 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Medium.ttf"; path = "../assets/fonts/SFProText-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +124,6 @@
 				5C747BB630FA7BA7D86BAC4E /* Pods-neetoUIRN-neetoUIRNTests.debug.xcconfig */,
 				6DD5CA59A809FBE33EAA7B36 /* Pods-neetoUIRN-neetoUIRNTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -159,9 +164,12 @@
 			children = (
 				1F0FAE1B8DDC49A4B845AAFD /* Inter-Bold.ttf */,
 				60E28010B68C432481C927DE /* Inter-Regular.ttf */,
+				0F22E6775CE049C6AEA7C8C7 /* SFProText-Bold.ttf */,
+				FBEABEAAFC404399A8758C01 /* SFProText-Medium.ttf */,
+				D8A4710EAA6A47F9825534BA /* SFProText-Regular.ttf */,
+				D15EE3A934D44535A3572101 /* SFProText-Semibold.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +268,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				32CEDA4AA355406B9FB7730E /* Inter-Bold.ttf in Resources */,
-				8C044EDDF06A4EA8B3004B0F /* Inter-Regular.ttf in Resources */,
+				82C9863936214E0F873CB5AC /* SFProText-Bold.ttf in Resources */,
+				621296961FB944F8A32DB0DB /* SFProText-Medium.ttf in Resources */,
+				6642A0D65FE44EAEB48C54A3 /* SFProText-Regular.ttf in Resources */,
+				F37888B50D1E4D43BC6738C8 /* SFProText-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
