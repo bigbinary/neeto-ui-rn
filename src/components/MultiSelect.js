@@ -37,7 +37,7 @@ const MultiSelectItem = ({
     {...multiSelectedItemContainerStyle}
   >
     <Typography
-      fontFamily="inter400"
+      fontFamily="SFProText400"
       fontSize="s"
       mr={2}
       maxWidth="90%"
@@ -73,7 +73,7 @@ const DropdownItem = ({
         {...itemContainerStyle}
       >
         <Typography
-          fontFamily="inter400"
+          fontFamily="SFProText400"
           fontSize="s"
           color="font.grey"
           {...itemLabelStyle}
@@ -261,7 +261,7 @@ export const MultiSelect = ({
   return (
     <Container {...containerStyle}>
       <Typography
-        fontFamily="inter400"
+        fontFamily="SFProText400"
         mb={1}
         fontSize="s"
         color="font.base"
@@ -286,7 +286,11 @@ export const MultiSelect = ({
           {...rest}
         >
           {!multipleOptionsSelected && (
-            <Typography fontFamily="inter400" fontSize="s" color="font.grey">
+            <Typography
+              fontFamily="SFProText400"
+              fontSize="s"
+              color="font.grey"
+            >
               {!multipleOptionsSelected && placeholder}
             </Typography>
           )}
@@ -362,7 +366,7 @@ export const MultiSelect = ({
                   {...emptyOptionsContainerStyle}
                 >
                   <Typography
-                    fontFamily="inter400"
+                    fontFamily="SFProText400"
                     fontSize="s"
                     color="font.grey"
                     {...emptyOptionsLabelStyle}
@@ -387,7 +391,7 @@ export const MultiSelect = ({
                     />
                   ) : (
                     <Typography
-                      fontFamily="inter400"
+                      fontFamily="SFProText400"
                       fontSize="s"
                       color="font.grey"
                       {...createSearchedOptionLabelStyle}

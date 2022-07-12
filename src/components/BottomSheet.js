@@ -65,7 +65,7 @@ const ContentRow = React.memo(
           >
             <Typography
               textStyle="body"
-              fontFamily={isSelected ? "inter700" : "inter400"}
+              fontFamily={isSelected ? "inter700" : "SFProText400"}
               {...itemTextStyle}
             >
               {label}

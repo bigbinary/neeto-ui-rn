@@ -167,7 +167,7 @@ export const Alert = () => {
           <Typography
             textAlign="center"
             py={20}
-            fontFamily="inter400"
+            fontFamily="SFProText400"
             fontSize="l"
             color="font.grey600"
           >
@@ -184,7 +184,7 @@ export const Alert = () => {
             <Button
               borderWidth={1}
               variant="inverse"
-              fontFamily="inter400"
+              fontFamily="SFProText400"
               fontSize="m"
               borderRadius={50}
               minWidth={110}
@@ -199,7 +199,7 @@ export const Alert = () => {
           )}
           {button1 && (
             <Button
-              fontFamily="inter400"
+              fontFamily="SFProText400"
               fontSize="m"
               borderRadius={50}
               minWidth={110}
@@ -218,7 +218,7 @@ export const Alert = () => {
             mt={20}
             borderWidth={1}
             variant="inverse"
-            fontFamily="inter400"
+            fontFamily="SFProText400"
             fontSize="m"
             borderRadius={50}
             minWidth={110}

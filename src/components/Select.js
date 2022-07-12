@@ -37,7 +37,7 @@ const DropdownItem = ({
       {...(isSelectedItem && selectedItemContainerStyle)}
     >
       <Typography
-        fontFamily="inter400"
+        fontFamily="SFProText400"
         fontSize="s"
         color={isSelectedItem ? "font.white" : "font.grey"}
         {...itemLabelStyle}
@@ -215,7 +215,7 @@ export const Select = ({
   return (
     <Container {...containerStyle}>
       <Typography
-        fontFamily="inter400"
+        fontFamily="SFProText400"
         mb={1}
         fontSize="s"
         color="font.base"
@@ -237,7 +237,7 @@ export const Select = ({
           {...inputContainerStyle}
           {...rest}
         >
-          <Typography fontFamily="inter400" fontSize="s" color="font.grey">
+          <Typography fontFamily="SFProText400" fontSize="s" color="font.grey">
             {selectedOptionLabel || placeholder}
           </Typography>
           {isLoading ? (
@@ -287,7 +287,7 @@ export const Select = ({
                   {...emptyOptionsContainerStyle}
                 >
                   <Typography
-                    fontFamily="inter400"
+                    fontFamily="SFProText400"
                     fontSize="s"
                     color="font.grey"
                     {...emptyOptionsLabelStyle}
@@ -311,7 +311,7 @@ export const Select = ({
                     />
                   ) : (
                     <Typography
-                      fontFamily="inter400"
+                      fontFamily="SFProText400"
                       fontSize="s"
                       color="font.grey"
                       {...createSearchedOptionLabelStyle}
