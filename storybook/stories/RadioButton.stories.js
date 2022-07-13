@@ -84,7 +84,7 @@ export const RadioButtons = () => {
         selected={selected === 2}
         onSelect={() => setSelected(2)}
         labelComponent={
-          <Typography color="font.grey200" mx={2} fontFamily="inter700">
+          <Typography color="font.grey200" mx={2} fontFamily="sf700">
             With custom padding and color
           </Typography>
         }

@@ -91,7 +91,7 @@ const InputMetaData = {
 export default InputMetaData;
 
 export const Inputs = () => {
-  const customStyles = { color: "font.danger", fontFamily: "inter700" };
+  const customStyles = { color: "font.danger", fontFamily: "sf700" };
   return (
     <>
       <Container mb={20}>

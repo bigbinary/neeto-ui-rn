@@ -337,6 +337,6 @@ ErrorMessage.propTypes = {
 TextInput.defaultProps = {
   px: 2,
   minHeight: 45,
-  fontFamily: "SFProText400",
+  fontFamily: "sf400",
   fontSize: "16px",
 };

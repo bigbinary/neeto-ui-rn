@@ -162,16 +162,16 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <Typography fontFamily="SFProText400" fontSize="3xl">
+      <Typography fontFamily="sf400" fontSize="3xl">
         SFProText Regular 400
       </Typography>
-      <Typography fontFamily="SFProText500" fontSize="3xl">
+      <Typography fontFamily="sf500" fontSize="3xl">
         SFProText Medium 500
       </Typography>
-      <Typography fontFamily="SFProText600" fontSize="3xl">
+      <Typography fontFamily="sf600" fontSize="3xl">
         SFProText SemiBold 600
       </Typography>
-      <Typography fontFamily="SFProText700" fontSize="3xl">
+      <Typography fontFamily="sf700" fontSize="3xl">
         SFProText Bold 700
       </Typography>
     </Container>

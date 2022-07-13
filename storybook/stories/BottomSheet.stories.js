@@ -48,7 +48,7 @@ export const BottomSheetDemo = args => {
           alignText="center"
           fontSize="l"
           color="font.secondary"
-          fontFamily="inter700"
+          fontFamily="sf700"
         >
           Selected Item: {args.data[selectedItemIndex]}
         </Typography>

@@ -105,7 +105,7 @@ export const SegmentPicker = ({
     fontSize: theme.fontSizes.m,
     textAlign: "center",
     color: theme.colors.font.grey800,
-    fontFamily: theme.fonts.SFProText500,
+    fontFamily: theme.fonts.sf500,
     ...activeTextStyle,
   };
 
@@ -113,7 +113,7 @@ export const SegmentPicker = ({
     fontSize: theme.fontSizes.m,
     textAlign: "center",
     color: theme.colors.font.grey800,
-    fontFamily: theme.fonts.SFProText500,
+    fontFamily: theme.fonts.sf500,
     ...inactiveTextStyle,
   };
 

@@ -79,10 +79,10 @@ const baseTheme = {
     // SFProText800: "SFProText-ExtraBold",
     // SFProText900: "SFProText-Black",
 
-    SFProText400: "SFProText-Regular",
-    SFProText500: "SFProText-Medium",
-    SFProText600: "SFProText-Semibold",
-    SFProText700: "SFProText-Bold",
+    sf400: "SFProText-Regular",
+    sf500: "SFProText-Medium",
+    sf600: "SFProText-Semibold",
+    sf700: "SFProText-Bold",
   },
   lineHeights: [24],
   fontSizes: {
@@ -112,7 +112,7 @@ export const theme = {
     header: {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
-      fontFamily: baseTheme.fonts.inter700,
+      fontFamily: baseTheme.fonts.sf700,
     },
     body: {
       color: baseTheme.colors.font.grey500,
