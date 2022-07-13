@@ -73,16 +73,16 @@ const baseTheme = {
     // We can add below commented fonts later as follows. Also add font faces in index.web.js for the web.
     // https://www.bigbinary.com/learn-react-native/adding-custom-fonats
 
-    // SFProText100: "SFProText-Thin",
-    // SFProText200: "SFProText-ExtraLight",
-    // SFProText300: "SFProText-Light",
-    // SFProText800: "SFProText-ExtraBold",
-    // SFProText900: "SFProText-Black",
+    // sf100: "SFProText-Thin",
+    // sf200: "SFProText-ExtraLight",
+    // sf300: "SFProText-Light",
+    // sf800: "SFProText-ExtraBold",
+    // sf900: "SFProText-Black",
 
-    SFProText400: "SFProText-Regular",
-    SFProText500: "SFProText-Medium",
-    SFProText600: "SFProText-Semibold",
-    SFProText700: "SFProText-Bold",
+    sf400: "SFProText-Regular",
+    sf500: "SFProText-Medium",
+    sf600: "SFProText-Semibold",
+    sf700: "SFProText-Bold",
   },
   lineHeights: [24],
   fontSizes: {
@@ -112,7 +112,7 @@ export const theme = {
     header: {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
-      fontFamily: baseTheme.fonts.inter700,
+      fontFamily: baseTheme.fonts.sf700,
     },
     body: {
       color: baseTheme.colors.font.grey500,
