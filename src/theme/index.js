@@ -35,6 +35,7 @@ const greenVariants = {
   green800: "#00956D",
   green700: "#00BA88",
   green600: "#33C8A0",
+  green500: "#34C759",
 };
 
 const colors = {
