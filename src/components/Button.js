@@ -1,15 +1,16 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
-import { Typography, Container, Touchable } from "@components";
 import PropTypes from "prop-types";
+import { ThemeContext } from "styled-components/native";
+
+import { Typography, Touchable } from "@components";
 
 /**
  *
  * Buttons are touchable elements used to interact with the screen and to trigger an action.
  *
  * <div class="screenshots">
- *   <img src="screenshots/button/solidButtons.png" />
- *   <img src="screenshots/button/loaderButtons.png" />
+ *   <img src="screenshots/button/button.png" />
  * </div>
  *
  *  ## Usage
@@ -20,13 +21,35 @@ import PropTypes from "prop-types";
  * export default function Main() {
  *  return (
  *    <Container>
+ *      <Button my={9} label="Button1" />
+ *      <Button my={9} disabled label="Disabled Button2" />
  *      <Button
  *        my={9}
- *        width={200}
- *        variant="solid"
- *        disabled
- *        label="Solid Button"
- *       />
+ *        LeftIcon={() => <Icon name="ri-add-line" color="white" size={16} />}
+ *        label="Left Icon Button"
+ *      />
+ *      <Button
+ *        my={9}
+ *        RightIcon={() => <Icon name="ri-add-line" color="white" size={16} />}
+ *        label="Right Icon Button"
+ *      />
+ *      <Button my={9} variant="text" label="Text Button" />
+ *      <Button
+ *        my={9}
+ *        variant="text"
+ *        LeftIcon={() => (
+ *          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+ *        )}
+ *        label="Left Icon Text Button"
+ *      />
+ *      <Button
+ *        my={9}
+ *        variant="text"
+ *        RightIcon={() => (
+ *          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+ *        )}
+ *        label="Right Icon Text Button"
+ *      />
  *    </Container>
  *  );
  * }
@@ -34,63 +57,47 @@ import PropTypes from "prop-types";
  *
  */
 
-export const Button = React.forwardRef((props, ref) => {
-  const {
-    RightIcon,
-    LeftIcon,
-    fontFamily,
-    color,
-    fontSize,
-    loadingText,
-    isLoading,
-    Loader,
-    disabled,
-    variant,
-    ...rest
-  } = props;
-  let style = rest.style || {};
-  if (disabled || isLoading) {
-    style = { ...style, opacity: 0.5 };
-  }
+export const Button = props => {
+  const { variant, label, labelStyle, RightIcon, LeftIcon, disabled, ...rest } =
+    props;
+  const theme = useContext(ThemeContext);
+  const isTextVariant = variant === "text";
 
   return (
     <Touchable
-      {...(variant === "solid" && { rippleColor: "white" })}
-      ref={ref}
+      rippleColor={isTextVariant ? "black" : "white"}
+      disabled={disabled}
+      bg={
+        isTextVariant
+          ? "transparent"
+          : theme.colors.background[disabled ? "grey400" : "base"]
+      }
+      height={45}
+      width={isTextVariant ? null : "100%"}
+      borderRadius={8}
       flexDirection="row"
-      disabled={disabled || isLoading}
+      alignItems="center"
+      justifyContent="center"
       {...rest}
-      variant={variant}
-      style={style}
     >
-      {Loader && isLoading && (
-        <Container mx={1}>
-          <Loader />
-        </Container>
-      )}
       {LeftIcon && <LeftIcon />}
       <Typography
         textAlign="center"
         mx={1}
-        color={color}
-        fontFamily={fontFamily || "sf700"}
-        fontSize={fontSize || "s"}
-        textStyle={variant}
+        color={theme.colors.font[isTextVariant ? "primary" : "white"]}
+        fontSize={15}
+        fontWeight="500"
+        {...labelStyle}
       >
-        {isLoading ? loadingText : rest.label}
+        {label}
       </Typography>
       {RightIcon && <RightIcon />}
     </Touchable>
   );
-});
+};
 
 Button.defaultProps = {
   variant: "solid",
-  p: 12,
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: 2,
-  loadingText: "Loading…",
 };
 
 Button.propTypes = {
@@ -105,33 +112,28 @@ Button.propTypes = {
    */
   label: PropTypes.string.isRequired,
   /**
-   * Supported Type: 'text' | 'inverse' | 'solid'
+   * Supported Type: 'text' | 'solid'
    * You can change the mode to adjust the styling.
    *  <ul>
    *    <li>text - flat button without background or outline.</li>
-   *    <li>inverse - button with an outline.</li>
    *    <li>solid - button with a background color.</li>
    *  </ul>
    */
-  variant: PropTypes.oneOf(["text", "inverse", "solid"]),
+  variant: PropTypes.oneOf(["text", "solid"]),
   /**
-   * Expects a component.
+   * Enable or Disable the button.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Customize label style of the button.
+   */
+  labelStyle: PropTypes.object,
+  /**
+   * Render a component on the right side of the Label.
    */
   RightIcon: PropTypes.elementType,
   /**
-   * Expects a component.
+   * Render a component on the left side of the Label.
    */
   LeftIcon: PropTypes.elementType,
-  /**
-   * Custom text can be specified while loading if default one needs to changed.
-   */
-  loadingText: PropTypes.string,
-  /**
-   * Whether to show a loading indicator.
-   */
-  isLoading: PropTypes.bool,
-  /**
-   * Expects a component. Is used to override the default loader.
-   */
-  Loader: PropTypes.elementType,
 };
