@@ -73,11 +73,11 @@ const baseTheme = {
     // We can add below commented fonts later as follows. Also add font faces in index.web.js for the web.
     // https://www.bigbinary.com/learn-react-native/adding-custom-fonats
 
-    // SFProText100: "SFProText-Thin",
-    // SFProText200: "SFProText-ExtraLight",
-    // SFProText300: "SFProText-Light",
-    // SFProText800: "SFProText-ExtraBold",
-    // SFProText900: "SFProText-Black",
+    // sf100: "SFProText-Thin",
+    // sf200: "SFProText-ExtraLight",
+    // sf300: "SFProText-Light",
+    // sf800: "SFProText-ExtraBold",
+    // sf900: "SFProText-Black",
 
     sf400: "SFProText-Regular",
     sf500: "SFProText-Medium",

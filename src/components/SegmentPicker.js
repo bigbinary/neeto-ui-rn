@@ -1,19 +1,12 @@
 import PropTypes from "prop-types";
-import propTypes from "@styled-system/prop-types";
-import React, { useEffect, useCallback, useContext } from "react";
-import {
-  View,
-  Dimensions,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import React, { useEffect, useCallback } from "react";
+import { Dimensions, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { ThemeContext } from "styled-components/native";
+import { Typography, Touchable } from "@components";
 
 const defaultShadowStyle = {
   shadowColor: "#000",
@@ -79,11 +72,10 @@ export const SegmentPicker = ({
   activeSegmentStyle,
   activeTextStyle,
   inactiveTextStyle,
-  paddingVertical,
+  py,
 }) => {
   const translateValue = (width - 4) / tabs?.length;
   const tabTranslateValue = useSharedValue(0);
-  const theme = useContext(ThemeContext);
 
   // useCallBack with an empty array as input, which will call inner lambda only once and memoize the reference for future calls
   const memoizedTabPressCallback = useCallback(
@@ -100,22 +92,6 @@ export const SegmentPicker = ({
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
-
-  const finalisedActiveTextStyle = {
-    fontSize: theme.fontSizes.m,
-    textAlign: "center",
-    color: theme.colors.font.grey800,
-    fontFamily: theme.fonts.sf500,
-    ...activeTextStyle,
-  };
-
-  const finalisedInActiveTextStyle = {
-    fontSize: theme.fontSizes.m,
-    textAlign: "center",
-    color: theme.colors.font.grey800,
-    fontFamily: theme.fonts.sf500,
-    ...inactiveTextStyle,
-  };
 
   const tabTranslateAnimatedStyles = useAnimatedStyle(() => {
     return {
@@ -140,27 +116,28 @@ export const SegmentPicker = ({
         ]}
       />
 
-      {tabs.map((tab, index) => {
-        const isCurrentIndex = currentIndex === index;
+      {tabs.map((label, index) => {
+        const currentIndexTextStyle =
+          currentIndex === index ? activeTextStyle : inactiveTextStyle;
         return (
-          <TouchableOpacity
+          <Touchable
             key={index}
-            style={[styles.textWrapper, { paddingVertical: paddingVertical }]}
+            flex={1}
+            elevation={6}
             onPress={() => memoizedTabPressCallback(index)}
+            py={py}
             activeOpacity={0.7}
           >
-            <View style={styles.textWrapper}>
-              <Text
-                style={
-                  isCurrentIndex
-                    ? finalisedActiveTextStyle
-                    : finalisedInActiveTextStyle
-                }
-              >
-                {tab}
-              </Text>
-            </View>
-          </TouchableOpacity>
+            <Typography
+              fontSize="xs"
+              textAlign="center"
+              color="font.grey800"
+              fontFamily="sf500"
+              {...currentIndexTextStyle}
+            >
+              {label}
+            </Typography>
+          </Touchable>
         );
       })}
     </Animated.View>
@@ -191,23 +168,9 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: "#FFFFFF",
   },
-  textWrapper: {
-    flex: 1,
-    elevation: 9,
-  },
-  textStyles: {
-    fontSize: 13,
-    textAlign: "center",
-    fontWeight: "600",
-  },
 });
 
 SegmentPicker.propTypes = {
-  ...propTypes.flexbox,
-  ...propTypes.space,
-  ...propTypes.border,
-  ...propTypes.layout,
-  ...propTypes.color,
   /**
    * Array of texts for the labels of each Segment/Tab.
    */
@@ -236,12 +199,12 @@ SegmentPicker.propTypes = {
    * To change the active segment font style.
    */
   activeTextStyle: PropTypes.object,
-  paddingVertical: PropTypes.number,
+  py: PropTypes.number,
 };
 
 SegmentPicker.defaultProps = {
   tabs: [],
   onChange: () => {},
   currentIndex: 0,
-  paddingVertical: 12,
+  py: 12,
 };
