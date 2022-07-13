@@ -23496,11 +23496,11 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
                   Object {
                     "alignItems": "center",
                     "backgroundColor": "rgba(255, 105, 105, 1)",
-                    "borderRadius": 12,
+                    "borderRadius": 10,
                     "flexDirection": "row",
-                    "height": 24,
+                    "height": 18,
                     "padding": 2,
-                    "width": 42,
+                    "width": 38,
                   }
                 }
               >
@@ -23525,14 +23525,14 @@ exports[`Storyshots ToggleSwitches Toggle Switch Demo 1`] = `
                   style={
                     Object {
                       "backgroundColor": "rgba(255, 255, 255, 1)",
-                      "borderRadius": 10,
-                      "height": 21,
+                      "borderRadius": 7,
+                      "height": 14,
                       "transform": Array [
                         Object {
-                          "translateX": 17,
+                          "translateX": 20,
                         },
                       ],
-                      "width": 21,
+                      "width": 14,
                     }
                   }
                 >
@@ -23686,12 +23686,12 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "backgroundColor": "rgba(52, 199, 89, 1)",
-                      "borderRadius": 12,
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
+                      "borderRadius": 10,
                       "flexDirection": "row",
-                      "height": 24,
+                      "height": 18,
                       "padding": 2,
-                      "width": 42,
+                      "width": 38,
                     }
                   }
                 >
@@ -23716,14 +23716,14 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255, 255, 255, 1)",
-                        "borderRadius": 10,
-                        "height": 21,
+                        "borderRadius": 7,
+                        "height": 14,
                         "transform": Array [
                           Object {
-                            "translateX": 17,
+                            "translateX": 20,
                           },
                         ],
-                        "width": 21,
+                        "width": 14,
                       }
                     }
                   >
@@ -23814,12 +23814,12 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "backgroundColor": "rgba(52, 199, 89, 1)",
-                      "borderRadius": 12,
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
+                      "borderRadius": 10,
                       "flexDirection": "row",
-                      "height": 24,
+                      "height": 18,
                       "padding": 2,
-                      "width": 42,
+                      "width": 38,
                     }
                   }
                 >
@@ -23844,14 +23844,14 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255, 255, 255, 1)",
-                        "borderRadius": 10,
-                        "height": 21,
+                        "borderRadius": 7,
+                        "height": 14,
                         "transform": Array [
                           Object {
-                            "translateX": 17,
+                            "translateX": 20,
                           },
                         ],
-                        "width": 21,
+                        "width": 14,
                       }
                     }
                   >
@@ -23942,12 +23942,12 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                   style={
                     Object {
                       "alignItems": "center",
-                      "backgroundColor": "rgba(52, 199, 89, 1)",
-                      "borderRadius": 12,
+                      "backgroundColor": "rgba(47, 57, 65, 1)",
+                      "borderRadius": 10,
                       "flexDirection": "row",
-                      "height": 24,
+                      "height": 18,
                       "padding": 2,
-                      "width": 42,
+                      "width": 38,
                     }
                   }
                 >
@@ -23971,15 +23971,15 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     nativeID="animatedComponent"
                     style={
                       Object {
-                        "backgroundColor": "rgba(194, 200, 204, 1)",
-                        "borderRadius": 10,
-                        "height": 21,
+                        "backgroundColor": "rgba(135, 146, 157, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
                         "transform": Array [
                           Object {
-                            "translateX": 17,
+                            "translateX": 20,
                           },
                         ],
-                        "width": 21,
+                        "width": 14,
                       }
                     }
                   >
@@ -24056,11 +24056,11 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "rgba(233, 235, 237, 1)",
-                      "borderRadius": 12,
+                      "borderRadius": 10,
                       "flexDirection": "row",
-                      "height": 24,
+                      "height": 18,
                       "padding": 2,
-                      "width": 42,
+                      "width": 38,
                     }
                   }
                 >
@@ -24076,15 +24076,15 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     nativeID="animatedComponent"
                     style={
                       Object {
-                        "backgroundColor": "rgba(248, 249, 249, 1)",
-                        "borderRadius": 10,
-                        "height": 21,
+                        "backgroundColor": "rgba(246, 246, 250, 1)",
+                        "borderRadius": 7,
+                        "height": 14,
                         "transform": Array [
                           Object {
                             "translateX": 0,
                           },
                         ],
-                        "width": 21,
+                        "width": 14,
                       }
                     }
                   >
@@ -24193,11 +24193,11 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     Object {
                       "alignItems": "center",
                       "backgroundColor": "rgba(255, 105, 105, 1)",
-                      "borderRadius": 12,
+                      "borderRadius": 10,
                       "flexDirection": "row",
-                      "height": 24,
+                      "height": 18,
                       "padding": 2,
-                      "width": 42,
+                      "width": 38,
                     }
                   }
                 >
@@ -24222,14 +24222,14 @@ exports[`Storyshots ToggleSwitches Toggle Switches 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255, 255, 255, 1)",
-                        "borderRadius": 10,
-                        "height": 21,
+                        "borderRadius": 7,
+                        "height": 14,
                         "transform": Array [
                           Object {
-                            "translateX": 17,
+                            "translateX": 20,
                           },
                         ],
-                        "width": 21,
+                        "width": 14,
                       }
                     }
                   >
