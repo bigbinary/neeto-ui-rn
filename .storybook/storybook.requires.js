@@ -41,6 +41,7 @@ const getStories = () => {
     require("../storybook/stories/Divider.stories.js"),
     require("../storybook/stories/FAB.stories.js"),
     require("../storybook/stories/Input.stories.js"),
+    require("../storybook/stories/ListItem.stories.js"),
     require("../storybook/stories/MultiSelect.stories.js"),
     require("../storybook/stories/OtpInputs.stories.js"),
     require("../storybook/stories/Popover.stories.js"),
