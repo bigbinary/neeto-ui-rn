@@ -35,14 +35,17 @@ export const ListItems = () => {
   return (
     <Container alignItems="center">
       <ListItem
-        LeftIcon={() => <Typography mr={2}>📣</Typography>}
+        LeftComponent={() => <Typography mr={2}>📣</Typography>}
         label="Organization"
-        value={() => <Typography>Bigbinary</Typography>}
+        RightComponent={() => <Typography>Bigbinary</Typography>}
       />
-      <ListItem label="Hello" value={() => <Typography>Text</Typography>} />
+      <ListItem
+        label="Hello"
+        RightComponent={() => <Typography>Text</Typography>}
+      />
       <ListItem
         label="Sample Project"
-        value={() => (
+        RightComponent={() => (
           <Touchable p={1}>
             <Typography color="font.base">Add</Typography>
           </Touchable>

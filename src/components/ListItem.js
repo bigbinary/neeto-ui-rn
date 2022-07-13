@@ -19,7 +19,7 @@ import { Typography, Container } from "@components";
  *  return (
  *    <Container>
  *      <ListItem
- *        LeftIcon={() => <Typography mr={2}>📣</Typography>}
+ *        LeftComponent={() => <Typography mr={2}>📣</Typography>}
  *        label="Organization"
  *        value={() => <Typography>Bigbinary</Typography>}
  *      />
@@ -29,8 +29,7 @@ import { Typography, Container } from "@components";
  * ```
  */
 
-export const ListItem = ({ LeftIcon, label, value }) => {
-  const ValueComponent = value;
+export const ListItem = ({ LeftComponent, label, RightComponent }) => {
   return (
     <Container
       flexDirection="row"
@@ -43,18 +42,18 @@ export const ListItem = ({ LeftIcon, label, value }) => {
       justifyContent="space-between"
     >
       <Container flexDirection="row" alignItems="center">
-        {LeftIcon && <LeftIcon />}
+        {LeftComponent && <LeftComponent />}
         <Typography color="font.grey800" fontSize="l" fontFamily="sf400">
           {label}
         </Typography>
       </Container>
-      <ValueComponent />
+      <RightComponent />
     </Container>
   );
 };
 
 ListItem.propTypes = {
-  LeftIcon: PropTypes.elementType,
+  LeftComponent: PropTypes.elementType,
   label: PropTypes.string.isRequired,
-  value: PropTypes.elementType.isRequired,
+  RightComponent: PropTypes.elementType.isRequired,
 };
