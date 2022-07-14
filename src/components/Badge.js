@@ -44,7 +44,7 @@ export const Badge = ({
   content,
   size = 21,
   fontSize = "xs",
-  fontFamily = "inter400",
+  fontFamily = "sf400",
   color = "font.white",
   ...rest
 }) => {

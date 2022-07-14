@@ -53,10 +53,10 @@ export const ToggleSwitch = ({
   const theme = useContext(ThemeContext);
 
   const circleColorOn = disabled
-    ? theme.colors.background.grey500
+    ? theme.colors.background.grey400
     : theme.colors.background.white;
   const circleColorOff = disabled
-    ? theme.colors.background.menubackground
+    ? theme.colors.background.grey100
     : theme.colors.background.white;
 
   return (
@@ -75,7 +75,7 @@ export const ToggleSwitch = ({
         circleColorOn={circleColorOn}
         circleColorOff={circleColorOff}
         backgroundColorOff={theme.colors.background.grey200}
-        backgroundColorOn={theme.colors.background.grey800}
+        backgroundColorOn={theme.colors.background.green500}
         containerStyle={styles.containerStyle}
         circleStyle={styles.circleStyle}
         {...rest.switchStyles}
@@ -136,14 +136,14 @@ Label.propTypes = {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    width: 38,
-    height: 18,
-    borderRadius: 10,
+    width: 42,
+    height: 24,
+    borderRadius: 12,
     padding: 2,
   },
   circleStyle: {
-    width: 14,
-    height: 14,
-    borderRadius: 7,
+    width: 21,
+    height: 21,
+    borderRadius: 10,
   },
 });

@@ -75,7 +75,7 @@ export const Avatar = ({
           {...rest}
         >
           <Typography
-            fontFamily="inter700"
+            fontFamily="sf700"
             fontSize={fontSize > 14 ? fontSize : 14}
             color={fontColor}
           >

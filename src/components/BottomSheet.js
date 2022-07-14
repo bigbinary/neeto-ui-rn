@@ -28,7 +28,7 @@ const Title = ({ title, bg, hide, titleContainerStyle, titleTextStyle }) => {
         {title && (
           <Typography
             color="font.secondary"
-            fontFamily="inter700"
+            fontFamily="sf700"
             textStyle="subtext"
             {...titleTextStyle}
           >
@@ -65,7 +65,7 @@ const ContentRow = React.memo(
           >
             <Typography
               textStyle="body"
-              fontFamily={isSelected ? "inter700" : "inter400"}
+              fontFamily={isSelected ? "sf700" : "sf400"}
               {...itemTextStyle}
             >
               {label}
