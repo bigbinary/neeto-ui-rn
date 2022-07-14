@@ -80,7 +80,12 @@ const Title = ({
               />
             </Container>
 
-            <Touchable onPress={() => setSearchBarOpen(false)}>
+            <Touchable
+              onPress={() => {
+                setSearchText("");
+                setSearchBarOpen(false);
+              }}
+            >
               <Typography fontSize="l" fontFamily="sf400" color="font.grey800">
                 Cancel
               </Typography>
