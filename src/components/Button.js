@@ -83,7 +83,7 @@ export const Button = props => {
       {LeftIcon && <LeftIcon />}
       <Typography
         textAlign="center"
-        mx={1}
+        mx={2}
         color={theme.colors.font[isTextVariant ? "primary" : "white"]}
         fontSize="m"
         fontFamily={theme.fonts.SFProText500}
