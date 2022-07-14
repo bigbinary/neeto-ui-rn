@@ -4,7 +4,7 @@ import { Container, CheckBox } from "@components";
 
 const CheckBoxStories = {
   title: "Checkbox",
-  component: CheckBoxStories,
+  component: CheckBox,
   argTypes: {
     disabled: {
       control: {

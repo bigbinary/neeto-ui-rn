@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
+import Proptypes from "prop-types";
+import { ThemeContext } from "styled-components/native";
 
-import { Container, Touchable, Typography } from "@components";
-const labelPositions = ["left", "right"];
-
-const LabelComponent = ({ label, labelComponent, labelProp }) => {
-  return labelComponent || <Typography {...labelProp}>{label}</Typography>;
-};
+import { Container, Typography, Touchable } from "@components";
 
 /**
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/radioButton/radioButton.png" />
+ * </div>
  *
  * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
@@ -26,149 +26,120 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  * import { Container, RadioButton } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
- *  const [selected, setSelected] = useState(false);
+ *  const [selected1, setSelected1] = useState(true);
+ *  const [selected2, setSelected2] = useState(false);
  *
- *   return (
- *     <Container>
+ *  return (
+ *    <Container>
  *      <RadioButton
- *       selected={selected}
- *       onSelect={() => setSelected(!selected)}
- *       label="option label 1"
- *       labelPosition="left"
+ *        mt={2}
+ *        selected={selected1}
+ *        onSelect={() => setSelected1(prev => !prev)}
+ *        label={`Radio button marked as ${!selected1 ? "un" : ""}selected`}
  *      />
- *     </Container>
- *   );
- *  }
+ *      <RadioButton
+ *        mt={3}
+ *        selected={selected2}
+ *        onSelect={() => setSelected2(prev => !prev)}
+ *        label={`Radio button marked as ${!selected2 ? "un" : ""}selected`}
+ *      />
+ *      <RadioButton mt={3} disabled label="Disabled Radio button" />
+ *    </Container>
+ *  );
+ * }
  * ```
  *
  */
 
 export const RadioButton = ({
-  radioButtonWidth = 20,
-  radioButtonSelectedWidth = 10,
-  containerBg = "background.grey",
-  innerActiveBg = "background.base",
-  innerInActiveBg = "background.secondary",
-  onSelect = () => {},
-  selected = null,
-  density = 5,
-  label = "Option",
-  labelComponent = null,
-  labelProp = {},
-  labelPosition = "right",
-  disabled = false,
+  selected,
+  onSelect,
+  disabled,
+  label,
+  radioButtonStyle,
+  labelStyle,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext);
+  const disabledProps = {
+    labelProps: {
+      color: theme.colors.font.grey400,
+    },
+  };
+  const selectedProps = {
+    borderWidth: 4,
+    borderColor: theme.colors.background.base,
+    labelProps: {
+      fontFamily: theme.fonts.SFProText500,
+      color: theme.colors.font.primary,
+    },
+  };
+  const unselectedProps = {
+    borderWidth: 2,
+    borderColor: theme.colors.border.secondary,
+    labelProps: {
+      fontFamily: theme.fonts.SFProText400,
+      color: theme.colors.font.secondary,
+    },
+  };
   return (
     <Touchable
       disabled={disabled}
-      opacity={disabled ? 0.5 : 1}
       onPress={onSelect}
       flexDirection="row"
       alignItems="center"
-      py={1}
       {...rest}
     >
-      {labelPosition === labelPositions[0] ? (
-        <LabelComponent
-          label={label}
-          labelComponent={labelComponent}
-          labelProp={{ mr: 2, ...labelProp }}
-        />
-      ) : null}
       <Container
-        bg={containerBg}
-        height={radioButtonWidth}
-        width={radioButtonWidth}
-        borderRadius={radioButtonWidth / 2}
-        justifyContent="center"
-        alignItems="center"
+        height={16}
+        width={16}
+        borderRadius={8}
+        bg={theme.colors.background.white}
+        {...(selected && selectedProps)}
+        {...(!selected && unselectedProps)}
+        {...radioButtonStyle}
+      />
+      <Typography
+        ml={2}
+        {...(selected && selectedProps.labelProps)}
+        {...(!selected && unselectedProps.labelProps)}
+        {...(disabled && disabledProps.labelProps)}
+        {...labelStyle}
       >
-        <Container
-          height={radioButtonSelectedWidth + density}
-          width={radioButtonSelectedWidth + density}
-          borderRadius={(radioButtonSelectedWidth + density) / 2}
-          bg="background.white"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Container
-            bg={selected ? innerActiveBg : innerInActiveBg}
-            height={radioButtonSelectedWidth}
-            width={radioButtonSelectedWidth}
-            borderRadius={radioButtonSelectedWidth / 2}
-            m={1}
-          />
-        </Container>
-      </Container>
-      {labelPosition === labelPositions[1] ? (
-        <LabelComponent
-          label={label}
-          labelComponent={labelComponent}
-          labelProp={{ ml: 2, ...labelProp }}
-        />
-      ) : null}
+        {label}
+      </Typography>
     </Touchable>
   );
 };
 
 RadioButton.propTypes = {
   /**
+   * Whether radio button is selected or not.
+   */
+  selected: Proptypes.bool.isRequired,
+  /**
    * Function to execute on press.
    */
-  onSelect: PropTypes.func.isRequired,
+  onSelect: Proptypes.func.isRequired,
   /**
-   * Whether radio is selected.
+   * To disable the component.
    */
-  selected: PropTypes.any.isRequired,
+  disabled: Proptypes.bool,
   /**
    * Text label to be shown with radio button.
    */
-  label: PropTypes.string,
+  label: Proptypes.string,
   /**
-   * Props for the label.
+   * Customize radio button style.
    */
-  labelProp: PropTypes.object,
+  radioButtonStyle: Proptypes.object,
   /**
-   * Label can passed as a component as well.
+   * Customize label style.
    */
-  labelComponent: PropTypes.element,
-  /**
-   * Position of label relative to the radio button. It can be either `left` or `right`
-   */
-  labelPosition: PropTypes.oneOf(labelPositions),
-  /**
-   * Whether radio is disabled.
-   */
-  disabled: PropTypes.bool,
-  /**
-   * Size of radio button.
-   */
-  radioButtonWidth: PropTypes.number,
-  /**
-   * Size of radio button when selected.
-   */
-  radioButtonSelectedWidth: PropTypes.number,
-  /**
-   * Background color of radio button.
-   */
-  containerBg: PropTypes.string,
-  /**
-   * Color of radio button when selected.
-   */
-  innerActiveBg: PropTypes.string,
-  /**
-   * Color of radio button when not selected.
-   */
-  innerInActiveBg: PropTypes.string,
-  /**
-   * Thickness of radio button container component.
-   */
-  density: PropTypes.number,
+  labelStyle: Proptypes.object,
 };
 
-LabelComponent.propTypes = {
-  label: PropTypes.string,
-  labelComponent: PropTypes.element,
-  labelProp: PropTypes.object,
+RadioButton.defaultProps = {
+  selected: false,
+  onSelect: () => {},
 };
