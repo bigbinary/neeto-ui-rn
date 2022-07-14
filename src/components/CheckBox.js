@@ -63,6 +63,7 @@ export const CheckBox = ({
 }) => {
   const theme = useContext(ThemeContext);
   const disabledProps = {
+    bg: theme.colors.background[checked ? "grey400" : "white"],
     labelProps: {
       color: theme.colors.font.grey400,
     },
@@ -97,16 +98,19 @@ export const CheckBox = ({
         borderRadius={3}
         justifyContent="center"
         alignItems="center"
-        {...(checked && checkedProps)}
         {...(!checked && unCheckedProps)}
+        {...(checked && checkedProps)}
+        {...(disabled && disabledProps)}
         {...checkboxStyle}
       >
-        <Icon
-          name="ri-check-line"
-          size={14}
-          color={theme.colors.font.white}
-          {...checkIconStyle}
-        />
+        {checked && (
+          <Icon
+            name="ri-check-line"
+            size={14}
+            color={theme.colors.font.white}
+            {...checkIconStyle}
+          />
+        )}
       </Container>
       <Typography
         ml={2}

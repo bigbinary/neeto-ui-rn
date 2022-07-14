@@ -64,6 +64,12 @@ export const RadioButtonComponent = () => {
         label={`Radio button marked as ${!selected2 ? "un" : ""}selected`}
       />
       <RadioButton mt={3} disabled label="Disabled radio button" />
+      <RadioButton
+        mt={3}
+        disabled
+        selected
+        label="Disabled and selected radio button"
+      />
     </Container>
   );
 };

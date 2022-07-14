@@ -62,6 +62,7 @@ export const RadioButton = ({
 }) => {
   const theme = useContext(ThemeContext);
   const disabledProps = {
+    borderColor: theme.colors.border.secondary,
     labelProps: {
       color: theme.colors.font.grey400,
     },
@@ -97,6 +98,7 @@ export const RadioButton = ({
         bg={theme.colors.background.white}
         {...(selected && selectedProps)}
         {...(!selected && unselectedProps)}
+        {...(disabled && disabledProps)}
         {...radioButtonStyle}
       />
       <Typography
