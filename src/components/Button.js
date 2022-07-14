@@ -85,8 +85,8 @@ export const Button = props => {
         textAlign="center"
         mx={1}
         color={theme.colors.font[isTextVariant ? "primary" : "white"]}
-        fontSize={15}
-        fontWeight="500"
+        fontSize="m"
+        fontFamily={theme.fonts.SFProText500}
         {...labelStyle}
       >
         {label}
