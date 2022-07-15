@@ -56,7 +56,6 @@ export const Toasts = () => {
         onPress={() => {
           Toast.show({
             type: "success",
-            position: "bottom",
             text1: "Yay!",
             text2: "Showing Success Toast Message!",
           });
@@ -68,7 +67,6 @@ export const Toasts = () => {
         onPress={() => {
           Toast.show({
             type: "error",
-            position: "bottom",
             text1: "Ohh!",
             text2: "Showing Error Toast Message!",
           });
@@ -80,7 +78,6 @@ export const Toasts = () => {
         onPress={() => {
           Toast.show({
             type: "info",
-            position: "bottom",
             text1: "Ohh!",
             text2: "Showing Info Toast Message!",
           });
@@ -92,7 +89,6 @@ export const Toasts = () => {
         onPress={() => {
           Toast.show({
             type: "warning",
-            position: "bottom",
             text1: "Ohh!",
             text2: "Showing Warning Toast Message!",
           });
