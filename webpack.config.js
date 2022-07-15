@@ -22,6 +22,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./node_modules/react-native-gesture-handler"),
     path.resolve(__dirname, "./node_modules/react-native-remix-icon"),
     path.resolve(__dirname, "./node_modules/react-native-svg"),
+    path.resolve(__dirname, "./node_modules/react-native-svg-transformer"),
     path.resolve(__dirname, "./node_modules/react-native-toast-message"),
     path.resolve(
       __dirname,

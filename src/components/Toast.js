@@ -6,19 +6,33 @@ import { useContext } from "react";
 import { ThemeContext } from "styled-components/native";
 import { useWindowDimensions } from "react-native";
 
+import SuccessIcon from "@assets/icons/success.svg";
+import WarningIcon from "@assets/icons/warning.svg";
+import InfoIcon from "@assets/icons/info.svg";
+import ErrorIcon from "@assets/icons/error.svg";
 import { Container, Typography } from "@components";
-import Icon from "react-native-remix-icon";
 
 const ToastComponent = ({ type, text1, text2 }) => {
   const theme = useContext(ThemeContext);
   const { width } = useWindowDimensions();
+  const Icon = () => {
+    switch (type) {
+      case "success":
+        return <SuccessIcon />;
+      case "warning":
+        return <WarningIcon />;
+      case "info":
+        return <InfoIcon />;
+      case "error":
+        return <ErrorIcon />;
+    }
+  };
   return (
     <Container
       width={width - 20}
       height={60}
       borderRadius={16}
-      // bg="rgba(245, 245, 245, 0.5)"
-      bg="white"
+      bg={theme.colors.background.secondary}
       flexDirection="row"
       alignItems="center"
       px={10}
@@ -32,16 +46,28 @@ const ToastComponent = ({ type, text1, text2 }) => {
         alignItems="center"
         justifyContent="center"
       >
-        <Icon name="ri-check-line" color={theme.colors.font.white} size={20} />
+        <Icon />
       </Container>
 
       <Container ml={10}>
-        <Typography fontFamily={theme.fonts.sf600} fontSize="m">
-          {text1}
-        </Typography>
-        <Typography fontFamily={theme.fonts.sf400} fontSize="xs">
-          {text2}
-        </Typography>
+        {text1 && (
+          <Typography
+            fontFamily={theme.fonts.sf600}
+            fontSize="m"
+            fontColor={theme.colors.font.primary}
+          >
+            {text1}
+          </Typography>
+        )}
+        {text2 && (
+          <Typography
+            fontFamily={theme.fonts.sf400}
+            fontSize="xs"
+            fontColor={theme.colors.font.secondary}
+          >
+            {text2}
+          </Typography>
+        )}
       </Container>
     </Container>
   );
