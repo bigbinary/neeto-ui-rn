@@ -86,7 +86,7 @@ export const Button = props => {
         mx={2}
         color={theme.colors.font[isTextVariant ? "primary" : "white"]}
         fontSize="m"
-        fontFamily={theme.fonts.SFProText500}
+        fontFamily={theme.fonts.sf500}
         {...labelStyle}
       >
         {label}

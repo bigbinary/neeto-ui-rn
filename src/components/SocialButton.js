@@ -57,8 +57,8 @@ export const SocialButton = props => {
       </Container>
       <Typography
         color={theme.colors.font.primary}
-        fontSize={14}
-        fontWeight="600"
+        fontSize="m"
+        fontFamily={theme.fonts.sf500}
         {...labelStyle}
       >
         Continue with {capitalize(variant)}
