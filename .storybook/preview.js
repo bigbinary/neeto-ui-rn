@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components/native";
 import { ScrollView } from "react-native";
 
 import { theme } from "@theme";
-import { Container } from "@components";
+import { Container, Toast } from "@components";
 
 export const decorators = [
   withBackgrounds,
@@ -19,6 +19,7 @@ export const decorators = [
           <Story />
         </Container>
       </ScrollView>
+      <Toast />
     </ThemeProvider>
   ),
 ];
