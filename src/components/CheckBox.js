@@ -71,7 +71,7 @@ export const CheckBox = ({
   const checkedProps = {
     bg: theme.colors.background.base,
     labelProps: {
-      fontFamily: theme.fonts.SFProText500,
+      fontFamily: theme.fonts.sf500,
       color: theme.colors.font.primary,
     },
   };
@@ -80,7 +80,7 @@ export const CheckBox = ({
     borderWidth: 1,
     borderColor: theme.colors.border.secondary,
     labelProps: {
-      fontFamily: theme.fonts.SFProText400,
+      fontFamily: theme.fonts.sf400,
       color: theme.colors.font.secondary,
     },
   };
@@ -114,6 +114,7 @@ export const CheckBox = ({
       </Container>
       <Typography
         ml={2}
+        fontSize="m"
         {...(checked && checkedProps.labelProps)}
         {...(!checked && unCheckedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

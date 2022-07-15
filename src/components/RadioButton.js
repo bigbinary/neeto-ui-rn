@@ -71,7 +71,7 @@ export const RadioButton = ({
     borderWidth: 4,
     borderColor: theme.colors.background.base,
     labelProps: {
-      fontFamily: theme.fonts.SFProText500,
+      fontFamily: theme.fonts.sf500,
       color: theme.colors.font.primary,
     },
   };
@@ -79,7 +79,7 @@ export const RadioButton = ({
     borderWidth: 2,
     borderColor: theme.colors.border.secondary,
     labelProps: {
-      fontFamily: theme.fonts.SFProText400,
+      fontFamily: theme.fonts.sf400,
       color: theme.colors.font.secondary,
     },
   };
@@ -103,6 +103,7 @@ export const RadioButton = ({
       />
       <Typography
         ml={2}
+        fontSize="m"
         {...(selected && selectedProps.labelProps)}
         {...(!selected && unselectedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}
