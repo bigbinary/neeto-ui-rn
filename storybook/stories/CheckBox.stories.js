@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, CheckBox, Typography } from "@components";
+import { Container, CheckBox } from "@components";
 
 const CheckBoxStories = {
   title: "Checkbox",
@@ -11,98 +11,59 @@ const CheckBoxStories = {
         type: "boolean",
       },
     },
-    selected: {
+    checked: {
       control: {
         type: "boolean",
       },
     },
-    labelPosition: {
-      options: ["left", "right"],
+    label: {
       control: {
-        type: "select",
+        type: "text",
       },
     },
   },
   args: {
     disabled: false,
-    selected: false,
-    labelPosition: "right",
+    checked: false,
+    label: "Checkbox demo",
   },
 };
 
 export default CheckBoxStories;
 
 export const CheckBoxDemo = args => {
-  const { selected, disabled, labelPosition } = args;
+  const { checked, disabled, label } = args;
   return (
-    <Container>
+    <Container flex={1} alignItems="center" justifyContent="center">
       <CheckBox
-        selected={selected}
+        label={label}
+        checked={checked}
         onSelect={() => {}}
         disabled={disabled}
-        labelPosition={labelPosition}
       />
     </Container>
   );
 };
 
 export const CheckBoxComponent = () => {
-  const [selectedValues, setSelectedValues] = useState([]);
-
-  const handleCheckbox = index => {
-    const oldData = [...selectedValues];
-    const itemIndex = selectedValues.indexOf(index);
-    if (itemIndex === -1) {
-      oldData.push(index);
-    } else {
-      oldData.splice(itemIndex, 1);
-    }
-    setSelectedValues(oldData);
-  };
-
-  const containerStyle = { borderColor: "green" };
-  const checkedItemProp = { color: "font.danger" };
+  const [checked1, setChecked1] = useState(true);
+  const [checked2, setChecked2] = useState(false);
 
   return (
     <Container>
-      <Container mt={2}>
-        <CheckBox
-          selected={selectedValues.indexOf(0) !== -1}
-          onSelect={() => handleCheckbox(0)}
-          checkboxContainerProp={containerStyle}
-          label="Custom border color"
-        />
-      </Container>
-      <Container mt={2}>
-        <CheckBox
-          selected={selectedValues.indexOf(1) !== -1}
-          onSelect={() => handleCheckbox(1)}
-          checkedComponent={
-            <Container width={10} height={10} bg="background.base" />
-          }
-          label="With Custom Checked Component"
-        />
-      </Container>
-      <Container mt={2}>
-        <CheckBox
-          selected={selectedValues.indexOf(2) !== -1}
-          onSelect={() => handleCheckbox(2)}
-          checkedItemProp={checkedItemProp}
-          labelComponent={
-            <Typography color="font.danger" ml={2}>
-              Custom label component
-            </Typography>
-          }
-        />
-      </Container>
-      <Container mt={2}>
-        <CheckBox
-          selected={true}
-          onSelect={() => {}}
-          label="Disabled"
-          disabled
-        />
-      </Container>
+      <CheckBox
+        mt={2}
+        checked={checked1}
+        onSelect={() => setChecked1(prev => !prev)}
+        label={`Checkbox marked as ${!checked1 ? "un" : ""}checked`}
+      />
+      <CheckBox
+        mt={3}
+        checked={checked2}
+        onSelect={() => setChecked2(prev => !prev)}
+        label={`Checkbox marked as ${!checked2 ? "un" : ""}checked`}
+      />
+      <CheckBox mt={3} disabled label="Disabled checkbox" />
     </Container>
   );
 };

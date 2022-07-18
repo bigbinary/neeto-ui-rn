@@ -1,4 +1,5 @@
 export { Button } from "./Button";
+export { SocialButton } from "./SocialButton";
 export { Container } from "./Container";
 export { Typography } from "./Typography";
 export { Input } from "./Input";

@@ -49,6 +49,7 @@ const getStories = () => {
     require("../storybook/stories/RichTextEditor.stories.js"),
     require("../storybook/stories/SegmentPicker.stories.js"),
     require("../storybook/stories/Select.stories.js"),
+    require("../storybook/stories/SocialButton.stories.js"),
     require("../storybook/stories/ToastMessage.stories.js"),
     require("../storybook/stories/ToggleSwitch.stories.js"),
     require("../storybook/stories/TopBar.stories.js"),
