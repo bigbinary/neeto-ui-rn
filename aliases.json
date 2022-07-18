@@ -1,4 +1,5 @@
 {
+  "@assets": "./assets",
   "@components": "./src/components",
   "@theme": "./src/theme",
   "@config": "./src/config",
