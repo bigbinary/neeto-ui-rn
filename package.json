@@ -95,7 +95,7 @@
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.2.4",
-    "eslint-plugin-neeto": "git+https://neeto_gems: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@github.com/bigbinary/eslint-plugin-neeto#1.0.5",
+    "eslint-plugin-neeto": "1.0.8",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.27.0",
