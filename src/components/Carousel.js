@@ -89,7 +89,7 @@ export const Carousel = ({
   };
 
   const renderLabel = () => {
-    return activeIndex !== itemArray.length - 1 ? "Next" : "Go";
+    return activeIndex !== itemArray.length - 1 ? "Next" : "Get Started";
   };
 
   return (
