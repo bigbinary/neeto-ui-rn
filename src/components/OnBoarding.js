@@ -41,14 +41,19 @@ import { Carousel, Container } from "@components";
  *
  */
 
-export const OnBoarding = ({ appLogo: AppLogo, slides, onComplete }) => {
+export const OnBoarding = ({
+  appLogo: AppLogo,
+  slides,
+  onComplete,
+  logoWidth = 150,
+}) => {
   return (
-    <Container flex={1}>
+    <Container flex={1} my={30}>
       <Container alignItems="center">
-        <AppLogo />
+        <AppLogo width={logoWidth} />
       </Container>
 
-      <Container justifyContent="center" alignItems="center">
+      <Container flex={1} justifyContent="center" alignItems="center">
         <Carousel itemArray={slides} fromOnBoarding onComplete={onComplete} />
       </Container>
     </Container>
@@ -59,4 +64,5 @@ OnBoarding.propTypes = {
   appLogo: PropTypes.func.isRequired,
   slides: PropTypes.array.isRequired,
   onComplete: PropTypes.func.isRequired,
+  logoWidth: PropTypes.number,
 };
