@@ -133,7 +133,7 @@ export const Carousel = ({
 
       {fromOnBoarding && (
         <Container mx={24}>
-          <Button label={renderLabel} onPress={handleOnPress} />
+          <Button label={renderLabel()} onPress={handleOnPress} />
         </Container>
       )}
     </Container>
