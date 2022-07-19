@@ -86,10 +86,11 @@ export const Input = props => {
     value = "",
     onChangeHandle = () => {},
     errorMessage = null,
-    // prefixIcon,
-    // suffixIcon,
+    PrefixIcon,
+    SuffixIcon,
     autoFocus = false,
     disabled = false,
+    ...rest
   } = props;
 
   const colors = useContext(ThemeContext).colors;
@@ -137,11 +138,11 @@ export const Input = props => {
   const labelStyles = {
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [18, 13],
+      outputRange: [18, 14],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [14, 5],
+      outputRange: [16, 6],
     }),
   };
 
@@ -157,34 +158,51 @@ export const Input = props => {
         borderWidth={1}
         borderColor={errorMessage ? "border.danger" : "border.grey300"}
         ref={containerRef}
+        alignItems="center"
+        flexDirection="row"
+        justifyContent="space-between"
       >
-        <AnimatedLabel
-          color={disabled ? "font.grey400" : "font.grey600"}
-          position="absolute"
-          left={16}
-          zIndex={1}
-          style={labelStyles}
-        >
-          {label}
-        </AnimatedLabel>
-        <TextInput
-          ref={inputRef}
-          value={value}
-          onChangeText={onChangeHandle}
-          autoFocus={autoFocus}
-          disabled={disabled}
-          onFocus={() => {
-            handleFocusBlur(true);
-          }}
-          onBlur={() => {
-            handleFocusBlur(false);
-          }}
-          color={disabled ? "font.grey500" : "font.grey800"}
-          fontSize={18}
-          p={3}
-          top={0}
-          zIndex={2}
-        />
+        {!!PrefixIcon && (
+          <View pl={2}>
+            <PrefixIcon />
+          </View>
+        )}
+        <View flex={1}>
+          <AnimatedLabel
+            color={disabled ? "font.grey400" : "font.grey600"}
+            position="absolute"
+            left={10}
+            zIndex={1}
+            style={labelStyles}
+          >
+            {label}
+          </AnimatedLabel>
+          <TextInput
+            ref={inputRef}
+            value={value}
+            onChangeText={onChangeHandle}
+            autoFocus={autoFocus}
+            editable={!disabled}
+            onFocus={() => {
+              handleFocusBlur(true);
+            }}
+            onBlur={() => {
+              handleFocusBlur(false);
+            }}
+            color={disabled ? "font.grey500" : "font.grey800"}
+            fontSize={18}
+            py={3}
+            left={10}
+            top={0}
+            zIndex={2}
+            {...rest.inputProps}
+          />
+        </View>
+        {!!SuffixIcon && (
+          <View px={2}>
+            <SuffixIcon />
+          </View>
+        )}
       </View>
       {!!errorMessage && (
         <Typography py={2} color="font.danger">
@@ -203,11 +221,11 @@ Input.propTypes = {
   /**
    * Holds the current value of the Input.
    */
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   /**
    * Func to set the current value.
    */
-  onChangeHandle: PropTypes.func,
+  onChangeHandle: PropTypes.func.isRequired,
   /**
    * To display error/info messages
    */
@@ -221,11 +239,11 @@ Input.propTypes = {
    */
   autoFocus: PropTypes.bool,
   /**
-   * Display Icon to the left of input.
+   * Display Icon component to the left of input.
    */
-  prefixIcon: PropTypes.node,
+  PrefixIcon: PropTypes.elementType,
   /**
-   * Display Icon to the Right of input.
+   * Display Icon component to the Right of input.
    */
-  suffixIcon: PropTypes.node,
+  SuffixIcon: PropTypes.elementType,
 };
