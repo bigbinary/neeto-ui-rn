@@ -167,12 +167,11 @@ export const Input = props => {
             <PrefixIcon />
           </View>
         )}
-        <View flex={1}>
+        <View flex={1} left={10}>
           <AnimatedLabel
             color={disabled ? "font.grey400" : "font.grey600"}
             position="absolute"
-            left={10}
-            zIndex={1}
+            zIndex={3}
             style={labelStyles}
           >
             {label}
@@ -192,7 +191,7 @@ export const Input = props => {
             color={disabled ? "font.grey500" : "font.grey800"}
             fontSize={18}
             py={3}
-            left={10}
+            px={0}
             top={0}
             zIndex={2}
             {...rest.inputProps}
