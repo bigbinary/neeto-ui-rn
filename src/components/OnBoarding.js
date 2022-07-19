@@ -48,7 +48,7 @@ export const OnBoarding = ({
   logoWidth = 150,
 }) => {
   return (
-    <Container flex={1} my={30}>
+    <Container flex={1} mb={52} mt={27}>
       <Container alignItems="center">
         <AppLogo width={logoWidth} />
       </Container>
