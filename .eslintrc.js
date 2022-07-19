@@ -45,7 +45,7 @@ module.exports = {
   rules: {
     eqeqeq: ["error", "always"],
     "neeto/no-dangling-constants": 2,
-    "neeto/no-jsx-string-templates": 2,
+    "neeto/no-redundant-string-templates": 2,
     "neeto/use-constant-case": 2,
     "react-hooks/exhaustive-deps": "error",
     "import/no-unresolved": 2,
