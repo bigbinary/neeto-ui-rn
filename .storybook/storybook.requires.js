@@ -44,6 +44,7 @@ const getStories = () => {
     require("../storybook/stories/Input.stories.js"),
     require("../storybook/stories/ListItem.stories.js"),
     require("../storybook/stories/MultiSelect.stories.js"),
+    require("../storybook/stories/OnBoarding.stories.js"),
     require("../storybook/stories/OtpInputs.stories.js"),
     require("../storybook/stories/Popover.stories.js"),
     require("../storybook/stories/RadioButton.stories.js"),
