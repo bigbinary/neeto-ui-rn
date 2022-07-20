@@ -7,11 +7,37 @@ import { Container, Button } from "@components";
 import { useDebounce } from "@hooks";
 import { theme } from "@theme";
 
+/**
+ * SearchBars are used to search or filter items.
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Container, SearchBar } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  return (
+ *    <Container>
+ *      <SearchBar placeholder="Search" onChangeHandle={() => {}} />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ */
+
 export const SearchBar = props => {
-  const { placeholder = "Search", onChangeHandle = () => {}, ...rest } = props;
+  const {
+    placeholder = "Search",
+    onChangeHandle = () => {},
+    debounceDelay = 1000,
+    ...rest
+  } = props;
   const inputRef = useRef();
-  const debouncedSearchTextValue = useDebounce(searchText, 1000);
   const [searchText, setSearchText] = useState("");
+  const debouncedSearchTextValue = useDebounce(
+    searchText,
+    Number(debounceDelay)
+  );
   const searchAnimationController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -33,6 +59,7 @@ export const SearchBar = props => {
 
   const onCancelHandle = () => {
     Animate(0);
+    setSearchText("");
     inputRef.current.blur();
   };
 
@@ -80,11 +107,6 @@ export const SearchBar = props => {
   );
 };
 
-SearchBar.propTypes = {
-  placeholder: PropTypes.string.isRequired,
-  onChangeHandle: PropTypes.func.isRequired,
-};
-
 const styles = StyleSheet.create({
   inputContainerStyles: {
     padding: 12,
@@ -94,3 +116,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 });
+
+SearchBar.propTypes = {
+  /**
+   * Set the placeholder text
+   */
+  placeholder: PropTypes.string,
+  /**
+   * Method to fire when text is changed
+   */
+  onChangeHandle: PropTypes.func.isRequired,
+  /**
+   * Takes numeric value which is used to set the debounce delay
+   */ debounceDelay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+};
