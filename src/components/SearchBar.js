@@ -1,14 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { TextInput } from "react-native";
 import { ThemeContext } from "styled-components/native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 
 import { Container, Button } from "@components";
+import { useDebounce } from "@hooks";
 
 export const SearchBar = props => {
-  const { placeholder = "Search", ...rest } = props;
+  const { placeholder = "Search", onChangeHandle = () => {}, ...rest } = props;
+  const [searchText, setSearchText] = useState("");
+  const debouncedSearchTextValue = useDebounce(searchText, 1000);
   const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    onChangeHandle(debouncedSearchTextValue);
+  }, [debouncedSearchTextValue, onChangeHandle]);
 
   return (
     <Container flexDirection="row" alignItems="center">
@@ -28,6 +35,8 @@ export const SearchBar = props => {
           />
         </Container>
         <TextInput
+          value={searchText}
+          onChangeText={setSearchText}
           placeholder={placeholder}
           fontSize={16}
           placeholderTextColor={theme.colors.font.grey600}
@@ -42,4 +51,5 @@ export const SearchBar = props => {
 
 SearchBar.propTypes = {
   placeholder: PropTypes.string.isRequired,
+  onChangeHandle: PropTypes.func.isRequired,
 };
