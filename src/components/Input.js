@@ -171,7 +171,7 @@ export const Input = props => {
           <AnimatedLabel
             color={disabled ? "font.grey400" : "font.grey600"}
             position="absolute"
-            zIndex={3}
+            zIndex={1}
             style={labelStyles}
           >
             {label}
