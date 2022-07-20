@@ -64,14 +64,14 @@ export const SearchBar = props => {
   };
 
   return (
-    <Container flexDirection="row" alignItems="center" flex={1}>
+    <Container flexDirection="row" alignItems="center">
       <Animated.View
         style={{
           ...styles.inputContainerStyles,
           width: searchInputWidth,
         }}
       >
-        <Container pr={10}>
+        <Container px={10}>
           <Icon
             name="ri-search-line"
             size={20}
@@ -109,11 +109,12 @@ export const SearchBar = props => {
 
 const styles = StyleSheet.create({
   inputContainerStyles: {
-    padding: 12,
+    height: 42,
     borderWidth: 1,
     borderColor: theme.colors.border.grey400,
     borderRadius: 8,
     flexDirection: "row",
+    alignItems: "center",
   },
 });
 
