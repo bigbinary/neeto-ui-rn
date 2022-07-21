@@ -4,7 +4,7 @@ import { Container, CheckBox } from "@components";
 
 const CheckBoxStories = {
   title: "Checkbox",
-  component: CheckBoxStories,
+  component: CheckBox,
   argTypes: {
     disabled: {
       control: {
@@ -64,6 +64,12 @@ export const CheckBoxComponent = () => {
         label={`Checkbox marked as ${!checked2 ? "un" : ""}checked`}
       />
       <CheckBox mt={3} disabled label="Disabled checkbox" />
+      <CheckBox
+        mt={3}
+        checked
+        disabled
+        label="Disabled checkbox marked as checked"
+      />
     </Container>
   );
 };
