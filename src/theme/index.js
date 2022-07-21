@@ -29,6 +29,7 @@ const purpleVariants = {
   purple800: "#342DF4",
   purple700: "#4557F8",
   purple600: "#7280FA",
+  purple500: "#5E5CE6",
 };
 
 const greenVariants = {
@@ -114,6 +115,11 @@ export const theme = {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
       fontFamily: baseTheme.fonts.sf700,
+    },
+    modalHeader: {
+      color: baseTheme.colors.font.black,
+      fontSize: baseTheme.fontSizes["xl"],
+      fontFamily: baseTheme.fonts.sf600,
     },
     body: {
       color: baseTheme.colors.font.grey500,
