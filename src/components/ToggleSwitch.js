@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "styled-components/native";
 import { Animated } from "react-native";
 import PropTypes from "prop-types";
@@ -35,7 +35,7 @@ import { Container, Touchable } from "@components";
 
 export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   const theme = useContext(ThemeContext);
-  const animatedPosition = new Animated.Value(value === true ? 1 : 0);
+  const animatedPosition = useRef(new Animated.Value(value ? 1 : 0)).current;
 
   useEffect(() => {
     startAnimation();
