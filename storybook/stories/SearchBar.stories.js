@@ -46,11 +46,11 @@ export const Searchbar = () => {
     <>
       <Container mb={20}>
         <Typography py={2}>Default SearchBar</Typography>
-        <SearchBar onChangeHandle={() => {}} />
+        <SearchBar onChangeText={() => {}} />
       </Container>
       <Container mb={20}>
         <Typography py={2}>SearchBar With Custom placeholder</Typography>
-        <SearchBar placeholder="Search here" onChangeHandle={() => {}} />
+        <SearchBar placeholder="Search here" onChangeText={() => {}} />
       </Container>
     </>
   );
@@ -61,7 +61,7 @@ export const SearchBarDemo = args => {
 
   return (
     <Container>
-      <SearchBar {...args} onChangeHandle={setSearchedText} />
+      <SearchBar {...args} onChangeText={setSearchedText} />
       <Typography py={2}>
         Searched expression is:
         <Typography fontFamily={theme.fonts.sf600}>{searchedText}</Typography>.

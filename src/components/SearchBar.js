@@ -18,7 +18,7 @@ import { theme } from "@theme";
  * export default function Main() {
  *  return (
  *    <Container>
- *      <SearchBar placeholder="Search" onChangeHandle={() => {}} />
+ *      <SearchBar placeholder="Search" onChangeText={() => {}} />
  *    </Container>
  *  );
  * }
@@ -28,7 +28,7 @@ import { theme } from "@theme";
 export const SearchBar = props => {
   const {
     placeholder = "Search",
-    onChangeHandle = () => {},
+    onChangeText = () => {},
     debounceDelay = 1000,
     ...rest
   } = props;
@@ -41,10 +41,10 @@ export const SearchBar = props => {
   const searchAnimationController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    onChangeHandle(debouncedSearchTextValue);
-  }, [debouncedSearchTextValue, onChangeHandle]);
+    onChangeText(debouncedSearchTextValue);
+  }, [debouncedSearchTextValue, onChangeText]);
 
-  const Animate = val => {
+  const animateSearchInput = val => {
     Animated.timing(searchAnimationController, {
       toValue: val,
       duration: 350,
@@ -58,7 +58,7 @@ export const SearchBar = props => {
   });
 
   const onCancelHandle = () => {
-    Animate(0);
+    animateSearchInput(0);
     setSearchText("");
     inputRef.current.blur();
   };
@@ -83,10 +83,10 @@ export const SearchBar = props => {
           value={searchText}
           onChangeText={setSearchText}
           onFocus={() => {
-            Animate(1);
+            animateSearchInput(1);
           }}
           onBlur={() => {
-            if (!searchText) Animate(0);
+            if (!searchText) animateSearchInput(0);
           }}
           placeholder={placeholder}
           fontSize={16}
@@ -126,8 +126,9 @@ SearchBar.propTypes = {
   /**
    * Method to fire when text is changed
    */
-  onChangeHandle: PropTypes.func.isRequired,
+  onChangeText: PropTypes.func.isRequired,
   /**
    * Takes numeric value which is used to set the debounce delay
-   */ debounceDelay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+   */
+  debounceDelay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
