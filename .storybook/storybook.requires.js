@@ -29,6 +29,7 @@ argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
 const getStories = () => {
   return [
     require("../storybook/stories/_Home.stories.js"),
+    require("../storybook/stories/Accordion.stories.js"),
     require("../storybook/stories/Alert.stories.js"),
     require("../storybook/stories/Avatar.stories.js"),
     require("../storybook/stories/Badge.stories.js"),
