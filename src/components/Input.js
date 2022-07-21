@@ -1,22 +1,22 @@
 /* eslint-disable react/display-name */
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import {
   flexbox,
   space,
   border,
   buttonStyle,
   typography,
+  textStyle,
   color,
   layout,
+  system,
+  position,
 } from "styled-system";
-import Icon from "react-native-remix-icon";
-import { Platform } from "react-native";
+import { Animated } from "react-native";
 import styled, { ThemeContext } from "styled-components/native";
-import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
-import { Typography, Container } from "@components";
 
-export const TextInput = styled.TextInput`
+const TextInput = styled.TextInput`
   ${flexbox}
   ${space}
   ${border}
@@ -31,6 +31,23 @@ const View = styled.View`
   ${border}
   ${color}
   ${layout}
+`;
+
+const Typography = styled.Text`
+  ${textStyle}
+  ${space}
+  ${layout}
+  ${flexbox}
+  ${typography}
+  ${color}
+  ${position}
+  ${system({
+    textDecoration: {
+      property: "textDecoration",
+      cssProperty: "textDecoration",
+    },
+    textTransform: { property: "textTransform", cssProperty: "textTransform" },
+  })}
 `;
 
 /**
@@ -53,7 +70,7 @@ const View = styled.View`
  * export default function Main() {
  *  return (
  *    <Container>
- *     <Input brandLeft="example" error={true} message="example error" />
+ *     <Input value="Oliver Smith" onChangeHandle={()=>{}} label="Name" />
  *    </Container>
  *  );
  * }
@@ -61,282 +78,171 @@ const View = styled.View`
  *
  */
 
-export const Input = React.forwardRef((props, ref) => {
+const AnimatedLabel = Animated.createAnimatedComponent(Typography);
+
+export const Input = props => {
   const {
-    label = "",
-    labelStyles,
-    containerStyles,
-    message = "",
-    error = false,
-    onFocus,
-    onBlur,
-    inline = false,
-    LeftIcon,
-    RightIcon,
-    brandRight,
-    brandLeft,
-    brandColor = "font.grey600",
-    brandBackground = "background.menubackground",
+    label,
+    value = "",
+    onChangeHandle = () => {},
+    errorMessage = null,
+    PrefixIcon,
+    SuffixIcon,
+    autoFocus = false,
     disabled = false,
-    secureTextEntry = false,
-    textAlignVertical = "top",
-    enableFocusStyle = false,
     ...rest
   } = props;
 
-  const theme = useContext(ThemeContext);
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [height, setHeight] = useState(0);
-  const [isFocus, setIsFocus] = useState(false);
-  const borderColor = error
-    ? theme.colors.border.danger
-    : theme.colors.border.primary;
+  const colors = useContext(ThemeContext).colors;
+  const inputRef = useRef();
+  const containerRef = useRef();
+  const animatedController = new Animated.Value(0);
 
-  const handleFocus = e => {
-    onFocus && onFocus(e);
-    setIsFocus(true);
+  useEffect(() => {
+    if (autoFocus || value) {
+      handleLabelAnimation(true);
+    } else {
+      handleLabelAnimation(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleLabelAnimation = isFocused => {
+    Animated.timing(animatedController, {
+      toValue: !!isFocused || !!value ? 1 : 0,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+
+    inputRef.current &&
+      inputRef.current.setNativeProps({
+        style: {
+          top: isFocused ? 10 : 0,
+        },
+      });
   };
 
-  const handleBlur = e => {
-    onBlur && onBlur(e);
-    setIsFocus(false);
+  const handleStyles = useCallback(isFocused => {
+    containerRef.current &&
+      containerRef.current.setNativeProps({
+        borderColor: errorMessage
+          ? colors.border.danger
+          : isFocused
+          ? colors.border.purple700
+          : colors.border.grey300,
+        borderWidth: errorMessage || isFocused ? 2 : 1,
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const labelStyles = {
+    fontSize: animatedController.interpolate({
+      inputRange: [0, 1],
+      outputRange: [18, 14],
+    }),
+    top: animatedController.interpolate({
+      inputRange: [0, 1],
+      outputRange: [16, 6],
+    }),
   };
 
-  const focusStyles = enableFocusStyle &&
-    isFocus && {
-      borderRadius: 4,
-      borderColor: error
-        ? "rgba(255, 105, 105, 0.3)"
-        : theme.colors.border.grey400,
-      borderWidth: inline ? "0px" : "3px",
-      borderStyle: "solid",
-    };
-
-  const disabledStyles = disabled && {
-    opacity: 0.5,
-    bg: theme.colors.background.secondary,
+  const handleFocusBlur = isFocused => {
+    if (!value) handleLabelAnimation(isFocused);
+    handleStyles(isFocused);
   };
-
-  const inlineInputStyles = enableFocusStyle &&
-    isFocus && {
-      backgroundColor: error
-        ? theme.colors.border.danger
-        : theme.colors.border.base,
-    };
 
   return (
-    <Container>
-      {!inline && !!label && (
-        <LabelText labelStyles={labelStyles} inline={inline} label={label} />
-      )}
-      <Container
-        border={!inline ? "1px" : "0"}
-        borderColor={borderColor}
-        borderRadius={2}
-        {...focusStyles}
-        {...disabledStyles}
-        flexDirection={inline ? "row" : "column"}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        position="relative"
-        {...containerStyles}
+    <View>
+      <View
+        borderRadius={5}
+        borderWidth={1}
+        borderColor={errorMessage ? "border.danger" : "border.grey300"}
+        ref={containerRef}
+        alignItems="center"
+        flexDirection="row"
+        justifyContent="space-between"
       >
-        {inline && (
-          <Container alignSelf="flex-end" maxWidth={100}>
-            <LabelText
-              labelStyles={labelStyles}
-              inline={inline}
-              label={label}
-            />
-          </Container>
+        {!!PrefixIcon && (
+          <View pl={2}>
+            <PrefixIcon />
+          </View>
         )}
-        <Container flexDirection="row" width="100%">
-          {LeftIcon && (
-            <Container alignSelf="center" mx="4px">
-              <LeftIcon />
-            </Container>
-          )}
-          {brandLeft && (
-            <InputText
-              text={brandLeft}
-              brandColor={brandColor}
-              brandBackground={brandBackground}
-            />
-          )}
+        <View flex={1} left={10}>
+          <AnimatedLabel
+            color={disabled ? "font.grey400" : "font.grey600"}
+            position="absolute"
+            zIndex={1}
+            style={labelStyles}
+          >
+            {label}
+          </AnimatedLabel>
           <TextInput
-            ref={ref}
-            flex={1}
-            {...Platform.select({
-              ios: {},
-              android: {
-                height,
-                onContentSizeChange: event => {
-                  setHeight(event.nativeEvent.contentSize.height);
-                },
-              },
-            })}
-            textStyle="subtext"
+            ref={inputRef}
+            value={value}
+            onChangeText={onChangeHandle}
+            autoFocus={autoFocus}
             editable={!disabled}
-            color={error ? theme.colors.font.danger : theme.colors.font.primary}
-            secureTextEntry={secureTextEntry && !isPasswordVisible}
-            textAlignVertical={textAlignVertical}
-            {...rest}
+            onFocus={() => {
+              handleFocusBlur(true);
+            }}
+            onBlur={() => {
+              handleFocusBlur(false);
+            }}
+            color={disabled ? "font.grey500" : "font.grey800"}
+            fontSize={18}
+            py={3}
+            px={0}
+            top={0}
+            zIndex={2}
+            {...rest.inputProps}
           />
-
-          {brandRight && (
-            <InputText
-              text={brandRight}
-              brandColor={brandColor}
-              brandBackground={brandBackground}
-            />
-          )}
-
-          {RightIcon && (
-            <Container alignSelf="center" mx="4px">
-              <RightIcon />
-            </Container>
-          )}
-
-          {secureTextEntry && (
-            <Container justifyContent="center" mx="4px">
-              <Icon
-                name={isPasswordVisible ? "eye-line" : "eye-off-line"}
-                color={theme.colors.background.grey500}
-                onPress={() => setIsPasswordVisible(!isPasswordVisible)}
-              />
-            </Container>
-          )}
-        </Container>
-      </Container>
-      {inline && (
-        <View
-          backgroundColor={theme.colors.border.primary}
-          height={1}
-          {...inlineInputStyles}
-        />
+        </View>
+        {!!SuffixIcon && (
+          <View px={2}>
+            <SuffixIcon />
+          </View>
+        )}
+      </View>
+      {!!errorMessage && (
+        <Typography py={2} color="font.danger">
+          {errorMessage}
+        </Typography>
       )}
-      <ErrorMessage theme={theme} error={error} message={message} />
-    </Container>
+    </View>
   );
-});
-
-const InputText = ({ text, brandColor, brandBackground }) => (
-  <Container bg={brandBackground} justifyContent="center" px={2}>
-    {text && <Typography color={brandColor}>{text}</Typography>}
-  </Container>
-);
-
-const LabelText = ({ inline, label, labelStyles }) => (
-  <Typography
-    numberOfLines={1}
-    textStyle="subtext"
-    mb={inline ? "12px" : "7px"}
-    {...labelStyles}
-  >
-    {label}
-  </Typography>
-);
-
-const ErrorMessage = ({ error, message, theme }) => {
-  if (error) {
-    return (
-      <Typography textStyle="subtext" color={theme.colors.font.danger}>
-        {message}
-      </Typography>
-    );
-  }
-  return null;
 };
 
 Input.propTypes = {
-  ...propTypes.flexbox,
-  ...propTypes.space,
-  ...propTypes.border,
-  ...propTypes.buttonStyle,
   /**
    * The text to use for the floating label.
    */
   label: PropTypes.string,
   /**
-   * To change the styles of label.
+   * Holds the current value of the Input.
    */
-  labelStyles: PropTypes.object,
+  value: PropTypes.string.isRequired,
   /**
-   * To change the styles of input text container.
+   * Func to set the current value.
    */
-  containerStyles: PropTypes.object,
+  onChangeHandle: PropTypes.func.isRequired,
   /**
    * To display error/info messages
    */
-  message: PropTypes.string,
-  /**
-   * Whether to style the TextInput with error style.
-   */
-  error: PropTypes.bool,
-  /**
-   * Changes input layout to inline.
-   */
-  inline: PropTypes.bool,
-  /**
-   * Display brand to the right of input.
-   */
-  brandRight: PropTypes.string,
-  /**
-   * Display brand to the left of input.
-   */
-  brandLeft: PropTypes.string,
+  errorMessage: PropTypes.string,
   /**
    * If true, user won't be able to interact with the component.
    */
   disabled: PropTypes.bool,
   /**
-   * To change the color of brand text.
-   */
-  brandColor: PropTypes.string,
-  /**
-   * To change the color of brand text.
-   */
-  brandBackground: PropTypes.string,
-  /**
-   * To hide and show password and enable secure text entry.
-   */
-  secureTextEntry: PropTypes.bool,
-  /**
    * If true, shows border on focus.
    */
-  enableFocusStyle: PropTypes.bool,
+  autoFocus: PropTypes.bool,
   /**
-   * Display Icon to the left of input.
+   * Display Icon component to the left of input.
    */
-  LeftIcon: PropTypes.func,
+  PrefixIcon: PropTypes.elementType,
   /**
-   * Display Icon to the Right of input.
+   * Display Icon component to the Right of input.
    */
-  RightIcon: PropTypes.func,
-  children: PropTypes.node,
-};
-
-InputText.propTypes = {
-  text: PropTypes.string,
-  borderColor: PropTypes.string,
-  brandColor: PropTypes.string,
-  brandBackground: PropTypes.string,
-};
-
-LabelText.propTypes = {
-  inline: PropTypes.bool,
-  label: PropTypes.string,
-  labelStyles: PropTypes.object,
-};
-
-ErrorMessage.propTypes = {
-  error: PropTypes.bool,
-  message: PropTypes.string,
-};
-
-TextInput.defaultProps = {
-  px: 2,
-  minHeight: 45,
-  fontFamily: "sf400",
-  fontSize: "16px",
+  SuffixIcon: PropTypes.elementType,
 };
