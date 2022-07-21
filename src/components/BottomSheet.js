@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import PropTypes from "prop-types";
 import { Typography, Container, Touchable, Input } from "@components";
@@ -9,6 +9,7 @@ import { theme } from "../theme";
 const Title = ({
   title,
   bg,
+  isVisible,
   hide,
   titleContainerStyle,
   titleTextStyle,
@@ -19,6 +20,10 @@ const Title = ({
 }) => {
   let touchY;
   const [isSearchBarOpen, setSearchBarOpen] = useState(false);
+
+  useEffect(() => {
+    setSearchText("");
+  }, [isVisible, setSearchText]);
 
   return (
     <>
@@ -64,10 +69,7 @@ const Title = ({
                 onChangeText={word => setSearchText(word.toLowerCase())}
                 placeholder="Search"
                 // eslint-disable-next-line react-native/no-inline-styles
-                containerStyles={{
-                  backgroundColor: "background.white",
-                  borderRadius: 10,
-                }}
+                containerStyles={styles.inputContainerStyle}
                 LeftIcon={() => {
                   return (
                     <Icon
@@ -99,6 +101,7 @@ const Title = ({
 
 Title.propTypes = {
   title: PropTypes.string,
+  isVisible: PropTypes.boolean,
   hide: PropTypes.func,
   bg: PropTypes.string,
   titleContainerStyle: PropTypes.object,
@@ -190,6 +193,7 @@ export const BottomSheet = ({
           <Title
             bg={bg}
             title={title}
+            isVisible={isVisible}
             hide={hide}
             titleContainerStyle={titleContainerStyle}
             titleTextStyle={titleTextStyle}
@@ -295,5 +299,9 @@ const styles = StyleSheet.create({
     margin: 0,
     alignItems: "flex-end",
     flexDirection: "row",
+  },
+  inputContainerStyle: {
+    backgroundColor: "background.white",
+    borderRadius: 10,
   },
 });
