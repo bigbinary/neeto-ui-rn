@@ -1,49 +1,15 @@
 import React, { useState } from "react";
 import { Container, ToggleSwitch } from "@components";
-import { theme } from "@theme";
-
-const labelPositions = ["left", "right"];
 
 const ToggleSwitchStories = {
   title: "ToggleSwitches",
   component: ToggleSwitch,
   args: {
-    label: "Toggle Switch Demo",
-    labelPosition: labelPositions[0],
     disabled: false,
-    switchStyles: {
-      backgroundColorOn: theme.colors.background.danger,
-      backgroundColorOff: theme.colors.background.base,
-    },
-    textStyles: {
-      mr: 2,
-    },
-    wrapperStyles: {
-      borderWidth: 1,
-      borderColor: "grey",
-      p: 3,
-      borderRadius: 5,
-    },
   },
   argTypes: {
-    label: {
-      control: { type: "text" },
-    },
-    labelPosition: {
-      options: labelPositions,
-      control: { type: "select" },
-    },
     onValueChange: {
       action: "pressed the button",
-    },
-    switchStyles: {
-      control: { type: "object" },
-    },
-    textStyles: {
-      control: { type: "object" },
-    },
-    wrapperStyles: {
-      control: { type: "object" },
     },
   },
   parameters: {
@@ -68,7 +34,7 @@ export const ToggleSwitchDemo = args => {
 };
 
 export const ToggleSwitches = () => {
-  const [switchOne, setSwitchOne] = useState(true);
+  const [switchOne, setSwitchOne] = useState(false);
   const [switchTwo, setSwitchTwo] = useState(true);
   const [switchThree, setSwitchThree] = useState(true);
 
@@ -84,42 +50,18 @@ export const ToggleSwitches = () => {
         <ToggleSwitch
           value={switchTwo}
           onValueChange={() => setSwitchTwo(prevValue => !prevValue)}
-          label="Conversation assigned to my group"
         />
       </Container>
       <Container my={3}>
-        <ToggleSwitch
-          value={true}
-          label="Disabled switched on toggle button"
-          disabled
-        />
+        <ToggleSwitch value={true} disabled />
       </Container>
       <Container my={3}>
-        <ToggleSwitch
-          value={false}
-          label="Disabled switched off toggle button"
-          labelPosition="right"
-          textStyles={{ ml: 2 }}
-          disabled
-        />
+        <ToggleSwitch value={false} disabled />
       </Container>
       <Container my={3}>
         <ToggleSwitch
           value={switchThree}
           onValueChange={() => setSwitchThree(prevValue => !prevValue)}
-          label="Toggle switch button with custom styles"
-          labelPosition="right"
-          textStyles={{ ml: 2 }}
-          wrapperStyles={{
-            borderWidth: 1,
-            borderColor: theme.colors.border.grey300,
-            p: 3,
-            borderRadius: 5,
-          }}
-          switchStyles={{
-            backgroundColorOn: theme.colors.background.danger,
-            backgroundColorOff: theme.colors.background.base,
-          }}
         />
       </Container>
     </Container>
