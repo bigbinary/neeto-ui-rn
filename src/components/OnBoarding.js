@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Carousel, Container } from "@components";
+import { Button, Carousel, Container, Typography } from "@components";
 
 /**
  *
@@ -47,6 +47,40 @@ export const OnBoarding = ({
   onComplete,
   logoWidth = 150,
 }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const onBoardingRef = useRef();
+
+  const handleOnPress = () => {
+    if (activeIndex !== slides.length - 1) {
+      onBoardingRef.current.snapToNext();
+      setActiveIndex(onBoardingRef.current._activeItem);
+    } else onComplete();
+  };
+
+  const renderItem = ({ item }) => {
+    return (
+      <Container flex={1} justifyContent="space-between">
+        <Container />
+        <Container alignItems="center" mx={24} my={12}>
+          {item.illustration}
+        </Container>
+        <Container alignItems="center" mx={24} my={12}>
+          <Typography fontFamily="sf700" fontSize="4xl" color="font.grey800">
+            {item.title}
+          </Typography>
+          <Typography
+            fontFamily="sf400"
+            fontSize="l"
+            color="font.grey500"
+            textAlign="center"
+          >
+            {item.description}
+          </Typography>
+        </Container>
+      </Container>
+    );
+  };
+
   return (
     <Container flex={1} mb={52} mt={27}>
       <Container alignItems="center">
@@ -54,7 +88,21 @@ export const OnBoarding = ({
       </Container>
 
       <Container flex={1} justifyContent="center" alignItems="center">
-        <Carousel itemArray={slides} fromOnBoarding onComplete={onComplete} />
+        <Carousel
+          carouselRef={onBoardingRef}
+          itemArray={slides}
+          onSnapToItem={index => {
+            setActiveIndex(index);
+          }}
+          renderItem={renderItem}
+        />
+      </Container>
+
+      <Container mx={24}>
+        <Button
+          label={activeIndex !== slides.length - 1 ? "Next" : "Get Started"}
+          onPress={handleOnPress}
+        />
       </Container>
     </Container>
   );

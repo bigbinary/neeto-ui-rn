@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { OnBoarding } from "@components";
 import Neeto from "../../docs/assets/images/neeto.svg";
@@ -11,8 +11,10 @@ const OnBoardingStories = {
 export default OnBoardingStories;
 
 export const OnBoardingComponent = () => {
+  const ref = useRef();
   return (
     <OnBoarding
+      onBoardingRef={ref}
       appLogo={Neeto}
       slides={[
         {

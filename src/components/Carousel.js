@@ -1,14 +1,9 @@
-import React, { useRef, useState } from "react";
-import {
-  Image,
-  StyleSheet,
-  Dimensions,
-  useWindowDimensions,
-} from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Dimensions, useWindowDimensions } from "react-native";
 import PropTypes from "prop-types";
 import CarouselParent, { Pagination } from "react-native-snap-carousel";
 
-import { Button, Container, Typography } from "@components";
+import { Container } from "@components";
 
 const { width } = Dimensions.get("screen");
 
@@ -43,83 +38,28 @@ const { width } = Dimensions.get("screen");
  *
  */
 
-const CarouselContent = ({ item, imageStyle }) => {
-  return (
-    <Container width={width} justifyContent="space-between" alignItems="center">
-      <Container />
-      <Image
-        style={{ ...styles.image, ...imageStyle }}
-        source={{
-          uri: item.url,
-        }}
-      />
-    </Container>
-  );
-};
-
 export const Carousel = ({
   itemArray,
-  fromOnBoarding = false,
-  onComplete,
-  imageStyle = {},
+  renderItem,
+  carouselRef,
+  onSnapToItem,
 }) => {
-  const ref = useRef();
   const { width } = useWindowDimensions();
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const renderItem = ({ item }) => {
-    return (
-      <Container alignItems="center" flex={1} justifyContent="center">
-        {fromOnBoarding ? (
-          <Container>
-            <Container />
-            {item.illustration}
-          </Container>
-        ) : (
-          <CarouselContent item={item} imageStyle={imageStyle} />
-        )}
-      </Container>
-    );
-  };
-
-  const handleOnPress = () => {
-    if (activeIndex !== itemArray.length - 1) {
-      ref.current.snapToNext();
-    } else onComplete();
-  };
-
-  const renderLabel = () => {
-    return activeIndex !== itemArray.length - 1 ? "Next" : "Get Started";
-  };
 
   return (
     <Container>
       <CarouselParent
-        ref={ref}
+        ref={carouselRef}
         data={itemArray}
         renderItem={renderItem}
         sliderWidth={width}
         itemWidth={width}
         onSnapToItem={index => {
+          onSnapToItem(index);
           setActiveIndex(index);
         }}
       />
-
-      {fromOnBoarding && (
-        <Container alignItems="center" mx={24} my={12}>
-          <Typography fontFamily="sf700" fontSize="4xl" color="font.grey800">
-            {itemArray[activeIndex].title}
-          </Typography>
-          <Typography
-            fontFamily="sf400"
-            fontSize="l"
-            color="font.grey500"
-            textAlign="center"
-          >
-            {itemArray[activeIndex].description}
-          </Typography>
-        </Container>
-      )}
 
       <Pagination
         dotsLength={itemArray.length}
@@ -130,12 +70,6 @@ export const Carousel = ({
         inactiveDotScale={0.6}
         dotContainerStyle={styles.dotContainerStyle}
       />
-
-      {fromOnBoarding && (
-        <Container mx={24}>
-          <Button label={renderLabel()} onPress={handleOnPress} />
-        </Container>
-      )}
     </Container>
   );
 };
@@ -172,12 +106,7 @@ const styles = StyleSheet.create({
 
 Carousel.propTypes = {
   itemArray: PropTypes.array.isRequired,
-  imageStyle: PropTypes.object,
-  fromOnBoarding: PropTypes.bool,
-  onComplete: PropTypes.func,
-};
-
-CarouselContent.propTypes = {
-  item: PropTypes.object,
-  imageStyle: PropTypes.object,
+  renderItem: PropTypes.func.isRequired,
+  onSnapToItem: PropTypes.func,
+  carouselRef: PropTypes.object,
 };
