@@ -81,7 +81,7 @@ export const SegmentPickers = () => {
             backgroundColor: theme.colors.background.purple800,
           }}
           activeTextStyle={{ color: theme.colors.font.white }}
-          py={18}
+          height={46}
         />
       </Container>
     </Container>

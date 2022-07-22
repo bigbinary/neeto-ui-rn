@@ -72,7 +72,7 @@ export const SegmentPicker = ({
   activeSegmentStyle,
   activeTextStyle,
   inactiveTextStyle,
-  py,
+  height,
 }) => {
   const translateValue = (width - 4) / tabs?.length;
   const tabTranslateValue = useSharedValue(0);
@@ -125,7 +125,8 @@ export const SegmentPicker = ({
             flex={1}
             elevation={6}
             onPress={() => memoizedTabPressCallback(index)}
-            py={py}
+            height={height}
+            justifyContent="center"
             activeOpacity={0.7}
           >
             <Typography
@@ -199,12 +200,12 @@ SegmentPicker.propTypes = {
    * To change the active segment font style.
    */
   activeTextStyle: PropTypes.object,
-  py: PropTypes.number,
+  height: PropTypes.number,
 };
 
 SegmentPicker.defaultProps = {
   tabs: [],
   onChange: () => {},
   currentIndex: 0,
-  py: 12,
+  height: 32,
 };
