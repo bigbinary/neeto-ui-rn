@@ -195,6 +195,7 @@ export const Alert = () => {
                 hide();
               }}
               label={button2.label}
+              width={undefined}
             />
           )}
           {button1 && (
@@ -210,6 +211,7 @@ export const Alert = () => {
               label={button1.label}
               height={35}
               p={0}
+              width={undefined}
             />
           )}
         </Container>
