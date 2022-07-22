@@ -68,7 +68,6 @@ const Title = ({
                 value={searchText}
                 onChangeText={word => setSearchText(word.toLowerCase())}
                 placeholder="Search"
-                // eslint-disable-next-line react-native/no-inline-styles
                 containerStyles={styles.inputContainerStyle}
                 LeftIcon={() => {
                   return (
@@ -301,7 +300,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   inputContainerStyle: {
-    backgroundColor: "background.white",
+    backgroundColor: "white",
     borderRadius: 10,
   },
 });
