@@ -121,9 +121,7 @@ export const Button = props => {
 
   const renderOpacity = () => {
     if (
-      (variant === "danger" ||
-        variant === "danger-inverse" ||
-        variant === "danger-text") &&
+      ["danger", "danger-inverse", "danger-text"].includes(variant) &&
       disabled
     )
       return 0.5;
@@ -131,12 +129,7 @@ export const Button = props => {
   };
 
   const renderLoaderColor = () => {
-    if (
-      variant === "text" ||
-      variant === "danger" ||
-      variant === "danger-inverse" ||
-      variant === "danger-text"
-    )
+    if (["text", "danger", "danger-inverse", "danger-text"].includes(variant))
       return "base";
     return "white";
   };
