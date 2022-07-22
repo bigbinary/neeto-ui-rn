@@ -32,3 +32,4 @@ export { Carousel } from "./Carousel";
 export { OnBoarding } from "./OnBoarding";
 export { SearchBar } from "./SearchBar";
 export { Accordion } from "./Accordion";
+export { Calendar } from "./Calendar";

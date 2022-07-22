@@ -36,6 +36,7 @@ const getStories = () => {
     require("../storybook/stories/BottomSheet.stories.js"),
     require("../storybook/stories/Button.stories.js"),
     require("../storybook/stories/ButtonGroup.stories.js"),
+    require("../storybook/stories/Calendar.stories.js"),
     require("../storybook/stories/Card.stories.js"),
     require("../storybook/stories/Carousel.stories.js"),
     require("../storybook/stories/CheckBox.stories.js"),
