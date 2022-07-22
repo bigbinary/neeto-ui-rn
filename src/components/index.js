@@ -28,3 +28,6 @@ export { FlatList } from "./FlatList";
 export { ScrollView } from "./ScrollView";
 export { SegmentPicker } from "./SegmentPicker";
 export { ListItem } from "./ListItem";
+export { Carousel } from "./Carousel";
+export { OnBoarding } from "./OnBoarding";
+export { SearchBar } from "./SearchBar";
