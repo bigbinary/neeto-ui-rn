@@ -26,16 +26,17 @@ const greyVariants = {
 };
 
 const purpleVariants = {
-  purple800: "#342DF4",
-  purple700: "#4557F8",
+  purple500: "#5E5CE6",
   purple600: "#7280FA",
+  purple700: "#4557F8",
+  purple800: "#342DF4",
 };
 
 const greenVariants = {
-  green800: "#00956D",
-  green700: "#00BA88",
-  green600: "#33C8A0",
   green500: "#34C759",
+  green600: "#33C8A0",
+  green700: "#00BA88",
+  green800: "#00956D",
 };
 
 const colors = {
@@ -117,6 +118,11 @@ export const theme = {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
       fontFamily: baseTheme.fonts.sf700,
+    },
+    modalHeader: {
+      color: baseTheme.colors.font.black,
+      fontSize: baseTheme.fontSizes["xl"],
+      fontFamily: baseTheme.fonts.sf600,
     },
     body: {
       color: baseTheme.colors.font.grey500,
