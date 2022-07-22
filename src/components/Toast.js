@@ -2,7 +2,82 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import T from "react-native-toast-message";
 import { defaultToasterConfig } from "@config";
-import { useKeyboard } from "@react-native-community/hooks";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components/native";
+import { useWindowDimensions } from "react-native";
+
+import SuccessIcon from "@assets/icons/success.svg";
+import WarningIcon from "@assets/icons/warning.svg";
+import InfoIcon from "@assets/icons/info.svg";
+import ErrorIcon from "@assets/icons/error.svg";
+import { Container, Typography } from "@components";
+
+const ToastComponent = ({ type, text1, text2 }) => {
+  const theme = useContext(ThemeContext);
+  const { width } = useWindowDimensions();
+  const Icon = () => {
+    switch (type) {
+      case "success":
+        return <SuccessIcon />;
+      case "warning":
+        return <WarningIcon />;
+      case "info":
+        return <InfoIcon />;
+      case "error":
+        return <ErrorIcon />;
+    }
+  };
+  return (
+    <Container
+      width={width - 20}
+      height={60}
+      borderRadius={16}
+      bg={theme.colors.background.secondary}
+      flexDirection="row"
+      alignItems="center"
+      px={10}
+      mx={10}
+    >
+      <Container
+        height={42}
+        width={42}
+        borderRadius={10}
+        bg={theme.colors.toast[type]}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Icon />
+      </Container>
+
+      <Container ml={10}>
+        {text1 && (
+          <Typography
+            fontFamily={theme.fonts.sf600}
+            fontSize="m"
+            fontColor={theme.colors.font.primary}
+          >
+            {text1}
+          </Typography>
+        )}
+        {text2 && (
+          <Typography
+            fontFamily={theme.fonts.sf400}
+            fontSize="xs"
+            fontColor={theme.colors.font.secondary}
+          >
+            {text2}
+          </Typography>
+        )}
+      </Container>
+    </Container>
+  );
+};
+
+ToastComponent.propTypes = {
+  type: PropTypes.string,
+  text1: PropTypes.string,
+  text2: PropTypes.string,
+};
 
 /**
  * Toast component is a wrapper over https://github.com/calintamas/react-native-toast-message.
@@ -32,7 +107,6 @@ import { useKeyboard } from "@react-native-community/hooks";
  *        onPress={() => {
  *          Toast.show({
  *            type: "error",
- *            position: "bottom",
  *            text1: "Yay!",
  *            text2: "Have a nice day! 😄",
  *          });
@@ -45,43 +119,24 @@ import { useKeyboard } from "@react-native-community/hooks";
  * @extends StyledSystems props /styled-system
  */
 
-let globalKeyboardState;
-// let toastOffsetValue;
-
 export const Toast = ({ toasterConfig, ...rest }) => {
-  const keyboard = useKeyboard();
-  // const screenDimensions = useDimensions().screen;
-
-  React.useEffect(() => {
-    globalKeyboardState = keyboard;
-    // toastOffsetValue =
-    //   Platform.OS === "ios"
-    //     ? screenDimensions.height - (globalKeyboardState.keyboardHeight + 50)
-    //     : screenDimensions.height - (globalKeyboardState.keyboardHeight + 130);
-  }, [keyboard]);
+  const customConfig = {
+    success: ToastComponent,
+    warning: ToastComponent,
+    info: ToastComponent,
+    error: ToastComponent,
+  };
 
   return (
     <T
       {...rest}
-      config={{ ...defaultToasterConfig, ...toasterConfig }}
-      position="bottom"
+      config={{ ...defaultToasterConfig, ...customConfig, ...toasterConfig }}
+      position="top"
     />
   );
 };
 
-Toast.show = params => {
-  // Rendering Toasts on top whenever keyboard is active.
-  if (globalKeyboardState.keyboardShown) {
-    T.show({
-      ...params,
-      position: "top",
-      // topOffset: toastOffsetValue,
-    });
-  } else {
-    T.show(params);
-  }
-};
-
+Toast.show = T.show;
 Toast.hide = T.hide;
 
 Toast.propTypes = {

@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import { Container, RadioButton, Typography } from "@components";
+import { Container, RadioButton } from "@components";
 
 const RadioButtonStories = {
-  title: "Radio Button",
-  component: RadioButtonStories,
+  title: "RadioButton",
+  component: RadioButton,
   argTypes: {
-    labelPosition: {
-      options: ["left", "right"],
-      control: {
-        type: "select",
-      },
-    },
     disabled: {
       control: {
         type: "boolean",
@@ -29,66 +23,52 @@ const RadioButtonStories = {
     },
   },
   args: {
-    label: "Hello",
     disabled: false,
     selected: false,
-    labelPosition: "right",
+    label: "Radio button demo",
   },
 };
 
 export default RadioButtonStories;
 
 export const RadioButtonDemo = args => {
-  const { label, selected, disabled, labelPosition } = args;
+  const { selected, disabled, label } = args;
   return (
-    <Container>
+    <Container flex={1} alignItems="center" justifyContent="center">
       <RadioButton
+        label={label}
         selected={selected}
         onSelect={() => {}}
-        label={label}
-        labelPosition={labelPosition}
         disabled={disabled}
       />
     </Container>
   );
 };
 
-export const RadioButtons = () => {
-  const [selected, setSelected] = useState(0);
-
-  useEffect(() => {
-    // console.log("selected is ", selected);
-  }, [selected]);
+export const RadioButtonComponent = () => {
+  const [selected1, setSelected1] = useState(true);
+  const [selected2, setSelected2] = useState(false);
 
   return (
     <Container>
       <RadioButton
-        selected={selected === 0}
-        onSelect={() => setSelected(0)}
-        label="Left label"
-        labelPosition="left"
+        mt={2}
+        selected={selected1}
+        onSelect={() => setSelected1(prev => !prev)}
+        label={`Radio button marked as ${!selected1 ? "un" : ""}selected`}
       />
       <RadioButton
-        selected={selected === 1}
-        onSelect={() => setSelected(1)}
-        label="Right label"
-        labelPosition="right"
+        mt={3}
+        selected={selected2}
+        onSelect={() => setSelected2(prev => !prev)}
+        label={`Radio button marked as ${!selected2 ? "un" : ""}selected`}
       />
+      <RadioButton mt={3} disabled label="Disabled radio button" />
       <RadioButton
-        selected={selected === 3}
-        onSelect={() => setSelected(3)}
+        mt={3}
         disabled
-        label="Disabled"
-      />
-      <RadioButton
-        selected={selected === 2}
-        onSelect={() => setSelected(2)}
-        labelComponent={
-          <Typography color="font.grey200" mx={2} fontFamily="inter700">
-            With custom padding and color
-          </Typography>
-        }
-        my={5}
+        selected
+        label="Disabled and selected radio button"
       />
     </Container>
   );

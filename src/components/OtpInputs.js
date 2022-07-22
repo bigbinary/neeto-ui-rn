@@ -53,7 +53,7 @@ const styles = {
   },
   defaultTextStyles: {
     fontSize: theme.fontSizes.xl,
-    fontFamily: theme.fonts.inter700,
+    fontFamily: theme.fonts.sf700,
   },
 };
 

@@ -76,7 +76,7 @@ export const Chip = ({
       {...rest.containerStyle}
     >
       {LeftIcon && <LeftIcon />}
-      <Typography mx={2} fontFamily="inter400" color={labelColor}>
+      <Typography mx={2} fontFamily="sf400" color={labelColor}>
         {label}
       </Typography>
       {onClose && (

@@ -1,90 +1,115 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import PropTypes from "prop-types";
-import { Typography, Container, Touchable } from "@components";
+import { Typography, Container, Touchable, Input } from "@components";
 import Modal from "react-native-modal";
+import Icon from "react-native-remix-icon";
+import { theme } from "../theme";
 
-const Border = () => {
-  return <Container bg="border.primary" height="1px" width="100%" />;
-};
-
-const Title = ({ title, bg, hide, titleContainerStyle, titleTextStyle }) => {
+const Title = ({
+  title,
+  bg,
+  isVisible,
+  hide,
+  titleContainerStyle,
+  titleTextStyle,
+  contentType,
+  canSearch,
+  searchText,
+  setSearchText,
+}) => {
   let touchY;
+  const [isSearchBarOpen, setSearchBarOpen] = useState(false);
+
+  useEffect(() => {
+    setSearchText("");
+  }, [isVisible, setSearchText]);
+
   return (
     <>
       <Container
-        px={2}
         bg={bg}
         onTouchStart={e => (touchY = e.nativeEvent.pageY)}
         onTouchEnd={e => {
           // Swipe Down Detection
           if (e.nativeEvent.pageY - touchY > 20) hide();
         }}
-        alignItems="center"
-        py={20}
+        pb={12}
         borderRadius={20}
         {...titleContainerStyle}
       >
-        {title && (
-          <Typography
-            color="font.secondary"
-            fontFamily="inter700"
-            textStyle="subtext"
-            {...titleTextStyle}
-          >
-            {title}
-          </Typography>
+        <Container flexDirection="row" justifyContent="space-between">
+          {title && (
+            <Typography textStyle="modalHeader" {...titleTextStyle}>
+              {title}
+            </Typography>
+          )}
+          {contentType && (
+            <Touchable onPress={hide}>
+              <Typography textStyle="modalHeader" color="font.purple600">
+                Done
+              </Typography>
+            </Touchable>
+          )}
+          {canSearch && !isSearchBarOpen && (
+            <Touchable onPress={() => setSearchBarOpen(true)}>
+              <Icon
+                name="search-line"
+                color={theme.colors.background.grey700}
+              />
+            </Touchable>
+          )}
+        </Container>
+
+        {canSearch && isSearchBarOpen && (
+          <Container pt={12} flexDirection="row" alignItems="center">
+            <Container flex={6} mr={3}>
+              <Input
+                value={searchText}
+                onChangeText={word => setSearchText(word.toLowerCase())}
+                placeholder="Search"
+                // eslint-disable-next-line react-native/no-inline-styles
+                containerStyles={styles.inputContainerStyle}
+                LeftIcon={() => {
+                  return (
+                    <Icon
+                      name="search-line"
+                      size={20}
+                      color={theme.colors.background.grey800}
+                    />
+                  );
+                }}
+              />
+            </Container>
+
+            <Touchable
+              onPress={() => {
+                setSearchText("");
+                setSearchBarOpen(false);
+              }}
+            >
+              <Typography fontSize="l" fontFamily="sf400" color="font.grey800">
+                Cancel
+              </Typography>
+            </Touchable>
+          </Container>
         )}
       </Container>
-      <Border />
     </>
   );
 };
 
 Title.propTypes = {
   title: PropTypes.string,
+  isVisible: PropTypes.boolean,
   hide: PropTypes.func,
   bg: PropTypes.string,
   titleContainerStyle: PropTypes.object,
   titleTextStyle: PropTypes.object,
-};
-
-const ContentRow = React.memo(
-  ({ label, onPress, bg, isSelected, itemContainerStyle, itemTextStyle }) => {
-    return (
-      !!label && (
-        <>
-          <Touchable
-            alignItems="center"
-            bg={bg}
-            py={12}
-            borderRadius={20}
-            onPress={onPress}
-            px={2}
-            {...itemContainerStyle}
-          >
-            <Typography
-              textStyle="body"
-              fontFamily={isSelected ? "inter700" : "inter400"}
-              {...itemTextStyle}
-            >
-              {label}
-            </Typography>
-          </Touchable>
-          <Border />
-        </>
-      )
-    );
-  }
-);
-ContentRow.displayName = "ContentRow";
-ContentRow.propTypes = {
-  label: PropTypes.string,
-  onPress: PropTypes.func,
-  bg: PropTypes.string,
-  isSelected: PropTypes.bool,
-  itemContainerStyle: PropTypes.object,
-  itemTextStyle: PropTypes.object,
+  contentType: PropTypes.oneOf(["checkbox", null]),
+  canSearch: PropTypes.bool,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.func,
 };
 
 /**
@@ -114,6 +139,7 @@ ContentRow.propTypes = {
  *       title="PROJECT"
  *       data={data}
  *       selectedItemIndex={selectedItemIndex}
+ *       ContentRow={() => <CustomComponent />}
  *      />
  *   </Container>
  *  );
@@ -134,11 +160,15 @@ export const BottomSheet = ({
   children,
   titleContainerStyle,
   titleTextStyle,
-  itemContainerStyle,
-  itemTextStyle,
   modalParams,
+  HeaderComponent,
+  ContentRow,
+  contentType,
+  canSearch,
   ...rest
 }) => {
+  const [searchText, setSearchText] = useState("");
+
   return (
     <Modal
       style={styles.modalStyle}
@@ -155,35 +185,45 @@ export const BottomSheet = ({
         flex={1}
         borderTopRightRadius={20}
         borderTopLeftRadius={20}
+        px={24}
+        py={24}
         {...rest}
       >
         <Container>
           <Title
             bg={bg}
             title={title}
+            isVisible={isVisible}
             hide={hide}
             titleContainerStyle={titleContainerStyle}
             titleTextStyle={titleTextStyle}
-          ></Title>
+            HeaderComponent={HeaderComponent}
+            contentType={contentType}
+            canSearch={canSearch}
+            searchText={searchText}
+            setSearchText={setSearchText}
+          />
 
           {data && (
             <FlatList
               contentContainerStyle={styles.flatListContentContainerStyle}
               initialNumToRender={data.length}
-              data={data}
+              data={
+                searchText
+                  ? data.filter(word => word.startsWith(searchText))
+                  : data
+              }
               renderItem={({ item, index }) => {
                 return (
                   <ContentRow
                     isSelected={index === selectedItemIndex}
-                    bg={bg}
                     key={index}
                     onPress={() => {
-                      hide();
+                      !contentType && hide();
                       onItemPress(index);
                     }}
+                    id={index}
                     label={item}
-                    itemContainerStyle={itemContainerStyle}
-                    itemTextStyle={itemTextStyle}
                   />
                 );
               }}
@@ -241,18 +281,14 @@ BottomSheet.propTypes = {
    */
   titleTextStyle: PropTypes.object,
   /**
-   * To customise item container styles.
-   */
-  itemContainerStyle: PropTypes.object,
-  /**
-   * To customise item text styles.
-   */
-  itemTextStyle: PropTypes.object,
-  /**
    * To support more Modal params.
    */
   modalParams: PropTypes.object,
   children: PropTypes.node,
+  HeaderComponent: PropTypes.elementType,
+  ContentRow: PropTypes.elementType.isRequired,
+  contentType: PropTypes.oneOf(["checkbox", null]),
+  canSearch: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({
@@ -263,5 +299,9 @@ const styles = StyleSheet.create({
     margin: 0,
     alignItems: "flex-end",
     flexDirection: "row",
+  },
+  inputContainerStyle: {
+    backgroundColor: "background.white",
+    borderRadius: 10,
   },
 });

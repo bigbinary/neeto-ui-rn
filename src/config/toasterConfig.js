@@ -121,12 +121,12 @@ const styles = StyleSheet.create({
   },
   text1Style: {
     fontSize: 15,
-    fontFamily: theme.fonts.inter700,
+    fontFamily: theme.fonts.sf700,
     color: theme.colors.font.white,
   },
   text2Style: {
     fontSize: 16,
-    fontFamily: theme.fonts.inter700,
+    fontFamily: theme.fonts.sf700,
     color: theme.colors.font.white,
   },
   closeButtonStyle: {

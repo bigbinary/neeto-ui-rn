@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Proptypes from "prop-types";
+import Icon from "react-native-remix-icon";
+import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography, Touchable } from "@components";
 
-const labelPositions = ["left", "right"];
-
-const LabelComponent = ({ label, labelComponent, labelProp }) => {
-  return labelComponent || <Typography {...labelProp}>{label}</Typography>;
-};
-
 /**
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/checkbox/checkbox.png" />
+ * </div>
  *
  * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
@@ -24,24 +24,26 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  *  ## Usage
  * ```js
  * import * as React from "react";
- * import { Container, CheckBox, Typography } from "@bigbinary/neetoui-rn";
+ * import { Container, CheckBox } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
- *  const [selected, setSelected] = React.useState(false);
- *
+ *  const [checked, setChecked] = useState(true);
  *
  *  return (
  *    <Container>
- *      <Container flexDirection="row" my={2}>
- *        <CheckBox
- *          selected={selected}
- *          onSelect={() => setSelected(!selected)}
- *          checkedComponent={
- *            <Container width={10} height={10} bg="background.base" />
- *          }
- *          label="Agree"
- *        />
- *      </Container>
+ *      <CheckBox
+ *        mt={2}
+ *        checked={checked1}
+ *        onSelect={() => setChecked1(prev => !prev)}
+ *        label={`Checkbox marked as ${!checked1 ? "un" : ""}checked`}
+ *      />
+ *      <CheckBox
+ *        mt={3}
+ *        checked={checked2}
+ *        onSelect={() => setChecked2(prev => !prev)}
+ *        label={`Checkbox marked as ${!checked2 ? "un" : ""}checked`}
+ *      />
+ *      <CheckBox mt={3} disabled label="Disabled checkbox" />
  *    </Container>
  *  );
  * }
@@ -50,68 +52,85 @@ const LabelComponent = ({ label, labelComponent, labelProp }) => {
  */
 
 export const CheckBox = ({
-  selected = false,
-  onSelect = () => {},
-  checkedComponent = null,
-  checkedItemProp = {},
-  disabled = false,
-  label = "Option",
-  labelComponent = null,
-  labelProp = {},
-  labelPosition = "right",
-  checkboxContainerProp = {},
+  checked,
+  onSelect,
+  disabled,
+  label,
+  checkboxStyle,
+  checkIconStyle,
+  labelStyle,
   ...rest
 }) => {
+  const theme = useContext(ThemeContext);
+  const disabledProps = {
+    bg: theme.colors.background[checked ? "grey400" : "white"],
+    labelProps: {
+      color: theme.colors.font.grey400,
+    },
+  };
+  const checkedProps = {
+    bg: theme.colors.background.base,
+    labelProps: {
+      fontFamily: theme.fonts.sf500,
+      color: theme.colors.font.primary,
+    },
+  };
+  const unCheckedProps = {
+    bg: theme.colors.background.white,
+    borderWidth: 1,
+    borderColor: theme.colors.border.secondary,
+    labelProps: {
+      fontFamily: theme.fonts.sf400,
+      color: theme.colors.font.secondary,
+    },
+  };
   return (
     <Touchable
       disabled={disabled}
       onPress={onSelect}
-      opacity={disabled ? 0.5 : 1}
       flexDirection="row"
       alignItems="center"
       {...rest}
     >
-      {labelPosition === labelPositions[0] ? (
-        <LabelComponent
-          label={label}
-          labelComponent={labelComponent}
-          labelProp={{ mr: 2, ...labelProp }}
-        />
-      ) : null}
       <Container
-        borderColor="background.base"
-        borderWidth={1}
-        borderRadius={5}
+        height={16}
+        width={16}
+        borderRadius={3}
         justifyContent="center"
         alignItems="center"
-        width={20}
-        height={20}
-        {...checkboxContainerProp}
+        {...(!checked && unCheckedProps)}
+        {...(checked && checkedProps)}
+        {...(disabled && disabledProps)}
+        {...checkboxStyle}
       >
-        {selected && (
-          <Container>
-            {checkedComponent || (
-              <Typography {...checkedItemProp}>✓</Typography>
-            )}
-          </Container>
+        {checked && (
+          <Icon
+            name="ri-check-line"
+            size={14}
+            color={theme.colors.font.white}
+            {...checkIconStyle}
+          />
         )}
       </Container>
-      {labelPosition === labelPositions[1] ? (
-        <LabelComponent
-          label={label}
-          labelComponent={labelComponent}
-          labelProp={{ ml: 2, ...labelProp }}
-        />
-      ) : null}
+      <Typography
+        ml={2}
+        fontSize="m"
+        {...(checked && checkedProps.labelProps)}
+        {...(!checked && unCheckedProps.labelProps)}
+        {...(disabled && disabledProps.labelProps)}
+        {...labelStyle}
+      >
+        {label}
+      </Typography>
     </Touchable>
   );
 };
 
 CheckBox.propTypes = {
   /**
-   * Whether checkbox is selected.
+   * Whether checkbox is checked or not.
    */
-  selected: Proptypes.bool.isRequired,
+  checked: Proptypes.bool.isRequired,
   /**
    * Function to execute on press.
    */
@@ -121,37 +140,24 @@ CheckBox.propTypes = {
    */
   disabled: Proptypes.bool,
   /**
-   * Render custom checked component.
-   */
-  checkedComponent: Proptypes.element,
-  /**
-   * Check mark style.
-   */
-  checkedItemProp: Proptypes.object,
-  /**
    * Text label to be shown with radio button.
    */
   label: Proptypes.string,
   /**
-   * Props for the label.
+   * Customize checkbox style.
    */
-  labelProp: Proptypes.object,
+  checkboxStyle: Proptypes.object,
   /**
-   * Label can passed as a component as well.
+   * Customize check icon style.
    */
-  labelComponent: Proptypes.element,
+  checkIconStyle: Proptypes.object,
   /**
-   * Position of label relative to the radio button. It can be either `left` or `right`
+   * Customize label style.
    */
-  labelPosition: Proptypes.oneOf(labelPositions),
-  /**
-   * Extra param to customize checkbox container
-   */
-  checkboxContainerProp: Proptypes.object,
+  labelStyle: Proptypes.object,
 };
 
-LabelComponent.propTypes = {
-  label: Proptypes.string,
-  labelComponent: Proptypes.element,
-  labelProp: Proptypes.object,
+CheckBox.defaultProps = {
+  checked: false,
+  onSelect: () => {},
 };

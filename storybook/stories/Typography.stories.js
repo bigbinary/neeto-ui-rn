@@ -92,12 +92,17 @@ export const TextStyles = () => {
 export const FontSizes = () => {
   return (
     <Container>
-      <Typography fontSize="xs">xs as 10px</Typography>
-      <Typography fontSize="s">s as 12px</Typography>
-      <Typography fontSize="m">m as 14px</Typography>
-      <Typography fontSize="l">l as 18px</Typography>
-      <Typography fontSize="xl">xl as 24px</Typography>
-      <Typography fontSize="xxl">xxl as 32px</Typography>
+      <Typography fontSize="3xs">3xs as 10px</Typography>
+      <Typography fontSize="2xs">2xs as 12px</Typography>
+      <Typography fontSize="xs">xs as 13px</Typography>
+      <Typography fontSize="s">s as 14px</Typography>
+      <Typography fontSize="m">m as 15px</Typography>
+      <Typography fontSize="l">l as 16px</Typography>
+      <Typography fontSize="xl">xl as 17px</Typography>
+      <Typography fontSize="2xl">2xl as 18px</Typography>
+      <Typography fontSize="3xl">3xl as 20px</Typography>
+      <Typography fontSize="4xl">4xl as 22px</Typography>
+      <Typography fontSize="5xl">5xl as 30px</Typography>
     </Container>
   );
 };
@@ -106,45 +111,48 @@ export const FontColors = () => {
   return (
     <Container>
       <Container backgroundColor="background.base">
-        <Typography color="font.white" fontSize="xxl">
+        <Typography color="font.white" fontSize="3xl">
           White
         </Typography>
       </Container>
-      <Typography color="font.black" fontSize="xxl">
+      <Typography color="font.black" fontSize="3xl">
         Black
       </Typography>
-      <Typography color="font.base" fontSize="xxl">
+      <Typography color="font.base" fontSize="3xl">
         Base
       </Typography>
-      <Typography fontSize="xxl">Primary</Typography>
-      <Typography color="font.secondary" fontSize="xxl">
+      <Typography fontSize="3xl">Primary</Typography>
+      <Typography color="font.secondary" fontSize="3xl">
         Secondary
       </Typography>
-      <Typography color="font.danger" fontSize="xxl">
+      <Typography color="font.danger" fontSize="3xl">
         Danger
       </Typography>
-      <Typography color="font.grey100" fontSize="xxl">
+      <Typography color="font.grey100" fontSize="3xl">
         Grey
       </Typography>
-      <Typography color="font.grey100" fontSize="xxl">
+      <Typography color="font.grey100" fontSize="3xl">
         Grey 100
       </Typography>
-      <Typography color="font.grey200" fontSize="xxl">
+      <Typography color="font.grey200" fontSize="3xl">
         Grey 200
       </Typography>
-      <Typography color="font.grey300" fontSize="xxl">
+      <Typography color="font.grey300" fontSize="3xl">
         Grey 300
       </Typography>
-      <Typography color="font.grey400" fontSize="xxl">
+      <Typography color="font.grey400" fontSize="3xl">
         Grey 400
       </Typography>
-      <Typography color="font.grey500" fontSize="xxl">
+      <Typography color="font.grey500" fontSize="3xl">
         Grey 500
       </Typography>
-      <Typography color="font.grey600" fontSize="xxl">
+      <Typography color="font.grey600" fontSize="3xl">
         Grey 600
       </Typography>
-      <Typography color="font.grey800" fontSize="xxl">
+      <Typography color="font.grey700" fontSize="3xl">
+        Grey 700
+      </Typography>
+      <Typography color="font.grey800" fontSize="3xl">
         Grey 800
       </Typography>
     </Container>
@@ -154,11 +162,17 @@ export const FontColors = () => {
 export const FontFamilies = () => {
   return (
     <Container>
-      <Typography fontFamily="inter400" fontSize="xxl">
-        Inter Regular 400
+      <Typography fontFamily="sf400" fontSize="3xl">
+        SFProText Regular 400
       </Typography>
-      <Typography fontFamily="inter700" fontSize="xxl">
-        Inter Bold 700
+      <Typography fontFamily="sf500" fontSize="3xl">
+        SFProText Medium 500
+      </Typography>
+      <Typography fontFamily="sf600" fontSize="3xl">
+        SFProText SemiBold 600
+      </Typography>
+      <Typography fontFamily="sf700" fontSize="3xl">
+        SFProText Bold 700
       </Typography>
     </Container>
   );
@@ -167,13 +181,13 @@ export const FontFamilies = () => {
 export const TextDecoration = () => {
   return (
     <Container>
-      <Typography fontSize="xxl" textDecoration="underline">
+      <Typography fontSize="3xl" textDecoration="underline">
         Underline
       </Typography>
-      <Typography fontSize="xxl" textDecoration="line-through">
+      <Typography fontSize="3xl" textDecoration="line-through">
         Line through
       </Typography>
-      <Typography fontSize="xxl" textDecoration="underline line-through">
+      <Typography fontSize="3xl" textDecoration="underline line-through">
         Underline and line through
       </Typography>
     </Container>
@@ -183,13 +197,13 @@ export const TextDecoration = () => {
 export const TextTransformation = () => {
   return (
     <Container>
-      <Typography fontSize="xxl" textTransform="uppercase">
+      <Typography fontSize="3xl" textTransform="uppercase">
         uppercase text
       </Typography>
-      <Typography fontSize="xxl" textTransform="lowercase">
+      <Typography fontSize="3xl" textTransform="lowercase">
         lowercase text
       </Typography>
-      <Typography fontSize="xxl" textTransform="capitalize">
+      <Typography fontSize="3xl" textTransform="capitalize">
         capitalized text
       </Typography>
     </Container>

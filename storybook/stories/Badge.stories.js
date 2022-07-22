@@ -93,18 +93,13 @@ export const Badges = () => {
           </Typography>
         </Container>
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge
-            size={32}
-            content="test"
-            fontSize="12px"
-            fontFamily="inter700"
-          />
+          <Badge size={32} content="test" fontSize="12px" fontFamily="sf700" />
           <Typography px={2} fontSize="l">
             Custom font family
           </Typography>
         </Container>
         <Container flexDirection="row" alignItems="center" mb={4} px={2}>
-          <Badge content="Comment" fontSize="12px" fontFamily="inter700" />
+          <Badge content="Comment" fontSize="12px" fontFamily="sf700" />
           <Typography px={2} fontSize="l">
             Long Text
           </Typography>

@@ -1,4 +1,5 @@
 export { Button } from "./Button";
+export { SocialButton } from "./SocialButton";
 export { Container } from "./Container";
 export { Typography } from "./Typography";
 export { Input } from "./Input";
@@ -25,3 +26,8 @@ export { MultiSelect } from "./MultiSelect";
 export { Divider } from "./Divider";
 export { FlatList } from "./FlatList";
 export { ScrollView } from "./ScrollView";
+export { SegmentPicker } from "./SegmentPicker";
+export { ListItem } from "./ListItem";
+export { Carousel } from "./Carousel";
+export { OnBoarding } from "./OnBoarding";
+export { SearchBar } from "./SearchBar";

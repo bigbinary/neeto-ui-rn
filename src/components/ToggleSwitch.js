@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import SwitchToggle from "react-native-switch-toggle";
+import React, { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "styled-components/native";
-import { StyleSheet } from "react-native";
+import { Animated } from "react-native";
 import PropTypes from "prop-types";
+import Icon from "react-native-remix-icon";
 
-import { Typography, Container } from "@components";
+import { Container, Touchable } from "@components";
 
 /**
- * ToggleSwitch component is a simple switch toggle component from react-native-switch-toggle along with a label which describes what is being switched ON/OFF.
+ * ToggleSwitch component is a simple switch toggle component describes what is being switched ON/OFF.
  *
  * <div class="screenshots">
  *   <img src="screenshots/toggleswitch/switchstyles.png" />
@@ -26,7 +26,6 @@ import { Typography, Container } from "@components";
  *     <ToggleSwitch
  *      value={switchOne}
  *      setValue={() => setSwitchOne(prevValue => !prevValue)}
- *      label="Conversation assigned to my group"
  *     />
  *   </Container>
  *  );
@@ -34,75 +33,59 @@ import { Typography, Container } from "@components";
  * ```
  */
 
-const Label = ({ label, textStyles }) => {
-  return (
-    <Typography textStyle="subtext" {...textStyles}>
-      {label}
-    </Typography>
-  );
-};
-
-export const ToggleSwitch = ({
-  value,
-  onValueChange,
-  label,
-  disabled,
-  labelPosition,
-  ...rest
-}) => {
+export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   const theme = useContext(ThemeContext);
+  const animatedPosition = useRef(new Animated.Value(value ? 1 : 0)).current;
 
-  const circleColorOn = disabled
-    ? theme.colors.background.grey500
-    : theme.colors.background.white;
-  const circleColorOff = disabled
-    ? theme.colors.background.menubackground
-    : theme.colors.background.white;
+  useEffect(() => {
+    startAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value]);
+
+  const startAnimation = () => {
+    Animated.timing(animatedPosition, {
+      toValue: value ? 20 : 0,
+      duration: 300,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const containerBg = value ? "#5E5CE6" : "background.grey300";
+  const iconColor = value ? "#5E5CE6" : theme.colors.font.grey500;
 
   return (
-    <Container
-      flexDirection="row"
-      borderColor={theme.colors.border.primary}
-      alignItems="center"
-      {...rest.wrapperStyles}
+    <Touchable
+      disabled={disabled}
+      onPress={() => onValueChange(!value)}
+      width={44}
+      height={24}
+      bg={containerBg}
+      justifyContent="center"
+      px={1}
+      borderRadius={70}
+      opacity={disabled ? 0.5 : 1}
     >
-      {labelPosition === "left" && (
-        <Label label={label} textStyles={rest.textStyles} />
-      )}
-      <SwitchToggle
-        switchOn={value}
-        onPress={() => !disabled && onValueChange()}
-        circleColorOn={circleColorOn}
-        circleColorOff={circleColorOff}
-        backgroundColorOff={theme.colors.background.grey200}
-        backgroundColorOn={theme.colors.background.grey800}
-        containerStyle={styles.containerStyle}
-        circleStyle={styles.circleStyle}
-        {...rest.switchStyles}
-      />
-      {labelPosition === "right" && (
-        <Label label={label} textStyles={rest.textStyles} />
-      )}
-    </Container>
+      <Animated.View style={{ transform: [{ translateX: animatedPosition }] }}>
+        <Container
+          bg="background.white"
+          width={16}
+          height={16}
+          borderRadius={8}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Icon
+            name={`ri-${value ? "check" : "close"}-line`}
+            size={12}
+            color={iconColor}
+          />
+        </Container>
+      </Animated.View>
+    </Touchable>
   );
-};
-
-ToggleSwitch.defaultProps = {
-  labelPosition: "left",
-  wrapperStyles: {},
-  switchStyles: {},
-  textStyles: { mr: 2 },
 };
 
 ToggleSwitch.propTypes = {
-  /**
-   * The text to use for the floating label.
-   */
-  label: PropTypes.string,
-  /**
-   * Prop that handles the label position.
-   */
-  labelPosition: PropTypes.string,
   /**
    * Value of the switch, true means 'on', false means 'off'.
    */
@@ -115,35 +98,4 @@ ToggleSwitch.propTypes = {
    * Disable toggling the switch.
    */
   disabled: PropTypes.bool,
-  /**
-   * Prop to handle custom wrapper styles.
-   */
-  wrapperStyles: PropTypes.object,
-  /**
-   * Prop to handle custom switch styles.
-   */
-  switchStyles: PropTypes.object,
-  /**
-   * Prop to handle custom text styles.
-   */
-  textStyles: PropTypes.object,
 };
-
-Label.propTypes = {
-  label: PropTypes.string,
-  textStyles: PropTypes.object,
-};
-
-const styles = StyleSheet.create({
-  containerStyle: {
-    width: 38,
-    height: 18,
-    borderRadius: 10,
-    padding: 2,
-  },
-  circleStyle: {
-    width: 14,
-    height: 14,
-    borderRadius: 7,
-  },
-});
