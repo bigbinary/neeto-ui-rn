@@ -3316,16 +3316,15 @@ exports[`Storyshots Bottom Sheet Bottom Sheet Demo 1`] = `
                         ]
                       }
                     >
-                      <View
-                        color="background.primary"
-                        flexDirection="row"
-                        justifyContent="space-between"
+                      <Text
+                        color="font.secondary"
+                        fontFamily="sf700"
                         style={
                           Array [
                             Object {
-                              "color": "#ffffff",
-                              "flexDirection": "row",
-                              "justifyContent": "space-between",
+                              "color": "#49545C",
+                              "fontFamily": "SFProText-Bold",
+                              "fontSize": 12,
                             },
                           ]
                         }
@@ -4357,8 +4356,7 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                       style={
                         Array [
                           Object {
-                            "backgroundColor": "#ffffff",
-                            "borderRadius": 20,
+                            "backgroundColor": "#E9EBED",
                             "color": "#ffffff",
                             "paddingBottom": 12,
                           },
@@ -4551,15 +4549,13 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                             }
                           >
                             <Text
-                              color="font.grey700"
                               fontFamily="sf400"
-                              fontSize="l"
                               style={
                                 Array [
                                   Object {
-                                    "color": "#49545C",
+                                    "color": "#87929d",
                                     "fontFamily": "SFProText-Regular",
-                                    "fontSize": 16,
+                                    "fontSize": 14,
                                   },
                                 ]
                               }
@@ -4586,6 +4582,22 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                               }
                             />
                           </View>
+                          <View
+                            bg="border.primary"
+                            color="background.primary"
+                            height="1px"
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "#E9EBED",
+                                  "color": "#ffffff",
+                                  "height": 1,
+                                  "width": "100%",
+                                },
+                              ]
+                            }
+                            width="100%"
+                          />
                         </View>
                         <View
                           onLayout={[Function]}
@@ -4621,15 +4633,13 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                             }
                           >
                             <Text
-                              color="font.grey700"
                               fontFamily="sf400"
-                              fontSize="l"
                               style={
                                 Array [
                                   Object {
-                                    "color": "#49545C",
+                                    "color": "#87929d",
                                     "fontFamily": "SFProText-Regular",
-                                    "fontSize": 16,
+                                    "fontSize": 14,
                                   },
                                 ]
                               }
@@ -4656,6 +4666,22 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                               }
                             />
                           </View>
+                          <View
+                            bg="border.primary"
+                            color="background.primary"
+                            height="1px"
+                            style={
+                              Array [
+                                Object {
+                                  "backgroundColor": "#E9EBED",
+                                  "color": "#ffffff",
+                                  "height": 1,
+                                  "width": "100%",
+                                },
+                              ]
+                            }
+                            width="100%"
+                          />
                         </View>
                         <View
                           onLayout={[Function]}
@@ -4695,15 +4721,13 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                             }
                           >
                             <Text
-                              color="font.grey700"
                               fontFamily="sf400"
-                              fontSize="l"
                               style={
                                 Array [
                                   Object {
-                                    "color": "#49545C",
+                                    "color": "#87929d",
                                     "fontFamily": "SFProText-Regular",
-                                    "fontSize": 16,
+                                    "fontSize": 14,
                                   },
                                 ]
                               }
@@ -4994,6 +5018,7 @@ exports[`Storyshots Bottom Sheet Bottom Sheets 1`] = `
                             style={
                               Array [
                                 Object {
+                                  "backgroundColor": "#E9EBED",
                                   "color": "#ffffff",
                                   "paddingBottom": 12,
                                   "paddingTop": 12,

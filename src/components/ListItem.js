@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import propTypes from "@styled-system/prop-types";
 
 import { Typography, Container } from "@components";
 
@@ -30,18 +29,17 @@ import { Typography, Container } from "@components";
  * ```
  */
 
-export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => {
+export const ListItem = ({ LeftComponent, label, RightComponent }) => {
   return (
     <Container
       flexDirection="row"
       bg="background.secondary"
       width="100%"
-      px={12}
-      height={52}
+      p={3}
+      m={3}
       borderRadius={6}
       alignItems="center"
       justifyContent="space-between"
-      {...rest}
     >
       <Container flexDirection="row" alignItems="center">
         {LeftComponent && <LeftComponent />}
@@ -55,11 +53,6 @@ export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => {
 };
 
 ListItem.propTypes = {
-  ...propTypes.flexbox,
-  ...propTypes.space,
-  ...propTypes.border,
-  ...propTypes.color,
-  ...propTypes.layout,
   LeftComponent: PropTypes.elementType,
   label: PropTypes.string.isRequired,
   RightComponent: PropTypes.elementType.isRequired,

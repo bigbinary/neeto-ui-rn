@@ -26,10 +26,7 @@ export default ListItemMetaData;
 export const ListItemDemo = args => {
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
-      <ListItem
-        {...args}
-        RightComponent={() => <Typography>Text</Typography>}
-      />
+      <ListItem {...args} value={() => <Typography>Text</Typography>} />
     </Container>
   );
 };

@@ -64,12 +64,6 @@ export const CheckBoxComponent = () => {
         label={`Checkbox marked as ${!checked2 ? "un" : ""}checked`}
       />
       <CheckBox mt={3} disabled label="Disabled checkbox" />
-      <CheckBox
-        mt={3}
-        checked
-        disabled
-        label="Disabled checkbox marked as checked"
-      />
     </Container>
   );
 };

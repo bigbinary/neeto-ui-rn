@@ -29,7 +29,6 @@ const purpleVariants = {
   purple800: "#342DF4",
   purple700: "#4557F8",
   purple600: "#7280FA",
-  purple500: "#5E5CE6",
 };
 
 const greenVariants = {
@@ -43,6 +42,7 @@ const colors = {
   font: {
     primary: "#2F3941",
     secondary: "#49545C",
+    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...purpleVariants,
@@ -52,6 +52,7 @@ const colors = {
     parentView: "#ffffff",
     primary: "#ffffff",
     secondary: "#F6F6FA",
+    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...purpleVariants,
@@ -60,6 +61,7 @@ const colors = {
   border: {
     primary: "#E9EBED",
     secondary: "#C2C8CC",
+    danger: "#D95D4E",
     ...greyVariants,
     ...defaultColors,
     ...purpleVariants,
@@ -115,11 +117,6 @@ export const theme = {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
       fontFamily: baseTheme.fonts.sf700,
-    },
-    modalHeader: {
-      color: baseTheme.colors.font.black,
-      fontSize: baseTheme.fontSizes["xl"],
-      fontFamily: baseTheme.fonts.sf600,
     },
     body: {
       color: baseTheme.colors.font.grey500,
