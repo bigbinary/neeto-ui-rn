@@ -1,10 +1,10 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Animated } from "react-native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Touchable } from "@components";
+import { Container, Card } from "@components";
 
 /**
  * A component used to display an expandable list item.
@@ -46,7 +46,7 @@ import { Container, Touchable } from "@components";
 
 export const Accordion = props => {
   const { Header, noBorder = false, iconProp = {}, children } = props;
-  const { iconName, IconLabel, iconSize, iconColor } = iconProp;
+  const { name, Label, size, color } = iconProp;
   const theme = useContext(ThemeContext);
   const [isExpanded, setExpanded] = useState(false);
   const [viewHeight, setViewHeight] = useState(0);
@@ -84,24 +84,29 @@ export const Accordion = props => {
         borderColor: "border.grey400",
         borderWidth: 1,
         borderRadius: 8,
-        p: 2,
       })}
       width="100%"
     >
-      <Container flexDirection="row" alignItems="center">
+      <Card
+        p={2}
+        flexDirection="row"
+        alignItems="center"
+        onPress={() => {
+          handleAnimation();
+        }}
+      >
         {!!Header && (
           <Container flexGrow={1}>
             <Header />
           </Container>
         )}
-        <Touchable
-          onPress={handleAnimation}
+        <Container
           alignItems="center"
           justifyContent="center"
           flexDirection="row"
           px={1}
         >
-          {IconLabel && <IconLabel />}
+          {Label && <Label />}
           <Animated.View
             style={{
               alignItems: "flex-end",
@@ -110,14 +115,14 @@ export const Accordion = props => {
           >
             <Container>
               <Icon
-                name={iconName ?? "ri-arrow-down-s-line"}
-                color={iconColor ?? theme.colors.font.grey700}
-                size={iconSize ?? 24}
+                name={name ?? "ri-arrow-down-s-line"}
+                color={color ?? theme.colors.font.grey700}
+                size={size ?? 24}
               />
             </Container>
           </Animated.View>
-        </Touchable>
-      </Container>
+        </Container>
+      </Card>
       <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
         <Container width="100%" position="absolute" onLayout={getLayout}>
           {children}
@@ -142,6 +147,14 @@ Accordion.propTypes = {
   noBorder: PropTypes.bool,
   /**
    * Takes an object based on which the icon to expand/collapse can be customized.
+   * Label: Takes a component.
+   * size: Used to update the icon size.
+   * name: Used to update the default arrow icon.
    */
-  iconProp: PropTypes.object,
+  iconProp: PropTypes.shape({
+    name: PropTypes.string,
+    Label: PropTypes.elementType,
+    size: PropTypes.number,
+    color: PropTypes.string,
+  }),
 };

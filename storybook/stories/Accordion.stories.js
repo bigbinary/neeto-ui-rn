@@ -62,10 +62,8 @@ export const Accordions = () => {
             </Container>
           )}
           iconProp={{
-            IconLabel: () => (
-              <Typography color="font.danger">Collapse</Typography>
-            ),
-            iconColor: theme.colors.font.danger,
+            Label: () => <Typography color="font.danger">Collapse</Typography>,
+            color: theme.colors.font.danger,
           }}
         >
           <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
@@ -77,10 +75,8 @@ export const Accordions = () => {
         <Typography py={2}>Accordion with no border and header</Typography>
         <Accordion
           iconProp={{
-            IconLabel: () => (
-              <Typography color="font.danger">Collapse</Typography>
-            ),
-            iconColor: theme.colors.font.danger,
+            Label: () => <Typography color="font.danger">Collapse</Typography>,
+            color: theme.colors.font.danger,
           }}
           noBorder={true}
         >
