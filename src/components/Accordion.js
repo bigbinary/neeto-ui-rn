@@ -45,7 +45,7 @@ import { Container, Card } from "@components";
  */
 
 export const Accordion = props => {
-  const { Header, noBorder = false, iconProp = {}, children } = props;
+  const { Header, noBorder = false, iconProp = {}, children, ...rest } = props;
   const { name, Label, size, color } = iconProp;
   const theme = useContext(ThemeContext);
   const [isExpanded, setExpanded] = useState(false);
@@ -86,6 +86,7 @@ export const Accordion = props => {
         borderRadius: 8,
       })}
       width="100%"
+      {...rest}
     >
       <Card
         p={2}
