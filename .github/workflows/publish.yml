@@ -10,9 +10,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
+      - run: yarn
       - run: yarn build
       - run: yarn version --patch --no-git-tag-version
       - run: git config core.hooksPath /dev/null
