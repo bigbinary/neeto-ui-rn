@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
+import { ActivityIndicator } from "react-native";
 
 import { Typography, Touchable } from "@components";
 
@@ -58,46 +59,124 @@ import { Typography, Touchable } from "@components";
  */
 
 export const Button = props => {
-  const { variant, label, labelStyle, RightIcon, LeftIcon, disabled, ...rest } =
-    props;
+  const {
+    variant,
+    label,
+    labelStyle,
+    RightIcon,
+    LeftIcon,
+    disabled,
+    isLoading,
+    ...rest
+  } = props;
   const theme = useContext(ThemeContext);
-  const isTextVariant = variant === "text";
+  const width = variant === "text" || variant === "danger-text" ? null : "100%";
+
+  const getButtonColors = () => {
+    switch (variant) {
+      case "solid":
+        return {
+          bg: theme.colors.background[disabled ? "grey400" : "base"],
+          border: theme.colors.background[disabled ? "grey400" : "base"],
+          color: theme.colors.background.white,
+          ripple: "white",
+        };
+      case "text":
+        return {
+          bg: "transparent",
+          border: "transparent",
+          color: theme.colors.font.primary,
+          ripple: "black",
+        };
+      case "danger":
+        return {
+          bg: theme.colors.background.danger,
+          border: theme.colors.background.danger,
+          color: theme.colors.background.white,
+          ripple: "white",
+        };
+      case "danger-inverse":
+        return {
+          bg: theme.colors.background.white,
+          border: theme.colors.background.danger,
+          color: theme.colors.background.danger,
+          ripple: "black",
+        };
+      case "danger-text":
+        return {
+          bg: "transparent",
+          border: "transparent",
+          color: theme.colors.background.danger,
+          ripple: "black",
+        };
+      default:
+        return {
+          bg: theme.colors.background[disabled ? "grey400" : "base"],
+          border: theme.colors.background[disabled ? "grey400" : "base"],
+          color: theme.colors.background.white,
+          ripple: "white",
+        };
+    }
+  };
+
+  const renderOpacity = () => {
+    if (
+      ["danger", "danger-inverse", "danger-text"].includes(variant) &&
+      disabled
+    )
+      return 0.5;
+    return 1;
+  };
+
+  const renderLoaderColor = () => {
+    if (["text", "danger", "danger-inverse", "danger-text"].includes(variant))
+      return "base";
+    return "white";
+  };
 
   return (
     <Touchable
-      rippleColor={isTextVariant ? "black" : "white"}
+      rippleColor={getButtonColors().ripple}
       disabled={disabled}
-      bg={
-        isTextVariant
-          ? "transparent"
-          : theme.colors.background[disabled ? "grey400" : "base"]
-      }
+      bg={getButtonColors().bg}
       height={45}
-      width={isTextVariant ? null : "100%"}
+      width={width}
       borderRadius={8}
       flexDirection="row"
       alignItems="center"
       justifyContent="center"
+      borderColor={getButtonColors().border}
+      borderWidth={1}
+      opacity={renderOpacity()}
       {...rest}
     >
-      {LeftIcon && <LeftIcon />}
-      <Typography
-        textAlign="center"
-        mx={2}
-        color={theme.colors.font[isTextVariant ? "primary" : "white"]}
-        fontSize="m"
-        fontFamily={theme.fonts.sf500}
-        {...labelStyle}
-      >
-        {label}
-      </Typography>
-      {RightIcon && <RightIcon />}
+      {isLoading ? (
+        <ActivityIndicator
+          color={theme.colors.background[renderLoaderColor()]}
+        />
+      ) : (
+        <>
+          {LeftIcon && <LeftIcon />}
+          <Typography
+            textAlign="center"
+            mx={2}
+            color={getButtonColors().color}
+            fontSize="m"
+            fontFamily={theme.fonts.sf500}
+            {...labelStyle}
+          >
+            {label}
+          </Typography>
+          {RightIcon && <RightIcon />}
+        </>
+      )}
     </Touchable>
   );
 };
 
 Button.defaultProps = {
   variant: "solid",
+  isLoading: false,
 };
 
 Button.propTypes = {
@@ -119,7 +198,13 @@ Button.propTypes = {
    *    <li>solid - button with a background color.</li>
    *  </ul>
    */
-  variant: PropTypes.oneOf(["text", "solid"]),
+  variant: PropTypes.oneOf([
+    "text",
+    "solid",
+    "danger",
+    "danger-inverse",
+    "danger-text",
+  ]),
   /**
    * Enable or Disable the button.
    */
@@ -136,4 +221,8 @@ Button.propTypes = {
    * Render a component on the left side of the Label.
    */
   LeftIcon: PropTypes.elementType,
+  /**
+   * To show loading indicator on the button.
+   */
+  isLoading: PropTypes.bool,
 };

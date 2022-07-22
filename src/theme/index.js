@@ -26,23 +26,24 @@ const greyVariants = {
 };
 
 const purpleVariants = {
-  purple800: "#342DF4",
-  purple700: "#4557F8",
-  purple600: "#7280FA",
   purple500: "#5E5CE6",
+  purple600: "#7280FA",
+  purple700: "#4557F8",
+  purple800: "#342DF4",
 };
 
 const greenVariants = {
-  green800: "#00956D",
-  green700: "#00BA88",
-  green600: "#33C8A0",
   green500: "#34C759",
+  green600: "#33C8A0",
+  green700: "#00BA88",
+  green800: "#00956D",
 };
 
 const colors = {
   font: {
     primary: "#2F3941",
     secondary: "#49545C",
+    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...purpleVariants,
@@ -52,6 +53,7 @@ const colors = {
     parentView: "#ffffff",
     primary: "#ffffff",
     secondary: "#F6F6FA",
+    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...purpleVariants,
@@ -60,6 +62,7 @@ const colors = {
   border: {
     primary: "#E9EBED",
     secondary: "#C2C8CC",
+    danger: "#D95D4E",
     ...greyVariants,
     ...defaultColors,
     ...purpleVariants,

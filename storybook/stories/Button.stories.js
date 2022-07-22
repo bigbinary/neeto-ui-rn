@@ -4,7 +4,7 @@ import Icon from "react-native-remix-icon";
 import { Button, Container } from "@components";
 import { theme } from "@theme";
 
-const variants = ["text", "solid"];
+const variants = ["text", "solid", "danger", "danger-inverse", "danger-text"];
 
 const ButtonMetaData = {
   title: "Buttons",
@@ -13,6 +13,7 @@ const ButtonMetaData = {
     label: "Button Component",
     variant: variants[1],
     disabled: false,
+    isLoading: false,
   },
   argTypes: {
     label: {
@@ -27,6 +28,11 @@ const ButtonMetaData = {
       },
     },
     disabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isLoading: {
       control: {
         type: "boolean",
       },
@@ -53,7 +59,12 @@ export const Buttons = () => {
   return (
     <Container alignItems="center" flex={1}>
       <Button my={9} label="Default Button is solid" />
+      <Button my={9} isLoading={true} label="Default Loading Button" />
       <Button my={9} disabled label="Default Disabled Button" />
+      <Button my={9} variant="danger" label="Danger Button" />
+      <Button my={9} disabled variant="danger" label="Danger Disabled Button" />
+      <Button my={9} variant="danger-inverse" label="Danger Inverse Button" />
+      <Button my={9} variant="danger-text" label="Danger Plain Button" />
       <Button
         my={9}
         LeftIcon={() => <Icon name="ri-add-line" color="white" size={16} />}
