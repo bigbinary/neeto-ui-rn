@@ -150,6 +150,7 @@ Accordion.propTypes = {
    * Label: Takes a component.
    * size: Used to update the icon size.
    * name: Used to update the default arrow icon.
+   * color: Used to update the default color of the icon.
    */
   iconProp: PropTypes.shape({
     name: PropTypes.string,
