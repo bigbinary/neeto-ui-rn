@@ -117,6 +117,7 @@ export const Alert = () => {
     button1 = {
       label: "OK",
       onPress: () => {},
+      variant: "solid",
     },
     button2,
     button3,
@@ -183,7 +184,6 @@ export const Alert = () => {
           {button2 && (
             <Button
               borderWidth={1}
-              variant="inverse"
               fontFamily="sf400"
               fontSize="m"
               borderRadius={50}
@@ -196,6 +196,7 @@ export const Alert = () => {
               }}
               label={button2.label}
               width={undefined}
+              variant={button2.variant}
             />
           )}
           {button1 && (
@@ -212,6 +213,7 @@ export const Alert = () => {
               height={35}
               p={0}
               width={undefined}
+              variant={button1.variant}
             />
           )}
         </Container>
@@ -219,7 +221,6 @@ export const Alert = () => {
           <Button
             mt={20}
             borderWidth={1}
-            variant="inverse"
             fontFamily="sf400"
             fontSize="m"
             borderRadius={50}
@@ -231,6 +232,7 @@ export const Alert = () => {
             label={button3.label}
             height={35}
             p={0}
+            variant={button3.variant}
           />
         )}
       </Container>
