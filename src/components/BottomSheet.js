@@ -5,6 +5,7 @@ import { Typography, Container, Touchable, Input } from "@components";
 import Modal from "react-native-modal";
 import Icon from "react-native-remix-icon";
 import { theme } from "../theme";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Title = ({
   title,
@@ -149,7 +150,7 @@ Title.propTypes = {
  */
 
 export const BottomSheet = ({
-  data,
+  data = [],
   title,
   hide,
   isVisible,
@@ -179,61 +180,63 @@ export const BottomSheet = ({
       onRequestClose={hide}
       {...modalParams}
     >
-      <Container
-        bg={bg}
-        flex={1}
-        borderTopRightRadius={20}
-        borderTopLeftRadius={20}
-        px={24}
-        py={24}
-        {...rest}
-      >
-        <Container>
-          <Title
-            bg={bg}
-            title={title}
-            isVisible={isVisible}
-            hide={hide}
-            titleContainerStyle={titleContainerStyle}
-            titleTextStyle={titleTextStyle}
-            HeaderComponent={HeaderComponent}
-            contentType={contentType}
-            canSearch={canSearch}
-            searchText={searchText}
-            setSearchText={setSearchText}
-          />
+      <SafeAreaView style={styles.safeAreaView}>
+        <Container
+          bg={bg}
+          borderTopRightRadius={20}
+          borderTopLeftRadius={20}
+          px={24}
+          py={24}
+          {...rest}
+        >
+          <Container>
+            {title && (
+              <Title
+                bg={bg}
+                title={title}
+                isVisible={isVisible}
+                hide={hide}
+                titleContainerStyle={titleContainerStyle}
+                titleTextStyle={titleTextStyle}
+                HeaderComponent={HeaderComponent}
+                contentType={contentType}
+                canSearch={canSearch}
+                searchText={searchText}
+                setSearchText={setSearchText}
+              />
+            )}
 
-          {data && (
-            <FlatList
-              contentContainerStyle={styles.flatListContentContainerStyle}
-              initialNumToRender={data.length}
-              data={
-                searchText
-                  ? data.filter(word => word.startsWith(searchText))
-                  : data
-              }
-              renderItem={({ item, index }) => {
-                return (
-                  <ContentRow
-                    isSelected={index === selectedItemIndex}
-                    key={index}
-                    onPress={() => {
-                      !contentType && hide();
-                      onItemPress(index);
-                    }}
-                    id={index}
-                    label={item}
-                  />
-                );
-              }}
-              keyExtractor={(item, index) => {
-                return index;
-              }}
-            />
-          )}
-          {children}
+            {data && (
+              <FlatList
+                ListFooterComponent={children}
+                initialNumToRender={data.length}
+                data={
+                  searchText
+                    ? data.filter(word => word.startsWith(searchText))
+                    : data
+                }
+                renderItem={({ item, index }) => {
+                  return (
+                    <ContentRow
+                      isSelected={index === selectedItemIndex}
+                      key={index}
+                      onPress={() => {
+                        !contentType && hide();
+                        onItemPress(index);
+                      }}
+                      id={index}
+                      label={item}
+                    />
+                  );
+                }}
+                keyExtractor={(item, index) => {
+                  return index;
+                }}
+              />
+            )}
+          </Container>
         </Container>
-      </Container>
+      </SafeAreaView>
     </Modal>
   );
 };
@@ -291,13 +294,15 @@ BottomSheet.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  flatListContentContainerStyle: {
-    paddingBottom: 70,
+  safeAreaView: {
+    maxHeight: "70%",
+    backgroundColor: theme.colors.background.primary,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   modalStyle: {
     margin: 0,
-    alignItems: "flex-end",
-    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   inputContainerStyle: {
     backgroundColor: "white",
