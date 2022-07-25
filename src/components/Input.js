@@ -161,7 +161,7 @@ export const Input = props => {
         alignItems="center"
         flexDirection="row"
         justifyContent="space-between"
-        height={58}
+        {...(!rest?.inputProps?.multiline && { height: 58 })}
       >
         {!!PrefixIcon && (
           <View pl={2}>
