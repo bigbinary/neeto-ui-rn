@@ -126,7 +126,7 @@ export const Inputs = () => {
             return (
               <Container flexDirection="row">
                 <Icon
-                  name="ri-service-line"
+                  name="ri-mail-line"
                   size={22}
                   color={theme.colors.background.grey600}
                 />
@@ -165,7 +165,7 @@ export const Inputs = () => {
               return (
                 <Container flexDirection="row">
                   <Icon
-                    name="ri-service-line"
+                    name="ri-mail-line"
                     size={22}
                     color={theme.colors.background.grey600}
                   />
