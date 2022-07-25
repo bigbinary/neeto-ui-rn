@@ -96,7 +96,7 @@ export const Input = props => {
   const colors = useContext(ThemeContext).colors;
   const inputRef = useRef();
   const containerRef = useRef();
-  const animatedController = new Animated.Value(0);
+  const animatedController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     if (autoFocus || value) {
