@@ -40,9 +40,9 @@ import { Typography, Container } from "@components";
 
 export const Avatar = ({
   name,
-  size = 80,
-  bgColor = "background.grey200",
-  fontColor = "font.grey600",
+  variant = "medium",
+  bgColor = "#EAF3FC",
+  fontColor = "#0B4885",
   imageUrl,
   ...rest
 }) => {
@@ -51,14 +51,26 @@ export const Avatar = ({
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
     .slice(0, 2);
-  const fontSize = size / 2 - 8;
+
+  const getSizes = () => {
+    switch (variant) {
+      case "small":
+        return [36, 12];
+      case "medium":
+        return [48, 14];
+      default:
+        return [48, 14];
+    }
+  };
+
+  const [avatarSize, avatarFontSize] = getSizes();
 
   const styles = {
     profileImage: {
-      height: size,
-      width: size,
+      height: avatarSize,
+      width: avatarSize,
       alignSelf: "center",
-      borderRadius: size / 2,
+      borderRadius: avatarSize / 2,
     },
   };
 
@@ -69,14 +81,14 @@ export const Avatar = ({
       {renderFallbackText ? (
         <Container
           bg={bgColor}
-          width={size}
-          height={size}
-          borderRadius={size / 2}
+          width={avatarSize}
+          height={avatarSize}
+          borderRadius={avatarSize / 2}
           {...rest}
         >
           <Typography
-            fontFamily="sf700"
-            fontSize={fontSize > 14 ? fontSize : 14}
+            fontFamily="sf400"
+            fontSize={avatarFontSize}
             color={fontColor}
           >
             {acronym.toUpperCase()}
@@ -105,9 +117,9 @@ Avatar.propTypes = {
    */
   name: PropTypes.string,
   /**
-   * Size of the avatar.
+   * variant of the avatar: `medium` or `small`
    */
-  size: PropTypes.number,
+  variant: PropTypes.oneOf(["medium", "small"]),
   /**
    * Custom color for the avatar.
    */
