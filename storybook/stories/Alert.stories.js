@@ -126,7 +126,6 @@ export const AlertDemo = () => {
               {
                 label: "No",
                 onPress: () => {},
-                variant: "text",
               },
             ],
             onDismiss: () => {},

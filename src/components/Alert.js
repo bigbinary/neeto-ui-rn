@@ -196,7 +196,7 @@ export const Alert = () => {
               }}
               label={button2.label}
               width={undefined}
-              variant={button2.variant}
+              variant={button2.variant || "text"}
             />
           )}
           {button1 && (
