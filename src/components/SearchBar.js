@@ -64,7 +64,7 @@ export const SearchBar = props => {
   };
 
   return (
-    <Container flexDirection="row" alignItems="center">
+    <Container flexDirection="row" alignItems="center" {...rest.containerProps}>
       <Animated.View
         style={{
           ...styles.inputContainerStyles,
@@ -131,4 +131,8 @@ SearchBar.propTypes = {
    * Takes numeric value which is used to set the debounce delay
    */
   debounceDelay: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Takes an object and accepts all the props accepted by TextInput component from React Native.
+   */
+  searchbarProps: PropTypes.object,
 };

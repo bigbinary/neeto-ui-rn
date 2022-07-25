@@ -74,7 +74,7 @@ export const Inputs = () => {
     <>
       <Container mb={20}>
         <Typography py={2}>Default Input</Typography>
-        <Input label="Email" value="" onChangeHandle={() => {}} />
+        <Input label="Email" value="" onChangeText={() => {}} />
       </Container>
       <Container mb={20}>
         <Typography py={2}>Focused Input</Typography>
@@ -82,7 +82,7 @@ export const Inputs = () => {
           label="Email"
           autoFocus={true}
           value=""
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
         />
       </Container>
       <Container mb={20}>
@@ -91,24 +91,19 @@ export const Inputs = () => {
           label="Email"
           placeholder="Placeholder"
           value="oliver@example.com"
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
         />
       </Container>
       <Container mb={20}>
         <Typography py={2}>Disabled Input Without Value</Typography>
-        <Input
-          label="Email"
-          disabled={true}
-          value=""
-          onChangeHandle={() => {}}
-        />
+        <Input label="Email" disabled={true} value="" onChangeText={() => {}} />
       </Container>
       <Container mb={20}>
         <Typography py={2}>Disabled Input With Value</Typography>
         <Input
           label="Email"
           value="oliver@example.com"
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
           disabled={true}
         />
       </Container>
@@ -118,7 +113,7 @@ export const Inputs = () => {
           label="Email"
           value="oliver.com"
           errorMessage="Please enter a valid email."
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
         />
       </Container>
       <Container mb={20}>
@@ -126,12 +121,12 @@ export const Inputs = () => {
         <Input
           label="Email"
           value=""
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
           PrefixIcon={() => {
             return (
               <Container flexDirection="row">
                 <Icon
-                  name="ri-service-line"
+                  name="ri-mail-line"
                   size={22}
                   color={theme.colors.background.grey600}
                 />
@@ -145,7 +140,7 @@ export const Inputs = () => {
         <Input
           label="Email"
           value=""
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
           SuffixIcon={() => {
             return (
               <Container flexDirection="row">
@@ -165,12 +160,12 @@ export const Inputs = () => {
           <Input
             label="Email"
             value="oliver@example.com"
-            onChangeHandle={() => {}}
+            onChangeText={() => {}}
             PrefixIcon={() => {
               return (
                 <Container flexDirection="row">
                   <Icon
-                    name="ri-service-line"
+                    name="ri-mail-line"
                     size={22}
                     color={theme.colors.background.grey600}
                   />
@@ -196,8 +191,21 @@ export const Inputs = () => {
         <Input
           label="Password"
           value="Password"
-          onChangeHandle={() => {}}
+          onChangeText={() => {}}
           inputProps={{ secureTextEntry: true }}
+        />
+      </Container>
+      <Container mb={20}>
+        <Typography py={2}>Input With Multiline Content</Typography>
+        <Input
+          label="Message"
+          value="Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit.
+          In sagittis scelerisque euismod. 
+          Vivamus efficitur libero ut fermentum elementum.
+          Aenean scelerisque sed augue quis vestibulum. "
+          onChangeText={() => {}}
+          inputProps={{ multiline: true }}
         />
       </Container>
     </>

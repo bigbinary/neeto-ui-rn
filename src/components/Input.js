@@ -51,7 +51,7 @@ const Typography = styled.Text`
 `;
 
 /**
- *
+ * Input component allow users to input custom text entries with a keyboard.
  * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
  * <li>flexbox</li>
@@ -70,7 +70,7 @@ const Typography = styled.Text`
  * export default function Main() {
  *  return (
  *    <Container>
- *     <Input value="Oliver Smith" onChangeHandle={()=>{}} label="Name" />
+ *     <Input value="Oliver Smith" onChangeText={()=>{}} label="Name" />
  *    </Container>
  *  );
  * }
@@ -84,7 +84,7 @@ export const Input = props => {
   const {
     label,
     value = "",
-    onChangeHandle = () => {},
+    onChangeText = () => {},
     errorMessage = null,
     PrefixIcon,
     SuffixIcon,
@@ -96,7 +96,7 @@ export const Input = props => {
   const colors = useContext(ThemeContext).colors;
   const inputRef = useRef();
   const containerRef = useRef();
-  const animatedController = new Animated.Value(0);
+  const animatedController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     if (autoFocus || value) {
@@ -128,9 +128,9 @@ export const Input = props => {
         borderColor: errorMessage
           ? colors.border.danger
           : isFocused
-          ? colors.border.purple700
-          : colors.border.grey300,
-        borderWidth: errorMessage || isFocused ? 2 : 1,
+          ? colors.border.purple500
+          : colors.border.grey400,
+        borderWidth: errorMessage || isFocused ? 1.5 : 1,
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -138,7 +138,7 @@ export const Input = props => {
   const labelStyles = {
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [18, 14],
+      outputRange: [17, 13],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
@@ -154,13 +154,14 @@ export const Input = props => {
   return (
     <View>
       <View
-        borderRadius={5}
-        borderWidth={1}
-        borderColor={errorMessage ? "border.danger" : "border.grey300"}
         ref={containerRef}
+        borderRadius={8}
+        borderWidth={1}
+        borderColor={errorMessage ? "border.danger" : "border.grey400"}
         alignItems="center"
         flexDirection="row"
         justifyContent="space-between"
+        {...(!rest?.inputProps?.multiline && { height: 58 })}
       >
         {!!PrefixIcon && (
           <View pl={2}>
@@ -179,7 +180,7 @@ export const Input = props => {
           <TextInput
             ref={inputRef}
             value={value}
-            onChangeText={onChangeHandle}
+            onChangeText={onChangeText}
             autoFocus={autoFocus}
             editable={!disabled}
             onFocus={() => {
@@ -188,10 +189,10 @@ export const Input = props => {
             onBlur={() => {
               handleFocusBlur(false);
             }}
-            color={disabled ? "font.grey500" : "font.grey800"}
-            fontSize={18}
+            color={disabled ? "font.grey500" : "font.primary"}
+            fontSize={17}
             py={3}
-            px={0}
+            pr={3}
             top={0}
             zIndex={2}
             {...rest.inputProps}
@@ -224,7 +225,7 @@ Input.propTypes = {
   /**
    * Func to set the current value.
    */
-  onChangeHandle: PropTypes.func.isRequired,
+  onChangeText: PropTypes.func.isRequired,
   /**
    * To display error/info messages
    */
