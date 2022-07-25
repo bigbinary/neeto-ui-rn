@@ -51,7 +51,7 @@ const Typography = styled.Text`
 `;
 
 /**
- *
+ * Input component allow users to input custom text entries with a keyboard.
  * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
  * <li>flexbox</li>
@@ -70,7 +70,7 @@ const Typography = styled.Text`
  * export default function Main() {
  *  return (
  *    <Container>
- *     <Input value="Oliver Smith" onChangeHandle={()=>{}} label="Name" />
+ *     <Input value="Oliver Smith" onChangeText={()=>{}} label="Name" />
  *    </Container>
  *  );
  * }
@@ -84,7 +84,7 @@ export const Input = props => {
   const {
     label,
     value = "",
-    onChangeHandle = () => {},
+    onChangeText = () => {},
     errorMessage = null,
     PrefixIcon,
     SuffixIcon,
@@ -180,7 +180,7 @@ export const Input = props => {
           <TextInput
             ref={inputRef}
             value={value}
-            onChangeText={onChangeHandle}
+            onChangeText={onChangeText}
             autoFocus={autoFocus}
             editable={!disabled}
             onFocus={() => {
@@ -189,7 +189,7 @@ export const Input = props => {
             onBlur={() => {
               handleFocusBlur(false);
             }}
-            color={disabled ? "font.grey500" : "font.grey800"}
+            color={disabled ? "font.grey500" : "font.primary"}
             fontSize={17}
             py={3}
             pr={3}
@@ -225,7 +225,7 @@ Input.propTypes = {
   /**
    * Func to set the current value.
    */
-  onChangeHandle: PropTypes.func.isRequired,
+  onChangeText: PropTypes.func.isRequired,
   /**
    * To display error/info messages
    */
