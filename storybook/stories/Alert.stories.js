@@ -33,6 +33,7 @@ export const AlertDemo = () => {
               {
                 label: "Yay!",
                 onPress: () => {},
+                variant: "text",
               },
             ],
           });
@@ -51,10 +52,12 @@ export const AlertDemo = () => {
               {
                 label: "Yay!",
                 onPress: () => {},
+                variant: "solid",
               },
               {
                 label: "No",
                 onPress: () => {},
+                variant: "text",
               },
             ],
             onDismiss: () => {},
@@ -103,6 +106,29 @@ export const AlertDemo = () => {
               },
             ],
             isCancelable: false,
+          });
+        }}
+      />
+      <Button
+        width={200}
+        my={10}
+        label="Danger Buttons"
+        onPress={() => {
+          Alert.show({
+            title: "Delete",
+            description: "Are you sure you want to delete?",
+            buttons: [
+              {
+                label: "Yay!",
+                onPress: () => {},
+                variant: "danger",
+              },
+              {
+                label: "No",
+                onPress: () => {},
+              },
+            ],
+            onDismiss: () => {},
           });
         }}
       />
