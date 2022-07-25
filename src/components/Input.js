@@ -128,9 +128,9 @@ export const Input = props => {
         borderColor: errorMessage
           ? colors.border.danger
           : isFocused
-          ? colors.border.purple700
-          : colors.border.grey300,
-        borderWidth: errorMessage || isFocused ? 2 : 1,
+          ? colors.border.purple500
+          : colors.border.grey400,
+        borderWidth: errorMessage || isFocused ? 1.5 : 1,
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -138,7 +138,7 @@ export const Input = props => {
   const labelStyles = {
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [18, 14],
+      outputRange: [17, 13],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
@@ -154,13 +154,14 @@ export const Input = props => {
   return (
     <View>
       <View
-        borderRadius={5}
-        borderWidth={1}
-        borderColor={errorMessage ? "border.danger" : "border.grey300"}
         ref={containerRef}
+        borderRadius={8}
+        borderWidth={1}
+        borderColor={errorMessage ? "border.danger" : "border.grey400"}
         alignItems="center"
         flexDirection="row"
         justifyContent="space-between"
+        height={58}
       >
         {!!PrefixIcon && (
           <View pl={2}>
@@ -189,9 +190,9 @@ export const Input = props => {
               handleFocusBlur(false);
             }}
             color={disabled ? "font.grey500" : "font.grey800"}
-            fontSize={18}
+            fontSize={17}
             py={3}
-            px={0}
+            pr={3}
             top={0}
             zIndex={2}
             {...rest.inputProps}
