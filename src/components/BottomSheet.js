@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import PropTypes from "prop-types";
-import { Typography, Container, Touchable, Input } from "@components";
+import { Typography, Container, Touchable, SearchBar } from "@components";
 import Modal from "react-native-modal";
 import Icon from "react-native-remix-icon";
 import { theme } from "../theme";
@@ -16,7 +16,6 @@ const Title = ({
   titleTextStyle,
   contentType,
   canSearch,
-  searchText,
   setSearchText,
 }) => {
   let touchY;
@@ -39,59 +38,42 @@ const Title = ({
         borderRadius={20}
         {...titleContainerStyle}
       >
-        <Container flexDirection="row" justifyContent="space-between">
-          {title && (
-            <Typography textStyle="modalHeader" {...titleTextStyle}>
-              {title}
-            </Typography>
-          )}
-          {contentType && (
-            <Touchable onPress={hide}>
-              <Typography textStyle="modalHeader" color="font.purple500">
-                Done
+        {canSearch && isSearchBarOpen ? null : (
+          <Container flexDirection="row" justifyContent="space-between">
+            {title && (
+              <Typography textStyle="modalHeader" {...titleTextStyle}>
+                {title}
               </Typography>
-            </Touchable>
-          )}
-          {canSearch && !isSearchBarOpen && (
-            <Touchable onPress={() => setSearchBarOpen(true)}>
-              <Icon
-                name="search-line"
-                color={theme.colors.background.grey700}
-              />
-            </Touchable>
-          )}
-        </Container>
+            )}
+            {contentType && (
+              <Touchable onPress={hide}>
+                <Typography textStyle="modalHeader" color="font.purple600">
+                  Done
+                </Typography>
+              </Touchable>
+            )}
+            {canSearch && !isSearchBarOpen && (
+              <Touchable onPress={() => setSearchBarOpen(true)}>
+                <Icon
+                  name="search-line"
+                  color={theme.colors.background.grey700}
+                />
+              </Touchable>
+            )}
+          </Container>
+        )}
 
         {canSearch && isSearchBarOpen && (
-          <Container pt={12} flexDirection="row" alignItems="center">
-            <Container flex={6} mr={3}>
-              <Input
-                value={searchText}
-                onChangeText={word => setSearchText(word.toLowerCase())}
-                placeholder="Search"
-                containerStyles={styles.inputContainerStyle}
-                LeftIcon={() => {
-                  return (
-                    <Icon
-                      name="search-line"
-                      size={20}
-                      color={theme.colors.background.grey800}
-                    />
-                  );
-                }}
-              />
-            </Container>
-
-            <Touchable
-              onPress={() => {
-                setSearchText("");
+          <Container alignItems="center">
+            <SearchBar
+              placeholder="Search"
+              onChangeText={setSearchText}
+              onCancel={() => {
                 setSearchBarOpen(false);
+                setSearchText("");
               }}
-            >
-              <Typography fontSize="l" fontFamily="sf400" color="font.grey800">
-                Cancel
-              </Typography>
-            </Touchable>
+              searchbarProps={{ autoFocus: true }}
+            />
           </Container>
         )}
       </Container>
@@ -108,7 +90,6 @@ Title.propTypes = {
   titleTextStyle: PropTypes.object,
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
-  searchText: PropTypes.string,
   setSearchText: PropTypes.func,
 };
 
@@ -212,7 +193,7 @@ export const BottomSheet = ({
                 initialNumToRender={data.length}
                 data={
                   searchText
-                    ? data.filter(word => word.startsWith(searchText))
+                    ? data.filter(word => word.includes(searchText))
                     : data
                 }
                 renderItem={({ item, index }) => {
