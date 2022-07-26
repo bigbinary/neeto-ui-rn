@@ -1,9 +1,27 @@
 import React, { useEffect } from "react";
 import { InteractionManager, Keyboard } from "react-native";
 import PropTypes from "prop-types";
+import {
+  flexbox,
+  space,
+  border,
+  buttonStyle,
+  typography,
+  color,
+} from "styled-system";
+import styled from "styled-components/native";
 
 import { theme } from "../theme";
-import { Container, Touchable, Typography, Input } from "@components";
+import { Container, Touchable, Typography } from "@components";
+
+const TextInput = styled.TextInput`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${buttonStyle}
+  ${typography}
+  ${color}
+`;
 
 /**
  *
@@ -42,14 +60,12 @@ const styles = {
   },
   defaultContainerStyles: {
     margin: 2,
-    borderRadius: 6,
-    borderWidth: 1,
-    borderColor: theme.colors.background.secondary,
+    borderRadius: 8,
     backgroundColor: theme.colors.background.white,
     justifyContent: "center",
     alignItems: "center",
-    minHeight: 45,
-    minWidth: 45,
+    minHeight: 42,
+    minWidth: 42,
   },
   defaultTextStyles: {
     fontSize: theme.fontSizes.xl,
@@ -94,6 +110,12 @@ export const OtpInputs = ({
               return (
                 <Container
                   key={index}
+                  borderColor={
+                    code.length - 1 === index
+                      ? theme.colors.border.purple500
+                      : theme.colors.border.secondary
+                  }
+                  borderWidth={code.length - 1 === index ? 1.5 : 1}
                   {...styles.defaultContainerStyles}
                   {...containerStyles}
                 >
@@ -102,7 +124,7 @@ export const OtpInputs = ({
                     color={
                       error
                         ? theme.colors.font.danger
-                        : theme.colors.font.secondary
+                        : theme.colors.font.purple500
                     }
                     {...styles.defaultTextStyles}
                     {...textStyles}
@@ -112,7 +134,7 @@ export const OtpInputs = ({
                 </Container>
               );
             })}
-          <Input
+          <TextInput
             keyboardType="phone-pad"
             selectionColor="transparent"
             autoFocus={true}
