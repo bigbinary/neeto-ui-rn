@@ -25,11 +25,18 @@ const greyVariants = {
   grey800: "#2f3941",
 };
 
+const darkBlueVariant = {
+  darkBlue100: "#0B4885",
+};
+
+const lightBlueVariants = {
+  lightBlue100: "#EAF3FC",
+};
+
 const purpleVariants = {
   purple500: "#5E5CE6",
-  purple600: "#7280FA",
-  purple700: "#4557F8",
-  purple800: "#342DF4",
+  purple700: "#4746B7",
+  purple100: "#EFEFFD",
 };
 
 const greenVariants = {
@@ -46,6 +53,8 @@ const colors = {
     danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
+    ...lightBlueVariants,
+    ...darkBlueVariant,
     ...purpleVariants,
     ...greenVariants,
   },
@@ -56,6 +65,8 @@ const colors = {
     danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
+    ...lightBlueVariants,
+    ...darkBlueVariant,
     ...purpleVariants,
     ...greenVariants,
   },
@@ -64,6 +75,8 @@ const colors = {
     secondary: "#C2C8CC",
     danger: "#D95D4E",
     ...greyVariants,
+    ...lightBlueVariants,
+    ...darkBlueVariant,
     ...defaultColors,
     ...purpleVariants,
   },

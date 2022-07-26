@@ -41,8 +41,8 @@ import { Typography, Container } from "@components";
 export const Avatar = ({
   name,
   variant = "medium",
-  bgColor = "#EAF3FC",
-  fontColor = "#0B4885",
+  bgColor = "background.lightBlue100",
+  fontColor = "font.darkBlue100",
   imageUrl,
   ...rest
 }) => {

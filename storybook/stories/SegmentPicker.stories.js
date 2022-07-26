@@ -75,10 +75,10 @@ export const SegmentPickers = () => {
           currentIndex={tab4Index}
           onChange={setTab4Index}
           inactiveSegmentStyle={{
-            backgroundColor: theme.colors.background.purple600,
+            backgroundColor: theme.colors.background.purple100,
           }}
           activeSegmentStyle={{
-            backgroundColor: theme.colors.background.purple800,
+            backgroundColor: theme.colors.background.purple500,
           }}
           activeTextStyle={{ color: theme.colors.font.white }}
           py={18}
