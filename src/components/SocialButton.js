@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
+import { ActivityIndicator } from "react-native";
 
 import AppleLogo from "@assets/icons/apple-logo.svg";
 import GoogleLogo from "@assets/icons/google-logo.svg";
@@ -33,7 +34,7 @@ import { Container, Typography, Touchable } from "@components";
  */
 
 export const SocialButton = props => {
-  const { variant, disabled, labelStyle, ...rest } = props;
+  const { variant, disabled, labelStyle, isLoading, ...rest } = props;
   const theme = useContext(ThemeContext);
   const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 
@@ -51,18 +52,24 @@ export const SocialButton = props => {
       justifyContent="center"
       {...rest}
     >
-      <Container position="absolute" left={17}>
-        {variant === "apple" && <AppleLogo />}
-        {variant === "google" && <GoogleLogo />}
-      </Container>
-      <Typography
-        color={theme.colors.font.primary}
-        fontSize="m"
-        fontFamily={theme.fonts.sf500}
-        {...labelStyle}
-      >
-        Continue with {capitalize(variant)}
-      </Typography>
+      {isLoading ? (
+        <ActivityIndicator color={theme.colors.background.grey800} />
+      ) : (
+        <>
+          <Container position="absolute" left={17}>
+            {variant === "apple" && <AppleLogo />}
+            {variant === "google" && <GoogleLogo />}
+          </Container>
+          <Typography
+            color={theme.colors.font.primary}
+            fontSize="m"
+            fontFamily={theme.fonts.sf500}
+            {...labelStyle}
+          >
+            Continue with {capitalize(variant)}
+          </Typography>
+        </>
+      )}
     </Touchable>
   );
 };
