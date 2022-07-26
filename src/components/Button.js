@@ -139,7 +139,7 @@ export const Button = props => {
       rippleColor={getButtonColors().ripple}
       disabled={disabled}
       bg={getButtonColors().bg}
-      height={45}
+      height={48}
       width={width}
       borderRadius={8}
       flexDirection="row"

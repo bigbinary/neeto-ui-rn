@@ -42,7 +42,7 @@ export const SocialButton = props => {
       rippleColor="black"
       disabled={disabled}
       bg="transparent"
-      height={45}
+      height={48}
       width="100%"
       borderRadius={8}
       borderWidth={1}
