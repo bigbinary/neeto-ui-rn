@@ -29,6 +29,7 @@ export const SearchBar = props => {
   const {
     placeholder = "Search",
     onChangeText = () => {},
+    onCancel = () => {},
     debounceDelay = 1000,
     ...rest
   } = props;
@@ -61,6 +62,7 @@ export const SearchBar = props => {
     animateSearchInput(0);
     setSearchText("");
     inputRef.current.blur();
+    onCancel();
   };
 
   return (
@@ -135,4 +137,8 @@ SearchBar.propTypes = {
    * Takes an object and accepts all the props accepted by TextInput component from React Native.
    */
   searchbarProps: PropTypes.object,
+  /**
+   * Method called when the cancel button is pressed.
+   */
+  onCancel: PropTypes.func,
 };
