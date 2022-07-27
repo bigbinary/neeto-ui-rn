@@ -64,17 +64,15 @@ const Title = ({
         )}
 
         {canSearch && isSearchBarOpen && (
-          <Container alignItems="center">
-            <SearchBar
-              placeholder="Search"
-              onChangeText={setSearchText}
-              onCancel={() => {
-                setSearchBarOpen(false);
-                setSearchText("");
-              }}
-              searchbarProps={{ autoFocus: true }}
-            />
-          </Container>
+          <SearchBar
+            placeholder="Search"
+            onChangeText={setSearchText}
+            onCancel={() => {
+              setSearchBarOpen(false);
+              setSearchText("");
+            }}
+            searchbarProps={{ autoFocus: true }}
+          />
         )}
       </Container>
     </>
