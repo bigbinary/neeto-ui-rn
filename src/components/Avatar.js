@@ -8,13 +8,8 @@ import { Typography, Container } from "@components";
  * Avatars can be used to represent people in a graphical way.
  *
  * <div class="screenshots">
- *   <img src="screenshots/avatar/bgcolors.png" />
- *   <img src="screenshots/avatar/fontcolors.png" />
- * </div>
- *
- * <div class="screenshots">
- *   <img src="screenshots/avatar/imagesizes.png" />
- *   <img src="screenshots/avatar/textsizes.png" />
+ *   <img src="screenshots/avatar/images.png" />
+ *   <img src="screenshots/avatar/texts.png" />
  * </div>
  *
  *  ## Usage
@@ -26,7 +21,7 @@ import { Typography, Container } from "@components";
  *  return (
  *    <Container>
  *     <Avatar
- *      size={42}
+ *      variant={"medium"}
  *      name="Oliver Smith"
  *      bgColor="background.black"
  *      fontColor="font.white"
@@ -40,9 +35,9 @@ import { Typography, Container } from "@components";
 
 export const Avatar = ({
   name,
-  size = 80,
-  bgColor = "background.grey200",
-  fontColor = "font.grey600",
+  variant = "medium",
+  bgColor = "background.lightBlue100",
+  fontColor = "font.darkBlue100",
   imageUrl,
   ...rest
 }) => {
@@ -51,14 +46,26 @@ export const Avatar = ({
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
     .slice(0, 2);
-  const fontSize = size / 2 - 8;
+
+  const getSizes = () => {
+    switch (variant) {
+      case "small":
+        return [36, 12];
+      case "medium":
+        return [48, 14];
+      default:
+        return [48, 14];
+    }
+  };
+
+  const [avatarSize, avatarFontSize] = getSizes();
 
   const styles = {
     profileImage: {
-      height: size,
-      width: size,
+      height: avatarSize,
+      width: avatarSize,
       alignSelf: "center",
-      borderRadius: size / 2,
+      borderRadius: avatarSize / 2,
     },
   };
 
@@ -69,14 +76,14 @@ export const Avatar = ({
       {renderFallbackText ? (
         <Container
           bg={bgColor}
-          width={size}
-          height={size}
-          borderRadius={size / 2}
+          width={avatarSize}
+          height={avatarSize}
+          borderRadius={avatarSize / 2}
           {...rest}
         >
           <Typography
-            fontFamily="sf700"
-            fontSize={fontSize > 14 ? fontSize : 14}
+            fontFamily="sf400"
+            fontSize={avatarFontSize}
             color={fontColor}
           >
             {acronym.toUpperCase()}
@@ -105,9 +112,9 @@ Avatar.propTypes = {
    */
   name: PropTypes.string,
   /**
-   * Size of the avatar.
+   * variant of the avatar: `medium` or `small`
    */
-  size: PropTypes.number,
+  variant: PropTypes.oneOf(["medium", "small"]),
   /**
    * Custom color for the avatar.
    */
