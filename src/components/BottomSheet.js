@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
-import { Typography, Container, Touchable, Input } from "@components";
+import { Typography, Container, Touchable, SearchBar } from "@components";
 import Modal from "react-native-modal";
 import Icon from "react-native-remix-icon";
 import { theme } from "../theme";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Title = ({
   title,
@@ -15,7 +16,6 @@ const Title = ({
   titleTextStyle,
   contentType,
   canSearch,
-  searchText,
   setSearchText,
 }) => {
   let touchY;
@@ -38,60 +38,41 @@ const Title = ({
         borderRadius={20}
         {...titleContainerStyle}
       >
-        <Container flexDirection="row" justifyContent="space-between">
-          {title && (
-            <Typography textStyle="modalHeader" {...titleTextStyle}>
-              {title}
-            </Typography>
-          )}
-          {contentType && (
-            <Touchable onPress={hide}>
-              <Typography textStyle="modalHeader" color="font.purple500">
-                Done
+        {canSearch && isSearchBarOpen ? null : (
+          <Container flexDirection="row" justifyContent="space-between">
+            {title && (
+              <Typography textStyle="modalHeader" {...titleTextStyle}>
+                {title}
               </Typography>
-            </Touchable>
-          )}
-          {canSearch && !isSearchBarOpen && (
-            <Touchable onPress={() => setSearchBarOpen(true)}>
-              <Icon
-                name="search-line"
-                color={theme.colors.background.grey700}
-              />
-            </Touchable>
-          )}
-        </Container>
+            )}
+            {contentType && (
+              <Touchable onPress={hide}>
+                <Typography textStyle="modalHeader" color="font.purple600">
+                  Done
+                </Typography>
+              </Touchable>
+            )}
+            {canSearch && !isSearchBarOpen && (
+              <Touchable onPress={() => setSearchBarOpen(true)}>
+                <Icon
+                  name="search-line"
+                  color={theme.colors.background.grey700}
+                />
+              </Touchable>
+            )}
+          </Container>
+        )}
 
         {canSearch && isSearchBarOpen && (
-          <Container pt={12} flexDirection="row" alignItems="center">
-            <Container flex={6} mr={3}>
-              <Input
-                value={searchText}
-                onChangeText={word => setSearchText(word.toLowerCase())}
-                placeholder="Search"
-                containerStyles={styles.inputContainerStyle}
-                LeftIcon={() => {
-                  return (
-                    <Icon
-                      name="search-line"
-                      size={20}
-                      color={theme.colors.background.grey800}
-                    />
-                  );
-                }}
-              />
-            </Container>
-
-            <Touchable
-              onPress={() => {
-                setSearchText("");
-                setSearchBarOpen(false);
-              }}
-            >
-              <Typography fontSize="l" fontFamily="sf400" color="font.grey800">
-                Cancel
-              </Typography>
-            </Touchable>
-          </Container>
+          <SearchBar
+            placeholder="Search"
+            onChangeText={setSearchText}
+            onCancel={() => {
+              setSearchBarOpen(false);
+              setSearchText("");
+            }}
+            searchbarProps={{ autoFocus: true }}
+          />
         )}
       </Container>
     </>
@@ -107,7 +88,6 @@ Title.propTypes = {
   titleTextStyle: PropTypes.object,
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
-  searchText: PropTypes.string,
   setSearchText: PropTypes.func,
 };
 
@@ -149,7 +129,7 @@ Title.propTypes = {
  */
 
 export const BottomSheet = ({
-  data,
+  data = [],
   title,
   hide,
   isVisible,
@@ -179,61 +159,64 @@ export const BottomSheet = ({
       onRequestClose={hide}
       {...modalParams}
     >
-      <Container
-        bg={bg}
-        flex={1}
-        borderTopRightRadius={20}
-        borderTopLeftRadius={20}
-        px={24}
-        py={24}
-        {...rest}
-      >
-        <Container>
-          <Title
-            bg={bg}
-            title={title}
-            isVisible={isVisible}
-            hide={hide}
-            titleContainerStyle={titleContainerStyle}
-            titleTextStyle={titleTextStyle}
-            HeaderComponent={HeaderComponent}
-            contentType={contentType}
-            canSearch={canSearch}
-            searchText={searchText}
-            setSearchText={setSearchText}
-          />
+      <SafeAreaView style={styles.safeAreaView}>
+        <Container
+          bg={bg}
+          borderTopRightRadius={20}
+          borderTopLeftRadius={20}
+          px={24}
+          py={24}
+          {...rest}
+        >
+          <Container>
+            {title && (
+              <Title
+                bg={bg}
+                title={title}
+                isVisible={isVisible}
+                hide={hide}
+                titleContainerStyle={titleContainerStyle}
+                titleTextStyle={titleTextStyle}
+                HeaderComponent={HeaderComponent}
+                contentType={contentType}
+                canSearch={canSearch}
+                searchText={searchText}
+                setSearchText={setSearchText}
+              />
+            )}
 
-          {data && (
-            <FlatList
-              contentContainerStyle={styles.flatListContentContainerStyle}
-              initialNumToRender={data.length}
-              data={
-                searchText
-                  ? data.filter(word => word.startsWith(searchText))
-                  : data
-              }
-              renderItem={({ item, index }) => {
-                return (
-                  <ContentRow
-                    isSelected={index === selectedItemIndex}
-                    key={index}
-                    onPress={() => {
-                      !contentType && hide();
-                      onItemPress(index);
-                    }}
-                    id={index}
-                    label={item}
-                  />
-                );
-              }}
-              keyExtractor={(item, index) => {
-                return index;
-              }}
-            />
-          )}
-          {children}
+            {data && (
+              <FlatList
+                ListFooterComponent={children}
+                initialNumToRender={data.length}
+                onScrollBeginDrag={Keyboard.dismiss}
+                data={
+                  searchText
+                    ? data.filter(word => word.includes(searchText))
+                    : data
+                }
+                renderItem={({ item, index }) => {
+                  return (
+                    <ContentRow
+                      isSelected={index === selectedItemIndex}
+                      key={index}
+                      onPress={() => {
+                        !contentType && hide();
+                        onItemPress(index);
+                      }}
+                      id={index}
+                      label={item}
+                    />
+                  );
+                }}
+                keyExtractor={(item, index) => {
+                  return index;
+                }}
+              />
+            )}
+          </Container>
         </Container>
-      </Container>
+      </SafeAreaView>
     </Modal>
   );
 };
@@ -291,13 +274,15 @@ BottomSheet.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  flatListContentContainerStyle: {
-    paddingBottom: 70,
+  safeAreaView: {
+    maxHeight: "70%",
+    backgroundColor: theme.colors.background.primary,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   modalStyle: {
     margin: 0,
-    alignItems: "flex-end",
-    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   inputContainerStyle: {
     backgroundColor: "white",

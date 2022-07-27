@@ -14,7 +14,17 @@ const TypographyStories = {
   title: "Bottom Sheet",
   component: BottomSheet,
   args: {
-    data: ["neeto-ui-rn", "aceinvoice-rn", "", "reactnative-hq"],
+    data: [
+      "neetoInvoice-RN",
+      "neetoPlanner-RN",
+      "neetoStore-RN",
+      "neetoStoreBusiness-RN",
+      "neetoDesk-RN",
+      "neetoChat-RN",
+      "neetoForm-RN",
+      "neetoCal-RN",
+      "Bigbinary HQ",
+    ],
   },
   argTypes: {
     data: {
@@ -39,7 +49,6 @@ export const BottomSheetDemo = args => {
         onPress={() => setbottomSheetVisible(true)}
       />
       <BottomSheet
-        maxHeight={224}
         isVisible={bottomSheetVisible}
         hide={() => {
           setbottomSheetVisible(false);
@@ -84,6 +93,7 @@ export const BottomSheets = args => {
   const [bottomSheetOneVisible, setbottomSheetOneVisible] = useState(false);
   const [bottomSheetTwoVisible, setbottomSheetTwoVisible] = useState(false);
   const [bottomSheetThreeVisible, setbottomSheetThreeVisible] = useState(false);
+  const [bottomSheetFourVisible, setbottomSheetFourVisible] = useState(false);
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [selectedValues, setSelectedValues] = useState([]);
 
@@ -184,6 +194,11 @@ export const BottomSheets = args => {
         onPress={() => setbottomSheetThreeVisible(true)}
         m={2}
       />
+      <Button
+        label="Bottom Sheet with only children component"
+        onPress={() => setbottomSheetFourVisible(true)}
+        m={2}
+      />
       <BottomSheet
         maxHeight={500}
         isVisible={bottomSheetOneVisible}
@@ -200,7 +215,6 @@ export const BottomSheets = args => {
         canSearch
       />
       <BottomSheet
-        maxHeight={224}
         isVisible={bottomSheetTwoVisible}
         hide={() => {
           setbottomSheetTwoVisible(false);
@@ -212,9 +226,10 @@ export const BottomSheets = args => {
         data={args.data}
         selectedItemIndex={selectedItemIndex}
         ContentRow={RadioContent}
-      />
+      >
+        <Typography> Cant find your option? </Typography>
+      </BottomSheet>
       <BottomSheet
-        maxHeight={224}
         isVisible={bottomSheetThreeVisible}
         hide={() => {
           setbottomSheetThreeVisible(false);
@@ -228,6 +243,14 @@ export const BottomSheets = args => {
         ContentRow={CheckBoxContent}
         contentType="checkbox"
       />
+      <BottomSheet
+        isVisible={bottomSheetFourVisible}
+        hide={() => {
+          setbottomSheetFourVisible(false);
+        }}
+      >
+        <Typography> Bottom Sheet with children only</Typography>
+      </BottomSheet>
       {selectedItemIndex !== null && (
         <Typography
           py={50}
