@@ -81,8 +81,7 @@ export const Inputs = () => {
         <Input
           label="Email"
           autoFocus={true}
-          value=""
-          onChangeText={() => {}}
+          // value=""
         />
       </Container>
       <Container mb={20}>
@@ -213,5 +212,7 @@ export const Inputs = () => {
 };
 
 export const InputDemo = args => {
-  return <Input {...args} />;
+  const [value, setValue] = React.useState(args.value);
+
+  return <Input {...args} value={value} onChangeText={setValue} />;
 };
