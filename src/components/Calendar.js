@@ -90,7 +90,7 @@ export const Calendar = props => {
               : theme.colors.border.base,
           },
           selected: {
-            backgroundColor: theme.colors.background.purple500,
+            backgroundColor: theme.colors.background.purple100,
           },
           text: {
             fontFamily: theme.fonts.sf400,
