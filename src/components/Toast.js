@@ -30,7 +30,7 @@ const ToastComponent = ({ type, text1, text2 }) => {
   return (
     <Container
       width={width - 20}
-      height={60}
+      minHeight={60}
       borderRadius={16}
       bg={theme.colors.background.secondary}
       flexDirection="row"
@@ -49,7 +49,7 @@ const ToastComponent = ({ type, text1, text2 }) => {
         <Icon />
       </Container>
 
-      <Container ml={10}>
+      <Container flex={1} ml={10} py={3}>
         {text1 && (
           <Typography
             fontFamily={theme.fonts.sf600}
