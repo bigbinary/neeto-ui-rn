@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
 import { Typography, Container, Touchable, SearchBar } from "@components";
 import Modal from "react-native-modal";
@@ -189,6 +189,7 @@ export const BottomSheet = ({
               <FlatList
                 ListFooterComponent={children}
                 initialNumToRender={data.length}
+                onScrollBeginDrag={Keyboard.dismiss}
                 data={
                   searchText
                     ? data.filter(word => word.includes(searchText))
