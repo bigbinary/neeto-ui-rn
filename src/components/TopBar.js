@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     color: theme.colors.font.white,
   },
   defaultInActiveTabTextStyle: {
-    color: theme.colors.font.black,
+    color: theme.colors.font.grey800,
   },
   defaultTabContainerStyle: {
     backgroundColor: theme.colors.font.white,

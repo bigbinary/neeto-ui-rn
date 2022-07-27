@@ -50,8 +50,12 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
     }).start();
   };
 
-  const containerBg = value ? "#5E5CE6" : "background.grey300";
-  const iconColor = value ? "#5E5CE6" : theme.colors.font.grey500;
+  const containerBg = value
+    ? theme.colors.background.purple500
+    : "background.grey300";
+  const iconColor = value
+    ? theme.colors.background.purple500
+    : theme.colors.font.grey500;
 
   return (
     <Touchable

@@ -4,6 +4,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
+import { theme } from "@theme";
 import { getShadowStyles } from "../utils/utils";
 
 /**
@@ -73,7 +74,7 @@ Card.propTypes = {
 
 export const styles = StyleSheet.create({
   defaultShadows: {
-    shadowColor: "#000",
+    shadowColor: theme.colors.background.grey800,
     shadowOffset: {
       width: 0,
       height: 2,

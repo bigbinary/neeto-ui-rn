@@ -40,14 +40,14 @@ export const SocialButton = props => {
 
   return (
     <Touchable
-      rippleColor="black"
+      rippleColor={theme.colors.background.grey800}
       disabled={disabled}
       bg="transparent"
       height={48}
       width="100%"
       borderRadius={8}
       borderWidth={1}
-      borderColor={theme.colors.border.black}
+      borderColor={theme.colors.background.grey800}
       alignItems="center"
       justifyContent="center"
       {...rest}

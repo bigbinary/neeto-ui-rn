@@ -7,9 +7,10 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { Typography, Touchable } from "@components";
+import { theme } from "@theme";
 
 const defaultShadowStyle = {
-  shadowColor: "#000",
+  shadowColor: theme.colors.background.grey800,
   shadowOffset: {
     width: 0,
     height: 2,

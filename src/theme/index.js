@@ -34,9 +34,9 @@ const lightBlueVariants = {
 };
 
 const purpleVariants = {
-  purple500: "#5E5CE6",
-  purple700: "#4746B7",
-  purple100: "#EFEFFD",
+  purple500: "#4557F8",
+  purple700: "#342DF4",
+  purple100: "#F2F4FF",
 };
 
 const greenVariants = {
