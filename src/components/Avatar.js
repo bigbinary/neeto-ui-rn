@@ -23,8 +23,6 @@ import { Typography, Container } from "@components";
  *     <Avatar
  *      variant={"medium"}
  *      name="Oliver Smith"
- *      bgColor="background.black"
- *      fontColor="font.white"
  *      imageUrl="https://www.himalmag.com/wp-content/uploads/2019/07/sample-profile-picture.png"
  *     />
  *   </Container>

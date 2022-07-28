@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
@@ -38,7 +38,7 @@ export const Calendar = props => {
 
   return (
     <RNCalender
-      key={`${isCurrentDay}`}
+      key={isCurrentDay}
       firstDay={1}
       markedDates={{
         [dayjs(selectedDate).format("YYYY-MM-DD")]: {
@@ -90,7 +90,7 @@ export const Calendar = props => {
               : theme.colors.border.base,
           },
           selected: {
-            backgroundColor: "#5E5CE61A",
+            backgroundColor: theme.colors.background.purple100,
           },
           text: {
             fontFamily: theme.fonts.sf400,

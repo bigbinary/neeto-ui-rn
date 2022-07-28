@@ -115,9 +115,6 @@ export const FontColors = () => {
           White
         </Typography>
       </Container>
-      <Typography color="font.black" fontSize="3xl">
-        Black
-      </Typography>
       <Typography color="font.base" fontSize="3xl">
         Base
       </Typography>

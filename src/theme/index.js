@@ -1,6 +1,5 @@
 const defaultColors = {
   white: "#ffffff",
-  black: "#000000",
   base: "#4557F8",
   danger: "#ff6969",
   menubackground: "#F6F6FA",
@@ -34,9 +33,9 @@ const lightBlueVariants = {
 };
 
 const purpleVariants = {
-  purple500: "#5E5CE6",
-  purple700: "#4746B7",
-  purple100: "#EFEFFD",
+  purple500: "#4557F8",
+  purple700: "#342DF4",
+  purple100: "#F2F4FF",
 };
 
 const greenVariants = {
@@ -133,7 +132,7 @@ export const theme = {
       fontFamily: baseTheme.fonts.sf700,
     },
     modalHeader: {
-      color: baseTheme.colors.font.black,
+      color: baseTheme.colors.font.green800,
       fontSize: baseTheme.fontSizes["xl"],
       fontFamily: baseTheme.fonts.sf600,
     },

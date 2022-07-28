@@ -195,6 +195,7 @@ export const Input = props => {
             pr={3}
             top={0}
             zIndex={2}
+            autoCapitalize="none"
             {...rest.inputProps}
           />
         </View>

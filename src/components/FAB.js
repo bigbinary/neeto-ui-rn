@@ -1,8 +1,9 @@
 import * as React from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
-import { Touchable } from "@components";
 
+import { Touchable } from "@components";
+import { theme } from "@theme";
 /**
  * FAB component is a floating action button which represents the primary action in an application and is built on top of styled-system.
  *
@@ -45,7 +46,7 @@ import { Touchable } from "@components";
 // eslint-disable-next-line neeto/no-dangling-constants
 export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
-    shadowColor: "#000",
+    shadowColor: theme.colors.background.grey800,
     shadowOffset: {
       width: 0,
       height: 2,

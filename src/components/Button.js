@@ -86,7 +86,7 @@ export const Button = props => {
           bg: "transparent",
           border: "transparent",
           color: theme.colors.font.primary,
-          ripple: "black",
+          ripple: theme.colors.background.grey800,
         };
       case "danger":
         return {
@@ -100,14 +100,14 @@ export const Button = props => {
           bg: theme.colors.background.white,
           border: theme.colors.background.danger,
           color: theme.colors.background.danger,
-          ripple: "black",
+          ripple: theme.colors.background.grey800,
         };
       case "danger-text":
         return {
           bg: "transparent",
           border: "transparent",
           color: theme.colors.background.danger,
-          ripple: "black",
+          ripple: theme.colors.background.grey800,
         };
       default:
         return {
