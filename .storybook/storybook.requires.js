@@ -43,6 +43,7 @@ const getStories = () => {
     require("../storybook/stories/Chip.stories.js"),
     require("../storybook/stories/Divider.stories.js"),
     require("../storybook/stories/FAB.stories.js"),
+    require("../storybook/stories/FlashList.stories.js"),
     require("../storybook/stories/Input.stories.js"),
     require("../storybook/stories/ListItem.stories.js"),
     require("../storybook/stories/MultiSelect.stories.js"),
