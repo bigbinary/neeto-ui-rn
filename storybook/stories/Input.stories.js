@@ -81,7 +81,8 @@ export const Inputs = () => {
         <Input
           label="Email"
           autoFocus={true}
-          // value=""
+          value=""
+          onChangeText={() => {}}
         />
       </Container>
       <Container mb={20}>

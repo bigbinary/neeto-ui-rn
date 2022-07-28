@@ -47,7 +47,7 @@ export const SocialButton = props => {
       width="100%"
       borderRadius={8}
       borderWidth={1}
-      borderColor={theme.colors.background.grey800}
+      borderColor={theme.colors.border.grey800}
       alignItems="center"
       justifyContent="center"
       {...rest}
