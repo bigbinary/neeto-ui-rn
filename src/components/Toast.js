@@ -5,14 +5,15 @@ import { defaultToasterConfig } from "@config";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components/native";
 import { useWindowDimensions } from "react-native";
+import CloseIcon from "react-native-remix-icon";
 
 import SuccessIcon from "@assets/icons/success.svg";
 import WarningIcon from "@assets/icons/warning.svg";
 import InfoIcon from "@assets/icons/info.svg";
 import ErrorIcon from "@assets/icons/error.svg";
-import { Container, Typography } from "@components";
+import { Container, Typography, Touchable } from "@components";
 
-const ToastComponent = ({ type, text1, text2 }) => {
+const ToastComponent = ({ type, text1, text2, hide }) => {
   const theme = useContext(ThemeContext);
   const { width } = useWindowDimensions();
   const Icon = () => {
@@ -69,6 +70,17 @@ const ToastComponent = ({ type, text1, text2 }) => {
           </Typography>
         )}
       </Container>
+      <Touchable
+        onPress={hide}
+        hitSlop={{
+          top: 5,
+          right: 5,
+          bottom: 5,
+          left: 5,
+        }}
+      >
+        <CloseIcon name="ri-close-line" color={theme.colors.font.grey500} />
+      </Touchable>
     </Container>
   );
 };
@@ -77,6 +89,7 @@ ToastComponent.propTypes = {
   type: PropTypes.string,
   text1: PropTypes.string,
   text2: PropTypes.string,
+  hide: PropTypes.func,
 };
 
 /**
