@@ -108,7 +108,7 @@ export const Input = props => {
 
   useEffect(() => {
     if (value) {
-      if (animatedController !== 1) {
+      if (animatedController._value === 0) {
         handleLabelAnimation(true);
       }
     } else {
