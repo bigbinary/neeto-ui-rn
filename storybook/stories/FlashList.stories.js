@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FlashList as FlashListComponent,
   Container,
@@ -6,6 +6,30 @@ import {
 } from "@components";
 
 const data = [
+  {
+    title: "Title",
+    description: "Description",
+  },
+  {
+    title: "Title",
+    description: "Description",
+  },
+  {
+    title: "Title",
+    description: "Description",
+  },
+  {
+    title: "Title",
+    description: "Description",
+  },
+  {
+    title: "Title",
+    description: "Description",
+  },
+  {
+    title: "Title",
+    description: "Description",
+  },
   {
     title: "Title",
     description: "Description",
@@ -32,9 +56,26 @@ const FlashListStories = {
 export default FlashListStories;
 
 export const FlashList = () => {
+  const [fData, setFData] = useState(data);
+
+  const generateData = () => {
+    const f = [];
+    for (let i = fData.length; i < fData.length + 10; i++) {
+      f.push({
+        title: `title${i}`,
+        description: `Description${i}`,
+      });
+    }
+    return f;
+  };
+
+  const append = () => {
+    setFData(prev => [...prev, ...generateData()]);
+  };
+
   return (
     <FlashListComponent
-      data={data}
+      data={fData}
       keyExtractor={(item, index) => index.toString()}
       renderItem={({ item }) => (
         <Container
@@ -50,6 +91,9 @@ export const FlashList = () => {
         </Container>
       )}
       estimatedItemSize={53}
+      onEndReached={append}
+      ListFooterComponent={<Typography>Loading</Typography>}
+      onEndReachedThreshold={0.9}
     />
   );
 };
