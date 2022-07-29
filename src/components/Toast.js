@@ -54,7 +54,7 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
         {text1 && (
           <Typography
             fontFamily={theme.fonts.sf600}
-            fontSize="m"
+            fontSize="l"
             fontColor={theme.colors.font.primary}
           >
             {text1}
