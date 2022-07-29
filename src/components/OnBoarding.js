@@ -82,7 +82,7 @@ export const OnBoarding = ({
   };
 
   return (
-    <Container flex={1} mb={52} mt={27}>
+    <Container bg="background.white" flex={1}>
       <Container alignItems="center">
         <AppLogo width={logoWidth} />
       </Container>
