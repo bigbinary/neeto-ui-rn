@@ -99,13 +99,22 @@ export const Input = props => {
   const animatedController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    if (autoFocus || value) {
+    if (autoFocus) {
       handleLabelAnimation(true);
     } else {
       handleLabelAnimation(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [autoFocus]);
+
+  useEffect(() => {
+    if (value) {
+      if (animatedController !== 1) {
+        handleLabelAnimation(true);
+      }
+    } else {
+      handleLabelAnimation(false);
+    }
+  }, [value]);
 
   const handleLabelAnimation = isFocused => {
     Animated.timing(animatedController, {
@@ -195,6 +204,7 @@ export const Input = props => {
             pr={3}
             top={0}
             zIndex={2}
+            autoCapitalize="none"
             {...rest.inputProps}
           />
         </View>
