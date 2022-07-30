@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 import { Typography, Container } from "@components";
 
@@ -39,7 +39,6 @@ export const Avatar = ({
   imageUrl,
   ...rest
 }) => {
-  const [fallback, setFallback] = useState(false);
   const acronym = name
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
@@ -58,7 +57,7 @@ export const Avatar = ({
 
   const [avatarSize, avatarFontSize] = getSizes();
 
-  const styles = {
+  const profileStyles = {
     profileImage: {
       height: avatarSize,
       width: avatarSize,
@@ -67,18 +66,17 @@ export const Avatar = ({
     },
   };
 
-  const renderFallbackText = fallback || !imageUrl;
-
   return (
     <>
-      {renderFallbackText ? (
-        <Container
-          bg={bgColor}
-          width={avatarSize}
-          height={avatarSize}
-          borderRadius={avatarSize / 2}
-          {...rest}
-        >
+      <Container
+        bg={bgColor}
+        width={avatarSize}
+        height={avatarSize}
+        borderRadius={avatarSize / 2}
+        {...rest}
+        flexDirection="row"
+      >
+        <Container style={styles.acronym}>
           <Typography
             fontFamily="sf400"
             fontSize={avatarFontSize}
@@ -87,17 +85,23 @@ export const Avatar = ({
             {acronym.toUpperCase()}
           </Typography>
         </Container>
-      ) : (
         <Image
-          style={styles.profileImage}
+          style={profileStyles.profileImage}
           source={{ uri: imageUrl }}
-          onError={() => setFallback(true)}
           {...rest}
         />
-      )}
+      </Container>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  acronym: {
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 Avatar.defaultProps = {
   alignItems: "center",
