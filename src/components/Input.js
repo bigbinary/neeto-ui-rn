@@ -90,6 +90,7 @@ export const Input = props => {
     SuffixIcon,
     autoFocus = false,
     disabled = false,
+    noBorder = false,
     ...rest
   } = props;
 
@@ -157,7 +158,7 @@ export const Input = props => {
 
   const handleFocusBlur = isFocused => {
     if (!value) handleLabelAnimation(isFocused);
-    handleStyles(isFocused);
+    if (!noBorder) handleStyles(isFocused);
   };
 
   return (
@@ -165,7 +166,7 @@ export const Input = props => {
       <View
         ref={containerRef}
         borderRadius={8}
-        borderWidth={1}
+        borderWidth={noBorder ? 0 : 1}
         borderColor={errorMessage ? "border.danger" : "border.grey400"}
         alignItems="center"
         flexDirection="row"
@@ -256,4 +257,8 @@ Input.propTypes = {
    * Display Icon component to the Right of input.
    */
   SuffixIcon: PropTypes.elementType,
+  /**
+   * Takes a boolean value based on which border is hidden/shown.
+   */
+  noBorder: PropTypes.bool,
 };
