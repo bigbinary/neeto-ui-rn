@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Image, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { Typography, Container } from "@components";
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 
 /**
  * Avatars can be used to represent people in a graphical way.
@@ -39,6 +45,7 @@ export const Avatar = ({
   imageUrl,
   ...rest
 }) => {
+  const opacity = useSharedValue(0);
   const acronym = name
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
@@ -57,14 +64,18 @@ export const Avatar = ({
 
   const [avatarSize, avatarFontSize] = getSizes();
 
-  const profileStyles = {
-    profileImage: {
+  const profileImageStyle = useAnimatedStyle(() => {
+    return {
+      opacity: withTiming(opacity.value, {
+        duration: 300,
+        easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+      }),
       height: avatarSize,
       width: avatarSize,
       alignSelf: "center",
       borderRadius: avatarSize / 2,
-    },
-  };
+    };
+  });
 
   return (
     <>
@@ -85,8 +96,9 @@ export const Avatar = ({
             {acronym.toUpperCase()}
           </Typography>
         </Container>
-        <Image
-          style={profileStyles.profileImage}
+        <Animated.Image
+          onLoad={() => (opacity.value = 1)}
+          style={profileImageStyle}
           source={{ uri: imageUrl }}
           {...rest}
         />
