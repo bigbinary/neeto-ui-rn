@@ -13,7 +13,7 @@ export const Accordions = () => {
       <Container py={2}>
         <Typography py={2}>Basic Accordion</Typography>
         <Accordion
-          Header={() => (
+          header={() => (
             <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
               Header
             </Typography>
@@ -27,7 +27,7 @@ export const Accordions = () => {
       <Container py={2}>
         <Typography py={2}>Customized Accordion</Typography>
         <Accordion
-          Header={() => (
+          header={() => (
             <Container
               flexDirection="row"
               alignItems="center"
@@ -53,7 +53,7 @@ export const Accordions = () => {
           Accordion with customized icon properties
         </Typography>
         <Accordion
-          Header={() => (
+          header={() => (
             <Container flexDirection="row" alignItems="center">
               <Typography bg="#00BA8829" color="font.green800" p={1}>
                 Open
