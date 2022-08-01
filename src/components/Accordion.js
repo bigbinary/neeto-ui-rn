@@ -18,7 +18,7 @@ import { Container, Card } from "@components";
  *  return (
  *    <Container>
  *     <Accordion
- *         Header={() => (
+ *         header={() => (
  *           <Container flexDirection="row" alignItems="center">
  *             <Typography bg="#00BA8829" color="font.green800" p={1}>
  *               Open
@@ -45,7 +45,7 @@ import { Container, Card } from "@components";
  */
 
 export const Accordion = props => {
-  const { Header, noBorder = false, iconProp = {}, children, ...rest } = props;
+  const { header, noBorder = false, iconProp = {}, children, ...rest } = props;
   const { name, Label, size, color } = iconProp;
   const theme = useContext(ThemeContext);
   const [isExpanded, setExpanded] = useState(false);
@@ -96,11 +96,7 @@ export const Accordion = props => {
           handleAnimation();
         }}
       >
-        {!!Header && (
-          <Container flexGrow={1}>
-            <Header />
-          </Container>
-        )}
+        {!!header && <Container flexGrow={1}>{header()}</Container>}
         <Container
           alignItems="center"
           justifyContent="center"
@@ -137,7 +133,7 @@ Accordion.propTypes = {
   /**
    * Render a component on the header.
    */
-  Header: PropTypes.elementType,
+  header: PropTypes.func,
   /**
    * Renders the child component passed in the body of the accordion.
    */
