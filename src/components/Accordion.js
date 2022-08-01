@@ -20,7 +20,7 @@ import { Container, Card } from "@components";
  *     <Accordion
  *         Header={() => (
  *           <Container flexDirection="row" alignItems="center">
- *             <Typography bg="#00BA8829" color="font.green800" p={1}>
+ *             <Typography bg="#00BA8829" color="font.primary" p={1}>
  *               Open
  *             </Typography>
  *             <Typography px={2}>Low</Typography>

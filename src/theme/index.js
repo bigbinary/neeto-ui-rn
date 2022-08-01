@@ -103,7 +103,8 @@ const baseTheme = {
   },
   lineHeights: [24],
   fontSizes: {
-    "3xs": 10,
+    "4xs": 10,
+    "3xs": 11,
     "2xs": 12,
     xs: 13,
     s: 14,
@@ -132,7 +133,7 @@ export const theme = {
       fontFamily: baseTheme.fonts.sf700,
     },
     modalHeader: {
-      color: baseTheme.colors.font.green800,
+      color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["xl"],
       fontFamily: baseTheme.fonts.sf600,
     },

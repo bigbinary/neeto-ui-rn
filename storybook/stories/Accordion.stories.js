@@ -34,7 +34,7 @@ export const Accordions = () => {
               justifyContent="space-between"
             >
               <Container flexDirection="row" alignItems="center">
-                <Typography bg="#00BA8829" color="font.green800" p={1}>
+                <Typography bg="#00BA8829" color="font.primary" p={1}>
                   Open
                 </Typography>
                 <Typography px={2}>Low</Typography>
@@ -55,7 +55,7 @@ export const Accordions = () => {
         <Accordion
           Header={() => (
             <Container flexDirection="row" alignItems="center">
-              <Typography bg="#00BA8829" color="font.green800" p={1}>
+              <Typography bg="#00BA8829" color="font.primary" p={1}>
                 Open
               </Typography>
               <Typography px={2}>Low</Typography>
