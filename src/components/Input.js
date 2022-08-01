@@ -90,6 +90,7 @@ export const Input = props => {
     SuffixIcon,
     autoFocus = false,
     disabled = false,
+    noBorder = false,
     ...rest
   } = props;
 
@@ -99,13 +100,22 @@ export const Input = props => {
   const animatedController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    if (autoFocus || value) {
+    if (autoFocus) {
       handleLabelAnimation(true);
     } else {
       handleLabelAnimation(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [autoFocus]);
+
+  useEffect(() => {
+    if (value) {
+      if (animatedController._value === 0) {
+        handleLabelAnimation(true);
+      }
+    } else {
+      handleLabelAnimation(false);
+    }
+  }, [value]);
 
   const handleLabelAnimation = isFocused => {
     Animated.timing(animatedController, {
@@ -148,7 +158,7 @@ export const Input = props => {
 
   const handleFocusBlur = isFocused => {
     if (!value) handleLabelAnimation(isFocused);
-    handleStyles(isFocused);
+    if (!noBorder) handleStyles(isFocused);
   };
 
   return (
@@ -156,7 +166,7 @@ export const Input = props => {
       <View
         ref={containerRef}
         borderRadius={8}
-        borderWidth={1}
+        borderWidth={noBorder ? 0 : 1}
         borderColor={errorMessage ? "border.danger" : "border.grey400"}
         alignItems="center"
         flexDirection="row"
@@ -247,4 +257,8 @@ Input.propTypes = {
    * Display Icon component to the Right of input.
    */
   SuffixIcon: PropTypes.elementType,
+  /**
+   * Takes a boolean value based on which border is hidden/shown.
+   */
+  noBorder: PropTypes.bool,
 };
