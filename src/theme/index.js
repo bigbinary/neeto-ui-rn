@@ -130,7 +130,7 @@ export const theme = {
     header: {
       color: baseTheme.colors.font.primary,
       fontSize: baseTheme.fontSizes["3xl"],
-      fontFamily: baseTheme.fonts.sf700,
+      fontFamily: baseTheme.fonts.sf600,
     },
     modalHeader: {
       color: baseTheme.colors.font.primary,
