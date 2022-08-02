@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { Image } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { Typography, Container } from "@components";
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 
 /**
  * Avatars can be used to represent people in a graphical way.
@@ -39,7 +45,7 @@ export const Avatar = ({
   imageUrl,
   ...rest
 }) => {
-  const [fallback, setFallback] = useState(false);
+  const opacity = useSharedValue(0);
   const acronym = name
     ?.split(/\s/)
     .reduce((response, word) => (response += word.slice(0, 1)), "")
@@ -58,27 +64,30 @@ export const Avatar = ({
 
   const [avatarSize, avatarFontSize] = getSizes();
 
-  const styles = {
-    profileImage: {
+  const profileImageStyle = useAnimatedStyle(() => {
+    return {
+      opacity: withTiming(opacity.value, {
+        duration: 300,
+        easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+      }),
       height: avatarSize,
       width: avatarSize,
       alignSelf: "center",
       borderRadius: avatarSize / 2,
-    },
-  };
-
-  const renderFallbackText = fallback || !imageUrl;
+    };
+  });
 
   return (
     <>
-      {renderFallbackText ? (
-        <Container
-          bg={bgColor}
-          width={avatarSize}
-          height={avatarSize}
-          borderRadius={avatarSize / 2}
-          {...rest}
-        >
+      <Container
+        bg={bgColor}
+        width={avatarSize}
+        height={avatarSize}
+        borderRadius={avatarSize / 2}
+        {...rest}
+        flexDirection="row"
+      >
+        <Container style={styles.acronym}>
           <Typography
             fontFamily="sf400"
             fontSize={avatarFontSize}
@@ -87,17 +96,24 @@ export const Avatar = ({
             {acronym.toUpperCase()}
           </Typography>
         </Container>
-      ) : (
-        <Image
-          style={styles.profileImage}
+        <Animated.Image
+          onLoad={() => (opacity.value = 1)}
+          style={profileImageStyle}
           source={{ uri: imageUrl }}
-          onError={() => setFallback(true)}
           {...rest}
         />
-      )}
+      </Container>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  acronym: {
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 Avatar.defaultProps = {
   alignItems: "center",
