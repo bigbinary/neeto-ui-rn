@@ -268,7 +268,7 @@ BottomSheet.propTypes = {
   modalParams: PropTypes.object,
   children: PropTypes.node,
   HeaderComponent: PropTypes.elementType,
-  ContentRow: PropTypes.elementType.isRequired,
+  ContentRow: PropTypes.elementType,
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
 };
