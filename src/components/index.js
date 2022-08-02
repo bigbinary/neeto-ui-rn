@@ -33,3 +33,4 @@ export { OnBoarding } from "./OnBoarding";
 export { SearchBar } from "./SearchBar";
 export { Accordion } from "./Accordion";
 export { Calendar } from "./Calendar";
+export { FlashList } from "./FlashList";

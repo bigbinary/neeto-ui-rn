@@ -13,20 +13,16 @@ Storybook: https://neetoui-rn.onrender.com/
 ## Installation
 
 ```
-yarn add @bigbinary/neetoui-rn react-native-svg react-native-webview
+yarn add @bigbinary/neetoui-rn react-native-svg react-native-webview @shopify/flash-list
 ```
 
-To link the library, run:
-
-```sh
-react-native link
+Navigate to iOS folder and run:
+```
+pod install
 ```
 
-or
+> All the native components will be linked automatically.
 
-```sh
-npx react-native link
-```
 
 ## Getting Started
 
