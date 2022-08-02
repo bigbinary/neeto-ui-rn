@@ -18,7 +18,7 @@ export const FlashList = ({ durationPerItem = 200, data = [], ...rest }) => {
 
 const FadeInFlatList = ({
   renderItem: originalRenderItem,
-  initialDelay = 300,
+  initialDelay = 250,
   durationPerItem = 200,
   data = [],
   ...props
@@ -57,17 +57,19 @@ const FadeInFlatList = ({
     []
   );
 
-  const Item = useCallback(({ info }) => {
-    return (
-      <FadeInComponent index={info.index}>
-        {originalRenderItem(info)}
+  const Item = useCallback(({ item }) => {
+    return item.index === 0 ? (
+      originalRenderItem(item)
+    ) : (
+      <FadeInComponent index={item.index}>
+        {originalRenderItem(item)}
       </FadeInComponent>
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const renderItem = useCallback(info => {
-    return <Item info={info} />;
+  const renderItem = useCallback(item => {
+    return <Item item={item} />;
   }, []);
 
   useEffect(() => {
