@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 8,
-    backgroundColor: "#E5E5EA",
+    backgroundColor: "#F6F6FA",
     width: width,
   },
   movingSegmentStyle: {
