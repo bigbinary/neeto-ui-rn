@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Card } from "@components";
+import { Container, Touchable } from "@components";
 
 /**
  * A component used to display an expandable list item.
@@ -111,7 +111,8 @@ export const Accordion = React.forwardRef((props, ref) => {
       width="100%"
       {...rest}
     >
-      <Card
+      <Touchable
+        rippleOpacity={0}
         p={2}
         flexDirection="row"
         alignItems="center"
@@ -142,7 +143,7 @@ export const Accordion = React.forwardRef((props, ref) => {
             </Container>
           </Animated.View>
         </Container>
-      </Card>
+      </Touchable>
       <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
         <Container width="100%" position="absolute" onLayout={getLayout}>
           {children}
