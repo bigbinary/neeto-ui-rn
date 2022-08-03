@@ -50,6 +50,7 @@
     "@shopify/flash-list": "^1.2.0",
     "@styled-system/prop-types": "^5.1.5",
     "dayjs": "^1.11.4",
+    "react-content-loader": "^6.2.0",
     "react-native-calendars": "^1.1285.0",
     "react-native-gesture-handler": "^2.4.0",
     "react-native-material-ripple": "^0.9.1",
