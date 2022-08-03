@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { Animated } from "react-native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
@@ -59,12 +59,16 @@ export const Accordion = props => {
     setViewHeight(height);
   };
 
-  const handleAnimation = () => {
+  useEffect(() => {
     Animated.timing(animationController, {
       duration: 300,
       toValue: isExpanded ? 1 : 0,
       useNativeDriver: false,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  const handleAnimation = () => {
     setExpanded(!isExpanded);
   };
 
