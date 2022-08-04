@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FlashList as FlashListComponent,
   Container,
@@ -56,9 +56,19 @@ const FlashListStories = {
 export default FlashListStories;
 
 export const FlashList = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [lData, setLData] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLData(data);
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   return (
     <FlashListComponent
-      data={data}
+      data={lData}
       keyExtractor={(item, index) => index.toString()}
       renderItem={({ item }) => (
         <Container
@@ -74,7 +84,12 @@ export const FlashList = () => {
         </Container>
       )}
       estimatedItemSize={53}
-      ListFooterComponent={<Typography>Loading</Typography>}
+      isLoading={isLoading}
+      SkeletonComponent={
+        <Container>
+          <Typography>Loading</Typography>
+        </Container>
+      }
     />
   );
 };
