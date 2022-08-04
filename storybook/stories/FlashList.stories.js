@@ -85,7 +85,7 @@ export const FlashList = () => {
       )}
       estimatedItemSize={53}
       isLoading={isLoading}
-      SkeltonComponent={
+      SkeletonComponent={
         <Container>
           <Typography>Loading</Typography>
         </Container>

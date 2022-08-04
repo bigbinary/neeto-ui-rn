@@ -30,7 +30,7 @@ const Placeholder = () => {
 
 export const FlashList = ({
   durationPerItem = 200,
-  SkeltonComponent,
+  SkeletonComponent,
   placeHolderItemCount = 10,
   isLoading = false,
   data = [],
@@ -40,7 +40,7 @@ export const FlashList = ({
   return (
     <FadeInFlatList
       durationPerItem={durationPerItem}
-      SkeltonComponent={SkeltonComponent}
+      SkeletonComponent={SkeletonComponent}
       isLoading={isLoading}
       extraData={{ isLoading }}
       data={isLoading ? dummyData : data}
@@ -54,7 +54,7 @@ const FadeInFlatList = ({
   initialDelay = 250,
   durationPerItem = 200,
   isLoading = false,
-  SkeltonComponent,
+  SkeletonComponent,
   ...props
 }) => {
   const value = useSharedValue(0);
@@ -95,7 +95,7 @@ const FadeInFlatList = ({
     ({ item }) => {
       return item?.extraData?.isLoading ? (
         <FadeInComponent index={item.index}>
-          {SkeltonComponent || <Placeholder />}
+          {SkeletonComponent || <Placeholder />}
         </FadeInComponent>
       ) : item.index === 0 ? (
         originalRenderItem(item)
@@ -127,7 +127,7 @@ const FadeInFlatList = ({
 };
 
 FlashList.propTypes = {
-  SkeltonComponent: PropTypes.element,
+  SkeletonComponent: PropTypes.element,
   durationPerItem: PropTypes.number,
   data: PropTypes.array.isRequired,
   isLoading: PropTypes.bool,
