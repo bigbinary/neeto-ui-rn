@@ -1555,6 +1555,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bigbinary/eslint-plugin-neeto@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@bigbinary/eslint-plugin-neeto/-/eslint-plugin-neeto-1.0.11.tgz#f29701e1ee1db6233e2ac8756adeb08b28073ccb"
+  integrity sha512-tRM1yhSew0zNqYFJ8XF4qyA6CQFV9FFI+hNzLmF4J+/cdPutWwZbkIkGvNR5Duz2ylHBagTM/MX9afl8EQxfqw==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -8914,11 +8919,6 @@ eslint-plugin-jest@^25.2.4:
   dependencies:
     "@typescript-eslint/experimental-utils" "^5.0.0"
 
-eslint-plugin-neeto@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-neeto/-/eslint-plugin-neeto-1.0.10.tgz#194c3281ca73174638129855a76c6e34ca586a39"
-  integrity sha512-DtN7uP7M1VmcZKd0ofcBOVqQ2GZY9qF1ZQIp0cgPq5oqiOTqPqDbbt/R06bNBYcvmlJ82KRDXifwoTDoQZoyYg==
-
 eslint-plugin-prettier@3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.1.2.tgz#432e5a667666ab84ce72f945c72f77d996a5c9ba"
@@ -14676,6 +14676,11 @@ react-colorful@^5.1.2:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.5.0.tgz#8359f218984a927095477a190ab9927eaf865c0c"
   integrity sha512-BuzrlrM0ylg7coPkXOrRqlf2BgHLw5L44sybbr9Lg4xy7w9e5N7fGYbojOO0s8J0nvrM3PERN2rVFkvSa24lnQ==
+
+react-content-loader@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-6.2.0.tgz#cd8fee8160b8fda6610d0c69ce5aee7b8094cba6"
+  integrity sha512-r1dI6S+uHNLW68qraLE2njJYOuy6976PpCExuCZUcABWbfnF3FMcmuESRI8L4Bj45wnZ7n8g71hkPLzbma7/Cw==
 
 react-dev-utils@^10.0.0:
   version "10.2.1"
