@@ -55,7 +55,7 @@ export const Accordion = React.forwardRef((props, ref) => {
     header,
     noBorder = false,
     iconProp = {},
-    onAccordionStateChanged,
+    onStateChanged,
     children,
     ...rest
   } = props;
@@ -78,7 +78,7 @@ export const Accordion = React.forwardRef((props, ref) => {
       toValue: isExpanded ? 1 : 0,
       useNativeDriver: false,
     }).start(() => {
-      !!onAccordionStateChanged && onAccordionStateChanged(isExpanded);
+      !!onStateChanged && onStateChanged(isExpanded);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
@@ -88,7 +88,7 @@ export const Accordion = React.forwardRef((props, ref) => {
   };
 
   useImperativeHandle(ref, () => ({
-    handleAccordion: handleAnimation,
+    toggleAccordion: handleAnimation,
   }));
 
   const arrowAngle = animationController.interpolate({
@@ -168,7 +168,7 @@ Accordion.propTypes = {
   /**
    * Function that returns the current state.
    */
-  onAccordionStateChanged: PropTypes.func,
+  onStateChanged: PropTypes.func,
   /**
    * Takes an object based on which the icon to expand/collapse can be customized.
    * Label: Takes a component.

@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
-import { Container, Accordion, Typography } from "@components";
+import React, { useRef, useState } from "react";
+
+import { Button, Container, Accordion, Typography } from "@components";
 import { theme } from "@theme";
 
 const AccordionStories = {
@@ -8,16 +9,15 @@ const AccordionStories = {
 export default AccordionStories;
 
 export const Accordions = () => {
-  const ref = useRef();
+  const accordionRef = useRef();
+
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <Container>
       <Container py={2}>
         <Typography py={2}>Basic Accordion</Typography>
         <Accordion
-          ref={ref}
-          // eslint-disable-next-line no-unused-vars
-          onAccordionStateChanged={isExpanded => {}}
           header={() => (
             <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
               Header
@@ -87,6 +87,46 @@ export const Accordions = () => {
         >
           <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
             <Typography color="font.primary">Body Content</Typography>
+          </Container>
+        </Accordion>
+      </Container>
+
+      <Container py={2}>
+        <Typography py={2}>Accordion label based on state</Typography>
+        <Accordion
+          onStateChanged={isExpanded => setIsExpanded(isExpanded)}
+          iconProp={{
+            Label: () => (
+              <Typography color="font.danger">
+                {isExpanded ? "Collapse" : "Expand"}
+              </Typography>
+            ),
+            color: theme.colors.font.danger,
+          }}
+          noBorder={true}
+        >
+          <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+            <Typography color="font.primary">Body Content</Typography>
+          </Container>
+        </Accordion>
+      </Container>
+
+      <Button
+        label="Toggle Accordion using ref"
+        onPress={() => accordionRef.current.toggleAccordion()}
+      />
+
+      <Container py={2}>
+        <Accordion
+          ref={accordionRef}
+          header={() => (
+            <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
+              Header
+            </Typography>
+          )}
+        >
+          <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+            <Typography color="font.primary">Accordion using ref</Typography>
           </Container>
         </Accordion>
       </Container>
