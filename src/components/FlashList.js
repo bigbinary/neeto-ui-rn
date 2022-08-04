@@ -12,6 +12,9 @@ import Animated, {
 import PropTypes from "prop-types";
 import ContentLoader, { Rect } from "react-content-loader/native";
 import { ThemeContext } from "styled-components/native";
+import { RefreshControl } from "react-native";
+
+import { useRefreshByUser } from "@hooks";
 
 const Placeholder = () => {
   const theme = useContext(ThemeContext);
@@ -34,9 +37,14 @@ export const FlashList = ({
   placeHolderItemCount = 10,
   isLoading = false,
   data = [],
+  onRefresh = () => {},
+  keyExtractor,
   ...rest
 }) => {
   const dummyData = Array.apply(null, Array(placeHolderItemCount));
+
+  const { isRefetchingByUser, refetchByUser } = useRefreshByUser(onRefresh);
+
   return (
     <FadeInFlatList
       durationPerItem={durationPerItem}
@@ -44,6 +52,19 @@ export const FlashList = ({
       isLoading={isLoading}
       extraData={{ isLoading }}
       data={isLoading ? dummyData : data}
+      refreshControl={
+        onRefresh && (
+          <RefreshControl
+            refreshing={isRefetchingByUser}
+            onRefresh={refetchByUser}
+          />
+        )
+      }
+      keyExtractor={(item, index) => {
+        return isLoading || !keyExtractor
+          ? index.toString()
+          : keyExtractor(item, index);
+      }}
       {...rest}
     />
   );
@@ -132,4 +153,6 @@ FlashList.propTypes = {
   data: PropTypes.array.isRequired,
   isLoading: PropTypes.bool,
   placeHolderItemCount: PropTypes.number,
+  onRefresh: PropTypes.func,
+  keyExtractor: PropTypes.func,
 };
