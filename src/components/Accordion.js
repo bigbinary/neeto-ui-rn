@@ -5,12 +5,12 @@ import React, {
   useEffect,
   useImperativeHandle,
 } from "react";
-import { Animated } from "react-native";
+import { Animated, StyleSheet, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Touchable } from "@components";
+import { Container } from "@components";
 
 /**
  * A component used to display an expandable list item.
@@ -111,11 +111,9 @@ export const Accordion = React.forwardRef((props, ref) => {
       width="100%"
       {...rest}
     >
-      <Touchable
+      <TouchableOpacity
         rippleOpacity={0}
-        p={2}
-        flexDirection="row"
-        alignItems="center"
+        style={styles.accordionContainer}
         onPress={() => {
           handleAnimation();
         }}
@@ -143,7 +141,7 @@ export const Accordion = React.forwardRef((props, ref) => {
             </Container>
           </Animated.View>
         </Container>
-      </Touchable>
+      </TouchableOpacity>
       <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
         <Container width="100%" position="absolute" onLayout={getLayout}>
           {children}
@@ -184,3 +182,11 @@ Accordion.propTypes = {
     color: PropTypes.string,
   }),
 };
+
+const styles = StyleSheet.create({
+  accordionContainer: {
+    flexDirection: "row",
+    padding: 12,
+    alignItems: "center",
+  },
+});
