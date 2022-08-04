@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Accordion, Typography } from "@components";
 import { theme } from "@theme";
 
@@ -8,11 +8,16 @@ const AccordionStories = {
 export default AccordionStories;
 
 export const Accordions = () => {
+  const ref = useRef();
+
   return (
     <Container>
       <Container py={2}>
         <Typography py={2}>Basic Accordion</Typography>
         <Accordion
+          ref={ref}
+          // eslint-disable-next-line no-unused-vars
+          onAccordionStateChanged={isExpanded => {}}
           header={() => (
             <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
               Header
