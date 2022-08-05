@@ -25,7 +25,8 @@
     "get-stories": "sb-rn-get-stories --config-path=./.storybook",
     "preweb": "yarn get-stories",
     "web": "yarn prestart && webpack serve --mode=development --config webpack.config.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "yalc:publish": "yarn build && rm -rf ~/.yalc/packages && yalc publish --private"
   },
   "files": [
     "lib",
@@ -74,6 +75,8 @@
     "@react-native-community/datetimepicker": "^3.5.2",
     "@react-native-community/eslint-config": "^3.0.1",
     "@react-native-community/slider": "^4.1.12",
+    "@react-navigation/bottom-tabs": "^6.3.2",
+    "@react-navigation/native": "^6.0.11",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-controls": "^6.3.12",
     "@storybook/addon-essentials": "^6.4.0-beta.33",
@@ -116,6 +119,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.66.2",
+    "react-native-screens": "^3.15.0",
     "react-native-storybook-loader": "^2.0.4",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^1.0.0",
