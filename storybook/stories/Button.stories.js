@@ -59,11 +59,24 @@ export const Buttons = () => {
   return (
     <Container alignItems="center" flex={1}>
       <Button my={9} label="Default Button is solid" />
+      <Button
+        my={9}
+        isLoading={true}
+        loadingText="Loading..."
+        label="Default Loading Button"
+      />
       <Button my={9} isLoading={true} label="Default Loading Button" />
       <Button my={9} disabled label="Default Disabled Button" />
       <Button my={9} variant="danger" label="Danger Button" />
       <Button my={9} disabled variant="danger" label="Danger Disabled Button" />
       <Button my={9} variant="danger-inverse" label="Danger Inverse Button" />
+      <Button
+        my={9}
+        isLoading={true}
+        loadingText="Loading..."
+        variant="danger-inverse"
+        label="Danger Inverse Button"
+      />
       <Button my={9} variant="danger-text" label="Danger Plain Button" />
       <Button
         my={9}
@@ -85,6 +98,16 @@ export const Buttons = () => {
         label="Left Icon Text Button"
       />
       <Button
+        my={9}
+        variant="text"
+        RightIcon={() => (
+          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+        )}
+        label="Right Icon Text Button"
+      />
+      <Button
+        isLoading={true}
+        loadingText="Loading with text variant..."
         my={9}
         variant="text"
         RightIcon={() => (
