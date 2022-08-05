@@ -105,6 +105,16 @@ export const Buttons = () => {
         )}
         label="Right Icon Text Button"
       />
+      <Button
+        isLoading={true}
+        loadingText="Loading with text variant..."
+        my={9}
+        variant="text"
+        RightIcon={() => (
+          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+        )}
+        label="Right Icon Text Button"
+      />
     </Container>
   );
 };
