@@ -1,4 +1,10 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useRef,
+  useEffect,
+  useImperativeHandle,
+} from "react";
 import { Animated } from "react-native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
@@ -44,8 +50,15 @@ import { Container, Card } from "@components";
  *
  */
 
-export const Accordion = props => {
-  const { header, noBorder = false, iconProp = {}, children, ...rest } = props;
+export const Accordion = React.forwardRef((props, ref) => {
+  const {
+    header,
+    noBorder = false,
+    iconProp = {},
+    onStateChanged,
+    children,
+    ...rest
+  } = props;
   const { name, Label, size, color } = iconProp;
   const theme = useContext(ThemeContext);
   const [isExpanded, setExpanded] = useState(false);
@@ -64,13 +77,19 @@ export const Accordion = props => {
       duration: 300,
       toValue: isExpanded ? 1 : 0,
       useNativeDriver: false,
-    }).start();
+    }).start(() => {
+      !!onStateChanged && onStateChanged(isExpanded);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
 
   const handleAnimation = () => {
     setExpanded(!isExpanded);
   };
+
+  useImperativeHandle(ref, () => ({
+    toggleAccordion: handleAnimation,
+  }));
 
   const arrowAngle = animationController.interpolate({
     inputRange: [0, 1],
@@ -131,7 +150,7 @@ export const Accordion = props => {
       </Animated.View>
     </Container>
   );
-};
+});
 
 Accordion.propTypes = {
   /**
@@ -146,6 +165,10 @@ Accordion.propTypes = {
    * Takes a boolean value based on which border is shown.
    */
   noBorder: PropTypes.bool,
+  /**
+   * Function that returns the current state.
+   */
+  onStateChanged: PropTypes.func,
   /**
    * Takes an object based on which the icon to expand/collapse can be customized.
    * Label: Takes a component.
