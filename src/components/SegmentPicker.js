@@ -124,7 +124,6 @@ export const SegmentPicker = ({
           <Touchable
             key={index}
             flex={1}
-            elevation={6}
             onPress={() => memoizedTabPressCallback(index)}
             height={height}
             justifyContent="center"
