@@ -95,6 +95,8 @@ export const SearchBar = props => {
           flex={1}
           placeholderTextColor={theme.colors.font.grey600}
           color="font.primary"
+          autoCapitalize="none"
+          returnKeyType="search"
           {...rest.searchbarProps}
         />
       </Animated.View>
