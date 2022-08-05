@@ -17,7 +17,7 @@ import { ThemeContext } from "styled-components/native";
  *  ## Usage
  * ```js
  * import * as React from 'react';
- * import { Typography, TabBar  } from '@bigbinary/neetoui-rn';
+ * import { Typography, BottomTabBar  } from '@bigbinary/neetoui-rn';
  * import { NavigationContainer } from '@react-navigation/native';
  * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
  * import { ThemeContext } from "styled-components/native";
@@ -44,7 +44,7 @@ import { ThemeContext } from "styled-components/native";
  *        tabBarActiveTintColor: theme.colors.background.base,
  *        tabBarInactiveTintColor: theme.colors.background.grey500,
  *      }}
- *      tabBar={props => <TabBar {...props} />}
+ *      tabBar={props => <BottomTabBar {...props} />}
  *    >
  *      <Tab.Screen name="Home" component={HomeScreen}
  *        options={{
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const TabBar = ({ state, descriptors, navigation }) => {
+export const BottomTabBar = ({ state, descriptors, navigation }) => {
   return (
     <Container flexDirection="row" height={82} bg="background.white">
       {state.routes.map(({ key, name }, index) => {
@@ -197,7 +197,7 @@ TabElement.propTypes = {
   size: PropTypes.number,
 };
 
-TabBar.propTypes = {
+BottomTabBar.propTypes = {
   state: PropTypes.object,
   descriptors: PropTypes.object,
   navigation: PropTypes.object,

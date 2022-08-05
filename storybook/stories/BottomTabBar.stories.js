@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import { Typography, TabBar } from "@components";
+import { Typography, BottomTabBar } from "@components";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ThemeContext } from "styled-components/native";
 
-const TabBarMetaData = {
-  title: "TabBar",
-  component: TabBar,
+const BottomTabBarMetaData = {
+  title: "BottomTabBar",
+  component: BottomTabBar,
   argTypes: {},
   args: {},
 };
 
-export default TabBarMetaData;
+export default BottomTabBarMetaData;
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +23,7 @@ const SettingsScreen = () => {
   return <Typography fontSize="14px">Settings Screen</Typography>;
 };
 
-export const TabBarDemo = () => {
+export const BottomTabBarDemo = () => {
   const theme = useContext(ThemeContext);
 
   return (
@@ -33,7 +33,7 @@ export const TabBarDemo = () => {
           tabBarActiveTintColor: theme.colors.background.base,
           tabBarInactiveTintColor: theme.colors.background.grey500,
         }}
-        tabBar={props => <TabBar {...props} />}
+        tabBar={props => <BottomTabBar {...props} />}
       >
         <Tab.Screen
           name="Home"
