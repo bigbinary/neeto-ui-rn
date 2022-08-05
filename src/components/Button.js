@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
 import { ActivityIndicator } from "react-native";
 
-import { Typography, Touchable } from "@components";
+import { Typography, Touchable, Container } from "@components";
 
 /**
  *
@@ -67,6 +67,7 @@ export const Button = props => {
     LeftIcon,
     disabled,
     isLoading,
+    loadingText,
     ...rest
   } = props;
   const theme = useContext(ThemeContext);
@@ -130,7 +131,7 @@ export const Button = props => {
 
   const renderLoaderColor = () => {
     if (["text", "danger", "danger-inverse", "danger-text"].includes(variant))
-      return "base";
+      return "danger";
     return "white";
   };
 
@@ -151,9 +152,23 @@ export const Button = props => {
       {...rest}
     >
       {isLoading ? (
-        <ActivityIndicator
-          color={theme.colors.background[renderLoaderColor()]}
-        />
+        <Container flexDirection="row">
+          <ActivityIndicator
+            color={theme.colors.background[renderLoaderColor()]}
+          />
+          {!!loadingText && (
+            <Typography
+              textAlign="center"
+              mx={2}
+              color={getButtonColors().color}
+              fontSize="m"
+              fontFamily={theme.fonts.sf500}
+              {...labelStyle}
+            >
+              {loadingText}
+            </Typography>
+          )}
+        </Container>
       ) : (
         <>
           {LeftIcon && <LeftIcon />}
@@ -177,6 +192,7 @@ export const Button = props => {
 Button.defaultProps = {
   variant: "solid",
   isLoading: false,
+  loadingText: "",
 };
 
 Button.propTypes = {
@@ -225,4 +241,8 @@ Button.propTypes = {
    * To show loading indicator on the button.
    */
   isLoading: PropTypes.bool,
+  /**
+   * To show loading text along with the loading indicator on the button.
+   */
+  loadingText: PropTypes.string,
 };
