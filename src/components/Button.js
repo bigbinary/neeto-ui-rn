@@ -129,12 +129,6 @@ export const Button = props => {
     return 1;
   };
 
-  const renderLoaderColor = () => {
-    if (["text", "danger", "danger-inverse", "danger-text"].includes(variant))
-      return "danger";
-    return "white";
-  };
-
   return (
     <Touchable
       rippleColor={getButtonColors().ripple}
@@ -153,9 +147,7 @@ export const Button = props => {
     >
       {isLoading ? (
         <Container flexDirection="row">
-          <ActivityIndicator
-            color={theme.colors.background[renderLoaderColor()]}
-          />
+          <ActivityIndicator color={getButtonColors().color} />
           {!!loadingText && (
             <Typography
               textAlign="center"
