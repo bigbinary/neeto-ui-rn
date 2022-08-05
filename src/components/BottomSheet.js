@@ -192,7 +192,11 @@ export const BottomSheet = ({
                 onScrollBeginDrag={Keyboard.dismiss}
                 data={
                   searchText
-                    ? data.filter(word => word.includes(searchText))
+                    ? data.filter(word =>
+                        word
+                          .toLowerCase()
+                          .includes(searchText.toLocaleLowerCase())
+                      )
                     : data
                 }
                 renderItem={({ item, index }) => {
