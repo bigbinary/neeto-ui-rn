@@ -12,9 +12,17 @@ import {
   system,
   position,
 } from "styled-system";
-import { Animated } from "react-native";
+import {
+  Animated,
+  InputAccessoryView,
+  Keyboard,
+  StyleSheet,
+  useWindowDimensions,
+} from "react-native";
 import styled, { ThemeContext } from "styled-components/native";
 import PropTypes from "prop-types";
+import { Button, Container } from "@components";
+import { theme } from "../../src/theme";
 
 const TextInput = styled.TextInput`
   ${flexbox}
@@ -94,6 +102,7 @@ export const Input = props => {
     ...rest
   } = props;
 
+  const { width } = useWindowDimensions();
   const colors = useContext(ThemeContext).colors;
   const inputRef = useRef();
   const containerRef = useRef();
@@ -105,6 +114,7 @@ export const Input = props => {
     } else {
       handleLabelAnimation(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoFocus]);
 
   useEffect(() => {
@@ -115,6 +125,7 @@ export const Input = props => {
     } else {
       handleLabelAnimation(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   const handleLabelAnimation = isFocused => {
@@ -171,7 +182,7 @@ export const Input = props => {
         alignItems="center"
         flexDirection="row"
         justifyContent="space-between"
-        {...(!rest?.inputProps?.multiline && { height: 58 })}
+        {...(!rest.inputProps?.multiline && { height: 58 })}
       >
         {!!PrefixIcon && (
           <View pl={2}>
@@ -190,6 +201,7 @@ export const Input = props => {
           <TextInput
             ref={inputRef}
             value={value}
+            returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
             onChangeText={onChangeText}
             autoFocus={autoFocus}
             editable={!disabled}
@@ -199,6 +211,7 @@ export const Input = props => {
             onBlur={() => {
               handleFocusBlur(false);
             }}
+            inputAccessoryViewID={label}
             color={disabled ? "font.grey500" : "font.primary"}
             fontSize={17}
             py={3}
@@ -208,6 +221,29 @@ export const Input = props => {
             autoCapitalize="none"
             {...rest.inputProps}
           />
+          {rest.inputProps?.multiline && (
+            <InputAccessoryView nativeID={label}>
+              <Container
+                flexDirection="row"
+                m={2}
+                width={width}
+                justifyContent="flex-end"
+                alignItems="center"
+                pr={20}
+              >
+                <Button
+                  height={30}
+                  left={10}
+                  labelStyle={styles.doneButtonStyle}
+                  variant="text"
+                  onPress={() => {
+                    Keyboard.dismiss();
+                  }}
+                  label="Done"
+                />
+              </Container>
+            </InputAccessoryView>
+          )}
         </View>
         {!!SuffixIcon && (
           <View px={2}>
@@ -262,3 +298,10 @@ Input.propTypes = {
    */
   noBorder: PropTypes.bool,
 };
+
+export const styles = StyleSheet.create({
+  doneButtonStyle: {
+    fontFamily: "sf700",
+    color: theme.colors.font.base,
+  },
+});
