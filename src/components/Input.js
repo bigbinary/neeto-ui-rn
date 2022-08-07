@@ -224,8 +224,9 @@ export const Input = props => {
           {rest.inputProps?.multiline && (
             <InputAccessoryView nativeID={label}>
               <Container
+                bg="background.white"
                 flexDirection="row"
-                m={2}
+                p={2}
                 width={width}
                 justifyContent="flex-end"
                 alignItems="center"
