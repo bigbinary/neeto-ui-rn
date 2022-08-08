@@ -30,6 +30,23 @@ export const Accordions = () => {
           </Container>
         </Accordion>
       </Container>
+
+      <Container py={2}>
+        <Typography py={2}>Basic Accordion at top</Typography>
+        <Accordion
+          header={() => (
+            <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
+              Header
+            </Typography>
+          )}
+          position="top"
+        >
+          <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+            <Typography color="font.primary">Body Content</Typography>
+          </Container>
+        </Accordion>
+      </Container>
+
       <Container py={2}>
         <Typography py={2}>Customized Accordion</Typography>
         <Accordion

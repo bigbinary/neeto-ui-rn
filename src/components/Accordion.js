@@ -50,6 +50,41 @@ import { Container } from "@components";
  *
  */
 
+ const AccordionBody = ({ isExpanded, children }) => {
+  const animationController = useRef(
+    new Animated.Value(isExpanded ? 1 : 0)
+  ).current;
+
+  const [viewHeight, setViewHeight] = useState(0);
+
+  useEffect(() => {
+    Animated.timing(animationController, {
+      duration: 300,
+      toValue: isExpanded ? 1 : 0,
+      useNativeDriver: false,
+    }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  const bodyContentHeight = animationController.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, viewHeight],
+  });
+
+  const getLayout = event => {
+    const height = event.nativeEvent.layout.height;
+    setViewHeight(height);
+  };
+
+  return (
+    <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
+      <Container width="100%" position="absolute" onLayout={getLayout}>
+        {children}
+      </Container>
+    </Animated.View>
+  );
+};
+
 export const Accordion = React.forwardRef((props, ref) => {
   const {
     header,
@@ -57,20 +92,15 @@ export const Accordion = React.forwardRef((props, ref) => {
     iconProp = {},
     onStateChanged,
     children,
+    position = "bottom",
     ...rest
   } = props;
   const { name, Label, size, color } = iconProp;
   const theme = useContext(ThemeContext);
   const [isExpanded, setExpanded] = useState(false);
-  const [viewHeight, setViewHeight] = useState(0);
   const animationController = useRef(
     new Animated.Value(isExpanded ? 1 : 0)
   ).current;
-
-  const getLayout = event => {
-    const height = event.nativeEvent.layout.height;
-    setViewHeight(height);
-  };
 
   useEffect(() => {
     Animated.timing(animationController, {
@@ -98,11 +128,6 @@ export const Accordion = React.forwardRef((props, ref) => {
     outputRange: ["0rad", `${Math.PI}rad`],
   });
 
-  const bodyContentHeight = animationController.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, viewHeight],
-  });
-
   return (
     <Container
       {...(!noBorder && {
@@ -113,6 +138,9 @@ export const Accordion = React.forwardRef((props, ref) => {
       width="100%"
       {...rest}
     >
+      {position === "top" && (
+        <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
+      )}
       <TouchableOpacity
         rippleOpacity={0}
         style={styles.accordionContainer}
@@ -143,15 +171,22 @@ export const Accordion = React.forwardRef((props, ref) => {
             </Container>
           </Animated.View>
         </Container>
+
       </TouchableOpacity>
-      <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
-        <Container width="100%" position="absolute" onLayout={getLayout}>
-          {children}
-        </Container>
-      </Animated.View>
+
+
+      {position === "bottom" && (
+        <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
+      )}
+
     </Container>
   );
 });
+
+AccordionBody.propTypes = {
+  isExpanded: PropTypes.bool.isRequired,
+  children: PropTypes.element,
+};
 
 Accordion.propTypes = {
   /**
@@ -183,6 +218,10 @@ Accordion.propTypes = {
     size: PropTypes.number,
     color: PropTypes.string,
   }),
+  /**
+   * Determine whether the body should show at the top or bottom
+   */
+  position: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
