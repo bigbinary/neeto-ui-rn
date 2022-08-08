@@ -10,6 +10,7 @@ export default AccordionStories;
 
 export const Accordions = () => {
   const accordionRef = useRef();
+  const accordionRef2 = useRef();
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -119,6 +120,36 @@ export const Accordions = () => {
       <Container py={2}>
         <Accordion
           ref={accordionRef}
+          header={() => (
+            <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
+              Header
+            </Typography>
+          )}
+        >
+          <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+            <Typography color="font.primary">Accordion using ref</Typography>
+          </Container>
+        </Accordion>
+      </Container>
+
+      <Container flex={1} flexDirection="row" justifyContent="space-between">
+        <Button
+          flex={1}
+          label="Open Accordion"
+          onPress={() => accordionRef2.current.openAccordion()}
+        />
+
+        <Container mx={2} />
+        <Button
+          flex={1}
+          label="Close Accordion"
+          onPress={() => accordionRef2.current.closeAccordion()}
+        />
+      </Container>
+
+      <Container py={2}>
+        <Accordion
+          ref={accordionRef2}
           header={() => (
             <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
               Header
