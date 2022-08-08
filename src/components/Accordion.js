@@ -89,6 +89,8 @@ export const Accordion = React.forwardRef((props, ref) => {
 
   useImperativeHandle(ref, () => ({
     toggleAccordion: handleAnimation,
+    openAccordion: () => setExpanded(true),
+    closeAccordion: () => setExpanded(false),
   }));
 
   const arrowAngle = animationController.interpolate({
