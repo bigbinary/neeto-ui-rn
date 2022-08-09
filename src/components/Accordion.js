@@ -50,7 +50,7 @@ import { Container } from "@components";
  *
  */
 
- const AccordionBody = ({ isExpanded, children }) => {
+const AccordionBody = ({ isExpanded, children }) => {
   const animationController = useRef(
     new Animated.Value(isExpanded ? 1 : 0)
   ).current;
@@ -136,6 +136,7 @@ export const Accordion = React.forwardRef((props, ref) => {
         borderRadius: 8,
       })}
       width="100%"
+      padding={12}
       {...rest}
     >
       {position === "top" && (
@@ -171,14 +172,11 @@ export const Accordion = React.forwardRef((props, ref) => {
             </Container>
           </Animated.View>
         </Container>
-
       </TouchableOpacity>
-
 
       {position === "bottom" && (
         <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
       )}
-
     </Container>
   );
 });
@@ -227,7 +225,6 @@ Accordion.propTypes = {
 const styles = StyleSheet.create({
   accordionContainer: {
     flexDirection: "row",
-    padding: 12,
     alignItems: "center",
   },
 });
