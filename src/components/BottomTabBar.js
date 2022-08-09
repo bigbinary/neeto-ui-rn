@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
 
 export const BottomTabBar = ({ state, descriptors, navigation }) => {
   return (
-    <Container flexDirection="row" height={76} bg="background.white">
+    <Container flexDirection="row" height={82} bg="background.white">
       {state.routes.map(({ key, name }, index) => {
         const { options } = descriptors[key];
         const isFocused = state.index === index;
