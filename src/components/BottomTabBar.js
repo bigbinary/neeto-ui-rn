@@ -136,6 +136,7 @@ function TabElement({
       <Typography
         color={isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor}
         fontFamily="sf500"
+        fontSize="4xs"
       >
         {name}
       </Typography>
