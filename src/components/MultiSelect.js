@@ -197,31 +197,35 @@ export const MultiSelect = ({
         ? emptySearchedOptionsHeight
         : 0);
 
-  const handleCheckbox = index => {
+  const getValue = (item, index) => {
+    return item?.value || valueExtractor(item, index);
+  };
+
+  const handleCheckbox = item => {
     const oldData = [...value];
-    const item = options[index];
-    const itemIndex = value.indexOf(item);
-    if (itemIndex === -1) {
+    const index = value.findIndex(
+      (data, index) => getValue(data, index) === getValue(item)
+    );
+    if (index === -1) {
       oldData.push(item);
     } else {
-      oldData.splice(itemIndex, 1);
+      oldData.splice(index, 1);
     }
     onSelect(oldData);
   };
 
-  const CheckBoxContent = ({ label, onPress, id }) => {
-    const current = options[id]?.value || valueExtractor(options[id], id);
-    const selected = value.some(
-      (item, i) => (item?.value || valueExtractor(item, i)) === current
+  const CheckBoxContent = ({ onPress, item, index }) => {
+    const itemIndex = value.findIndex(
+      (data, i) => getValue(data, i) === getValue(item, index)
     );
     return (
       !!label && (
         <Container py={12}>
           <CheckBox
-            checked={selected}
+            checked={itemIndex !== -1}
             onSelect={onPress}
             // checkboxContainerProp={containerStyle}
-            label={label}
+            label={item?.label || labelExtractor(item, index)}
           />
         </Container>
       )
@@ -257,7 +261,8 @@ export const MultiSelect = ({
   CheckBoxContent.propTypes = {
     label: PropTypes.string,
     onPress: PropTypes.func,
-    id: PropTypes.number,
+    item: PropTypes.object,
+    index: PropTypes.number,
   };
 
   return (
@@ -344,196 +349,23 @@ export const MultiSelect = ({
         onItemPress={index => {
           handleCheckbox(index);
         }}
-        ContentRow={CheckBoxContent}
-        contentType="checkbox"
-        data={options.map(
-          (item, index) => item.label || labelExtractor(item, index)
-        )}
-        canSearch={isSearchable}
         isVisible={showDropdown}
         hide={() => setShowDropdown(false)}
-      />
-      {/* <Container overflow="hidden">
-          <Animated.View style={animatedStyles}>
-            <Card
-              bg="background.white"
-              borderWidth={1}
-              borderColor="border.grey400"
-              maxHeight={dropdownHeight}
-              {...dropdownContainerStyle}
-            >
-              {isSearchable && (
-                <Container p={1} {...searchInputContainerStyle}>
-                  <Input
-                    placeholder="Search"
-                    onChangeText={setSearchQuery}
-                    fontSize="s"
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    containerStyles={{
-                      height: searchInputHeight,
-                      justifyContent: "center",
-                    }}
-                    {...searchInputStyle}
-                  />
-                </Container>
-              )}
-              {isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption) && (
-                <Container
-                  height={emptyOptionsPlaceholderHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  {...emptyOptionsContainerStyle}
-                >
-                  <Typography
-                    fontFamily="sf400"
-                    fontSize="s"
-                    color="font.grey"
-                    {...emptyOptionsLabelStyle}
-                  >
-                    {emptyOptionsPlaceholder || "No Options"}
-                  </Typography>
-                </Container>
-              )}
-
-              {isSearchedOptionsEmpty && showCreateOption && (
-                <Touchable
-                  height={emptySearchedOptionsHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  onPress={() => onPressCreateOption(searchQuery)}
-                  {...createSearchedOptionContainerStyle}
-                >
-                  {showCreateOptionLoader ? (
-                    <ActivityIndicator
-                      size="small"
-                      color={theme.colors.background.base}
-                    />
-                  ) : (
-                    <Typography
-                      fontFamily="sf400"
-                      fontSize="s"
-                      color="font.grey"
-                      {...createSearchedOptionLabelStyle}
-                    >
-                      {createOptionLabel || `Create ${searchQuery} option`}
-                    </Typography>
-                  )}
-                </Touchable>
-              )}
-              {/* Animation not working without this hidden input */}
-      {/* <Container height={0}>
-                <Input />
+      >
+        <Container>
+          {options.map((item, index) => {
+            return (
+              <Container justifyContent="center" key={index}>
+                <CheckBoxContent
+                  index={index}
+                  item={item}
+                  onPress={() => handleCheckbox(item)}
+                />
               </Container>
-              <ScrollView>
-                {filteredOptions.map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  return (
-                    <DropdownItem
-                      key={index}
-                      label={optionLabel}
-                      onPress={() => handleSelection(item)}
-                      itemContainerStyle={itemContainerStyle}
-                      defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      itemLabelStyle={itemLabelStyle}
-                    />
-                  );
-                })}
-              </ScrollView>
-            </Card>
-          </Animated.View>
+            );
+          })}
         </Container>
-      </BottomSheet> */}
-      {/* {showDropdown && (
-        <Container overflow="hidden">
-          <Animated.View style={animatedStyles}>
-            <Card
-              bg="background.white"
-              borderWidth={1}
-              borderColor="border.grey400"
-              maxHeight={dropdownHeight}
-              {...dropdownContainerStyle}
-            >
-              {isSearchable && (
-                <Container p={1} {...searchInputContainerStyle}>
-                  <Input
-                    placeholder="Search"
-                    onChangeText={setSearchQuery}
-                    fontSize="s"
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    containerStyles={{
-                      height: searchInputHeight,
-                      justifyContent: "center",
-                    }}
-                    {...searchInputStyle}
-                  />
-                </Container>
-              )}
-              {isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption) && (
-                <Container
-                  height={emptyOptionsPlaceholderHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  {...emptyOptionsContainerStyle}
-                >
-                  <Typography
-                    fontFamily="sf400"
-                    fontSize="s"
-                    color="font.grey"
-                    {...emptyOptionsLabelStyle}
-                  >
-                    {emptyOptionsPlaceholder || "No Options"}
-                  </Typography>
-                </Container>
-              )}
-
-              {isSearchedOptionsEmpty && showCreateOption && (
-                <Touchable
-                  height={emptySearchedOptionsHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  onPress={() => onPressCreateOption(searchQuery)}
-                  {...createSearchedOptionContainerStyle}
-                >
-                  {showCreateOptionLoader ? (
-                    <ActivityIndicator
-                      size="small"
-                      color={theme.colors.background.base}
-                    />
-                  ) : (
-                    <Typography
-                      fontFamily="sf400"
-                      fontSize="s"
-                      color="font.grey"
-                      {...createSearchedOptionLabelStyle}
-                    >
-                      {createOptionLabel || `Create ${searchQuery} option`}
-                    </Typography>
-                  )}
-                </Touchable>
-              )} */}
-      {/* Animation not working without this hidden input */}
-      {/* <Container height={0}>
-                <Input />
-              </Container>
-              <ScrollView>
-                {filteredOptions.map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  return (
-                    <DropdownItem
-                      key={index}
-                      label={optionLabel}
-                      onPress={() => handleSelection(item)}
-                      itemContainerStyle={itemContainerStyle}
-                      defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      itemLabelStyle={itemLabelStyle}
-                    />
-                  );
-                })}
-              </ScrollView>
-            </Card>
-          </Animated.View>
-        </Container>
-      )} */}
+      </BottomSheet>
     </Container>
   );
 };
@@ -556,10 +388,6 @@ MultiSelect.propTypes = {
    * The text to be displayed if no option is selected.
    */
   placeholder: PropTypes.string,
-  /**
-   * The text to be displayed if no options are provided.
-   */
-  emptyOptionsPlaceholder: PropTypes.string,
   /**
    * Use custom key as label.
    */
@@ -669,7 +497,6 @@ MultiSelect.propTypes = {
 MultiSelect.defaultProps = {
   label: null,
   placeholder: "Select Option",
-  emptyOptionsPlaceholder: null,
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
