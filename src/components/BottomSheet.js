@@ -213,7 +213,7 @@ export const BottomSheet = ({
                         !contentType && hide();
                         onItemPress({ index, item });
                       }}
-                      id={index}
+                      index={index}
                       item={item}
                     />
                   );
