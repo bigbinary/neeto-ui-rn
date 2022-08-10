@@ -18,6 +18,7 @@ import {
   Keyboard,
   StyleSheet,
   useWindowDimensions,
+  Platform,
 } from "react-native";
 import styled, { ThemeContext } from "styled-components/native";
 import PropTypes from "prop-types";
@@ -221,7 +222,7 @@ export const Input = props => {
             autoCapitalize="none"
             {...rest.inputProps}
           />
-          {rest.inputProps?.multiline && (
+          {rest.inputProps?.multiline && Platform.OS === "ios" && (
             <InputAccessoryView nativeID={label}>
               <Container
                 bg="background.white"
