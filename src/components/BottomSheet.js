@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
-import { Typography, Container, Touchable, SearchBar } from "@components";
 import Modal from "react-native-modal";
 import Icon from "react-native-remix-icon";
-import { theme } from "../theme";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Fuse from "fuse.js";
+
+import { Typography, Container, Touchable, SearchBar } from "@components";
+import { theme } from "../theme";
+import { FUSE_KEYS } from "../constants";
 
 const Title = ({
   title,
@@ -148,6 +151,16 @@ export const BottomSheet = ({
 }) => {
   const [searchText, setSearchText] = useState("");
 
+  const fuse = new Fuse(data, { keys: FUSE_KEYS, threshold: 0.1 });
+
+  const generateData = () => {
+    if (searchText) {
+      return fuse.search(searchText).map(item => item.item);
+    } else {
+      return data;
+    }
+  };
+
   return (
     <Modal
       style={styles.modalStyle}
@@ -190,15 +203,7 @@ export const BottomSheet = ({
                 ListFooterComponent={children}
                 initialNumToRender={data.length}
                 onScrollBeginDrag={Keyboard.dismiss}
-                data={
-                  searchText
-                    ? data.filter(word =>
-                        word
-                          .toLowerCase()
-                          .includes(searchText.toLocaleLowerCase())
-                      )
-                    : data
-                }
+                data={generateData()}
                 renderItem={({ item, index }) => {
                   return (
                     <ContentRow
@@ -206,10 +211,10 @@ export const BottomSheet = ({
                       key={index}
                       onPress={() => {
                         !contentType && hide();
-                        onItemPress(index);
+                        onItemPress({ index, item });
                       }}
                       id={index}
-                      label={item}
+                      item={item}
                     />
                   );
                 }}
