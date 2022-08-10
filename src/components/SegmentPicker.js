@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import React, { useEffect, useCallback } from "react";
 import { Dimensions, StyleSheet } from "react-native";
@@ -6,8 +7,18 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { Typography, Touchable } from "@components";
+import { Typography, Touchable, Container } from "@components";
 import { theme } from "@theme";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+
+const Tab = createMaterialTopTabNavigator();
+
+export const T = () => (
+  <Container>
+    <Typography> Testing tabs</Typography>
+  </Container>
+);
 
 const defaultShadowStyle = {
   shadowColor: theme.colors.background.grey800,
@@ -21,7 +32,7 @@ const defaultShadowStyle = {
   elevation: 4,
 };
 
-// eslint-disable-next-line neeto/no-dangling-constants
+// eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const DEFAULT_SPRING_CONFIG = {
   stiffness: 150,
   damping: 20,
@@ -65,7 +76,18 @@ const width = Dimensions.get("screen").width - 32;
  * ```
  */
 
-export const SegmentPicker = ({
+export const SegmentPicker = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="dd" component={T} />
+        <Tab.Screen name="wdd" component={T} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export const SegmentPicker1 = ({
   tabs,
   onChange,
   currentIndex,
