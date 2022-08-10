@@ -186,7 +186,7 @@ export const Alert = () => {
               borderWidth={1}
               fontFamily="sf400"
               fontSize="m"
-              borderRadius={50}
+              borderRadius={8}
               minWidth={110}
               height={35}
               p={0}
@@ -203,7 +203,7 @@ export const Alert = () => {
             <Button
               fontFamily="sf400"
               fontSize="m"
-              borderRadius={50}
+              borderRadius={8}
               minWidth={110}
               onPress={() => {
                 button1.onPress?.();
@@ -223,7 +223,7 @@ export const Alert = () => {
             borderWidth={1}
             fontFamily="sf400"
             fontSize="m"
-            borderRadius={50}
+            borderRadius={8}
             minWidth={110}
             onPress={() => {
               button3.onPress?.();
