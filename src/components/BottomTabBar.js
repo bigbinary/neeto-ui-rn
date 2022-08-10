@@ -122,17 +122,12 @@ function TabElement({
     >
       <Container height={35} width={48} alignItems="center" mb={1}>
         <Animated.View style={[styles.iconContainer, animatedStyles]}>
-          <Icon
-            size={size}
-            color={theme.colors.background.grey200}
-            name={icon}
-          />
+          <Icon size={size} color={theme.colors.font.grey500} name={icon} />
         </Animated.View>
         <Animated.View style={[styles.iconContainer, animatedStyles2]}>
-          <Icon size={size} color={theme.colors.background.base} name={icon} />
+          <Icon size={size} color={theme.colors.font.base} name={icon} />
         </Animated.View>
       </Container>
-
       <Typography
         color={isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor}
         fontFamily="sf500"
@@ -153,7 +148,7 @@ const styles = StyleSheet.create({
 
 export const BottomTabBar = ({ state, descriptors, navigation }) => {
   return (
-    <Container flexDirection="row" height={82} bg="background.white">
+    <Container flexDirection="row" height={83} bg="background.white">
       {state.routes.map(({ key, name }, index) => {
         const { options } = descriptors[key];
         const isFocused = state.index === index;
