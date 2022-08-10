@@ -37,19 +37,21 @@ export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => {
       bg="background.secondary"
       width="100%"
       px={12}
-      height={52}
+      py={16}
       borderRadius={6}
       alignItems="center"
       justifyContent="space-between"
       {...rest}
     >
-      <Container flexDirection="row" alignItems="center">
+      <Container flexDirection="row" alignItems="center" width="50%">
         {LeftComponent && <LeftComponent />}
         <Typography color="font.grey800" fontSize="l" fontFamily="sf400">
           {label}
         </Typography>
       </Container>
-      <RightComponent />
+      <Container width="50%" alignItems="flex-end">
+        <RightComponent />
+      </Container>
     </Container>
   );
 };
