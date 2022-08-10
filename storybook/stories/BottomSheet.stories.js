@@ -53,7 +53,7 @@ export const BottomSheetDemo = args => {
         hide={() => {
           setbottomSheetVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select Multi Options"
@@ -205,7 +205,7 @@ export const BottomSheets = args => {
         hide={() => {
           setbottomSheetOneVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select an Option"
@@ -219,7 +219,7 @@ export const BottomSheets = args => {
         hide={() => {
           setbottomSheetTwoVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select an Option"
@@ -258,7 +258,7 @@ export const BottomSheets = args => {
           color="font.secondary"
           fontFamily="sf700"
         >
-          Selected Item: {args.data[selectedItemIndex]}
+          Selected Item: {args.data[selectedItemIndex].value}
         </Typography>
       )}
     </Container>
