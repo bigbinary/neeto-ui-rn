@@ -40,11 +40,15 @@ export const ListItems = () => {
       <ListItem
         LeftComponent={() => <Typography mr={2}>📣</Typography>}
         label="Organization"
-        RightComponent={() => <Typography>Bigbinary</Typography>}
+        RightComponent={() => (
+          <Typography>oliversmith@bigbinary.com</Typography>
+        )}
+        my={1}
       />
       <ListItem
         label="Hello"
         RightComponent={() => <Typography>Text</Typography>}
+        my={1}
       />
       <ListItem
         label="Sample Project"
@@ -53,6 +57,7 @@ export const ListItems = () => {
             <Typography color="font.base">Add</Typography>
           </Touchable>
         )}
+        my={1}
       />
     </Container>
   );
