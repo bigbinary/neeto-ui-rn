@@ -50,7 +50,7 @@ const Title = ({
             )}
             {contentType && (
               <Touchable onPress={hide}>
-                <Typography textStyle="modalHeader" color="font.purple600">
+                <Typography textStyle="modalHeader" color="font.purple500">
                   Done
                 </Typography>
               </Touchable>
