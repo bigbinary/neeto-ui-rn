@@ -154,8 +154,8 @@ export const BottomSheet = ({
   const fuse = new Fuse(data, { keys: FUSE_KEYS, threshold: 0.1 });
 
   const generateData = () => {
-    if (searchText) {
-      return fuse.search(searchText).map(item => item.item);
+    if (searchText.trim().length) {
+      return fuse.search(searchText.trim()).map(item => item.item);
     } else {
       return data;
     }
