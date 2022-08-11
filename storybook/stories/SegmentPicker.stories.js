@@ -1,8 +1,20 @@
-import React, { useState } from "react";
-import { Container, SegmentPicker } from "@components";
+import React from "react";
+import { Container, SegmentPicker, Typography } from "@components";
+import PropTypes from "prop-types";
 import { theme } from "@theme";
 
-const labelPositions = ["left", "right"];
+const CustomComponent = ({ route: { name } }) => {
+  return (
+    <Container>
+      <Typography>{`This is "${name}" tab `}</Typography>
+    </Container>
+  );
+};
+
+const labelPositions = [
+  { name: "left", Component: CustomComponent },
+  { name: "right", Component: CustomComponent },
+];
 
 const SegmentPickerStories = {
   title: "SegmentPickers",
@@ -23,57 +35,39 @@ const SegmentPickerStories = {
 export default SegmentPickerStories;
 
 export const SegmentPickerDemo = args => {
-  const [tabIndex, setTabIndex] = useState(1);
-  const handleTabsChange = index => {
-    setTabIndex(index);
-  };
-
   return (
     <Container flex={1} justifyContent="center" alignItems="center">
-      <SegmentPicker
-        {...args}
-        tabs={labelPositions}
-        currentIndex={tabIndex}
-        onChange={handleTabsChange}
-      />
+      <SegmentPicker {...args} tabs={labelPositions} />
     </Container>
   );
 };
 
 export const SegmentPickers = () => {
-  const [tab1Index, setTab1Index] = useState(0);
-  const [tab2Index, setTab2Index] = useState(1);
-  const [tab3Index, setTab3Index] = useState(0);
-  const [tab4Index, setTab4Index] = useState(1);
-
   return (
-    <Container flex={1} justifyContent="center" alignItems="center">
-      <Container my={3}>
+    <Container flex={1}>
+      <Container flex={1} my={3}>
         <SegmentPicker
-          tabs={["On", "Off"]}
-          currentIndex={tab1Index}
-          onChange={setTab1Index}
+          tabs={[
+            { name: "On", Component: CustomComponent },
+            { name: "Off", Component: CustomComponent },
+          ]}
         />
       </Container>
-      <Container my={3}>
+      <Container flex={1} my={3}>
         <SegmentPicker
-          tabs={["Label 1", "Label 2", "Label 3"]}
-          currentIndex={tab2Index}
-          onChange={setTab2Index}
+          tabs={[
+            { name: "Tab1", Component: CustomComponent },
+            { name: "Tab2", Component: CustomComponent },
+            { name: "Tab3", Component: CustomComponent },
+          ]}
         />
       </Container>
-      <Container my={3}>
+      <Container flex={1} my={3}>
         <SegmentPicker
-          tabs={["Label 1", "Label 2", "Label 3", "Label 4"]}
-          currentIndex={tab3Index}
-          onChange={setTab3Index}
-        />
-      </Container>
-      <Container my={3}>
-        <SegmentPicker
-          tabs={["Shop", "Discover", "Brands"]}
-          currentIndex={tab4Index}
-          onChange={setTab4Index}
+          tabs={[
+            { name: "On", Component: CustomComponent },
+            { name: "Off", Component: CustomComponent },
+          ]}
           inactiveSegmentStyle={{
             backgroundColor: theme.colors.background.purple100,
           }}
@@ -86,4 +80,8 @@ export const SegmentPickers = () => {
       </Container>
     </Container>
   );
+};
+
+CustomComponent.propTypes = {
+  route: PropTypes.object,
 };

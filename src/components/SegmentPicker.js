@@ -1,24 +1,18 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect } from "react";
 import { Dimensions, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { Typography, Touchable, Container } from "@components";
+import { Typography, Touchable } from "@components";
 import { theme } from "@theme";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
 const Tab = createMaterialTopTabNavigator();
-
-export const T = () => (
-  <Container>
-    <Typography> Testing tabs</Typography>
-  </Container>
-);
 
 const defaultShadowStyle = {
   shadowColor: theme.colors.background.grey800,
@@ -59,15 +53,12 @@ const width = Dimensions.get("screen").width - 32;
  * import { Container, SegmentPicker } from '@bigbinary/neetoui-rn';
  *
  * export default function Main(){
- *   const [tabIndex, setTabIndex] = useState(1);
  *
  *  return (
  *    <Container flex={1} alignItems="center" justifyContent="center">
  *      <Container my={3}>
  *        <SegmentPicker
- *          tabs={["On", "Off"]}
- *          currentIndex={tabIndex}
- *          onChange={setTabIndex}
+ *          tabs={[{ name: "On", Component: CustomComponent }, { name: "Off", Component: CustomComponent }]}
  *        />
  *      </Container>
  *    </Container>
@@ -76,45 +67,38 @@ const width = Dimensions.get("screen").width - 32;
  * ```
  */
 
-export const SegmentPicker = () => {
+export const SegmentPicker = segmentProps => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="dd" component={T} />
-        <Tab.Screen name="wdd" component={T} />
+      <Tab.Navigator tabBar={props => <TabBar {...segmentProps} {...props} />}>
+        {segmentProps.tabs.map(({ name, Component }, index) => {
+          return <Tab.Screen key={index} name={name} component={Component} />;
+        })}
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-export const SegmentPicker1 = ({
-  tabs,
-  onChange,
-  currentIndex,
-  inactiveSegmentStyle,
-  activeSegmentStyle,
+const TabBar = ({
   activeTextStyle,
-  inactiveTextStyle,
+  activeSegmentStyle,
   height,
+  inactiveTextStyle,
+  inactiveSegmentStyle,
+  navigation,
+  state: { index = 0 },
+  tabs,
 }) => {
   const translateValue = (width - 4) / tabs?.length;
   const tabTranslateValue = useSharedValue(0);
 
-  // useCallBack with an empty array as input, which will call inner lambda only once and memoize the reference for future calls
-  const memoizedTabPressCallback = useCallback(
-    index => {
-      onChange(index);
-    },
-    [onChange]
-  );
-
   useEffect(() => {
     tabTranslateValue.value = withSpring(
-      currentIndex * (translateValue * 1),
+      index * (translateValue * 1),
       DEFAULT_SPRING_CONFIG
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex]);
+  }, [index]);
 
   const tabTranslateAnimatedStyles = useAnimatedStyle(() => {
     return {
@@ -138,27 +122,26 @@ export const SegmentPicker1 = ({
           tabTranslateAnimatedStyles,
         ]}
       />
-
-      {tabs.map((label, index) => {
+      {tabs.map(({ name }, i) => {
         const currentIndexTextStyle =
-          currentIndex === index ? activeTextStyle : inactiveTextStyle;
+          index === index + 1 ? activeTextStyle : inactiveTextStyle;
         return (
           <Touchable
-            key={index}
+            onPress={() => navigation.navigate(name)}
+            key={i}
             flex={1}
-            onPress={() => memoizedTabPressCallback(index)}
             height={height}
+            alignItems="center"
             justifyContent="center"
-            activeOpacity={0.7}
+            {...currentIndexTextStyle}
           >
             <Typography
               fontSize="xs"
               textAlign="center"
               color="font.grey800"
               fontFamily="sf500"
-              {...currentIndexTextStyle}
             >
-              {label}
+              {name}
             </Typography>
           </Touchable>
         );
@@ -183,6 +166,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: "#F6F6FA",
     width: width,
+    marginBottom: 5,
   },
   movingSegmentStyle: {
     top: 0,
@@ -193,19 +177,16 @@ const styles = StyleSheet.create({
   },
 });
 
-SegmentPicker.propTypes = {
+TabBar.propTypes = {
   /**
    * Array of texts for the labels of each Segment/Tab.
    */
-  tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
-  /**
-   * Callback called with the new value when it changes.
-   */
-  onChange: PropTypes.func.isRequired,
-  /**
-   * Index value of the currently selected Segment/Tab.
-   */
-  currentIndex: PropTypes.number.isRequired,
+  tabs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      Component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+    })
+  ).isRequired,
   /**
    * To change the inactive segment container style.
    */
@@ -225,9 +206,7 @@ SegmentPicker.propTypes = {
   height: PropTypes.number,
 };
 
-SegmentPicker.defaultProps = {
+TabBar.defaultProps = {
   tabs: [],
-  onChange: () => {},
-  currentIndex: 0,
   height: 32,
 };
