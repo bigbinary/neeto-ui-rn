@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
-import Icon from "react-native-remix-icon";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Fuse from "fuse.js";
 
@@ -22,7 +21,6 @@ const Title = ({
   setSearchText,
 }) => {
   let touchY;
-  const [isSearchBarOpen, setSearchBarOpen] = useState(false);
 
   useEffect(() => {
     setSearchText("");
@@ -41,40 +39,30 @@ const Title = ({
         borderRadius={20}
         {...titleContainerStyle}
       >
-        {canSearch && isSearchBarOpen ? null : (
-          <Container flexDirection="row" justifyContent="space-between">
-            {title && (
-              <Typography textStyle="modalHeader" {...titleTextStyle}>
-                {title}
+        <Container mb={16} flexDirection="row" justifyContent="space-between">
+          {title && (
+            <Typography textStyle="modalHeader" {...titleTextStyle}>
+              {title}
+            </Typography>
+          )}
+          {contentType && (
+            <Touchable onPress={hide}>
+              <Typography textStyle="modalHeader" color="font.purple500">
+                Done
               </Typography>
-            )}
-            {contentType && (
-              <Touchable onPress={hide}>
-                <Typography textStyle="modalHeader" color="font.purple500">
-                  Done
-                </Typography>
-              </Touchable>
-            )}
-            {canSearch && !isSearchBarOpen && (
-              <Touchable onPress={() => setSearchBarOpen(true)}>
-                <Icon
-                  name="search-line"
-                  color={theme.colors.background.grey700}
-                />
-              </Touchable>
-            )}
-          </Container>
-        )}
+            </Touchable>
+          )}
+        </Container>
 
-        {canSearch && isSearchBarOpen && (
+        {canSearch && (
           <SearchBar
             placeholder="Search"
             onChangeText={setSearchText}
             onCancel={() => {
-              setSearchBarOpen(false);
               setSearchText("");
             }}
             searchbarProps={{ autoFocus: true }}
+            showCancelButton={false}
           />
         )}
       </Container>
