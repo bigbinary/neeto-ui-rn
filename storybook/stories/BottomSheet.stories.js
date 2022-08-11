@@ -15,15 +15,15 @@ const TypographyStories = {
   component: BottomSheet,
   args: {
     data: [
-      "neetoInvoice-RN",
-      "neetoPlanner-RN",
-      "neetoStore-RN",
-      "neetoStoreBusiness-RN",
-      "neetoDesk-RN",
-      "neetoChat-RN",
-      "neetoForm-RN",
-      "neetoCal-RN",
-      "Bigbinary HQ",
+      { label: "neetoInvoice-RN", value: "neetoInvoice-RN" },
+      { label: "neetoPlanner-RN", value: "neetoPlanner-RN" },
+      { label: "neetoStore-RN", value: "neetoStore-RN" },
+      { label: "neetoStoreBusiness-RN", value: "neetoStoreBusiness-RN" },
+      { label: "neetoDesk-RN", value: "neetoDesk-RN" },
+      { label: "neetoChat-RN", value: "neetoChat-RN" },
+      { label: "neetoForm-RN", value: "neetoForm-RN" },
+      { label: "neetoCal-RN", value: "neetoCal-RN" },
+      { label: "Bigbinary HQ", value: "Bigbinary HQ" },
     ],
   },
   argTypes: {
@@ -53,13 +53,13 @@ export const BottomSheetDemo = args => {
         hide={() => {
           setbottomSheetVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select Multi Options"
         data={args.data}
         selectedItemIndex={selectedItemIndex}
-        ContentRow={({ label, onPress, isSelected }) => {
+        ContentRow={({ item: { label }, onPress, isSelected }) => {
           return (
             !!label && (
               <Container py={12}>
@@ -97,11 +97,11 @@ export const BottomSheets = args => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [selectedValues, setSelectedValues] = useState([]);
 
-  const handleCheckbox = index => {
+  const handleCheckbox = ({ item: { value } }) => {
     const oldData = [...selectedValues];
-    const itemIndex = selectedValues.indexOf(index);
+    const itemIndex = selectedValues.indexOf(value);
     if (itemIndex === -1) {
-      oldData.push(index);
+      oldData.push(value);
     } else {
       oldData.splice(itemIndex, 1);
     }
@@ -109,7 +109,7 @@ export const BottomSheets = args => {
   };
 
   // Text Content
-  const TextContent = ({ label, bg, onPress, isSelected }) => {
+  const TextContent = ({ item: { label }, bg, onPress, isSelected }) => {
     return (
       !!label && (
         <>
@@ -128,7 +128,7 @@ export const BottomSheets = args => {
   };
 
   // Radio Button
-  const RadioContent = ({ label, onPress, isSelected }) => {
+  const RadioContent = ({ item: { label }, onPress, isSelected }) => {
     return (
       !!label && (
         <Container py={12}>
@@ -143,12 +143,12 @@ export const BottomSheets = args => {
     );
   };
 
-  const CheckBoxContent = ({ label, onPress, id }) => {
+  const CheckBoxContent = ({ item: { label, value }, onPress }) => {
     return (
       !!label && (
         <Container py={12}>
           <CheckBox
-            selected={selectedValues.indexOf(id) !== -1}
+            checked={selectedValues.indexOf(value) !== -1}
             onSelect={onPress}
             // checkboxContainerProp={containerStyle}
             label={label}
@@ -159,20 +159,20 @@ export const BottomSheets = args => {
   };
 
   TextContent.propTypes = {
-    label: PropTypes.string,
+    item: PropTypes.object,
     bg: PropTypes.string,
     onPress: PropTypes.func,
     isSelected: PropTypes.bool,
   };
 
   RadioContent.propTypes = {
-    label: PropTypes.string,
+    item: PropTypes.object,
     onPress: PropTypes.func,
     isSelected: PropTypes.bool,
   };
 
   CheckBoxContent.propTypes = {
-    label: PropTypes.string,
+    item: PropTypes.object,
     onPress: PropTypes.func,
     id: PropTypes.number,
   };
@@ -205,7 +205,7 @@ export const BottomSheets = args => {
         hide={() => {
           setbottomSheetOneVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select an Option"
@@ -219,7 +219,7 @@ export const BottomSheets = args => {
         hide={() => {
           setbottomSheetTwoVisible(false);
         }}
-        onItemPress={index => {
+        onItemPress={({ index }) => {
           setSelectedItemIndex(index);
         }}
         title="Select an Option"
@@ -234,14 +234,13 @@ export const BottomSheets = args => {
         hide={() => {
           setbottomSheetThreeVisible(false);
         }}
-        onItemPress={index => {
-          handleCheckbox(index);
-        }}
+        onItemPress={handleCheckbox}
         title="Select Multi Options"
         data={args.data}
         selectedItemIndex={selectedItemIndex}
         ContentRow={CheckBoxContent}
         contentType="checkbox"
+        canSearch
       />
       <BottomSheet
         isVisible={bottomSheetFourVisible}
@@ -259,7 +258,7 @@ export const BottomSheets = args => {
           color="font.secondary"
           fontFamily="sf700"
         >
-          Selected Item: {args.data[selectedItemIndex]}
+          Selected Item: {args.data[selectedItemIndex].value}
         </Typography>
       )}
     </Container>

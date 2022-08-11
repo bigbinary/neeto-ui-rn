@@ -31,6 +31,7 @@ export const SearchBar = props => {
     onChangeText = () => {},
     onCancel = () => {},
     debounceDelay = 1000,
+    showCancelButton = true,
     ...rest
   } = props;
   const inputRef = useRef();
@@ -55,7 +56,7 @@ export const SearchBar = props => {
 
   const searchInputWidth = searchAnimationController.interpolate({
     inputRange: [0, 1],
-    outputRange: ["100%", "85%"],
+    outputRange: ["100%", showCancelButton ? "85%" : "100%"],
   });
 
   const onCancelHandle = () => {
@@ -105,7 +106,9 @@ export const SearchBar = props => {
           opacity: searchAnimationController,
         }}
       >
-        <Button variant="text" label="Cancel" onPress={onCancelHandle} />
+        {showCancelButton && (
+          <Button variant="text" label="Cancel" onPress={onCancelHandle} />
+        )}
       </Animated.View>
     </Container>
   );
@@ -143,4 +146,8 @@ SearchBar.propTypes = {
    * Method called when the cancel button is pressed.
    */
   onCancel: PropTypes.func,
+  /**
+   * option to hide the cancel button. Default is true
+   */
+  showCancelButton: PropTypes.bool,
 };

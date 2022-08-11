@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
-import { Typography, Container, Touchable, SearchBar } from "@components";
 import Modal from "react-native-modal";
-import Icon from "react-native-remix-icon";
-import { theme } from "../theme";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Fuse from "fuse.js";
+
+import { Typography, Container, Touchable, SearchBar } from "@components";
+import { theme } from "../theme";
+import { FUSE_KEYS } from "../constants";
 
 const Title = ({
   title,
@@ -19,7 +21,6 @@ const Title = ({
   setSearchText,
 }) => {
   let touchY;
-  const [isSearchBarOpen, setSearchBarOpen] = useState(false);
 
   useEffect(() => {
     setSearchText("");
@@ -38,40 +39,30 @@ const Title = ({
         borderRadius={20}
         {...titleContainerStyle}
       >
-        {canSearch && isSearchBarOpen ? null : (
-          <Container flexDirection="row" justifyContent="space-between">
-            {title && (
-              <Typography textStyle="modalHeader" {...titleTextStyle}>
-                {title}
+        <Container mb={16} flexDirection="row" justifyContent="space-between">
+          {title && (
+            <Typography textStyle="modalHeader" {...titleTextStyle}>
+              {title}
+            </Typography>
+          )}
+          {contentType && (
+            <Touchable onPress={hide}>
+              <Typography textStyle="modalHeader" color="font.purple500">
+                Done
               </Typography>
-            )}
-            {contentType && (
-              <Touchable onPress={hide}>
-                <Typography textStyle="modalHeader" color="font.purple600">
-                  Done
-                </Typography>
-              </Touchable>
-            )}
-            {canSearch && !isSearchBarOpen && (
-              <Touchable onPress={() => setSearchBarOpen(true)}>
-                <Icon
-                  name="search-line"
-                  color={theme.colors.background.grey700}
-                />
-              </Touchable>
-            )}
-          </Container>
-        )}
+            </Touchable>
+          )}
+        </Container>
 
-        {canSearch && isSearchBarOpen && (
+        {canSearch && (
           <SearchBar
             placeholder="Search"
             onChangeText={setSearchText}
             onCancel={() => {
-              setSearchBarOpen(false);
               setSearchText("");
             }}
             searchbarProps={{ autoFocus: true }}
+            showCancelButton={false}
           />
         )}
       </Container>
@@ -148,6 +139,16 @@ export const BottomSheet = ({
 }) => {
   const [searchText, setSearchText] = useState("");
 
+  const fuse = new Fuse(data, { keys: FUSE_KEYS, threshold: 0.1 });
+
+  const generateData = () => {
+    if (searchText.trim().length) {
+      return fuse.search(searchText.trim()).map(item => item.item);
+    } else {
+      return data;
+    }
+  };
+
   return (
     <Modal
       style={styles.modalStyle}
@@ -190,15 +191,7 @@ export const BottomSheet = ({
                 ListFooterComponent={children}
                 initialNumToRender={data.length}
                 onScrollBeginDrag={Keyboard.dismiss}
-                data={
-                  searchText
-                    ? data.filter(word =>
-                        word
-                          .toLowerCase()
-                          .includes(searchText.toLocaleLowerCase())
-                      )
-                    : data
-                }
+                data={generateData()}
                 renderItem={({ item, index }) => {
                   return (
                     <ContentRow
@@ -206,10 +199,10 @@ export const BottomSheet = ({
                       key={index}
                       onPress={() => {
                         !contentType && hide();
-                        onItemPress(index);
+                        onItemPress({ index, item });
                       }}
-                      id={index}
-                      label={item}
+                      index={index}
+                      item={item}
                     />
                   );
                 }}
