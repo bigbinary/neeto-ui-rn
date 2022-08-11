@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -148,7 +148,11 @@ const styles = StyleSheet.create({
 
 export const BottomTabBar = ({ state, descriptors, navigation }) => {
   return (
-    <Container flexDirection="row" height={83} bg="background.white">
+    <Container
+      flexDirection="row"
+      height={Platform.OS === "android" ? 63 : 83}
+      bg="background.white"
+    >
       {state.routes.map(({ key, name }, index) => {
         const { options } = descriptors[key];
         const isFocused = state.index === index;
