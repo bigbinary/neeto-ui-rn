@@ -158,10 +158,10 @@ export const Alert = () => {
         justifyContent="center"
         alignItems="center"
         width="90%"
-        padding={20}
-        borderRadius={20}
+        padding={18}
+        borderRadius={8}
       >
-        <Typography fontFamily="sf700" fontSize="l" color="font.grey800">
+        <Typography fontFamily="sf600" fontSize="3xl" color="font.grey800">
           {title}
         </Typography>
         <Container alignItems="center" justifyContent="center">
@@ -169,8 +169,8 @@ export const Alert = () => {
             textAlign="center"
             py={20}
             fontFamily="sf400"
-            fontSize="l"
-            color="font.grey600"
+            fontSize="s"
+            color="font.grey500"
           >
             {description}
           </Typography>
