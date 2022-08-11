@@ -40,6 +40,7 @@ const getStories = () => {
     require("../storybook/stories/Calendar.stories.js"),
     require("../storybook/stories/Card.stories.js"),
     require("../storybook/stories/Carousel.stories.js"),
+    require("../storybook/stories/ChatInput.stories.js"),
     require("../storybook/stories/CheckBox.stories.js"),
     require("../storybook/stories/Chip.stories.js"),
     require("../storybook/stories/Divider.stories.js"),

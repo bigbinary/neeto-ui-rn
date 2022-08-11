@@ -35,3 +35,4 @@ export { Accordion } from "./Accordion";
 export { Calendar } from "./Calendar";
 export { FlashList } from "./FlashList";
 export { BottomTabBar } from "./BottomTabBar";
+export { ChatInput } from "./ChatInput";
