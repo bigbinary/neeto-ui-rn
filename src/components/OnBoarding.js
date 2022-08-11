@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Platform } from "react-native";
 import PropTypes from "prop-types";
 
 import { Button, Carousel, Container, Typography } from "@components";
@@ -98,7 +99,7 @@ export const OnBoarding = ({
         />
       </Container>
 
-      <Container mx={24}>
+      <Container mx={24} mb={Platform.OS === "android" ? 10 : 0}>
         <Button
           label={activeIndex !== slides.length - 1 ? "Next" : "Get Started"}
           onPress={handleOnPress}
