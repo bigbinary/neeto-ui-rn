@@ -38,7 +38,8 @@ export const Calendar = props => {
 
   return (
     <RNCalender
-      key={isCurrentDay}
+      key={selectedDate}
+      current={selectedDate}
       firstDay={1}
       markedDates={{
         [dayjs(selectedDate).format("YYYY-MM-DD")]: {
