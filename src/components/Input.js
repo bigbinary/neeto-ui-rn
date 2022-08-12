@@ -94,6 +94,7 @@ export const Input = props => {
     label,
     value = "",
     onChangeText = () => {},
+    onBlur = () => {},
     errorMessage = null,
     PrefixIcon,
     SuffixIcon,
@@ -210,6 +211,7 @@ export const Input = props => {
               handleFocusBlur(true);
             }}
             onBlur={() => {
+              onBlur();
               handleFocusBlur(false);
             }}
             inputAccessoryViewID={label}
@@ -275,6 +277,10 @@ Input.propTypes = {
    * Func to set the current value.
    */
   onChangeText: PropTypes.func.isRequired,
+  /**
+   * Func which will get trigged onBlur.
+   */
+  onBlur: PropTypes.func,
   /**
    * To display error/info messages
    */
