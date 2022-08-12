@@ -125,7 +125,9 @@ export const theme = {
   ...baseTheme,
   textStyles: {
     defaultTextStyle: {
-      color: baseTheme.colors.font.primary,
+      color: baseTheme.colors.font.grey800,
+      fontSize: baseTheme.fontSizes.s,
+      fontFamily: baseTheme.fonts.sf400,
     },
     header: {
       color: baseTheme.colors.font.primary,
