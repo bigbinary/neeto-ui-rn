@@ -68,6 +68,9 @@ export const Button = props => {
     disabled,
     isLoading,
     loadingText,
+    fontFamily,
+    color,
+    fontSize,
     ...rest
   } = props;
   const theme = useContext(ThemeContext);
@@ -152,9 +155,9 @@ export const Button = props => {
             <Typography
               textAlign="center"
               mx={2}
-              color={getButtonColors().color}
-              fontSize="m"
-              fontFamily={theme.fonts.sf500}
+              color={color || getButtonColors().color}
+              fontSize={fontSize}
+              fontFamily={fontFamily || theme.fonts.sf500}
               {...labelStyle}
             >
               {loadingText}
@@ -167,9 +170,9 @@ export const Button = props => {
           <Typography
             textAlign="center"
             mx={2}
-            color={getButtonColors().color}
-            fontSize="m"
-            fontFamily={theme.fonts.sf500}
+            color={color || getButtonColors().color}
+            fontSize={fontSize}
+            fontFamily={fontFamily || theme.fonts.sf500}
             {...labelStyle}
           >
             {label}
@@ -185,6 +188,7 @@ Button.defaultProps = {
   variant: "solid",
   isLoading: false,
   loadingText: "",
+  fontSize: "m",
 };
 
 Button.propTypes = {
