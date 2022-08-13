@@ -1,7 +1,7 @@
 const defaultColors = {
   white: "#ffffff",
   base: "#4557F8",
-  danger: "#ff6969",
+  danger: "#D95D4E",
   menubackground: "#F6F6FA",
 };
 
@@ -49,7 +49,6 @@ const colors = {
   font: {
     primary: "#2F3941",
     secondary: "#49545C",
-    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...lightBlueVariants,
@@ -61,7 +60,6 @@ const colors = {
     parentView: "#ffffff",
     primary: "#ffffff",
     secondary: "#F6F6FA",
-    danger: "#D95D4E",
     ...defaultColors,
     ...greyVariants,
     ...lightBlueVariants,
@@ -72,7 +70,6 @@ const colors = {
   border: {
     primary: "#E9EBED",
     secondary: "#C2C8CC",
-    danger: "#D95D4E",
     ...greyVariants,
     ...lightBlueVariants,
     ...darkBlueVariant,
