@@ -154,6 +154,11 @@ export const MultiSelect = ({
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
   selectedValue,
+  CreateItemComponent,
+  showCreateOptionLoader,
+  createSearchedOptionLabelStyle,
+  onPressCreateOption,
+  createSearchedOptionContainerStyle,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -357,6 +362,12 @@ export const MultiSelect = ({
         data={options}
         contentType="checkbox"
         ContentRow={CheckBoxContent}
+        showCreateOption={showCreateOption}
+        CreateItemComponent={CreateItemComponent}
+        showCreateOptionLoader={showCreateOptionLoader}
+        createSearchedOptionLabelStyle={createSearchedOptionLabelStyle}
+        onPressCreateOption={onPressCreateOption}
+        createSearchedOptionContainerStyle={createSearchedOptionContainerStyle}
       />
     </Container>
   );
@@ -484,6 +495,10 @@ MultiSelect.propTypes = {
    * To customise empty options placeholder text style.
    */
   createSearchedOptionLabelStyle: PropTypes.object,
+  /**
+   * Component that renders when searched item doesn't exists
+   */
+  CreateItemComponent: PropTypes.node,
 };
 
 MultiSelect.defaultProps = {

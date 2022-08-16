@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { MultiSelect } from "@components";
+import { MultiSelect, Button } from "@components";
 
 const MultiSelectStories = {
   title: "MultiSelect",
@@ -43,14 +43,34 @@ export const MultiSelects = () => {
       value: "option_1",
     },
   ]);
+  const [sData, setSData] = useState(data);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const simulateAPICall = value => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setSData(prev => [...prev, { label: value, value }]);
+      setIsLoading(false);
+    }, 2000);
+  };
 
   return (
     <MultiSelect
-      options={data}
+      options={sData}
       value={selectedOptions}
       onSelect={setSelectedOptions}
       label="Multi Select"
       isSearchable
+      showCreateOption
+      onPressCreateOption={simulateAPICall}
+      showCreateOptionLoader={isLoading}
+      CreateItemComponent={({ searchText }) => (
+        <Button
+          label="Create Tag"
+          onPress={() => simulateAPICall(searchText)}
+        />
+      )}
     />
   );
 };

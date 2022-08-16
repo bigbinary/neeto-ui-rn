@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList, Keyboard } from "react-native";
+import {
+  StyleSheet,
+  FlatList,
+  Keyboard,
+  ActivityIndicator,
+} from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -120,6 +125,13 @@ Title.propTypes = {
  */
 
 export const BottomSheet = ({
+  showCreateOption,
+  CreateItemComponent,
+  showCreateOptionLoader,
+  createSearchedOptionLabelStyle,
+  createOptionLabel,
+  onPressCreateOption,
+  createSearchedOptionContainerStyle,
   data = [],
   title,
   hide,
@@ -211,6 +223,40 @@ export const BottomSheet = ({
                 }}
               />
             )}
+
+            {showCreateOptionLoader ? (
+              <ActivityIndicator
+                size="small"
+                color={theme.colors.background.base}
+              />
+            ) : (
+              !!searchText.trim() &&
+              !generateData().length &&
+              showCreateOption && (
+                <Container>
+                  {CreateItemComponent ? (
+                    <CreateItemComponent searchText={searchText} />
+                  ) : (
+                    <Touchable
+                      height={40}
+                      justifyContent="center"
+                      alignItems="center"
+                      onPress={() => onPressCreateOption(searchText)}
+                      {...createSearchedOptionContainerStyle}
+                    >
+                      <Typography
+                        fontFamily="sf400"
+                        fontSize="s"
+                        color="font.grey"
+                        {...createSearchedOptionLabelStyle}
+                      >
+                        {createOptionLabel || `Create ${searchText} option`}
+                      </Typography>
+                    </Touchable>
+                  )}
+                </Container>
+              )
+            )}
           </Container>
         </Container>
       </SafeAreaView>
@@ -220,6 +266,11 @@ export const BottomSheet = ({
 
 BottomSheet.defaultProps = {
   bg: "background.primary",
+  showCreateOption: false,
+  showCreateOptionLoader: false,
+  createOptionLabel: null,
+  onPressCreateOption: () => {},
+  CreateItemComponent: null,
 };
 
 BottomSheet.propTypes = {
@@ -259,6 +310,34 @@ BottomSheet.propTypes = {
    * To customise title text styles.
    */
   titleTextStyle: PropTypes.object,
+  /**
+   * Show option to create the searched label if not present in the options list
+   */
+  showCreateOption: PropTypes.bool,
+  /**
+   * Show loader while creating a searched option not present in the options list
+   */
+  showCreateOptionLoader: PropTypes.bool,
+  /**
+   * Custom label for creating searched option not present in the options list
+   */
+  createOptionLabel: PropTypes.string,
+  /**
+   * Callback when create searched option is pressed
+   */
+  onPressCreateOption: PropTypes.func,
+  /**
+   * Component that renders when searched item doesn't exists
+   */
+  CreateItemComponent: PropTypes.node,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  createSearchedOptionLabelStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  createSearchedOptionContainerStyle: PropTypes.object,
   /**
    * To support more Modal params.
    */
