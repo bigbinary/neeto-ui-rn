@@ -44,7 +44,8 @@
   "peerDependencies": {
     "react-native-safe-area-context": "^3.3.2",
     "react-native-svg": "*",
-    "react-native-webview": "11.14.4"
+    "react-native-webview": "11.14.4",
+    "react-native-reanimated": "^2.7.0"
   },
   "dependencies": {
     "@react-native-community/hooks": "^2.8.1",
@@ -59,7 +60,6 @@
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
     "react-native-popover-view": "^4.1.0",
-    "react-native-reanimated": "^2.7.0",
     "react-native-remix-icon": "^0.3.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-snap-carousel": "^3.9.1",
