@@ -47,6 +47,7 @@ const width = Dimensions.get("screen").width - 32;
  * ```js
  * import * as React from 'react';
  * import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+ * import { NavigationContainer } from "@react-navigation/native";
  *
  * import { SegmentedTopBar } from '@bigbinary/neetoui-rn';
  *
