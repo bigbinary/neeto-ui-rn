@@ -26,7 +26,7 @@ export { MultiSelect } from "./MultiSelect";
 export { Divider } from "./Divider";
 export { FlatList } from "./FlatList";
 export { ScrollView } from "./ScrollView";
-export { SegmentPicker } from "./SegmentPicker";
+export { SegmentedTopBar } from "./SegmentedTopBar";
 export { ListItem } from "./ListItem";
 export { Carousel } from "./Carousel";
 export { OnBoarding } from "./OnBoarding";

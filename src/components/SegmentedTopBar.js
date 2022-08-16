@@ -9,10 +9,6 @@ import Animated, {
 } from "react-native-reanimated";
 import { Typography, Touchable } from "@components";
 import { theme } from "@theme";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-
-const Tab = createMaterialTopTabNavigator();
 
 const defaultShadowStyle = {
   shadowColor: theme.colors.background.grey800,
@@ -44,52 +40,45 @@ const width = Dimensions.get("screen").width - 32;
  * A Segment Picker component that provides toggling between two or more views.
  *
  * <div class="screenshots">
- *   <img src="screenshots/segmentPicker/segmentpickers.png" />
+ *   <img src="screenshots/segmentedTopBar/segmentedTopBars.png" />
  * </div>
  *
  *   ## Usage
  * ```js
  * import * as React from 'react';
- * import { Container, SegmentPicker } from '@bigbinary/neetoui-rn';
+ * import { SegmentedTopBar } from '@bigbinary/neetoui-rn';
  *
  * export default function Main(){
  *
  *  return (
- *    <Container flex={1} alignItems="center" justifyContent="center">
- *      <Container my={3}>
- *        <SegmentPicker
- *          tabs={[{ name: "On", Component: CustomComponent }, { name: "Off", Component: CustomComponent }]}
+ *    <NavigationContainer>
+ *      <Tab.Navigator tabBar={props => <SegmentedTopBar {...props} />} >
+ *        <Tab.Screen
+ *          name="Home"
+ *          component={HomeScreen}
  *        />
- *      </Container>
- *    </Container>
+ *
+ *        <Tab.Screen
+ *          name="Settings"
+ *          component={SettingsScreen}
+ *        />
+ *      </Tab.Navigator>
+ *    </NavigationContainer>
  *  );
  * }
  * ```
  */
 
-export const SegmentPicker = segmentProps => {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator tabBar={props => <TabBar {...segmentProps} {...props} />}>
-        {segmentProps.tabs.map(({ name, Component }, index) => {
-          return <Tab.Screen key={index} name={name} component={Component} />;
-        })}
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-};
-
-const TabBar = ({
-  activeTextStyle,
-  activeSegmentStyle,
-  height,
-  inactiveTextStyle,
+export const SegmentedTopBar = ({
+  state: { routes, index },
   inactiveSegmentStyle,
+  activeSegmentStyle,
+  activeTextStyle,
+  inactiveTextStyle,
   navigation,
-  state: { index = 0 },
-  tabs,
+  height,
 }) => {
-  const translateValue = (width - 4) / tabs?.length;
+  const translateValue = (width - 4) / routes?.length;
   const tabTranslateValue = useSharedValue(0);
 
   useEffect(() => {
@@ -117,12 +106,12 @@ const TabBar = ({
           defaultShadowStyle,
           StyleSheet.absoluteFill,
           {
-            width: width / tabs?.length,
+            width: width / routes?.length,
           },
           tabTranslateAnimatedStyles,
         ]}
       />
-      {tabs.map(({ name }, i) => {
+      {routes.map(({ name }, i) => {
         const currentIndexTextStyle =
           index === index + 1 ? activeTextStyle : inactiveTextStyle;
         return (
@@ -177,7 +166,7 @@ const styles = StyleSheet.create({
   },
 });
 
-TabBar.propTypes = {
+SegmentedTopBar.propTypes = {
   /**
    * Array of texts for the labels of each Segment/Tab.
    */
@@ -206,7 +195,7 @@ TabBar.propTypes = {
   height: PropTypes.number,
 };
 
-TabBar.defaultProps = {
+SegmentedTopBar.defaultProps = {
   tabs: [],
   height: 32,
 };
