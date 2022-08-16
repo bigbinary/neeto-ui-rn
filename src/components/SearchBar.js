@@ -56,7 +56,7 @@ export const SearchBar = props => {
 
   const searchInputWidth = searchAnimationController.interpolate({
     inputRange: [0, 1],
-    outputRange: ["100%", showCancelButton ? "85%" : "100%"],
+    outputRange: ["100%", showCancelButton ? "80%" : "100%"],
   });
 
   const onCancelHandle = () => {
@@ -103,6 +103,7 @@ export const SearchBar = props => {
       </Animated.View>
       <Animated.View
         style={{
+          marginLeft: 17,
           opacity: searchAnimationController,
         }}
       >
