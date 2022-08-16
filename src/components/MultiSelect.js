@@ -283,7 +283,6 @@ export const MultiSelect = ({
           borderColor={showDropdown ? "border.base" : "border.grey400"}
           p={multipleOptionsSelected ? 1 : 2}
           pr={2}
-          maxHeight={120}
           {...inputContainerStyle}
           {...rest}
         >
