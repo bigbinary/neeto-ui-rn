@@ -153,6 +153,7 @@ export const MultiSelect = ({
   itemContainerStyle,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
+  selectedValue,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -206,6 +207,7 @@ export const MultiSelect = ({
     const index = value.findIndex(
       (data, index) => getValue(data, index) === getValue(item)
     );
+
     if (index === -1) {
       oldData.push(item);
     } else {
@@ -219,7 +221,7 @@ export const MultiSelect = ({
       (data, i) => getValue(data, i) === getValue(item, index)
     );
     return (
-      !!label && (
+      !!item?.label && (
         <Container py={12}>
           <CheckBox
             checked={itemIndex !== -1}
@@ -259,7 +261,6 @@ export const MultiSelect = ({
   }, [showDropdown, dropdownHeight]);
 
   CheckBoxContent.propTypes = {
-    label: PropTypes.string,
     onPress: PropTypes.func,
     item: PropTypes.object,
     index: PropTypes.number,
@@ -346,26 +347,17 @@ export const MultiSelect = ({
 
       <BottomSheet
         title={label}
-        onItemPress={index => {
-          handleCheckbox(index);
+        onItemPress={({ item }) => {
+          handleCheckbox(item);
+          selectedValue(item);
         }}
         isVisible={showDropdown}
         hide={() => setShowDropdown(false)}
-      >
-        <Container>
-          {options.map((item, index) => {
-            return (
-              <Container justifyContent="center" key={index}>
-                <CheckBoxContent
-                  index={index}
-                  item={item}
-                  onPress={() => handleCheckbox(item)}
-                />
-              </Container>
-            );
-          })}
-        </Container>
-      </BottomSheet>
+        canSearch={isSearchable}
+        data={options}
+        contentType="checkbox"
+        ContentRow={CheckBoxContent}
+      />
     </Container>
   );
 };
@@ -383,7 +375,7 @@ MultiSelect.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
     })
-  ).isRequired,
+  ),
   /**
    * The text to be displayed if no option is selected.
    */
