@@ -137,12 +137,15 @@ export const Input = props => {
       useNativeDriver: false,
     }).start();
 
-    inputRef.current &&
-      inputRef.current.setNativeProps({
-        style: {
-          top: isFocused ? 10 : 0,
-        },
-      });
+    {
+      !!label &&
+        inputRef.current &&
+        inputRef.current.setNativeProps({
+          style: {
+            top: isFocused ? 10 : 0,
+          },
+        });
+    }
   };
 
   const handleStyles = useCallback(isFocused => {
@@ -170,8 +173,10 @@ export const Input = props => {
   };
 
   const handleFocusBlur = isFocused => {
-    if (!value) handleLabelAnimation(isFocused);
-    if (!noBorder) handleStyles(isFocused);
+    if (label) {
+      if (!value) handleLabelAnimation(isFocused);
+      if (!noBorder) handleStyles(isFocused);
+    }
   };
 
   return (
@@ -185,6 +190,7 @@ export const Input = props => {
         flexDirection="row"
         justifyContent="space-between"
         {...(!rest.inputProps?.multiline && { height: 58 })}
+        {...rest.containerProps}
       >
         {!!PrefixIcon && (
           <View pl={2}>
@@ -192,14 +198,16 @@ export const Input = props => {
           </View>
         )}
         <View flex={1} left={10}>
-          <AnimatedLabel
-            color={disabled ? "font.grey400" : "font.grey600"}
-            position="absolute"
-            zIndex={1}
-            style={labelStyles}
-          >
-            {label}
-          </AnimatedLabel>
+          {!!label && (
+            <AnimatedLabel
+              color={disabled ? "font.grey400" : "font.grey600"}
+              position="absolute"
+              zIndex={1}
+              style={labelStyles}
+            >
+              {label}
+            </AnimatedLabel>
+          )}
           <TextInput
             ref={inputRef}
             value={value}
@@ -305,6 +313,10 @@ Input.propTypes = {
    * Takes a boolean value based on which border is hidden/shown.
    */
   noBorder: PropTypes.bool,
+  /**
+   * Used to pass custom styles to the wrapper component.
+   */
+  containerProps: PropTypes.object,
 };
 
 export const styles = StyleSheet.create({
