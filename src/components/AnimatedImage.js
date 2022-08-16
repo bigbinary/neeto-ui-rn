@@ -41,6 +41,7 @@ export const AnimatedImage = ({
   imageHeight = 139,
   imageWidth = 255,
   imageUrl,
+  ...rest
 }) => {
   const opacity = useSharedValue(0);
   const [isImageLoaded, setImageLoaded] = useState(false);
@@ -68,7 +69,6 @@ export const AnimatedImage = ({
       >
         <Animated.Image
           style={profileImageStyle}
-          resizeMode="cover"
           source={{
             uri: imageUrl,
             headers: {
@@ -81,11 +81,12 @@ export const AnimatedImage = ({
             setImageLoaded(true);
             opacity.value = 1;
           }}
+          {...rest}
         />
 
         {!isImageLoaded && (
           <Container position="absolute">
-            <ImagePlaceholder />
+            <ImagePlaceholder width={imageWidth} height={imageHeight} />
           </Container>
         )}
       </Container>

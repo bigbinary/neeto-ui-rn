@@ -9,7 +9,7 @@ const AnimatedImageStories = {
   component: AnimatedImage,
   args: {
     imageUrl: imageUrl,
-    imageHeight: 139,
+    imageHeight: 255,
     imageWidth: 255,
   },
 };
@@ -30,6 +30,7 @@ export const AnimatedImages = () => {
         imageHeight={139}
         imageWidth={255}
         imageUrl="https://picsum.photos/255/139"
+        resizeMode="cover"
       />
       <Typography fontSize="xl">Image with Placeholder</Typography>
     </Container>
