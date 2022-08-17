@@ -184,8 +184,7 @@ export const BottomSheet = ({
           bg={bg}
           borderTopRightRadius={20}
           borderTopLeftRadius={20}
-          px={24}
-          py={24}
+          p={16}
           {...rest}
         >
           <Container>
