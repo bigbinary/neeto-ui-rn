@@ -85,8 +85,8 @@ export const AnimatedImage = ({
         />
 
         {!isImageLoaded && (
-          <Container position="absolute">
-            <ImagePlaceholder width={imageWidth} height={imageHeight} />
+          <Container position="absolute" alignItems="center" justifyContent="center" width={imageWidth} height={imageHeight}>
+            <ImagePlaceholder  />
           </Container>
         )}
       </Container>
