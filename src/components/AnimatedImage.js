@@ -87,11 +87,7 @@ export const AnimatedImage = ({
         />
 
         {!isImageLoaded && (
-          <Container
-            position="absolute"
-            alignItems="center"
-            justifyContent="center"
-          >
+          <Container position="absolute">
             <ImagePlaceholder />
             <Container position="absolute" bottom={15} right={15}>
               <ActivityIndicator
