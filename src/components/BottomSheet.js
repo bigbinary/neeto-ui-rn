@@ -66,7 +66,6 @@ const Title = ({
             onCancel={() => {
               setSearchText("");
             }}
-            searchbarProps={{ autoFocus: true }}
             showCancelButton={false}
           />
         )}
