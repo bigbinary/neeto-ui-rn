@@ -6,27 +6,28 @@ import Animated, {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
-  withDelay,
   withTiming,
 } from "react-native-reanimated";
 import PropTypes from "prop-types";
 import ContentLoader, { Rect } from "react-content-loader/native";
 import { ThemeContext } from "styled-components/native";
-import { RefreshControl } from "react-native";
+import { Dimensions, RefreshControl } from "react-native";
 
 import { useRefreshByUser } from "@hooks";
 
+const { width } = Dimensions.get("screen");
 const Placeholder = () => {
   const theme = useContext(ThemeContext);
   return (
     <ContentLoader
-      height={68}
+      marginHorizontal={15}
+      height="60"
       width={400}
       viewBox="0 0 400 50"
       backgroundColor={theme.colors.lightgrey}
       foregroundColor={theme.colors.grey300}
     >
-      <Rect x="0" y="8" width={400} height="70" />
+      <Rect x="0" rx="5" ry="5" width={width - 30} height="50" />
     </ContentLoader>
   );
 };
@@ -38,6 +39,7 @@ export const FlashList = ({
   isLoading = false,
   data = [],
   onRefresh = () => {},
+  onEndReached = () => {},
   keyExtractor,
   ...rest
 }) => {
@@ -47,10 +49,11 @@ export const FlashList = ({
 
   return (
     <FadeInFlatList
+      key={isLoading}
       durationPerItem={durationPerItem}
       SkeletonComponent={SkeletonComponent}
       isLoading={isLoading}
-      extraData={{ isLoading }}
+      extraData={{ isLoading, placeHolderItemCount }}
       data={isLoading ? dummyData : data}
       refreshControl={
         onRefresh && (
@@ -60,19 +63,20 @@ export const FlashList = ({
           />
         )
       }
+      placeHolderItemCount={placeHolderItemCount}
       keyExtractor={(item, index) => {
         return isLoading || !keyExtractor
           ? index.toString()
           : keyExtractor(item, index);
       }}
       {...rest}
+      onEndReached={isLoading ? undefined : onEndReached}
     />
   );
 };
 
 const FadeInFlatList = ({
   renderItem: originalRenderItem,
-  initialDelay = 250,
   durationPerItem = 200,
   isLoading = false,
   SkeletonComponent,
@@ -82,15 +86,13 @@ const FadeInFlatList = ({
 
   const FadeInComponent = useCallback(
     ({ index, children }) => {
-      const inputRange =
-        index === 0 ? [-1, 0, 1, 2] : [index - 1, index, index + 1, index + 2];
-
+      const inputRange = [index - 1, index, index + 1, index + 2];
       const animatedStyles = useAnimatedStyle(() => {
         return {
           opacity: interpolate(
             value.value,
             inputRange,
-            [0, 0, 1, 1],
+            [0, 0.6, 1, 1],
             Extrapolation.CLAMP
           ),
           transform: [
@@ -112,37 +114,33 @@ const FadeInFlatList = ({
     []
   );
 
-  const Item = useCallback(
-    ({ item }) => {
-      return item?.extraData?.isLoading ? (
-        <FadeInComponent index={item.index}>
-          {SkeletonComponent || <Placeholder />}
-        </FadeInComponent>
-      ) : item.index === 0 ? (
-        originalRenderItem(item)
-      ) : (
-        <FadeInComponent index={item.index}>
-          {originalRenderItem(item)}
-        </FadeInComponent>
-      );
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  const Item = ({ item }) => {
+    return item?.extraData?.isLoading ? (
+      <FadeInComponent index={item.index}>
+        {SkeletonComponent || <Placeholder />}
+      </FadeInComponent>
+    ) : (
+      <FadeInComponent index={item.index}>
+        {originalRenderItem(item)}
+      </FadeInComponent>
+    );
+  };
 
-  const renderItem = useCallback(item => {
-    return <Item item={item} />;
-  }, []);
+  const renderItem = item => {
+    return isLoading || item.index < props.placeHolderItemCount ? (
+      <Item item={item} />
+    ) : (
+      originalRenderItem(item)
+    );
+  };
 
   useEffect(() => {
     value.value = 0;
-    value.value = withDelay(
-      initialDelay,
-      withTiming(props.data.length + 1, {
-        duration: props.data.length * durationPerItem,
-      })
-    );
-  }, [props.data.length, durationPerItem, initialDelay, value, isLoading]);
+    value.value = withTiming(props.data.length + 1, {
+      duration: props.data.length * durationPerItem,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [durationPerItem, value, isLoading]);
 
   return <ShopifyFlashList {...props} renderItem={renderItem} />;
 };
@@ -154,5 +152,6 @@ FlashList.propTypes = {
   isLoading: PropTypes.bool,
   placeHolderItemCount: PropTypes.number,
   onRefresh: PropTypes.func,
+  onEndReached: PropTypes.func,
   keyExtractor: PropTypes.func,
 };
