@@ -159,6 +159,7 @@ export const MultiSelect = ({
   createSearchedOptionLabelStyle,
   onPressCreateOption,
   createSearchedOptionContainerStyle,
+  onDonePress,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -355,6 +356,7 @@ export const MultiSelect = ({
           handleCheckbox(item);
           selectedValue(item);
         }}
+        onDonePress={onDonePress}
         isVisible={showDropdown}
         hide={() => setShowDropdown(false)}
         canSearch={isSearchable}
@@ -422,6 +424,10 @@ MultiSelect.propTypes = {
    * Toggle Search bar within the options dropdown to search through the options.
    */
   isSearchable: PropTypes.bool,
+  /**
+   * Callback that will be called on Done button press
+   */
+  onDonePress: PropTypes.func,
   /**
    * Show option to create the searched label if not present in the options list
    */
@@ -515,4 +521,5 @@ MultiSelect.defaultProps = {
   showCreateOptionLoader: false,
   createOptionLabel: null,
   onPressCreateOption: () => {},
+  onDonePress: () => {},
 };

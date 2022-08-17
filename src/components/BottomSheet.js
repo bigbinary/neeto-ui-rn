@@ -24,6 +24,7 @@ const Title = ({
   contentType,
   canSearch,
   setSearchText,
+  onDonePress,
 }) => {
   let touchY;
 
@@ -51,7 +52,12 @@ const Title = ({
             </Typography>
           )}
           {contentType && (
-            <Touchable onPress={hide}>
+            <Touchable
+              onPress={() => {
+                hide();
+                onDonePress();
+              }}
+            >
               <Typography textStyle="modalHeader" color="font.purple500">
                 Done
               </Typography>
@@ -84,6 +90,7 @@ Title.propTypes = {
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
   setSearchText: PropTypes.func,
+  onDonePress: PropTypes.func,
 };
 
 /**
@@ -146,6 +153,7 @@ export const BottomSheet = ({
   ContentRow,
   contentType,
   canSearch,
+  onDonePress,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -194,6 +202,7 @@ export const BottomSheet = ({
                 canSearch={canSearch}
                 searchText={searchText}
                 setSearchText={setSearchText}
+                onDonePress={onDonePress}
               />
             )}
 
@@ -270,6 +279,7 @@ BottomSheet.defaultProps = {
   createOptionLabel: null,
   onPressCreateOption: () => {},
   CreateItemComponent: null,
+  onDonePress: () => {},
 };
 
 BottomSheet.propTypes = {
@@ -297,6 +307,10 @@ BottomSheet.propTypes = {
    * Index of selected Item.
    */
   selectedItemIndex: PropTypes.number,
+  /**
+   * Callback that will be called on Done button press
+   */
+  onDonePress: PropTypes.func,
   /**
    * Background color.
    */
