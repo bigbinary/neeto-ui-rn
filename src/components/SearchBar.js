@@ -1,11 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
-import { TextInput, Animated, StyleSheet } from "react-native";
+import { Animated, StyleSheet } from "react-native";
+import {
+  flexbox,
+  space,
+  border,
+  buttonStyle,
+  typography,
+  color,
+} from "styled-system";
+import styled from "styled-components/native";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 
 import { Container, Button } from "@components";
 import { useDebounce } from "@hooks";
 import { theme } from "@theme";
+
+const TextInput = styled.TextInput`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${buttonStyle}
+  ${typography}
+  ${color}
+`;
 
 /**
  * SearchBars are used to search or filter items.
