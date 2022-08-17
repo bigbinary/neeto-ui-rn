@@ -137,15 +137,13 @@ export const Input = props => {
       useNativeDriver: false,
     }).start();
 
-    {
-      !!label &&
-        inputRef.current &&
-        inputRef.current.setNativeProps({
-          style: {
-            top: isFocused ? 10 : 0,
-          },
-        });
-    }
+    !!label &&
+      inputRef.current &&
+      inputRef.current.setNativeProps({
+        style: {
+          top: isFocused ? 10 : 0,
+        },
+      });
   };
 
   const handleStyles = useCallback(isFocused => {
