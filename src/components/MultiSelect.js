@@ -1,22 +1,22 @@
-import React, { useState, useContext, useEffect } from "react";
-import Icon from "react-native-remix-icon";
+import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-  Easing,
-  runOnJS,
-} from "react-native-reanimated";
 import {
   ActivityIndicator,
-  TouchableWithoutFeedback,
   Keyboard,
+  TouchableWithoutFeedback,
 } from "react-native";
-import { ThemeContext } from "styled-components/native";
 import { ScrollView } from "react-native-gesture-handler";
+import { useSharedValue } from "react-native-reanimated";
+import Icon from "react-native-remix-icon";
+import { ThemeContext } from "styled-components/native";
 
-import { Container, Input, Touchable, Typography, Card } from "@components";
+import {
+  BottomSheet,
+  CheckBox,
+  Container,
+  Touchable,
+  Typography,
+} from "@components";
 
 const MultiSelectItem = ({
   label,
@@ -25,14 +25,13 @@ const MultiSelectItem = ({
   multiSelectedItemLabelStyle,
 }) => (
   <Container
-    borderWidth={1}
-    borderColor="border.base"
-    bg="background.grey100"
-    borderRadius={2}
+    bg="background.secondary"
+    borderRadius={12}
     flexDirection="row"
     alignItems="center"
     justifyContent="space-between"
-    p={1}
+    px={2}
+    py={1}
     m={1}
     {...multiSelectedItemContainerStyle}
   >
@@ -40,13 +39,13 @@ const MultiSelectItem = ({
       fontFamily="sf400"
       fontSize="s"
       mr={2}
-      maxWidth="90%"
+      color="font.grey800"
       {...multiSelectedItemLabelStyle}
     >
       {label}
     </Typography>
     <TouchableWithoutFeedback onPress={onUnselect}>
-      <Icon name="ri-close-line" size="20" color="grey" />
+      <Icon name="ri-close-line" size="20" color="grey800" />
     </TouchableWithoutFeedback>
   </Container>
 );
@@ -140,32 +139,27 @@ export const MultiSelect = ({
   label,
   value,
   placeholder,
-  emptyOptionsPlaceholder,
   labelExtractor,
   valueExtractor,
   onSelect,
-  selectedValue,
   deletedValue,
   isLoading,
   isSearchable,
   showCreateOption,
-  showCreateOptionLoader,
-  createOptionLabel,
-  onPressCreateOption,
   labelStyle,
   containerStyle,
   inputContainerStyle,
   dropdownContainerStyle,
   itemContainerStyle,
-  itemLabelStyle,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
-  searchInputContainerStyle,
-  searchInputStyle,
-  emptyOptionsContainerStyle,
-  emptyOptionsLabelStyle,
-  createSearchedOptionContainerStyle,
+  selectedValue,
+  CreateItemComponent,
+  showCreateOptionLoader,
   createSearchedOptionLabelStyle,
+  onPressCreateOption,
+  createSearchedOptionContainerStyle,
+  onDonePress,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -210,22 +204,41 @@ export const MultiSelect = ({
         ? emptySearchedOptionsHeight
         : 0);
 
-  const animatedStyles = useAnimatedStyle(() => {
-    return {
-      height: withTiming(
-        dropdownAnimatedHeight.value,
-        {
-          duration: 100,
-          easing: Easing.ease,
-        },
-        () => {
-          if (dropdownAnimatedHeight.value === 0) {
-            runOnJS(setShowDropdown)(false);
-          }
-        }
-      ),
-    };
-  }, []);
+  const getValue = (item, index) => {
+    return item?.value || valueExtractor(item, index);
+  };
+
+  const handleCheckbox = item => {
+    const oldData = [...value];
+    const index = value.findIndex(
+      (data, index) => getValue(data, index) === getValue(item)
+    );
+
+    if (index === -1) {
+      oldData.push(item);
+    } else {
+      oldData.splice(index, 1);
+    }
+    onSelect(oldData);
+  };
+
+  const CheckBoxContent = ({ onPress, item, index }) => {
+    const itemIndex = value.findIndex(
+      (data, i) => getValue(data, i) === getValue(item, index)
+    );
+    return (
+      !!item?.label && (
+        <Container py={12}>
+          <CheckBox
+            checked={itemIndex !== -1}
+            onSelect={onPress}
+            // checkboxContainerProp={containerStyle}
+            label={item?.label || labelExtractor(item, index)}
+          />
+        </Container>
+      )
+    );
+  };
 
   const handleOpenDropdown = () => {
     Keyboard.dismiss();
@@ -246,11 +259,6 @@ export const MultiSelect = ({
     deletedValue(item);
   };
 
-  const handleSelection = item => {
-    onSelect([...value, item]);
-    selectedValue(item);
-  };
-
   useEffect(() => {
     if (showDropdown) {
       dropdownAnimatedHeight.value = dropdownHeight;
@@ -258,168 +266,110 @@ export const MultiSelect = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showDropdown, dropdownHeight]);
 
+  CheckBoxContent.propTypes = {
+    onPress: PropTypes.func,
+    item: PropTypes.object,
+    index: PropTypes.number,
+  };
+
   return (
     <Container {...containerStyle}>
-      <Typography
-        fontFamily="sf400"
-        mb={1}
-        fontSize="s"
-        color="font.base"
-        {...labelStyle}
-      >
-        {label}
-      </Typography>
       <TouchableWithoutFeedback
         disabled={isLoading}
         onPress={handleOpenDropdown}
       >
         <Container
+          borderRadius={12}
           borderWidth={1}
-          borderColor="border.grey400"
-          flexDirection="row"
-          justifyContent="space-between"
-          alignItems="center"
+          borderColor={showDropdown ? "border.base" : "border.grey400"}
           p={multipleOptionsSelected ? 1 : 2}
           pr={2}
-          maxHeight={120}
           {...inputContainerStyle}
           {...rest}
         >
-          {!multipleOptionsSelected && (
-            <Typography fontFamily="sf400" fontSize="s" color="font.grey">
-              {!multipleOptionsSelected && placeholder}
-            </Typography>
-          )}
-          {multipleOptionsSelected && (
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <Container
-                flexWrap="wrap"
-                flexDirection="row"
-                maxWidth="85%"
-                onStartShouldSetResponder={() => true}
-              >
-                {value?.map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  return (
-                    <MultiSelectItem
-                      key={index}
-                      label={optionLabel}
-                      onUnselect={() => handleUnselection(item)}
-                      multiSelectedItemContainerStyle={
-                        multiSelectedItemContainerStyle
-                      }
-                      multiSelectedItemLabelStyle={multiSelectedItemLabelStyle}
-                    />
-                  );
-                })}
-              </Container>
-            </ScrollView>
-          )}
-          {isLoading ? (
-            <ActivityIndicator
-              size="small"
-              color={theme.colors.background.base}
-            />
-          ) : (
-            <Icon
-              name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-              size="20"
-              color="grey"
-            />
-          )}
+          <Typography
+            fontFamily="sf400"
+            mb={1}
+            fontSize="xs"
+            color="font.grey600"
+            ml={1}
+            {...labelStyle}
+          >
+            {label}
+          </Typography>
+          <Container
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            {!multipleOptionsSelected && (
+              <Typography fontFamily="sf400" fontSize="s" color="font.grey">
+                {!multipleOptionsSelected && placeholder}
+              </Typography>
+            )}
+            {multipleOptionsSelected && (
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <Container
+                  flexWrap="wrap"
+                  flexDirection="row"
+                  maxWidth="85%"
+                  onStartShouldSetResponder={() => true}
+                >
+                  {value?.map((item, index) => {
+                    const optionLabel = labelExtractor(item, index);
+                    return (
+                      <MultiSelectItem
+                        key={index}
+                        label={optionLabel}
+                        onUnselect={() => handleUnselection(item)}
+                        multiSelectedItemContainerStyle={
+                          multiSelectedItemContainerStyle
+                        }
+                        multiSelectedItemLabelStyle={
+                          multiSelectedItemLabelStyle
+                        }
+                      />
+                    );
+                  })}
+                </Container>
+              </ScrollView>
+            )}
+            {isLoading ? (
+              <ActivityIndicator
+                size="small"
+                color={theme.colors.background.base}
+              />
+            ) : (
+              <Icon
+                name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                size="20"
+                color="grey"
+              />
+            )}
+          </Container>
         </Container>
       </TouchableWithoutFeedback>
-      {showDropdown && (
-        <Container overflow="hidden">
-          <Animated.View style={animatedStyles}>
-            <Card
-              bg="background.white"
-              borderWidth={1}
-              borderColor="border.grey400"
-              maxHeight={dropdownHeight}
-              {...dropdownContainerStyle}
-            >
-              {isSearchable && (
-                <Container p={1} {...searchInputContainerStyle}>
-                  <Input
-                    placeholder="Search"
-                    onChangeText={setSearchQuery}
-                    fontSize="s"
-                    // eslint-disable-next-line react-native/no-inline-styles
-                    containerStyles={{
-                      height: searchInputHeight,
-                      justifyContent: "center",
-                    }}
-                    {...searchInputStyle}
-                  />
-                </Container>
-              )}
-              {isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption) && (
-                <Container
-                  height={emptyOptionsPlaceholderHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  {...emptyOptionsContainerStyle}
-                >
-                  <Typography
-                    fontFamily="sf400"
-                    fontSize="s"
-                    color="font.grey"
-                    {...emptyOptionsLabelStyle}
-                  >
-                    {emptyOptionsPlaceholder || "No Options"}
-                  </Typography>
-                </Container>
-              )}
 
-              {isSearchedOptionsEmpty && showCreateOption && (
-                <Touchable
-                  height={emptySearchedOptionsHeight}
-                  justifyContent="center"
-                  alignItems="center"
-                  onPress={() => onPressCreateOption(searchQuery)}
-                  {...createSearchedOptionContainerStyle}
-                >
-                  {showCreateOptionLoader ? (
-                    <ActivityIndicator
-                      size="small"
-                      color={theme.colors.background.base}
-                    />
-                  ) : (
-                    <Typography
-                      fontFamily="sf400"
-                      fontSize="s"
-                      color="font.grey"
-                      {...createSearchedOptionLabelStyle}
-                    >
-                      {createOptionLabel || `Create ${searchQuery} option`}
-                    </Typography>
-                  )}
-                </Touchable>
-              )}
-              {/* Animation not working without this hidden input */}
-              <Container height={0}>
-                <Input />
-              </Container>
-              <ScrollView>
-                {filteredOptions.map((item, index) => {
-                  const optionLabel = labelExtractor(item, index);
-                  return (
-                    <DropdownItem
-                      key={index}
-                      label={optionLabel}
-                      onPress={() => handleSelection(item)}
-                      itemContainerStyle={itemContainerStyle}
-                      defaultDropdownItemHeight={defaultDropdownItemHeight}
-                      itemLabelStyle={itemLabelStyle}
-                    />
-                  );
-                })}
-              </ScrollView>
-            </Card>
-          </Animated.View>
-        </Container>
-      )}
+      <BottomSheet
+        title={label}
+        onItemPress={({ item }) => {
+          handleCheckbox(item);
+          selectedValue(item);
+        }}
+        onDonePress={onDonePress}
+        isVisible={showDropdown}
+        hide={() => setShowDropdown(false)}
+        canSearch={isSearchable}
+        data={options}
+        contentType="checkbox"
+        ContentRow={CheckBoxContent}
+        showCreateOption={showCreateOption}
+        CreateItemComponent={CreateItemComponent}
+        showCreateOptionLoader={showCreateOptionLoader}
+        createSearchedOptionLabelStyle={createSearchedOptionLabelStyle}
+        onPressCreateOption={onPressCreateOption}
+        createSearchedOptionContainerStyle={createSearchedOptionContainerStyle}
+      />
     </Container>
   );
 };
@@ -437,15 +387,11 @@ MultiSelect.propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
     })
-  ).isRequired,
+  ),
   /**
    * The text to be displayed if no option is selected.
    */
   placeholder: PropTypes.string,
-  /**
-   * The text to be displayed if no options are provided.
-   */
-  emptyOptionsPlaceholder: PropTypes.string,
   /**
    * Use custom key as label.
    */
@@ -478,6 +424,10 @@ MultiSelect.propTypes = {
    * Toggle Search bar within the options dropdown to search through the options.
    */
   isSearchable: PropTypes.bool,
+  /**
+   * Callback that will be called on Done button press
+   */
+  onDonePress: PropTypes.func,
   /**
    * Show option to create the searched label if not present in the options list
    */
@@ -550,12 +500,15 @@ MultiSelect.propTypes = {
    * To customise empty options placeholder text style.
    */
   createSearchedOptionLabelStyle: PropTypes.object,
+  /**
+   * Component that renders when searched item doesn't exists
+   */
+  CreateItemComponent: PropTypes.node,
 };
 
 MultiSelect.defaultProps = {
   label: null,
   placeholder: "Select Option",
-  emptyOptionsPlaceholder: null,
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
@@ -568,4 +521,5 @@ MultiSelect.defaultProps = {
   showCreateOptionLoader: false,
   createOptionLabel: null,
   onPressCreateOption: () => {},
+  onDonePress: () => {},
 };

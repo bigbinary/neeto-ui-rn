@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList, Keyboard } from "react-native";
+import {
+  StyleSheet,
+  FlatList,
+  Keyboard,
+  ActivityIndicator,
+} from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -19,6 +24,7 @@ const Title = ({
   contentType,
   canSearch,
   setSearchText,
+  onDonePress,
 }) => {
   let touchY;
 
@@ -46,7 +52,12 @@ const Title = ({
             </Typography>
           )}
           {contentType && (
-            <Touchable onPress={hide}>
+            <Touchable
+              onPress={() => {
+                hide();
+                onDonePress();
+              }}
+            >
               <Typography textStyle="modalHeader" color="font.purple500">
                 Done
               </Typography>
@@ -61,7 +72,6 @@ const Title = ({
             onCancel={() => {
               setSearchText("");
             }}
-            searchbarProps={{ autoFocus: true }}
             showCancelButton={false}
           />
         )}
@@ -80,6 +90,7 @@ Title.propTypes = {
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
   setSearchText: PropTypes.func,
+  onDonePress: PropTypes.func,
 };
 
 /**
@@ -120,6 +131,13 @@ Title.propTypes = {
  */
 
 export const BottomSheet = ({
+  showCreateOption,
+  CreateItemComponent,
+  showCreateOptionLoader,
+  createSearchedOptionLabelStyle,
+  createOptionLabel,
+  onPressCreateOption,
+  createSearchedOptionContainerStyle,
   data = [],
   title,
   hide,
@@ -135,6 +153,7 @@ export const BottomSheet = ({
   ContentRow,
   contentType,
   canSearch,
+  onDonePress,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -183,6 +202,7 @@ export const BottomSheet = ({
                 canSearch={canSearch}
                 searchText={searchText}
                 setSearchText={setSearchText}
+                onDonePress={onDonePress}
               />
             )}
 
@@ -211,6 +231,40 @@ export const BottomSheet = ({
                 }}
               />
             )}
+
+            {showCreateOptionLoader ? (
+              <ActivityIndicator
+                size="small"
+                color={theme.colors.background.base}
+              />
+            ) : (
+              !!searchText.trim() &&
+              !generateData().length &&
+              showCreateOption && (
+                <Container>
+                  {CreateItemComponent ? (
+                    <CreateItemComponent searchText={searchText} />
+                  ) : (
+                    <Touchable
+                      height={40}
+                      justifyContent="center"
+                      alignItems="center"
+                      onPress={() => onPressCreateOption(searchText)}
+                      {...createSearchedOptionContainerStyle}
+                    >
+                      <Typography
+                        fontFamily="sf400"
+                        fontSize="s"
+                        color="font.grey"
+                        {...createSearchedOptionLabelStyle}
+                      >
+                        {createOptionLabel || `Create ${searchText} option`}
+                      </Typography>
+                    </Touchable>
+                  )}
+                </Container>
+              )
+            )}
           </Container>
         </Container>
       </SafeAreaView>
@@ -220,6 +274,12 @@ export const BottomSheet = ({
 
 BottomSheet.defaultProps = {
   bg: "background.primary",
+  showCreateOption: false,
+  showCreateOptionLoader: false,
+  createOptionLabel: null,
+  onPressCreateOption: () => {},
+  CreateItemComponent: null,
+  onDonePress: () => {},
 };
 
 BottomSheet.propTypes = {
@@ -248,6 +308,10 @@ BottomSheet.propTypes = {
    */
   selectedItemIndex: PropTypes.number,
   /**
+   * Callback that will be called on Done button press
+   */
+  onDonePress: PropTypes.func,
+  /**
    * Background color.
    */
   bg: PropTypes.string,
@@ -259,6 +323,34 @@ BottomSheet.propTypes = {
    * To customise title text styles.
    */
   titleTextStyle: PropTypes.object,
+  /**
+   * Show option to create the searched label if not present in the options list
+   */
+  showCreateOption: PropTypes.bool,
+  /**
+   * Show loader while creating a searched option not present in the options list
+   */
+  showCreateOptionLoader: PropTypes.bool,
+  /**
+   * Custom label for creating searched option not present in the options list
+   */
+  createOptionLabel: PropTypes.string,
+  /**
+   * Callback when create searched option is pressed
+   */
+  onPressCreateOption: PropTypes.func,
+  /**
+   * Component that renders when searched item doesn't exists
+   */
+  CreateItemComponent: PropTypes.node,
+  /**
+   * To customise empty options placeholder text style.
+   */
+  createSearchedOptionLabelStyle: PropTypes.object,
+  /**
+   * To customise empty options placeholder container style.
+   */
+  createSearchedOptionContainerStyle: PropTypes.object,
   /**
    * To support more Modal params.
    */
