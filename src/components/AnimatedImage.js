@@ -9,6 +9,8 @@ import Animated, {
 
 import { Container } from "@components";
 import ImagePlaceholder from "@assets/images/image-placeholder.svg";
+import { ActivityIndicator } from "react-native";
+import { theme } from "../theme";
 
 /**
  * AnimatedImage can be used to display a placeholder before image is loaded with animation.
@@ -85,8 +87,18 @@ export const AnimatedImage = ({
         />
 
         {!isImageLoaded && (
-          <Container position="absolute" alignItems="center" justifyContent="center" width={imageWidth} height={imageHeight}>
-            <ImagePlaceholder  />
+          <Container
+            position="absolute"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <ImagePlaceholder />
+            <Container position="absolute" bottom={15} right={15}>
+              <ActivityIndicator
+                size="small"
+                color={theme.colors.font.grey600}
+              />
+            </Container>
           </Container>
         )}
       </Container>
