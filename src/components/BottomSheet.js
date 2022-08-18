@@ -4,6 +4,7 @@ import {
   FlatList,
   Keyboard,
   ActivityIndicator,
+  Platform,
 } from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
@@ -82,7 +83,7 @@ const Title = ({
 
 Title.propTypes = {
   title: PropTypes.string,
-  isVisible: PropTypes.boolean,
+  isVisible: PropTypes.bool,
   hide: PropTypes.func,
   bg: PropTypes.string,
   titleContainerStyle: PropTypes.object,
@@ -168,6 +169,10 @@ export const BottomSheet = ({
     }
   };
 
+  const contentContainerStyle = {
+    paddingBottom: Platform.OS === "android" ? 50 : 0,
+  };
+
   return (
     <Modal
       style={styles.modalStyle}
@@ -187,84 +192,83 @@ export const BottomSheet = ({
           p={16}
           {...rest}
         >
-          <Container>
-            {title && (
-              <Title
-                bg={bg}
-                title={title}
-                isVisible={isVisible}
-                hide={hide}
-                titleContainerStyle={titleContainerStyle}
-                titleTextStyle={titleTextStyle}
-                HeaderComponent={HeaderComponent}
-                contentType={contentType}
-                canSearch={canSearch}
-                searchText={searchText}
-                setSearchText={setSearchText}
-                onDonePress={onDonePress}
-              />
-            )}
+          {title && (
+            <Title
+              bg={bg}
+              title={title}
+              isVisible={isVisible}
+              hide={hide}
+              titleContainerStyle={titleContainerStyle}
+              titleTextStyle={titleTextStyle}
+              HeaderComponent={HeaderComponent}
+              contentType={contentType}
+              canSearch={canSearch}
+              searchText={searchText}
+              setSearchText={setSearchText}
+              onDonePress={onDonePress}
+            />
+          )}
 
-            {data && (
-              <FlatList
-                ListFooterComponent={children}
-                initialNumToRender={data.length}
-                onScrollBeginDrag={Keyboard.dismiss}
-                data={generateData()}
-                renderItem={({ item, index }) => {
-                  return (
-                    <ContentRow
-                      isSelected={index === selectedItemIndex}
-                      key={index}
-                      onPress={() => {
-                        !contentType && hide();
-                        onItemPress({ index, item });
-                      }}
-                      index={index}
-                      item={item}
-                    />
-                  );
-                }}
-                keyExtractor={(item, index) => {
-                  return index;
-                }}
-              />
-            )}
+          {data && (
+            <FlatList
+              ListFooterComponent={children}
+              initialNumToRender={data.length}
+              onScrollBeginDrag={Keyboard.dismiss}
+              data={generateData()}
+              renderItem={({ item, index }) => {
+                return (
+                  <ContentRow
+                    isSelected={index === selectedItemIndex}
+                    key={index}
+                    onPress={() => {
+                      !contentType && hide();
+                      onItemPress({ index, item });
+                    }}
+                    index={index}
+                    item={item}
+                  />
+                );
+              }}
+              keyExtractor={(item, index) => {
+                return index;
+              }}
+              contentContainerStyle={contentContainerStyle}
+            />
+          )}
 
-            {showCreateOptionLoader ? (
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.background.base}
-              />
-            ) : (
-              !!searchText.trim() &&
-              !generateData().length &&
-              showCreateOption && (
-                <Container>
-                  {CreateItemComponent ? (
-                    <CreateItemComponent searchText={searchText} />
-                  ) : (
-                    <Touchable
-                      height={40}
-                      justifyContent="center"
-                      alignItems="center"
-                      onPress={() => onPressCreateOption(searchText)}
-                      {...createSearchedOptionContainerStyle}
+          {showCreateOptionLoader ? (
+            <ActivityIndicator
+              size="small"
+              color={theme.colors.background.base}
+            />
+          ) : (
+            !!searchText.trim() &&
+            !generateData().length &&
+            showCreateOption && (
+              <Container>
+                {CreateItemComponent ? (
+                  <CreateItemComponent searchText={searchText} />
+                ) : (
+                  <Touchable
+                    height={40}
+                    justifyContent="center"
+                    alignItems="center"
+                    onPress={() => onPressCreateOption(searchText)}
+                    {...createSearchedOptionContainerStyle}
+                  >
+                    <Typography
+                      fontFamily="sf400"
+                      fontSize="s"
+                      color="font.grey"
+                      {...createSearchedOptionLabelStyle}
                     >
-                      <Typography
-                        fontFamily="sf400"
-                        fontSize="s"
-                        color="font.grey"
-                        {...createSearchedOptionLabelStyle}
-                      >
-                        {createOptionLabel || `Create ${searchText} option`}
-                      </Typography>
-                    </Touchable>
-                  )}
-                </Container>
-              )
-            )}
-          </Container>
+                      {createOptionLabel || `Create ${searchText} option`}
+                    </Typography>
+                  </Touchable>
+                )}
+              </Container>
+            )
+          )}
         </Container>
       </SafeAreaView>
     </Modal>

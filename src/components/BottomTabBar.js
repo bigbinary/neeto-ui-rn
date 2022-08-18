@@ -188,7 +188,7 @@ export const BottomTabBar = ({ state, descriptors, navigation }) => {
 };
 
 TabElement.propTypes = {
-  isFocused: PropTypes.boolean,
+  isFocused: PropTypes.bool,
   onPress: PropTypes.func,
   name: PropTypes.string,
   tabBarActiveTintColor: PropTypes.string,
