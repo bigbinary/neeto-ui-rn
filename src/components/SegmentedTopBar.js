@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, Platform, StyleSheet } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -127,6 +127,7 @@ export const SegmentedTopBar = ({
             height={height}
             alignItems="center"
             justifyContent="center"
+            elevation={Platform.OS === "android" ? 9 : null}
             {...currentIndexTextStyle}
           >
             <Typography
