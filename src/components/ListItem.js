@@ -36,8 +36,8 @@ export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => {
       flexDirection="row"
       bg="background.secondary"
       width="100%"
-      px={12}
-      py={16}
+      px={16}
+      py={12}
       borderRadius={6}
       alignItems="center"
       justifyContent="space-between"

@@ -20,6 +20,7 @@ const TypographyStories = {
       { label: "neetoStore-RN", value: "neetoStore-RN" },
       { label: "neetoStoreBusiness-RN", value: "neetoStoreBusiness-RN" },
       { label: "neetoDesk-RN", value: "neetoDesk-RN" },
+      { label: "neetoQuiz-RN", value: "neetoQuiz-RN" },
       { label: "neetoChat-RN", value: "neetoChat-RN" },
       { label: "neetoForm-RN", value: "neetoForm-RN" },
       { label: "neetoCal-RN", value: "neetoCal-RN" },
@@ -230,6 +231,7 @@ export const BottomSheets = args => {
         <Typography> Cant find your option? </Typography>
       </BottomSheet>
       <BottomSheet
+        maxHeight={500}
         isVisible={bottomSheetThreeVisible}
         hide={() => {
           setbottomSheetThreeVisible(false);
