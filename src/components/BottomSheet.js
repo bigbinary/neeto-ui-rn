@@ -4,7 +4,6 @@ import {
   FlatList,
   Keyboard,
   ActivityIndicator,
-  Platform,
 } from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
@@ -170,7 +169,7 @@ export const BottomSheet = ({
   };
 
   const contentContainerStyle = {
-    paddingBottom: Platform.OS === "android" ? 50 : 0,
+    paddingBottom: 50,
   };
 
   return (
