@@ -101,6 +101,7 @@ export const Input = props => {
     autoFocus = false,
     disabled = false,
     noBorder = false,
+    textAlignVertical = "top",
     ...rest
   } = props;
 
@@ -228,6 +229,7 @@ export const Input = props => {
             top={0}
             zIndex={2}
             autoCapitalize="none"
+            textAlignVertical={textAlignVertical}
             {...rest.inputProps}
           />
           {rest.inputProps?.multiline && Platform.OS === "ios" && (
@@ -315,6 +317,10 @@ Input.propTypes = {
    * Used to pass custom styles to the wrapper component.
    */
   containerProps: PropTypes.object,
+  /**
+   * Used to align the position of text in input.
+   */
+  textAlignVertical: PropTypes.oneOf(["auto", "top", "bottom", "center"]),
 };
 
 export const styles = StyleSheet.create({
