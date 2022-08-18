@@ -135,7 +135,7 @@ export const Button = props => {
   return (
     <Touchable
       rippleColor={getButtonColors().ripple}
-      disabled={disabled}
+      disabled={disabled || isLoading}
       bg={getButtonColors().bg}
       height={48}
       width={width}
