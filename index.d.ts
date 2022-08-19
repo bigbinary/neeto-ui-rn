@@ -9,10 +9,14 @@ import {
   PositionProps,
   TypographyProps,
 } from "styled-system";
-import { ViewProps as RNViewProps } from "react-native";
+import {
+  ViewProps as RNViewProps,
+  TextInputProps as RNTextInputProps,
+} from "react-native";
 import { ModalProps } from "react-native-modal";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { CalendarProps } from "react-native-calendars";
+import { FlashListProps as RNFlashListProps } from "@shopify/flash-list";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
@@ -168,6 +172,51 @@ type ChipProps = {
   closeIcon?: string;
 };
 
+interface DividerProps extends ViewProps {
+  thickness?: number | string;
+  orientation?: "horizontal" | "vertical";
+  bg?: typeof theme.colors.background;
+}
+
+interface FabProps extends ViewProps {
+  Icon: React.FC;
+  bg: typeof theme.colors.background;
+  disabled?: boolean;
+  variant?: "solid" | "inverse";
+  onPress?: () => void;
+}
+
+interface FlashListProps extends RNFlashListProps {
+  SkeletonComponent?: React.FC;
+  durationPerItem?: number;
+  data: Array<any>;
+  isLoading?: boolean;
+  placeHolderItemCount?: number;
+  onRefresh?: () => void;
+  keyExtractor?: () => void;
+}
+
+interface FlatListProps extends ViewProps {}
+
+type InputProps = {
+  label?: string;
+  value: string;
+  onChangeText: () => void;
+  errorMessage?: string;
+  PrefixIcon?: React.FC;
+  SuffixIcon?: React.FC;
+  autoFocus?: boolean;
+  disabled?: boolean;
+  noBorder?: boolean;
+  inputProps?: RNTextInputProps;
+};
+
+interface ListItemProps extends ViewProps {
+  LeftComponent?: React.FC;
+  label: string;
+  RightComponent?: React.FC;
+}
+
 export const Accordian: React.FC<AccordianProps>;
 export const Alert: React.FC<AlertProps> & {
   show?: (params: AlertShowParams) => void;
@@ -184,3 +233,9 @@ export const Carousel: React.FC<CarouselProps>;
 export const CheckBox: React.FC<CheckBoxProps>;
 export const Chip: React.FC<ChipProps>;
 export const Container: React.FC<ViewProps>;
+export const Divider: React.FC<DividerProps>;
+export const Fab: React.FC<FabProps>;
+export const FlashList: React.FC<FlashListProps>;
+export const FlatList: React.FC<FlatListProps>;
+export const Input: React.FC<InputProps>;
+export const ListItem: React.FC<ListItemProps>;
