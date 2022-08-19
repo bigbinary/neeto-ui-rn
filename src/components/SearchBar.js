@@ -97,7 +97,6 @@ export const SearchBar = props => {
       <Animated.View
         style={{
           ...styles.inputContainerStyles,
-          flex: 1,
         }}
       >
         <Container px={10}>
@@ -150,6 +149,7 @@ export const SearchBar = props => {
 const styles = StyleSheet.create({
   inputContainerStyles: {
     height: 42,
+    flex: 1,
     borderWidth: 1,
     borderColor: theme.colors.border.grey400,
     borderRadius: 8,
