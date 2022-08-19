@@ -93,12 +93,7 @@ export const SearchBar = props => {
   };
 
   return (
-    <Container
-      flexDirection="row"
-      alignItems="center"
-      flex={1}
-      {...rest.containerProps}
-    >
+    <Container flexDirection="row" alignItems="center" {...rest.containerProps}>
       <Animated.View
         style={{
           ...styles.inputContainerStyles,
