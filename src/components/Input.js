@@ -167,7 +167,7 @@ export const Input = props => {
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [16, 6],
+      outputRange: [14, 6],
     }),
   };
 
@@ -189,6 +189,7 @@ export const Input = props => {
         flexDirection="row"
         justifyContent="space-between"
         {...(!rest.inputProps?.multiline && { height: 58 })}
+        overflow="hidden"
         {...rest.containerProps}
       >
         {!!PrefixIcon && (
@@ -224,11 +225,13 @@ export const Input = props => {
             inputAccessoryViewID={label}
             color={disabled ? "font.grey500" : "font.primary"}
             fontSize={17}
-            py={3}
             pr={3}
             top={0}
             zIndex={2}
             autoCapitalize="none"
+            mt={10}
+            pb={3}
+            pt={1}
             textAlignVertical={textAlignVertical}
             {...rest.inputProps}
           />
