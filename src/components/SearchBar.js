@@ -82,7 +82,7 @@ export const SearchBar = props => {
 
   const cancelButtonWidth = searchAnimationController.interpolate({
     inputRange: [0, 1],
-    outputRange: [0, 90],
+    outputRange: [0, 60],
   });
 
   const onCancelHandle = () => {
@@ -136,10 +136,16 @@ export const SearchBar = props => {
         style={{
           opacity: buttonOpacityController,
           width: cancelButtonWidth,
+          alignItems: "flex-end",
         }}
       >
         {showCancelButton && (
-          <Button variant="text" label="Cancel" onPress={onCancelHandle} />
+          <Button
+            variant="text"
+            label="Cancel"
+            onPress={onCancelHandle}
+            labelStyle={{ mx: 0 }}
+          />
         )}
       </Animated.View>
     </Container>
