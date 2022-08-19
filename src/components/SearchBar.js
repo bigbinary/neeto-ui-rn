@@ -59,22 +59,30 @@ export const SearchBar = props => {
     Number(debounceDelay)
   );
   const searchAnimationController = useRef(new Animated.Value(0)).current;
+  const buttonOpacityController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     onChangeText(debouncedSearchTextValue);
   }, [debouncedSearchTextValue, onChangeText]);
 
   const animateSearchInput = val => {
-    Animated.timing(searchAnimationController, {
-      toValue: val,
-      duration: 350,
-      useNativeDriver: false,
-    }).start();
+    Animated.sequence([
+      Animated.timing(buttonOpacityController, {
+        toValue: val,
+        duration: 350,
+        useNativeDriver: false,
+      }),
+      Animated.timing(searchAnimationController, {
+        toValue: val,
+        duration: 200,
+        useNativeDriver: false,
+      }),
+    ]).start();
   };
 
-  const searchInputWidth = searchAnimationController.interpolate({
+  const cancelButtonWidth = searchAnimationController.interpolate({
     inputRange: [0, 1],
-    outputRange: ["100%", showCancelButton ? "80%" : "100%"],
+    outputRange: [0, 60],
   });
 
   const onCancelHandle = () => {
@@ -85,11 +93,16 @@ export const SearchBar = props => {
   };
 
   return (
-    <Container flexDirection="row" alignItems="center" {...rest.containerProps}>
+    <Container
+      flexDirection="row"
+      alignItems="center"
+      flex={1}
+      {...rest.containerProps}
+    >
       <Animated.View
         style={{
           ...styles.inputContainerStyles,
-          width: searchInputWidth,
+          flex: 1,
         }}
       >
         <Container px={10}>
@@ -121,12 +134,18 @@ export const SearchBar = props => {
       </Animated.View>
       <Animated.View
         style={{
-          marginLeft: 17,
-          opacity: searchAnimationController,
+          opacity: buttonOpacityController,
+          width: cancelButtonWidth,
+          alignItems: "flex-end",
         }}
       >
         {showCancelButton && (
-          <Button variant="text" label="Cancel" onPress={onCancelHandle} />
+          <Button
+            variant="text"
+            label="Cancel"
+            onPress={onCancelHandle}
+            labelStyle={{ mx: 0 }}
+          />
         )}
       </Animated.View>
     </Container>
