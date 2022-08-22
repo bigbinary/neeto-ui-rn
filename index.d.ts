@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-native-snap-carousel";
+import RNPopover from "react-native-popover-view";
 import {
   FlexboxProps,
   SpaceProps,
@@ -12,11 +13,20 @@ import {
 import {
   ViewProps as RNViewProps,
   TextInputProps as RNTextInputProps,
+  ScrollViewProps as RNScrollViewProps,
+  FlatListProps as RNFlatListProps,
+  TextProps as RNTextProps,
+  TextInputAndroidProps as RNTextInputAndroidProps,
+  TextInputIOSProps as RNTextInputIOSProps,
 } from "react-native";
 import { ModalProps } from "react-native-modal";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import { CalendarProps } from "react-native-calendars";
 import { FlashListProps as RNFlashListProps } from "@shopify/flash-list";
+import {
+  RichEditorProps,
+  RichToolbarProps,
+} from "react-native-pell-rich-editor";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
@@ -51,8 +61,16 @@ interface StyleProps
 interface ViewProps extends RNViewProps, StyleProps {
   children?: React.ReactNode;
 }
-
-interface TextProps extends StyleProps, TypographyProps {}
+interface TextProps extends RNTextProps, StyleProps, TypographyProps {
+  children?: React.ReactNode;
+}
+interface TextInputProps
+  extends RNTextInputAndroidProps,
+    RNTextInputIOSProps,
+    StyleProps,
+    TypographyProps {}
+interface FlatListProps extends RNFlatListProps, StyleProps {}
+interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
 
 interface AccordianProps extends ViewProps {
   header?: () => void;
@@ -196,8 +214,6 @@ interface FlashListProps extends RNFlashListProps {
   keyExtractor?: () => void;
 }
 
-interface FlatListProps extends ViewProps {}
-
 type InputProps = {
   label?: string;
   value: string;
@@ -215,6 +231,94 @@ interface ListItemProps extends ViewProps {
   LeftComponent?: React.FC;
   label: string;
   RightComponent?: React.FC;
+}
+
+interface MultiSelectProps extends ViewProps {
+  options?: Array<any>;
+  label?: string;
+  value?: string | Array<any>;
+  placeholder?: string;
+  labelExtractor?: () => void;
+  valueExtractor?: () => void;
+  onSelect?: () => void;
+  deletedValue?: () => void;
+  isLoading?: boolean;
+  isSearchable?: boolean;
+  showCreateOption?: boolean;
+  labelStyle?: TextProps;
+  containerStyle?: ViewProps;
+  inputContainerStyle?: ViewProps;
+  dropdownContainerStyle?: ViewProps;
+  itemContainerStyle?: ViewProps;
+  multiSelectedItemContainerStyle?: ViewProps;
+  multiSelectedItemLabelStyle?: TextProps;
+  selectedValue?: () => void;
+  CreateItemComponent?: React.FC;
+  showCreateOptionLoader?: boolean;
+  createSearchedOptionLabelStyle?: TextProps;
+  onPressCreateOption?: () => void;
+  createSearchedOptionContainerStyle?: ViewProps;
+  onDonePress?: () => void;
+}
+
+type OnBoardingProps = {
+  appLogo: React.FC;
+  slides: Array<any>;
+  onComplete: () => void;
+  logoWidth?: number;
+};
+
+type OtpInputsProps = {
+  handleChange: () => {};
+  numberOfInputs: number;
+  error?: boolean;
+  code: string;
+  containerStyles?: ViewProps;
+  textStyles?: TextProps;
+};
+
+interface ParentViewProps extends ViewProps {
+  barStyle?: "light-content" | "dark-content";
+  topInset?: boolean;
+  rightInset?: boolean;
+  leftInset?: boolean;
+  bottomInset?: boolean;
+}
+
+type RNPopoverProps = typeof RNPopover.propTypes;
+interface PopoverProps extends RNPopoverProps {
+  children?: React.FC;
+  data?: Array<any>;
+  fontFamily?: typeof theme.fonts;
+  fontSize?: typeof theme.fontSizes;
+}
+
+interface RadioButtonProps extends ViewProps {
+  selected: boolean;
+  onSelect: () => void;
+  disabled?: boolean;
+  label?: string;
+  radioButtonStyle?: ViewProps;
+  labelStyle?: TextProps;
+}
+
+type RichTextEditorProps = {
+  onChange: () => void;
+  placeholderText?: string;
+  children?: React.FC;
+  toolbarActions: Array<string>;
+  editorProps?: RichEditorProps;
+  toolBarProps?: RichToolbarProps;
+};
+
+interface SearchBarProps extends ViewProps {
+  placeholder?: string;
+  onChangeText: () => void;
+  onCancel?: () => void;
+  debounceDelay?: number | string;
+  showCancelButton?: boolean;
+  containerProps?: ViewProps;
+  searchbarProps?: TextInputProps;
 }
 
 export const Accordian: React.FC<AccordianProps>;
@@ -239,3 +343,12 @@ export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
 export const ListItem: React.FC<ListItemProps>;
+export const MultiSelect: React.FC<MultiSelectProps>;
+export const OnBoarding: React.FC<OnBoardingProps>;
+export const OtpInputs: React.FC<OtpInputsProps>;
+export const ParentView: React.FC<ParentViewProps>;
+export const Popover: React.FC<PopoverProps>;
+export const RadioButton: React.FC<RadioButtonProps>;
+export const RichTextEditor: React.FC<RichTextEditorProps>;
+export const ScrollView: React.FC<ScrollViewProps>;
+export const SearchBar: React.FC<SearchBarProps>;
