@@ -8,6 +8,7 @@ import {
   ColorProps,
   LayoutProps,
   PositionProps,
+  ButtonStyleProps,
   TypographyProps,
 } from "styled-system";
 import {
@@ -18,6 +19,8 @@ import {
   TextProps as RNTextProps,
   TextInputAndroidProps as RNTextInputAndroidProps,
   TextInputIOSProps as RNTextInputIOSProps,
+  ViewStyle,
+  TextStyle,
 } from "react-native";
 import { ModalProps } from "react-native-modal";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
@@ -27,6 +30,14 @@ import {
   RichEditorProps,
   RichToolbarProps,
 } from "react-native-pell-rich-editor";
+import { MaterialTopTabBarProps } from "@react-navigation/material-top-tabs";
+import {
+  ToastProps as RNToastProps,
+  ToastHideParams,
+  ToastShowParams,
+  ToastConfig,
+} from "react-native-toast-message";
+import { RippleProps } from "react-native-material-ripple";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
@@ -287,7 +298,7 @@ interface ParentViewProps extends ViewProps {
 
 type RNPopoverProps = typeof RNPopover.propTypes;
 interface PopoverProps extends RNPopoverProps {
-  children?: React.FC;
+  children?: React.ReactNode;
   data?: Array<any>;
   fontFamily?: typeof theme.fonts;
   fontSize?: typeof theme.fontSizes;
@@ -305,7 +316,7 @@ interface RadioButtonProps extends ViewProps {
 type RichTextEditorProps = {
   onChange: () => void;
   placeholderText?: string;
-  children?: React.FC;
+  children?: React.ReactNode;
   toolbarActions: Array<string>;
   editorProps?: RichEditorProps;
   toolBarProps?: RichToolbarProps;
@@ -319,6 +330,51 @@ interface SearchBarProps extends ViewProps {
   showCancelButton?: boolean;
   containerProps?: ViewProps;
   searchbarProps?: TextInputProps;
+}
+
+interface SegmentedTopBarProps extends MaterialTopTabBarProps {
+  inactiveSegmentStyle?: ViewStyle;
+  activeSegmentStyle?: ViewStyle;
+  activeTextStyle?: ViewProps;
+  inactiveTextStyle?: ViewProps;
+  height?: number;
+}
+
+interface SelectProps
+  extends Omit<MultiSelectProps, "value" | "selectedValue" | "deletedValue"> {
+  value: any;
+}
+
+interface SocialButtonProps extends ViewProps {
+  variant: "apple" | "google";
+  disabled?: boolean;
+  labelStyle?: TextProps;
+  isLoading?: boolean;
+}
+
+interface ToastProps extends Omit<RNToastProps, "config" | "position"> {
+  toasterConfig: ToastConfig;
+}
+
+type ToggleSwitchProps = {
+  value: boolean;
+  onValueChange?: () => void;
+  disabled?: boolean;
+};
+
+type TopBarProps = {
+  data: Array<any>;
+  activeIndex?: number;
+  onActiveTabChange: () => void;
+  activeTabTextStyle?: TextStyle;
+  activeTabContainerStyle?: ViewStyle;
+  inActiveTabTextStyle?: TextStyle;
+  inActiveTabContainerStyle?: ViewStyle;
+  tabContainerStyle?: ViewStyle;
+};
+
+interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
+  children?: React.ReactNode;
 }
 
 export const Accordian: React.FC<AccordianProps>;
@@ -352,3 +408,14 @@ export const RadioButton: React.FC<RadioButtonProps>;
 export const RichTextEditor: React.FC<RichTextEditorProps>;
 export const ScrollView: React.FC<ScrollViewProps>;
 export const SearchBar: React.FC<SearchBarProps>;
+export const SegmentedTopBar: React.FC<SegmentedTopBarProps>;
+export const Select: React.FC<SelectProps>;
+export const SocialButton: React.FC<SocialButtonProps>;
+export const Toast: React.FC<ToastProps> & {
+  show?: (params: ToastShowParams) => void;
+  hide?: (params: ToastHideParams) => void;
+};
+export const ToggleSwitch: React.FC<ToggleSwitchProps>;
+export const TopBar: React.FC<TopBarProps>;
+export const Touchable: React.FC<TouchableProps>;
+export const Typography: React.FC<TextProps>;
