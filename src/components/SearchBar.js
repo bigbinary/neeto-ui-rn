@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Animated, StyleSheet } from "react-native";
+import { Animated } from "react-native";
 import {
   flexbox,
   space,
@@ -58,7 +58,7 @@ export const SearchBar = props => {
     searchText,
     Number(debounceDelay)
   );
-  const searchAnimationController = useRef(new Animated.Value(0)).current;
+  const buttonWidthController = useRef(new Animated.Value(0)).current;
   const buttonOpacityController = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export const SearchBar = props => {
         duration: 350,
         useNativeDriver: false,
       }),
-      Animated.timing(searchAnimationController, {
+      Animated.timing(buttonWidthController, {
         toValue: val,
         duration: 200,
         useNativeDriver: false,
@@ -80,7 +80,7 @@ export const SearchBar = props => {
     ]).start();
   };
 
-  const cancelButtonWidth = searchAnimationController.interpolate({
+  const cancelButtonWidth = buttonWidthController.interpolate({
     inputRange: [0, 1],
     outputRange: [0, 60],
   });
@@ -93,11 +93,16 @@ export const SearchBar = props => {
   };
 
   return (
-    <Container flexDirection="row" alignItems="center" {...rest.containerProps}>
-      <Animated.View
-        style={{
-          ...styles.inputContainerStyles,
-        }}
+    <Container flexDirection="row" alignItems="center">
+      <Container
+        height={42}
+        flex={1}
+        borderWidth={1}
+        borderColor={theme.colors.border.grey400}
+        borderRadius={8}
+        flexDirection="row"
+        alignItems="center"
+        {...rest.containerProps}
       >
         <Container px={10}>
           <Icon
@@ -125,38 +130,26 @@ export const SearchBar = props => {
           returnKeyType="search"
           {...rest.searchbarProps}
         />
-      </Animated.View>
-      <Animated.View
-        style={{
-          opacity: buttonOpacityController,
-          width: cancelButtonWidth,
-          alignItems: "flex-end",
-        }}
-      >
-        {showCancelButton && (
+      </Container>
+      {showCancelButton && (
+        <Animated.View
+          style={{
+            opacity: buttonOpacityController,
+            width: cancelButtonWidth,
+            alignItems: "flex-end",
+          }}
+        >
           <Button
             variant="text"
             label="Cancel"
             onPress={onCancelHandle}
             labelStyle={{ mx: 0 }}
           />
-        )}
-      </Animated.View>
+        </Animated.View>
+      )}
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  inputContainerStyles: {
-    height: 42,
-    flex: 1,
-    borderWidth: 1,
-    borderColor: theme.colors.border.grey400,
-    borderRadius: 8,
-    flexDirection: "row",
-    alignItems: "center",
-  },
-});
 
 SearchBar.propTypes = {
   /**
