@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet, Platform, TouchableWithoutFeedback } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -9,6 +9,7 @@ import Animated, {
   interpolate,
   Extrapolation,
 } from "react-native-reanimated";
+
 import { Container, Typography } from "@components";
 import { ThemeContext } from "styled-components/native";
 
@@ -113,29 +114,30 @@ function TabElement({
   });
 
   return (
-    <Container
-      flex={1}
-      onTouchStart={onPress}
-      alignItems="center"
-      borderTopWidth={1}
-      borderColor="background.grey200"
-    >
-      <Container height={35} width={48} alignItems="center" mb={1}>
-        <Animated.View style={[styles.iconContainer, animatedStyles]}>
-          <Icon size={size} color={theme.colors.font.grey500} name={icon} />
-        </Animated.View>
-        <Animated.View style={[styles.iconContainer, animatedStyles2]}>
-          <Icon size={size} color={theme.colors.font.base} name={icon} />
-        </Animated.View>
-      </Container>
-      <Typography
-        color={isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor}
-        fontFamily="sf500"
-        fontSize="4xs"
+    <TouchableWithoutFeedback onPress={onPress}>
+      <Container
+        flex={1}
+        alignItems="center"
+        borderTopWidth={1}
+        borderColor="background.grey200"
       >
-        {name}
-      </Typography>
-    </Container>
+        <Container height={35} width={48} alignItems="center" mb={1}>
+          <Animated.View style={[styles.iconContainer, animatedStyles]}>
+            <Icon size={size} color={theme.colors.font.grey500} name={icon} />
+          </Animated.View>
+          <Animated.View style={[styles.iconContainer, animatedStyles2]}>
+            <Icon size={size} color={theme.colors.font.base} name={icon} />
+          </Animated.View>
+        </Container>
+        <Typography
+          color={isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor}
+          fontFamily="sf500"
+          fontSize="4xs"
+        >
+          {name}
+        </Typography>
+      </Container>
+    </TouchableWithoutFeedback>
   );
 }
 
