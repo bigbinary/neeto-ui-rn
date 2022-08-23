@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "react-native-snap-carousel";
+import dayjs from "dayjs";
 import RNPopover from "react-native-popover-view";
 import {
   FlexboxProps,
@@ -12,6 +13,7 @@ import {
   TypographyProps,
 } from "styled-system";
 import {
+  ImageProps as RNImageProps,
   ViewProps as RNViewProps,
   TextInputProps as RNTextInputProps,
   ScrollViewProps as RNScrollViewProps,
@@ -21,10 +23,11 @@ import {
   TextInputIOSProps as RNTextInputIOSProps,
   ViewStyle,
   TextStyle,
+  TouchableOpacityProps,
 } from "react-native";
 import { ModalProps } from "react-native-modal";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { CalendarProps } from "react-native-calendars";
+import { CalendarProps as RNCalendarProps } from "react-native-calendars";
 import { FlashListProps as RNFlashListProps } from "@shopify/flash-list";
 import {
   RichEditorProps,
@@ -82,6 +85,9 @@ interface TextInputProps
     TypographyProps {}
 interface FlatListProps extends RNFlatListProps, StyleProps {}
 interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
+interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
+  children?: React.ReactNode;
+}
 
 interface AccordianProps extends ViewProps {
   header?: () => void;
@@ -110,8 +116,14 @@ type AlertShowParams = {
   buttons?: Array<AlertButton>;
 };
 
+interface AnimatedImageProps extends RNImageProps {
+  imageHeight?: number;
+  imageWidth?: number;
+  imageUrl: string;
+}
+
 interface AvatarProps extends ViewProps {
-  name: string;
+  name?: string;
   variant?: "small" | "medium";
   bgColor?: typeof theme.colors.background;
   fontColor?: typeof theme.colors.font;
@@ -128,10 +140,17 @@ interface BadgeProps extends ViewProps {
 }
 
 interface BottomSheetProps extends ViewProps {
+  showCreateOption?: boolean;
+  CreateItemComponent?: React.ReactNode;
+  showCreateOptionLoader?: boolean;
+  createSearchedOptionLabelStyle?: TextProps;
+  createOptionLabel?: string;
+  onPressCreateOption?: () => void;
+  createSearchedOptionContainerStyle?: TouchableProps;
   data?: Array<any>;
   title?: string;
   hide?: () => void;
-  isVisible: boolean;
+  isVisible?: boolean;
   onItemPress?: () => void;
   selectedItemIndex?: number;
   bg?: typeof theme.colors.background;
@@ -142,9 +161,10 @@ interface BottomSheetProps extends ViewProps {
   ContentRow?: () => void;
   contentType?: "checkbox" | null;
   canSearch?: boolean;
+  onDonePress?: () => void;
 }
 
-interface ButtonProps extends ViewProps {
+interface ButtonProps extends TouchableProps {
   variant?: typeof BUTTON_VARIANTS[keyof typeof BUTTON_VARIANTS];
   label: string;
   labelStyle?: TextProps;
@@ -153,6 +173,9 @@ interface ButtonProps extends ViewProps {
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;
+  fontFamily?: typeof theme.fonts;
+  color?: typeof theme.colors;
+  fontSize?: typeof theme.fontSizes;
 }
 
 type ButtonGroupProps = {
@@ -161,28 +184,32 @@ type ButtonGroupProps = {
   buttonItems: Array<string>;
   onPress: () => void;
   currentActiveBtn: string;
-  wrapperStyle?: StyleProps;
-  buttonTextStyle?: StyleProps;
-  buttonStyle?: StyleProps;
+  wrapperStyle?: ViewProps;
+  buttonTextStyle?: TextProps;
+  buttonStyle?: TouchableProps;
 };
 
-interface CardProps extends ViewProps {
+interface CalendarProps extends RNCalendarProps {
+  selectedDate?: string | typeof dayjs;
+}
+
+interface CardProps extends TouchableOpacityProps, StyleProps {
   elevation?: number;
 }
 
 type CarouselProps = {
   itemArray: Array<any>;
   renderItem: () => void;
-  carouselRef: React.RefObject<Carousel>;
-  onSnapToItem: () => void;
+  carouselRef?: React.RefObject<Carousel>;
+  onSnapToItem?: () => void;
 };
 
-interface CheckBoxProps extends ViewProps {
+interface CheckBoxProps extends TouchableProps {
   checked: boolean;
   onSelect: () => void;
   disabled?: boolean;
   label?: string;
-  checkboxStyle?: StyleProps;
+  checkboxStyle?: ViewProps;
   checkIconStyle?: any;
   labelStyle?: TextProps;
 }
@@ -199,6 +226,8 @@ type ChipProps = {
   isDisabled?: disabled;
   closeIconSize?: number;
   closeIcon?: string;
+  containerStyle?: TouchableProps;
+  closeIconContainerStyle?: TouchableProps;
 };
 
 interface DividerProps extends ViewProps {
@@ -207,12 +236,12 @@ interface DividerProps extends ViewProps {
   bg?: typeof theme.colors.background;
 }
 
-interface FabProps extends ViewProps {
+interface FabProps extends TouchableProps {
   Icon: React.FC;
   bg: typeof theme.colors.background;
   disabled?: boolean;
   variant?: "solid" | "inverse";
-  onPress?: () => void;
+  onPress: () => void;
 }
 
 interface FlashListProps extends RNFlashListProps {
@@ -222,6 +251,7 @@ interface FlashListProps extends RNFlashListProps {
   isLoading?: boolean;
   placeHolderItemCount?: number;
   onRefresh?: () => void;
+  onEndReached?: () => void;
   keyExtractor?: () => void;
 }
 
@@ -229,6 +259,7 @@ type InputProps = {
   label?: string;
   value: string;
   onChangeText: () => void;
+  onBlur?: () => void;
   errorMessage?: string;
   PrefixIcon?: React.FC;
   SuffixIcon?: React.FC;
@@ -241,7 +272,7 @@ type InputProps = {
 interface ListItemProps extends ViewProps {
   LeftComponent?: React.FC;
   label: string;
-  RightComponent?: React.FC;
+  RightComponent: React.FC;
 }
 
 interface MultiSelectProps extends ViewProps {
@@ -304,7 +335,7 @@ interface PopoverProps extends RNPopoverProps {
   fontSize?: typeof theme.fontSizes;
 }
 
-interface RadioButtonProps extends ViewProps {
+interface RadioButtonProps extends TouchableProps {
   selected: boolean;
   onSelect: () => void;
   disabled?: boolean;
@@ -335,8 +366,8 @@ interface SearchBarProps extends ViewProps {
 interface SegmentedTopBarProps extends MaterialTopTabBarProps {
   inactiveSegmentStyle?: ViewStyle;
   activeSegmentStyle?: ViewStyle;
-  activeTextStyle?: ViewProps;
-  inactiveTextStyle?: ViewProps;
+  activeTextStyle?: TouchableProps;
+  inactiveTextStyle?: TouchableProps;
   height?: number;
 }
 
@@ -345,7 +376,7 @@ interface SelectProps
   value: any;
 }
 
-interface SocialButtonProps extends ViewProps {
+interface SocialButtonProps extends TouchableProps {
   variant: "apple" | "google";
   disabled?: boolean;
   labelStyle?: TextProps;
@@ -373,14 +404,11 @@ type TopBarProps = {
   tabContainerStyle?: ViewStyle;
 };
 
-interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
-  children?: React.ReactNode;
-}
-
 export const Accordian: React.FC<AccordianProps>;
 export const Alert: React.FC<AlertProps> & {
   show?: (params: AlertShowParams) => void;
 };
+export const AnimatedImage: React.FC<AnimatedImageProps>;
 export const Avatar: React.FC<AvatarProps>;
 export const Badge: React.FC<BadgeProps>;
 export const BottomSheet: React.FC<BottomSheetProps>;
