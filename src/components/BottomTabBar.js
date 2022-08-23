@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet, Platform, TouchableOpacity } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -9,6 +9,9 @@ import Animated, {
   interpolate,
   Extrapolation,
 } from "react-native-reanimated";
+import styled from "styled-components/native";
+import { flexbox, space, border, color, layout } from "styled-system";
+
 import { Container, Typography } from "@components";
 import { ThemeContext } from "styled-components/native";
 
@@ -68,6 +71,14 @@ import { ThemeContext } from "styled-components/native";
  *
  */
 
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${color}
+  ${layout}
+`;
+
 function TabElement({
   isFocused,
   onPress,
@@ -113,9 +124,9 @@ function TabElement({
   });
 
   return (
-    <Container
+    <StyledTouchableOpacity
       flex={1}
-      onTouchStart={onPress}
+      onPress={onPress}
       alignItems="center"
       borderTopWidth={1}
       borderColor="background.grey200"
@@ -135,7 +146,7 @@ function TabElement({
       >
         {name}
       </Typography>
-    </Container>
+    </StyledTouchableOpacity>
   );
 }
 
