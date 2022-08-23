@@ -89,13 +89,13 @@ interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
 }
 
-interface AccordianProps extends ViewProps {
-  header?: () => void;
+interface AccordionProps extends ViewProps {
+  header?: () => React.ReactNode;
   noBorder?: boolean;
-  onStateChange?: () => void;
+  onStateChange?: (isExpanded: boolean) => void;
   iconProp?: {
     name?: string;
-    Label?: () => void;
+    Label?: () => React.ReactNode;
     size?: number;
     color?: string;
   };
@@ -145,20 +145,20 @@ interface BottomSheetProps extends ViewProps {
   showCreateOptionLoader?: boolean;
   createSearchedOptionLabelStyle?: TextProps;
   createOptionLabel?: string;
-  onPressCreateOption?: () => void;
+  onPressCreateOption?: (searchText: string) => void;
   createSearchedOptionContainerStyle?: TouchableProps;
   data?: Array<any>;
   title?: string;
   hide?: () => void;
   isVisible?: boolean;
-  onItemPress?: () => void;
+  onItemPress?: ({ index, item }: { index: number; item: any }) => void;
   selectedItemIndex?: number;
   bg?: typeof theme.colors.background;
   titleContainerStyle?: ViewProps;
   titleTextStyle?: TextProps;
   modalParams?: ModalProps;
-  HeaderComponent?: () => void;
-  ContentRow?: () => void;
+  HeaderComponent?: () => React.ReactNode;
+  ContentRow?: () => React.ReactNode;
   contentType?: "checkbox" | null;
   canSearch?: boolean;
   onDonePress?: () => void;
@@ -168,8 +168,8 @@ interface ButtonProps extends TouchableProps {
   variant?: typeof BUTTON_VARIANTS[keyof typeof BUTTON_VARIANTS];
   label: string;
   labelStyle?: TextProps;
-  RightIcon?: () => void;
-  LeftIcon?: () => void;
+  RightIcon?: () => React.ReactNode;
+  LeftIcon?: () => React.ReactNode;
   disabled?: boolean;
   isLoading?: boolean;
   loadingText?: string;
@@ -199,9 +199,9 @@ interface CardProps extends TouchableOpacityProps, StyleProps {
 
 type CarouselProps = {
   itemArray: Array<any>;
-  renderItem: () => void;
+  renderItem: () => React.ReactNode;
   carouselRef?: React.RefObject<Carousel>;
-  onSnapToItem?: () => void;
+  onSnapToItem?: (index: number) => void;
 };
 
 interface CheckBoxProps extends TouchableProps {
@@ -252,13 +252,13 @@ interface FlashListProps extends RNFlashListProps {
   placeHolderItemCount?: number;
   onRefresh?: () => void;
   onEndReached?: () => void;
-  keyExtractor?: () => void;
+  keyExtractor?: (item: any, index: number) => string;
 }
 
 type InputProps = {
   label?: string;
   value: string;
-  onChangeText: () => void;
+  onChangeText: (val: string) => void;
   onBlur?: () => void;
   errorMessage?: string;
   PrefixIcon?: React.FC;
@@ -280,10 +280,10 @@ interface MultiSelectProps extends ViewProps {
   label?: string;
   value?: string | Array<any>;
   placeholder?: string;
-  labelExtractor?: () => void;
-  valueExtractor?: () => void;
-  onSelect?: () => void;
-  deletedValue?: () => void;
+  labelExtractor?: (item: any, index: number) => string;
+  valueExtractor?: (item: any, index: number) => string;
+  onSelect?: (selectedData: Array<any>) => void;
+  deletedValue?: (deletedOption: any) => void;
   isLoading?: boolean;
   isSearchable?: boolean;
   showCreateOption?: boolean;
@@ -294,11 +294,11 @@ interface MultiSelectProps extends ViewProps {
   itemContainerStyle?: ViewProps;
   multiSelectedItemContainerStyle?: ViewProps;
   multiSelectedItemLabelStyle?: TextProps;
-  selectedValue?: () => void;
+  selectedValue?: (selectedOption: any) => void;
   CreateItemComponent?: React.FC;
   showCreateOptionLoader?: boolean;
   createSearchedOptionLabelStyle?: TextProps;
-  onPressCreateOption?: () => void;
+  onPressCreateOption?: (searchText: string) => void;
   createSearchedOptionContainerStyle?: ViewProps;
   onDonePress?: () => void;
 }
@@ -311,7 +311,7 @@ type OnBoardingProps = {
 };
 
 type OtpInputsProps = {
-  handleChange: () => {};
+  handleChange: (value: string) => void;
   numberOfInputs: number;
   error?: boolean;
   code: string;
@@ -345,7 +345,7 @@ interface RadioButtonProps extends TouchableProps {
 }
 
 type RichTextEditorProps = {
-  onChange: () => void;
+  onChange: (val: string) => void;
   placeholderText?: string;
   children?: React.ReactNode;
   toolbarActions: Array<string>;
@@ -355,7 +355,7 @@ type RichTextEditorProps = {
 
 interface SearchBarProps extends ViewProps {
   placeholder?: string;
-  onChangeText: () => void;
+  onChangeText: (val: string) => void;
   onCancel?: () => void;
   debounceDelay?: number | string;
   showCancelButton?: boolean;
@@ -404,7 +404,7 @@ type TopBarProps = {
   tabContainerStyle?: ViewStyle;
 };
 
-export const Accordian: React.FC<AccordianProps>;
+export const Accordion: React.FC<AccordionProps>;
 export const Alert: React.FC<AlertProps> & {
   show?: (params: AlertShowParams) => void;
 };
