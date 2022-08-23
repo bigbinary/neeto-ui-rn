@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import Icon from "react-native-remix-icon";
 import PropTypes from "prop-types";
-import { StyleSheet, Platform, TouchableOpacity } from "react-native";
+import { StyleSheet, Platform, TouchableWithoutFeedback } from "react-native";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -71,7 +71,7 @@ import { ThemeContext } from "styled-components/native";
  *
  */
 
-const StyledTouchableOpacity = styled(TouchableOpacity)`
+const StyledTouchableWithoutFeedback = styled(TouchableWithoutFeedback)`
   ${flexbox}
   ${space}
   ${border}
@@ -124,7 +124,7 @@ function TabElement({
   });
 
   return (
-    <StyledTouchableOpacity
+    <StyledTouchableWithoutFeedback
       flex={1}
       onPress={onPress}
       alignItems="center"
@@ -146,7 +146,7 @@ function TabElement({
       >
         {name}
       </Typography>
-    </StyledTouchableOpacity>
+    </StyledTouchableWithoutFeedback>
   );
 }
 

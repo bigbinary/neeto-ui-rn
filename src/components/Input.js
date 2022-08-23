@@ -101,6 +101,7 @@ export const Input = props => {
     autoFocus = false,
     disabled = false,
     noBorder = false,
+    showInputAccessoryView = true,
     textAlignVertical = "top",
     ...rest
   } = props;
@@ -235,30 +236,32 @@ export const Input = props => {
             textAlignVertical={textAlignVertical}
             {...rest.inputProps}
           />
-          {rest.inputProps?.multiline && Platform.OS === "ios" && (
-            <InputAccessoryView nativeID={label}>
-              <Container
-                bg="background.white"
-                flexDirection="row"
-                p={2}
-                width={width}
-                justifyContent="flex-end"
-                alignItems="center"
-                pr={20}
-              >
-                <Button
-                  height={30}
-                  left={10}
-                  labelStyle={styles.doneButtonStyle}
-                  variant="text"
-                  onPress={() => {
-                    Keyboard.dismiss();
-                  }}
-                  label="Done"
-                />
-              </Container>
-            </InputAccessoryView>
-          )}
+          {rest.inputProps?.multiline &&
+            showInputAccessoryView &&
+            Platform.OS === "ios" && (
+              <InputAccessoryView nativeID={label}>
+                <Container
+                  bg="background.white"
+                  flexDirection="row"
+                  p={2}
+                  width={width}
+                  justifyContent="flex-end"
+                  alignItems="center"
+                  pr={20}
+                >
+                  <Button
+                    height={30}
+                    left={10}
+                    labelStyle={styles.doneButtonStyle}
+                    variant="text"
+                    onPress={() => {
+                      Keyboard.dismiss();
+                    }}
+                    label="Done"
+                  />
+                </Container>
+              </InputAccessoryView>
+            )}
         </View>
         {!!SuffixIcon && (
           <View px={2}>
@@ -324,6 +327,10 @@ Input.propTypes = {
    * Used to align the position of text in input.
    */
   textAlignVertical: PropTypes.oneOf(["auto", "top", "bottom", "center"]),
+  /**
+   * Show Input AccessoryView on iOS
+   */
+  showInputAccessoryView: PropTypes.bool,
 };
 
 export const styles = StyleSheet.create({
