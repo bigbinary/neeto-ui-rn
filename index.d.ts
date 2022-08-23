@@ -266,6 +266,7 @@ type InputProps = {
   autoFocus?: boolean;
   disabled?: boolean;
   noBorder?: boolean;
+  showInputAccessoryView?: boolean;
   inputProps?: RNTextInputProps;
 };
 
