@@ -1,3 +1,4 @@
+/* eslint-disable @bigbinary/neeto/no-dangling-constants */
 import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -5,6 +6,14 @@ import { ThemeContext } from "styled-components/native";
 import { ActivityIndicator } from "react-native";
 
 import { Typography, Touchable, Container } from "@components";
+
+export const BUTTON_VARIANTS = Object.freeze({
+  SOLID: "solid",
+  TEXT: "text",
+  DANGER: "danger",
+  DANGER_INVERSE: "danger-inverse",
+  DANGER_TEXT: "danger-text",
+});
 
 /**
  *
@@ -78,35 +87,35 @@ export const Button = props => {
 
   const getButtonColors = () => {
     switch (variant) {
-      case "solid":
+      case BUTTON_VARIANTS.SOLID:
         return {
           bg: theme.colors.background[disabled ? "grey400" : "base"],
           border: theme.colors.background[disabled ? "grey400" : "base"],
           color: theme.colors.background.white,
           ripple: "white",
         };
-      case "text":
+      case BUTTON_VARIANTS.TEXT:
         return {
           bg: "transparent",
           border: "transparent",
           color: theme.colors.font.primary,
           ripple: theme.colors.background.grey800,
         };
-      case "danger":
+      case BUTTON_VARIANTS.DANGER:
         return {
           bg: theme.colors.background.danger,
           border: theme.colors.background.danger,
           color: theme.colors.background.white,
           ripple: "white",
         };
-      case "danger-inverse":
+      case BUTTON_VARIANTS.DANGER_INVERSE:
         return {
           bg: theme.colors.background.white,
           border: theme.colors.background.danger,
           color: theme.colors.background.danger,
           ripple: theme.colors.background.grey800,
         };
-      case "danger-text":
+      case BUTTON_VARIANTS.DANGER_TEXT:
         return {
           bg: "transparent",
           border: "transparent",
@@ -210,13 +219,7 @@ Button.propTypes = {
    *    <li>solid - button with a background color.</li>
    *  </ul>
    */
-  variant: PropTypes.oneOf([
-    "text",
-    "solid",
-    "danger",
-    "danger-inverse",
-    "danger-text",
-  ]),
+  variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)),
   /**
    * Enable or Disable the button.
    */

@@ -1,3 +1,4 @@
+/* eslint-disable @bigbinary/neeto/no-dangling-constants */
 import * as React from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -43,7 +44,6 @@ import { theme } from "@theme";
  * @extends StyledSystems props /styled-system
  */
 
-// eslint-disable-next-line neeto/no-dangling-constants
 export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: theme.colors.background.grey800,
