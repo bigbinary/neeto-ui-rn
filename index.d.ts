@@ -280,7 +280,6 @@ interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
   label?: string;
   value?: string | Array<any>;
-  placeholder?: string;
   labelExtractor?: (item: any, index: number) => string;
   valueExtractor?: (item: any, index: number) => string;
   onSelect?: (selectedData: Array<any>) => void;

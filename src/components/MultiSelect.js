@@ -145,7 +145,6 @@ export const MultiSelect = ({
   options,
   label,
   value,
-  placeholder,
   labelExtractor,
   valueExtractor,
   onSelect,
@@ -319,11 +318,7 @@ export const MultiSelect = ({
             justifyContent="space-between"
             alignItems="center"
           >
-            {!multipleOptionsSelected && (
-              <Typography fontFamily="sf400" fontSize="s" color="font.grey">
-                {!multipleOptionsSelected && placeholder}
-              </Typography>
-            )}
+            {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
               <ScrollView showsVerticalScrollIndicator={false}>
                 <Container
@@ -430,10 +425,6 @@ MultiSelect.propTypes = {
       value: PropTypes.string,
     })
   ),
-  /**
-   * The text to be displayed if no option is selected.
-   */
-  placeholder: PropTypes.string,
   /**
    * Use custom key as label.
    */
@@ -586,7 +577,6 @@ MultiSelect.propTypes = {
 
 MultiSelect.defaultProps = {
   label: null,
-  placeholder: "Select Option",
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
