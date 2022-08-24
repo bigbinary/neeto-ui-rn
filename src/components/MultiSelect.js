@@ -6,9 +6,24 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { useSharedValue } from "react-native-reanimated";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
-import { ThemeContext } from "styled-components/native";
+import styled, { ThemeContext } from "styled-components/native";
+import {
+  flexbox,
+  space,
+  typography,
+  textStyle,
+  color,
+  layout,
+  system,
+  position,
+} from "styled-system";
 
 import {
   BottomSheet,
@@ -17,6 +32,23 @@ import {
   Touchable,
   Typography,
 } from "@components";
+
+const Typography2 = styled.Text`
+  ${textStyle}
+  ${space}
+  ${layout}
+  ${flexbox}
+  ${typography}
+  ${color}
+  ${position}
+  ${system({
+    textDecoration: {
+      property: "textDecoration",
+      cssProperty: "textDecoration",
+    },
+    textTransform: { property: "textTransform", cssProperty: "textTransform" },
+  })}
+`;
 
 const MultiSelectItem = ({
   label,
@@ -145,6 +177,8 @@ DropdownItem.propTypes = {
  * ```
  */
 
+const AnimatedLabel = Animated.createAnimatedComponent(Typography2);
+
 export const MultiSelect = ({
   options,
   label,
@@ -185,6 +219,7 @@ export const MultiSelect = ({
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
+  const animatedLabelValue = useSharedValue(0);
 
   const formatStr = str => str?.toLowerCase()?.trim();
   const filteredOptions = options
@@ -283,6 +318,16 @@ export const MultiSelect = ({
   };
 
   useEffect(() => {
+    animatedLabelValue.value = withTiming(
+      value.length || showDropdown ? 1 : 0,
+      {
+        duration: 250,
+      }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value, showDropdown]);
+
+  useEffect(() => {
     if (showDropdown) {
       dropdownAnimatedHeight.value = dropdownHeight;
     }
@@ -295,6 +340,14 @@ export const MultiSelect = ({
     index: PropTypes.number,
   };
 
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      top: interpolate(animatedLabelValue.value, [0, 1], [-1, -5]),
+      fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
+      marginLeft: 5,
+    };
+  });
+
   return (
     <Container {...containerStyle}>
       <TouchableWithoutFeedback
@@ -305,26 +358,23 @@ export const MultiSelect = ({
           borderRadius={12}
           borderWidth={1}
           borderColor={showDropdown ? "border.base" : "border.grey400"}
-          p={multipleOptionsSelected ? 1 : 2}
+          p={2}
           pr={2}
           {...inputContainerStyle}
           {...rest}
         >
-          <Typography
-            fontFamily="sf400"
-            mb={1}
-            fontSize="xs"
-            color="font.grey600"
-            ml={1}
-            {...labelStyle}
-          >
-            {label}
-          </Typography>
           <Container
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
           >
+            <AnimatedLabel
+              position="absolute"
+              zIndex={1}
+              style={[animatedStyles, { ...labelStyle }]}
+            >
+              {label}
+            </AnimatedLabel>
             {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
               <ScrollView showsVerticalScrollIndicator={false}>
@@ -333,6 +383,7 @@ export const MultiSelect = ({
                   flexDirection="row"
                   maxWidth="85%"
                   onStartShouldSetResponder={() => true}
+                  mt={3}
                 >
                   {value?.slice(0, maxItemSize).map((item, index) => {
                     return (
