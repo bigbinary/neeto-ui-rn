@@ -246,7 +246,7 @@ interface FabProps extends TouchableProps {
 
 interface FlashListProps extends RNFlashListProps {
   SkeletonComponent?: React.FC;
-  durationPerItem?: number;
+  animationDuration?: number;
   data: Array<any>;
   isLoading?: boolean;
   placeHolderItemCount?: number;
