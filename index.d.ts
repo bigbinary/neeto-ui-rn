@@ -303,6 +303,10 @@ interface MultiSelectProps extends ViewProps {
   createSearchedOptionContainerStyle?: ViewProps;
   onDonePress?: () => void;
   disabled?: boolean;
+  noResultsLabelContainerStyle?: ViewStyle;
+  noResultsLabelStyle?: ViewStyle;
+  noResultsLabel?: TypographyProps;
+  NoResultsComponent?: React.ReactNode;
 }
 
 type OnBoardingProps = {

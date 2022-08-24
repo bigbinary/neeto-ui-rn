@@ -155,6 +155,10 @@ export const BottomSheet = ({
   canSearch,
   onDonePress,
   disabled,
+  noResultsLabelContainerStyle,
+  noResultsLabelStyle,
+  noResultsLabel,
+  NoResultsComponent,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -235,6 +239,32 @@ export const BottomSheet = ({
               contentContainerStyle={contentContainerStyle}
             />
           )}
+
+          {!!searchText.trim() &&
+            !generateData().length &&
+            !showCreateOption &&
+            (NoResultsComponent ? (
+              <NoResultsComponent />
+            ) : (
+              <Container
+                alignItems="center"
+                py={2}
+                borderRadius={5}
+                borderWidth={1}
+                mb={2}
+                borderColor="border.grey300"
+                {...noResultsLabelContainerStyle}
+              >
+                <Typography
+                  fontFamily="sf600"
+                  fontSize="s"
+                  color="font.grey"
+                  {...noResultsLabelStyle}
+                >
+                  {noResultsLabel || "Search not found"}
+                </Typography>
+              </Container>
+            ))}
 
           {!disabled &&
             (showCreateOptionLoader ? (
@@ -360,6 +390,10 @@ BottomSheet.propTypes = {
    * To customize empty options placeholder container style.
    */
   createSearchedOptionContainerStyle: PropTypes.object,
+  noResultsLabelContainerStyle: PropTypes.object,
+  noResultsLabelStyle: PropTypes.object,
+  noResultsLabel: PropTypes.string,
+  NoResultsComponent: PropTypes.node,
   /**
    * To support more Modal params.
    */

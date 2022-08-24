@@ -168,6 +168,10 @@ export const MultiSelect = ({
   createSearchedOptionContainerStyle,
   onDonePress,
   disabled,
+  noResultsLabelContainerStyle,
+  noResultsLabelStyle,
+  noResultsLabel,
+  NoResultsComponent,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -379,6 +383,10 @@ export const MultiSelect = ({
         createSearchedOptionLabelStyle={createSearchedOptionLabelStyle}
         onPressCreateOption={onPressCreateOption}
         createSearchedOptionContainerStyle={createSearchedOptionContainerStyle}
+        noResultsLabelContainerStyle={noResultsLabelContainerStyle}
+        noResultsLabelStyle={noResultsLabelStyle}
+        noResultsLabel={noResultsLabel}
+        NoResultsComponent={NoResultsComponent}
       />
     </Container>
   );
@@ -518,6 +526,22 @@ MultiSelect.propTypes = {
    * Flag will disable the selection of the item
    */
   disabled: PropTypes.bool,
+  /**
+   * To customize no results container style
+   */
+  noResultsLabelContainerStyle: PropTypes.object,
+  /**
+   * To customize no results label style
+   */
+  noResultsLabelStyle: PropTypes.object,
+  /**
+   * To customize no results label
+   */
+  noResultsLabel: PropTypes.string,
+  /**
+   * To customize no results component
+   */
+  NoResultsComponent: PropTypes.node,
 };
 
 MultiSelect.defaultProps = {

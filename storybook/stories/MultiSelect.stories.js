@@ -71,6 +71,10 @@ export const MultiSelects = () => {
           onPress={() => simulateAPICall(searchText)}
         />
       )}
+      // noResultsLabelContainerStyle={{backgroundColor:"red"}}
+      // noResultsLabelStyle={{color:"green"}}
+      // noResultsLabel="Not Found"
+      // NoResultsComponent={() => <Typography>Searched Item Not Found</Typography>}
     />
   );
 };
