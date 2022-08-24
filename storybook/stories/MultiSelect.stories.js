@@ -75,6 +75,10 @@ export const MultiSelects = () => {
       // noResultsLabelStyle={{color:"green"}}
       // noResultsLabel="Not Found"
       // NoResultsComponent={() => <Typography>Searched Item Not Found</Typography>}
+      // MoreItemComponent={() => <Typography>Searched Item Not Found</Typography>}
+      // moreItemLabelContainerStyle={{backgroundColor:"yellow"}}
+      // moreItemLabelStyle={{color:"green"}}
+      // maxItemSize={1}
     />
   );
 };

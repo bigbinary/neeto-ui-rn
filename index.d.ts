@@ -304,9 +304,12 @@ interface MultiSelectProps extends ViewProps {
   onDonePress?: () => void;
   disabled?: boolean;
   noResultsLabelContainerStyle?: ViewStyle;
-  noResultsLabelStyle?: ViewStyle;
+  noResultsLabelStyle?: TextStyle;
   noResultsLabel?: TypographyProps;
   NoResultsComponent?: React.ReactNode;
+  maxItemSize?: number;
+  moreItemLabelContainerStyle?: ViewStyle;
+  moreItemLabelStyle?: TextStyle
 }
 
 type OnBoardingProps = {

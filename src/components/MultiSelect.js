@@ -172,6 +172,10 @@ export const MultiSelect = ({
   noResultsLabelStyle,
   noResultsLabel,
   NoResultsComponent,
+  maxItemSize,
+  moreItemLabelContainerStyle,
+  moreItemLabelStyle,
+  MoreItemComponent,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -328,7 +332,7 @@ export const MultiSelect = ({
                   maxWidth="85%"
                   onStartShouldSetResponder={() => true}
                 >
-                  {value?.map((item, index) => {
+                  {value?.slice(0, maxItemSize).map((item, index) => {
                     const optionLabel = labelExtractor(item, index);
                     return (
                       <MultiSelectItem
@@ -344,6 +348,26 @@ export const MultiSelect = ({
                       />
                     );
                   })}
+                  {value?.length > maxItemSize &&
+                    (!MoreItemComponent ? (
+                      <Container
+                        bg="background.secondary"
+                        borderRadius={12}
+                        flexDirection="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                        px={2}
+                        py={1}
+                        m={1}
+                        {...moreItemLabelContainerStyle}
+                      >
+                        <Typography {...moreItemLabelStyle}>
+                          +{value?.length - maxItemSize} More
+                        </Typography>
+                      </Container>
+                    ) : (
+                      <MoreItemComponent />
+                    ))}
                 </Container>
               </ScrollView>
             )}
@@ -542,6 +566,22 @@ MultiSelect.propTypes = {
    * To customize no results component
    */
   NoResultsComponent: PropTypes.node,
+  /**
+   * Maximum number of items to render in the list
+   */
+  maxItemSize: PropTypes.number,
+  /**
+   * Container style for the more item label
+   */
+  moreItemLabelContainerStyle: PropTypes.object,
+  /**
+   * More item label style
+   */
+  moreItemLabelStyle: PropTypes.object,
+  /**
+   * Custom component to render more item message
+   */
+  MoreItemComponent: PropTypes.node,
 };
 
 MultiSelect.defaultProps = {
@@ -560,4 +600,5 @@ MultiSelect.defaultProps = {
   createOptionLabel: null,
   onPressCreateOption: () => {},
   onDonePress: () => {},
+  maxItemSize: 5,
 };
