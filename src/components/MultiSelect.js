@@ -241,8 +241,10 @@ export const MultiSelect = ({
     const itemIndex = value.findIndex(
       (data, i) => getValue(data, i) === getValue(item, index)
     );
+
     return (
-      !!item?.label && (
+      !!item?.label ||
+      (labelExtractor(item, index) && (
         <Container py={12}>
           <CheckBox
             disabled={disabled}
@@ -252,7 +254,7 @@ export const MultiSelect = ({
             label={item?.label || labelExtractor(item, index)}
           />
         </Container>
-      )
+      ))
     );
   };
 

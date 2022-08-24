@@ -11,36 +11,36 @@ export default MultiSelectStories;
 
 const data = [
   {
-    label: "Option 1",
-    value: "option_1",
+    name: "Option 1",
+    id: "option_1",
   },
   {
-    label: "Option 2",
-    value: "option_2",
+    name: "Option 2",
+    id: "option_2",
   },
   {
-    label: "Option 3",
-    value: "option_3",
+    name: "Option 3",
+    id: "option_3",
   },
   {
-    label: "Option 4",
-    value: "option_4",
+    name: "Option 4",
+    id: "option_4",
   },
   {
-    label: "Option 5",
-    value: "option_5",
+    name: "Option 5",
+    id: "option_5",
   },
   {
-    label: "Option 6",
-    value: "option_6",
+    name: "Option 6",
+    id: "option_6",
   },
 ];
 
 export const MultiSelects = () => {
   const [selectedOptions, setSelectedOptions] = useState([
     {
-      label: "Option 1",
-      value: "option_1",
+      name: "Option 1",
+      id: "option_1",
     },
   ]);
   const [sData, setSData] = useState(data);
@@ -50,7 +50,7 @@ export const MultiSelects = () => {
   const simulateAPICall = value => {
     setIsLoading(true);
     setTimeout(() => {
-      setSData(prev => [...prev, { label: value, value }]);
+      setSData(prev => [...prev, { name: value, id: value }]);
       setIsLoading(false);
     }, 2000);
   };
@@ -71,6 +71,8 @@ export const MultiSelects = () => {
           onPress={() => simulateAPICall(searchText)}
         />
       )}
+      valueExtractor={item => item.id}
+      labelExtractor={item => item.name}
       // noResultsLabelContainerStyle={{backgroundColor:"red"}}
       // noResultsLabelStyle={{color:"green"}}
       // noResultsLabel="Not Found"
