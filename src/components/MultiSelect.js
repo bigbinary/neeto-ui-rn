@@ -23,6 +23,7 @@ const MultiSelectItem = ({
   onUnselect,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
+  disabled,
 }) => {
   const theme = useContext(ThemeContext);
   return (
@@ -46,13 +47,15 @@ const MultiSelectItem = ({
       >
         {label}
       </Typography>
-      <TouchableWithoutFeedback onPress={onUnselect}>
-        <Icon
-          name="ri-close-line"
-          size="20"
-          color={theme.colors.font.grey800}
-        />
-      </TouchableWithoutFeedback>
+      {!disabled && (
+        <TouchableWithoutFeedback disabled={disabled} onPress={onUnselect}>
+          <Icon
+            name="ri-close-line"
+            size="20"
+            color={theme.colors.font.grey800}
+          />
+        </TouchableWithoutFeedback>
+      )}
     </Container>
   );
 };
@@ -62,6 +65,7 @@ MultiSelectItem.propTypes = {
   onUnselect: PropTypes.func,
   multiSelectedItemContainerStyle: PropTypes.object,
   multiSelectedItemLabelStyle: PropTypes.object,
+  disabled: PropTypes.bool,
 };
 
 const DropdownItem = ({
@@ -342,6 +346,7 @@ export const MultiSelect = ({
                         multiSelectedItemLabelStyle={
                           multiSelectedItemLabelStyle
                         }
+                        disabled={disabled}
                       />
                     );
                   })}
