@@ -45,7 +45,7 @@ export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => {
     >
       <Container flexDirection="row" alignItems="center" width="50%">
         {LeftComponent && <LeftComponent />}
-        <Typography color="font.grey800" fontSize="l" fontFamily="sf400">
+        <Typography color="font.grey800" fontSize="l" fontFamily="sf500">
           {label}
         </Typography>
       </Container>
