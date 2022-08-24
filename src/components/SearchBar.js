@@ -66,10 +66,10 @@ export const SearchBar = props => {
   }, [debouncedSearchTextValue, onChangeText]);
 
   const animateSearchInput = val => {
-    Animated.sequence([
+    Animated.parallel([
       Animated.timing(buttonOpacityController, {
         toValue: val,
-        duration: 350,
+        duration: val ? 800 : 0,
         useNativeDriver: false,
       }),
       Animated.timing(buttonWidthController, {
