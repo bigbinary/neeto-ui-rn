@@ -8,11 +8,9 @@ import {
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Fuse from "fuse.js";
 
 import { Typography, Container, Touchable, SearchBar } from "@components";
 import { theme } from "../theme";
-import { FUSE_KEYS } from "../constants";
 
 const Title = ({
   title,
@@ -159,15 +157,20 @@ export const BottomSheet = ({
   noResultsLabelStyle,
   noResultsLabel,
   NoResultsComponent,
+  labelExtractor,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
 
-  const fuse = new Fuse(data, { keys: FUSE_KEYS, threshold: 0.1 });
+  const getLabel = (item, index) => {
+    return item?.label || labelExtractor(item, index) || item;
+  };
 
   const generateData = () => {
     if (searchText.trim().length) {
-      return fuse.search(searchText.trim()).map(item => item.item);
+      return data.filter(item =>
+        getLabel(item).toLowerCase().includes(searchText.toLowerCase())
+      );
     } else {
       return data;
     }
@@ -394,6 +397,14 @@ BottomSheet.propTypes = {
   noResultsLabelStyle: PropTypes.object,
   noResultsLabel: PropTypes.string,
   NoResultsComponent: PropTypes.node,
+  /**
+   * Use custom key as label.
+   */
+  labelExtractor: PropTypes.func,
+  /**
+   * Use custom key as value.
+   */
+  valueExtractor: PropTypes.func,
   /**
    * To support more Modal params.
    */

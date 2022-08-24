@@ -162,6 +162,8 @@ interface BottomSheetProps extends ViewProps {
   contentType?: "checkbox" | null;
   canSearch?: boolean;
   onDonePress?: () => void;
+  valueExtractor?: () =>{};
+  labelExtractor?: () =>{};
 }
 
 interface ButtonProps extends TouchableProps {

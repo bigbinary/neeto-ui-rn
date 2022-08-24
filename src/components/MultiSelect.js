@@ -220,7 +220,11 @@ export const MultiSelect = ({
         : 0);
 
   const getValue = (item, index) => {
-    return item?.value || valueExtractor(item, index);
+    return item?.value || valueExtractor(item, index) || item;
+  };
+
+  const getLabel = (item, index) => {
+    return item?.label || labelExtractor(item, index) || item;
   };
 
   const handleCheckbox = item => {
@@ -243,18 +247,15 @@ export const MultiSelect = ({
     );
 
     return (
-      !!item?.label ||
-      (labelExtractor(item, index) && (
-        <Container py={12}>
-          <CheckBox
-            disabled={disabled}
-            checked={itemIndex !== -1}
-            onSelect={onPress}
-            // checkboxContainerProp={containerStyle}
-            label={item?.label || labelExtractor(item, index)}
-          />
-        </Container>
-      ))
+      <Container py={12}>
+        <CheckBox
+          disabled={disabled}
+          checked={itemIndex !== -1}
+          onSelect={onPress}
+          // checkboxContainerProp={containerStyle}
+          label={item?.label || labelExtractor(item, index) || item}
+        />
+      </Container>
     );
   };
 
@@ -269,7 +270,7 @@ export const MultiSelect = ({
     }
   };
 
-  const handleUnselection = item => {
+  const handleUnSelection = item => {
     const newValue = value.filter(
       selectedItem => valueExtractor(selectedItem) !== valueExtractor(item)
     );
@@ -330,12 +331,11 @@ export const MultiSelect = ({
                   onStartShouldSetResponder={() => true}
                 >
                   {value?.slice(0, maxItemSize).map((item, index) => {
-                    const optionLabel = labelExtractor(item, index);
                     return (
                       <MultiSelectItem
                         key={index}
-                        label={optionLabel}
-                        onUnselect={() => handleUnselection(item)}
+                        label={getLabel(item)}
+                        onUnselect={() => handleUnSelection(item)}
                         multiSelectedItemContainerStyle={
                           multiSelectedItemContainerStyle
                         }
@@ -408,6 +408,8 @@ export const MultiSelect = ({
         noResultsLabelStyle={noResultsLabelStyle}
         noResultsLabel={noResultsLabel}
         NoResultsComponent={NoResultsComponent}
+        valueExtractor={valueExtractor}
+        labelExtractor={labelExtractor}
       />
     </Container>
   );
@@ -421,12 +423,10 @@ MultiSelect.propTypes = {
   /**
    * options to populate the options dropdown.
    */
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    })
-  ),
+  options: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
   /**
    * Use custom key as label.
    */
