@@ -2,10 +2,12 @@
 import React, { useCallback, useContext, useEffect } from "react";
 import { FlashList as ShopifyFlashList } from "@shopify/flash-list";
 import Animated, {
+  cancelAnimation,
   Extrapolation,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
+  withSequence,
   withTiming,
 } from "react-native-reanimated";
 import PropTypes from "prop-types";
@@ -33,7 +35,7 @@ const Placeholder = () => {
 };
 
 export const FlashList = ({
-  durationPerItem = 200,
+  animationDuration = 2000,
   SkeletonComponent,
   placeHolderItemCount = 10,
   isLoading = false,
@@ -50,7 +52,7 @@ export const FlashList = ({
   return (
     <FadeInFlatList
       key={isLoading}
-      durationPerItem={durationPerItem}
+      animationDuration={animationDuration}
       SkeletonComponent={SkeletonComponent}
       isLoading={isLoading}
       extraData={{ isLoading, placeHolderItemCount }}
@@ -77,7 +79,7 @@ export const FlashList = ({
 
 const FadeInFlatList = ({
   renderItem: originalRenderItem,
-  durationPerItem = 200,
+  animationDuration,
   isLoading = false,
   SkeletonComponent,
   ...props
@@ -136,18 +138,27 @@ const FadeInFlatList = ({
 
   useEffect(() => {
     value.value = 0;
-    value.value = withTiming(props.data.length + 1, {
-      duration: props.data.length * durationPerItem,
-    });
+    value.value = withSequence(
+      withTiming(20, {
+        duration: animationDuration,
+      }),
+      withTiming(props.data.length + 1, {
+        duration: 0,
+      })
+    );
+
+    return () => {
+      cancelAnimation(value);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [durationPerItem, value, props.data.length, isLoading]);
+  }, [animationDuration, value, props.data.length, isLoading]);
 
   return <ShopifyFlashList {...props} renderItem={renderItem} />;
 };
 
 FlashList.propTypes = {
   SkeletonComponent: PropTypes.element,
-  durationPerItem: PropTypes.number,
+  animationDuration: PropTypes.number,
   data: PropTypes.array.isRequired,
   isLoading: PropTypes.bool,
   placeHolderItemCount: PropTypes.number,
