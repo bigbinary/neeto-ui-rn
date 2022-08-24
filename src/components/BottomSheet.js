@@ -154,6 +154,7 @@ export const BottomSheet = ({
   contentType,
   canSearch,
   onDonePress,
+  disabled,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -235,39 +236,41 @@ export const BottomSheet = ({
             />
           )}
 
-          {showCreateOptionLoader ? (
-            <ActivityIndicator
-              size="small"
-              color={theme.colors.background.base}
-            />
-          ) : (
-            !!searchText.trim() &&
-            !generateData().length &&
-            showCreateOption && (
-              <Container>
-                {CreateItemComponent ? (
-                  <CreateItemComponent searchText={searchText} />
-                ) : (
-                  <Touchable
-                    height={40}
-                    justifyContent="center"
-                    alignItems="center"
-                    onPress={() => onPressCreateOption(searchText)}
-                    {...createSearchedOptionContainerStyle}
-                  >
-                    <Typography
-                      fontFamily="sf400"
-                      fontSize="s"
-                      color="font.grey"
-                      {...createSearchedOptionLabelStyle}
+          {!disabled &&
+            (showCreateOptionLoader ? (
+              <ActivityIndicator
+                size="small"
+                color={theme.colors.background.base}
+              />
+            ) : (
+              !!searchText.trim() &&
+              !generateData().length &&
+              showCreateOption && (
+                <Container>
+                  {CreateItemComponent ? (
+                    <CreateItemComponent searchText={searchText} />
+                  ) : (
+                    <Touchable
+                      height={40}
+                      justifyContent="center"
+                      alignItems="center"
+                      onPress={() => onPressCreateOption(searchText)}
+                      {...createSearchedOptionContainerStyle}
                     >
-                      {createOptionLabel || `Create ${searchText} option`}
-                    </Typography>
-                  </Touchable>
-                )}
-              </Container>
-            )
-          )}
+                      <Typography
+                        fontFamily="sf400"
+                        fontSize="s"
+                        color="font.grey"
+                        {...createSearchedOptionLabelStyle}
+                      >
+                        {createOptionLabel || `Create ${searchText} option`}{" "}
+                        {disabled.toString()}
+                      </Typography>
+                    </Touchable>
+                  )}
+                </Container>
+              )
+            ))}
         </Container>
       </SafeAreaView>
     </Modal>
@@ -318,11 +321,11 @@ BottomSheet.propTypes = {
    */
   bg: PropTypes.string,
   /**
-   * To customise title container styles.
+   * To customize title container styles.
    */
   titleContainerStyle: PropTypes.object,
   /**
-   * To customise title text styles.
+   * To customize title text styles.
    */
   titleTextStyle: PropTypes.object,
   /**
@@ -346,11 +349,15 @@ BottomSheet.propTypes = {
    */
   CreateItemComponent: PropTypes.node,
   /**
-   * To customise empty options placeholder text style.
+   * To customize empty options placeholder text style.
    */
   createSearchedOptionLabelStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder container style.
+   * Flag will disable create item feature
+   */
+  disabled: PropTypes.bool,
+  /**
+   * To customize empty options placeholder container style.
    */
   createSearchedOptionContainerStyle: PropTypes.object,
   /**

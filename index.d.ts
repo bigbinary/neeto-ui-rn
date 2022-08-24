@@ -302,6 +302,7 @@ interface MultiSelectProps extends ViewProps {
   onPressCreateOption?: (searchText: string) => void;
   createSearchedOptionContainerStyle?: ViewProps;
   onDonePress?: () => void;
+  disabled?: boolean;
 }
 
 type OnBoardingProps = {

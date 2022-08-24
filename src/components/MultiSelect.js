@@ -23,32 +23,39 @@ const MultiSelectItem = ({
   onUnselect,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
-}) => (
-  <Container
-    bg="background.secondary"
-    borderRadius={12}
-    flexDirection="row"
-    alignItems="center"
-    justifyContent="space-between"
-    px={2}
-    py={1}
-    m={1}
-    {...multiSelectedItemContainerStyle}
-  >
-    <Typography
-      fontFamily="sf400"
-      fontSize="s"
-      mr={2}
-      color="font.grey800"
-      {...multiSelectedItemLabelStyle}
+}) => {
+  const theme = useContext(ThemeContext);
+  return (
+    <Container
+      bg="background.secondary"
+      borderRadius={12}
+      flexDirection="row"
+      alignItems="center"
+      justifyContent="space-between"
+      px={2}
+      py={1}
+      m={1}
+      {...multiSelectedItemContainerStyle}
     >
-      {label}
-    </Typography>
-    <TouchableWithoutFeedback onPress={onUnselect}>
-      <Icon name="ri-close-line" size="20" color="grey800" />
-    </TouchableWithoutFeedback>
-  </Container>
-);
+      <Typography
+        fontFamily="sf400"
+        fontSize="s"
+        mr={2}
+        color="font.grey800"
+        {...multiSelectedItemLabelStyle}
+      >
+        {label}
+      </Typography>
+      <TouchableWithoutFeedback onPress={onUnselect}>
+        <Icon
+          name="ri-close-line"
+          size="20"
+          color={theme.colors.font.grey800}
+        />
+      </TouchableWithoutFeedback>
+    </Container>
+  );
+};
 
 MultiSelectItem.propTypes = {
   label: PropTypes.string,
@@ -160,6 +167,7 @@ export const MultiSelect = ({
   onPressCreateOption,
   createSearchedOptionContainerStyle,
   onDonePress,
+  disabled,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -230,6 +238,7 @@ export const MultiSelect = ({
       !!item?.label && (
         <Container py={12}>
           <CheckBox
+            disabled={disabled}
             checked={itemIndex !== -1}
             onSelect={onPress}
             // checkboxContainerProp={containerStyle}
@@ -356,6 +365,7 @@ export const MultiSelect = ({
           handleCheckbox(item);
           selectedValue(item);
         }}
+        disabled={disabled}
         onDonePress={onDonePress}
         isVisible={showDropdown}
         hide={() => setShowDropdown(false)}
@@ -477,7 +487,7 @@ MultiSelect.propTypes = {
    */
   multiSelectedItemLabelStyle: PropTypes.object,
   /**
-   * To customise search input containerr style.
+   * To customise search input container style.
    */
   searchInputContainerStyle: PropTypes.object,
   /**
@@ -504,6 +514,10 @@ MultiSelect.propTypes = {
    * Component that renders when searched item doesn't exists
    */
   CreateItemComponent: PropTypes.node,
+  /**
+   * Flag will disable the selection of the item
+   */
+  disabled: PropTypes.bool,
 };
 
 MultiSelect.defaultProps = {
