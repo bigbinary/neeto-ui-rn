@@ -176,10 +176,6 @@ export const BottomSheet = ({
     }
   };
 
-  const contentContainerStyle = {
-    paddingBottom: 50,
-  };
-
   return (
     <Modal
       style={styles.modalStyle}
@@ -197,6 +193,7 @@ export const BottomSheet = ({
           borderTopRightRadius={20}
           borderTopLeftRadius={20}
           p={16}
+          flex={1}
           {...rest}
         >
           {title && (
@@ -218,7 +215,67 @@ export const BottomSheet = ({
 
           {data && (
             <FlatList
-              ListFooterComponent={children}
+              ListFooterComponent={
+                <Container>
+                  {children}
+                  {!!searchText.trim() &&
+                    !showCreateOption &&
+                    (NoResultsComponent ? (
+                      <NoResultsComponent />
+                    ) : (
+                      <Container
+                        alignItems="center"
+                        py={2}
+                        mb={2}
+                        {...noResultsLabelContainerStyle}
+                      >
+                        <Typography
+                          fontFamily="sf600"
+                          fontSize="s"
+                          color="font.grey"
+                          {...noResultsLabelStyle}
+                        >
+                          {noResultsLabel || "Search not found"}
+                        </Typography>
+                      </Container>
+                    ))}
+
+                  {!disabled &&
+                    (showCreateOptionLoader ? (
+                      <ActivityIndicator
+                        size="small"
+                        color={theme.colors.background.base}
+                      />
+                    ) : (
+                      !!searchText.trim() &&
+                      showCreateOption && (
+                        <Container>
+                          {CreateItemComponent ? (
+                            <CreateItemComponent searchText={searchText} />
+                          ) : (
+                            <Touchable
+                              height={40}
+                              justifyContent="center"
+                              alignItems="center"
+                              onPress={() => onPressCreateOption(searchText)}
+                              {...createSearchedOptionContainerStyle}
+                            >
+                              <Typography
+                                fontFamily="sf400"
+                                fontSize="s"
+                                color="font.grey"
+                                {...createSearchedOptionLabelStyle}
+                              >
+                                {createOptionLabel ||
+                                  `Create ${searchText} option`}
+                              </Typography>
+                            </Touchable>
+                          )}
+                        </Container>
+                      )
+                    ))}
+                </Container>
+              }
               initialNumToRender={data.length}
               onScrollBeginDrag={Keyboard.dismiss}
               data={generateData()}
@@ -239,71 +296,8 @@ export const BottomSheet = ({
               keyExtractor={(item, index) => {
                 return index;
               }}
-              contentContainerStyle={contentContainerStyle}
             />
           )}
-
-          {!!searchText.trim() &&
-            !generateData().length &&
-            !showCreateOption &&
-            (NoResultsComponent ? (
-              <NoResultsComponent />
-            ) : (
-              <Container
-                alignItems="center"
-                py={2}
-                borderRadius={5}
-                borderWidth={1}
-                mb={2}
-                borderColor="border.grey300"
-                {...noResultsLabelContainerStyle}
-              >
-                <Typography
-                  fontFamily="sf600"
-                  fontSize="s"
-                  color="font.grey"
-                  {...noResultsLabelStyle}
-                >
-                  {noResultsLabel || "Search not found"}
-                </Typography>
-              </Container>
-            ))}
-
-          {!disabled &&
-            (showCreateOptionLoader ? (
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.background.base}
-              />
-            ) : (
-              !!searchText.trim() &&
-              !generateData().length &&
-              showCreateOption && (
-                <Container>
-                  {CreateItemComponent ? (
-                    <CreateItemComponent searchText={searchText} />
-                  ) : (
-                    <Touchable
-                      height={40}
-                      justifyContent="center"
-                      alignItems="center"
-                      onPress={() => onPressCreateOption(searchText)}
-                      {...createSearchedOptionContainerStyle}
-                    >
-                      <Typography
-                        fontFamily="sf400"
-                        fontSize="s"
-                        color="font.grey"
-                        {...createSearchedOptionLabelStyle}
-                      >
-                        {createOptionLabel || `Create ${searchText} option`}{" "}
-                        {disabled.toString()}
-                      </Typography>
-                    </Touchable>
-                  )}
-                </Container>
-              )
-            ))}
         </Container>
       </SafeAreaView>
     </Modal>
@@ -422,10 +416,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background.primary,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    flex: 1,
   },
   modalStyle: {
     margin: 0,
     justifyContent: "flex-end",
+    flex: 1,
   },
   inputContainerStyle: {
     backgroundColor: "white",
