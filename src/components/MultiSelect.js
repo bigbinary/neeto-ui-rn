@@ -291,7 +291,6 @@ export const MultiSelect = ({
           disabled={disabled}
           checked={itemIndex !== -1}
           onSelect={onPress}
-          // checkboxContainerProp={containerStyle}
           label={item?.label || labelExtractor(item, index) || item}
         />
       </Container>
