@@ -181,9 +181,8 @@ export const BottomSheet = ({
       data =>
         getLabel(data).toLocaleLowerCase() === searchText.toLocaleLowerCase()
     ).length;
-    return (
-      filteredItemCount === generateData().length && generateData().length > 0
-    );
+
+    return filteredItemCount > 0;
   };
 
   return (
