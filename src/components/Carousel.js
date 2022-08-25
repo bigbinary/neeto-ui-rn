@@ -66,8 +66,8 @@ export const Carousel = ({
         activeDotIndex={activeIndex}
         dotStyle={styles.dotStyle}
         inactiveDotStyle={styles.inactiveDotStyle}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
+        inactiveDotOpacity={1}
+        inactiveDotScale={1}
         dotContainerStyle={styles.dotContainerStyle}
       />
     </Container>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    marginHorizontal: 8,
+    marginRight: 8,
     backgroundColor: "#2F3941",
   },
   inactiveDotStyle: {
