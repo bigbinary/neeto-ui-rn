@@ -235,7 +235,7 @@ export const BottomSheet = ({
                           color="font.grey"
                           {...noResultsLabelStyle}
                         >
-                          {noResultsLabel || "Search not found"}
+                          {noResultsLabel || "No options found"}
                         </Typography>
                       </Container>
                     ))}
