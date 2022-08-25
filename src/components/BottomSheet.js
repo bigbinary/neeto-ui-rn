@@ -112,7 +112,7 @@ Title.propTypes = {
  *       hide={() => {
  *         setBottomSheetVisibility(false);
  *       }}
- *       onItemPress={index => {
+ *       onItemPress={({index}) => {
  *         setSelectedItemIndex(index);
  *       }}
  *       title="PROJECT"
