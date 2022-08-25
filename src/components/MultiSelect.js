@@ -5,7 +5,6 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -378,52 +377,48 @@ export const MultiSelect = ({
             </AnimatedLabel>
             {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <Container
-                  flexWrap="wrap"
-                  flexDirection="row"
-                  maxWidth="85%"
-                  onStartShouldSetResponder={() => true}
-                  mt={3}
-                >
-                  {value?.slice(0, maxItemSize).map((item, index) => {
-                    return (
-                      <MultiSelectItem
-                        key={index}
-                        label={getLabel(item)}
-                        onUnselect={() => handleUnSelection(item)}
-                        multiSelectedItemContainerStyle={
-                          multiSelectedItemContainerStyle
-                        }
-                        multiSelectedItemLabelStyle={
-                          multiSelectedItemLabelStyle
-                        }
-                        disabled={disabled}
-                      />
-                    );
-                  })}
-                  {value?.length > maxItemSize &&
-                    (!MoreItemComponent ? (
-                      <Container
-                        bg="background.secondary"
-                        borderRadius={12}
-                        flexDirection="row"
-                        alignItems="center"
-                        justifyContent="space-between"
-                        px={2}
-                        py={1}
-                        m={1}
-                        {...moreItemLabelContainerStyle}
-                      >
-                        <Typography {...moreItemLabelStyle}>
-                          +{value?.length - maxItemSize} More
-                        </Typography>
-                      </Container>
-                    ) : (
-                      <MoreItemComponent />
-                    ))}
-                </Container>
-              </ScrollView>
+              <Container
+                flexWrap="wrap"
+                flexDirection="row"
+                maxWidth="85%"
+                onStartShouldSetResponder={() => true}
+                mt={3}
+              >
+                {value?.slice(0, maxItemSize).map((item, index) => {
+                  return (
+                    <MultiSelectItem
+                      key={index}
+                      label={getLabel(item)}
+                      onUnselect={() => handleUnSelection(item)}
+                      multiSelectedItemContainerStyle={
+                        multiSelectedItemContainerStyle
+                      }
+                      multiSelectedItemLabelStyle={multiSelectedItemLabelStyle}
+                      disabled={disabled}
+                    />
+                  );
+                })}
+                {value?.length > maxItemSize &&
+                  (!MoreItemComponent ? (
+                    <Container
+                      bg="background.secondary"
+                      borderRadius={12}
+                      flexDirection="row"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      px={2}
+                      py={1}
+                      m={1}
+                      {...moreItemLabelContainerStyle}
+                    >
+                      <Typography {...moreItemLabelStyle}>
+                        +{value?.length - maxItemSize} More
+                      </Typography>
+                    </Container>
+                  ) : (
+                    <MoreItemComponent />
+                  ))}
+              </Container>
             )}
             <Container mt={10}>
               {isLoading ? (
