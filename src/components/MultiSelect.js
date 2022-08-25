@@ -342,7 +342,7 @@ export const MultiSelect = ({
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
-      top: interpolate(animatedLabelValue.value, [0, 1], [-1, -5]),
+      top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
       fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
       marginLeft: 5,
     };
@@ -360,6 +360,7 @@ export const MultiSelect = ({
           borderColor={showDropdown ? "border.base" : "border.grey400"}
           p={2}
           pr={2}
+          minHeight={58}
           {...inputContainerStyle}
           {...rest}
         >
@@ -424,18 +425,20 @@ export const MultiSelect = ({
                 </Container>
               </ScrollView>
             )}
-            {isLoading ? (
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.background.base}
-              />
-            ) : (
-              <Icon
-                name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                size="20"
-                color="grey"
-              />
-            )}
+            <Container mt={10}>
+              {isLoading ? (
+                <ActivityIndicator
+                  size="small"
+                  color={theme.colors.background.base}
+                />
+              ) : (
+                <Icon
+                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                  size="20"
+                  color="grey"
+                />
+              )}
+            </Container>
           </Container>
         </Container>
       </TouchableWithoutFeedback>
