@@ -177,13 +177,13 @@ export const BottomSheet = ({
   };
 
   const hideCreateComponent = () => {
-    if (generateData().length === 1) {
-      return (
-        getLabel(generateData()[0]).toLowerCase() ===
-        searchText.toLocaleLowerCase().trim()
-      );
-    }
-    return false;
+    const filteredItemCount = generateData().filter(
+      data =>
+        getLabel(data).toLocaleLowerCase() === searchText.toLocaleLowerCase()
+    ).length;
+    return (
+      filteredItemCount === generateData().length && generateData().length > 0
+    );
   };
 
   return (
