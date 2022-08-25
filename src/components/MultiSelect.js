@@ -345,6 +345,7 @@ export const MultiSelect = ({
       top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
       fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
       marginLeft: 5,
+      color: "font.grey600",
     };
   });
 
