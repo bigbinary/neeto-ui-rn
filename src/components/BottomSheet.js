@@ -167,13 +167,23 @@ export const BottomSheet = ({
   };
 
   const generateData = () => {
-    if (searchText.trim().length) {
+    if (searchText.length) {
       return data.filter(item =>
         getLabel(item).toLowerCase().includes(searchText.toLowerCase())
       );
     } else {
       return data;
     }
+  };
+
+  const hideCreateComponent = () => {
+    if (generateData().length === 1) {
+      return (
+        getLabel(generateData()[0]).toLowerCase() ===
+        searchText.toLocaleLowerCase().trim()
+      );
+    }
+    return false;
   };
 
   return (
@@ -218,7 +228,7 @@ export const BottomSheet = ({
               ListFooterComponent={
                 <Container>
                   {children}
-                  {!!searchText.trim() &&
+                  {!!searchText &&
                     !showCreateOption &&
                     (NoResultsComponent ? (
                       <NoResultsComponent />
@@ -241,13 +251,14 @@ export const BottomSheet = ({
                     ))}
 
                   {!disabled &&
+                    !hideCreateComponent() &&
                     (showCreateOptionLoader ? (
                       <ActivityIndicator
                         size="small"
                         color={theme.colors.background.base}
                       />
                     ) : (
-                      !!searchText.trim() &&
+                      !!searchText &&
                       showCreateOption && (
                         <Container>
                           {CreateItemComponent ? (
