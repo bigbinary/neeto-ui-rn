@@ -101,7 +101,7 @@ Title.propTypes = {
  *
  * export default function Main() {
  *  const [isBottomSheetVisible, setBottomSheetVisibility] = useState(false);
- *  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+ *  const [selectedItem, setSelectedItem] = useState(null);
  *  const data = ["neeto-ui-rn", "neeto-desk-rn", "neeto-hq"];
  *
  *  return (
@@ -112,12 +112,12 @@ Title.propTypes = {
  *       hide={() => {
  *         setBottomSheetVisibility(false);
  *       }}
- *       onItemPress={({index}) => {
- *         setSelectedItemIndex(index);
+ *       onItemPress={({item}) => {
+ *         setSelectedItem(item);
  *       }}
  *       title="PROJECT"
  *       data={data}
- *       selectedItemIndex={selectedItemIndex}
+ *       selectedItem={selectedItem}
  *       ContentRow={() => <CustomComponent />}
  *      />
  *   </Container>
@@ -141,7 +141,6 @@ export const BottomSheet = ({
   hide,
   isVisible,
   onItemPress,
-  selectedItemIndex,
   bg,
   children,
   titleContainerStyle,
@@ -158,6 +157,8 @@ export const BottomSheet = ({
   noResultsLabel,
   NoResultsComponent,
   labelExtractor,
+  valueExtractor,
+  selectedItem,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -183,6 +184,13 @@ export const BottomSheet = ({
     ).length;
 
     return filteredItemCount > 0;
+  };
+
+  const checkIsSelected = item => {
+    const itemValue = item?.value || valueExtractor(item) || item;
+    const selectedItemValue =
+      selectedItem?.value || valueExtractor(selectedItem) || selectedItem;
+    return itemValue === selectedItemValue;
   };
 
   return (
@@ -292,7 +300,7 @@ export const BottomSheet = ({
               renderItem={({ item, index }) => {
                 return (
                   <ContentRow
-                    isSelected={index === selectedItemIndex}
+                    isSelected={checkIsSelected(item)}
                     key={index}
                     onPress={() => {
                       !contentType && hide();
@@ -322,6 +330,8 @@ BottomSheet.defaultProps = {
   onPressCreateOption: () => {},
   CreateItemComponent: null,
   onDonePress: () => {},
+  valueExtractor: () => {},
+  labelExtractor: () => {},
 };
 
 BottomSheet.propTypes = {
@@ -345,10 +355,6 @@ BottomSheet.propTypes = {
    * Callback which returns the index of selected item.
    */
   onItemPress: PropTypes.func,
-  /**
-   * Index of selected Item.
-   */
-  selectedItemIndex: PropTypes.number,
   /**
    * Callback that will be called on Done button press
    */
@@ -409,6 +415,10 @@ BottomSheet.propTypes = {
    * Use custom key as value.
    */
   valueExtractor: PropTypes.func,
+  /**
+   *
+   */
+  selectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**
    * To support more Modal params.
    */

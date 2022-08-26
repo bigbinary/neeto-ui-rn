@@ -40,26 +40,26 @@ const TypographyStories = {
 export default TypographyStories;
 
 export const BottomSheetDemo = args => {
-  const [bottomSheetVisible, setbottomSheetVisible] = useState(false);
-  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+  const [bottomSheetVisible, setBottomSheetVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   return (
     <Container flex={1} alignItems="center" justifyContent="center">
       <Button
         label="Select Project"
-        onPress={() => setbottomSheetVisible(true)}
+        onPress={() => setBottomSheetVisible(true)}
       />
       <BottomSheet
         isVisible={bottomSheetVisible}
         hide={() => {
-          setbottomSheetVisible(false);
+          setBottomSheetVisible(false);
         }}
-        onItemPress={({ index }) => {
-          setSelectedItemIndex(index);
+        onItemPress={({ item }) => {
+          setSelectedItem(item);
         }}
         title="Select Multi Options"
         data={args.data}
-        selectedItemIndex={selectedItemIndex}
+        selectedItem={selectedItem}
         ContentRow={({ item: { label }, onPress, isSelected }) => {
           return (
             !!label && (
@@ -75,7 +75,7 @@ export const BottomSheetDemo = args => {
           );
         }}
       />
-      {selectedItemIndex !== null && (
+      {selectedItem !== null && (
         <Typography
           py={50}
           alignText="center"
@@ -83,7 +83,7 @@ export const BottomSheetDemo = args => {
           color="font.secondary"
           fontFamily="sf700"
         >
-          Selected Item: {args.data[selectedItemIndex]}
+          Selected Item: {selectedItem}
         </Typography>
       )}
     </Container>
@@ -91,11 +91,11 @@ export const BottomSheetDemo = args => {
 };
 
 export const BottomSheets = args => {
-  const [bottomSheetOneVisible, setbottomSheetOneVisible] = useState(false);
-  const [bottomSheetTwoVisible, setbottomSheetTwoVisible] = useState(false);
-  const [bottomSheetThreeVisible, setbottomSheetThreeVisible] = useState(false);
-  const [bottomSheetFourVisible, setbottomSheetFourVisible] = useState(false);
-  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+  const [bottomSheetOneVisible, setBottomSheetOneVisible] = useState(false);
+  const [bottomSheetTwoVisible, setBottomSheetTwoVisible] = useState(false);
+  const [bottomSheetThreeVisible, setBottomSheetThreeVisible] = useState(false);
+  const [bottomSheetFourVisible, setBottomSheetFourVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [selectedValues, setSelectedValues] = useState([]);
 
   const handleCheckbox = ({ item: { value } }) => {
@@ -182,51 +182,52 @@ export const BottomSheets = args => {
     <Container flex={1} alignItems="center" justifyContent="center">
       <Button
         label="Select Project with Labels"
-        onPress={() => setbottomSheetOneVisible(true)}
+        onPress={() => setBottomSheetOneVisible(true)}
         m={2}
       />
       <Button
         label="Select Project with Radio buttons"
-        onPress={() => setbottomSheetTwoVisible(true)}
+        onPress={() => setBottomSheetTwoVisible(true)}
         m={2}
       />
       <Button
         label="Select Project with checkboxes"
-        onPress={() => setbottomSheetThreeVisible(true)}
+        onPress={() => setBottomSheetThreeVisible(true)}
         m={2}
       />
       <Button
         label="Bottom Sheet with only children component"
-        onPress={() => setbottomSheetFourVisible(true)}
+        onPress={() => setBottomSheetFourVisible(true)}
         m={2}
       />
       <BottomSheet
         maxHeight={500}
         isVisible={bottomSheetOneVisible}
         hide={() => {
-          setbottomSheetOneVisible(false);
+          setBottomSheetOneVisible(false);
         }}
-        onItemPress={({ index }) => {
-          setSelectedItemIndex(index);
+        onItemPress={({ item }) => {
+          setSelectedItem(item);
         }}
         title="Select an Option"
         data={args.data}
-        selectedItemIndex={selectedItemIndex}
+        selectedItem={selectedItem}
         ContentRow={TextContent}
         canSearch
       />
       <BottomSheet
         isVisible={bottomSheetTwoVisible}
         hide={() => {
-          setbottomSheetTwoVisible(false);
+          setBottomSheetTwoVisible(false);
         }}
-        onItemPress={({ index }) => {
-          setSelectedItemIndex(index);
+        onItemPress={({ item }) => {
+          setSelectedItem(item);
         }}
         title="Select an Option"
         data={args.data}
-        selectedItemIndex={selectedItemIndex}
+        selectedItem={selectedItem}
         ContentRow={RadioContent}
+        canSearch
       >
         <Typography> Cant find your option? </Typography>
       </BottomSheet>
@@ -234,12 +235,12 @@ export const BottomSheets = args => {
         maxHeight={500}
         isVisible={bottomSheetThreeVisible}
         hide={() => {
-          setbottomSheetThreeVisible(false);
+          setBottomSheetThreeVisible(false);
         }}
         onItemPress={handleCheckbox}
         title="Select Multi Options"
         data={args.data}
-        selectedItemIndex={selectedItemIndex}
+        selectedItem={selectedItem}
         ContentRow={CheckBoxContent}
         contentType="checkbox"
         canSearch
@@ -247,12 +248,12 @@ export const BottomSheets = args => {
       <BottomSheet
         isVisible={bottomSheetFourVisible}
         hide={() => {
-          setbottomSheetFourVisible(false);
+          setBottomSheetFourVisible(false);
         }}
       >
         <Typography> Bottom Sheet with children only</Typography>
       </BottomSheet>
-      {selectedItemIndex !== null && (
+      {selectedItem !== null && (
         <Typography
           py={50}
           alignText="center"
@@ -260,7 +261,7 @@ export const BottomSheets = args => {
           color="font.secondary"
           fontFamily="sf700"
         >
-          Selected Item: {args.data[selectedItemIndex].value}
+          Selected Item: {selectedItem.value}
         </Typography>
       )}
     </Container>
