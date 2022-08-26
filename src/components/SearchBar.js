@@ -55,7 +55,7 @@ export const SearchBar = props => {
   const inputRef = useRef();
   const [searchText, setSearchText] = useState("");
   const debouncedSearchTextValue = useDebounce(
-    searchText,
+    searchText.trim(),
     Number(debounceDelay)
   );
   const buttonWidthController = useRef(new Animated.Value(0)).current;

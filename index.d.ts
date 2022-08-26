@@ -162,6 +162,8 @@ interface BottomSheetProps extends ViewProps {
   contentType?: "checkbox" | null;
   canSearch?: boolean;
   onDonePress?: () => void;
+  valueExtractor?: () =>{};
+  labelExtractor?: () =>{};
 }
 
 interface ButtonProps extends TouchableProps {
@@ -280,7 +282,6 @@ interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
   label?: string;
   value?: string | Array<any>;
-  placeholder?: string;
   labelExtractor?: (item: any, index: number) => string;
   valueExtractor?: (item: any, index: number) => string;
   onSelect?: (selectedData: Array<any>) => void;
@@ -302,6 +303,14 @@ interface MultiSelectProps extends ViewProps {
   onPressCreateOption?: (searchText: string) => void;
   createSearchedOptionContainerStyle?: ViewProps;
   onDonePress?: () => void;
+  disabled?: boolean;
+  noResultsLabelContainerStyle?: ViewStyle;
+  noResultsLabelStyle?: TextStyle;
+  noResultsLabel?: TypographyProps;
+  NoResultsComponent?: React.ReactNode;
+  maxItemSize?: number;
+  moreItemLabelContainerStyle?: ViewStyle;
+  moreItemLabelStyle?: TextStyle
 }
 
 type OnBoardingProps = {

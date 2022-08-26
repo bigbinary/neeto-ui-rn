@@ -5,56 +5,92 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
-import { useSharedValue } from "react-native-reanimated";
+import Animated, {
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
-import { ThemeContext } from "styled-components/native";
-
+import styled, { ThemeContext } from "styled-components/native";
 import {
-  BottomSheet,
-  CheckBox,
-  Container,
-  Touchable,
-  Typography,
-} from "@components";
+  flexbox,
+  space,
+  typography,
+  textStyle,
+  color,
+  layout,
+  system,
+  position,
+} from "styled-system";
+
+import { BottomSheet, CheckBox, Container, Touchable } from "@components";
+
+const Typography = styled.Text`
+  ${textStyle}
+  ${space}
+  ${layout}
+  ${flexbox}
+  ${typography}
+  ${color}
+  ${position}
+  ${system({
+    textDecoration: {
+      property: "textDecoration",
+      cssProperty: "textDecoration",
+    },
+    textTransform: { property: "textTransform", cssProperty: "textTransform" },
+  })}
+`;
 
 const MultiSelectItem = ({
   label,
   onUnselect,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
-}) => (
-  <Container
-    bg="background.secondary"
-    borderRadius={12}
-    flexDirection="row"
-    alignItems="center"
-    justifyContent="space-between"
-    px={2}
-    py={1}
-    m={1}
-    {...multiSelectedItemContainerStyle}
-  >
-    <Typography
-      fontFamily="sf400"
-      fontSize="s"
-      mr={2}
-      color="font.grey800"
-      {...multiSelectedItemLabelStyle}
+  disabled,
+}) => {
+  const theme = useContext(ThemeContext);
+  return (
+    <Container
+      bg="background.secondary"
+      borderRadius={12}
+      flexDirection="row"
+      alignItems="center"
+      justifyContent="space-between"
+      px={2}
+      py={1}
+      m={1}
+      {...multiSelectedItemContainerStyle}
     >
-      {label}
-    </Typography>
-    <TouchableWithoutFeedback onPress={onUnselect}>
-      <Icon name="ri-close-line" size="20" color="grey800" />
-    </TouchableWithoutFeedback>
-  </Container>
-);
+      <Typography
+        fontFamily="sf400"
+        fontSize="s"
+        mr={2}
+        color="font.grey800"
+        {...multiSelectedItemLabelStyle}
+      >
+        {label}
+      </Typography>
+      {!disabled && (
+        <TouchableWithoutFeedback disabled={disabled} onPress={onUnselect}>
+          <Icon
+            name="ri-close-line"
+            size="20"
+            color={theme.colors.font.grey800}
+          />
+        </TouchableWithoutFeedback>
+      )}
+    </Container>
+  );
+};
 
 MultiSelectItem.propTypes = {
   label: PropTypes.string,
   onUnselect: PropTypes.func,
   multiSelectedItemContainerStyle: PropTypes.object,
   multiSelectedItemLabelStyle: PropTypes.object,
+  disabled: PropTypes.bool,
 };
 
 const DropdownItem = ({
@@ -134,11 +170,12 @@ DropdownItem.propTypes = {
  * ```
  */
 
+const AnimatedLabel = Animated.createAnimatedComponent(Typography);
+
 export const MultiSelect = ({
   options,
   label,
   value,
-  placeholder,
   labelExtractor,
   valueExtractor,
   onSelect,
@@ -160,12 +197,22 @@ export const MultiSelect = ({
   onPressCreateOption,
   createSearchedOptionContainerStyle,
   onDonePress,
+  disabled,
+  noResultsLabelContainerStyle,
+  noResultsLabelStyle,
+  noResultsLabel,
+  NoResultsComponent,
+  maxItemSize,
+  moreItemLabelContainerStyle,
+  moreItemLabelStyle,
+  MoreItemComponent,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const dropdownAnimatedHeight = useSharedValue(0);
+  const animatedLabelValue = useSharedValue(0);
 
   const formatStr = str => str?.toLowerCase()?.trim();
   const filteredOptions = options
@@ -205,7 +252,11 @@ export const MultiSelect = ({
         : 0);
 
   const getValue = (item, index) => {
-    return item?.value || valueExtractor(item, index);
+    return item?.value || valueExtractor(item, index) || item;
+  };
+
+  const getLabel = (item, index) => {
+    return item?.label || labelExtractor(item, index) || item;
   };
 
   const handleCheckbox = item => {
@@ -226,17 +277,16 @@ export const MultiSelect = ({
     const itemIndex = value.findIndex(
       (data, i) => getValue(data, i) === getValue(item, index)
     );
+
     return (
-      !!item?.label && (
-        <Container py={12}>
-          <CheckBox
-            checked={itemIndex !== -1}
-            onSelect={onPress}
-            // checkboxContainerProp={containerStyle}
-            label={item?.label || labelExtractor(item, index)}
-          />
-        </Container>
-      )
+      <Container py={12}>
+        <CheckBox
+          disabled={disabled}
+          checked={itemIndex !== -1}
+          onSelect={onPress}
+          label={item?.label || labelExtractor(item, index) || item}
+        />
+      </Container>
     );
   };
 
@@ -251,13 +301,23 @@ export const MultiSelect = ({
     }
   };
 
-  const handleUnselection = item => {
+  const handleUnSelection = item => {
     const newValue = value.filter(
       selectedItem => valueExtractor(selectedItem) !== valueExtractor(item)
     );
     onSelect(newValue);
     deletedValue(item);
   };
+
+  useEffect(() => {
+    animatedLabelValue.value = withTiming(
+      value.length || showDropdown ? 1 : 0,
+      {
+        duration: 250,
+      }
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value, showDropdown]);
 
   useEffect(() => {
     if (showDropdown) {
@@ -272,6 +332,15 @@ export const MultiSelect = ({
     index: PropTypes.number,
   };
 
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
+      fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
+      marginLeft: 5,
+      color: "font.grey600",
+    };
+  });
+
   return (
     <Container {...containerStyle}>
       <TouchableWithoutFeedback
@@ -282,70 +351,83 @@ export const MultiSelect = ({
           borderRadius={12}
           borderWidth={1}
           borderColor={showDropdown ? "border.base" : "border.grey400"}
-          p={multipleOptionsSelected ? 1 : 2}
+          p={2}
           pr={2}
+          minHeight={58}
           {...inputContainerStyle}
           {...rest}
         >
-          <Typography
-            fontFamily="sf400"
-            mb={1}
-            fontSize="xs"
-            color="font.grey600"
-            ml={1}
-            {...labelStyle}
-          >
-            {label}
-          </Typography>
           <Container
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
           >
-            {!multipleOptionsSelected && (
-              <Typography fontFamily="sf400" fontSize="s" color="font.grey">
-                {!multipleOptionsSelected && placeholder}
-              </Typography>
-            )}
+            <AnimatedLabel
+              position="absolute"
+              zIndex={1}
+              style={[animatedStyles, { ...labelStyle }]}
+            >
+              {label}
+            </AnimatedLabel>
+            {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <Container
-                  flexWrap="wrap"
-                  flexDirection="row"
-                  maxWidth="85%"
-                  onStartShouldSetResponder={() => true}
-                >
-                  {value?.map((item, index) => {
-                    const optionLabel = labelExtractor(item, index);
-                    return (
-                      <MultiSelectItem
-                        key={index}
-                        label={optionLabel}
-                        onUnselect={() => handleUnselection(item)}
-                        multiSelectedItemContainerStyle={
-                          multiSelectedItemContainerStyle
-                        }
-                        multiSelectedItemLabelStyle={
-                          multiSelectedItemLabelStyle
-                        }
-                      />
-                    );
-                  })}
-                </Container>
-              </ScrollView>
+              <Container
+                flexWrap="wrap"
+                flexDirection="row"
+                maxWidth="85%"
+                onStartShouldSetResponder={() => true}
+                mt={3}
+              >
+                {value?.slice(0, maxItemSize).map((item, index) => {
+                  return (
+                    <MultiSelectItem
+                      key={index}
+                      label={getLabel(item)}
+                      onUnselect={() => handleUnSelection(item)}
+                      multiSelectedItemContainerStyle={
+                        multiSelectedItemContainerStyle
+                      }
+                      multiSelectedItemLabelStyle={multiSelectedItemLabelStyle}
+                      disabled={disabled}
+                    />
+                  );
+                })}
+                {value?.length > maxItemSize &&
+                  (!MoreItemComponent ? (
+                    <Container
+                      bg="background.secondary"
+                      borderRadius={12}
+                      flexDirection="row"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      px={2}
+                      py={1}
+                      m={1}
+                      {...moreItemLabelContainerStyle}
+                    >
+                      <Typography {...moreItemLabelStyle}>
+                        +{value?.length - maxItemSize} More
+                      </Typography>
+                    </Container>
+                  ) : (
+                    <MoreItemComponent />
+                  ))}
+              </Container>
             )}
-            {isLoading ? (
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.background.base}
-              />
-            ) : (
-              <Icon
-                name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                size="20"
-                color="grey"
-              />
-            )}
+            <Container mt={10}>
+              {isLoading ? (
+                <ActivityIndicator
+                  size="small"
+                  color={theme.colors.background.base}
+                />
+              ) : (
+                <Icon
+                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
+                  size="20"
+                  color="grey"
+                />
+              )}
+            </Container>
           </Container>
         </Container>
       </TouchableWithoutFeedback>
@@ -356,6 +438,7 @@ export const MultiSelect = ({
           handleCheckbox(item);
           selectedValue(item);
         }}
+        disabled={disabled}
         onDonePress={onDonePress}
         isVisible={showDropdown}
         hide={() => setShowDropdown(false)}
@@ -369,6 +452,12 @@ export const MultiSelect = ({
         createSearchedOptionLabelStyle={createSearchedOptionLabelStyle}
         onPressCreateOption={onPressCreateOption}
         createSearchedOptionContainerStyle={createSearchedOptionContainerStyle}
+        noResultsLabelContainerStyle={noResultsLabelContainerStyle}
+        noResultsLabelStyle={noResultsLabelStyle}
+        noResultsLabel={noResultsLabel}
+        NoResultsComponent={NoResultsComponent}
+        valueExtractor={valueExtractor}
+        labelExtractor={labelExtractor}
       />
     </Container>
   );
@@ -382,16 +471,10 @@ MultiSelect.propTypes = {
   /**
    * options to populate the options dropdown.
    */
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    })
-  ),
-  /**
-   * The text to be displayed if no option is selected.
-   */
-  placeholder: PropTypes.string,
+  options: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
   /**
    * Use custom key as label.
    */
@@ -477,7 +560,7 @@ MultiSelect.propTypes = {
    */
   multiSelectedItemLabelStyle: PropTypes.object,
   /**
-   * To customise search input containerr style.
+   * To customise search input container style.
    */
   searchInputContainerStyle: PropTypes.object,
   /**
@@ -504,11 +587,46 @@ MultiSelect.propTypes = {
    * Component that renders when searched item doesn't exists
    */
   CreateItemComponent: PropTypes.node,
+  /**
+   * Flag will disable the selection of the item
+   */
+  disabled: PropTypes.bool,
+  /**
+   * To customize no results container style
+   */
+  noResultsLabelContainerStyle: PropTypes.object,
+  /**
+   * To customize no results label style
+   */
+  noResultsLabelStyle: PropTypes.object,
+  /**
+   * To customize no results label
+   */
+  noResultsLabel: PropTypes.string,
+  /**
+   * To customize no results component
+   */
+  NoResultsComponent: PropTypes.node,
+  /**
+   * Maximum number of items to render in the list
+   */
+  maxItemSize: PropTypes.number,
+  /**
+   * Container style for the more item label
+   */
+  moreItemLabelContainerStyle: PropTypes.object,
+  /**
+   * More item label style
+   */
+  moreItemLabelStyle: PropTypes.object,
+  /**
+   * Custom component to render more item message
+   */
+  MoreItemComponent: PropTypes.node,
 };
 
 MultiSelect.defaultProps = {
   label: null,
-  placeholder: "Select Option",
   labelExtractor: option => option?.label,
   valueExtractor: option => option?.value,
   value: null,
@@ -522,4 +640,5 @@ MultiSelect.defaultProps = {
   createOptionLabel: null,
   onPressCreateOption: () => {},
   onDonePress: () => {},
+  maxItemSize: 5,
 };

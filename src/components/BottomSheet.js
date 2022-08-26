@@ -8,11 +8,9 @@ import {
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Fuse from "fuse.js";
 
 import { Typography, Container, Touchable, SearchBar } from "@components";
 import { theme } from "../theme";
-import { FUSE_KEYS } from "../constants";
 
 const Title = ({
   title,
@@ -114,7 +112,7 @@ Title.propTypes = {
  *       hide={() => {
  *         setBottomSheetVisibility(false);
  *       }}
- *       onItemPress={index => {
+ *       onItemPress={({index}) => {
  *         setSelectedItemIndex(index);
  *       }}
  *       title="PROJECT"
@@ -154,22 +152,37 @@ export const BottomSheet = ({
   contentType,
   canSearch,
   onDonePress,
+  disabled,
+  noResultsLabelContainerStyle,
+  noResultsLabelStyle,
+  noResultsLabel,
+  NoResultsComponent,
+  labelExtractor,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
 
-  const fuse = new Fuse(data, { keys: FUSE_KEYS, threshold: 0.1 });
+  const getLabel = (item, index) => {
+    return item?.label || labelExtractor(item, index) || item;
+  };
 
   const generateData = () => {
-    if (searchText.trim().length) {
-      return fuse.search(searchText.trim()).map(item => item.item);
+    if (searchText.length) {
+      return data.filter(item =>
+        getLabel(item).toLowerCase().includes(searchText.toLowerCase())
+      );
     } else {
       return data;
     }
   };
 
-  const contentContainerStyle = {
-    paddingBottom: 50,
+  const hideCreateComponent = () => {
+    const filteredItemCount = generateData().filter(
+      data =>
+        getLabel(data).toLocaleLowerCase() === searchText.toLocaleLowerCase()
+    ).length;
+
+    return filteredItemCount > 0;
   };
 
   return (
@@ -189,6 +202,7 @@ export const BottomSheet = ({
           borderTopRightRadius={20}
           borderTopLeftRadius={20}
           p={16}
+          flex={1}
           {...rest}
         >
           {title && (
@@ -210,7 +224,68 @@ export const BottomSheet = ({
 
           {data && (
             <FlatList
-              ListFooterComponent={children}
+              ListFooterComponent={
+                <Container>
+                  {children}
+                  {!!searchText &&
+                    !showCreateOption &&
+                    (NoResultsComponent ? (
+                      <NoResultsComponent />
+                    ) : (
+                      <Container
+                        alignItems="center"
+                        py={2}
+                        mb={2}
+                        {...noResultsLabelContainerStyle}
+                      >
+                        <Typography
+                          fontFamily="sf600"
+                          fontSize="s"
+                          color="font.grey"
+                          {...noResultsLabelStyle}
+                        >
+                          {noResultsLabel || "No options found"}
+                        </Typography>
+                      </Container>
+                    ))}
+
+                  {!disabled &&
+                    !hideCreateComponent() &&
+                    (showCreateOptionLoader ? (
+                      <ActivityIndicator
+                        size="small"
+                        color={theme.colors.background.base}
+                      />
+                    ) : (
+                      !!searchText &&
+                      showCreateOption && (
+                        <Container>
+                          {CreateItemComponent ? (
+                            <CreateItemComponent searchText={searchText} />
+                          ) : (
+                            <Touchable
+                              height={40}
+                              justifyContent="center"
+                              alignItems="center"
+                              onPress={() => onPressCreateOption(searchText)}
+                              {...createSearchedOptionContainerStyle}
+                            >
+                              <Typography
+                                fontFamily="sf400"
+                                fontSize="s"
+                                color="font.grey"
+                                {...createSearchedOptionLabelStyle}
+                              >
+                                {createOptionLabel ||
+                                  `Create ${searchText} option`}
+                              </Typography>
+                            </Touchable>
+                          )}
+                        </Container>
+                      )
+                    ))}
+                </Container>
+              }
               initialNumToRender={data.length}
               onScrollBeginDrag={Keyboard.dismiss}
               data={generateData()}
@@ -231,42 +306,7 @@ export const BottomSheet = ({
               keyExtractor={(item, index) => {
                 return index;
               }}
-              contentContainerStyle={contentContainerStyle}
             />
-          )}
-
-          {showCreateOptionLoader ? (
-            <ActivityIndicator
-              size="small"
-              color={theme.colors.background.base}
-            />
-          ) : (
-            !!searchText.trim() &&
-            !generateData().length &&
-            showCreateOption && (
-              <Container>
-                {CreateItemComponent ? (
-                  <CreateItemComponent searchText={searchText} />
-                ) : (
-                  <Touchable
-                    height={40}
-                    justifyContent="center"
-                    alignItems="center"
-                    onPress={() => onPressCreateOption(searchText)}
-                    {...createSearchedOptionContainerStyle}
-                  >
-                    <Typography
-                      fontFamily="sf400"
-                      fontSize="s"
-                      color="font.grey"
-                      {...createSearchedOptionLabelStyle}
-                    >
-                      {createOptionLabel || `Create ${searchText} option`}
-                    </Typography>
-                  </Touchable>
-                )}
-              </Container>
-            )
           )}
         </Container>
       </SafeAreaView>
@@ -318,11 +358,11 @@ BottomSheet.propTypes = {
    */
   bg: PropTypes.string,
   /**
-   * To customise title container styles.
+   * To customize title container styles.
    */
   titleContainerStyle: PropTypes.object,
   /**
-   * To customise title text styles.
+   * To customize title text styles.
    */
   titleTextStyle: PropTypes.object,
   /**
@@ -346,13 +386,29 @@ BottomSheet.propTypes = {
    */
   CreateItemComponent: PropTypes.node,
   /**
-   * To customise empty options placeholder text style.
+   * To customize empty options placeholder text style.
    */
   createSearchedOptionLabelStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder container style.
+   * Flag will disable create item feature
+   */
+  disabled: PropTypes.bool,
+  /**
+   * To customize empty options placeholder container style.
    */
   createSearchedOptionContainerStyle: PropTypes.object,
+  noResultsLabelContainerStyle: PropTypes.object,
+  noResultsLabelStyle: PropTypes.object,
+  noResultsLabel: PropTypes.string,
+  NoResultsComponent: PropTypes.node,
+  /**
+   * Use custom key as label.
+   */
+  labelExtractor: PropTypes.func,
+  /**
+   * Use custom key as value.
+   */
+  valueExtractor: PropTypes.func,
   /**
    * To support more Modal params.
    */
@@ -370,10 +426,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background.primary,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    flex: 1,
   },
   modalStyle: {
     margin: 0,
     justifyContent: "flex-end",
+    flex: 1,
   },
   inputContainerStyle: {
     backgroundColor: "white",
