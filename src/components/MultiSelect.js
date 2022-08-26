@@ -24,15 +24,9 @@ import {
   position,
 } from "styled-system";
 
-import {
-  BottomSheet,
-  CheckBox,
-  Container,
-  Touchable,
-  Typography,
-} from "@components";
+import { BottomSheet, CheckBox, Container, Touchable } from "@components";
 
-const Typography2 = styled.Text`
+const Typography = styled.Text`
   ${textStyle}
   ${space}
   ${layout}
@@ -176,7 +170,7 @@ DropdownItem.propTypes = {
  * ```
  */
 
-const AnimatedLabel = Animated.createAnimatedComponent(Typography2);
+const AnimatedLabel = Animated.createAnimatedComponent(Typography);
 
 export const MultiSelect = ({
   options,
