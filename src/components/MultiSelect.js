@@ -337,7 +337,6 @@ export const MultiSelect = ({
     return {
       top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
       fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
-      marginLeft: 5,
       color: "font.grey600",
     };
   });
@@ -366,7 +365,7 @@ export const MultiSelect = ({
             <AnimatedLabel
               position="absolute"
               zIndex={1}
-              style={[animatedStyles, { ...labelStyle }]}
+              style={[animatedStyles, { marginLeft: 5, ...labelStyle }]}
             >
               {label}
             </AnimatedLabel>
