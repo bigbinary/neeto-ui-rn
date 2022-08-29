@@ -201,7 +201,6 @@ export const BottomSheets = args => {
         m={2}
       />
       <BottomSheet
-        maxHeight={500}
         isVisible={bottomSheetOneVisible}
         hide={() => {
           setBottomSheetOneVisible(false);
@@ -232,7 +231,6 @@ export const BottomSheets = args => {
         <Typography> Cant find your option? </Typography>
       </BottomSheet>
       <BottomSheet
-        maxHeight={500}
         isVisible={bottomSheetThreeVisible}
         hide={() => {
           setBottomSheetThreeVisible(false);

@@ -65,6 +65,7 @@ const Title = ({
 
         {canSearch && (
           <SearchBar
+            debounceDelay={500}
             placeholder="Search"
             onChangeText={setSearchText}
             onCancel={() => {
@@ -236,6 +237,7 @@ export const BottomSheet = ({
                 <Container>
                   {children}
                   {!!searchText &&
+                    !generateData().length &&
                     !showCreateOption &&
                     (NoResultsComponent ? (
                       <NoResultsComponent />

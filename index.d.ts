@@ -152,7 +152,7 @@ interface BottomSheetProps extends ViewProps {
   hide?: () => void;
   isVisible?: boolean;
   onItemPress?: ({ index, item }: { index: number; item: any }) => void;
-  selectedItemIndex?: object | string;
+  selectedItem?: object | string;
   bg?: typeof theme.colors.background;
   titleContainerStyle?: ViewProps;
   titleTextStyle?: TextProps;
