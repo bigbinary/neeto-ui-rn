@@ -71,8 +71,9 @@ export const MultiSelects = () => {
           onPress={() => simulateAPICall(searchText)}
         />
       )}
-      valueExtractor={item => item.id}
-      labelExtractor={item => item.name}
+      valueExtractor={item => item?.id}
+      labelExtractor={item => item?.name}
+      // onBackdropPress={() => {}}
       // disabled
       // noResultsLabelContainerStyle={{backgroundColor:"red"}}
       // noResultsLabelStyle={{color:"green"}}

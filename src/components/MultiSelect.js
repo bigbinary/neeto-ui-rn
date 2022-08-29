@@ -206,6 +206,7 @@ export const MultiSelect = ({
   moreItemLabelContainerStyle,
   moreItemLabelStyle,
   MoreItemComponent,
+  onBackdropPress,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -336,7 +337,6 @@ export const MultiSelect = ({
     return {
       top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
       fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
-      marginLeft: 5,
       color: "font.grey600",
     };
   });
@@ -365,7 +365,7 @@ export const MultiSelect = ({
             <AnimatedLabel
               position="absolute"
               zIndex={1}
-              style={[animatedStyles, { ...labelStyle }]}
+              style={[animatedStyles, { marginLeft: 5, ...labelStyle }]}
             >
               {label}
             </AnimatedLabel>
@@ -458,6 +458,7 @@ export const MultiSelect = ({
         NoResultsComponent={NoResultsComponent}
         valueExtractor={valueExtractor}
         labelExtractor={labelExtractor}
+        onBackdropPress={onBackdropPress}
       />
     </Container>
   );
@@ -623,6 +624,10 @@ MultiSelect.propTypes = {
    * Custom component to render more item message
    */
   MoreItemComponent: PropTypes.node,
+  /**
+   * Function to customize back drop press
+   */
+  onBackdropPress: PropTypes.func,
 };
 
 MultiSelect.defaultProps = {
@@ -641,4 +646,5 @@ MultiSelect.defaultProps = {
   onPressCreateOption: () => {},
   onDonePress: () => {},
   maxItemSize: 5,
+  onBackdropPress: () => {},
 };
