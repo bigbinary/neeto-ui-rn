@@ -65,7 +65,7 @@ const Title = ({
 
         {canSearch && (
           <SearchBar
-            debounceDelay={500}
+            debounceDelay={200}
             placeholder="Search"
             onChangeText={setSearchText}
             onCancel={() => {
@@ -211,7 +211,7 @@ export const BottomSheet = ({
           borderTopRightRadius={20}
           borderTopLeftRadius={20}
           p={16}
-          flex={1}
+          flexShrink={1}
           {...rest}
         >
           {title && (
@@ -438,7 +438,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.background.primary,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    flex: 1,
   },
   modalStyle: {
     margin: 0,
