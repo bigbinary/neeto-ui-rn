@@ -626,7 +626,7 @@ MultiSelect.propTypes = {
    */
   MoreItemComponent: PropTypes.node,
   /**
-   * FUnction to customize back drop press
+   * Function to customize back drop press
    */
   onBackdropPress: PropTypes.func,
 };
