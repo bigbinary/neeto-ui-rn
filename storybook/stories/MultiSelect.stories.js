@@ -73,7 +73,7 @@ export const MultiSelects = () => {
       )}
       valueExtractor={item => item?.id}
       labelExtractor={item => item?.name}
-      onBackdropPress={() => {}}
+      // onBackdropPress={() => {}}
       // disabled
       // noResultsLabelContainerStyle={{backgroundColor:"red"}}
       // noResultsLabelStyle={{color:"green"}}
