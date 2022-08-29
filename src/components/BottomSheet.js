@@ -160,6 +160,7 @@ export const BottomSheet = ({
   labelExtractor,
   valueExtractor,
   selectedItem,
+  onBackdropPress,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -198,7 +199,10 @@ export const BottomSheet = ({
     <Modal
       style={styles.modalStyle}
       isVisible={isVisible}
-      onBackdropPress={hide}
+      onBackdropPress={() => {
+        onBackdropPress();
+        hide();
+      }}
       useNativeDriver
       avoidKeyboard
       hideModalContentWhileAnimating
@@ -334,6 +338,7 @@ BottomSheet.defaultProps = {
   onDonePress: () => {},
   valueExtractor: () => {},
   labelExtractor: () => {},
+  onBackdropPress: () => {},
 };
 
 BottomSheet.propTypes = {
@@ -417,8 +422,12 @@ BottomSheet.propTypes = {
    * Use custom key as value.
    */
   valueExtractor: PropTypes.func,
+   /**
+   * Function to customize back drop press
+   */
+  onBackdropPress: PropTypes.func,
   /**
-   *
+   * Currently selected item
    */
   selectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   /**

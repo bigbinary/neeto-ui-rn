@@ -206,6 +206,7 @@ export const MultiSelect = ({
   moreItemLabelContainerStyle,
   moreItemLabelStyle,
   MoreItemComponent,
+  onBackdropPress,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -458,6 +459,7 @@ export const MultiSelect = ({
         NoResultsComponent={NoResultsComponent}
         valueExtractor={valueExtractor}
         labelExtractor={labelExtractor}
+        onBackdropPress={onBackdropPress}
       />
     </Container>
   );
@@ -623,6 +625,10 @@ MultiSelect.propTypes = {
    * Custom component to render more item message
    */
   MoreItemComponent: PropTypes.node,
+  /**
+   * FUnction to customize back drop press
+   */
+  onBackdropPress: PropTypes.func,
 };
 
 MultiSelect.defaultProps = {
@@ -641,4 +647,5 @@ MultiSelect.defaultProps = {
   onPressCreateOption: () => {},
   onDonePress: () => {},
   maxItemSize: 5,
+  onBackdropPress: () => {},
 };
