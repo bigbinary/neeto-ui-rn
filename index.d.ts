@@ -10,7 +10,7 @@ import {
   LayoutProps,
   PositionProps,
   ButtonStyleProps,
-  TypographyProps,
+  TypographyProps as SSTypographyProps,
 } from "styled-system";
 import {
   ImageProps as RNImageProps,
@@ -67,10 +67,32 @@ const theme: {
 interface StyleProps
   extends FlexboxProps,
     SpaceProps,
-    BorderProps,
-    ColorProps,
+    Omit<
+      BorderProps,
+      | "borderColor"
+      | "borderTopColor"
+      | "borderBottomColor"
+      | "borderLeftColor"
+      | "borderRightColor"
+    >,
+    Omit<ColorProps, "backgroundColor" | "bg" | "color">,
     LayoutProps,
-    PositionProps {}
+    PositionProps {
+  borderColor?: typeof theme.colors.border;
+  borderTopColor?: typeof theme.colors.border;
+  borderBottomColor?: typeof theme.colors.border;
+  borderLeftColor?: typeof theme.colors.border;
+  borderRightColor?: typeof theme.colors.border;
+  backgroundColor?: typeof theme.colors.background;
+  bg?: typeof theme.colors.background;
+  color?: typeof theme.colors.font;
+}
+
+interface TypographyProps
+  extends Omit<SSTypographyProps, "fontFamily" | "fontSize"> {
+  fontFamily?: typeof theme.fonts;
+  fontSize?: typeof theme.fontSizes;
+}
 
 interface ViewProps extends RNViewProps, StyleProps {
   children?: React.ReactNode;
@@ -162,8 +184,8 @@ interface BottomSheetProps extends ViewProps {
   contentType?: "checkbox" | null;
   canSearch?: boolean;
   onDonePress?: () => void;
-  valueExtractor?: () =>{};
-  labelExtractor?: () =>{};
+  valueExtractor?: () => {};
+  labelExtractor?: () => {};
 }
 
 interface ButtonProps extends TouchableProps {
@@ -310,7 +332,7 @@ interface MultiSelectProps extends ViewProps {
   NoResultsComponent?: React.ReactNode;
   maxItemSize?: number;
   moreItemLabelContainerStyle?: ViewStyle;
-  moreItemLabelStyle?: TextStyle
+  moreItemLabelStyle?: TextStyle;
 }
 
 type OnBoardingProps = {
