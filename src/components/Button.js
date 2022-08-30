@@ -9,6 +9,7 @@ import { Typography, Touchable, Container } from "@components";
 
 export const BUTTON_VARIANTS = Object.freeze({
   SOLID: "solid",
+  SECONDARY: "secondary",
   TEXT: "text",
   DANGER: "danger",
   DANGER_INVERSE: "danger-inverse",
@@ -94,6 +95,13 @@ export const Button = props => {
           color: theme.colors.background.white,
           ripple: "white",
         };
+      case BUTTON_VARIANTS.SECONDARY:
+        return {
+          bg: "transparent",
+          border: theme.colors.background.base,
+          color: theme.colors.font.base,
+          ripple: theme.colors.background.base,
+        };
       case BUTTON_VARIANTS.TEXT:
         return {
           bg: "transparent",
@@ -134,7 +142,9 @@ export const Button = props => {
 
   const renderOpacity = () => {
     if (
-      ["danger", "danger-inverse", "danger-text"].includes(variant) &&
+      ["secondary", "danger", "danger-inverse", "danger-text"].includes(
+        variant
+      ) &&
       disabled
     )
       return 0.5;
