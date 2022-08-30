@@ -69,6 +69,13 @@ export const Buttons = () => {
       <Button my={9} disabled label="Default Disabled Button" />
       <Button my={9} variant="danger" label="Danger Button" />
       <Button my={9} disabled variant="danger" label="Danger Disabled Button" />
+      <Button my={9} variant="secondary" label="Secondary Button" />
+      <Button
+        my={9}
+        disabled
+        variant="secondary"
+        label="Secondary Disabled Button"
+      />
       <Button my={9} variant="danger-inverse" label="Danger Inverse Button" />
       <Button
         my={9}
