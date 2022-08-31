@@ -141,7 +141,7 @@ export const SearchBar = props => {
           }}
         >
           <Button
-            height={30}
+            height={20}
             variant="text"
             label="Cancel"
             onPress={onCancelHandle}
