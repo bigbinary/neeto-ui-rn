@@ -66,10 +66,10 @@ export const SearchBar = props => {
   }, [debouncedSearchTextValue, onChangeText]);
 
   const animateSearchInput = val => {
-    Animated.parallel([
+    Animated.sequence([
       Animated.timing(buttonOpacityController, {
         toValue: val,
-        duration: val ? 800 : 0,
+        duration: 350,
         useNativeDriver: false,
       }),
       Animated.timing(buttonWidthController, {
@@ -137,9 +137,11 @@ export const SearchBar = props => {
             opacity: buttonOpacityController,
             width: cancelButtonWidth,
             alignItems: "flex-end",
+            justifyContent: "center",
           }}
         >
           <Button
+            height={30}
             variant="text"
             label="Cancel"
             onPress={onCancelHandle}
