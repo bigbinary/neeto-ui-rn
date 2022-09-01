@@ -93,6 +93,17 @@ Run `cd docs`, `yarn start` to run component documentation locally.
 Run `cd docs`, `yarn build` to build component documentation locally, this would
 create `dist` folder with static files in `docs` folder.
 
+## Testing with yalc package manager
+
+To publish locally
+```
+rm -rf ~/.yalc/packages && yalc publish --private
+```
+
+To install local yalc version of library in any app.
+```
+rm -rf .yalc && yalc add @bigbinary/neetoui-rn  && rm -rf node_modules  && yarn 
+```
 ## Learn more about contributing to this repository
 
 https://github.com/bigbinary/neeto-ui-rn/blob/master/CONTRIBUTING.md
