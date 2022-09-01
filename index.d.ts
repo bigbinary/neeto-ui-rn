@@ -41,6 +41,7 @@ import {
   ToastConfig,
 } from "react-native-toast-message";
 import { RippleProps } from "react-native-material-ripple";
+import { FastImageProps } from "react-native-fast-image";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
@@ -116,7 +117,7 @@ type AlertShowParams = {
   buttons?: Array<AlertButton>;
 };
 
-interface AnimatedImageProps extends RNImageProps {
+interface AnimatedImageProps extends RNImageProps, FastImageProps {
   imageHeight?: number;
   imageWidth?: number;
   imageUrl: string;
@@ -162,8 +163,8 @@ interface BottomSheetProps extends ViewProps {
   contentType?: "checkbox" | null;
   canSearch?: boolean;
   onDonePress?: () => void;
-  valueExtractor?: () =>{};
-  labelExtractor?: () =>{};
+  valueExtractor?: () => {};
+  labelExtractor?: () => {};
 }
 
 interface ButtonProps extends TouchableProps {
@@ -310,7 +311,7 @@ interface MultiSelectProps extends ViewProps {
   NoResultsComponent?: React.ReactNode;
   maxItemSize?: number;
   moreItemLabelContainerStyle?: ViewStyle;
-  moreItemLabelStyle?: TextStyle
+  moreItemLabelStyle?: TextStyle;
 }
 
 type OnBoardingProps = {
