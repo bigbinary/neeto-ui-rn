@@ -82,7 +82,6 @@ export const AnimatedImage = ({
       >
         <Animated.View style={profileImageStyle}>
           <StyledImage
-            // key={imageUrl}
             height={imageHeight}
             width={imageWidth}
             source={{

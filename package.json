@@ -50,7 +50,6 @@
     "react-native-fast-image": "^8.6.0"
   },
   "dependencies": {
-    "@bigbinary/neetoui-rn": "file:.yalc/@bigbinary/neetoui-rn",
     "@react-native-community/hooks": "^2.8.1",
     "@shopify/flash-list": "^1.2.0",
     "@styled-system/prop-types": "^5.1.5",
