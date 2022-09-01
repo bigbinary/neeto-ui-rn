@@ -128,6 +128,8 @@ DropdownItem.propTypes = {
   itemLabelStyle: PropTypes.object,
 };
 
+const AnimatedLabel = Animated.createAnimatedComponent(Typography);
+
 /**
  *
  * MultiSelect can be used to select multiple options from a list of options.
@@ -169,8 +171,6 @@ DropdownItem.propTypes = {
  * }
  * ```
  */
-
-const AnimatedLabel = Animated.createAnimatedComponent(Typography);
 
 export const MultiSelect = ({
   options,

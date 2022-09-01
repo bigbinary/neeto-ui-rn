@@ -13,7 +13,7 @@ import { Container, Typography, Touchable } from "@components";
  * Buttons are touchable elements used to interact with the screen and to trigger an action.
  *
  * <div class="screenshots">
- *   <img src="screenshots/button/socialButtons.png" />
+ *   <img src="screenshots/socialButton/socialButtons.png" />
  * </div>
  *
  *  ## Usage

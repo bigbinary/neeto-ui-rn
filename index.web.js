@@ -12,18 +12,32 @@ AppRegistry.runApplication(appName, {
 
 // Loaded Fonts with this approach: https://github.com/oblador/react-native-vector-icons#web-with-webpack
 
-import interRegular from "./assets/fonts/Inter-Regular.ttf";
-import interBold from "./assets/fonts/Inter-Bold.ttf";
+
+import sfRegular from "./assets/fonts/SFProText-Regular.ttf";
+import sfMedium from "./assets/fonts/SFProText-Medium.ttf";
+import sfSemiBold from "./assets/fonts/SFProText-Semibold.ttf";
+import sfBold from "./assets/fonts/SFProText-Bold.ttf";
+
 
 const iconFontStyles = `
 @font-face {
-  src: url(${interRegular});
-  font-family: Inter-Regular;
+  src: url(${sfRegular});
+  font-family: SFProText-Regular;
 }
 
 @font-face {
-  src: url(${interBold});
-  font-family: Inter-Bold;
+  src: url(${sfMedium});
+  font-family: SFProText-Medium;
+}
+
+@font-face {
+  src: url(${sfSemiBold});
+  font-family: SFProText-Semibold;
+}
+
+@font-face {
+  src: url(${sfBold});
+  font-family: SFProText-Bold;
 }
 `;
 

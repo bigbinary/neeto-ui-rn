@@ -95,6 +95,10 @@ Title.propTypes = {
 /**
  * BottomSheet can be used to select an item from list of items. Like a DropDown
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/bottomsheet/bottomsheet.png" />
+ * </div>
+ *
  * ## Usage
  * ```js
  * import React, { useState } from 'react';
@@ -422,7 +426,7 @@ BottomSheet.propTypes = {
    * Use custom key as value.
    */
   valueExtractor: PropTypes.func,
-   /**
+  /**
    * Function to customize back drop press
    */
   onBackdropPress: PropTypes.func,

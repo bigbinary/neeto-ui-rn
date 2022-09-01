@@ -9,22 +9,43 @@ import color from "color";
 import GooglePlayIcon from "../../components/google-play-icon";
 import IphoneIcon from "../../components/iphone-icon";
 import Content from "./components/Content";
-import GithubIcon from "../../components/github-icon";
+// import GithubIcon from "../../components/github-icon";
 
 const data = [
   {
-    color: "#49545c",
+    color: "#4557F8",
     name: "neetoInvoice",
-    image: "apps/neetoInvoice.jpg",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+    image: "apps/neetoInvoice-1.png",
+    android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
-    color: "#49545c",
+    color: "#4557F8",
     name: "neetoInvoice",
-    image: "apps/neetoInvoice.jpg",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+    image: "apps/neetoInvoice-2.png",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
+  },
+  {
+    color: "#4557F8",
+    name: "neetoInvoice",
+    image: "apps/neetoInvoice-3.png",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
+  },
+  {
+    color: "#4557F8",
+    name: "neetoInvoice",
+    image: "apps/neetoInvoice-4.png",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
+  },
+  {
+    color: "#4557F8",
+    name: "neetoInvoice",
+    image: "apps/neetoInvoice-5.png",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
 ];
 
@@ -39,11 +60,11 @@ export default class Home extends React.Component<{}> {
         <Header logo="images/neeto.svg" />
         <Content>
           <h1>
-            neetoUI is the UI library that drives the experience in all{" "}
+            neetoUI RN is the component library that drives the experience in all the{" "}
             <Highlighted target="_blank" href="https://neeto.com/">
-              neetoProducts
+              neeto
             </Highlighted>{" "}
-            built at{" "}
+            react native apps built at{" "}
             <Highlighted target="_blank" href="https://www.bigbinary.com/">
               BigBinary
             </Highlighted>{" "}
@@ -69,10 +90,10 @@ export default class Home extends React.Component<{}> {
                 <div key={item.image}>
                   <ImageContainer>
                     <Image src={item.image} alt="" />
-                    <Info style={{ backgroundColor: item.color }}>
+                    <Info style={{ backgroundColor: "#ffffff" }}>
                       <AppName
                         style={{
-                          color: tintColor,
+                          color: primaryColor,
                         }}
                       >
                         {item.name}
@@ -86,7 +107,7 @@ export default class Home extends React.Component<{}> {
                             item.android ? "anchor-active" : "anchor-inactive"
                           }
                         >
-                          <GooglePlayIcon color={tintColor} />
+                          <GooglePlayIcon color={primaryColor} />
                         </a>
                         <Separation />
                         <a
@@ -97,18 +118,7 @@ export default class Home extends React.Component<{}> {
                             item.ios ? "anchor-active" : "anchor-inactive"
                           }
                         >
-                          <IphoneIcon color={tintColor} />
-                        </a>
-                        <Separation />
-                        <a
-                          href={item.github || null}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={
-                            item.github ? "anchor-active" : "anchor-inactive"
-                          }
-                        >
-                          <GithubIcon color={tintColor} />
+                          <IphoneIcon color={primaryColor} />
                         </a>
                       </BadgeContainer>
                     </Info>
@@ -123,7 +133,7 @@ export default class Home extends React.Component<{}> {
   }
 }
 
-const primaryColor = "#6200ee";
+const primaryColor = "#4557F8";
 const restingShadow = "0 1px 3px rgba(0, 0, 0, 0.12)";
 
 const Highlighted = styled.a`
@@ -223,28 +233,12 @@ const ImageContainer = styled.div`
   overflow: hidden;
   margin: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-
-  @media (min-width: 420px) {
-    height: ${480 + 48}px;
-
-    &:hover,
-    &:focus {
-      ${Info} {
-        transform: translateY(-48px);
-      }
-    }
-  }
 `;
 
 const Image = styled.img`
   display: block;
-  max-height: 480px;
-  width: auto;
+  max-width: 280px;
 
-  @media (min-width: 420px) {
-    height: 480px;
-    width: 270px;
-  }
 `;
 
 const BadgeContainer = styled.div`

@@ -40,7 +40,8 @@ const width = Dimensions.get("screen").width - 32;
  * A Segment Picker component that provides toggling between two or more views.
  *
  * <div class="screenshots">
- *   <img src="screenshots/segmentedTopBar/segmentedTopBars.png" />
+ *   <img src="screenshots/toptabbar/toptabbar-1.png" />
+ *   <img src="screenshots/toptabbar/toptabbar-2.png" />
  * </div>
  *
  *   ## Usage

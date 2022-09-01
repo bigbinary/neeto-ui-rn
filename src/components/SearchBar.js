@@ -28,6 +28,10 @@ const TextInput = styled.TextInput`
 /**
  * SearchBars are used to search or filter items.
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/searchbar/searchbar.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  * import * as React from 'react';
