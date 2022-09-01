@@ -16,36 +16,36 @@ const data = [
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-1.png",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+    android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-2.png",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-3.png",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-4.png",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-5.png",
-    android: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
-    ios: "https://apps.apple.com/in/app/aceinvoice/id1457618272",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
 ];
 
@@ -90,10 +90,10 @@ export default class Home extends React.Component<{}> {
                 <div key={item.image}>
                   <ImageContainer>
                     <Image src={item.image} alt="" />
-                    <Info style={{ backgroundColor: item.color }}>
+                    <Info style={{ backgroundColor: "#ffffff" }}>
                       <AppName
                         style={{
-                          color: tintColor,
+                          color: primaryColor,
                         }}
                       >
                         {item.name}
@@ -107,7 +107,7 @@ export default class Home extends React.Component<{}> {
                             item.android ? "anchor-active" : "anchor-inactive"
                           }
                         >
-                          <GooglePlayIcon color={tintColor} />
+                          <GooglePlayIcon color={primaryColor} />
                         </a>
                         <Separation />
                         <a
@@ -118,7 +118,7 @@ export default class Home extends React.Component<{}> {
                             item.ios ? "anchor-active" : "anchor-inactive"
                           }
                         >
-                          <IphoneIcon color={tintColor} />
+                          <IphoneIcon color={primaryColor} />
                         </a>
                       </BadgeContainer>
                     </Info>
