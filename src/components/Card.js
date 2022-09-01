@@ -7,6 +7,14 @@ import { flexbox, space, border, color, layout } from "styled-system";
 import { theme } from "@theme";
 import { getShadowStyles } from "../utils/utils";
 
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  ${flexbox}
+  ${space}
+ ${border}
+ ${color}
+ ${layout}
+`;
+
 /**
  * This component is wrapper over Container component.
  * This component supports below props categories from [styled-system ](/styled-system).
@@ -39,14 +47,6 @@ import { getShadowStyles } from "../utils/utils";
  * ```
  *
  */
-
-const StyledTouchableOpacity = styled(TouchableOpacity)`
-  ${flexbox}
-  ${space}
- ${border}
- ${color}
- ${layout}
-`;
 
 export const Card = ({ children, elevation, ...rest }) => {
   const shadowStyles = elevation ? getShadowStyles(elevation) : {};

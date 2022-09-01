@@ -47,11 +47,22 @@ const useAlertHook = () => {
 };
 
 let rootLevelRef = null;
+
 /**
  * Launches an alert dialog with the specified title and message.
  * Optionally provide a list of buttons.
  * Tapping any button will fire the respective onPress callback and dismiss the alert.
  * By default, the only button will be an 'OK' button.
+ * <div class="screenshots">
+ *   <img src="screenshots/alert/alert-1.png" />
+ *   <img src="screenshots/alert/alert-2.png" />
+ *   <img src="screenshots/alert/alert-3.png" />
+ *   <img src="screenshots/alert/alert-4.png" />
+ *   <img src="screenshots/alert/alert-5.png" />
+ *   <img src="screenshots/alert/alert-6.png" />
+ * </div>
+ *
+ *
  *  ## Usage
  * ```js
  *import * as React from "react";
@@ -102,6 +113,7 @@ let rootLevelRef = null;
  *
  * ```
  */
+
 export const Alert = () => {
   const {
     isVisible,

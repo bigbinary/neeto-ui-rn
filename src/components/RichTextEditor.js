@@ -26,6 +26,11 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
 /**
  * RichTextEditor component is wrapper created around react-native-pell-rich-editor. This has dependency on react-native-webview, so make sure to add that as well.
  *
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/rte/rte.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  * import * as React from "react";

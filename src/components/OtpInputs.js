@@ -23,32 +23,6 @@ const TextInput = styled.TextInput`
   ${color}
 `;
 
-/**
- *
- * One-Time password input component.
- *
- * <div class="screenshots">
- *   <img src="screenshots/otpInputs/otpInputs.png" />
- * </div>
- *
- *  ## Usage
- * ```js
- * import * as React from 'react';
- * import { Container, OtpInputs, Typography} from '@bigbinary/neetoui-rn';
- *
- * export default function Main() {
- * const [code, setCode] = useState("");
- * return (
- *   <Container flex={1} justifyContent="center" alignItems="center">
- *      <OtpInputs code={code} numberOfInputs={6} handleChange={setCode} />
- *      <Typography py={10} fontSize="xl">
- *        {`Your entered OTP is ${code}`}
- *      </Typography>
- *    </Container>
- *  );
- * ```
- */
-
 const styles = {
   inputStyles: {
     fontSize: 0,
@@ -72,6 +46,32 @@ const styles = {
     fontFamily: theme.fonts.sf700,
   },
 };
+
+/**
+ *
+ * One-Time password input component.
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/otp/otp.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Container, OtpInputs, Typography} from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ * const [code, setCode] = useState("");
+ * return (
+ *   <Container flex={1} justifyContent="center" alignItems="center">
+ *      <OtpInputs code={code} numberOfInputs={6} handleChange={setCode} />
+ *      <Typography py={10} fontSize="xl">
+ *        {`Your entered OTP is ${code}`}
+ *      </Typography>
+ *    </Container>
+ *  );
+ * ```
+ */
 
 export const OtpInputs = ({
   handleChange = () => {},

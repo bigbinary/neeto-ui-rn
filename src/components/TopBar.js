@@ -5,6 +5,45 @@ import PropTypes from "prop-types";
 import { Container, Touchable, Typography } from "@components";
 import { theme } from "@theme";
 
+/**
+ *
+ * Buttons are touchable elements used to interact with the screen and to trigger an action.
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/toptabbar/toptabbar-1.png" />
+ *   <img src="screenshots/toptabbar/toptabbar-2.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React, { useEffect, useState } from 'react';
+ * import { Button, TopBar } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  const [activeTab, setActiveTab] = useState(0);
+ *
+ *  useEffect(() => {
+ *    console.log("Active tab is ", itemList[activeTab]);
+ *  }, [activeTab]);
+ *
+ *  return (
+ *    <>
+ *      <TopBar
+ *        data={itemList}
+ *        activeIndex={activeTab}
+ *        onActiveTabChange={index => {
+ *          setActiveTab(index);
+ *        }}
+ *      />
+ *
+ *      <Button label="Switch to `Expired` tab" onPress={() => setActiveTab(2)} />
+ *    </>
+ *  );
+ * }
+ * ```
+ *
+ */
+
 export const TopBar = ({
   data,
   activeIndex = 0,

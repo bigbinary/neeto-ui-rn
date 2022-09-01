@@ -7,7 +7,7 @@ import { Button, Carousel, Container, Typography } from "@components";
 /**
  *
  * <div class="screenshots">
- *   <img src="screenshots/carousel/carousel.png" />
+ *   <img src="screenshots/onboarding/onboarding.png" />
  * </div>
  *
  * This component supports below props categories from [styled-system ](/styled-system).

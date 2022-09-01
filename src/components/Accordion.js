@@ -12,8 +12,47 @@ import { ThemeContext } from "styled-components/native";
 
 import { Container } from "@components";
 
+const AccordionBody = ({ isExpanded, children }) => {
+  const animationController = useRef(
+    new Animated.Value(isExpanded ? 1 : 0)
+  ).current;
+
+  const [viewHeight, setViewHeight] = useState(0);
+
+  useEffect(() => {
+    Animated.timing(animationController, {
+      duration: 300,
+      toValue: isExpanded ? 1 : 0,
+      useNativeDriver: false,
+    }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded]);
+
+  const bodyContentHeight = animationController.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, viewHeight],
+  });
+
+  const getLayout = event => {
+    const height = event.nativeEvent.layout.height;
+    setViewHeight(height);
+  };
+
+  return (
+    <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
+      <Container width="100%" position="absolute" onLayout={getLayout}>
+        {children}
+      </Container>
+    </Animated.View>
+  );
+};
+
 /**
  * A component used to display an expandable list item.
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/accordion/accordion.png" />
+ * </div>
  *
  *  ## Usage
  * ```js
@@ -49,41 +88,6 @@ import { Container } from "@components";
  * ```
  *
  */
-
-const AccordionBody = ({ isExpanded, children }) => {
-  const animationController = useRef(
-    new Animated.Value(isExpanded ? 1 : 0)
-  ).current;
-
-  const [viewHeight, setViewHeight] = useState(0);
-
-  useEffect(() => {
-    Animated.timing(animationController, {
-      duration: 300,
-      toValue: isExpanded ? 1 : 0,
-      useNativeDriver: false,
-    }).start();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded]);
-
-  const bodyContentHeight = animationController.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, viewHeight],
-  });
-
-  const getLayout = event => {
-    const height = event.nativeEvent.layout.height;
-    setViewHeight(height);
-  };
-
-  return (
-    <Animated.View style={{ height: bodyContentHeight, overflow: "hidden" }}>
-      <Container width="100%" position="absolute" onLayout={getLayout}>
-        {children}
-      </Container>
-    </Animated.View>
-  );
-};
 
 export const Accordion = React.forwardRef((props, ref) => {
   const {

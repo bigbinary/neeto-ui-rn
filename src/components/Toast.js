@@ -95,6 +95,13 @@ ToastComponent.propTypes = {
 /**
  * Toast component is a wrapper over https://github.com/calintamas/react-native-toast-message.
  *
+ * <div class="screenshots">
+ *   <img src="screenshots/toast/toast-1.png" />
+ *   <img src="screenshots/toast/toast-2.png" />
+ *   <img src="screenshots/toast/toast-3.png" />
+ *   <img src="screenshots/toast/toast-4.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  *import { Toast } from "@bigbinary/neetoui-rn";

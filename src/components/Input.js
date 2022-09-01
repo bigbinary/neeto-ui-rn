@@ -59,6 +59,8 @@ const Typography = styled.Text`
   })}
 `;
 
+const AnimatedLabel = Animated.createAnimatedComponent(Typography);
+
 /**
  * Input component allow users to input custom text entries with a keyboard.
  * This component supports below props categories from [styled-system ](/styled-system).
@@ -70,6 +72,10 @@ const Typography = styled.Text`
  * <li>brandLeft</li>
  * <li>typography</li>
  * </ul>
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/inputs/inputs.png" />
+ * </div>
  *
  *  ## Usage
  * ```js
@@ -86,8 +92,6 @@ const Typography = styled.Text`
  * ```
  *
  */
-
-const AnimatedLabel = Animated.createAnimatedComponent(Typography);
 
 export const Input = props => {
   const {

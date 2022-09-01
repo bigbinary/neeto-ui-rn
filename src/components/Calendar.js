@@ -6,6 +6,8 @@ import { Calendar as RNCalender } from "react-native-calendars";
 
 /**
  *
+ * Calendar component built on top of [react-native-calendars](https://github.com/wix/react-native-calendars) with our custom theme.
+ *
  * <div class="screenshots">
  *   <img src="screenshots/calendar/calendar.png" />
  * </div>

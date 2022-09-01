@@ -13,62 +13,6 @@ import Animated, {
 import { Container, Typography } from "@components";
 import { ThemeContext } from "styled-components/native";
 
-/**
- *
- *  ## Usage
- * ```js
- * import * as React from 'react';
- * import { Typography, BottomTabBar  } from '@bigbinary/neetoui-rn';
- * import { NavigationContainer } from '@react-navigation/native';
- * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
- * import { ThemeContext } from "styled-components/native";
- *
- * const Tab = createBottomTabNavigator();
- *
- * const HomeScreen = () => {
- *  return (
- *   <Typography fontSize="14px">Home Screen</Typography>
- *  )
- * }
- *
- * const SettingsScreen = () => {
- *   return (
- *     <Typography fontSize="14px">Settings Screen</Typography>
- *   )
- * }
- *
- * export default function Main() {
- *  const theme = useContext(ThemeContext);
- *  return (
- *    <Tab.Navigator
- *      screenOptions={{
- *        tabBarActiveTintColor: theme.colors.background.base,
- *        tabBarInactiveTintColor: theme.colors.background.grey500,
- *      }}
- *      tabBar={props => <BottomTabBar {...props} />}
- *    >
- *      <Tab.Screen name="Home" component={HomeScreen}
- *        options={{
- *          customTabBarProps: {
- *            icon: "home-5-line",
- *            size: 26,
- *          },
- *        }}
- *      />
- *      <Tab.Screen name="Settings" component={SettingsScreen}
- *        options={{
- *          customTabBarProps: {
- *            icon: "user-3-line",
- *            size: 26,
- *          },
- *        }} />
- *    </Tab.Navigator>
- *  );
- * }
- * ```
- *
- */
-
 function TabElement({
   isFocused,
   onPress,
@@ -147,6 +91,68 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+/**
+ *
+ * BottomTabBar is animated custom tabbar component which needs to used along with [React Navigation & Bottom Tabs Navigator](https://reactnavigation.org/docs/bottom-tab-navigator/)
+ * <div class="screenshots">
+ *   <img src="screenshots/bottomTabBar/bottomTabBar-1.png" />
+ *   <img src="screenshots/bottomTabBar/bottomTabBar-2.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Typography, BottomTabBar  } from '@bigbinary/neetoui-rn';
+ * import { NavigationContainer } from '@react-navigation/native';
+ * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+ * import { ThemeContext } from "styled-components/native";
+ *
+ * const Tab = createBottomTabNavigator();
+ *
+ * const HomeScreen = () => {
+ *  return (
+ *   <Typography fontSize="14px">Home Screen</Typography>
+ *  )
+ * }
+ *
+ * const SettingsScreen = () => {
+ *   return (
+ *     <Typography fontSize="14px">Settings Screen</Typography>
+ *   )
+ * }
+ *
+ * export default function Main() {
+ *  const theme = useContext(ThemeContext);
+ *  return (
+ *    <Tab.Navigator
+ *      screenOptions={{
+ *        tabBarActiveTintColor: theme.colors.background.base,
+ *        tabBarInactiveTintColor: theme.colors.background.grey500,
+ *      }}
+ *      tabBar={props => <BottomTabBar {...props} />}
+ *    >
+ *      <Tab.Screen name="Home" component={HomeScreen}
+ *        options={{
+ *          customTabBarProps: {
+ *            icon: "home-5-line",
+ *            size: 26,
+ *          },
+ *        }}
+ *      />
+ *      <Tab.Screen name="Settings" component={SettingsScreen}
+ *        options={{
+ *          customTabBarProps: {
+ *            icon: "user-3-line",
+ *            size: 26,
+ *          },
+ *        }} />
+ *    </Tab.Navigator>
+ *  );
+ * }
+ * ```
+ *
+ */
 
 export const BottomTabBar = ({ state, descriptors, navigation }) => {
   return (
