@@ -94,7 +94,7 @@ export const OtpInputs = ({
   return (
     <Container>
       <Container
-        onTouchStart={() => {
+        onTouchEnd={() => {
           Keyboard.dismiss();
           inputRef && inputRef.current.focus();
         }}
