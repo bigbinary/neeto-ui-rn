@@ -141,9 +141,11 @@ export const SearchBar = props => {
             opacity: buttonOpacityController,
             width: cancelButtonWidth,
             alignItems: "flex-end",
+            justifyContent: "center",
           }}
         >
           <Button
+            height={20}
             variant="text"
             label="Cancel"
             onPress={onCancelHandle}
