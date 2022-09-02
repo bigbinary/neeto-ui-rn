@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RNFImage from "react-native-fast-image";
 import PropTypes from "prop-types";
 import Animated, {
   Easing,
@@ -6,11 +7,21 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import styled from "styled-components/native";
+import { flexbox, space, border, color, layout } from "styled-system";
 
 import { Container } from "@components";
 import ImagePlaceholder from "@assets/images/image-placeholder.svg";
 import { ActivityIndicator } from "react-native";
 import { theme } from "../theme";
+
+const StyledImage = styled(RNFImage)`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${color}
+  ${layout}
+`;
 
 /**
  * AnimatedImage can be used to display a placeholder before image is loaded with animation.
@@ -69,22 +80,29 @@ export const AnimatedImage = ({
         borderRadius={10}
         overflow="hidden"
       >
-        <Animated.Image
-          style={profileImageStyle}
-          source={{
-            uri: imageUrl,
-            headers: {
-              Accept: "*/*",
-              "Content-Type": "application/json",
-              Pragma: "no-cache",
-            },
-          }}
-          onLoad={() => {
-            setImageLoaded(true);
-            opacity.value = 1;
-          }}
-          {...rest}
-        />
+        <Animated.View style={profileImageStyle}>
+          <StyledImage
+            height={imageHeight}
+            width={imageWidth}
+            source={{
+              uri: imageUrl,
+              headers: {
+                Accept: "*/*",
+                "Content-Type": "application/json",
+                Pragma: "no-cache",
+              },
+            }}
+            onLoadStart={() => {
+              setImageLoaded(false);
+              opacity.value = 0;
+            }}
+            onLoad={() => {
+              setImageLoaded(true);
+              opacity.value = 1;
+            }}
+            {...rest}
+          />
+        </Animated.View>
 
         {!isImageLoaded && (
           <Container position="absolute">
