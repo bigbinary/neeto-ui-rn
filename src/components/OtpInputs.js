@@ -12,7 +12,7 @@ import {
 import styled from "styled-components/native";
 
 import { theme } from "../theme";
-import { Container, Touchable, Typography } from "@components";
+import { Container, Typography } from "@components";
 
 const TextInput = styled.TextInput`
   ${flexbox}
@@ -93,67 +93,64 @@ export const OtpInputs = ({
 
   return (
     <Container>
-      <Touchable
-        onPress={() => {
+      <Container
+        onTouchEnd={() => {
           Keyboard.dismiss();
           inputRef && inputRef.current.focus();
         }}
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
       >
-        <Container
-          flexDirection="row"
-          alignItems="center"
-          justifyContent="center"
-        >
-          {Array(numberOfInputs)
-            .fill()
-            .map((number, index) => {
-              return (
-                <Container
-                  key={index}
-                  borderColor={
-                    code.length - 1 === index
-                      ? theme.colors.border.purple500
-                      : theme.colors.border.secondary
+        {Array(numberOfInputs)
+          .fill()
+          .map((number, index) => {
+            return (
+              <Container
+                key={index}
+                borderColor={
+                  code.length - 1 === index
+                    ? theme.colors.border.purple500
+                    : theme.colors.border.secondary
+                }
+                borderWidth={code.length - 1 === index ? 1.5 : 1}
+                {...styles.defaultContainerStyles}
+                {...containerStyles}
+              >
+                <Typography
+                  accessibilityLabel="otp"
+                  color={
+                    error
+                      ? theme.colors.font.danger
+                      : theme.colors.font.purple500
                   }
-                  borderWidth={code.length - 1 === index ? 1.5 : 1}
-                  {...styles.defaultContainerStyles}
-                  {...containerStyles}
+                  {...styles.defaultTextStyles}
+                  {...textStyles}
                 >
-                  <Typography
-                    accessibilityLabel="otp"
-                    color={
-                      error
-                        ? theme.colors.font.danger
-                        : theme.colors.font.purple500
-                    }
-                    {...styles.defaultTextStyles}
-                    {...textStyles}
-                  >
-                    {code[index] || ""}
-                  </Typography>
-                </Container>
-              );
-            })}
-          <TextInput
-            keyboardType="phone-pad"
-            selectionColor="transparent"
-            autoFocus={true}
-            onChangeText={value => {
-              if (!isNaN(value)) {
-                if (value.length <= numberOfInputs) {
-                  handleChange && handleChange(value);
-                }
-                if (value.length >= numberOfInputs) {
-                  return Keyboard.dismiss();
-                }
+                  {code[index] || ""}
+                </Typography>
+              </Container>
+            );
+          })}
+        <TextInput
+          keyboardType="phone-pad"
+          selectionColor="transparent"
+          autoFocus={true}
+          onChangeText={value => {
+            if (!isNaN(value)) {
+              if (value.length <= numberOfInputs) {
+                handleChange && handleChange(value);
               }
-            }}
-            ref={inputRef}
-            value={code || ""}
-            {...styles.inputStyles}
-          />
-        </Container>
-      </Touchable>
+              if (value.length >= numberOfInputs) {
+                return Keyboard.dismiss();
+              }
+            }
+          }}
+          ref={inputRef}
+          value={code || ""}
+          {...styles.inputStyles}
+        />
+      </Container>
     </Container>
   );
 };
