@@ -1,6 +1,6 @@
 {
   "name": "@bigbinary/neetoui-rn",
-  "version": "0.0.196",
+  "version": "0.0.197",
   "main": "lib/index.js",
   "author": "BigBinary",
   "license": "MIT",
@@ -43,11 +43,11 @@
     ]
   },
   "peerDependencies": {
+    "react-native-fast-image": "^8.6.0",
     "react-native-reanimated": "^2.7.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-svg": "*",
-    "react-native-webview": "11.14.4",
-    "react-native-fast-image": "^8.6.0"
+    "react-native-webview": "11.14.4"
   },
   "dependencies": {
     "@react-native-community/hooks": "^2.8.1",
