@@ -67,15 +67,8 @@ const theme: {
 interface StyleProps
   extends FlexboxProps,
     SpaceProps,
-    Omit<
-      BorderProps,
-      | "borderColor"
-      | "borderTopColor"
-      | "borderBottomColor"
-      | "borderLeftColor"
-      | "borderRightColor"
-    >,
-    Omit<ColorProps, "backgroundColor" | "bg" | "color">,
+    BorderProps,
+    ColorProps,
     LayoutProps,
     PositionProps {
   borderColor?: typeof theme.colors.border;
@@ -88,8 +81,7 @@ interface StyleProps
   color?: typeof theme.colors.font;
 }
 
-interface TypographyProps
-  extends Omit<SSTypographyProps, "fontFamily" | "fontSize"> {
+interface TypographyProps extends SSTypographyProps {
   fontFamily?: typeof theme.fonts;
   fontSize?: typeof theme.fontSizes;
 }
@@ -404,7 +396,7 @@ interface SegmentedTopBarProps extends MaterialTopTabBarProps {
 }
 
 interface SelectProps
-  extends Omit<MultiSelectProps, "value" | "selectedValue" | "deletedValue"> {
+  extends Omit<MultiSelectProps, "selectedValue" | "deletedValue"> {
   value: any;
 }
 
