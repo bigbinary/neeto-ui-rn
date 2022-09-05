@@ -10,7 +10,7 @@ import {
   LayoutProps,
   PositionProps,
   ButtonStyleProps,
-  TypographyProps,
+  TypographyProps as SSTypographyProps,
 } from "styled-system";
 import {
   ImageProps as RNImageProps,
@@ -71,7 +71,21 @@ interface StyleProps
     BorderProps,
     ColorProps,
     LayoutProps,
-    PositionProps {}
+    PositionProps {
+  borderColor?: typeof theme.colors.border;
+  borderTopColor?: typeof theme.colors.border;
+  borderBottomColor?: typeof theme.colors.border;
+  borderLeftColor?: typeof theme.colors.border;
+  borderRightColor?: typeof theme.colors.border;
+  backgroundColor?: typeof theme.colors.background;
+  bg?: typeof theme.colors.background;
+  color?: typeof theme.colors.font;
+}
+
+interface TypographyProps extends SSTypographyProps {
+  fontFamily?: typeof theme.fonts;
+  fontSize?: typeof theme.fontSizes;
+}
 
 interface ViewProps extends RNViewProps, StyleProps {
   children?: React.ReactNode;
@@ -383,7 +397,7 @@ interface SegmentedTopBarProps extends MaterialTopTabBarProps {
 }
 
 interface SelectProps
-  extends Omit<MultiSelectProps, "value" | "selectedValue" | "deletedValue"> {
+  extends Omit<MultiSelectProps, "selectedValue" | "deletedValue"> {
   value: any;
 }
 
