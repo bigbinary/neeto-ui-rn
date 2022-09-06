@@ -211,7 +211,7 @@ export const BottomSheet = ({
       avoidKeyboard
       hideModalContentWhileAnimating
       animationInTiming={600}
-      animationOutTiming={1000}
+      animationOutTiming={600}
       onRequestClose={hide}
       {...modalParams}
     >
