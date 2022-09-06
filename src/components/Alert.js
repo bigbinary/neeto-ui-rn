@@ -153,8 +153,6 @@ export const Alert = () => {
 
   return (
     <Modal
-      animationIn="zoomInDown"
-      animationOut="zoomOutUp"
       animationInTiming={600}
       animationOutTiming={600}
       backdropTransitionInTiming={600}
