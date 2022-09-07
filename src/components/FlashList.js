@@ -151,7 +151,7 @@ const FadeInFlatList = ({
       cancelAnimation(value);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [animationDuration, value, props.data.length, isLoading]);
+  }, [animationDuration, value, isLoading]);
 
   return <ShopifyFlashList {...props} renderItem={renderItem} />;
 };
