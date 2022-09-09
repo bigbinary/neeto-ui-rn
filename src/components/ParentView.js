@@ -38,7 +38,7 @@ export const ParentView = ({
   rightInset = true,
   leftInset = true,
   bottomInset = true,
-  shouldDismissKeyboardOnTap = true,
+  shouldDismissKeyboardOnTap = false,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -73,8 +73,13 @@ export const ParentView = ({
         {...(shouldDismissKeyboardOnTap
           ? {
               onStartShouldSetResponder: () => true,
-              onResponderGrant: () => {
-                if (keyboardHeight) {
+              onTouchStart: e => {
+                if (
+                  keyboardHeight &&
+                  e?.target?._internalFiberInstanceHandleDEV?.elementType?.indexOf(
+                    "TextInput"
+                  ) === -1
+                ) {
                   Keyboard.dismiss();
                 }
               },
