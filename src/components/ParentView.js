@@ -38,7 +38,7 @@ export const ParentView = ({
   rightInset = true,
   leftInset = true,
   bottomInset = true,
-  shouldDismissKeyboardOnTap = false,
+  shouldDismissKeyboardOnTap = true,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
