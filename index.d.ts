@@ -350,6 +350,7 @@ interface ParentViewProps extends ViewProps {
   rightInset?: boolean;
   leftInset?: boolean;
   bottomInset?: boolean;
+  shouldDismissKeyboardOnTap?: boolean;
 }
 
 type RNPopoverProps = typeof RNPopover.propTypes;
