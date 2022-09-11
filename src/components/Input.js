@@ -274,7 +274,7 @@ export const Input = props => {
         )}
       </View>
       {!!errorMessage && (
-        <Typography py={2} color="font.danger">
+        <Typography pt={2} color="font.danger">
           {errorMessage}
         </Typography>
       )}
