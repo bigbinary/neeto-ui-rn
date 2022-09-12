@@ -219,6 +219,7 @@ type CarouselProps = {
   renderItem: () => React.ReactNode;
   carouselRef?: React.RefObject<Carousel>;
   onSnapToItem?: (index: number) => void;
+  containerStyle: ViewProps
 };
 
 interface CheckBoxProps extends TouchableProps {

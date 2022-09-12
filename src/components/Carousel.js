@@ -43,12 +43,13 @@ export const Carousel = ({
   renderItem,
   carouselRef,
   onSnapToItem,
+  containerStyle = {},
 }) => {
   const { width } = useWindowDimensions();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <Container>
+    <Container flex={1} {...containerStyle}>
       <CarouselParent
         ref={carouselRef}
         data={itemArray}
@@ -109,4 +110,5 @@ Carousel.propTypes = {
   renderItem: PropTypes.func.isRequired,
   onSnapToItem: PropTypes.func,
   carouselRef: PropTypes.object,
+  containerStyle: PropTypes.object,
 };
