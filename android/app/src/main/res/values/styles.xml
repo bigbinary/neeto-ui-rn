@@ -3,6 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+         <item name="android:colorControlActivated">#3A79DF</item>
+         <item name="android:textColorHighlight">#D6E2F1</item>
     </style>
 
 </resources>
