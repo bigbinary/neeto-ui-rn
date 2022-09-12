@@ -72,7 +72,6 @@ export const ParentView = ({
       <Container
         {...(shouldDismissKeyboardOnTap
           ? {
-              onStartShouldSetResponder: () => true,
               onTouchStart: e => {
                 if (
                   keyboardHeight &&
