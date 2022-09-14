@@ -142,7 +142,7 @@ const FadeInFlatList = ({
       withTiming(20, {
         duration: animationDuration,
       }),
-      withTiming(props.data.length + 1, {
+      withTiming(10000, {
         duration: 0,
       })
     );
