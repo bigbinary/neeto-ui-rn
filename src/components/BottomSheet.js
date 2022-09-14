@@ -210,8 +210,6 @@ export const BottomSheet = ({
       useNativeDriver
       avoidKeyboard
       hideModalContentWhileAnimating
-      animationInTiming={600}
-      animationOutTiming={600}
       onRequestClose={hide}
       {...modalParams}
     >
