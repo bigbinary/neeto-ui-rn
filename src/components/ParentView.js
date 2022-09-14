@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { StatusBar } from "react-native";
+import { Keyboard, StatusBar } from "react-native";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
 import {
@@ -8,6 +8,7 @@ import {
 } from "react-native-safe-area-context";
 
 import { Container } from "@components";
+import { useKeyboard } from "../hooks/useKeyboard";
 
 /**
  *ParentView wraps the childrens with SafeAreaview.
@@ -37,9 +38,11 @@ export const ParentView = ({
   rightInset = true,
   leftInset = true,
   bottomInset = true,
+  shouldDismissKeyboardOnTap = true,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
+  const keyboardHeight = useKeyboard();
 
   const safeAreaViewProps = {
     edges: [topInset && "top", rightInset && "right", leftInset && "left"],
@@ -67,6 +70,20 @@ export const ParentView = ({
     >
       <StatusBar barStyle={barStyle} backgroundColor={statusBarColor} />
       <Container
+        {...(shouldDismissKeyboardOnTap
+          ? {
+              onTouchStart: e => {
+                if (
+                  keyboardHeight &&
+                  e?.target?._internalFiberInstanceHandleDEV?.elementType?.indexOf(
+                    "TextInput"
+                  ) === -1
+                ) {
+                  Keyboard.dismiss();
+                }
+              },
+            }
+          : {})}
         flex={1}
         backgroundColor={newBackgroundColor}
         {...rest}
@@ -108,4 +125,8 @@ ParentView.propTypes = {
    * Sets Bottom Inset
    */
   bottomInset: PropTypes.bool,
+  /**
+   * Dismiss keyboard on tap
+   */
+  shouldDismissKeyboardOnTap: PropTypes.bool,
 };
