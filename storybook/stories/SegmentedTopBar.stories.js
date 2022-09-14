@@ -21,13 +21,29 @@ const HomeScreen = () => {
 const SettingsScreen = () => {
   return <Typography fontSize="14px">Settings Screen</Typography>;
 };
+const ProfileScreen = () => {
+  return <Typography fontSize="14px">ProfileScreen</Typography>;
+};
 
 export const SegmentedTopBarDemo = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator tabBar={props => <SegmentedTopBar {...props} />}>
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen
+          name="Settings"
+          component={SettingsScreen}
+          options={{
+            title: "SettingsTitle",
+          }}
+        />
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: "ProfileScreenLabel",
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

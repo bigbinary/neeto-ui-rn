@@ -83,6 +83,7 @@ export const SegmentedTopBar = ({
   inactiveTextStyle,
   navigation,
   height,
+  descriptors,
 }) => {
   const translateValue = (width - 4) / routes?.length;
   const tabTranslateValue = useSharedValue(0);
@@ -117,12 +118,20 @@ export const SegmentedTopBar = ({
           tabTranslateAnimatedStyles,
         ]}
       />
-      {routes.map(({ name }, i) => {
+      {routes.map((route, i) => {
         const currentIndexTextStyle =
           index === index + 1 ? activeTextStyle : inactiveTextStyle;
+        const { options } = descriptors[route.key];
+        const label =
+          options.tabBarLabel !== undefined
+            ? options.tabBarLabel
+            : options.title !== undefined
+            ? options.title
+            : route.name;
+
         return (
           <Touchable
-            onPress={() => navigation.navigate(name)}
+            onPress={() => navigation.navigate(route.name)}
             key={i}
             flex={1}
             height={height}
@@ -137,7 +146,7 @@ export const SegmentedTopBar = ({
               color="font.grey800"
               fontFamily="sf500"
             >
-              {name}
+              {label}
             </Typography>
           </Touchable>
         );

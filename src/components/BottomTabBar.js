@@ -16,7 +16,7 @@ import { ThemeContext } from "styled-components/native";
 function TabElement({
   isFocused,
   onPress,
-  name,
+  label,
   tabBarActiveTintColor,
   tabBarInactiveTintColor,
   icon,
@@ -78,7 +78,7 @@ function TabElement({
           fontFamily="sf500"
           fontSize="4xs"
         >
-          {name}
+          {label}
         </Typography>
       </Container>
     </TouchableWithoutFeedback>
@@ -178,12 +178,19 @@ export const BottomTabBar = ({ state, descriptors, navigation }) => {
           }
         };
 
+        const label =
+          options.tabBarLabel !== undefined
+            ? options.tabBarLabel
+            : options.title !== undefined
+            ? options.title
+            : name;
+
         return (
           <TabElement
             key={index}
             onPress={onPress}
             isFocused={isFocused}
-            name={name}
+            label={label}
             tabBarActiveTintColor={tabBarActiveTintColor}
             tabBarInactiveTintColor={tabBarInactiveTintColor}
             icon={icon}
@@ -198,7 +205,7 @@ export const BottomTabBar = ({ state, descriptors, navigation }) => {
 TabElement.propTypes = {
   isFocused: PropTypes.bool,
   onPress: PropTypes.func,
-  name: PropTypes.string,
+  label: PropTypes.string,
   tabBarActiveTintColor: PropTypes.string,
   tabBarInactiveTintColor: PropTypes.string,
   icon: PropTypes.string,
