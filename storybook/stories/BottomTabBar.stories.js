@@ -23,6 +23,10 @@ const SettingsScreen = () => {
   return <Typography fontSize="14px">Settings Screen</Typography>;
 };
 
+const ProfileScreen = () => {
+  return <Typography fontSize="14px">ProfileScreen Screen</Typography>;
+};
+
 export const BottomTabBarDemo = () => {
   const theme = useContext(ThemeContext);
 
@@ -49,6 +53,18 @@ export const BottomTabBarDemo = () => {
           name="Settings"
           component={SettingsScreen}
           options={{
+            title: "SettingsTitle",
+            customTabBarProps: {
+              icon: "user-3-line",
+              size: 26,
+            },
+          }}
+        />
+        <Tab.Screen
+          name="ProfileScreen"
+          component={ProfileScreen}
+          options={{
+            tabBarLabel: "ProfileScreenLabel",
             customTabBarProps: {
               icon: "user-3-line",
               size: 26,
