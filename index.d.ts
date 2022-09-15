@@ -67,11 +67,11 @@ const theme: {
 
 interface StyleProps
   extends FlexboxProps,
-    SpaceProps,
-    BorderProps,
-    ColorProps,
-    LayoutProps,
-    PositionProps {
+  SpaceProps,
+  BorderProps,
+  ColorProps,
+  LayoutProps,
+  PositionProps {
   borderColor?: typeof theme.colors.border;
   borderTopColor?: typeof theme.colors.border;
   borderBottomColor?: typeof theme.colors.border;
@@ -95,11 +95,11 @@ interface TextProps extends RNTextProps, StyleProps, TypographyProps {
 }
 interface TextInputProps
   extends RNTextInputAndroidProps,
-    RNTextInputIOSProps,
-    StyleProps,
-    TypographyProps {}
-interface FlatListProps extends RNFlatListProps, StyleProps {}
-interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
+  RNTextInputIOSProps,
+  StyleProps,
+  TypographyProps { }
+interface FlatListProps extends RNFlatListProps, StyleProps { }
+interface ScrollViewProps extends RNScrollViewProps, StyleProps { }
 interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
 }
@@ -353,11 +353,15 @@ interface ParentViewProps extends ViewProps {
   bottomInset?: boolean;
   shouldDismissKeyboardOnTap?: boolean;
 }
-
+interface PopoverItemProps {
+  Icon?: React.FC;
+  label?: string;
+  labelProps?: TypographyProps
+}
 type RNPopoverProps = typeof RNPopover.propTypes;
 interface PopoverProps extends RNPopoverProps {
   children?: React.ReactNode;
-  data?: Array<any>;
+  data?: Array<PopoverItemProps>;
   fontFamily?: typeof theme.fonts;
   fontSize?: typeof theme.fontSizes;
 }
