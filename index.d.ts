@@ -45,7 +45,6 @@ import { FastImageProps } from "react-native-fast-image";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
-import { type } from "ramda";
 
 type addPrefixToObject<
   TObject extends object,
