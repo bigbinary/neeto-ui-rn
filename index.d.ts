@@ -45,6 +45,7 @@ import { FastImageProps } from "react-native-fast-image";
 
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
+import { type } from "ramda";
 
 type addPrefixToObject<
   TObject extends object,
@@ -219,7 +220,7 @@ type CarouselProps = {
   renderItem: () => React.ReactNode;
   carouselRef?: React.RefObject<Carousel>;
   onSnapToItem?: (index: number) => void;
-  containerStyle: ViewProps
+  containerStyle: ViewProps;
 };
 
 interface CheckBoxProps extends TouchableProps {
@@ -294,6 +295,20 @@ interface ListItemProps extends ViewProps {
   RightComponent: React.FC;
 }
 
+type NotificationPreferenceListItem = {
+  label: string;
+  enabled: boolean;
+  onSwitch: (item: any, index: number) => void;
+};
+type NotificationPreferenceListProps = {
+  data: Array<NotificationPreferenceListItem>;
+  containerProps?: ViewProps;
+  itemWrapperProps?: ViewProps;
+  itemContainerProps?: ViewProps;
+  labelContainerProps?: ViewProps;
+  labelProps?: TypographyProps;
+};
+
 interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
   label?: string;
@@ -334,6 +349,18 @@ type OnBoardingProps = {
   slides: Array<any>;
   onComplete: () => void;
   logoWidth?: number;
+};
+
+type OrganizationItemProps = {
+  label?: string;
+  name: string;
+  wrapperProps?: ViewProps;
+  containerProps?: ViewProps;
+  iconContainerProps?: ViewProps;
+  iconProps?: { size: number; color: typeof theme.colors.font; name: string };
+  textContainerProps?: ViewProps;
+  labelProps?: TypographyProps;
+  nameProps?: TypographyProps;
 };
 
 type OtpInputsProps = {
@@ -454,8 +481,10 @@ export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
 export const ListItem: React.FC<ListItemProps>;
+export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
 export const MultiSelect: React.FC<MultiSelectProps>;
 export const OnBoarding: React.FC<OnBoardingProps>;
+export const OrganizationItem: React.FC<OrganizationItemProps>;
 export const OtpInputs: React.FC<OtpInputsProps>;
 export const ParentView: React.FC<ParentViewProps>;
 export const Popover: React.FC<PopoverProps>;
