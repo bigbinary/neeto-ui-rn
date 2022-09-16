@@ -23,6 +23,7 @@ const Title = ({
   canSearch,
   setSearchText,
   onDonePress,
+  searchBarProps,
 }) => {
   let touchY;
 
@@ -62,7 +63,6 @@ const Title = ({
             </Touchable>
           )}
         </Container>
-
         {canSearch && (
           <SearchBar
             debounceDelay={200}
@@ -72,6 +72,7 @@ const Title = ({
               setSearchText("");
             }}
             showCancelButton={false}
+            {...searchBarProps}
           />
         )}
       </Container>
@@ -90,6 +91,7 @@ Title.propTypes = {
   canSearch: PropTypes.bool,
   setSearchText: PropTypes.func,
   onDonePress: PropTypes.func,
+  searchBarProps: PropTypes.object,
 };
 
 /**
@@ -165,6 +167,7 @@ export const BottomSheet = ({
   valueExtractor,
   selectedItem,
   onBackdropPress,
+  searchBarProps,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -238,6 +241,7 @@ export const BottomSheet = ({
               searchText={searchText}
               setSearchText={setSearchText}
               onDonePress={onDonePress}
+              searchBarProps={searchBarProps}
             />
           )}
 
@@ -345,6 +349,7 @@ BottomSheet.defaultProps = {
   valueExtractor: () => {},
   labelExtractor: () => {},
   onBackdropPress: () => {},
+  searchBarProps: {},
 };
 
 BottomSheet.propTypes = {
@@ -436,6 +441,10 @@ BottomSheet.propTypes = {
    * Currently selected item
    */
   selectedItem: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  /**
+   * Object to update the searchbar component
+   */
+  searchBarProps: PropTypes.object,
   /**
    * To support more Modal params.
    */

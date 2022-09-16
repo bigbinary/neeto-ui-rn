@@ -207,6 +207,7 @@ export const MultiSelect = ({
   moreItemLabelStyle,
   MoreItemComponent,
   onBackdropPress,
+  searchBarProps,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -459,6 +460,7 @@ export const MultiSelect = ({
         valueExtractor={valueExtractor}
         labelExtractor={labelExtractor}
         onBackdropPress={onBackdropPress}
+        searchBarProps={searchBarProps}
       />
     </Container>
   );
@@ -628,6 +630,10 @@ MultiSelect.propTypes = {
    * Function to customize back drop press
    */
   onBackdropPress: PropTypes.func,
+  /**
+   * Object to update the searchbar component
+   */
+  searchBarProps: PropTypes.object,
 };
 
 MultiSelect.defaultProps = {
@@ -647,4 +653,5 @@ MultiSelect.defaultProps = {
   onDonePress: () => {},
   maxItemSize: 5,
   onBackdropPress: () => {},
+  searchBarProps: {},
 };
