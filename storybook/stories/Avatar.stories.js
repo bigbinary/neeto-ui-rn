@@ -77,6 +77,14 @@ export const ImageSizes = () => {
         <Avatar
           imageUrl="https://picsum.photos/100"
           name="John Doe"
+          variant="extra-small"
+        />
+        <Typography fontSize="2xs">Extra Small</Typography>
+      </Container>
+      <Container flexDirection="row" alignItems="center">
+        <Avatar
+          imageUrl="https://picsum.photos/100"
+          name="John Doe"
           variant="small"
         />
         <Typography fontSize="xl">Small</Typography>
