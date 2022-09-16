@@ -53,6 +53,8 @@ export const Avatar = ({
 
   const getSizes = () => {
     switch (variant) {
+      case "extra-small":
+        return [24, 8];
       case "small":
         return [36, 12];
       case "medium":
@@ -128,7 +130,7 @@ Avatar.propTypes = {
   /**
    * variant of the avatar: `medium` or `small`
    */
-  variant: PropTypes.oneOf(["medium", "small"]),
+  variant: PropTypes.oneOf(["medium", "small", "extra-small"]),
   /**
    * Custom color for the avatar.
    */

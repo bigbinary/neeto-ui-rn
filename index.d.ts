@@ -139,7 +139,7 @@ interface AnimatedImageProps extends RNImageProps, FastImageProps {
 
 interface AvatarProps extends ViewProps {
   name?: string;
-  variant?: "small" | "medium";
+  variant?: "extra-small" |"small" | "medium";
   bgColor?: typeof theme.colors.background;
   fontColor?: typeof theme.colors.font;
   imageUrl?: string;
