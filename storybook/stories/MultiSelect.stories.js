@@ -73,7 +73,7 @@ export const MultiSelects = () => {
       )}
       valueExtractor={item => item?.id}
       labelExtractor={item => item?.name}
-      searchBarProps={{ placeholder: "Search Here...", debounceDelay: 3000 }}
+      searchBarProps={{ placeholder: "Search Here...", debounceDelay: 1000 }}
       // onBackdropPress={() => {}}
       // disabled
       // noResultsLabelContainerStyle={{backgroundColor:"red"}}

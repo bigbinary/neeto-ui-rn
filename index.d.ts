@@ -179,6 +179,7 @@ interface BottomSheetProps extends ViewProps {
   onDonePress?: () => void;
   valueExtractor?: () => {};
   labelExtractor?: () => {};
+  searchbarProps?: object;
 }
 
 interface ButtonProps extends TouchableProps {
@@ -327,6 +328,7 @@ interface MultiSelectProps extends ViewProps {
   maxItemSize?: number;
   moreItemLabelContainerStyle?: ViewStyle;
   moreItemLabelStyle?: TextStyle;
+  searchbarProps?: object;
 }
 
 type OnBoardingProps = {
