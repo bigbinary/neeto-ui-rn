@@ -16,7 +16,7 @@ export const TouchableOpacity = styled.TouchableOpacity`
 `;
 
 const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
-  const { Icon, label } = item;
+  const { Icon, label, labelProps } = item;
 
   return (
     <TouchableOpacity
@@ -32,6 +32,7 @@ const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
         fontSize={fontSize}
         fontColor="font.primary"
         fontFamily={fontFamily}
+        {...labelProps}
       >
         {label}
       </Typography>
