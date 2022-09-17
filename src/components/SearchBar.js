@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Animated } from "react-native";
+import { Animated, TouchableWithoutFeedback } from "react-native";
 import {
   flexbox,
   space,
@@ -98,43 +98,49 @@ export const SearchBar = props => {
 
   return (
     <Container flexDirection="row" alignItems="center">
-      <Container
-        height={42}
-        flex={1}
-        borderWidth={1}
-        borderColor={theme.colors.border.grey400}
-        borderRadius={8}
-        flexDirection="row"
-        alignItems="center"
-        {...rest.containerProps}
+      <TouchableWithoutFeedback
+        onPress={() => {
+          inputRef.current.focus();
+        }}
       >
-        <Container px={10}>
-          <Icon
-            name="ri-search-line"
-            size={20}
-            color={theme.colors.font.grey600}
+        <Container
+          height={42}
+          flex={1}
+          borderWidth={1}
+          borderColor={theme.colors.border.grey400}
+          borderRadius={8}
+          flexDirection="row"
+          alignItems="center"
+          {...rest.containerProps}
+        >
+          <Container px={10}>
+            <Icon
+              name="ri-search-line"
+              size={20}
+              color={theme.colors.font.grey600}
+            />
+          </Container>
+          <TextInput
+            ref={inputRef}
+            value={searchText}
+            onChangeText={setSearchText}
+            onFocus={() => {
+              animateSearchInput(1);
+            }}
+            onBlur={() => {
+              if (!searchText) animateSearchInput(0);
+            }}
+            placeholder={placeholder}
+            fontSize={16}
+            flex={1}
+            placeholderTextColor={theme.colors.font.grey600}
+            color="font.primary"
+            autoCapitalize="none"
+            returnKeyType="search"
+            {...rest.searchbarProps}
           />
         </Container>
-        <TextInput
-          ref={inputRef}
-          value={searchText}
-          onChangeText={setSearchText}
-          onFocus={() => {
-            animateSearchInput(1);
-          }}
-          onBlur={() => {
-            if (!searchText) animateSearchInput(0);
-          }}
-          placeholder={placeholder}
-          fontSize={16}
-          flex={1}
-          placeholderTextColor={theme.colors.font.grey600}
-          color="font.primary"
-          autoCapitalize="none"
-          returnKeyType="search"
-          {...rest.searchbarProps}
-        />
-      </Container>
+      </TouchableWithoutFeedback>
       {showCancelButton && (
         <Animated.View
           style={{
