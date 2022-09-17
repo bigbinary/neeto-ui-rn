@@ -188,7 +188,9 @@ export const Input = props => {
     <>
       <TouchableWithoutFeedback
         onPress={() => {
-          inputRef.current.focus();
+          if (!inputRef?.current?.isFocused()) {
+            inputRef?.current?.focus();
+          }
         }}
       >
         <View

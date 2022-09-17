@@ -100,7 +100,9 @@ export const SearchBar = props => {
     <Container flexDirection="row" alignItems="center">
       <TouchableWithoutFeedback
         onPress={() => {
-          inputRef.current.focus();
+          if (!inputRef?.current?.isFocused()) {
+            inputRef?.current?.focus();
+          }
         }}
       >
         <Container
