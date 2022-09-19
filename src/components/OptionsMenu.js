@@ -45,8 +45,8 @@ const RenderOptions = ({
 export const OptionsMenu = ({
   isVisible,
   renderDefault,
-  onEditPress,
-  onDeletePress,
+  onEdit,
+  onDelete,
   hide,
   options,
   containerProps,
@@ -59,12 +59,12 @@ export const OptionsMenu = ({
           {
             title: "Edit",
             icon: "edit-2-line",
-            onPress: onEditPress,
+            onPress: onEdit,
           },
           {
             title: "Remove",
             icon: "delete-bin-4-line",
-            onPress: onDeletePress,
+            onPress: onDelete,
             labelProps: { color: theme.colors.font.danger500 },
           },
         ]
@@ -93,8 +93,8 @@ export const OptionsMenu = ({
 OptionsMenu.defaultProps = {
   isVisible: false,
   renderDefault: true,
-  onEditPress: () => {},
-  onDeletePress: () => {},
+  onEdit: () => {},
+  onDelete: () => {},
   hide: () => {},
   options: [],
   containerProps: {},
@@ -110,8 +110,8 @@ RenderOptions.propTypes = {
 OptionsMenu.propTypes = {
   isVisible: PropTypes.bool,
   renderDefault: PropTypes.bool,
-  onEditPress: PropTypes.func,
-  onDeletePress: PropTypes.func,
+  onEdit: PropTypes.func,
+  onDelete: PropTypes.func,
   hide: PropTypes.func,
   options: PropTypes.array,
   containerProps: PropTypes.object,

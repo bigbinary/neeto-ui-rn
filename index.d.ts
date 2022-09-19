@@ -372,8 +372,8 @@ type OptionsMenuItemProps = {
 type OptionsMenuProps = {
   isVisible: boolean;
   renderDefault: boolean;
-  onEditPress?: () => {};
-  onDeletePress?: () => {};
+  onEdit?: () => {};
+  onDelete?: () => {};
   hide: () => {};
   options?: Array<OptionsMenuItemProps>;
   containerProps?: ViewProps;
