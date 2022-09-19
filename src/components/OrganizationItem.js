@@ -31,18 +31,17 @@ export const OrganizationItem = props => {
   const {
     label,
     name,
-    wrapperProps,
     containerProps,
     iconContainerProps,
     iconProps,
     textContainerProps,
     labelProps,
     nameProps,
+    ...rest
   } = props;
   const theme = useContext(ThemeContext);
   return (
     <Container
-      flexDirection="row"
       bg="background.secondary"
       width="100%"
       px={16}
@@ -50,7 +49,7 @@ export const OrganizationItem = props => {
       borderRadius={6}
       alignItems="center"
       justifyContent="space-between"
-      {...wrapperProps}
+      {...rest}
     >
       <Container
         flexDirection="row"
@@ -98,10 +97,6 @@ OrganizationItem.propTypes = {
    * Organization name
    */
   name: PropTypes.string.isRequired,
-  /**
-   * Customize outermost container
-   */
-  wrapperProps: PropTypes.object,
   /**
    * Customize inner container
    */

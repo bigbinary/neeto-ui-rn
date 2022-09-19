@@ -65,15 +65,15 @@ import { Container, Typography, Divider, ToggleSwitch } from "@components";
 export const NotificationPreferenceList = props => {
   const {
     data,
-    containerProps,
     itemWrapperProps,
     itemContainerProps,
     labelContainerProps,
     labelProps,
+    ...rest
   } = props;
 
   return (
-    <Container bg="background.secondary" borderRadius={8} {...containerProps}>
+    <Container bg="background.secondary" borderRadius={8} {...rest}>
       {data?.map((item, index) => {
         const { label, enabled, onSwitch } = item;
         const isLastItem = index === data.length - 1;
@@ -121,10 +121,6 @@ NotificationPreferenceList.propTypes = {
    * Array of preference list
    */
   data: PropTypes.array.isRequired,
-  /**
-   * Customize outermost container
-   */
-  containerProps: PropTypes.object,
   /**
    * Customize outer container for each item
    */

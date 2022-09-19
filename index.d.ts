@@ -299,14 +299,13 @@ type NotificationPreferenceListItem = {
   enabled: boolean;
   onSwitch: (item: any, index: number) => void;
 };
-type NotificationPreferenceListProps = {
+interface NotificationPreferenceListProps extends ViewProps {
   data: Array<NotificationPreferenceListItem>;
-  containerProps?: ViewProps;
   itemWrapperProps?: ViewProps;
   itemContainerProps?: ViewProps;
   labelContainerProps?: ViewProps;
   labelProps?: TypographyProps;
-};
+}
 
 interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
@@ -350,17 +349,16 @@ type OnBoardingProps = {
   logoWidth?: number;
 };
 
-type OrganizationItemProps = {
+interface OrganizationItemProps extends ViewProps {
   label?: string;
   name: string;
-  wrapperProps?: ViewProps;
   containerProps?: ViewProps;
   iconContainerProps?: ViewProps;
   iconProps?: { size: number; color: typeof theme.colors.font; name: string };
   textContainerProps?: ViewProps;
   labelProps?: TypographyProps;
   nameProps?: TypographyProps;
-};
+}
 
 type OtpInputsProps = {
   handleChange: (value: string) => void;
