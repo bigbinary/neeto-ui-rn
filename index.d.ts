@@ -219,7 +219,7 @@ type CarouselProps = {
   renderItem: () => React.ReactNode;
   carouselRef?: React.RefObject<Carousel>;
   onSnapToItem?: (index: number) => void;
-  containerStyle: ViewProps
+  containerStyle: ViewProps;
 };
 
 interface CheckBoxProps extends TouchableProps {
@@ -294,6 +294,20 @@ interface ListItemProps extends ViewProps {
   RightComponent: React.FC;
 }
 
+type NotificationPreferenceListItem = {
+  label: string;
+  enabled: boolean;
+  onSwitch: (item: any, index: number) => void;
+  LeftIcon?: React.FC;
+};
+interface NotificationPreferenceListProps extends ViewProps {
+  data: Array<NotificationPreferenceListItem>;
+  itemWrapperProps?: ViewProps;
+  itemContainerProps?: ViewProps;
+  labelContainerProps?: ViewProps;
+  labelProps?: TypographyProps;
+}
+
 interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
   label?: string;
@@ -335,6 +349,17 @@ type OnBoardingProps = {
   onComplete: () => void;
   logoWidth?: number;
 };
+
+interface OrganizationItemProps extends ViewProps {
+  label?: string;
+  name: string;
+  containerProps?: ViewProps;
+  iconContainerProps?: ViewProps;
+  iconProps?: { size: number; color: typeof theme.colors.font; name: string };
+  textContainerProps?: ViewProps;
+  labelProps?: TypographyProps;
+  nameProps?: TypographyProps;
+}
 
 type OtpInputsProps = {
   handleChange: (value: string) => void;
@@ -458,8 +483,10 @@ export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
 export const ListItem: React.FC<ListItemProps>;
+export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
 export const MultiSelect: React.FC<MultiSelectProps>;
 export const OnBoarding: React.FC<OnBoardingProps>;
+export const OrganizationItem: React.FC<OrganizationItemProps>;
 export const OtpInputs: React.FC<OtpInputsProps>;
 export const ParentView: React.FC<ParentViewProps>;
 export const Popover: React.FC<PopoverProps>;
