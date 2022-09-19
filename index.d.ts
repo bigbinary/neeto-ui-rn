@@ -298,6 +298,7 @@ type NotificationPreferenceListItem = {
   label: string;
   enabled: boolean;
   onSwitch: (item: any, index: number) => void;
+  LeftIcon?: React.FC;
 };
 interface NotificationPreferenceListProps extends ViewProps {
   data: Array<NotificationPreferenceListItem>;

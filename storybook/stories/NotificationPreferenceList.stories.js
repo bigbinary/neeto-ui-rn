@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import Icon from "react-native-remix-icon";
+import { ThemeContext } from "styled-components/native";
 
 import { NotificationPreferenceList, Container } from "@components";
 
@@ -11,6 +13,7 @@ export default NotificationPreferenceListMetaData;
 
 export const NotificationPreferenceListComponent = () => {
   const [data, setData] = useState([]);
+  const theme = useContext(ThemeContext);
 
   const handleSwitch = (item, index) => {
     setData(prevData => {
@@ -42,7 +45,20 @@ export const NotificationPreferenceListComponent = () => {
         enabled: false,
         onSwitch: handleSwitch,
       },
+      {
+        label: "Preference 5",
+        enabled: false,
+        onSwitch: handleSwitch,
+        LeftIcon: () => (
+          <Icon
+            name="ri-notification-2-line"
+            size={20}
+            color={theme.colors.font.secondary}
+          />
+        ),
+      },
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -49,6 +49,18 @@ import { Container, Typography, Divider, ToggleSwitch } from "@components";
  *        enabled: false,
  *        onSwitch: handleSwitch,
  *      },
+ *      {
+ *        label: "Preference 5",
+ *        enabled: false,
+ *        onSwitch: handleSwitch,
+ *        LeftIcon: () => (
+ *          <Icon
+ *            name="ri-notification-2-line"
+ *            size={20}
+ *            color={theme.colors.font.secondary}
+ *          />
+ *        ),
+ *      },
  *    ]);
  *  }, []);
 
@@ -75,7 +87,7 @@ export const NotificationPreferenceList = props => {
   return (
     <Container bg="background.secondary" borderRadius={8} {...rest}>
       {data?.map((item, index) => {
-        const { label, enabled, onSwitch } = item;
+        const { label, enabled, onSwitch, LeftIcon } = item;
         const isLastItem = index === data.length - 1;
         return (
           <Container key={index} px={12} {...itemWrapperProps}>
@@ -93,6 +105,11 @@ export const NotificationPreferenceList = props => {
                 pr={15}
                 {...labelContainerProps}
               >
+                {LeftIcon && (
+                  <Container mr={10}>
+                    <LeftIcon />
+                  </Container>
+                )}
                 <Typography
                   color="font.grey800"
                   fontSize="l"
