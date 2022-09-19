@@ -362,6 +362,23 @@ interface OrganizationItemProps extends ViewProps {
   nameProps?: TypographyProps;
 }
 
+type OptionsMenuItemProps = {
+  title: string;
+  icon: string;
+  onPress: () => {};
+  labelProps?: TypographyProps
+};
+
+type OptionsMenuProps = {
+  isVisible: boolean;
+  renderDefault: boolean;
+  onEditPress?: () => {};
+  onDeletePress?: () => {};
+  hide: () => {};
+  options?: Array<OptionsMenuItemProps>;
+  containerProps?: ViewProps;
+};
+
 type OtpInputsProps = {
   handleChange: (value: string) => void;
   numberOfInputs: number;
@@ -487,6 +504,7 @@ export const ListItem: React.FC<ListItemProps>;
 export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
 export const MultiSelect: React.FC<MultiSelectProps>;
 export const OnBoarding: React.FC<OnBoardingProps>;
+export const OptionsMenu: React.FC<OptionsMenuProps>;
 export const OrganizationItem: React.FC<OrganizationItemProps>;
 export const OtpInputs: React.FC<OtpInputsProps>;
 export const ParentView: React.FC<ParentViewProps>;

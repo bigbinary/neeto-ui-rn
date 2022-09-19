@@ -51,6 +51,7 @@ const getStories = () => {
     require("../storybook/stories/MultiSelect.stories.js"),
     require("../storybook/stories/NotificationPreferenceList.stories.js"),
     require("../storybook/stories/OnBoarding.stories.js"),
+    require("../storybook/stories/OptionsMenu.stories.js"),
     require("../storybook/stories/OrganizationItem.stories.js"),
     require("../storybook/stories/OtpInputs.stories.js"),
     require("../storybook/stories/Popover.stories.js"),

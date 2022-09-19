@@ -3,6 +3,7 @@ const defaultColors = {
   base: "#4557F8",
   danger: "#D95D4E",
   menubackground: "#F6F6FA",
+  danger500: "#F22D2D",
 };
 
 const toastBorderColors = {
