@@ -366,7 +366,8 @@ type OptionsMenuItemProps = {
   title: string;
   iconName: string;
   onPress: () => {};
-  labelProps?: TypographyProps
+  labelProps?: TypographyProps;
+  variant: "danger" | "default"
 };
 
 type OptionsMenuProps = {

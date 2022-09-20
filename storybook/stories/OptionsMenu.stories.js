@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Container, Button } from "@components";
-import { OptionsMenu } from "../../src/components/OptionsMenu";
+import { Container, Button, OptionsMenu } from "@components";
 
 const OptionsMenuStories = {
   title: "OptionsMenu",
@@ -22,6 +21,12 @@ export const OptionsMenuDemo = () => {
             title: "Edit 2",
             iconName: "edit-2-line",
             onPress: () => {},
+          },
+          {
+            title: "Remove",
+            iconName: "delete-bin-4-line",
+            onPress: () => {},
+            variant: "danger",
           },
         ]}
         renderDefault={false}

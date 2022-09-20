@@ -12,6 +12,7 @@ const RenderOptions = ({
   iconName,
   title,
   labelProps,
+  variant,
 }) => {
   const theme = useContext(ThemeContext);
 
@@ -25,12 +26,18 @@ const RenderOptions = ({
       >
         <Icon
           size="20"
-          color={labelProps?.color ?? theme.colors.font.grey800}
+          color={
+            variant === "danger"
+              ? theme.colors.font.danger500
+              : labelProps?.color ?? theme.colors.font.grey800
+          }
           name={iconName}
         />
         <Typography
           fontFamily="sf400"
-          color="font.grey800"
+          color={
+            variant === "danger" ? theme.colors.font.danger500 : "font.grey800"
+          }
           fontSize="l"
           ml={14}
           {...labelProps}
@@ -51,8 +58,6 @@ export const OptionsMenu = ({
   options,
   containerProps,
 }) => {
-  const theme = useContext(ThemeContext);
-
   const defaultOptions =
     renderDefault || !options?.length
       ? [
@@ -65,7 +70,7 @@ export const OptionsMenu = ({
             title: "Remove",
             iconName: "delete-bin-4-line",
             onPress: onDelete,
-            labelProps: { color: theme.colors.font.danger500 },
+            variant: "danger",
           },
         ]
       : [];
@@ -74,7 +79,7 @@ export const OptionsMenu = ({
     <Container>
       <BottomSheet isVisible={isVisible} hide={hide}>
         {[...defaultOptions, ...options].map(
-          ({ iconName, labelProps, onPress, title }, index) => (
+          ({ iconName, labelProps, onPress, title, variant }, index) => (
             <RenderOptions
               key={index}
               iconName={iconName}
@@ -82,6 +87,7 @@ export const OptionsMenu = ({
               onPress={onPress}
               title={title}
               containerProps={containerProps}
+              variant={variant}
             />
           )
         )}
@@ -99,12 +105,18 @@ OptionsMenu.defaultProps = {
   options: [],
   containerProps: {},
 };
+
 RenderOptions.propTypes = {
   onPress: PropTypes.func,
   iconName: PropTypes.string,
   title: PropTypes.string,
   labelProps: PropTypes.object,
   containerProps: PropTypes.object,
+  variant: PropTypes.oneOf(["default", "danger"]),
+};
+
+RenderOptions.defaultOptions = {
+  variant: "default",
 };
 
 OptionsMenu.propTypes = {
