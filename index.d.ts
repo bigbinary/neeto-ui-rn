@@ -364,7 +364,7 @@ interface OrganizationItemProps extends ViewProps {
 
 type OptionsMenuItemProps = {
   title: string;
-  icon: string;
+  iconName: string;
   onPress: () => {};
   labelProps?: TypographyProps
 };

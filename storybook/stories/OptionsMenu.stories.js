@@ -15,12 +15,12 @@ export const OptionsMenuDemo = () => {
       <OptionsMenu
         hide={() => setShowOptions(false)}
         isVisible={showOptions}
-        onDeletePress={() => {}}
-        onEditPress={() => {}}
+        onDelete={() => {}}
+        onEdit={() => {}}
         options={[
           {
             title: "Edit 2",
-            icon: "edit-2-line",
+            iconName: "edit-2-line",
             onPress: () => {},
           },
         ]}

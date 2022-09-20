@@ -9,7 +9,7 @@ import { ThemeContext } from "styled-components/native";
 const RenderOptions = ({
   containerProps,
   onPress,
-  icon,
+  iconName,
   title,
   labelProps,
 }) => {
@@ -26,7 +26,7 @@ const RenderOptions = ({
         <Icon
           size="20"
           color={labelProps?.color ?? theme.colors.font.grey800}
-          name={icon}
+          name={iconName}
         />
         <Typography
           fontFamily="sf400"
@@ -58,12 +58,12 @@ export const OptionsMenu = ({
       ? [
           {
             title: "Edit",
-            icon: "edit-2-line",
+            iconName: "edit-2-line",
             onPress: onEdit,
           },
           {
             title: "Remove",
-            icon: "delete-bin-4-line",
+            iconName: "delete-bin-4-line",
             onPress: onDelete,
             labelProps: { color: theme.colors.font.danger500 },
           },
@@ -74,10 +74,10 @@ export const OptionsMenu = ({
     <Container>
       <BottomSheet isVisible={isVisible} hide={hide}>
         {[...defaultOptions, ...options].map(
-          ({ icon, labelProps, onPress, title }, index) => (
+          ({ iconName, labelProps, onPress, title }, index) => (
             <RenderOptions
               key={index}
-              icon={icon}
+              iconName={iconName}
               labelProps={labelProps}
               onPress={onPress}
               title={title}
@@ -101,7 +101,7 @@ OptionsMenu.defaultProps = {
 };
 RenderOptions.propTypes = {
   onPress: PropTypes.func,
-  icon: PropTypes.string,
+  iconName: PropTypes.string,
   title: PropTypes.string,
   labelProps: PropTypes.object,
   containerProps: PropTypes.object,
