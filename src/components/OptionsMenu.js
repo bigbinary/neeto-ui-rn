@@ -6,6 +6,66 @@ import { Container } from "@components";
 import { BottomSheet, Touchable, Typography } from "../..";
 import { ThemeContext } from "styled-components/native";
 
+/**
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/optionsmenu/optionsmenu.png" />
+ * </div>
+ *
+ * This component supports below props categories from [styled-system ](/styled-system).
+ * <ul>
+ * <li>flexbox</li>
+ * <li>space</li>
+ * <li>border</li>
+ * <li>layout</li>
+ * <li>color</li>
+ * <li>buttonStyle</li>
+ * </ul>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from "react";
+ * import { Button, Container, OptionsMenu } from "@bigbinary/neetoui-rn";
+ *
+ * export default function Main() {
+ *
+ *  const [showOptions, setShowOptions] = React.useState(false);
+ *  return (
+ *    <Container flex={1} alignItems="center" justifyContent="center">
+ *      <OptionsMenu
+ *        hide={() => setShowOptions(false)}
+ *        isVisible={showOptions}
+ *        onDelete={() => {}}
+ *        onEdit={() => {}}
+ *        options={[
+ *          {
+ *          title: "Edit 2",
+ *          iconName: "edit-2-line",
+ *          onPress: () => {},
+ *          },
+ *          {
+ *          title: "Remove",
+ *          iconName: "delete-bin-4-line",
+ *          onPress: () => {},
+ *          },
+ *        }]
+ *        renderDefault={false}
+ *      />
+ *      <Button
+ *        width={200}
+ *        width={200}
+ *        label="Show Options"
+ *        onPress={() => {
+ *        setShowOptions(true);
+ *        }}
+ *      />
+ *    </Container>
+ *  );
+ * }
+ * ```
+ *
+ */
+
 const RenderOptions = ({
   containerProps,
   onPress,
