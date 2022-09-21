@@ -30,12 +30,11 @@ import { ThemeContext } from "styled-components/native";
 export const OrganizationItem = props => {
   const {
     label,
-    name,
-    containerProps,
+    labelContainerProps,
     iconContainerProps,
     iconProps,
-    textContainerProps,
     labelProps,
+    name,
     nameProps,
     ...rest
   } = props;
@@ -47,14 +46,13 @@ export const OrganizationItem = props => {
       px={16}
       py={12}
       borderRadius={6}
-      alignItems="center"
       justifyContent="space-between"
       {...rest}
     >
       <Container
         flexDirection="row"
-        alignItems="flex-start"
-        {...containerProps}
+        alignItems="center"
+        {...labelContainerProps}
       >
         <Container mr={9} {...iconContainerProps}>
           <Icon
@@ -64,26 +62,25 @@ export const OrganizationItem = props => {
             {...iconProps}
           />
         </Container>
-        <Container flex={1} {...textContainerProps}>
-          <Typography
-            color="font.grey800"
-            fontSize="l"
-            fontFamily="sf500"
-            {...labelProps}
-          >
-            {label || "Organization"}
-          </Typography>
-          <Typography
-            color="font.grey"
-            fontSize="m"
-            fontFamily="sf500"
-            mt="8px"
-            {...nameProps}
-          >
-            {name}
-          </Typography>
-        </Container>
+        <Typography
+          color="font.grey800"
+          fontSize="l"
+          fontFamily="sf500"
+          {...labelProps}
+        >
+          {label || "Organization"}
+        </Typography>
       </Container>
+      <Typography
+        ml={29}
+        color="font.grey"
+        fontSize="m"
+        fontFamily="sf500"
+        mt="8px"
+        {...nameProps}
+      >
+        {name}
+      </Typography>
     </Container>
   );
 };
@@ -94,13 +91,9 @@ OrganizationItem.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * Organization name
+   * Customize label container
    */
-  name: PropTypes.string.isRequired,
-  /**
-   * Customize inner container
-   */
-  containerProps: PropTypes.object,
+  labelContainerProps: PropTypes.object,
   /**
    * Customize icon container
    */
@@ -110,13 +103,13 @@ OrganizationItem.propTypes = {
    */
   iconProps: PropTypes.object,
   /**
-   * Customize label and name container
-   */
-  textContainerProps: PropTypes.object,
-  /**
    * Customize label
    */
   labelProps: PropTypes.object,
+  /**
+   * Organization name
+   */
+  name: PropTypes.string.isRequired,
   /**
    * Customize name
    */
