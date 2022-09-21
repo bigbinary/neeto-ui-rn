@@ -67,11 +67,11 @@ const theme: {
 
 interface StyleProps
   extends FlexboxProps,
-  SpaceProps,
-  BorderProps,
-  ColorProps,
-  LayoutProps,
-  PositionProps {
+    SpaceProps,
+    BorderProps,
+    ColorProps,
+    LayoutProps,
+    PositionProps {
   borderColor?: typeof theme.colors.border;
   borderTopColor?: typeof theme.colors.border;
   borderBottomColor?: typeof theme.colors.border;
@@ -95,11 +95,11 @@ interface TextProps extends RNTextProps, StyleProps, TypographyProps {
 }
 interface TextInputProps
   extends RNTextInputAndroidProps,
-  RNTextInputIOSProps,
-  StyleProps,
-  TypographyProps { }
-interface FlatListProps extends RNFlatListProps, StyleProps { }
-interface ScrollViewProps extends RNScrollViewProps, StyleProps { }
+    RNTextInputIOSProps,
+    StyleProps,
+    TypographyProps {}
+interface FlatListProps extends RNFlatListProps, StyleProps {}
+interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
 interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
 }
@@ -139,7 +139,7 @@ interface AnimatedImageProps extends RNImageProps, FastImageProps {
 
 interface AvatarProps extends ViewProps {
   name?: string;
-  variant?: "extra-small" |"small" | "medium";
+  variant?: "extra-small" | "small" | "medium";
   bgColor?: typeof theme.colors.background;
   fontColor?: typeof theme.colors.font;
   imageUrl?: string;
@@ -354,12 +354,11 @@ type OnBoardingProps = {
 
 interface OrganizationItemProps extends ViewProps {
   label?: string;
-  name: string;
-  containerProps?: ViewProps;
+  labelContainerProps?: ViewProps;
   iconContainerProps?: ViewProps;
   iconProps?: { size: number; color: typeof theme.colors.font; name: string };
-  textContainerProps?: ViewProps;
   labelProps?: TypographyProps;
+  name: string;
   nameProps?: TypographyProps;
 }
 
@@ -383,7 +382,7 @@ interface ParentViewProps extends ViewProps {
 interface PopoverItemProps {
   Icon?: React.FC;
   label?: string;
-  labelProps?: TypographyProps
+  labelProps?: TypographyProps;
 }
 type RNPopoverProps = typeof RNPopover.propTypes;
 interface PopoverProps extends RNPopoverProps {
