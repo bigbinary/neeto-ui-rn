@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { MultiSelect, Button } from "@components";
+import { MultiSelect, Button, Alert } from "@components";
 
 const MultiSelectStories = {
   title: "MultiSelect",
@@ -56,34 +56,37 @@ export const MultiSelects = () => {
   };
 
   return (
-    <MultiSelect
-      options={sData}
-      value={selectedOptions}
-      onSelect={setSelectedOptions}
-      label="Multi Select"
-      isSearchable
-      showCreateOption
-      onPressCreateOption={simulateAPICall}
-      showCreateOptionLoader={isLoading}
-      CreateItemComponent={({ searchText }) => (
-        <Button
-          label="Create Tag"
-          onPress={() => simulateAPICall(searchText)}
-        />
-      )}
-      valueExtractor={item => item?.id}
-      labelExtractor={item => item?.name}
-      searchBarProps={{ placeholder: "Search Here...", debounceDelay: 1000 }}
-      // onBackdropPress={() => {}}
-      // disabled
-      // noResultsLabelContainerStyle={{backgroundColor:"red"}}
-      // noResultsLabelStyle={{color:"green"}}
-      // noResultsLabel="Not Found"
-      // NoResultsComponent={() => <Typography>Searched Item Not Found</Typography>}
-      // MoreItemComponent={() => <Typography>Searched Item Not Found</Typography>}
-      // moreItemLabelContainerStyle={{backgroundColor:"yellow"}}
-      // moreItemLabelStyle={{color:"green"}}
-      // maxItemSize={1}
-    />
+    <>
+      <Alert />
+      <MultiSelect
+        options={sData}
+        value={selectedOptions}
+        onSelect={setSelectedOptions}
+        label="Multi Select"
+        isSearchable
+        showCreateOption
+        onPressCreateOption={simulateAPICall}
+        showCreateOptionLoader={isLoading}
+        CreateItemComponent={({ searchText }) => (
+          <Button
+            label="Create Tag"
+            onPress={() => simulateAPICall(searchText)}
+          />
+        )}
+        valueExtractor={item => item?.id}
+        labelExtractor={item => item?.name}
+        searchBarProps={{ placeholder: "Search Here...", debounceDelay: 1000 }}
+        // onBackdropPress={() => {}}
+        // disabled
+        // noResultsLabelContainerStyle={{backgroundColor:"red"}}
+        // noResultsLabelStyle={{color:"green"}}
+        // noResultsLabel="Not Found"
+        // NoResultsComponent={() => <Typography>Searched Item Not Found</Typography>}
+        // MoreItemComponent={() => <Typography>Searched Item Not Found</Typography>}
+        // moreItemLabelContainerStyle={{backgroundColor:"yellow"}}
+        // moreItemLabelStyle={{color:"green"}}
+        // maxItemSize={1}
+      />
+    </>
   );
 };

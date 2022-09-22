@@ -309,6 +309,12 @@ interface NotificationPreferenceListProps extends ViewProps {
   labelProps?: TypographyProps;
 }
 
+interface MultiSelectConfirmationAlertObjProps {
+  alertTitle?: string,
+  alertDescription?: string,
+  alertConfirmButtonLabel?: string
+}
+
 interface MultiSelectProps extends ViewProps {
   options?: Array<any>;
   label?: string;
@@ -343,6 +349,7 @@ interface MultiSelectProps extends ViewProps {
   moreItemLabelContainerStyle?: ViewStyle;
   moreItemLabelStyle?: TextStyle;
   searchbarProps?: SearchBarProps;
+  confirmationAlertObj?: MultiSelectConfirmationAlertObjProps
 }
 
 type OnBoardingProps = {
