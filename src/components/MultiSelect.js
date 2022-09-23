@@ -24,7 +24,13 @@ import {
   position,
 } from "styled-system";
 
-import { BottomSheet, CheckBox, Container, Touchable } from "@components";
+import {
+  BottomSheet,
+  CheckBox,
+  Container,
+  Touchable,
+  Alert,
+} from "@components";
 
 const Typography = styled.Text`
   ${textStyle}
@@ -49,8 +55,38 @@ const MultiSelectItem = ({
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
   disabled,
+  confirmationAlertObj = {},
 }) => {
   const theme = useContext(ThemeContext);
+  const {
+    alertTitle = "Delete tag",
+    alertDescription = `Are you sure you want to delete tag: ${label}? This action cannot be undone.`,
+    alertConfirmButtonLabel = "Proceed",
+    showDeleteAlertConfirmation = true,
+  } = confirmationAlertObj;
+
+  const handleItemUnSelection = () => {
+    showDeleteAlertConfirmation
+      ? Alert.show({
+          title: alertTitle,
+          description: alertDescription,
+          buttons: [
+            {
+              label: alertConfirmButtonLabel,
+              variant: "danger",
+              onPress: () => {
+                onUnselect();
+              },
+            },
+            {
+              label: "Cancel",
+              onPress: () => {},
+            },
+          ],
+        })
+      : onUnselect();
+  };
+
   return (
     <Container
       bg="background.secondary"
@@ -73,7 +109,10 @@ const MultiSelectItem = ({
         {label}
       </Typography>
       {!disabled && (
-        <TouchableWithoutFeedback disabled={disabled} onPress={onUnselect}>
+        <TouchableWithoutFeedback
+          disabled={disabled}
+          onPress={handleItemUnSelection}
+        >
           <Icon
             name="ri-close-line"
             size="20"
@@ -91,6 +130,7 @@ MultiSelectItem.propTypes = {
   multiSelectedItemContainerStyle: PropTypes.object,
   multiSelectedItemLabelStyle: PropTypes.object,
   disabled: PropTypes.bool,
+  confirmationAlertObj: PropTypes.object,
 };
 
 const DropdownItem = ({
@@ -208,6 +248,7 @@ export const MultiSelect = ({
   MoreItemComponent,
   onBackdropPress,
   searchBarProps,
+  confirmationAlertObj,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -390,6 +431,7 @@ export const MultiSelect = ({
                       }
                       multiSelectedItemLabelStyle={multiSelectedItemLabelStyle}
                       disabled={disabled}
+                      confirmationAlertObj={confirmationAlertObj}
                     />
                   );
                 })}
@@ -563,6 +605,10 @@ MultiSelect.propTypes = {
    */
   multiSelectedItemLabelStyle: PropTypes.object,
   /**
+   * To customise confirmation alert popup.
+   */
+  confirmationAlertObj: PropTypes.object,
+  /**
    * To customise search input container style.
    */
   searchInputContainerStyle: PropTypes.object,
@@ -654,4 +700,5 @@ MultiSelect.defaultProps = {
   maxItemSize: 5,
   onBackdropPress: () => {},
   searchBarProps: {},
+  confirmationAlertObj: {},
 };
