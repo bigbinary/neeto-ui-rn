@@ -310,9 +310,10 @@ interface NotificationPreferenceListProps extends ViewProps {
 }
 
 interface MultiSelectConfirmationAlertObjProps {
-  alertTitle?: string,
-  alertDescription?: string,
-  alertConfirmButtonLabel?: string
+  alertTitle?: string;
+  alertDescription?: string;
+  alertConfirmButtonLabel?: string;
+  showDeleteAlertConfirmation?:boolean;
 }
 
 interface MultiSelectProps extends ViewProps {

@@ -61,27 +61,30 @@ const MultiSelectItem = ({
   const {
     alertTitle = "Delete tag",
     alertDescription = `Are you sure you want to delete tag: ${label}? This action cannot be undone.`,
-    alertConfirmButtonLabel = "Delete",
+    alertConfirmButtonLabel = "Proceed",
+    showDeleteAlertConfirmation = true,
   } = confirmationAlertObj;
 
   const handleItemUnSelection = () => {
-    Alert.show({
-      title: alertTitle,
-      description: alertDescription,
-      buttons: [
-        {
-          label: alertConfirmButtonLabel,
-          variant: "danger",
-          onPress: () => {
-            onUnselect();
-          },
-        },
-        {
-          label: "Cancel",
-          onPress: () => {},
-        },
-      ],
-    });
+    showDeleteAlertConfirmation
+      ? Alert.show({
+          title: alertTitle,
+          description: alertDescription,
+          buttons: [
+            {
+              label: alertConfirmButtonLabel,
+              variant: "danger",
+              onPress: () => {
+                onUnselect();
+              },
+            },
+            {
+              label: "Cancel",
+              onPress: () => {},
+            },
+          ],
+        })
+      : onUnselect();
   };
 
   return (
