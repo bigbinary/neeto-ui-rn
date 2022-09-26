@@ -115,6 +115,7 @@ export const CheckBox = ({
       <Typography
         ml={2}
         fontSize="m"
+        flex={1}
         {...(checked && checkedProps.labelProps)}
         {...(!checked && unCheckedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

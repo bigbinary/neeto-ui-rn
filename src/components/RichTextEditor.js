@@ -82,7 +82,7 @@ export const RichTextEditor = ({
 }) => {
   const richTextRef = useRef();
   const keyboardHeight = useKeyboard();
-  const [toolbarVisible, setToolbar] = useState(true);
+  const [toolbarVisible, setToolbar] = useState(false);
   const showToolbar = keyboardHeight > 0 && toolbarVisible;
 
   const computeToolbarActions = () => {

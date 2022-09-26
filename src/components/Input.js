@@ -19,6 +19,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   Platform,
+  TouchableWithoutFeedback,
 } from "react-native";
 import styled, { ThemeContext } from "styled-components/native";
 import PropTypes from "prop-types";
@@ -184,101 +185,109 @@ export const Input = props => {
   };
 
   return (
-    <View>
-      <View
-        ref={containerRef}
-        borderRadius={8}
-        borderWidth={noBorder ? 0 : 1}
-        borderColor={errorMessage ? "border.danger" : "border.grey400"}
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="space-between"
-        {...(!rest.inputProps?.multiline && { height: 58 })}
-        overflow="hidden"
-        {...rest.containerProps}
+    <>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          if (!inputRef?.current?.isFocused()) {
+            inputRef?.current?.focus();
+          }
+        }}
       >
-        {!!PrefixIcon && (
-          <View pl={2}>
-            <PrefixIcon />
-          </View>
-        )}
-        <View flex={1} left={10}>
-          {!!label && (
-            <AnimatedLabel
-              color={disabled ? "font.grey400" : "font.grey600"}
-              position="absolute"
-              zIndex={1}
-              style={labelStyles}
-            >
-              {label}
-            </AnimatedLabel>
+        <View
+          ref={containerRef}
+          borderRadius={8}
+          borderWidth={noBorder ? 0 : 1}
+          borderColor={errorMessage ? "border.danger" : "border.grey400"}
+          alignItems="center"
+          flexDirection="row"
+          justifyContent="space-between"
+          {...(!rest.inputProps?.multiline && { height: 58 })}
+          overflow="hidden"
+          {...rest.containerProps}
+        >
+          {!!PrefixIcon && (
+            <View pl={2}>
+              <PrefixIcon />
+            </View>
           )}
-          <TextInput
-            ref={inputRef}
-            value={value}
-            returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
-            onChangeText={onChangeText}
-            autoFocus={autoFocus}
-            editable={!disabled}
-            onFocus={() => {
-              handleFocusBlur(true);
-            }}
-            onBlur={() => {
-              onBlur();
-              handleFocusBlur(false);
-            }}
-            inputAccessoryViewID={label}
-            color={disabled ? "font.grey500" : "font.primary"}
-            fontSize={17}
-            pr={3}
-            top={0}
-            zIndex={2}
-            autoCapitalize="none"
-            mt={10}
-            pb={3}
-            pt={1}
-            textAlignVertical={textAlignVertical}
-            {...rest.inputProps}
-          />
-          {rest.inputProps?.multiline &&
-            showInputAccessoryView &&
-            Platform.OS === "ios" && (
-              <InputAccessoryView nativeID={label}>
-                <Container
-                  bg="background.white"
-                  flexDirection="row"
-                  p={2}
-                  width={width}
-                  justifyContent="flex-end"
-                  alignItems="center"
-                  pr={20}
-                >
-                  <Button
-                    height={30}
-                    left={10}
-                    labelStyle={styles.doneButtonStyle}
-                    variant="text"
-                    onPress={() => {
-                      Keyboard.dismiss();
-                    }}
-                    label="Done"
-                  />
-                </Container>
-              </InputAccessoryView>
+          <View flex={1} left={10}>
+            {!!label && (
+              <AnimatedLabel
+                color={disabled ? "font.grey400" : "font.grey600"}
+                position="absolute"
+                zIndex={1}
+                style={labelStyles}
+              >
+                {label}
+              </AnimatedLabel>
             )}
-        </View>
-        {!!SuffixIcon && (
-          <View px={2}>
-            <SuffixIcon />
+            <TextInput
+              ref={inputRef}
+              value={value}
+              returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
+              onChangeText={onChangeText}
+              autoFocus={autoFocus}
+              editable={!disabled}
+              onFocus={() => {
+                handleFocusBlur(true);
+              }}
+              onBlur={() => {
+                onBlur();
+                handleFocusBlur(false);
+              }}
+              inputAccessoryViewID={label}
+              color={disabled ? "font.grey500" : "font.primary"}
+              fontSize={17}
+              pr={3}
+              top={0}
+              zIndex={2}
+              autoCapitalize="none"
+              mt={10}
+              pb={3}
+              pt={1}
+              textAlignVertical={textAlignVertical}
+              {...rest.inputProps}
+            />
+            {rest.inputProps?.multiline &&
+              showInputAccessoryView &&
+              Platform.OS === "ios" && (
+                <InputAccessoryView nativeID={label}>
+                  <Container
+                    bg="background.white"
+                    flexDirection="row"
+                    p={2}
+                    width={width}
+                    justifyContent="flex-end"
+                    alignItems="center"
+                    pr={20}
+                  >
+                    <Button
+                      height={30}
+                      left={10}
+                      labelStyle={styles.doneButtonStyle}
+                      variant="text"
+                      onPress={() => {
+                        Keyboard.dismiss();
+                      }}
+                      label="Done"
+                    />
+                  </Container>
+                </InputAccessoryView>
+              )}
           </View>
-        )}
-      </View>
+          {!!SuffixIcon && (
+            <View px={2}>
+              <SuffixIcon />
+            </View>
+          )}
+        </View>
+      </TouchableWithoutFeedback>
       {!!errorMessage && (
         <Typography pt={2} color="font.danger">
           {errorMessage}
         </Typography>
       )}
-    </View>
+    </>
   );
 };
 
