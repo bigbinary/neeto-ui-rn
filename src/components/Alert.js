@@ -153,10 +153,6 @@ export const Alert = () => {
 
   return (
     <Modal
-      animationInTiming={600}
-      animationOutTiming={600}
-      backdropTransitionInTiming={600}
-      backdropTransitionOutTiming={600}
       style={styles.modalStyle}
       isVisible={isVisible}
       onBackdropPress={hideOnBackPressDrop}
