@@ -373,7 +373,13 @@ type OptionsMenuItemProps = {
 type OptionsMenuProps = {
   isVisible: boolean;
   renderDefault: boolean;
+  /**
+   * This prop is required only when renderDefault is true or no options are passed
+   */
   onEdit?: () => {};
+  /**
+   * This prop is required only when renderDefault is true or no options are passed
+   */
   onDelete?: () => {};
   hide: () => {};
   options?: Array<OptionsMenuItemProps>;

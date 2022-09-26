@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 
-import { Container } from "@components";
-import { BottomSheet, Touchable, Typography } from "../..";
+import { BottomSheet, Container, Touchable, Typography } from "@components";
 import { ThemeContext } from "styled-components/native";
 
 /**
@@ -159,8 +158,6 @@ export const OptionsMenu = ({
 OptionsMenu.defaultProps = {
   isVisible: false,
   renderDefault: true,
-  onEdit: () => {},
-  onDelete: () => {},
   hide: () => {},
   options: [],
   containerProps: {},
@@ -182,8 +179,24 @@ RenderOptions.defaultOptions = {
 OptionsMenu.propTypes = {
   isVisible: PropTypes.bool,
   renderDefault: PropTypes.bool,
-  onEdit: PropTypes.func,
-  onDelete: PropTypes.func,
+  onEdit: function (props, propName) {
+    if (
+      (props["renderDefault"] === true || !props["options"]?.length) &&
+      (props[propName] === undefined || typeof props[propName] !== "function")
+    ) {
+      console.error("Please provide onEdit function!");
+      return new Error("Please provide onEdit function!");
+    }
+  },
+  onDelete: function (props, propName) {
+    if (
+      (props["renderDefault"] === true || !props["options"]?.length) &&
+      (props[propName] === undefined || typeof props[propName] !== "function")
+    ) {
+      console.error("Please provide onDelete function!");
+      return new Error("Please provide onDelete function!");
+    }
+  },
   hide: PropTypes.func,
   options: PropTypes.array,
   containerProps: PropTypes.object,
