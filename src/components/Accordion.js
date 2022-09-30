@@ -97,6 +97,7 @@ export const Accordion = React.forwardRef((props, ref) => {
     onStateChanged,
     children,
     position = "bottom",
+    hasCustomToggleAction = false,
     ...rest
   } = props;
   const { name, Label, size, color } = iconProp;
@@ -154,28 +155,30 @@ export const Accordion = React.forwardRef((props, ref) => {
         }}
       >
         {!!header && <Container flexGrow={1}>{header()}</Container>}
-        <Container
-          alignItems="center"
-          justifyContent="center"
-          flexDirection="row"
-          px={1}
-        >
-          {Label && <Label />}
-          <Animated.View
-            style={{
-              alignItems: "flex-end",
-              transform: [{ rotateZ: arrowAngle }],
-            }}
+        {!hasCustomToggleAction && (
+          <Container
+            alignItems="center"
+            justifyContent="center"
+            flexDirection="row"
+            px={1}
           >
-            <Container>
-              <Icon
-                name={name ?? "ri-arrow-down-s-line"}
-                color={color ?? theme.colors.font.grey700}
-                size={size ?? 24}
-              />
-            </Container>
-          </Animated.View>
-        </Container>
+            {Label && <Label />}
+            <Animated.View
+              style={{
+                alignItems: "flex-end",
+                transform: [{ rotateZ: arrowAngle }],
+              }}
+            >
+              <Container>
+                <Icon
+                  name={name ?? "ri-arrow-down-s-line"}
+                  color={color ?? theme.colors.font.grey700}
+                  size={size ?? 24}
+                />
+              </Container>
+            </Animated.View>
+          </Container>
+        )}
       </TouchableOpacity>
 
       {position === "bottom" && (
@@ -224,6 +227,10 @@ Accordion.propTypes = {
    * Determine whether the body should show at the top or bottom
    */
   position: PropTypes.string,
+  /**
+   * Can be set to true if custom toggle UI action item needs to be passed.
+   */
+  hasCustomToggleAction: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({
