@@ -115,7 +115,7 @@ interface AccordionProps extends ViewProps {
     color?: string;
   };
   position?: "top" | "bottom";
-  hasCustomToggleAction?: boolean;
+  hideCustomToggleAction?: boolean;
 }
 
 type AlertProps = {};
