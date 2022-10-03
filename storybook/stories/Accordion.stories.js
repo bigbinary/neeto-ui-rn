@@ -1,6 +1,12 @@
 import React, { useRef, useState } from "react";
 
-import { Button, Container, Accordion, Typography } from "@components";
+import {
+  Button,
+  Container,
+  Accordion,
+  Typography,
+  Touchable,
+} from "@components";
 import { theme } from "@theme";
 
 const AccordionStories = {
@@ -11,6 +17,7 @@ export default AccordionStories;
 export const Accordions = () => {
   const accordionRef = useRef();
   const accordionRef2 = useRef();
+  const accordionRef3 = useRef();
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -175,6 +182,30 @@ export const Accordions = () => {
         >
           <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
             <Typography color="font.primary">Accordion using ref</Typography>
+          </Container>
+        </Accordion>
+      </Container>
+      <Container py={2}>
+        <Accordion
+          ref={accordionRef3}
+          shouldShowToggle={false}
+          header={() => (
+            <Container flexDirection="row" justifyContent="space-between">
+              <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
+                Header
+              </Typography>
+              <Touchable
+                onPress={() => accordionRef3.current.toggleAccordion()}
+              >
+                <Typography color="font.darkBlue100">Custom action</Typography>
+              </Touchable>
+            </Container>
+          )}
+        >
+          <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+            <Typography color="font.primary">
+              Accordion with custom toggle action item.
+            </Typography>
           </Container>
         </Accordion>
       </Container>
