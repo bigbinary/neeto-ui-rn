@@ -188,7 +188,7 @@ export const Accordions = () => {
       <Container py={2}>
         <Accordion
           ref={accordionRef3}
-          hideCustomToggleAction={true}
+          shouldShowToggle={false}
           header={() => (
             <Container flexDirection="row" justifyContent="space-between">
               <Typography fontSize={theme.fontSizes.xl} iconProp={{ size: 24 }}>
