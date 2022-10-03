@@ -97,7 +97,7 @@ export const Accordion = React.forwardRef((props, ref) => {
     onStateChanged,
     children,
     position = "bottom",
-    hasCustomToggleAction = false,
+    hideCustomToggleAction = false,
     ...rest
   } = props;
   const { name, Label, size, color } = iconProp;
@@ -155,7 +155,7 @@ export const Accordion = React.forwardRef((props, ref) => {
         }}
       >
         {!!header && <Container flexGrow={1}>{header()}</Container>}
-        {!hasCustomToggleAction && (
+        {!hideCustomToggleAction && (
           <Container
             alignItems="center"
             justifyContent="center"
@@ -230,7 +230,7 @@ Accordion.propTypes = {
   /**
    * Can be set to true if custom toggle UI action item needs to be passed.
    */
-  hasCustomToggleAction: PropTypes.bool,
+  hideCustomToggleAction: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({
