@@ -90,6 +90,7 @@ export const CheckBox = ({
       onPress={onSelect}
       flexDirection="row"
       alignItems="center"
+      flexShrink={1}
       {...rest}
     >
       <Container
