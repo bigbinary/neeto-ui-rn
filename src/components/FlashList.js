@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import { FlashList as ShopifyFlashList } from "@shopify/flash-list";
 import Animated, {
   cancelAnimation,
@@ -43,14 +43,18 @@ export const FlashList = ({
   onRefresh = () => {},
   onEndReached = () => {},
   keyExtractor,
+  flashListRef = undefined,
   ...rest
 }) => {
   const dummyData = Array.apply(null, Array(placeHolderItemCount));
 
   const { isRefetchingByUser, refetchByUser } = useRefreshByUser(onRefresh);
 
+  const flashRef = useRef();
+
   return (
     <FadeInFlatList
+      ref={flashListRef || flashRef}
       key={isLoading}
       animationDuration={animationDuration}
       SkeletonComponent={SkeletonComponent}
@@ -77,84 +81,90 @@ export const FlashList = ({
   );
 };
 
-const FadeInFlatList = ({
-  renderItem: originalRenderItem,
-  animationDuration,
-  isLoading = false,
-  SkeletonComponent,
-  ...props
-}) => {
-  const value = useSharedValue(0);
-
-  const FadeInComponent = useCallback(
-    ({ index, children }) => {
-      const inputRange = [index - 1, index, index + 1, index + 2];
-      const animatedStyles = useAnimatedStyle(() => {
-        return {
-          opacity: interpolate(
-            value.value,
-            inputRange,
-            [0, 0.6, 1, 1],
-            Extrapolation.CLAMP
-          ),
-          transform: [
-            {
-              translateX: interpolate(
-                value.value,
-                inputRange,
-                [25, 15, 10, 0],
-                Extrapolation.CLAMP
-              ),
-            },
-          ],
-        };
-      });
-
-      return <Animated.View style={animatedStyles}>{children}</Animated.View>;
+// eslint-disable-next-line react/display-name
+const FadeInFlatList = React.forwardRef(
+  (
+    {
+      renderItem: originalRenderItem,
+      animationDuration,
+      isLoading = false,
+      SkeletonComponent,
+      ...props
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+    ref
+  ) => {
+    const value = useSharedValue(0);
 
-  const Item = ({ item }) => {
-    return item?.extraData?.isLoading ? (
-      <FadeInComponent index={item.index}>
-        {SkeletonComponent || <Placeholder />}
-      </FadeInComponent>
-    ) : (
-      <FadeInComponent index={item.index}>
-        {originalRenderItem(item)}
-      </FadeInComponent>
+    const FadeInComponent = useCallback(
+      ({ index, children }) => {
+        const inputRange = [index - 1, index, index + 1, index + 2];
+        const animatedStyles = useAnimatedStyle(() => {
+          return {
+            opacity: interpolate(
+              value.value,
+              inputRange,
+              [0, 0.6, 1, 1],
+              Extrapolation.CLAMP
+            ),
+            transform: [
+              {
+                translateX: interpolate(
+                  value.value,
+                  inputRange,
+                  [25, 15, 10, 0],
+                  Extrapolation.CLAMP
+                ),
+              },
+            ],
+          };
+        });
+
+        return <Animated.View style={animatedStyles}>{children}</Animated.View>;
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      []
     );
-  };
 
-  const renderItem = item => {
-    return isLoading || item.index < props.placeHolderItemCount ? (
-      <Item item={item} />
-    ) : (
-      originalRenderItem(item)
-    );
-  };
-
-  useEffect(() => {
-    value.value = 0;
-    value.value = withSequence(
-      withTiming(20, {
-        duration: animationDuration,
-      }),
-      withTiming(10000, {
-        duration: 0,
-      })
-    );
-
-    return () => {
-      cancelAnimation(value);
+    const Item = ({ item }) => {
+      return item?.extraData?.isLoading ? (
+        <FadeInComponent index={item.index}>
+          {SkeletonComponent || <Placeholder />}
+        </FadeInComponent>
+      ) : (
+        <FadeInComponent index={item.index}>
+          {originalRenderItem(item)}
+        </FadeInComponent>
+      );
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [animationDuration, value, isLoading]);
 
-  return <ShopifyFlashList {...props} renderItem={renderItem} />;
-};
+    const renderItem = item => {
+      return isLoading || item.index < props.placeHolderItemCount ? (
+        <Item item={item} />
+      ) : (
+        originalRenderItem(item)
+      );
+    };
+
+    useEffect(() => {
+      value.value = 0;
+      value.value = withSequence(
+        withTiming(20, {
+          duration: animationDuration,
+        }),
+        withTiming(10000, {
+          duration: 0,
+        })
+      );
+
+      return () => {
+        cancelAnimation(value);
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [animationDuration, value, isLoading]);
+
+    return <ShopifyFlashList ref={ref} {...props} renderItem={renderItem} />;
+  }
+);
 
 FlashList.propTypes = {
   SkeletonComponent: PropTypes.element,
