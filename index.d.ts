@@ -273,7 +273,6 @@ interface FlashListProps extends RNFlashListProps {
   onRefresh?: () => void;
   onEndReached?: () => void;
   keyExtractor?: (item: any, index: number) => string;
-  flashListRef?: React.RefObject<Carousel>;
 }
 
 type InputProps = {

@@ -1,5 +1,6 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
-import React, { useCallback, useContext, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { FlashList as ShopifyFlashList } from "@shopify/flash-list";
 import Animated, {
   cancelAnimation,
@@ -34,52 +35,54 @@ const Placeholder = () => {
   );
 };
 
-export const FlashList = ({
-  animationDuration = 2000,
-  SkeletonComponent,
-  placeHolderItemCount = 10,
-  isLoading = false,
-  data = [],
-  onRefresh = () => {},
-  onEndReached = () => {},
-  keyExtractor,
-  flashListRef = undefined,
-  ...rest
-}) => {
-  const dummyData = Array.apply(null, Array(placeHolderItemCount));
+export const FlashList = React.forwardRef(
+  (
+    {
+      animationDuration = 2000,
+      SkeletonComponent,
+      placeHolderItemCount = 10,
+      isLoading = false,
+      data = [],
+      onRefresh = () => {},
+      onEndReached = () => {},
+      keyExtractor,
+      ...rest
+    },
+    ref
+  ) => {
+    const dummyData = Array.apply(null, Array(placeHolderItemCount));
 
-  const { isRefetchingByUser, refetchByUser } = useRefreshByUser(onRefresh);
+    const { isRefetchingByUser, refetchByUser } = useRefreshByUser(onRefresh);
 
-  const flashRef = useRef();
-
-  return (
-    <FadeInFlatList
-      ref={flashListRef || flashRef}
-      key={isLoading}
-      animationDuration={animationDuration}
-      SkeletonComponent={SkeletonComponent}
-      isLoading={isLoading}
-      extraData={{ isLoading, placeHolderItemCount }}
-      data={isLoading ? dummyData : data}
-      refreshControl={
-        onRefresh && (
-          <RefreshControl
-            refreshing={isRefetchingByUser}
-            onRefresh={refetchByUser}
-          />
-        )
-      }
-      placeHolderItemCount={placeHolderItemCount}
-      keyExtractor={(item, index) => {
-        return isLoading || !keyExtractor
-          ? index.toString()
-          : keyExtractor(item, index);
-      }}
-      {...rest}
-      onEndReached={isLoading ? undefined : onEndReached}
-    />
-  );
-};
+    return (
+      <FadeInFlatList
+        ref={ref}
+        key={isLoading}
+        animationDuration={animationDuration}
+        SkeletonComponent={SkeletonComponent}
+        isLoading={isLoading}
+        extraData={{ isLoading, placeHolderItemCount }}
+        data={isLoading ? dummyData : data}
+        refreshControl={
+          onRefresh && (
+            <RefreshControl
+              refreshing={isRefetchingByUser}
+              onRefresh={refetchByUser}
+            />
+          )
+        }
+        placeHolderItemCount={placeHolderItemCount}
+        keyExtractor={(item, index) => {
+          return isLoading || !keyExtractor
+            ? index.toString()
+            : keyExtractor(item, index);
+        }}
+        {...rest}
+        onEndReached={isLoading ? undefined : onEndReached}
+      />
+    );
+  }
+);
 
 // eslint-disable-next-line react/display-name
 const FadeInFlatList = React.forwardRef(
