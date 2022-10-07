@@ -2,7 +2,7 @@ name: "Publish"
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   release:
     name: "Release"
@@ -16,7 +16,7 @@ jobs:
       - run: git config core.hooksPath /dev/null
       - uses: EndBug/add-and-commit@v7
         with:
-          branch: master
+          branch: main
           message: "New version release"
       - name: Push changes
         uses: ad-m/github-push-action@master

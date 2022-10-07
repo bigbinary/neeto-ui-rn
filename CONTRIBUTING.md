@@ -36,8 +36,8 @@ can also run the following commands manually:
 ## Auto Publish to NPM
 
 neetoUI-RN version gets patched, auto-incremented and auto-published to npm on
-new commit to master. You can checkout the `publish` workflow in git actions to
+new commit to main branch. You can checkout the `publish` workflow in git actions to
 get a live update.
 
 Don't push build folder manually. Github workflow automatically builds project
-and pushes build folder to master on a new commit to master.
+and pushes build folder to main branch on a new commit to main.

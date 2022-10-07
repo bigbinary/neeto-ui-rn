@@ -15,7 +15,7 @@ const scripts = [
   path.join(__dirname, "assets", "snack.js"),
   path.join(__dirname, "assets", "storybookLink.js"),
 ];
-const github = "https://github.com/bigbinary/neeto-ui-rn/tree/master/";
+const github = "https://github.com/bigbinary/neeto-ui-rn/tree/main/";
 
 if (!fs.existsSync(dist)) {
   fs.mkdirSync(dist);
