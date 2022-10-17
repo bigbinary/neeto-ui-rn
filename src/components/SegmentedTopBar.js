@@ -18,7 +18,6 @@ const defaultShadowStyle = {
   },
   shadowOpacity: 0.23,
   shadowRadius: 2.62,
-
   elevation: 4,
 };
 
@@ -87,7 +86,6 @@ export const SegmentedTopBar = ({
 }) => {
   const translateValue = (width - 4) / routes?.length;
   const tabTranslateValue = useSharedValue(0);
-
   useEffect(() => {
     tabTranslateValue.value = withSpring(
       index * (translateValue * 1),
@@ -113,7 +111,7 @@ export const SegmentedTopBar = ({
           defaultShadowStyle,
           StyleSheet.absoluteFill,
           {
-            width: width / routes?.length,
+            width: (width - 4) / routes?.length,
           },
           tabTranslateAnimatedStyles,
         ]}
@@ -184,14 +182,9 @@ const styles = StyleSheet.create({
 
 SegmentedTopBar.propTypes = {
   /**
-   * Array of texts for the labels of each Segment/Tab.
+   * Navigation routes and additional data.
    */
-  tabs: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      Component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
-    })
-  ).isRequired,
+  state: PropTypes.object,
   /**
    * To change the inactive segment container style.
    */
@@ -209,6 +202,8 @@ SegmentedTopBar.propTypes = {
    */
   activeTextStyle: PropTypes.object,
   height: PropTypes.number,
+  navigation: PropTypes.object,
+  descriptors: PropTypes.object,
 };
 
 SegmentedTopBar.defaultProps = {
