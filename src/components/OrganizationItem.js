@@ -27,17 +27,16 @@ import { ThemeContext } from "styled-components/native";
  *
  */
 
-export const OrganizationItem = props => {
-  const {
-    label,
-    labelContainerProps,
-    iconContainerProps,
-    iconProps,
-    labelProps,
-    name,
-    nameProps,
-    ...rest
-  } = props;
+export const OrganizationItem = ({
+  label,
+  labelContainerProps,
+  iconContainerProps,
+  iconProps,
+  labelProps,
+  name,
+  nameProps,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext);
   return (
     <Container

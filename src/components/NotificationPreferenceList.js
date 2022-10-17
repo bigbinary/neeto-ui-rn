@@ -74,16 +74,14 @@ import { Container, Typography, Divider, ToggleSwitch } from "@components";
  *
  */
 
-export const NotificationPreferenceList = props => {
-  const {
-    data,
-    itemWrapperProps,
-    itemContainerProps,
-    labelContainerProps,
-    labelProps,
-    ...rest
-  } = props;
-
+export const NotificationPreferenceList = ({
+  data,
+  itemWrapperProps,
+  itemContainerProps,
+  labelContainerProps,
+  labelProps,
+  ...rest
+}) => {
   return (
     <Container bg="background.secondary" borderRadius={8} {...rest}>
       {data?.map((item, index) => {

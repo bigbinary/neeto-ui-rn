@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, TouchableWithoutFeedback } from "react-native";
 import {
@@ -47,15 +48,15 @@ const TextInput = styled.TextInput`
  * ```
  */
 
-export const SearchBar = props => {
-  const {
-    placeholder = "Search",
-    onChangeText = () => {},
-    onCancel = () => {},
-    debounceDelay = 1000,
-    showCancelButton = true,
-    ...rest
-  } = props;
+export const SearchBar = ({
+  placeholder = "Search",
+  onChangeText = () => {},
+  onCancel = () => {},
+  debounceDelay = 1000,
+  showCancelButton = true,
+  containerProps,
+  searchbarProps,
+}) => {
   const inputRef = useRef();
   const [searchText, setSearchText] = useState("");
   const debouncedSearchTextValue = useDebounce(
@@ -113,7 +114,7 @@ export const SearchBar = props => {
           borderRadius={8}
           flexDirection="row"
           alignItems="center"
-          {...rest.containerProps}
+          {...containerProps}
         >
           <Container px={10}>
             <Icon
@@ -139,7 +140,7 @@ export const SearchBar = props => {
             color="font.primary"
             autoCapitalize="none"
             returnKeyType="search"
-            {...rest.searchbarProps}
+            {...searchbarProps}
           />
         </Container>
       </TouchableWithoutFeedback>
@@ -190,4 +191,5 @@ SearchBar.propTypes = {
    * option to hide the cancel button. Default is true
    */
   showCancelButton: PropTypes.bool,
+  containerProps: PropTypes.object,
 };
