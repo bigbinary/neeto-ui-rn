@@ -338,8 +338,6 @@ interface MultiSelectProps extends ViewProps {
   labelStyle?: TextProps;
   containerStyle?: ViewProps;
   inputContainerStyle?: ViewProps;
-  dropdownContainerStyle?: ViewProps;
-  itemContainerStyle?: ViewProps;
   multiSelectedItemContainerStyle?: ViewProps;
   multiSelectedItemLabelStyle?: TextProps;
   selectedValue?: (selectedOption: any) => void;
@@ -478,6 +476,8 @@ interface SelectProps
   searchInputStyle?: TextInputProps;
   emptyOptionsContainerStyle?: ViewProps;
   emptyOptionsLabelStyle?: TextProps;
+  itemContainerStyle?: ViewProps;
+  dropdownContainerStyle?: ViewProps;
 }
 
 interface SocialButtonProps extends TouchableProps {

@@ -1,17 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import {
   ActivityIndicator,
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-import Animated, {
-  interpolate,
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
 import styled, { ThemeContext } from "styled-components/native";
 import {
@@ -128,8 +122,6 @@ MultiSelectItem.propTypes = {
   confirmationAlertObj: PropTypes.object,
 };
 
-const AnimatedLabel = Animated.createAnimatedComponent(Typography);
-
 /**
  *
  * MultiSelect can be used to select multiple options from a list of options.
@@ -186,8 +178,6 @@ export const MultiSelect = ({
   labelStyle,
   containerStyle,
   inputContainerStyle,
-  dropdownContainerStyle,
-  itemContainerStyle,
   multiSelectedItemContainerStyle,
   multiSelectedItemLabelStyle,
   selectedValue,
@@ -213,46 +203,7 @@ export const MultiSelect = ({
 }) => {
   const theme = useContext(ThemeContext);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const dropdownAnimatedHeight = useSharedValue(0);
-  const animatedLabelValue = useSharedValue(0);
-
-  const formatStr = str => str?.toLowerCase()?.trim();
-  const filteredOptions = options
-    .filter((item, index) => {
-      const optionValue = valueExtractor(item, index);
-      const isItemAlreadySelected = Boolean(
-        value?.find(
-          selectedItem => valueExtractor(selectedItem) === optionValue
-        )
-      );
-      return !isItemAlreadySelected;
-    })
-    .filter((item, index) => {
-      const optionLabel = labelExtractor(item, index);
-      if (searchQuery.length === 0) return true;
-      return formatStr(optionLabel).includes(formatStr(searchQuery));
-    });
-
-  const isOptionsEmpty = !options || options?.length === 0;
-  const isSearchedOptionsEmpty =
-    searchQuery.length > 0 && filteredOptions.length === 0;
-  const emptyOptionsPlaceholderHeight = 40;
-  const emptySearchedOptionsHeight = 40;
-  const searchInputHeight = 35;
   const multipleOptionsSelected = value?.length > 0;
-  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
-  const dropdownHeight =
-    dropdownContainerStyle?.height ||
-    dropdownContainerStyle?.maxHeight ||
-    defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
-      (isSearchable ? searchInputHeight + 10 : 0) +
-      (isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption)
-        ? emptyOptionsPlaceholderHeight
-        : 0) +
-      (isSearchedOptionsEmpty && showCreateOption
-        ? emptySearchedOptionsHeight
-        : 0);
 
   const getValue = (item, index) => {
     return item?.value || valueExtractor(item, index) || item;
@@ -295,12 +246,8 @@ export const MultiSelect = ({
 
   const handleOpenDropdown = () => {
     Keyboard.dismiss();
-    setSearchQuery("");
     if (!showDropdown) {
       setShowDropdown(true);
-    }
-    if (showDropdown) {
-      dropdownAnimatedHeight.value = 0;
     }
   };
 
@@ -312,36 +259,11 @@ export const MultiSelect = ({
     deletedValue(item);
   };
 
-  useEffect(() => {
-    animatedLabelValue.value = withTiming(
-      value.length || showDropdown ? 1 : 0,
-      {
-        duration: 250,
-      }
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value, showDropdown]);
-
-  useEffect(() => {
-    if (showDropdown) {
-      dropdownAnimatedHeight.value = dropdownHeight;
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showDropdown, dropdownHeight]);
-
   CheckBoxContent.propTypes = {
     onPress: PropTypes.func,
     item: PropTypes.object,
     index: PropTypes.number,
   };
-
-  const animatedStyles = useAnimatedStyle(() => {
-    return {
-      top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
-      fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
-      color: "font.grey600",
-    };
-  });
 
   return (
     <Container {...containerStyle}>
@@ -356,6 +278,7 @@ export const MultiSelect = ({
           p={2}
           pr={2}
           minHeight={58}
+          justifyContent="center"
           {...inputContainerStyle}
           {...rest}
         >
@@ -364,13 +287,17 @@ export const MultiSelect = ({
             justifyContent="space-between"
             alignItems="center"
           >
-            <AnimatedLabel
+            <Typography
               position="absolute"
               zIndex={1}
-              style={[animatedStyles, { marginLeft: 5, ...labelStyle }]}
+              top={multipleOptionsSelected ? "-6" : "0%"}
+              ml={1}
+              color="font.grey600"
+              fontSize={multipleOptionsSelected ? "xs" : "xl"}
+              {...labelStyle}
             >
               {label}
-            </AnimatedLabel>
+            </Typography>
             {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
               <Container
@@ -417,7 +344,7 @@ export const MultiSelect = ({
                   ))}
               </Container>
             )}
-            <Container mt={10}>
+            <Container>
               {isLoading ? (
                 <ActivityIndicator
                   size="small"
@@ -540,14 +467,6 @@ MultiSelect.propTypes = {
    * To customise Select input container styles.
    */
   inputContainerStyle: PropTypes.object,
-  /**
-   * To customise dropdown container styles.
-   */
-  dropdownContainerStyle: PropTypes.object,
-  /**
-   * To customise dropdown item container styles.
-   */
-  itemContainerStyle: PropTypes.object,
   /**
    * To customise item container styles for multi selected items.
    */
