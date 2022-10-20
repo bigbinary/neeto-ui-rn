@@ -158,4 +158,6 @@ RichTextEditor.propTypes = {
    * Object which can be used to pass other supported props by the RichToolbar.
    */
   toolBarProps: PropTypes.object,
+  editorWrapperStyle: PropTypes.object,
+  toolbarWrapperStyle: PropTypes.object,
 };

@@ -99,4 +99,13 @@ FAB.propTypes = {
    * Function to execute on press.
    */
   onPress: PropTypes.func.isRequired,
+  /**
+   * String to set background color.
+   */
+  bg: PropTypes.string,
+  /**
+   * Boolean to disable button.
+   */
+  disabled: PropTypes.bool,
+  variant: PropTypes.string,
 };

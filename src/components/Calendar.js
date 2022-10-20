@@ -32,8 +32,7 @@ import { Calendar as RNCalender } from "react-native-calendars";
  * Checkout <a href=" https://www.npmjs.com/package/react-native-calendars">react-native-calendars</a> package for all the available props
  */
 
-export const Calendar = props => {
-  const { selectedDate, ...rest } = props;
+export const Calendar = ({ selectedDate, ...rest }) => {
   delete rest.markedDates;
   const theme = useContext(ThemeContext);
   const isCurrentDay = dayjs(selectedDate).isSame(dayjs(), "D");

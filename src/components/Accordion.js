@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {
   useContext,
   useState,
@@ -89,104 +90,108 @@ const AccordionBody = ({ isExpanded, children }) => {
  *
  */
 
-export const Accordion = React.forwardRef((props, ref) => {
-  const {
-    header,
-    noBorder = false,
-    iconProp = {},
-    onStateChanged,
-    children,
-    position = "bottom",
-    shouldShowToggle = true,
-    ...rest
-  } = props;
-  const { name, Label, size, color } = iconProp;
-  const theme = useContext(ThemeContext);
-  const [isExpanded, setExpanded] = useState(false);
-  const animationController = useRef(
-    new Animated.Value(isExpanded ? 1 : 0)
-  ).current;
+export const Accordion = React.forwardRef(
+  (
+    {
+      header,
+      noBorder = false,
+      iconProp = {},
+      onStateChanged,
+      children,
+      position = "bottom",
+      shouldShowToggle = true,
+      ...rest
+    },
+    ref
+  ) => {
+    const { name, Label, size, color } = iconProp;
+    const theme = useContext(ThemeContext);
+    const [isExpanded, setExpanded] = useState(false);
+    const animationController = useRef(
+      new Animated.Value(isExpanded ? 1 : 0)
+    ).current;
 
-  useEffect(() => {
-    Animated.timing(animationController, {
-      duration: 300,
-      toValue: isExpanded ? 1 : 0,
-      useNativeDriver: false,
-    }).start(() => {
-      !!onStateChanged && onStateChanged(isExpanded);
+    useEffect(() => {
+      Animated.timing(animationController, {
+        duration: 300,
+        toValue: isExpanded ? 1 : 0,
+        useNativeDriver: false,
+      }).start(() => {
+        !!onStateChanged && onStateChanged(isExpanded);
+      });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isExpanded]);
+
+    const handleAnimation = () => {
+      setExpanded(!isExpanded);
+    };
+
+    useImperativeHandle(ref, () => ({
+      toggleAccordion: handleAnimation,
+      openAccordion: () => setExpanded(true),
+      closeAccordion: () => setExpanded(false),
+    }));
+
+    const arrowAngle = animationController.interpolate({
+      inputRange: [0, 1],
+      outputRange: ["0rad", `${Math.PI}rad`],
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded]);
 
-  const handleAnimation = () => {
-    setExpanded(!isExpanded);
-  };
-
-  useImperativeHandle(ref, () => ({
-    toggleAccordion: handleAnimation,
-    openAccordion: () => setExpanded(true),
-    closeAccordion: () => setExpanded(false),
-  }));
-
-  const arrowAngle = animationController.interpolate({
-    inputRange: [0, 1],
-    outputRange: ["0rad", `${Math.PI}rad`],
-  });
-
-  return (
-    <Container
-      {...(!noBorder && {
-        borderColor: "border.grey400",
-        borderWidth: 1,
-        borderRadius: 8,
-      })}
-      width="100%"
-      padding={12}
-      {...rest}
-    >
-      {position === "top" && (
-        <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
-      )}
-      <TouchableOpacity
-        rippleOpacity={0}
-        style={styles.accordionContainer}
-        onPress={() => {
-          handleAnimation();
-        }}
+    return (
+      <Container
+        {...(!noBorder && {
+          borderColor: "border.grey400",
+          borderWidth: 1,
+          borderRadius: 8,
+        })}
+        width="100%"
+        padding={12}
+        {...rest}
       >
-        {!!header && <Container flexGrow={1}>{header()}</Container>}
-        {!!shouldShowToggle && (
-          <Container
-            alignItems="center"
-            justifyContent="center"
-            flexDirection="row"
-            px={1}
-          >
-            {Label && <Label />}
-            <Animated.View
-              style={{
-                alignItems: "flex-end",
-                transform: [{ rotateZ: arrowAngle }],
-              }}
-            >
-              <Container>
-                <Icon
-                  name={name ?? "ri-arrow-down-s-line"}
-                  color={color ?? theme.colors.font.grey700}
-                  size={size ?? 24}
-                />
-              </Container>
-            </Animated.View>
-          </Container>
+        {position === "top" && (
+          <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
         )}
-      </TouchableOpacity>
+        <TouchableOpacity
+          rippleOpacity={0}
+          style={styles.accordionContainer}
+          onPress={() => {
+            handleAnimation();
+          }}
+        >
+          {!!header && <Container flexGrow={1}>{header()}</Container>}
+          {!!shouldShowToggle && (
+            <Container
+              alignItems="center"
+              justifyContent="center"
+              flexDirection="row"
+              px={1}
+            >
+              {Label && <Label />}
+              <Animated.View
+                style={{
+                  alignItems: "flex-end",
+                  transform: [{ rotateZ: arrowAngle }],
+                }}
+              >
+                <Container>
+                  <Icon
+                    name={name ?? "ri-arrow-down-s-line"}
+                    color={color ?? theme.colors.font.grey700}
+                    size={size ?? 24}
+                  />
+                </Container>
+              </Animated.View>
+            </Container>
+          )}
+        </TouchableOpacity>
 
-      {position === "bottom" && (
-        <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
-      )}
-    </Container>
-  );
-});
+        {position === "bottom" && (
+          <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
+        )}
+      </Container>
+    );
+  }
+);
 
 AccordionBody.propTypes = {
   isExpanded: PropTypes.bool.isRequired,

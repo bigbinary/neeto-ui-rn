@@ -68,21 +68,20 @@ export const BUTTON_VARIANTS = Object.freeze({
  *
  */
 
-export const Button = props => {
-  const {
-    variant,
-    label,
-    labelStyle,
-    RightIcon,
-    LeftIcon,
-    disabled,
-    isLoading,
-    loadingText,
-    fontFamily,
-    color,
-    fontSize,
-    ...rest
-  } = props;
+export const Button = ({
+  variant,
+  label,
+  labelStyle,
+  RightIcon,
+  LeftIcon,
+  disabled,
+  isLoading,
+  loadingText,
+  fontFamily,
+  color,
+  fontSize,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext);
   const width = variant === "text" || variant === "danger-text" ? null : "100%";
 
@@ -254,4 +253,7 @@ Button.propTypes = {
    * To show loading text along with the loading indicator on the button.
    */
   loadingText: PropTypes.string,
+  fontFamily: PropTypes.string,
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
 };

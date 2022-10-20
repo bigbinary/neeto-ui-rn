@@ -84,4 +84,5 @@ Touchable.propTypes = {
   ...propTypes.buttonStyle,
 
   children: PropTypes.node,
+  elevation: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };

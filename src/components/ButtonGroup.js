@@ -36,7 +36,9 @@ export const ButtonGroup = ({
   buttonItems,
   onPress,
   currentActiveBtn,
-  ...rest
+  wrapperStyle,
+  buttonStyle,
+  buttonTextStyle,
 }) => {
   return (
     <Container
@@ -47,7 +49,7 @@ export const ButtonGroup = ({
       flexDirection="row"
       justifyContent="space-between"
       alignSelf="center"
-      {...rest.wrapperStyle}
+      {...wrapperStyle}
     >
       {buttonItems.map(item => {
         return (
@@ -61,11 +63,11 @@ export const ButtonGroup = ({
                 onPress(item);
               }
             }}
-            {...rest.buttonStyle}
+            {...buttonStyle}
           >
             <Typography
               color={item === currentActiveBtn ? inActiveColor : activeColor}
-              {...rest.buttonTextStyle}
+              {...buttonTextStyle}
             >
               {item}
             </Typography>

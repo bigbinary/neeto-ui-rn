@@ -107,7 +107,7 @@ interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
 interface AccordionProps extends ViewProps {
   header?: () => React.ReactNode;
   noBorder?: boolean;
-  onStateChange?: (isExpanded: boolean) => void;
+  onStateChanged?: (isExpanded: boolean) => void;
   iconProp?: {
     name?: string;
     Label?: () => React.ReactNode;
@@ -180,7 +180,13 @@ interface BottomSheetProps extends ViewProps {
   onDonePress?: () => void;
   valueExtractor?: () => {};
   labelExtractor?: () => {};
-  searchbarProps?: SearchBarProps;
+  searchBarProps?: SearchBarProps;
+  onBackdropPress?: () => void;
+  disabled?: boolean;
+  noResultsLabelContainerStyle?:  ViewProps;
+  noResultsLabelStyle?: TextProps;
+  noResultsLabel?: string;
+  NoResultsComponent?: () => React.ReactNode;
 }
 
 interface ButtonProps extends TouchableProps {
@@ -288,6 +294,7 @@ type InputProps = {
   noBorder?: boolean;
   showInputAccessoryView?: boolean;
   inputProps?: RNTextInputProps;
+  textAlignVertical?: string;
 };
 
 interface ListItemProps extends ViewProps {
@@ -314,7 +321,7 @@ interface MultiSelectConfirmationAlertObjProps {
   alertTitle?: string;
   alertDescription?: string;
   alertConfirmButtonLabel?: string;
-  showDeleteAlertConfirmation?:boolean;
+  showDeleteAlertConfirmation?: boolean;
 }
 
 interface MultiSelectProps extends ViewProps {
@@ -350,6 +357,8 @@ interface MultiSelectProps extends ViewProps {
   maxItemSize?: number;
   moreItemLabelContainerStyle?: ViewStyle;
   moreItemLabelStyle?: TextStyle;
+  MoreItemComponent?: () => React.ReactNode;
+  onBackdropPress?:  () => void;
   searchbarProps?: SearchBarProps;
   confirmationAlertObj?: MultiSelectConfirmationAlertObjProps
 }
@@ -387,12 +396,21 @@ interface ParentViewProps extends ViewProps {
   leftInset?: boolean;
   bottomInset?: boolean;
   shouldDismissKeyboardOnTap?: boolean;
+  backgroundColor?: string;
+  bg?: string;
 }
-interface PopoverItemProps {
+interface PopOverItemNestedItemProps {
   Icon?: React.FC;
   label?: string;
   labelProps?: TypographyProps;
 }
+interface PopoverItemProps {
+  item?: PopOverItemNestedItemProps;
+  onPress?:  () => void;
+  fontFamily?: typeof theme.fonts;
+  fontSize?: typeof theme.fontSizes;
+}
+
 type RNPopoverProps = typeof RNPopover.propTypes;
 interface PopoverProps extends RNPopoverProps {
   children?: React.ReactNode;
@@ -429,17 +447,37 @@ interface SearchBarProps extends ViewProps {
   searchbarProps?: TextInputProps;
 }
 
+interface SegmentedTopBarStateProps {
+  routes?:  Array<any>; 
+  index?: number
+}
+
+interface NavigationProps {
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+}
 interface SegmentedTopBarProps extends MaterialTopTabBarProps {
+  state?: SegmentedTopBarStateProps;
   inactiveSegmentStyle?: ViewStyle;
   activeSegmentStyle?: ViewStyle;
   activeTextStyle?: TouchableProps;
   inactiveTextStyle?: TouchableProps;
+  navigation?: NavigationProps;
   height?: number;
+  descriptors?: object; 
 }
 
 interface SelectProps
   extends Omit<MultiSelectProps, "selectedValue" | "deletedValue"> {
   value: any;
+  placeholder?: string;
+  emptyOptionsPlaceHolder?: string;
+  itemLabelStyle?: TextProps;
+  selectedItemContainerStyle?: ViewProps;
+  selectedItemLabelStyle?: TextProps;
+  searchInputContainerStyle?: ViewProps;
+  searchInputStyle?: TextInputProps;
+  emptyOptionsContainerStyle?: ViewProps;
+  emptyOptionsLabelStyle?: TextProps;
 }
 
 interface SocialButtonProps extends TouchableProps {
@@ -488,7 +526,7 @@ export const CheckBox: React.FC<CheckBoxProps>;
 export const Chip: React.FC<ChipProps>;
 export const Container: React.FC<ViewProps>;
 export const Divider: React.FC<DividerProps>;
-export const Fab: React.FC<FabProps>;
+export const FAB: React.FC<FabProps>;
 export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;

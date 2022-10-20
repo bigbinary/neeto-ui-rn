@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
@@ -24,13 +25,7 @@ import {
   position,
 } from "styled-system";
 
-import {
-  BottomSheet,
-  CheckBox,
-  Container,
-  Touchable,
-  Alert,
-} from "@components";
+import { BottomSheet, CheckBox, Container, Alert } from "@components";
 
 const Typography = styled.Text`
   ${textStyle}
@@ -131,41 +126,6 @@ MultiSelectItem.propTypes = {
   multiSelectedItemLabelStyle: PropTypes.object,
   disabled: PropTypes.bool,
   confirmationAlertObj: PropTypes.object,
-};
-
-const DropdownItem = ({
-  label,
-  onPress,
-  defaultDropdownItemHeight,
-  itemContainerStyle,
-  itemLabelStyle,
-}) => {
-  return (
-    <Touchable bg="background.white" onPress={onPress}>
-      <Container
-        height={defaultDropdownItemHeight}
-        p={2}
-        {...itemContainerStyle}
-      >
-        <Typography
-          fontFamily="sf400"
-          fontSize="s"
-          color="font.grey"
-          {...itemLabelStyle}
-        >
-          {label}
-        </Typography>
-      </Container>
-    </Touchable>
-  );
-};
-
-DropdownItem.propTypes = {
-  label: PropTypes.string,
-  onPress: PropTypes.func,
-  defaultDropdownItemHeight: PropTypes.number,
-  itemContainerStyle: PropTypes.object,
-  itemLabelStyle: PropTypes.object,
 };
 
 const AnimatedLabel = Animated.createAnimatedComponent(Typography);
@@ -565,10 +525,6 @@ MultiSelect.propTypes = {
    */
   showCreateOptionLoader: PropTypes.bool,
   /**
-   * Custom label for creating searched option not present in the options list
-   */
-  createOptionLabel: PropTypes.string,
-  /**
    * Callback when create searched option is pressed
    */
   onPressCreateOption: PropTypes.func,
@@ -593,10 +549,6 @@ MultiSelect.propTypes = {
    */
   itemContainerStyle: PropTypes.object,
   /**
-   * To customise dropdown item text styles.
-   */
-  itemLabelStyle: PropTypes.object,
-  /**
    * To customise item container styles for multi selected items.
    */
   multiSelectedItemContainerStyle: PropTypes.object,
@@ -608,22 +560,6 @@ MultiSelect.propTypes = {
    * To customise confirmation alert popup.
    */
   confirmationAlertObj: PropTypes.object,
-  /**
-   * To customise search input container style.
-   */
-  searchInputContainerStyle: PropTypes.object,
-  /**
-   * To customise search input style.
-   */
-  searchInputStyle: PropTypes.object,
-  /**
-   * To customise empty options placeholder container style.
-   */
-  emptyOptionsContainerStyle: PropTypes.object,
-  /**
-   * To customise empty options placeholder text style.
-   */
-  emptyOptionsLabelStyle: PropTypes.object,
   /**
    * To customise empty options placeholder container style.
    */
@@ -694,7 +630,6 @@ MultiSelect.defaultProps = {
   isSearchable: false,
   showCreateOption: false,
   showCreateOptionLoader: false,
-  createOptionLabel: null,
   onPressCreateOption: () => {},
   onDonePress: () => {},
   maxItemSize: 5,

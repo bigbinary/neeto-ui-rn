@@ -61,7 +61,8 @@ export const Chip = ({
   isDisabled,
   closeIconSize,
   closeIcon,
-  ...rest
+  containerStyle,
+  closeIconContainerStyle,
 }) => {
   return (
     <Touchable
@@ -73,7 +74,7 @@ export const Chip = ({
       disabled={!onChipPress || isDisabled}
       {...(variant && variantStyleObj[variant])}
       {...(isDisabled && { opacity: 0.5 })}
-      {...rest.containerStyle}
+      {...containerStyle}
     >
       {LeftIcon && <LeftIcon />}
       <Typography mx={2} fontFamily="sf400" color={labelColor}>
@@ -85,7 +86,7 @@ export const Chip = ({
           borderRadius={10}
           disabled={isDisabled}
           onPress={onClose}
-          {...rest.closeIconContainerStyle}
+          {...closeIconContainerStyle}
         >
           <Icon name={closeIcon} size={closeIconSize} color={closeIconColor} />
         </Touchable>
@@ -149,4 +150,6 @@ Chip.propTypes = {
    * Whether the chip is disabled. A disabled chip has a overlay and onPress is not called on touch.
    */
   isDisabled: PropTypes.bool,
+  containerStyle: PropTypes.object,
+  closeIconContainerStyle: PropTypes.object,
 };

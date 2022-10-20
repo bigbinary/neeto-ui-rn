@@ -33,8 +33,13 @@ import { Container, Typography, Touchable } from "@components";
  *
  */
 
-export const SocialButton = props => {
-  const { variant, disabled, labelStyle, isLoading, ...rest } = props;
+export const SocialButton = ({
+  variant,
+  disabled,
+  labelStyle,
+  isLoading,
+  ...rest
+}) => {
   const theme = useContext(ThemeContext);
   const capitalize = str => `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
 
@@ -93,4 +98,8 @@ SocialButton.propTypes = {
    * Customize label style of the button
    */
   labelStyle: PropTypes.object,
+  /**
+   * Button loading status
+   */
+  isLoading: PropTypes.bool,
 };

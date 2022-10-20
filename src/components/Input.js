@@ -94,23 +94,22 @@ const AnimatedLabel = Animated.createAnimatedComponent(Typography);
  *
  */
 
-export const Input = props => {
-  const {
-    label,
-    value = "",
-    onChangeText = () => {},
-    onBlur = () => {},
-    errorMessage = null,
-    PrefixIcon,
-    SuffixIcon,
-    autoFocus = false,
-    disabled = false,
-    noBorder = false,
-    showInputAccessoryView = true,
-    textAlignVertical = "top",
-    ...rest
-  } = props;
-
+export const Input = ({
+  label,
+  value = "",
+  onChangeText = () => {},
+  onBlur = () => {},
+  errorMessage = null,
+  PrefixIcon,
+  SuffixIcon,
+  autoFocus = false,
+  disabled = false,
+  noBorder = false,
+  showInputAccessoryView = true,
+  textAlignVertical = "top",
+  containerProps,
+  ...rest
+}) => {
   const { width } = useWindowDimensions();
   const colors = useContext(ThemeContext).colors;
   const inputRef = useRef();
@@ -203,7 +202,7 @@ export const Input = props => {
           justifyContent="space-between"
           {...(!rest.inputProps?.multiline && { height: 58 })}
           overflow="hidden"
-          {...rest.containerProps}
+          {...containerProps}
         >
           {!!PrefixIcon && (
             <View pl={2}>
