@@ -46,20 +46,20 @@ import { FastImageProps } from "react-native-fast-image";
 import { theme as themeDef } from "./src/theme";
 import { BUTTON_VARIANTS } from "./src/components/Button";
 
-type addPrefixToo<
-  To extends o,
+type addPrefixToObject<
+  TObject extends object,
   TPrefix extends string
-> = `${TPrefix}${keyof To}`;
+> = `${TPrefix}${keyof TObject}`;
 
 const theme: {
   colors: {
-    font: addPrefixToo<typeof themeDef.colors.font, "font.">;
-    background: addPrefixToo<
+    font: addPrefixToObject<typeof themeDef.colors.font, "font.">;
+    background: addPrefixToObject<
       typeof themeDef.colors.background,
       "background."
     >;
-    border: addPrefixToo<typeof themeDef.colors.border, "border.">;
-    toast: addPrefixToo<typeof themeDef.colors.toast, "toast.">;
+    border: addPrefixToObject<typeof themeDef.colors.border, "border.">;
+    toast: addPrefixToObject<typeof themeDef.colors.toast, "toast.">;
   };
   fonts: keyof typeof themeDef.fonts;
   fontSizes: keyof typeof themeDef.fontSizes;
@@ -168,7 +168,7 @@ interface BottomSheetProps extends ViewProps {
   hide?: () => void;
   isVisible?: boolean;
   onItemPress?: ({ index, item }: { index: number; item: any }) => void;
-  selectedItem?: o | string;
+  selectedItem?: object | string;
   bg?: typeof theme.colors.background;
   titleContainerStyle?: ViewProps;
   titleTextStyle?: TextProps;
@@ -225,7 +225,7 @@ interface CardProps extends TouchableOpacityProps, StyleProps {
 type CarouselProps = {
   itemArray: Array<any>;
   renderItem: () => React.ReactNode;
-  carouselRef?: React.Refo<Carousel>;
+  carouselRef?: React.RefObject<Carousel>;
   onSnapToItem?: (index: number) => void;
   containerStyle: ViewProps;
 };
@@ -321,7 +321,7 @@ interface MultiSelectConfirmationAlertObjProps {
   alertTitle?: string;
   alertDescription?: string;
   alertConfirmButtonLabel?: string;
-  showDeleteAlertConfirmation?:boolean;
+  showDeleteAlertConfirmation?: boolean;
 }
 
 interface MultiSelectProps extends ViewProps {

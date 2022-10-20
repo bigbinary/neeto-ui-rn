@@ -99,7 +99,7 @@ SocialButton.propTypes = {
    */
   labelStyle: PropTypes.object,
   /**
-   * Button loafing status
+   * Button loading status
    */
   isLoading: PropTypes.bool,
 };
