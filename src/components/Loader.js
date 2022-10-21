@@ -75,7 +75,7 @@ export const Loader = ({ color, size }) => {
   });
 
   return (
-    <Container flex={1} alignItems="center" width={width} height={width}>
+    <Container alignItems="center" justifyContent="center">
       <Animated.View style={animatedStyles}>
         <Svg width={width} height={width}>
           <AnimatedCircle
