@@ -30,6 +30,7 @@ const darkBlueVariant = {
 
 const lightBlueVariants = {
   lightBlue100: "#EAF3FC",
+  lightBlue400: "#4558F9",
 };
 
 const purpleVariants = {

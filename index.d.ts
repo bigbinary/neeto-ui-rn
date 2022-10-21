@@ -304,8 +304,8 @@ interface ListItemProps extends ViewProps {
 }
 
 interface LoaderProps extends ViewProps {
-  size?: string;
-  colorVariant: string;
+  size?: 's' | 'm' | 'l';
+  color: typeof theme.colors.background;
 }
 
 type NotificationPreferenceListItem = {

@@ -1,6 +1,6 @@
 /* eslint-disable @bigbinary/neeto/no-dangling-constants */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import Animated, {
   useSharedValue,
   withTiming,
@@ -12,7 +12,7 @@ import Animated, {
 } from "react-native-reanimated";
 import Svg, { Circle } from "react-native-svg";
 import PropTypes from "prop-types";
-import { ThemeContext } from "styled-components/native";
+import { theme } from "@theme";
 import { Container } from "@components";
 
 const LOADER_WIDTH = {
@@ -25,10 +25,6 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
 /**
  ** Component is used to show a loading indication to user.
- *
- * <div class="screenshots">
- *   <img src="screenshots/loader/loader.png" />
- * </div>
  *
  *  ## Usage
  * ```js
@@ -45,18 +41,13 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle);
  *
  */
 
-export const Loader = ({ colorVariant, size }) => {
+export const Loader = ({ color, size }) => {
   const progress = useSharedValue(0);
   const width = LOADER_WIDTH[size];
   const stroke_width = width * 0.15;
   const radius = (width - stroke_width) / 2;
-  const svgWidth = width;
   const circleLength = (width / 2) * (2 * Math.PI);
-  const theme = useContext(ThemeContext);
-  const LOADER_COLOR = {
-    primary: "#4558F9",
-    secondary: theme.colors.font.white,
-  };
+
   useEffect(() => {
     progress.value = withRepeat(
       withTiming(2, {
@@ -84,20 +75,15 @@ export const Loader = ({ colorVariant, size }) => {
   });
 
   return (
-    <Container
-      flex={1}
-      alignItems="center"
-      justifyContent="center"
-      flexDirection="row"
-    >
+    <Container flex={1} alignItems="center" width={width} height={width}>
       <Animated.View style={animatedStyles}>
         <Svg width={width} height={width}>
           <AnimatedCircle
-            cx={svgWidth / 2}
-            cy={svgWidth / 2}
+            cx={width / 2}
+            cy={width / 2}
             r={radius}
             strokeWidth={stroke_width}
-            stroke={LOADER_COLOR[colorVariant]}
+            stroke={color}
             strokeDasharray={circleLength}
             animatedProps={animatedProps}
             strokeLinecap="round"
@@ -112,14 +98,14 @@ Loader.propTypes = {
   /**
    * Size variant to select the width of the loader.
    */
-  size: PropTypes.string,
+  size: PropTypes.oneOf(["s", "m", "l"]),
   /**
    * Color variant to select the color from the available options.
    */
-  colorVariant: PropTypes.string,
+  color: PropTypes.string,
 };
 
 Loader.defaultProps = {
   size: "s",
-  colorVariant: "primary",
+  color: theme.colors.background.lightBlue400,
 };

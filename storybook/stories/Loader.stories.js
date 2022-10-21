@@ -13,25 +13,38 @@ export const Loaders = () => {
   return (
     <Container justifyContent="space-around" flex={1}>
       <Alert />
-      <Container flexDirection="row">
+      <Container flexDirection="row" flex={1}>
         <Loader />
-        <Loader size="m" colorVariant="primary" />
-        <Loader size="l" colorVariant="primary" />
+        <Loader size="m" />
+        <Loader size="l" />
       </Container>
-      <Container
-        flexDirection="row"
-        width="100%"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <Touchable width={100} height={30} borderRadius={5} borderWidth={1}>
+      <Container flex={1} justifyContent="space-around" alignItems="center">
+        <Touchable
+          alignItems="center"
+          width={100}
+          height={28}
+          borderRadius={5}
+          borderWidth={1}
+        >
           <Loader />
         </Touchable>
-        <Touchable width={100} height={40} borderRadius={5} borderWidth={1}>
-          <Loader />
-        </Touchable>
-        <Touchable width={100} height={40} borderRadius={5} borderWidth={1}>
+        <Touchable
+          alignItems="center"
+          width={120}
+          height={40}
+          borderRadius={5}
+          borderWidth={1}
+        >
           <Loader size="m" />
+        </Touchable>
+        <Touchable
+          alignItems="center"
+          width={140}
+          height={52}
+          borderRadius={5}
+          borderWidth={1}
+        >
+          <Loader size="l" />
         </Touchable>
       </Container>
     </Container>
