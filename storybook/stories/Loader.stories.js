@@ -13,14 +13,14 @@ export const Loaders = () => {
   return (
     <Container justifyContent="space-around" flex={1}>
       <Alert />
-      <Container flexDirection="row" flex={1}>
+      <Container flexDirection="row" justifyContent="space-around" flex={1}>
         <Loader />
         <Loader size="m" />
         <Loader size="l" />
       </Container>
       <Container flex={1} justifyContent="space-around" alignItems="center">
         <Touchable
-          alignItems="center"
+          justifyContent="center"
           width={100}
           height={28}
           borderRadius={5}
@@ -29,7 +29,7 @@ export const Loaders = () => {
           <Loader />
         </Touchable>
         <Touchable
-          alignItems="center"
+          justifyContent="center"
           width={120}
           height={40}
           borderRadius={5}
@@ -38,7 +38,7 @@ export const Loaders = () => {
           <Loader size="m" />
         </Touchable>
         <Touchable
-          alignItems="center"
+          justifyContent="center"
           width={140}
           height={52}
           borderRadius={5}

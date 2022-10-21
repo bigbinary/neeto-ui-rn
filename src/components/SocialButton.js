@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
-import { ActivityIndicator } from "react-native";
 
 import AppleLogo from "@assets/icons/apple-logo.svg";
 import GoogleLogo from "@assets/icons/google-logo.svg";
-import { Container, Typography, Touchable } from "@components";
+import { Container, Typography, Touchable, Loader } from "@components";
 
 /**
  *
@@ -58,7 +57,7 @@ export const SocialButton = ({
       {...rest}
     >
       {isLoading ? (
-        <ActivityIndicator color={theme.colors.background.grey800} />
+        <Loader color={theme.colors.background.grey800} />
       ) : (
         <>
           <Container position="absolute" left={17}>

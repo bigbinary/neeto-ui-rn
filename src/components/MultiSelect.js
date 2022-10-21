@@ -1,11 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {
-  ActivityIndicator,
-  Keyboard,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { Keyboard, TouchableWithoutFeedback } from "react-native";
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -25,7 +21,7 @@ import {
   position,
 } from "styled-system";
 
-import { BottomSheet, CheckBox, Container, Alert } from "@components";
+import { BottomSheet, CheckBox, Container, Alert, Loader } from "@components";
 
 const Typography = styled.Text`
   ${textStyle}
@@ -419,10 +415,7 @@ export const MultiSelect = ({
             )}
             <Container mt={10}>
               {isLoading ? (
-                <ActivityIndicator
-                  size="small"
-                  color={theme.colors.background.base}
-                />
+                <Loader color={theme.colors.background.base} />
               ) : (
                 <Icon
                   name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
