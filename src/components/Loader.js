@@ -26,6 +26,10 @@ const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 /**
  ** Component is used to show a loading indication to user.
  *
+ * * <div class="screenshots">
+ *   <img src="screenshots/loaders/loaders.png" />
+ * </div>
+ *
  *  ## Usage
  * ```js
  * import * as React from 'react';

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Loader, Alert, Container, Touchable } from "@components";
+import { theme } from "@theme";
 
 const LoaderStories = {
   title: "Loaders",
@@ -11,12 +12,16 @@ export default LoaderStories;
 
 export const Loaders = () => {
   return (
-    <Container justifyContent="space-around" flex={1}>
+    <Container
+      justifyContent="space-around"
+      flex={1}
+      // bg={theme.colors.background.grey100}
+    >
       <Alert />
       <Container flexDirection="row" justifyContent="space-around" flex={1}>
-        <Loader />
-        <Loader size="m" />
-        <Loader size="l" />
+        <Loader color={theme.colors.font.grey400} />
+        <Loader size="m" color={theme.colors.font.grey600} />
+        <Loader size="l" color={theme.colors.font.grey800} />
       </Container>
       <Container flex={1} justifyContent="space-around" alignItems="center">
         <Touchable
@@ -25,8 +30,9 @@ export const Loaders = () => {
           height={28}
           borderRadius={5}
           borderWidth={1}
+          borderColor="border.grey800"
         >
-          <Loader />
+          <Loader color={theme.colors.font.grey800} />
         </Touchable>
         <Touchable
           justifyContent="center"
@@ -34,8 +40,9 @@ export const Loaders = () => {
           height={40}
           borderRadius={5}
           borderWidth={1}
+          borderColor="border.grey600"
         >
-          <Loader size="m" />
+          <Loader size="m" color={theme.colors.font.grey600} />
         </Touchable>
         <Touchable
           justifyContent="center"
@@ -43,8 +50,9 @@ export const Loaders = () => {
           height={52}
           borderRadius={5}
           borderWidth={1}
+          borderColor="border.grey400"
         >
-          <Loader size="l" />
+          <Loader size="l" color={theme.colors.font.grey400} />
         </Touchable>
       </Container>
     </Container>
