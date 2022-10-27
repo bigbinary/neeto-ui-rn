@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "styled-components/native";
 import { useWindowDimensions } from "react-native";
 import CloseIcon from "react-native-remix-icon";
+import DeviceInfo from "react-native-device-info";
 
 import SuccessIcon from "@assets/icons/success.svg";
 import WarningIcon from "@assets/icons/warning.svg";
@@ -38,6 +39,7 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
       alignItems="center"
       px={10}
       mx={10}
+      mt={DeviceInfo.hasDynamicIsland() ? 10 : 0}
     >
       <Container
         height={42}
