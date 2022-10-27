@@ -38,3 +38,4 @@ export { BottomTabBar } from "./BottomTabBar";
 export { AnimatedImage } from "./AnimatedImage";
 export { NotificationPreferenceList } from "./NotificationPreferenceList";
 export { OrganizationItem } from "./OrganizationItem";
+export { Loader } from "./Loader";

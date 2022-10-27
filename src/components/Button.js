@@ -3,9 +3,8 @@ import React, { useContext } from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
 import { ThemeContext } from "styled-components/native";
-import { ActivityIndicator } from "react-native";
 
-import { Typography, Touchable, Container } from "@components";
+import { Typography, Touchable, Container, Loader } from "@components";
 
 export const BUTTON_VARIANTS = Object.freeze({
   SOLID: "solid",
@@ -168,7 +167,7 @@ export const Button = ({
     >
       {isLoading ? (
         <Container flexDirection="row">
-          <ActivityIndicator color={getButtonColors().color} />
+          <Loader color={getButtonColors().color} />
           {!!loadingText && (
             <Typography
               textAlign="center"

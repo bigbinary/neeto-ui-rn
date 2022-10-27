@@ -48,6 +48,7 @@ const getStories = () => {
     require("../storybook/stories/FlashList.stories.js"),
     require("../storybook/stories/Input.stories.js"),
     require("../storybook/stories/ListItem.stories.js"),
+    require("../storybook/stories/Loader.stories.js"),
     require("../storybook/stories/MultiSelect.stories.js"),
     require("../storybook/stories/NotificationPreferenceList.stories.js"),
     require("../storybook/stories/OnBoarding.stories.js"),

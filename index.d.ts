@@ -303,6 +303,11 @@ interface ListItemProps extends ViewProps {
   RightComponent: React.FC;
 }
 
+interface LoaderProps extends ViewProps {
+  size?: 's' | 'm' | 'l';
+  color: typeof theme.colors.background;
+}
+
 type NotificationPreferenceListItem = {
   label: string;
   enabled: boolean;
@@ -531,6 +536,7 @@ export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
 export const ListItem: React.FC<ListItemProps>;
+export const Loader: React.FC<LoaderProps>;
 export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
 export const MultiSelect: React.FC<MultiSelectProps>;
 export const OnBoarding: React.FC<OnBoardingProps>;

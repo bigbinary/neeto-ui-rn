@@ -10,9 +10,8 @@ import Animated, {
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
-import { Container } from "@components";
+import { Container, Loader } from "@components";
 import ImagePlaceholder from "@assets/images/image-placeholder.svg";
-import { ActivityIndicator } from "react-native";
 import { theme } from "../theme";
 
 const StyledImage = styled(RNFImage)`
@@ -108,10 +107,7 @@ export const AnimatedImage = ({
           <Container position="absolute">
             <ImagePlaceholder />
             <Container position="absolute" bottom={15} right={15}>
-              <ActivityIndicator
-                size="small"
-                color={theme.colors.font.grey600}
-              />
+              <Loader color={theme.colors.font.grey600} />
             </Container>
           </Container>
         )}

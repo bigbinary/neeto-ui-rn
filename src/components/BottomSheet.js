@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  FlatList,
-  Keyboard,
-  ActivityIndicator,
-} from "react-native";
+import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Typography, Container, Touchable, SearchBar } from "@components";
+import {
+  Typography,
+  Container,
+  Touchable,
+  SearchBar,
+  Loader,
+} from "@components";
 import { theme } from "../theme";
 
 const Title = ({
@@ -274,10 +275,7 @@ export const BottomSheet = ({
                   {!disabled &&
                     !hideCreateComponent() &&
                     (showCreateOptionLoader ? (
-                      <ActivityIndicator
-                        size="small"
-                        color={theme.colors.background.base}
-                      />
+                      <Loader color={theme.colors.background.base} />
                     ) : (
                       !!searchText &&
                       showCreateOption && (

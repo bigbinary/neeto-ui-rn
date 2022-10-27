@@ -8,15 +8,18 @@ import Animated, {
   Easing,
   runOnJS,
 } from "react-native-reanimated";
-import {
-  ActivityIndicator,
-  TouchableWithoutFeedback,
-  Keyboard,
-} from "react-native";
+import { TouchableWithoutFeedback, Keyboard } from "react-native";
 import { ThemeContext } from "styled-components/native";
 import { ScrollView } from "react-native-gesture-handler";
 
-import { Card, Container, Input, Touchable, Typography } from "@components";
+import {
+  Card,
+  Container,
+  Input,
+  Touchable,
+  Typography,
+  Loader,
+} from "@components";
 
 const DropdownItem = ({
   label,
@@ -241,10 +244,7 @@ export const Select = ({
             {selectedOptionLabel || placeholder}
           </Typography>
           {isLoading ? (
-            <ActivityIndicator
-              size="small"
-              color={theme.colors.background.base}
-            />
+            <Loader color={theme.colors.background.base} />
           ) : (
             <Icon
               name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
@@ -305,10 +305,7 @@ export const Select = ({
                   {...createSearchedOptionContainerStyle}
                 >
                   {showCreateOptionLoader ? (
-                    <ActivityIndicator
-                      size="small"
-                      color={theme.colors.background.base}
-                    />
+                    <Loader size="s" color={theme.colors.background.base} />
                   ) : (
                     <Typography
                       fontFamily="sf400"
