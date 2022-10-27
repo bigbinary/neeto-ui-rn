@@ -243,7 +243,7 @@ export const Select = ({
           <Typography fontFamily="sf400" fontSize="s" color="font.grey">
             {selectedOptionLabel || placeholder}
           </Typography>
-          {!isLoading ? (
+          {isLoading ? (
             <Loader color={theme.colors.background.base} />
           ) : (
             <Icon
