@@ -50,13 +50,13 @@ export const Loader = ({ color, size }) => {
   const width = LOADER_WIDTH[size];
   const stroke_width = width * 0.15;
   const radius = (width - stroke_width) / 2;
-  const circleLength = (width / 2) * (2 * Math.PI);
+  const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
     progress.value = withRepeat(
       withTiming(2, {
         duration: 1500,
-        easing: Easing.out(Easing.in),
+        easing: Easing.linear,
       }),
       -1,
       false
@@ -64,11 +64,15 @@ export const Loader = ({ color, size }) => {
   }, []);
 
   const animatedProps = useAnimatedProps(() => ({
-    strokeDashoffset: circleLength * (1 - progress.value),
+    strokeDashoffset: -interpolate(
+      progress.value,
+      [0, 1, 2],
+      [0, circumference, circumference * 2]
+    ),
   }));
 
   const animatedStyles = useAnimatedStyle(() => {
-    const scale = interpolate(progress.value, [0, 2], [0, 360]);
+    const scale = interpolate(progress.value, [0, 2], [0, 420]);
     return {
       width: width,
       height: width,
@@ -88,7 +92,7 @@ export const Loader = ({ color, size }) => {
             r={radius}
             strokeWidth={stroke_width}
             stroke={color}
-            strokeDasharray={circleLength}
+            strokeDasharray={circumference}
             animatedProps={animatedProps}
             strokeLinecap="round"
           />
