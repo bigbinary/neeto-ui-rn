@@ -13,7 +13,7 @@ Storybook: https://neetoui-rn.onrender.com/
 ## Installation
 
 ```
-yarn add @bigbinary/neetoui-rn react-native-svg react-native-webview @shopify/flash-list react-native-reanimated react-native-fast-image
+yarn add @bigbinary/neetoui-rn react-native-svg react-native-webview @shopify/flash-list react-native-reanimated react-native-fast-image react-native-device-info
 ```
 
 Navigate to iOS folder and run:
