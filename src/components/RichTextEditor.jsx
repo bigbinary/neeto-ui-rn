@@ -12,6 +12,8 @@ import { space, flexbox, border, layout } from "styled-system";
 import { Container } from "@components";
 import { useKeyboard } from "@hooks";
 
+import { theme } from "../theme";
+
 export const ScrollView = styled.ScrollView.attrs(() => ({
   keyboardShouldPersistTaps: "handled",
   showsVerticalScrollIndicator: true,
@@ -102,6 +104,7 @@ export const RichTextEditor = ({
           <RichToolbar
             actions={computeToolbarActions()}
             editor={richTextRef}
+            {...RichTextEditor.defaultProps.toolBarProps}
             {...toolBarProps}
           />
         </Container>
@@ -129,7 +132,9 @@ export const RichTextEditor = ({
 
 RichTextEditor.defaultProps = {
   editorProps: {},
-  toolBarProps: {},
+  toolBarProps: {
+    selectedIconTint: theme.buttons.solid.backgroundColor,
+  },
   toolbarWrapperStyle: {},
   placeholderText: "Type here...",
 };
