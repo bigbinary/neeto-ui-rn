@@ -1,6 +1,14 @@
 import { AppRegistry } from "react-native";
-import { name as appName } from "./app.json";
+
+// Loaded Fonts with this approach: https://github.com/oblador/react-native-vector-icons#web-with-webpack
+
 import App from "./App";
+import { name as appName } from "./app.json";
+import sfBold from "./assets/fonts/SFProText-Bold.ttf";
+import sfMedium from "./assets/fonts/SFProText-Medium.ttf";
+import sfRegular from "./assets/fonts/SFProText-Regular.ttf";
+import sfSemiBold from "./assets/fonts/SFProText-Semibold.ttf";
+
 if (module.hot) {
   module.hot.accept();
 }
@@ -9,15 +17,6 @@ AppRegistry.runApplication(appName, {
   initialProps: {},
   rootTag: document.getElementById("app-root"),
 });
-
-// Loaded Fonts with this approach: https://github.com/oblador/react-native-vector-icons#web-with-webpack
-
-
-import sfRegular from "./assets/fonts/SFProText-Regular.ttf";
-import sfMedium from "./assets/fonts/SFProText-Medium.ttf";
-import sfSemiBold from "./assets/fonts/SFProText-Semibold.ttf";
-import sfBold from "./assets/fonts/SFProText-Bold.ttf";
-
 
 const iconFontStyles = `
 @font-face {

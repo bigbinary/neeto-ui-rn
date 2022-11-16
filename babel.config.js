@@ -13,6 +13,7 @@ module.exports = api => {
   if (babelEnv === "production") {
     plugins.push("transform-remove-console");
   }
+
   return {
     presets: ["module:metro-react-native-babel-preset"],
     plugins,

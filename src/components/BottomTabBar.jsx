@@ -1,0 +1,213 @@
+import React, { useContext, useEffect } from "react";
+import { StyleSheet, Platform, TouchableWithoutFeedback } from "react-native";
+
+import PropTypes from "prop-types";
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  interpolate,
+  Extrapolation,
+} from "react-native-reanimated";
+import Icon from "react-native-remix-icon";
+import { ThemeContext } from "styled-components/native";
+
+import { Container, Typography } from "@components";
+
+const TabElement = ({
+  isFocused,
+  onPress,
+  label,
+  tabBarActiveTintColor,
+  tabBarInactiveTintColor,
+  icon,
+  size,
+}) => {
+  const theme = useContext(ThemeContext);
+  const offset = useSharedValue(isFocused ? 1 : 0);
+
+  useEffect(() => {
+    if (isFocused) {
+      offset.value = withTiming(1, { duration: 500 });
+    } else {
+      offset.value = withTiming(0, { duration: 0 });
+    }
+  }, [isFocused]);
+
+  const animatedStyles = useAnimatedStyle(() => ({
+    opacity: interpolate(offset.value, [0, 1], [1, 0], {
+      extrapolateRight: Extrapolation.CLAMP,
+    }),
+  }));
+
+  const animatedStyles2 = useAnimatedStyle(() => ({
+    opacity: interpolate(offset.value, [0, 0.9, 1], [0, 0.5, 1], {
+      extrapolateRight: Extrapolation.CLAMP,
+    }),
+    transform: [
+      {
+        scale: interpolate(offset.value, [0, 0.8, 1], [1, 1.2, 1], {
+          extrapolateRight: Extrapolation.CLAMP,
+        }),
+      },
+    ],
+  }));
+
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      <Container
+        alignItems="center"
+        borderColor="background.grey200"
+        borderTopWidth={1}
+        flex={1}
+      >
+        <Container alignItems="center" height={35} mb={1} width={48}>
+          <Animated.View style={[styles.iconContainer, animatedStyles]}>
+            <Icon color={theme.colors.font.grey500} name={icon} size={size} />
+          </Animated.View>
+          <Animated.View style={[styles.iconContainer, animatedStyles2]}>
+            <Icon color={theme.colors.font.base} name={icon} size={size} />
+          </Animated.View>
+        </Container>
+        <Typography
+          color={isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor}
+          fontFamily="sf500"
+          fontSize="4xs"
+        >
+          {label}
+        </Typography>
+      </Container>
+    </TouchableWithoutFeedback>
+  );
+};
+
+const styles = StyleSheet.create({
+  iconContainer: {
+    position: "absolute",
+    margin: 10,
+  },
+});
+
+/**
+ *
+ * BottomTabBar is animated custom tabbar component which needs to used along with [React Navigation & Bottom Tabs Navigator](https://reactnavigation.org/docs/bottom-tab-navigator/)
+ * <div class="screenshots">
+ *   <img src="screenshots/bottomTabBar/bottomTabBar-1.png" />
+ *   <img src="screenshots/bottomTabBar/bottomTabBar-2.png" />
+ * </div>
+ *
+ *  ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Typography, BottomTabBar  } from '@bigbinary/neetoui-rn';
+ * import { NavigationContainer } from '@react-navigation/native';
+ * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+ * import { ThemeContext } from "styled-components/native";
+ *
+ * const Tab = createBottomTabNavigator();
+ *
+ * const HomeScreen = () => {
+ *  return (
+ *   <Typography fontSize="14px">Home Screen</Typography>
+ *  )
+ * }
+ *
+ * const SettingsScreen = () => {
+ *   return (
+ *     <Typography fontSize="14px">Settings Screen</Typography>
+ *   )
+ * }
+ *
+ * export default function Main() {
+ *  const theme = useContext(ThemeContext);
+ *  return (
+ *    <Tab.Navigator
+ *      screenOptions={{
+ *        tabBarActiveTintColor: theme.colors.background.base,
+ *        tabBarInactiveTintColor: theme.colors.background.grey500,
+ *      }}
+ *      tabBar={props => <BottomTabBar {...props} />}
+ *    >
+ *      <Tab.Screen name="Home" component={HomeScreen}
+ *        options={{
+ *          customTabBarProps: {
+ *            icon: "home-5-line",
+ *            size: 26,
+ *          },
+ *        }}
+ *      />
+ *      <Tab.Screen name="Settings" component={SettingsScreen}
+ *        options={{
+ *          customTabBarProps: {
+ *            icon: "user-3-line",
+ *            size: 26,
+ *          },
+ *        }} />
+ *    </Tab.Navigator>
+ *  );
+ * }
+ * ```
+ *
+ */
+
+export const BottomTabBar = ({ state, descriptors, navigation }) => (
+  <Container
+    bg="background.white"
+    flexDirection="row"
+    height={Platform.OS === "android" ? 63 : 83}
+  >
+    {state.routes.map(({ key, name }, index) => {
+      const { options } = descriptors[key];
+      const isFocused = state.index === index;
+      const { icon, size } = options?.customTabBarProps || {};
+      const { tabBarActiveTintColor, tabBarInactiveTintColor } = options;
+      const onPress = () => {
+        const event = navigation.emit({
+          type: "tabPress",
+          target: key,
+          canPreventDefault: true,
+        });
+
+        if (!isFocused && !event.defaultPrevented) {
+          navigation.navigate({ name, merge: true });
+        }
+      };
+
+      const label =
+        options.tabBarLabel !== undefined
+          ? options.tabBarLabel
+          : options.title !== undefined
+          ? options.title
+          : name;
+
+      return (
+        <TabElement
+          icon={icon}
+          isFocused={isFocused}
+          key={index}
+          label={label}
+          size={size}
+          tabBarActiveTintColor={tabBarActiveTintColor}
+          tabBarInactiveTintColor={tabBarInactiveTintColor}
+          onPress={onPress}
+        />
+      );
+    })}
+  </Container>
+);
+
+TabElement.propTypes = {
+  isFocused: PropTypes.bool,
+  onPress: PropTypes.func,
+  label: PropTypes.string,
+  tabBarActiveTintColor: PropTypes.string,
+  tabBarInactiveTintColor: PropTypes.string,
+  icon: PropTypes.string,
+  size: PropTypes.number,
+};
+
+BottomTabBar.propTypes = {
+  state: PropTypes.object,
+  descriptors: PropTypes.object,
+  navigation: PropTypes.object,
+};

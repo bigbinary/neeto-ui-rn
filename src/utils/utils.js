@@ -10,6 +10,7 @@ const shadowOpacityList = [
 
 export const getShadowStyles = (elevation = 0) => {
   if (elevation > 24) elevation = 24;
+
   return {
     shadowOffset: {
       width: 0,
@@ -17,6 +18,6 @@ export const getShadowStyles = (elevation = 0) => {
     },
     shadowRadius: shadowRadiusList[elevation - 1],
     shadowOpacity: shadowOpacityList[elevation - 1],
-    elevation: elevation,
+    elevation,
   };
 };

@@ -1,6 +1,7 @@
 /* @flow */
 
 import * as React from "react";
+
 import { styled } from "linaria/react";
 import icons from "react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json";
 
@@ -47,10 +48,10 @@ export default class IconsList extends React.Component<{}, State> {
     return (
       <Container>
         <Searchbar
+          placeholder="Find icon by name…"
           type="search"
           value={this.state.query}
           onChange={this._handleInputChange}
-          placeholder="Find icon by name…"
         />
         {searchResults.length ? (
           <Results>
