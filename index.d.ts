@@ -421,6 +421,7 @@ interface ParentViewProps extends ViewProps {
   leftInset?: boolean;
   bottomInset?: boolean;
   shouldDismissKeyboardOnTap?: boolean;
+  onOutsideTap?: () => void;
   backgroundColor?: string;
   bg?: string;
 }
