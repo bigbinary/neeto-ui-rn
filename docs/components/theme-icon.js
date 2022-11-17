@@ -10,30 +10,30 @@ const ThemeIcon = ({ type = "dark" }: Props) => {
   if (type === "dark") {
     return (
       <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="19"
         height="20"
         viewBox="0 0 50 50"
-        width="19"
-        xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M37,4a22,22 0 1,0 0,42a22,22 0 0,1 0-42z"
           fill="none"
           stroke="#000"
-          strokeLinejoin="round"
           strokeWidth="2"
+          strokeLinejoin="round"
+          d="M37,4a22,22 0 1,0 0,42a22,22 0 0,1 0-42z"
         />
       </svg>
     );
   } else if (type === "light") {
     return (
       <svg
-        enableBackground="new 0 0 129 129"
-        fill="orange"
-        height="22"
         version="1.1"
-        viewBox="0 0 130 130"
-        width="23"
         xmlns="http://www.w3.org/2000/svg"
+        width="23"
+        height="22"
+        fill="orange"
+        viewBox="0 0 130 130"
+        enableBackground="new 0 0 129 129"
       >
         <g>
           <g>

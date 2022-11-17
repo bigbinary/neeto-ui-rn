@@ -2,15 +2,13 @@
 /* eslint-disable import/no-commonjs */
 
 import * as React from "react";
+import { styled } from "linaria/react";
+import { Link, Header } from "component-docs/components";
 
 import color from "color";
-import { Link, Header } from "component-docs/components";
-import { styled } from "linaria/react";
-
-import Content from "./components/Content";
-
 import GooglePlayIcon from "../../components/google-play-icon";
 import IphoneIcon from "../../components/iphone-icon";
+import Content from "./components/Content";
 // import GithubIcon from "../../components/github-icon";
 
 const data = [
@@ -18,40 +16,35 @@ const data = [
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-1.png",
-    android:
-      "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+    android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
     ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-2.png",
-    android:
-      "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
     ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-3.png",
-    android:
-      "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
     ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-4.png",
-    android:
-      "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
     ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
   {
     color: "#4557F8",
     name: "neetoInvoice",
     image: "apps/neetoInvoice-5.png",
-    android:
-      "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
+   android: "https://play.google.com/store/apps/details?id=com.bigbinary.mobile.neetoinvoice&hl=en_IN&gl=US",
     ios: "https://apps.apple.com/in/app/neetoinvoice/id1592964241",
   },
 ];
@@ -67,24 +60,23 @@ export default class Home extends React.Component<{}> {
         <Header logo="images/neeto.svg" />
         <Content>
           <h1>
-            neetoUI RN is the component library that drives the experience in
-            all the{" "}
-            <Highlighted href="https://neeto.com/" target="_blank">
+            neetoUI RN is the component library that drives the experience in all the{" "}
+            <Highlighted target="_blank" href="https://neeto.com/">
               neeto
             </Highlighted>{" "}
             react native apps built at{" "}
-            <Highlighted href="https://www.bigbinary.com/" target="_blank">
+            <Highlighted target="_blank" href="https://www.bigbinary.com/">
               BigBinary
             </Highlighted>{" "}
           </h1>
           <Buttons>
-            <Button as={Link} className="primary" to="getting-started">
+            <Button className="primary" as={Link} to="getting-started">
               Get started
             </Button>
             <Button
               href="https://github.com/bigbinary/neeto-ui-rn/"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
             >
               GitHub
             </Button>
@@ -94,11 +86,10 @@ export default class Home extends React.Component<{}> {
               const tintColor = color(item.color).isLight()
                 ? "#000000"
                 : "#FFFFFF";
-
               return (
                 <div key={item.image}>
                   <ImageContainer>
-                    <Image alt="" src={item.image} />
+                    <Image src={item.image} alt="" />
                     <Info style={{ backgroundColor: "#ffffff" }}>
                       <AppName
                         style={{
@@ -110,8 +101,8 @@ export default class Home extends React.Component<{}> {
                       <BadgeContainer>
                         <a
                           href={item.android || null}
-                          rel="noopener noreferrer"
                           target="_blank"
+                          rel="noopener noreferrer"
                           className={
                             item.android ? "anchor-active" : "anchor-inactive"
                           }
@@ -121,8 +112,8 @@ export default class Home extends React.Component<{}> {
                         <Separation />
                         <a
                           href={item.ios || null}
-                          rel="noopener noreferrer"
                           target="_blank"
+                          rel="noopener noreferrer"
                           className={
                             item.ios ? "anchor-active" : "anchor-inactive"
                           }
@@ -247,6 +238,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   display: block;
   max-width: 280px;
+
 `;
 
 const BadgeContainer = styled.div`

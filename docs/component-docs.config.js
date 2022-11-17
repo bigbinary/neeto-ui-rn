@@ -1,7 +1,7 @@
 /* @flow */
 
-import fs from "fs";
 import path from "path";
+import fs from "fs";
 
 const root = path.join(__dirname, "..");
 const dist = path.join(__dirname, "dist");
@@ -30,7 +30,6 @@ function getType(file: string) {
   } else if (file.endsWith(".mdx")) {
     return "mdx";
   }
-
   return "md";
 }
 
@@ -52,11 +51,9 @@ function getPages() {
           .match(/export \{ default \} from .+/);
         if (matches && matches.length) {
           const name = matches[0].split(" ").pop().replace(/('|;)/g, "");
-
           return require.resolve(path.join(__dirname, "../src", line, name));
         }
       }
-
       return file;
     })
     .reduce((acc, file) => {
@@ -75,7 +72,6 @@ function getPages() {
       if (match && match.length) {
         const componentFiles = match.map(line => {
           const fileName = line.split(" ")[2];
-
           return {
             group,
             file: require.resolve(
@@ -96,13 +92,11 @@ function getPages() {
     .sort((a, b) => {
       const nameA = a.file.split("/").pop();
       const nameB = b.file.split("/").pop();
-
       return nameA.localeCompare(nameB);
     })
     .sort((a, b) => {
       const nameA = (a.group || a.file).split("/").pop();
       const nameB = (b.group || b.file).split("/").pop();
-
       return nameA.localeCompare(nameB);
     })
     .map(info => ({ ...info, type: "component" }));
