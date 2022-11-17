@@ -12,7 +12,9 @@ const CalendarStories = {
 export default CalendarStories;
 
 export const Calendars = () => {
-  const [selectedDate, setSelectedDate] = useState(dayjs());
+  const [selectedDate, setSelectedDate] = useState(
+    dayjs().format("YYYY-MM-DD")
+  );
 
   return (
     <Calendar

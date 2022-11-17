@@ -24,7 +24,7 @@ module.exports = (async () => {
     resolver: {
       resolverMainFields: ["sbmodern", "browser", "main"],
       assetExts: assetExts.filter(ext => ext !== "svg"),
-      sourceExts: [...sourceExts, "svg", "jsx", "js"],
+      sourceExts: [...sourceExts, "cjs", "svg", "jsx", "js"],
     },
   };
 })();
