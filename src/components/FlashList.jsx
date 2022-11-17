@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useCallback, useContext, useEffect } from "react";
 import { Dimensions, RefreshControl } from "react-native";
 
@@ -136,6 +135,10 @@ const FadeInFlatList = React.forwardRef(
         </FadeInComponent>
       );
 
+    Item.propTypes = {
+      item: PropTypes.object,
+    };
+
     const renderItem = item =>
       isLoading || item.index < props.placeHolderItemCount ? (
         <Item item={item} />
@@ -175,3 +178,5 @@ FlashList.propTypes = {
   onEndReached: PropTypes.func,
   keyExtractor: PropTypes.func,
 };
+
+FadeInFlatList.propTypes = FlashList.propTypes;
