@@ -17,6 +17,7 @@ export function useKeyboard() {
       "keyboardDidShow",
       onKeyboardDidShow
     );
+
     const keyboardDidHideListener = Keyboard.addListener(
       "keyboardDidHide",
       onKeyboardDidHide

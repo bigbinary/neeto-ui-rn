@@ -117,7 +117,7 @@ const baseTheme = {
 };
 
 //aliases
-baseTheme.lineHeights.note = baseTheme.lineHeights[0] + "px";
+baseTheme.lineHeights.note = `${baseTheme.lineHeights[0]}px`;
 
 export const theme = {
   ...baseTheme,
