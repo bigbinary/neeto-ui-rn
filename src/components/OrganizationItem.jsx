@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import PropTypes from "prop-types";
-import Icon from "react-native-remix-icon";
-import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography } from "@components";
 
@@ -31,60 +29,51 @@ import { Container, Typography } from "@components";
 export const OrganizationItem = ({
   label,
   labelContainerProps,
-  iconContainerProps,
-  iconProps,
   labelProps,
   name,
   nameProps,
+  subdomain,
+  subdomainProps,
   ...rest
-}) => {
-  const theme = useContext(ThemeContext);
-
-  return (
-    <Container
-      bg="background.secondary"
-      borderRadius={6}
-      justifyContent="space-between"
-      px={16}
-      py={12}
-      width="100%"
-      {...rest}
-    >
-      <Container
-        alignItems="center"
-        flexDirection="row"
-        {...labelContainerProps}
-      >
-        <Container mr={9} {...iconContainerProps}>
-          <Icon
-            color={theme.colors.font.grey800}
-            name="building-line"
-            size={20}
-            {...iconProps}
-          />
-        </Container>
-        <Typography
-          color="font.grey800"
-          fontFamily="sf500"
-          fontSize="l"
-          {...labelProps}
-        >
-          {label || "Organization"}
-        </Typography>
-      </Container>
+}) => (
+  <Container
+    bg="background.secondary"
+    borderRadius={6}
+    justifyContent="space-between"
+    px={29}
+    py={12}
+    width="100%"
+    {...rest}
+  >
+    <Container alignItems="center" flexDirection="row" {...labelContainerProps}>
       <Typography
-        color="font.grey"
+        color="font.grey800"
         fontFamily="sf500"
-        fontSize="m"
-        ml={29}
-        mt="8px"
-        {...nameProps}
+        fontSize="s"
+        {...labelProps}
       >
-        {name}
+        {label || "Organization"}
       </Typography>
     </Container>
-  );
-};
+    <Typography
+      color="font.grey"
+      fontFamily="sf500"
+      fontSize="m"
+      mt="8px"
+      {...nameProps}
+    >
+      {name}
+    </Typography>
+    <Typography
+      color="font.grey"
+      fontFamily="sf500"
+      fontSize="m"
+      {...subdomainProps}
+    >
+      {subdomain}
+    </Typography>
+  </Container>
+);
 
 OrganizationItem.propTypes = {
   /**
@@ -95,14 +84,6 @@ OrganizationItem.propTypes = {
    * Customize label container
    */
   labelContainerProps: PropTypes.object,
-  /**
-   * Customize icon container
-   */
-  iconContainerProps: PropTypes.object,
-  /**
-   * Customize icon
-   */
-  iconProps: PropTypes.object,
   /**
    * Customize label
    */
@@ -115,4 +96,12 @@ OrganizationItem.propTypes = {
    * Customize name
    */
   nameProps: PropTypes.object,
+  /**
+   * Subdomain
+   */
+  subdomain: PropTypes.string.isRequired,
+  /**
+   * Customize Subdomain
+   */
+  subdomainProps: PropTypes.object,
 };
