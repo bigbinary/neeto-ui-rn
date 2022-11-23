@@ -40,7 +40,7 @@ export const OrganizationItem = ({
     bg="background.secondary"
     borderRadius={6}
     justifyContent="space-between"
-    px={29}
+    px={12}
     py={12}
     width="100%"
     {...rest}
