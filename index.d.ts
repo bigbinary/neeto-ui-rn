@@ -106,6 +106,7 @@ interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
 
 interface AccordionProps extends ViewProps {
   header?: () => React.ReactNode;
+  headerContainerProps?: TouchableProps;
   noBorder?: boolean;
   onStateChanged?: (isExpanded: boolean) => void;
   iconProp?: {
@@ -183,7 +184,7 @@ interface BottomSheetProps extends ViewProps {
   searchBarProps?: SearchBarProps;
   onBackdropPress?: () => void;
   disabled?: boolean;
-  noResultsLabelContainerStyle?:  ViewProps;
+  noResultsLabelContainerStyle?: ViewProps;
   noResultsLabelStyle?: TextProps;
   noResultsLabel?: string;
   NoResultsComponent?: () => React.ReactNode;
@@ -304,7 +305,7 @@ interface ListItemProps extends ViewProps {
 }
 
 interface LoaderProps extends ViewProps {
-  size?: 's' | 'm' | 'l';
+  size?: "s" | "m" | "l";
   color: typeof theme.colors.background;
 }
 
@@ -363,9 +364,9 @@ interface MultiSelectProps extends ViewProps {
   moreItemLabelContainerStyle?: ViewStyle;
   moreItemLabelStyle?: TextStyle;
   MoreItemComponent?: () => React.ReactNode;
-  onBackdropPress?:  () => void;
+  onBackdropPress?: () => void;
   searchbarProps?: SearchBarProps;
-  confirmationAlertObj?: MultiSelectConfirmationAlertObjProps
+  confirmationAlertObj?: MultiSelectConfirmationAlertObjProps;
 }
 
 type OnBoardingProps = {
@@ -411,7 +412,7 @@ interface PopOverItemNestedItemProps {
 }
 interface PopoverItemProps {
   item?: PopOverItemNestedItemProps;
-  onPress?:  () => void;
+  onPress?: () => void;
   fontFamily?: typeof theme.fonts;
   fontSize?: typeof theme.fontSizes;
 }
@@ -453,8 +454,8 @@ interface SearchBarProps extends ViewProps {
 }
 
 interface SegmentedTopBarStateProps {
-  routes?:  Array<any>; 
-  index?: number
+  routes?: Array<any>;
+  index?: number;
 }
 
 interface NavigationProps {
@@ -468,7 +469,7 @@ interface SegmentedTopBarProps extends MaterialTopTabBarProps {
   inactiveTextStyle?: TouchableProps;
   navigation?: NavigationProps;
   height?: number;
-  descriptors?: object; 
+  descriptors?: object;
 }
 
 interface SelectProps

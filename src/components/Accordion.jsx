@@ -5,13 +5,13 @@ import React, {
   useEffect,
   useImperativeHandle,
 } from "react";
-import { Animated, StyleSheet, TouchableOpacity } from "react-native";
+import { Animated, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { ThemeContext } from "styled-components/native";
 
-import { Container } from "@components";
+import { Container, Touchable } from "@components";
 
 const AccordionBody = ({ isExpanded, children }) => {
   const animationController = useRef(
@@ -99,6 +99,7 @@ export const Accordion = React.forwardRef(
       children,
       position = "bottom",
       shouldShowToggle = true,
+      headerContainerProps,
       ...rest
     },
     ref
@@ -149,12 +150,13 @@ export const Accordion = React.forwardRef(
         {position === "top" && (
           <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
         )}
-        <TouchableOpacity
+        <Touchable
           rippleOpacity={0}
           style={styles.accordionContainer}
           onPress={() => {
             handleAnimation();
           }}
+          {...headerContainerProps}
         >
           {!!header && <Container flexGrow={1}>{header()}</Container>}
           {!!shouldShowToggle && (
@@ -181,7 +183,7 @@ export const Accordion = React.forwardRef(
               </Animated.View>
             </Container>
           )}
-        </TouchableOpacity>
+        </Touchable>
         {position === "bottom" && (
           <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
         )}
@@ -200,6 +202,10 @@ Accordion.propTypes = {
    * Render a component on the header.
    */
   header: PropTypes.func,
+  /**
+   * Customise header container
+   */
+  headerContainerProps: PropTypes.object,
   /**
    * Renders the child component passed in the body of the accordion.
    */
