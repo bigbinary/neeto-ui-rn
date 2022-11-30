@@ -100,16 +100,6 @@ export const RichTextEditor = ({
 
   return (
     <ScrollView {...rest?.editorWrapperStyle}>
-      {showToolbar && (
-        <Container width="100%" {...rest?.toolbarWrapperStyle}>
-          <RichToolbar
-            actions={computeToolbarActions()}
-            editor={richTextRef}
-            {...RichTextEditor.defaultProps.toolBarProps}
-            {...toolBarProps}
-          />
-        </Container>
-      )}
       <RichEditor
         androidLayerType="software"
         autoCapitalize="sentences"
@@ -127,6 +117,16 @@ export const RichTextEditor = ({
         }}
         {...editorProps}
       />
+      {showToolbar && (
+        <Container width="100%" {...rest?.toolbarWrapperStyle}>
+          <RichToolbar
+            actions={computeToolbarActions()}
+            editor={richTextRef}
+            {...RichTextEditor.defaultProps.toolBarProps}
+            {...toolBarProps}
+          />
+        </Container>
+      )}
       {children}
     </ScrollView>
   );

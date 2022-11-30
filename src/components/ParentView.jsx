@@ -80,6 +80,8 @@ export const ParentView = ({
                   keyboardHeight &&
                   e?.target?._internalFiberInstanceHandleDEV?.elementType !==
                     "RNCWebView" &&
+                  e?.target?._internalFiberInstanceHandleDEV?.elementType !==
+                    "RCTImageView" &&
                   e?.target?._internalFiberInstanceHandleDEV?.elementType?.indexOf(
                     "TextInput"
                   ) === -1
@@ -136,7 +138,7 @@ ParentView.propTypes = {
    */
   shouldDismissKeyboardOnTap: PropTypes.bool,
   /**
-   * On tap event handler
+   * On outside tap event handler
    */
   onOutsideTap: PropTypes.func,
 };
