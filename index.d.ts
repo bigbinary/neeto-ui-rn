@@ -437,6 +437,13 @@ interface PopoverItemProps {
   fontSize?: typeof theme.fontSizes;
 }
 
+interface BorderStyle {
+  color?: string;
+  width?: number;
+  radius?: number;
+  style?: "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset" | "none" | "hidden";
+}
+
 type RNPopoverProps = typeof RNPopover.propTypes;
 interface PopoverProps extends RNPopoverProps {
   children?: React.ReactNode;
@@ -461,6 +468,7 @@ type RichTextEditorProps = {
   toolbarActions: Array<string>;
   editorProps?: RichEditorProps;
   toolBarProps?: RichToolbarProps;
+  borderStyle?: BorderStyle;
 };
 
 interface SearchBarProps extends ViewProps {
