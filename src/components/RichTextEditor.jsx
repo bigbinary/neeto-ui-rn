@@ -76,13 +76,14 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
  */
 
 export const RichTextEditor = ({
+  borderStyle,
+  children,
+  editorProps,
   onChange,
   placeholderText,
-  children,
   toolbarActions,
-  editorProps,
-  toolBarProps,
-  borderStyle,
+  toolbarProps,
+  toolbarStyle,
   ...rest
 }) => {
   const richTextRef = useRef();
@@ -103,62 +104,73 @@ export const RichTextEditor = ({
   const combinedEditorProps = {
     ...editorProps,
     containerStyle: {
-      ...{
-        borderWidth: borderStyle.width ?? defaultBorderStyle.width,
-        borderColor: borderStyle.color ?? defaultBorderStyle.color,
-        borderRadius: borderStyle.radius ?? defaultBorderStyle.radius,
-        borderStyle: borderStyle.style ?? defaultBorderStyle.style,
-      },
+      borderRadius: borderStyle.radius ?? defaultBorderStyle.radius,
+      overflow: "hidden",
     },
   };
 
   return (
     <ScrollView {...rest?.editorWrapperStyle}>
-      <RichEditor
-        androidLayerType="software"
-        autoCapitalize="sentences"
-        placeholder={placeholderText}
-        ref={richTextRef}
-        useContainer={false}
-        onChange={onChange}
-        onBlur={() => {
-          setToolbarVisible(false);
-          editorProps?.onBlurFn();
-        }}
-        onFocus={() => {
-          setToolbarVisible(true);
-          editorProps?.onFocusFn();
-        }}
-        {...combinedEditorProps}
-      />
-      {showToolbar && (
-        <Container width="100%" {...rest?.toolbarWrapperStyle}>
+      <Container
+        borderColor={borderStyle.color ?? defaultBorderStyle.color}
+        borderRadius={borderStyle.radius ?? defaultBorderStyle.radius}
+        borderStyle={borderStyle.style ?? defaultBorderStyle.style}
+        borderWidth={borderStyle.width ?? defaultBorderStyle.width}
+        flex={1}
+        pd={8}
+      >
+        <RichEditor
+          androidLayerType="software"
+          placeholder={placeholderText}
+          ref={richTextRef}
+          useContainer={false}
+          onChange={onChange}
+          onBlur={() => {
+            setToolbarVisible(false);
+            editorProps?.onBlurFn();
+          }}
+          onFocus={() => {
+            setToolbarVisible(true);
+            editorProps?.onFocusFn();
+          }}
+          {...combinedEditorProps}
+        />
+        {showToolbar && (
           <RichToolbar
             actions={computeToolbarActions()}
             editor={richTextRef}
-            {...RichTextEditor.defaultProps.toolBarProps}
-            {...toolBarProps}
+            style={{
+              ...RichTextEditor.defaultProps.toolbarStyle,
+              ...toolbarStyle,
+            }}
+            {...RichTextEditor.defaultProps.toolbarProps}
+            {...toolbarProps}
           />
-        </Container>
-      )}
+        )}
+      </Container>
       {children}
     </ScrollView>
   );
 };
 
 RichTextEditor.defaultProps = {
+  placeholderText: "Type here...",
   editorProps: {},
-  toolBarProps: {
-    selectedIconTint: theme.buttons.solid.backgroundColor,
-  },
-  toolbarWrapperStyle: {},
   borderStyle: {
     radius: 8,
     color: "transparent",
     style: "solid",
     width: 1,
   },
-  placeholderText: "Type here...",
+  toolbarProps: {
+    selectedIconTint: theme.buttons.solid.backgroundColor,
+  },
+  toolbarWrapperStyle: {},
+  toolbarStyle: {
+    borderBottomRightRadius: 8,
+    borderBottomLeftRadius: 8,
+    backgroundColor: theme.colors.border.primary,
+  },
 };
 
 RichTextEditor.propTypes = {
@@ -182,11 +194,15 @@ RichTextEditor.propTypes = {
   /**
    * Object which can be used to pass other supported props by the RichToolbar.
    */
-  toolBarProps: PropTypes.object,
+  toolbarProps: PropTypes.object,
   editorWrapperStyle: PropTypes.object,
   toolbarWrapperStyle: PropTypes.object,
   /**
    * Object which can be used to style border of the editor.
    */
   borderStyle: PropTypes.object,
+  /**
+   * Object which can be used to style toolbar container.
+   */
+  toolbarStyle: PropTypes.object,
 };
