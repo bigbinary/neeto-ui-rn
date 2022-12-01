@@ -443,13 +443,14 @@ interface RadioButtonProps extends TouchableProps {
 }
 
 type RichTextEditorProps = {
+  borderStyle?: BorderStyle;
+  children?: React.ReactNode;
+  editorProps?: RichEditorProps;
   onChange: (val: string) => void;
   placeholderText?: string;
-  children?: React.ReactNode;
   toolbarActions: Array<string>;
-  editorProps?: RichEditorProps;
-  toolBarProps?: RichToolbarProps;
-  borderStyle?: BorderStyle;
+  toolbarProps?: RichToolbarProps;
+  toolbarStyle?: ViewStyle;
 };
 
 interface SearchBarProps extends ViewProps {

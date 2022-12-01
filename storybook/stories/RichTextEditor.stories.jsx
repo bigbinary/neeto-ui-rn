@@ -10,6 +10,8 @@ const RichTextEditorStories = {
 export default RichTextEditorStories;
 
 export const RichTextEditorComponent = () => {
+  const toolbarProps = {};
+  const toolbarStyle = {};
   const editorProps = {
     initialContentHTML: "Rich Text Component...",
     initialFocus: true,
@@ -17,8 +19,6 @@ export const RichTextEditorComponent = () => {
       color: theme.colors.font.grey,
     },
   };
-
-  const toolBarProps = {};
 
   const toolbarWrapperStyle = {
     bottom: 0,
@@ -33,7 +33,8 @@ export const RichTextEditorComponent = () => {
       <RichTextEditor
         borderStyle={borderStyle}
         editorProps={editorProps}
-        toolBarProps={toolBarProps}
+        toolbarProps={toolbarProps}
+        toolbarStyle={toolbarStyle}
         toolbarWrapperStyle={toolbarWrapperStyle}
         toolbarActions={[
           "keyboard",
