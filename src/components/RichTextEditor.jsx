@@ -81,12 +81,14 @@ export const RichTextEditor = ({
   toolbarActions,
   editorProps,
   toolBarProps,
+  borderStyle,
   ...rest
 }) => {
   const richTextRef = useRef();
   const keyboardHeight = useKeyboard();
   const [toolbarVisible, setToolbarVisible] = useState(false);
   const showToolbar = keyboardHeight > 0 && toolbarVisible;
+  const defaultBorderStyle = RichTextEditor.defaultProps.borderStyle;
 
   const computeToolbarActions = () => {
     const actionItems = [];
@@ -95,6 +97,18 @@ export const RichTextEditor = ({
     });
 
     return actionItems;
+  };
+
+  const combinedEditorProps = {
+    ...editorProps,
+    containerStyle: {
+      ...{
+        borderWidth: borderStyle.width ?? defaultBorderStyle.width,
+        borderColor: borderStyle.color ?? defaultBorderStyle.color,
+        borderRadius: borderStyle.radius ?? defaultBorderStyle.radius,
+        borderStyle: borderStyle.style ?? defaultBorderStyle.style,
+      },
+    },
   };
 
   return (
@@ -113,7 +127,7 @@ export const RichTextEditor = ({
           setToolbarVisible(true);
           editorProps?.onFocusFn();
         }}
-        {...editorProps}
+        {...combinedEditorProps}
       />
       {showToolbar && (
         <Container width="100%" {...rest?.toolbarWrapperStyle}>
@@ -136,6 +150,12 @@ RichTextEditor.defaultProps = {
     selectedIconTint: theme.buttons.solid.backgroundColor,
   },
   toolbarWrapperStyle: {},
+  borderStyle: {
+    radius: 8,
+    color: "transparent",
+    style: "solid",
+    width: 1,
+  },
   placeholderText: "Type here...",
 };
 
@@ -163,4 +183,8 @@ RichTextEditor.propTypes = {
   toolBarProps: PropTypes.object,
   editorWrapperStyle: PropTypes.object,
   toolbarWrapperStyle: PropTypes.object,
+  /**
+   * Object which can be used to style border of the editor.
+   */
+  borderStyle: PropTypes.object,
 };

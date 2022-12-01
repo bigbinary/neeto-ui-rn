@@ -17,14 +17,21 @@ export const RichTextEditorComponent = () => {
       color: theme.colors.font.grey,
     },
   };
+
   const toolBarProps = {};
+
   const toolbarWrapperStyle = {
     bottom: 0,
+  };
+
+  const borderStyle = {
+    color: theme.colors.border.primary,
   };
 
   return (
     <Container flex={1}>
       <RichTextEditor
+        borderStyle={borderStyle}
         editorProps={editorProps}
         toolBarProps={toolBarProps}
         toolbarWrapperStyle={toolbarWrapperStyle}
