@@ -9,6 +9,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   flexbox,
@@ -82,19 +83,19 @@ const MultiSelectItem = ({
     <Container
       alignItems="center"
       bg="background.secondary"
-      borderRadius={12}
+      borderRadius={moderateScale(12)}
       flexDirection="row"
       justifyContent="space-between"
-      m={1}
-      px={2}
-      py={1}
+      m={moderateScale(1)}
+      px={moderateScale(2)}
+      py={moderateScale(1)}
       {...multiSelectedItemContainerStyle}
     >
       <Typography
         color="font.grey800"
         fontFamily="sf400"
         fontSize="s"
-        mr={2}
+        mr={moderateScale(2)}
         {...multiSelectedItemLabelStyle}
       >
         {label}
@@ -235,16 +236,18 @@ export const MultiSelect = ({
   const isOptionsEmpty = !options || options?.length === 0;
   const isSearchedOptionsEmpty =
     searchQuery.length > 0 && filteredOptions.length === 0;
-  const emptyOptionsPlaceholderHeight = 40;
-  const emptySearchedOptionsHeight = 40;
-  const searchInputHeight = 35;
+  const emptyOptionsPlaceholderHeight = moderateScale(40);
+  const emptySearchedOptionsHeight = moderateScale(40);
+  const searchInputHeight = moderateScale(35);
   const multipleOptionsSelected = value?.length > 0;
-  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
+  const defaultDropdownItemHeight =
+    itemContainerStyle?.height || moderateScale(32);
+
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
     defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
-      (isSearchable ? searchInputHeight + 10 : 0) +
+      (isSearchable ? searchInputHeight + moderateScale(10) : 0) +
       (isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption)
         ? emptyOptionsPlaceholderHeight
         : 0) +
@@ -278,7 +281,7 @@ export const MultiSelect = ({
     );
 
     return (
-      <Container py={12}>
+      <Container py={moderateScale(12)}>
         <CheckBox
           checked={itemIndex !== -1}
           disabled={disabled}
@@ -344,11 +347,11 @@ export const MultiSelect = ({
       >
         <Container
           borderColor={showDropdown ? "border.base" : "border.grey400"}
-          borderRadius={12}
-          borderWidth={1}
-          minHeight={58}
-          p={2}
-          pr={2}
+          borderRadius={moderateScale(12)}
+          borderWidth={moderateScale(1)}
+          minHeight={moderateScale(58)}
+          p={moderateScale(2)}
+          pr={moderateScale(2)}
           {...inputContainerStyle}
           {...rest}
         >
@@ -359,8 +362,11 @@ export const MultiSelect = ({
           >
             <AnimatedLabel
               position="absolute"
-              style={[animatedStyles, { marginLeft: 5, ...labelStyle }]}
-              zIndex={1}
+              zIndex={moderateScale(1)}
+              style={[
+                animatedStyles,
+                { marginLeft: moderateScale(5), ...labelStyle },
+              ]}
             >
               {label}
             </AnimatedLabel>
@@ -370,7 +376,7 @@ export const MultiSelect = ({
                 flexDirection="row"
                 flexWrap="wrap"
                 maxWidth="85%"
-                mt={3}
+                mt={moderateScale(3)}
                 onStartShouldSetResponder={() => true}
               >
                 {value?.slice(0, maxItemSize).map((item, index) => (
@@ -391,12 +397,12 @@ export const MultiSelect = ({
                     <Container
                       alignItems="center"
                       bg="background.secondary"
-                      borderRadius={12}
+                      borderRadius={moderateScale(12)}
                       flexDirection="row"
                       justifyContent="space-between"
-                      m={1}
-                      px={2}
-                      py={1}
+                      m={moderateScale(1)}
+                      px={moderateScale(2)}
+                      py={moderateScale(1)}
                       {...moreItemLabelContainerStyle}
                     >
                       <Typography {...moreItemLabelStyle}>
@@ -408,14 +414,14 @@ export const MultiSelect = ({
                   ))}
               </Container>
             )}
-            <Container mt={10}>
+            <Container mt={moderateScale(10)}>
               {isLoading ? (
                 <Loader color={theme.colors.background.base} />
               ) : (
                 <Icon
                   color="grey"
                   name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                  size="20"
+                  size={moderateScale(20)}
                 />
               )}
             </Container>

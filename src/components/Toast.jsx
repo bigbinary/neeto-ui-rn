@@ -5,6 +5,7 @@ import { useWindowDimensions } from "react-native";
 import PropTypes from "prop-types";
 import DeviceInfo from "react-native-device-info";
 import CloseIcon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import T from "react-native-toast-message";
 import { ThemeContext } from "styled-components/native";
 
@@ -37,25 +38,25 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
     <Container
       alignItems="center"
       bg={theme.colors.background.secondary}
-      borderRadius={16}
+      borderRadius={moderateScale(16)}
       flexDirection="row"
-      minHeight={60}
-      mt={DeviceInfo.hasDynamicIsland() ? 10 : 0}
-      mx={10}
-      px={10}
+      minHeight={moderateScale(60)}
+      mt={DeviceInfo.hasDynamicIsland() ? moderateScale(10) : 0}
+      mx={moderateScale(10)}
+      px={moderateScale(10)}
       width={width - 20}
     >
       <Container
         alignItems="center"
         bg={theme.colors.toast[type]}
-        borderRadius={10}
-        height={42}
+        borderRadius={moderateScale(10)}
+        height={moderateScale(42)}
         justifyContent="center"
-        width={42}
+        width={moderateScale(42)}
       >
         <Icon />
       </Container>
-      <Container flex={1} ml={10} py={3}>
+      <Container flex={1} ml={moderateScale(10)} py={moderateScale(3)}>
         {text1 && (
           <Typography
             fontColor={theme.colors.font.primary}
@@ -77,10 +78,10 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
       </Container>
       <Touchable
         hitSlop={{
-          top: 5,
-          right: 5,
-          bottom: 5,
-          left: 5,
+          top: moderateScale(5),
+          right: moderateScale(5),
+          bottom: moderateScale(5),
+          left: moderateScale(5),
         }}
         onPress={hide}
       >
@@ -122,6 +123,8 @@ ToastComponent.propTypes = {
  *
  *
  *import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  *import { Toast, Container, Button } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {

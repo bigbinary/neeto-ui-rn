@@ -2,6 +2,7 @@ import * as React from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Touchable } from "@components";
 import { theme } from "@theme";
@@ -49,17 +50,17 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: theme.colors.background.grey800,
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: moderateScale(0),
+      height: moderateScale(2),
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    shadowOpacity: moderateScale(0.25),
+    shadowRadius: moderateScale(3.84),
+    elevation: moderateScale(5),
   };
 
   let style = rest.style || {};
   if (disabled) {
-    style = { ...style, opacity: 0.5 };
+    style = { ...style, opacity: moderateScale(0.5) };
   }
 
   return (
@@ -79,10 +80,10 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
 
 FAB.defaultProps = {
   variant: "solid",
-  size: 56,
+  size: moderateScale(56),
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: 28,
+  borderRadius: moderateScale(28),
 };
 
 FAB.propTypes = {

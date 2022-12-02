@@ -9,6 +9,7 @@ import { Animated, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   buttonStyle,
@@ -82,10 +83,10 @@ const AccordionBody = ({ isExpanded, children }) => {
  *     <Accordion
  *         header={() => (
  *           <Container flexDirection="row" alignItems="center">
- *             <Typography bg="#00BA8829" color="font.primary" p={1}>
+ *             <Typography bg="#00BA8829" color="font.primary" p={moderateScale(1)}>
  *               Open
  *             </Typography>
- *             <Typography px={2}>Low</Typography>
+ *             <Typography px={moderateScale(2)}>Low</Typography>
  *           </Container>
  *         )}
  *         iconProp={{
@@ -95,7 +96,7 @@ const AccordionBody = ({ isExpanded, children }) => {
  *           iconColor: theme.colors.font.danger,
  *         }}
  *       >
- *         <Container my={2} p={3} bg="background.grey100" borderRadius={8}>
+ *         <Container my={moderateScale(2)} p={moderateScale(3)} bg="background.grey100" borderRadius={moderateScale(8)}>
  *           <Typography color="font.primary">Body Content</Typography>
  *         </Container>
  *       </Accordion>
@@ -157,10 +158,10 @@ export const Accordion = React.forwardRef(
       <Container
         {...(!noBorder && {
           borderColor: "border.grey400",
-          borderWidth: 1,
-          borderRadius: 8,
+          borderWidth: moderateScale(1),
+          borderRadius: moderateScale(8),
         })}
-        padding={12}
+        padding={moderateScale(12)}
         width="100%"
         {...rest}
       >
@@ -180,7 +181,7 @@ export const Accordion = React.forwardRef(
               alignItems="center"
               flexDirection="row"
               justifyContent="center"
-              px={1}
+              px={moderateScale(1)}
             >
               {Label && <Label />}
               <Animated.View
@@ -193,7 +194,7 @@ export const Accordion = React.forwardRef(
                   <Icon
                     color={color ?? theme.colors.font.grey700}
                     name={name ?? "ri-arrow-down-s-line"}
-                    size={size ?? 24}
+                    size={size ?? moderateScale(24)}
                   />
                 </Container>
               </Animated.View>
@@ -219,7 +220,7 @@ Accordion.propTypes = {
    */
   header: PropTypes.func,
   /**
-   * Customise header container
+   * Customize header container
    */
   headerContainerProps: PropTypes.object,
   /**

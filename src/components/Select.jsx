@@ -11,6 +11,7 @@ import Animated, {
   runOnJS,
 } from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import {
@@ -36,7 +37,7 @@ const DropdownItem = ({
     <Container
       bg={isSelectedItem ? "background.base" : "background.white"}
       height={defaultDropdownItemHeight}
-      p={2}
+      p={moderateScale(2)}
       {...itemContainerStyle}
       {...(isSelectedItem && selectedItemContainerStyle)}
     >
@@ -154,15 +155,18 @@ export const Select = ({
   const isOptionsEmpty = !options || options?.length === 0;
   const isSearchedOptionsEmpty =
     searchQuery.length > 0 && filteredOptions.length === 0;
-  const emptyOptionsPlaceholderHeight = 40;
-  const emptySearchedOptionsHeight = 40;
-  const searchInputHeight = 35;
-  const defaultDropdownItemHeight = itemContainerStyle?.height || 32;
+  const emptyOptionsPlaceholderHeight = moderateScale(40);
+  const emptySearchedOptionsHeight = moderateScale(40);
+  const searchInputHeight = moderateScale(35);
+  const defaultDropdownItemHeight =
+    itemContainerStyle?.height || moderateScale(32);
+
   const dropdownHeight =
     dropdownContainerStyle?.height ||
     dropdownContainerStyle?.maxHeight ||
-    defaultDropdownItemHeight * Math.min(filteredOptions?.length, 6) +
-      (isSearchable ? searchInputHeight + 10 : 0) +
+    defaultDropdownItemHeight *
+      Math.min(filteredOptions?.length, moderateScale(6)) +
+      (isSearchable ? searchInputHeight + moderateScale(10) : 0) +
       (isOptionsEmpty && !(isSearchedOptionsEmpty && showCreateOption)
         ? emptyOptionsPlaceholderHeight
         : 0) +
@@ -224,7 +228,7 @@ export const Select = ({
         color="font.base"
         fontFamily="sf400"
         fontSize="s"
-        mb={1}
+        mb={moderateScale(1)}
         {...labelStyle}
       >
         {label}
@@ -236,10 +240,10 @@ export const Select = ({
         <Container
           alignItems="center"
           borderColor="border.grey400"
-          borderWidth={1}
+          borderWidth={moderateScale(1)}
           flexDirection="row"
           justifyContent="space-between"
-          p={2}
+          p={moderateScale(2)}
           {...inputContainerStyle}
           {...rest}
         >
@@ -263,12 +267,12 @@ export const Select = ({
             <Card
               bg="background.white"
               borderColor="border.grey400"
-              borderWidth={1}
+              borderWidth={moderateScale(1)}
               maxHeight={dropdownHeight}
               {...dropdownContainerStyle}
             >
               {isSearchable && (
-                <Container p={1} {...searchInputContainerStyle}>
+                <Container p={moderateScale(1)} {...searchInputContainerStyle}>
                   <Input
                     fontSize="s"
                     placeholder="Search"
@@ -321,7 +325,7 @@ export const Select = ({
                 </Touchable>
               )}
               {/* Animation not working without this hidden input */}
-              <Container height={0}>
+              <Container height={moderateScale(0)}>
                 <Input />
               </Container>
               <ScrollView>
@@ -417,59 +421,59 @@ Select.propTypes = {
    */
   onPressCreateOption: PropTypes.func,
   /**
-   * To customise floating label styles.
+   * To customize floating label styles.
    */
   labelStyle: PropTypes.object,
   /**
-   * To customise outermost container style.
+   * To customize outermost container style.
    */
   containerStyle: PropTypes.object,
   /**
-   * To customise Select input container styles.
+   * To customize Select input container styles.
    */
   inputContainerStyle: PropTypes.object,
   /**
-   * To customise dropdown container styles.
+   * To customize dropdown container styles.
    */
   dropdownContainerStyle: PropTypes.object,
   /**
-   * To customise dropdown item container styles.
+   * To customize dropdown item container styles.
    */
   itemContainerStyle: PropTypes.object,
   /**
-   * To customise dropdown item text styles.
+   * To customize dropdown item text styles.
    */
   itemLabelStyle: PropTypes.object,
   /**
-   * To customise dropdown item container styles for selected item.
+   * To customize dropdown item container styles for selected item.
    */
   selectedItemContainerStyle: PropTypes.object,
   /**
-   * To customise dropdown item text styles for selected item.
+   * To customize dropdown item text styles for selected item.
    */
   selectedItemLabelStyle: PropTypes.object,
   /**
-   * To customise search input containerr style.
+   * To customize search input containerr style.
    */
   searchInputContainerStyle: PropTypes.object,
   /**
-   * To customise search input style.
+   * To customize search input style.
    */
   searchInputStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder container style.
+   * To customize empty options placeholder container style.
    */
   emptyOptionsContainerStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder text style.
+   * To customize empty options placeholder text style.
    */
   emptyOptionsLabelStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder container style.
+   * To customize empty options placeholder container style.
    */
   createSearchedOptionContainerStyle: PropTypes.object,
   /**
-   * To customise empty options placeholder text style.
+   * To customize empty options placeholder text style.
    */
   createSearchedOptionLabelStyle: PropTypes.object,
 };

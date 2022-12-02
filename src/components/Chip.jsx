@@ -2,6 +2,7 @@ import * as React from "react";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Touchable } from "@components";
 
@@ -67,23 +68,23 @@ export const Chip = ({
 }) => (
   <Touchable
     alignItems="center"
-    borderRadius={20}
+    borderRadius={moderateScale(20)}
     disabled={!onChipPress || isDisabled}
     flexDirection="row"
-    p={2}
+    p={moderateScale(2)}
     onPress={onChipPress}
     {...(variant && variantStyleObj[variant])}
     {...(isDisabled && { opacity: 0.5 })}
     {...containerStyle}
   >
     {LeftIcon && <LeftIcon />}
-    <Typography color={labelColor} fontFamily="sf400" mx={2}>
+    <Typography color={labelColor} fontFamily="sf400" mx={moderateScale(2)}>
       {label}
     </Typography>
     {onClose && (
       <Touchable
         bg={closeIconBackground}
-        borderRadius={10}
+        borderRadius={moderateScale(10)}
         disabled={isDisabled}
         onPress={onClose}
         {...closeIconContainerStyle}
@@ -100,7 +101,7 @@ Chip.defaultProps = {
   closeIconBackground: "background.grey500",
   closeIconColor: "white",
   isDisabled: false,
-  closeIconSize: 14,
+  closeIconSize: moderateScale(14),
   closeIcon: "ri-close-fill",
 };
 

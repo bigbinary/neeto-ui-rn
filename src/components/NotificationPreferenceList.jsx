@@ -1,6 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Container, Typography, Divider, ToggleSwitch } from "@components";
 
@@ -57,7 +58,7 @@ import { Container, Typography, Divider, ToggleSwitch } from "@components";
  *        LeftIcon: () => (
  *          <Icon
  *            name="ri-notification-2-line"
- *            size={20}
+ *            size={moderateScale(20)}
  *            color={theme.colors.font.secondary}
  *          />
  *        ),
@@ -83,29 +84,33 @@ export const NotificationPreferenceList = ({
   labelProps,
   ...rest
 }) => (
-  <Container bg="background.secondary" borderRadius={8} {...rest}>
+  <Container
+    bg="background.secondary"
+    borderRadius={moderateScale(8)}
+    {...rest}
+  >
     {data?.map((item, index) => {
       const { label, enabled, onSwitch, LeftIcon } = item;
       const isLastItem = index === data.length - 1;
 
       return (
-        <Container key={index} px={12} {...itemWrapperProps}>
+        <Container key={index} px={moderateScale(12)} {...itemWrapperProps}>
           <Container
             alignItems="center"
             flexDirection="row"
             justifyContent="space-between"
-            py={15}
+            py={moderateScale(15)}
             {...itemContainerProps}
           >
             <Container
               alignItems="center"
               flexDirection="row"
-              pr={15}
+              pr={moderateScale(15)}
               width="85%"
               {...labelContainerProps}
             >
               {LeftIcon && (
-                <Container mr={10}>
+                <Container mr={moderateScale(10)}>
                   <LeftIcon />
                 </Container>
               )}
@@ -119,7 +124,7 @@ export const NotificationPreferenceList = ({
               </Typography>
             </Container>
             <ToggleSwitch
-              mt={4}
+              mt={moderateScale(4)}
               value={enabled}
               onValueChange={() => onSwitch(item, index)}
             />

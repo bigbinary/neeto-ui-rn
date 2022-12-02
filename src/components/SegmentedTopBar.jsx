@@ -7,6 +7,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Touchable } from "@components";
 import { theme } from "@theme";
@@ -15,11 +16,11 @@ const defaultShadowStyle = {
   shadowColor: theme.colors.background.grey800,
   shadowOffset: {
     width: 0,
-    height: 2,
+    height: moderateScale(2),
   },
-  shadowOpacity: 0.23,
-  shadowRadius: 2.62,
-  elevation: 4,
+  shadowOpacity: moderateScale(0.23),
+  shadowRadius: moderateScale(2.62),
+  elevation: moderateScale(4),
 };
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
@@ -33,7 +34,7 @@ const DEFAULT_SPRING_CONFIG = {
 };
 
 // So that it stretches in landscape mode.
-const width = Dimensions.get("screen").width - 32;
+const width = Dimensions.get("screen").width - moderateScale(32);
 
 /**
  *
@@ -109,7 +110,7 @@ export const SegmentedTopBar = ({
           defaultShadowStyle,
           StyleSheet.absoluteFill,
           {
-            width: (width - 4) / routes?.length,
+            width: (width - moderateScale(4)) / routes?.length,
           },
           tabTranslateAnimatedStyles,
         ]}
@@ -128,7 +129,7 @@ export const SegmentedTopBar = ({
         return (
           <Touchable
             alignItems="center"
-            elevation={Platform.OS === "android" ? 9 : null}
+            elevation={Platform.OS === "android" ? moderateScale(9) : null}
             flex={1}
             height={height}
             justifyContent="center"
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 8,
+    borderRadius: moderateScale(8),
     width,
   },
   defaultSegmentedControlWrapper: {
@@ -164,16 +165,16 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 8,
+    borderRadius: moderateScale(8),
     backgroundColor: "#F6F6FA",
     width,
-    marginBottom: 5,
+    marginBottom: moderateScale(5),
   },
   movingSegmentStyle: {
-    top: 0,
-    marginVertical: 2,
-    marginHorizontal: 2,
-    borderRadius: 6,
+    top: moderateScale(0),
+    marginVertical: moderateScale(2),
+    marginHorizontal: moderateScale(2),
+    borderRadius: moderateScale(6),
     backgroundColor: "#FFFFFF",
   },
 });
@@ -206,5 +207,5 @@ SegmentedTopBar.propTypes = {
 
 SegmentedTopBar.defaultProps = {
   tabs: [],
-  height: 32,
+  height: moderateScale(32),
 };

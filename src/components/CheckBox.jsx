@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import Proptypes from "prop-types";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography, Touchable } from "@components";
@@ -25,6 +26,8 @@ import { Container, Typography, Touchable } from "@components";
  *  ## Usage
  * ```js
  * import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  * import { Container, CheckBox } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
@@ -33,18 +36,18 @@ import { Container, Typography, Touchable } from "@components";
  *  return (
  *    <Container>
  *      <CheckBox
- *        mt={2}
+ *        mt={moderateScale(2)}
  *        checked={checked1}
  *        onSelect={() => setChecked1(prev => !prev)}
  *        label={`Checkbox marked as ${!checked1 ? "un" : ""}checked`}
  *      />
  *      <CheckBox
- *        mt={3}
+ *        mt={moderateScale(3)}
  *        checked={checked2}
  *        onSelect={() => setChecked2(prev => !prev)}
  *        label={`Checkbox marked as ${!checked2 ? "un" : ""}checked`}
  *      />
- *      <CheckBox mt={3} disabled label="Disabled checkbox" />
+ *      <CheckBox mt={moderateScale(3)} disabled label="Disabled checkbox" />
  *    </Container>
  *  );
  * }
@@ -80,7 +83,7 @@ export const CheckBox = ({
 
   const unCheckedProps = {
     bg: theme.colors.background.white,
-    borderWidth: 1,
+    borderWidth: moderateScale(1),
     borderColor: theme.colors.border.secondary,
     labelProps: {
       fontFamily: theme.fonts.sf400,
@@ -99,10 +102,10 @@ export const CheckBox = ({
     >
       <Container
         alignItems="center"
-        borderRadius={3}
-        height={16}
+        borderRadius={moderateScale(3)}
+        height={moderateScale(16)}
         justifyContent="center"
-        width={16}
+        width={moderateScale(16)}
         {...(!checked && unCheckedProps)}
         {...(checked && checkedProps)}
         {...(disabled && disabledProps)}
@@ -112,7 +115,7 @@ export const CheckBox = ({
           <Icon
             color={theme.colors.font.white}
             name="ri-check-line"
-            size={14}
+            size={moderateScale(14)}
             {...checkIconStyle}
           />
         )}
@@ -120,7 +123,7 @@ export const CheckBox = ({
       <Typography
         flex={1}
         fontSize="m"
-        ml={2}
+        ml={moderateScale(2)}
         {...(checked && checkedProps.labelProps)}
         {...(!checked && unCheckedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

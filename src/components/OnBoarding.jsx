@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Button, Carousel, Container, Typography } from "@components";
 
@@ -24,6 +25,8 @@ import { Button, Carousel, Container, Typography } from "@components";
  *  ## Usage
  * ```js
  * import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  * import { OnBoarding } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
@@ -47,7 +50,7 @@ export const OnBoarding = ({
   appLogo: AppLogo,
   slides,
   onComplete,
-  logoWidth = 150,
+  logoWidth = moderateScale(150),
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onBoardingRef = useRef();
@@ -62,10 +65,18 @@ export const OnBoarding = ({
   const renderItem = ({ item }) => (
     <Container flex={1} justifyContent="space-between">
       <Container />
-      <Container alignItems="center" mx={24} my={12}>
+      <Container
+        alignItems="center"
+        mx={moderateScale(24)}
+        my={moderateScale(12)}
+      >
         {item.illustration}
       </Container>
-      <Container alignItems="center" mx={24} my={12}>
+      <Container
+        alignItems="center"
+        mx={moderateScale(24)}
+        my={moderateScale(12)}
+      >
         <Typography color="font.grey800" fontFamily="sf700" fontSize="4xl">
           {item.title}
         </Typography>
@@ -96,7 +107,10 @@ export const OnBoarding = ({
           }}
         />
       </Container>
-      <Container mb={Platform.OS === "android" ? 10 : 0} mx={24}>
+      <Container
+        mb={Platform.OS === "android" ? moderateScale(10) : 0}
+        mx={moderateScale(24)}
+      >
         <Button
           label={activeIndex !== slides.length - 1 ? "Next" : "Get Started"}
           onPress={handleOnPress}

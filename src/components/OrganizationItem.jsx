@@ -1,6 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Container, Typography } from "@components";
 
@@ -38,10 +39,10 @@ export const OrganizationItem = ({
 }) => (
   <Container
     bg="background.secondary"
-    borderRadius={6}
+    borderRadius={moderateScale(6)}
     justifyContent="space-between"
-    px={12}
-    py={12}
+    px={moderateScale(12)}
+    py={moderateScale(12)}
     width="100%"
     {...rest}
   >

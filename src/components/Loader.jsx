@@ -10,6 +10,7 @@ import Animated, {
   useAnimatedStyle,
   interpolate,
 } from "react-native-reanimated";
+import { moderateScale } from "react-native-size-matters";
 import Svg, { Circle } from "react-native-svg";
 
 import { Container } from "@components";
@@ -17,9 +18,9 @@ import { theme } from "@theme";
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const LOADER_WIDTH = {
-  s: 24,
-  m: 36,
-  l: 48,
+  s: moderateScale(24),
+  m: moderateScale(36),
+  l: moderateScale(48),
 };
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);

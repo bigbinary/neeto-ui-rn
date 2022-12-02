@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   flexbox,
@@ -147,7 +148,7 @@ export const Input = ({
       inputRef.current &&
       inputRef.current.setNativeProps({
         style: {
-          top: isFocused ? 10 : 0,
+          top: isFocused ? moderateScale(10) : moderateScale(0),
         },
       });
   };
@@ -160,18 +161,18 @@ export const Input = ({
           : isFocused
           ? colors.border.purple500
           : colors.border.grey400,
-        borderWidth: errorMessage || isFocused ? 1.5 : 1,
+        borderWidth: errorMessage || isFocused ? 1.5 : moderateScale(1),
       });
   }, []);
 
   const labelStyles = {
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [17, 13],
+      outputRange: [moderateScale(17), moderateScale(13)],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [14, 6],
+      outputRange: [moderateScale(14), moderateScale(6)],
     }),
   };
 
@@ -195,27 +196,27 @@ export const Input = ({
         <View
           alignItems="center"
           borderColor={errorMessage ? "border.danger" : "border.grey400"}
-          borderRadius={8}
-          borderWidth={noBorder ? 0 : 1}
+          borderRadius={moderateScale(8)}
+          borderWidth={noBorder ? 0 : moderateScale(1)}
           flexDirection="row"
           justifyContent="space-between"
           ref={containerRef}
-          {...(!rest.inputProps?.multiline && { height: 58 })}
+          {...(!rest.inputProps?.multiline && { height: moderateScale(58) })}
           overflow="hidden"
           {...containerProps}
         >
           {!!PrefixIcon && (
-            <View pl={2}>
+            <View pl={moderateScale(2)}>
               <PrefixIcon />
             </View>
           )}
-          <View flex={1} left={10}>
+          <View flex={1} left={moderateScale(10)}>
             {!!label && (
               <AnimatedLabel
                 color={disabled ? "font.grey400" : "font.grey600"}
                 position="absolute"
                 style={labelStyles}
-                zIndex={1}
+                zIndex={moderateScale(1)}
               >
                 {label}
               </AnimatedLabel>
@@ -225,18 +226,18 @@ export const Input = ({
               autoFocus={autoFocus}
               color={disabled ? "font.grey500" : "font.primary"}
               editable={!disabled}
-              fontSize={17}
+              fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
-              mt={10}
-              pb={3}
-              pr={3}
-              pt={1}
+              mt={moderateScale(10)}
+              pb={moderateScale(3)}
+              pr={moderateScale(3)}
+              pt={moderateScale(1)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
-              top={0}
+              top={moderateScale(0)}
               value={value}
-              zIndex={2}
+              zIndex={moderateScale(2)}
               onChangeText={onChangeText}
               onBlur={() => {
                 onBlur();
@@ -256,15 +257,15 @@ export const Input = ({
                     bg="background.white"
                     flexDirection="row"
                     justifyContent="flex-end"
-                    p={2}
-                    pr={20}
+                    p={moderateScale(2)}
+                    pr={moderateScale(20)}
                     width={width}
                   >
                     <Button
-                      height={30}
+                      height={moderateScale(30)}
                       label="Done"
                       labelStyle={styles.doneButtonStyle}
-                      left={10}
+                      left={moderateScale(10)}
                       variant="text"
                       onPress={() => {
                         Keyboard.dismiss();
@@ -275,14 +276,14 @@ export const Input = ({
               )}
           </View>
           {!!SuffixIcon && (
-            <View px={2}>
+            <View px={moderateScale(2)}>
               <SuffixIcon />
             </View>
           )}
         </View>
       </TouchableWithoutFeedback>
       {!!errorMessage && (
-        <Typography color="font.danger" pt={2}>
+        <Typography color="font.danger" pt={moderateScale(2)}>
           {errorMessage}
         </Typography>
       )}

@@ -1,6 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Container } from "@components";
 
@@ -29,7 +30,7 @@ import { Typography, Container } from "@components";
  *    <Container>
  *       <Badge
  *          content="test"
- *          size={32}
+ *          size={moderateScale(32)}
  *          fontSize="12px"
  *          badgeColor="background.secondary"
  *          color="font.secondary"
@@ -44,7 +45,7 @@ import { Typography, Container } from "@components";
 export const Badge = ({
   badgeColor = "background.base",
   content,
-  size = 21,
+  size = moderateScale(21),
   fontSize = "xs",
   fontFamily = "sf400",
   color = "font.white",
@@ -54,10 +55,10 @@ export const Badge = ({
     <Container
       alignItems="center"
       bg={badgeColor}
-      borderRadius={15}
+      borderRadius={moderateScale(15)}
       justifyContent="center"
-      px={3}
-      py={1}
+      px={moderateScale(3)}
+      py={moderateScale(1)}
       {...rest}
     >
       {!!content && (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Dimensions, useWindowDimensions } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import CarouselParent, { Pagination } from "react-native-snap-carousel";
 
 import { Container } from "@components";
@@ -27,6 +28,8 @@ const { width } = Dimensions.get("screen");
  *  ## Usage
  * ```js
  * import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  * import { Carousel } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
@@ -67,8 +70,8 @@ export const Carousel = ({
         dotContainerStyle={styles.dotContainerStyle}
         dotStyle={styles.dotStyle}
         dotsLength={itemArray.length}
-        inactiveDotOpacity={1}
-        inactiveDotScale={1}
+        inactiveDotOpacity={moderateScale(1)}
+        inactiveDotScale={moderateScale(1)}
         inactiveDotStyle={styles.inactiveDotStyle}
       />
     </Container>
@@ -77,26 +80,26 @@ export const Carousel = ({
 
 const styles = StyleSheet.create({
   image: {
-    height: width / 1.8,
-    width: width / 1.8,
+    height: width / moderateScale(1.8),
+    width: width / moderateScale(1.8),
     resizeMode: "contain",
-    borderRadius: 20,
+    borderRadius: moderateScale(20),
   },
   indicator: {
-    height: 12,
-    width: 12,
-    borderRadius: 10,
-    marginVertical: 20,
-    marginHorizontal: 5,
+    height: moderateScale(12),
+    width: moderateScale(12),
+    borderRadius: moderateScale(10),
+    marginVertical: moderateScale(20),
+    marginHorizontal: moderateScale(5),
     backgroundColor: "#49545C",
     borderColor: "#FFFFFF",
-    borderWidth: 2,
+    borderWidth: moderateScale(2),
   },
   dotStyle: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginRight: 8,
+    width: moderateScale(10),
+    height: moderateScale(10),
+    borderRadius: moderateScale(5),
+    marginRight: moderateScale(8),
     backgroundColor: "#2F3941",
   },
   inactiveDotStyle: {

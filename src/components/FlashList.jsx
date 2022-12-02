@@ -13,6 +13,7 @@ import Animated, {
   withSequence,
   withTiming,
 } from "react-native-reanimated";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { useRefreshByUser } from "@hooks";
@@ -25,12 +26,18 @@ const Placeholder = () => {
     <ContentLoader
       backgroundColor={theme.colors.lightgrey}
       foregroundColor={theme.colors.grey300}
-      height="60"
-      marginHorizontal={15}
-      viewBox="0 0 400 50"
-      width={400}
+      height={moderateScale(60)}
+      marginHorizontal={moderateScale(15)}
+      viewBox={`0 0 ${moderateScale(400)} ${moderateScale(50)}`}
+      width={moderateScale(400)}
     >
-      <Rect height="50" rx="5" ry="5" width={width - 30} x="0" />
+      <Rect
+        height={moderateScale(50)}
+        rx={moderateScale(5)}
+        ry={moderateScale(5)}
+        width={width - moderateScale(30)}
+        x="0"
+      />
     </ContentLoader>
   );
 };

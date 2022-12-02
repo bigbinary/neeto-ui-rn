@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 
 import Modal from "react-native-modal";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Container, Button } from "@components";
 
@@ -68,6 +69,8 @@ let rootLevelRef = null;
  *  ## Usage
  * ```js
  *import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  *import { Alert } from "@bigbinary/neetoui-rn";
  *export function App(props) {
  *  return (
@@ -79,13 +82,15 @@ let rootLevelRef = null;
  *}
  *
  *import * as React from "react";
+import { moderateScale } from "react-native-size-matters";
+
  *import { Alert, Button } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {
  *  return (
  *    <Button
- *      width={200}
- *      my={10}
+ *      width={moderateScale(200)}
+ *      my={moderateScale(10)}
  *      label="Three Buttons"
  *      onPress={() => {
  *        Alert.show({
@@ -164,9 +169,9 @@ export const Alert = () => {
       <Container
         alignItems="center"
         bg="background.primary"
-        borderRadius={8}
+        borderRadius={moderateScale(8)}
         justifyContent="center"
-        padding={18}
+        padding={moderateScale(18)}
         width="90%"
       >
         <Typography color="font.grey800" fontFamily="sf600" fontSize="3xl">
@@ -177,7 +182,7 @@ export const Alert = () => {
             color="font.grey500"
             fontFamily="sf400"
             fontSize="s"
-            py={20}
+            py={moderateScale(20)}
             textAlign="center"
           >
             {description}
@@ -190,14 +195,14 @@ export const Alert = () => {
         >
           {button2 && (
             <Button
-              borderRadius={8}
-              borderWidth={1}
+              borderRadius={moderateScale(8)}
+              borderWidth={moderateScale(1)}
               fontFamily="sf400"
               fontSize="m"
-              height={35}
+              height={moderateScale(35)}
               label={button2.label}
-              minWidth={110}
-              p={0}
+              minWidth={moderateScale(110)}
+              p={moderateScale(0)}
               variant={button2.variant || "text"}
               width={undefined}
               onPress={() => {
@@ -208,13 +213,13 @@ export const Alert = () => {
           )}
           {button1 && (
             <Button
-              borderRadius={8}
+              borderRadius={moderateScale(8)}
               fontFamily="sf400"
               fontSize="m"
-              height={35}
+              height={moderateScale(35)}
               label={button1.label}
-              minWidth={110}
-              p={0}
+              minWidth={moderateScale(110)}
+              p={moderateScale(0)}
               variant={button1.variant}
               width={undefined}
               onPress={() => {
@@ -226,15 +231,15 @@ export const Alert = () => {
         </Container>
         {button3 && (
           <Button
-            borderRadius={8}
-            borderWidth={1}
+            borderRadius={moderateScale(8)}
+            borderWidth={moderateScale(1)}
             fontFamily="sf400"
             fontSize="m"
-            height={35}
+            height={moderateScale(35)}
             label={button3.label}
-            minWidth={110}
-            mt={20}
-            p={0}
+            minWidth={moderateScale(110)}
+            mt={moderateScale(20)}
+            p={moderateScale(0)}
             variant={button3.variant}
             onPress={() => {
               button3.onPress?.();

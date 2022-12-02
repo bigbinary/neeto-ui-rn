@@ -4,6 +4,7 @@ import { StyleSheet, FlatList, Keyboard } from "react-native";
 import PropTypes from "prop-types";
 import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { moderateScale } from "react-native-size-matters";
 
 import {
   Typography,
@@ -37,8 +38,8 @@ const Title = ({
   return (
     <Container
       bg={bg}
-      borderRadius={20}
-      pb={12}
+      borderRadius={moderateScale(20)}
+      pb={moderateScale(12)}
       onTouchStart={e => (touchY = e.nativeEvent.pageY)}
       onTouchEnd={e => {
         // Swipe Down Detection
@@ -46,7 +47,11 @@ const Title = ({
       }}
       {...titleContainerStyle}
     >
-      <Container flexDirection="row" justifyContent="space-between" mb={16}>
+      <Container
+        flexDirection="row"
+        justifyContent="space-between"
+        mb={moderateScale(16)}
+      >
         {title && (
           <Typography textStyle="modalHeader" {...titleTextStyle}>
             {title}
@@ -67,7 +72,7 @@ const Title = ({
       </Container>
       {canSearch && (
         <SearchBar
-          debounceDelay={200}
+          debounceDelay={moderateScale(200)}
           placeholder="Search"
           showCancelButton={false}
           onChangeText={setSearchText}
@@ -115,7 +120,7 @@ Title.propTypes = {
  *  return (
  *    <Container>
  *     <BottomSheet
- *       maxHeight={200}
+ *       maxHeight={moderateScale(200)}
  *       isVisible={isBottomSheetVisible}
  *       hide={() => {
  *         setBottomSheetVisibility(false);
@@ -220,10 +225,10 @@ export const BottomSheet = ({
       <SafeAreaView style={styles.safeAreaView}>
         <Container
           bg={bg}
-          borderTopLeftRadius={20}
-          borderTopRightRadius={20}
+          borderTopLeftRadius={moderateScale(20)}
+          borderTopRightRadius={moderateScale(20)}
           flexShrink={1}
-          p={16}
+          p={moderateScale(16)}
           {...rest}
         >
           {title && (
@@ -259,8 +264,8 @@ export const BottomSheet = ({
                     ) : (
                       <Container
                         alignItems="center"
-                        mb={2}
-                        py={2}
+                        mb={moderateScale(2)}
+                        py={moderateScale(2)}
                         {...noResultsLabelContainerStyle}
                       >
                         <Typography
@@ -286,7 +291,7 @@ export const BottomSheet = ({
                           ) : (
                             <Touchable
                               alignItems="center"
-                              height={40}
+                              height={moderateScale(40)}
                               justifyContent="center"
                               onPress={() => onPressCreateOption(searchText)}
                               {...createSearchedOptionContainerStyle}
@@ -450,8 +455,8 @@ const styles = StyleSheet.create({
   safeAreaView: {
     maxHeight: "70%",
     backgroundColor: theme.colors.background.primary,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
+    borderTopRightRadius: moderateScale(20),
+    borderTopLeftRadius: moderateScale(20),
   },
   modalStyle: {
     margin: 0,
@@ -460,6 +465,6 @@ const styles = StyleSheet.create({
   },
   inputContainerStyle: {
     backgroundColor: "white",
-    borderRadius: 10,
+    borderRadius: moderateScale(10),
   },
 });

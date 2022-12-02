@@ -10,6 +10,7 @@ import Animated, {
   Extrapolation,
 } from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography } from "@components";
@@ -58,10 +59,15 @@ const TabElement = ({
       <Container
         alignItems="center"
         borderColor="background.grey200"
-        borderTopWidth={1}
+        borderTopWidth={moderateScale(1)}
         flex={1}
       >
-        <Container alignItems="center" height={35} mb={1} width={48}>
+        <Container
+          alignItems="center"
+          height={moderateScale(35)}
+          mb={moderateScale(1)}
+          width={moderateScale(48)}
+        >
           <Animated.View style={[styles.iconContainer, animatedStyles]}>
             <Icon color={theme.colors.font.grey500} name={icon} size={size} />
           </Animated.View>
@@ -84,7 +90,7 @@ const TabElement = ({
 const styles = StyleSheet.create({
   iconContainer: {
     position: "absolute",
-    margin: 10,
+    margin: moderateScale(10),
   },
 });
 
@@ -103,6 +109,7 @@ const styles = StyleSheet.create({
  * import { NavigationContainer } from '@react-navigation/native';
  * import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
  * import { ThemeContext } from "styled-components/native";
+ * import { moderateScale } from "react-native-size-matters";
  *
  * const Tab = createBottomTabNavigator();
  *
@@ -132,7 +139,7 @@ const styles = StyleSheet.create({
  *        options={{
  *          customTabBarProps: {
  *            icon: "home-5-line",
- *            size: 26,
+ *            size: moderateScale(26),
  *          },
  *        }}
  *      />
@@ -140,7 +147,7 @@ const styles = StyleSheet.create({
  *        options={{
  *          customTabBarProps: {
  *            icon: "user-3-line",
- *            size: 26,
+ *            size: moderateScale(26),
  *          },
  *        }} />
  *    </Tab.Navigator>
@@ -154,7 +161,7 @@ export const BottomTabBar = ({ state, descriptors, navigation }) => (
   <Container
     bg="background.white"
     flexDirection="row"
-    height={Platform.OS === "android" ? 63 : 83}
+    height={Platform.OS === "android" ? moderateScale(63) : moderateScale(83)}
   >
     {state.routes.map(({ key, name }, index) => {
       const { options } = descriptors[key];
