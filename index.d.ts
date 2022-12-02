@@ -23,7 +23,7 @@ import {
   TextInputIOSProps as RNTextInputIOSProps,
   ViewStyle,
   TextStyle,
-  TouchableOpacityProps,
+  TouchableOpacityProps as RNTouchableOpacityProps,
 } from "react-native";
 import { ModalProps } from "react-native-modal";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
@@ -100,13 +100,19 @@ interface TextInputProps
     TypographyProps {}
 interface FlatListProps extends RNFlatListProps, StyleProps {}
 interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
+interface TouchableOpacityProps
+  extends RNTouchableOpacityProps,
+    StyleProps,
+    ButtonStyleProps {
+  children?: React.ReactNode;
+}
 interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
 }
 
 interface AccordionProps extends ViewProps {
   header?: () => React.ReactNode;
-  headerContainerProps?: TouchableProps;
+  headerContainerProps?: TouchableOpacityProps;
   noBorder?: boolean;
   onStateChanged?: (isExpanded: boolean) => void;
   iconProp?: {
