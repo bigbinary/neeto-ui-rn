@@ -9,9 +9,26 @@ import { Animated, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
-import { ThemeContext } from "styled-components/native";
+import styled, { ThemeContext } from "styled-components/native";
+import {
+  buttonStyle,
+  flexbox,
+  space,
+  border,
+  color,
+  layout,
+} from "styled-system";
 
-import { Container, Touchable } from "@components";
+import { Container } from "@components";
+
+const TouchableOpacity = styled.TouchableOpacity`
+  ${buttonStyle}
+  ${flexbox}
+  ${space}
+  ${border}
+  ${color}
+  ${layout}
+`;
 
 const AccordionBody = ({ isExpanded, children }) => {
   const animationController = useRef(
@@ -150,8 +167,7 @@ export const Accordion = React.forwardRef(
         {position === "top" && (
           <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
         )}
-        <Touchable
-          rippleOpacity={0}
+        <TouchableOpacity
           style={styles.accordionContainer}
           onPress={() => {
             handleAnimation();
@@ -183,7 +199,7 @@ export const Accordion = React.forwardRef(
               </Animated.View>
             </Container>
           )}
-        </Touchable>
+        </TouchableOpacity>
         {position === "bottom" && (
           <AccordionBody isExpanded={isExpanded}>{children}</AccordionBody>
         )}
