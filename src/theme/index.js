@@ -37,6 +37,7 @@ const purpleVariants = {
   purple500: "#4557F8",
   purple700: "#342DF4",
   purple100: "#F2F4FF",
+  purple200: "#ECF4FF",
 };
 
 const greenVariants = {
