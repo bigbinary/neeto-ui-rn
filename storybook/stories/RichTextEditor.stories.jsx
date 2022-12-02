@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Container, RichTextEditor } from "@components";
 import { theme } from "@theme";
@@ -10,6 +10,8 @@ const RichTextEditorStories = {
 export default RichTextEditorStories;
 
 export const RichTextEditorComponent = () => {
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const toolbarProps = {};
   const toolbarStyle = {};
   const editorProps = {
@@ -28,11 +30,18 @@ export const RichTextEditorComponent = () => {
     color: theme.colors.border.primary,
   };
 
+  const handleOnChange = data => {
+    const message = data ? null : "Please write something...";
+    if (message === errorMessage) return;
+    setErrorMessage(message);
+  };
+
   return (
     <Container flex={1}>
       <RichTextEditor
         borderStyle={borderStyle}
         editorProps={editorProps}
+        errorMessage={errorMessage}
         toolbarProps={toolbarProps}
         toolbarStyle={toolbarStyle}
         toolbarWrapperStyle={toolbarWrapperStyle}
@@ -47,7 +56,7 @@ export const RichTextEditorComponent = () => {
           "undo",
           "redo",
         ]}
-        onChange={() => {}}
+        onChange={handleOnChange}
       />
     </Container>
   );

@@ -465,6 +465,7 @@ type RichTextEditorProps = {
   borderStyle?: BorderStyle;
   children?: React.ReactNode;
   editorProps?: RichEditorProps;
+  errorMessage?: string;
   onChange: (val: string) => void;
   placeholderText?: string;
   toolbarActions: Array<string>;
