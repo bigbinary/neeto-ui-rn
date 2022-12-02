@@ -9,7 +9,7 @@ import {
 import styled from "styled-components/native";
 import { space, flexbox, border, layout } from "styled-system";
 
-import { Container } from "@components";
+import { Container, Typography } from "@components";
 import { useKeyboard } from "@hooks";
 
 import { theme } from "../theme";
@@ -78,6 +78,7 @@ export const RichTextEditor = ({
   borderStyle,
   children,
   editorProps,
+  errorMessage,
   onChange,
   placeholderText,
   toolbarActions,
@@ -111,12 +112,16 @@ export const RichTextEditor = ({
   return (
     <ScrollView {...rest?.editorWrapperStyle}>
       <Container
-        borderColor={borderStyle.color ?? defaultBorderStyle.color}
         borderRadius={borderStyle.radius ?? defaultBorderStyle.radius}
         borderStyle={borderStyle.style ?? defaultBorderStyle.style}
         borderWidth={borderStyle.width ?? defaultBorderStyle.width}
         flex={1}
         pd={8}
+        borderColor={
+          !errorMessage
+            ? borderStyle.color ?? defaultBorderStyle.color
+            : theme.colors.border.danger
+        }
       >
         <RichEditor
           androidLayerType="software"
@@ -147,6 +152,11 @@ export const RichTextEditor = ({
           />
         )}
       </Container>
+      {!!errorMessage && (
+        <Typography color="font.danger" pt={2}>
+          {errorMessage}
+        </Typography>
+      )}
       {children}
     </ScrollView>
   );
@@ -155,6 +165,7 @@ export const RichTextEditor = ({
 RichTextEditor.defaultProps = {
   placeholderText: "Type here...",
   editorProps: {},
+  errorMessage: null,
   borderStyle: {
     radius: 8,
     color: "transparent",
@@ -190,6 +201,10 @@ RichTextEditor.propTypes = {
    * Object which can be used to pass other supported props by the Editor.
    */
   editorProps: PropTypes.object,
+  /**
+   * Prop to pass string value of error message to be shown.
+   */
+  errorMessage: PropTypes.string,
   /**
    * Object which can be used to pass other supported props by the RichToolbar.
    */
