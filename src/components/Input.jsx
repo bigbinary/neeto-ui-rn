@@ -28,6 +28,7 @@ import {
 import { Button, Container } from "@components";
 
 import { theme } from "../theme";
+import { isAndroid } from "../utils/utils";
 
 const TextInput = styled.TextInput`
   ${flexbox}
@@ -148,7 +149,7 @@ export const Input = ({
       inputRef.current &&
       inputRef.current.setNativeProps({
         style: {
-          top: isFocused ? moderateScale(10) : moderateScale(0),
+          // top: isFocused ? moderateScale(10) : moderateScale(0),
         },
       });
   };
@@ -166,13 +167,16 @@ export const Input = ({
   }, []);
 
   const labelStyles = {
+    paddingLeft: isAndroid() ? moderateScale(3) : 0,
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
       outputRange: [moderateScale(17), moderateScale(13)],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [moderateScale(14), moderateScale(6)],
+      outputRange: isAndroid()
+        ? [moderateScale(16), moderateScale(4)]
+        : [moderateScale(8), moderateScale(-2)],
     }),
   };
 
@@ -228,10 +232,9 @@ export const Input = ({
               editable={!disabled}
               fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
-              mt={moderateScale(10)}
+              mt={isAndroid() ? moderateScale(10) : 0}
               pb={moderateScale(3)}
-              pr={moderateScale(3)}
-              pt={moderateScale(1)}
+              pt={moderateScale(14)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
