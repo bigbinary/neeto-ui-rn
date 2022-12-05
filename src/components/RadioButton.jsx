@@ -111,7 +111,7 @@ export const RadioButton = ({
       <Typography
         flex={1}
         fontSize="m"
-        ml={moderateScale(2)}
+        ml={moderateScale(8)}
         {...(selected && selectedProps.labelProps)}
         {...(!selected && unselectedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

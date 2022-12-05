@@ -18,9 +18,9 @@ import { theme } from "@theme";
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const LOADER_WIDTH = {
-  s: moderateScale(24),
-  m: moderateScale(36),
-  l: moderateScale(48),
+  s: parseInt(moderateScale(18)),
+  m: parseInt(moderateScale(24)),
+  l: parseInt(moderateScale(36)),
 };
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);

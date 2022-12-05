@@ -123,7 +123,7 @@ export const CheckBox = ({
       <Typography
         flex={1}
         fontSize="m"
-        ml={moderateScale(2)}
+        ml={moderateScale(8)}
         {...(checked && checkedProps.labelProps)}
         {...(!checked && unCheckedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

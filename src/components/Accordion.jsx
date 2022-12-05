@@ -181,7 +181,6 @@ export const Accordion = React.forwardRef(
               alignItems="center"
               flexDirection="row"
               justifyContent="center"
-              px={moderateScale(1)}
             >
               {Label && <Label />}
               <Animated.View

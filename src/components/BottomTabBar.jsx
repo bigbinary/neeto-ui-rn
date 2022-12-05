@@ -65,7 +65,7 @@ const TabElement = ({
         <Container
           alignItems="center"
           height={moderateScale(35)}
-          mb={moderateScale(1)}
+          mb={moderateScale(4)}
           width={moderateScale(48)}
         >
           <Animated.View style={[styles.iconContainer, animatedStyles]}>

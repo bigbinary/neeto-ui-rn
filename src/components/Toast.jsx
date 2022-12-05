@@ -13,7 +13,7 @@ import ErrorIcon from "@assets/icons/error.svg";
 import InfoIcon from "@assets/icons/info.svg";
 import SuccessIcon from "@assets/icons/success.svg";
 import WarningIcon from "@assets/icons/warning.svg";
-import { Container, Typography, Touchable } from "@components";
+import { Container, Typography, Card, Touchable } from "@components";
 import { defaultToasterConfig } from "@config";
 
 const ToastComponent = ({ type, text1, text2, hide }) => {
@@ -35,10 +35,11 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
   };
 
   return (
-    <Container
+    <Card
       alignItems="center"
       bg={theme.colors.background.secondary}
       borderRadius={moderateScale(16)}
+      elevation={10}
       flexDirection="row"
       minHeight={moderateScale(60)}
       mt={DeviceInfo.hasDynamicIsland() ? moderateScale(10) : 0}
@@ -87,7 +88,7 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
       >
         <CloseIcon color={theme.colors.font.grey500} name="ri-close-line" />
       </Touchable>
-    </Container>
+    </Card>
   );
 };
 
