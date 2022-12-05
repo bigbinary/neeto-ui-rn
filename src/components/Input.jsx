@@ -167,16 +167,14 @@ export const Input = ({
   }, []);
 
   const labelStyles = {
-    paddingLeft: isAndroid() ? moderateScale(3) : 0,
+    paddingLeft: isAndroid() ? moderateScale(4) : 0,
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
       outputRange: [moderateScale(17), moderateScale(13)],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: isAndroid()
-        ? [moderateScale(16), moderateScale(4)]
-        : [moderateScale(8), moderateScale(-2)],
+      outputRange: [moderateScale(16), moderateScale(6)],
     }),
   };
 
@@ -204,13 +202,14 @@ export const Input = ({
           borderWidth={noBorder ? 0 : moderateScale(1)}
           flexDirection="row"
           justifyContent="space-between"
-          ref={containerRef}
-          {...(!rest.inputProps?.multiline && { height: moderateScale(58) })}
           overflow="hidden"
+          ref={containerRef}
+          // {...(!rest.inputProps?.multiline && { height: moderateScale(58) })}
+          // minHeight={moderateScale(58)}
           {...containerProps}
         >
           {!!PrefixIcon && (
-            <View pl={moderateScale(2)}>
+            <View pl={moderateScale(8)}>
               <PrefixIcon />
             </View>
           )}
@@ -232,9 +231,9 @@ export const Input = ({
               editable={!disabled}
               fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
-              mt={isAndroid() ? moderateScale(10) : 0}
-              pb={moderateScale(3)}
-              pt={moderateScale(14)}
+              paddingVertical={0}
+              pb={moderateScale(8)}
+              pt={moderateScale(22)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
