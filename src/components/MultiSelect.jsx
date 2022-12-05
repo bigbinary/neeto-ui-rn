@@ -86,9 +86,10 @@ const MultiSelectItem = ({
       borderRadius={moderateScale(12)}
       flexDirection="row"
       justifyContent="space-between"
-      m={moderateScale(1)}
-      px={moderateScale(2)}
-      py={moderateScale(1)}
+      mr={4}
+      mt={4}
+      px={moderateScale(10)}
+      py={moderateScale(4)}
       {...multiSelectedItemContainerStyle}
     >
       <Typography
@@ -350,8 +351,9 @@ export const MultiSelect = ({
           borderRadius={moderateScale(12)}
           borderWidth={moderateScale(1)}
           minHeight={moderateScale(58)}
-          p={moderateScale(2)}
-          pr={moderateScale(2)}
+          p={moderateScale(10)}
+          pr={moderateScale(8)}
+          pt={moderateScale(12)}
           {...inputContainerStyle}
           {...rest}
         >
@@ -365,7 +367,7 @@ export const MultiSelect = ({
               zIndex={moderateScale(1)}
               style={[
                 animatedStyles,
-                { marginLeft: moderateScale(5), ...labelStyle },
+                { marginLeft: moderateScale(2), ...labelStyle },
               ]}
             >
               {label}
@@ -376,7 +378,7 @@ export const MultiSelect = ({
                 flexDirection="row"
                 flexWrap="wrap"
                 maxWidth="85%"
-                mt={moderateScale(3)}
+                mt={moderateScale(16)}
                 onStartShouldSetResponder={() => true}
               >
                 {value?.slice(0, maxItemSize).map((item, index) => (
@@ -401,7 +403,7 @@ export const MultiSelect = ({
                       flexDirection="row"
                       justifyContent="space-between"
                       m={moderateScale(1)}
-                      px={moderateScale(2)}
+                      px={moderateScale(3)}
                       py={moderateScale(1)}
                       {...moreItemLabelContainerStyle}
                     >
