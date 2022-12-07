@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
 
 import { Button, Carousel, Container, Typography } from "@components";
@@ -54,6 +54,7 @@ export const OnBoarding = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const onBoardingRef = useRef();
+  const { bottom } = useSafeAreaInsets();
 
   const handleOnPress = () => {
     if (activeIndex !== slides.length - 1) {
@@ -64,9 +65,10 @@ export const OnBoarding = ({
 
   const renderItem = ({ item }) => (
     <Container flex={1} justifyContent="space-between">
-      <Container />
       <Container
         alignItems="center"
+        flex={1}
+        justifyContent="center"
         mx={moderateScale(24)}
         my={moderateScale(12)}
       >
@@ -77,7 +79,12 @@ export const OnBoarding = ({
         mx={moderateScale(24)}
         my={moderateScale(12)}
       >
-        <Typography color="font.grey800" fontFamily="sf700" fontSize="4xl">
+        <Typography
+          color="font.grey800"
+          fontFamily="sf700"
+          fontSize="4xl"
+          textAlign="center"
+        >
           {item.title}
         </Typography>
         <Typography
@@ -97,7 +104,7 @@ export const OnBoarding = ({
       <Container alignItems="center">
         <AppLogo width={logoWidth} />
       </Container>
-      <Container alignItems="center" flex={1} justifyContent="center">
+      <Container alignItems="center" flex={1}>
         <Carousel
           carouselRef={onBoardingRef}
           itemArray={slides}
@@ -108,7 +115,7 @@ export const OnBoarding = ({
         />
       </Container>
       <Container
-        mb={Platform.OS === "android" ? moderateScale(10) : 0}
+        mb={bottom === 0 ? moderateScale(16) : 0}
         mx={moderateScale(24)}
       >
         <Button
