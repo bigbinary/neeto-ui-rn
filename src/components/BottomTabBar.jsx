@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { StyleSheet, Platform, TouchableWithoutFeedback } from "react-native";
+import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
 import PropTypes from "prop-types";
 import Animated, {
@@ -10,6 +10,7 @@ import Animated, {
   Extrapolation,
 } from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
@@ -157,51 +158,55 @@ const styles = StyleSheet.create({
  *
  */
 
-export const BottomTabBar = ({ state, descriptors, navigation }) => (
-  <Container
-    bg="background.white"
-    flexDirection="row"
-    height={Platform.OS === "android" ? moderateScale(63) : moderateScale(83)}
-  >
-    {state.routes.map(({ key, name }, index) => {
-      const { options } = descriptors[key];
-      const isFocused = state.index === index;
-      const { icon, size } = options?.customTabBarProps || {};
-      const { tabBarActiveTintColor, tabBarInactiveTintColor } = options;
-      const onPress = () => {
-        const event = navigation.emit({
-          type: "tabPress",
-          target: key,
-          canPreventDefault: true,
-        });
+export const BottomTabBar = ({ state, descriptors, navigation }) => {
+  const { bottom } = useSafeAreaInsets();
 
-        if (!isFocused && !event.defaultPrevented) {
-          navigation.navigate({ name, merge: true });
-        }
-      };
+  return (
+    <Container
+      bg="background.white"
+      flexDirection="row"
+      height={bottom === 0 ? moderateScale(63) : moderateScale(83)}
+    >
+      {state.routes.map(({ key, name }, index) => {
+        const { options } = descriptors[key];
+        const isFocused = state.index === index;
+        const { icon, size } = options?.customTabBarProps || {};
+        const { tabBarActiveTintColor, tabBarInactiveTintColor } = options;
+        const onPress = () => {
+          const event = navigation.emit({
+            type: "tabPress",
+            target: key,
+            canPreventDefault: true,
+          });
 
-      const label =
-        options.tabBarLabel !== undefined
-          ? options.tabBarLabel
-          : options.title !== undefined
-          ? options.title
-          : name;
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate({ name, merge: true });
+          }
+        };
 
-      return (
-        <TabElement
-          icon={icon}
-          isFocused={isFocused}
-          key={index}
-          label={label}
-          size={size}
-          tabBarActiveTintColor={tabBarActiveTintColor}
-          tabBarInactiveTintColor={tabBarInactiveTintColor}
-          onPress={onPress}
-        />
-      );
-    })}
-  </Container>
-);
+        const label =
+          options.tabBarLabel !== undefined
+            ? options.tabBarLabel
+            : options.title !== undefined
+            ? options.title
+            : name;
+
+        return (
+          <TabElement
+            icon={icon}
+            isFocused={isFocused}
+            key={index}
+            label={label}
+            size={size}
+            tabBarActiveTintColor={tabBarActiveTintColor}
+            tabBarInactiveTintColor={tabBarInactiveTintColor}
+            onPress={onPress}
+          />
+        );
+      })}
+    </Container>
+  );
+};
 
 TabElement.propTypes = {
   isFocused: PropTypes.bool,

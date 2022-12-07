@@ -7215,20 +7215,10 @@ can-use-dom@^0.1.0:
   resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
   integrity sha1-IsxKNKCrxDlQ9CxkEQJKP2NmtFo=
 
-caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001280:
-  version "1.0.30001280"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001280.tgz#066a506046ba4be34cde5f74a08db7a396718fb7"
-  integrity sha512-kFXwYvHe5rix25uwueBxC569o53J6TpnGu0BEEn+6Lhl2vsnAumRFWEBhDft1fwyo6m1r4i+RqA4+163FpeFcA==
-
-caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001274:
-  version "1.0.30001279"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001279.tgz#eb06818da481ef5096a3b3760f43e5382ed6b0ce"
-  integrity sha512-VfEHpzHEXj6/CxggTwSFoZBBYGQfQv9Cf42KPlO79sWXCD1QNKWKsKzFeWL7QpZHJQYAvocqV6Rty1yJMkqWLQ==
-
-caniuse-lite@^1.0.30001332:
-  version "1.0.30001343"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001343.tgz#8e1107e30d9a4d2f63782b48ae0a3ce34e2f9c2a"
-  integrity sha512-8KeCrAtPMabo/XW14B+R9sZYoClx1n0b+WYgwDKZPtWR3TcdvWzdSy7mPyFEmR5WU1St9v1PW6sdO5dkFOEzfA==
+caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001274, caniuse-lite@^1.0.30001280, caniuse-lite@^1.0.30001332:
+  version "1.0.30001436"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001436.tgz"
+  integrity sha512-ZmWkKsnC2ifEPoWUvSAIGyOYwT+keAaaWPHiQ9DfMqS1t6tfuyFYoWR78TeZtznkEQ64+vGXH9cZrElwR2Mrxg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
