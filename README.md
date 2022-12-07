@@ -97,7 +97,13 @@ create `dist` folder with static files in `docs` folder.
 
 To publish locally
 ```
-rm -rf ~/.yalc/packages && yalc publish --private
+yarn build && rm -rf ~/.yalc/packages && yalc publish --private
+```
+
+or
+
+```
+yarn yalc:publish
 ```
 
 To install local yalc version of library in any app.
