@@ -144,14 +144,6 @@ export const Input = ({
       duration: 300,
       useNativeDriver: false,
     }).start();
-
-    !!label &&
-      inputRef.current &&
-      inputRef.current.setNativeProps({
-        style: {
-          // top: isFocused ? moderateScale(10) : moderateScale(0),
-        },
-      });
   };
 
   const handleStyles = useCallback(isFocused => {
@@ -233,7 +225,7 @@ export const Input = ({
               inputAccessoryViewID={label}
               paddingVertical={0}
               pb={moderateScale(8)}
-              pt={moderateScale(22)}
+              pt={label ? moderateScale(22) : moderateScale(12)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
