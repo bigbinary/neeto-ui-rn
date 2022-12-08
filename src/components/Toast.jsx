@@ -45,7 +45,7 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
       mt={DeviceInfo.hasDynamicIsland() ? moderateScale(10) : 0}
       mx={moderateScale(10)}
       px={moderateScale(10)}
-      width={width - 20}
+      width={width - moderateScale(20)}
     >
       <Container
         alignItems="center"
