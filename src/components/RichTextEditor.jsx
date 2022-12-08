@@ -6,6 +6,7 @@ import {
   RichToolbar,
   actions,
 } from "react-native-pell-rich-editor";
+import Icon from "react-native-remix-icon";
 import styled from "styled-components/native";
 import { space, flexbox, border, layout } from "styled-system";
 
@@ -84,6 +85,7 @@ export const RichTextEditor = ({
   toolbarActions,
   toolbarProps,
   toolbarStyle,
+  onSend,
   ...rest
 }) => {
   const richTextRef = useRef();
@@ -97,6 +99,10 @@ export const RichTextEditor = ({
     toolbarActions?.map(actionItem => {
       actionItems.push(actions[actionItem]);
     });
+
+    if (onSend) {
+      actionItems.push("customAction");
+    }
 
     return actionItems;
   };
@@ -149,6 +155,16 @@ export const RichTextEditor = ({
             }}
             {...RichTextEditor.defaultProps.toolbarProps}
             {...toolbarProps}
+            customAction={onSend}
+            iconMap={{
+              ["customAction"]: data => (
+                <Icon
+                  color={data.tintColor}
+                  name="send-plane-2-fill"
+                  size={20}
+                />
+              ),
+            }}
           />
         )}
       </Container>
@@ -181,6 +197,7 @@ RichTextEditor.defaultProps = {
     borderBottomLeftRadius: 8,
     backgroundColor: theme.colors.border.primary,
   },
+  iconMap: PropTypes.object,
 };
 
 RichTextEditor.propTypes = {
@@ -219,4 +236,9 @@ RichTextEditor.propTypes = {
    * Object which can be used to style toolbar container.
    */
   toolbarStyle: PropTypes.object,
+
+  /**
+   * callback for the send action
+   */
+  onSend: PropTypes.func,
 };
