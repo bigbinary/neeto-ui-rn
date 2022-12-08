@@ -2,6 +2,7 @@ import * as React from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Container } from "@components";
 
@@ -21,7 +22,7 @@ import { Typography, Container } from "@components";
  *  return (
  *    <Container>
  *      <ListItem
- *        LeftComponent={() => <Typography mr={2}>📣</Typography>}
+ *        LeftComponent={() => <Typography mr={moderateScale(2)}>📣</Typography>}
  *        label="Organization"
  *        value={() => <Typography>Bigbinary</Typography>}
  *      />
@@ -35,11 +36,11 @@ export const ListItem = ({ LeftComponent, label, RightComponent, ...rest }) => (
   <Container
     alignItems="center"
     bg="background.secondary"
-    borderRadius={6}
+    borderRadius={moderateScale(6)}
     flexDirection="row"
     justifyContent="space-between"
-    px={16}
-    py={12}
+    px={moderateScale(16)}
+    py={moderateScale(12)}
     width="100%"
     {...rest}
   >

@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 const shadowRadiusList = [
   1, 1.41, 2.22, 2.62, 3.84, 4.65, 4.65, 4.65, 5.46, 6.27, 6.68, 7.49, 8.3,
   9.11, 9.51, 10.32, 11.14, 11.95, 12.35, 13.16, 13.97, 14.78, 15.19, 16,
@@ -21,3 +23,5 @@ export const getShadowStyles = (elevation = 0) => {
     elevation,
   };
 };
+
+export const isAndroid = () => Platform.OS === "android";

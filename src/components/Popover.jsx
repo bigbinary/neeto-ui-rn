@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import OriginalPopover from "react-native-popover-view";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
@@ -23,8 +24,8 @@ const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
     <TouchableOpacity
       alignItems="center"
       flexDirection="row"
-      p={2}
-      px={3}
+      p={moderateScale(2)}
+      px={moderateScale(3)}
       onPress={onPress}
     >
       <Icon />
@@ -32,7 +33,7 @@ const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
         fontColor="font.primary"
         fontFamily={fontFamily}
         fontSize={fontSize}
-        px={2}
+        px={moderateScale(2)}
         {...labelProps}
       >
         {label}
@@ -88,7 +89,7 @@ PopOverItem.propTypes = {
  *         return (
  *           <Icon
  *             name="ri-search-line"
- *             size={20}
+ *             size={moderateScale(20)}
  *             color={theme.colors.background.grey800}
  *           />
  *         );
@@ -103,7 +104,7 @@ PopOverItem.propTypes = {
  *         return (
  *           <Icon
  *             name="ri-search-line"
- *             size={20}
+ *             size={moderateScale(20)}
  *             color={theme.colors.background.grey800}
  *           />
  *         );
@@ -116,10 +117,10 @@ PopOverItem.propTypes = {
  *
  *  return (
  *    <Container flex={1} alignItems="center" justifyContent="center">
- *      <Container p={2}>
+ *      <Container p={moderateScale(2)}>
  *        <Popover data={data} from={<Button label="With Data" />} />
  *      </Container>
- *      <Container p={2}>
+ *      <Container p={moderateScale(2)}>
  *      <Popover from={<Button label="With Custom Popup Content" />}>
  *
  *          <Container bg="background.white" flex={1}>
@@ -128,7 +129,7 @@ PopOverItem.propTypes = {
  *        </Popover>
  *      </Container>
  *
- *      <Container p={2}>
+ *      <Container p={moderateScale(2)}>
  *        <Popover
  *          data={data}
  *          from={<Button label="With Custom Popup Content and data" />}
@@ -200,5 +201,5 @@ Popover.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  popoverStyle: { borderRadius: 15, padding: 5 },
+  popoverStyle: { borderRadius: moderateScale(15), padding: moderateScale(5) },
 });

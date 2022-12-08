@@ -8,6 +8,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
@@ -41,8 +42,8 @@ const StyledImage = styled(RNFImage)`
  *  return (
  *    <Container>
  *     <AnimatedImage
- *      imageHeight={139}
- *      imageWidth={255}
+ *      imageHeight={moderateScale(139)}
+ *      imageWidth={moderateScale(255)}
  *      imageUrl="https://picsum.photos/255/139"
  *     />
  *   </Container>
@@ -51,6 +52,7 @@ const StyledImage = styled(RNFImage)`
  * ```
  */
 
+const borderRadius = moderateScale(10);
 export const AnimatedImage = ({
   imageHeight = 139,
   imageWidth = 255,
@@ -68,13 +70,13 @@ export const AnimatedImage = ({
     height: imageHeight,
     width: imageWidth,
     alignSelf: "center",
-    borderRadius: 10,
+    borderRadius,
   }));
 
   return (
     <Container
       alignItems="center"
-      borderRadius={10}
+      borderRadius={moderateScale(10)}
       justifyContent="center"
       overflow="hidden"
     >
@@ -104,7 +106,11 @@ export const AnimatedImage = ({
       {!isImageLoaded && (
         <Container position="absolute">
           <ImagePlaceholder />
-          <Container bottom={15} position="absolute" right={15}>
+          <Container
+            bottom={moderateScale(15)}
+            position="absolute"
+            right={moderateScale(15)}
+          >
             <Loader color={theme.colors.font.grey600} />
           </Container>
         </Container>

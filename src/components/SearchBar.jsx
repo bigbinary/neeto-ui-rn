@@ -3,6 +3,7 @@ import { Animated, TouchableWithoutFeedback } from "react-native";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
   flexbox,
@@ -109,25 +110,25 @@ export const SearchBar = ({
         <Container
           alignItems="center"
           borderColor={theme.colors.border.grey400}
-          borderRadius={8}
-          borderWidth={1}
+          borderRadius={moderateScale(8)}
+          borderWidth={moderateScale(1)}
           flex={1}
           flexDirection="row"
-          height={42}
+          height={moderateScale(42)}
           {...containerProps}
         >
-          <Container px={10}>
+          <Container px={moderateScale(10)}>
             <Icon
               color={theme.colors.font.grey600}
               name="ri-search-line"
-              size={20}
+              size={moderateScale(20)}
             />
           </Container>
           <TextInput
             autoCapitalize="none"
             color="font.primary"
             flex={1}
-            fontSize={16}
+            fontSize={moderateScale(16)}
             placeholder={placeholder}
             placeholderTextColor={theme.colors.font.grey600}
             ref={inputRef}
@@ -154,7 +155,7 @@ export const SearchBar = ({
           }}
         >
           <Button
-            height={20}
+            height={moderateScale(20)}
             label="Cancel"
             labelStyle={{ mx: 0 }}
             variant="text"

@@ -8,6 +8,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Container } from "@components";
 
@@ -55,13 +56,13 @@ export const Avatar = ({
   const getSizes = () => {
     switch (variant) {
       case "extra-small":
-        return [24, 8];
+        return [moderateScale(24), moderateScale(8)];
       case "small":
-        return [36, 12];
+        return [moderateScale(36), moderateScale(12)];
       case "medium":
-        return [48, 14];
+        return [moderateScale(48), moderateScale(14)];
       default:
-        return [48, 14];
+        return [moderateScale(48), moderateScale(14)];
     }
   };
 

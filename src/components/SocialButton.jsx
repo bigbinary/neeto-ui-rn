@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import AppleLogo from "@assets/icons/apple-logo.svg";
@@ -24,7 +25,7 @@ import { Container, Typography, Touchable, Loader } from "@components";
  * export default function Main() {
  *  return (
  *    <Container>
- *      <SocialButton variant="apple" my={9} />
+ *      <SocialButton variant="apple" my={moderateScale(9)} />
  *      <SocialButton variant="google" />
  *    </Container>
  *  );
@@ -48,10 +49,10 @@ export const SocialButton = ({
       alignItems="center"
       bg="transparent"
       borderColor={theme.colors.border.grey800}
-      borderRadius={8}
-      borderWidth={1}
+      borderRadius={moderateScale(8)}
+      borderWidth={moderateScale(1)}
       disabled={disabled}
-      height={48}
+      height={moderateScale(48)}
       justifyContent="center"
       rippleColor={theme.colors.background.grey800}
       width="100%"
@@ -61,7 +62,7 @@ export const SocialButton = ({
         <Loader color={theme.colors.background.grey800} />
       ) : (
         <>
-          <Container left={17} position="absolute">
+          <Container left={moderateScale(17)} position="absolute">
             {variant === "apple" && <AppleLogo />}
             {variant === "google" && <GoogleLogo />}
           </Container>
