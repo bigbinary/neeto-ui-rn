@@ -129,7 +129,7 @@ export const SegmentedTopBar = ({
         return (
           <Touchable
             alignItems="center"
-            elevation={Platform.OS === "android" ? moderateScale(9) : null}
+            elevation={Platform.OS === "android" ? 9 : null}
             flex={1}
             height={height}
             justifyContent="center"
