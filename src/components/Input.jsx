@@ -197,8 +197,6 @@ export const Input = ({
           justifyContent="space-between"
           overflow="hidden"
           ref={containerRef}
-          // {...(!rest.inputProps?.multiline && { height: moderateScale(58) })}
-          // minHeight={moderateScale(58)}
           {...containerProps}
         >
           {!!PrefixIcon && (
