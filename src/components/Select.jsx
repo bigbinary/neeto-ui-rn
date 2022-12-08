@@ -325,7 +325,7 @@ export const Select = ({
                 </Touchable>
               )}
               {/* Animation not working without this hidden input */}
-              <Container height={moderateScale(0)}>
+              <Container height={0}>
                 <Input />
               </Container>
               <ScrollView>

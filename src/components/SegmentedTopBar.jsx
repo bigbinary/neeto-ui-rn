@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     marginBottom: moderateScale(5),
   },
   movingSegmentStyle: {
-    top: moderateScale(0),
+    top: 0,
     marginVertical: moderateScale(2),
     marginHorizontal: moderateScale(2),
     borderRadius: moderateScale(6),

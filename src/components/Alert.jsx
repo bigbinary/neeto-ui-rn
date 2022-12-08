@@ -200,7 +200,7 @@ export const Alert = () => {
               height={moderateScale(35)}
               label={button2.label}
               minWidth={moderateScale(110)}
-              p={moderateScale(0)}
+              p={0}
               variant={button2.variant || "text"}
               width={undefined}
               onPress={() => {
@@ -217,7 +217,7 @@ export const Alert = () => {
               height={moderateScale(35)}
               label={button1.label}
               minWidth={moderateScale(110)}
-              p={moderateScale(0)}
+              p={0}
               variant={button1.variant}
               width={undefined}
               onPress={() => {
@@ -237,7 +237,7 @@ export const Alert = () => {
             label={button3.label}
             minWidth={moderateScale(110)}
             mt={moderateScale(20)}
-            p={moderateScale(0)}
+            p={0}
             variant={button3.variant}
             onPress={() => {
               button3.onPress?.();

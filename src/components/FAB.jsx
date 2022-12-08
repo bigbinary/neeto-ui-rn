@@ -50,7 +50,7 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
   const shadowStyle = {
     shadowColor: theme.colors.background.grey800,
     shadowOffset: {
-      width: moderateScale(0),
+      width: 0,
       height: moderateScale(2),
     },
     shadowOpacity: moderateScale(0.25),
