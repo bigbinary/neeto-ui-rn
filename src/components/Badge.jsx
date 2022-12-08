@@ -57,7 +57,7 @@ export const Badge = ({
       bg={badgeColor}
       borderRadius={moderateScale(15)}
       justifyContent="center"
-      px={moderateScale(3)}
+      px={moderateScale(6)}
       py={moderateScale(1)}
       {...rest}
     >
