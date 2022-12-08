@@ -471,6 +471,7 @@ type RichTextEditorProps = {
   toolbarActions: Array<string>;
   toolbarProps?: RichToolbarProps;
   toolbarStyle?: ViewStyle;
+  onSend?: () => void;
 };
 
 interface SearchBarProps extends ViewProps {

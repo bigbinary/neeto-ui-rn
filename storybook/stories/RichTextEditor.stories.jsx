@@ -57,6 +57,9 @@ export const RichTextEditorComponent = () => {
           "redo",
         ]}
         onChange={handleOnChange}
+        onSend={() => {
+          console.log("Sending");
+        }}
       />
     </Container>
   );
