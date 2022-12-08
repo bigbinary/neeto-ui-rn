@@ -50,7 +50,7 @@ const StyledRipple = styled(Ripple)`
  *       height="30px"
  *       rippleOpacity = {0.09}
  *       rippleDuration = {600}
- *       rippleContainerBorderRadius = {50}
+ *       rippleContainerBorderRadius = {moderateScale(50)}
  *     >
  *       <Typography fontSize="10px">This is wrapped in Touchable component</Typography>
  *     </Touchable>

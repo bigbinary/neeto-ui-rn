@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
@@ -41,7 +42,7 @@ const StyledTouchableOpacity = styled(TouchableOpacity)`
  *
  * export default function Main() {
  *  return (
- *     <Card height="100px" width="100px" bg="background.danger" elevation={8}>
+ *     <Card height="100px" width="100px" bg="background.danger" elevation={moderateScale(8)}>
  *       <Typography fontSize="14px">Card</Typography>
  *     </Card>
  *  );
@@ -80,10 +81,10 @@ export const styles = StyleSheet.create({
     shadowColor: theme.colors.background.grey800,
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: moderateScale(2),
     },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: moderateScale(3.84),
     elevation: 5,
   },
 });

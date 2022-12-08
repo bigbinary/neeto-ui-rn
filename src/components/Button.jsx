@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { Typography, Touchable, Container, Loader } from "@components";
@@ -32,32 +33,32 @@ export const BUTTON_VARIANTS = Object.freeze({
  * export default function Main() {
  *  return (
  *    <Container>
- *      <Button my={9} label="Button1" />
- *      <Button my={9} disabled label="Disabled Button2" />
+ *      <Button my={moderateScale(9)} label="Button1" />
+ *      <Button my={moderateScale(9)} disabled label="Disabled Button2" />
  *      <Button
- *        my={9}
- *        LeftIcon={() => <Icon name="ri-add-line" color="white" size={16} />}
+ *        my={moderateScale(9)}
+ *        LeftIcon={() => <Icon name="ri-add-line" color="white" size={moderateScale(16)} />}
  *        label="Left Icon Button"
  *      />
  *      <Button
- *        my={9}
- *        RightIcon={() => <Icon name="ri-add-line" color="white" size={16} />}
+ *        my={moderateScale(9)}
+ *        RightIcon={() => <Icon name="ri-add-line" color="white" size={moderateScale(16)} />}
  *        label="Right Icon Button"
  *      />
- *      <Button my={9} variant="text" label="Text Button" />
+ *      <Button my={moderateScale(9)} variant="text" label="Text Button" />
  *      <Button
- *        my={9}
+ *        my={moderateScale(9)}
  *        variant="text"
  *        LeftIcon={() => (
- *          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+ *          <Icon name="ri-add-line" color={theme.fonts.primary} size={moderateScale(16)} />
  *        )}
  *        label="Left Icon Text Button"
  *      />
  *      <Button
- *        my={9}
+ *        my={moderateScale(9)}
  *        variant="text"
  *        RightIcon={() => (
- *          <Icon name="ri-add-line" color={theme.fonts.primary} size={16} />
+ *          <Icon name="ri-add-line" color={theme.fonts.primary} size={moderateScale(16)} />
  *        )}
  *        label="Right Icon Text Button"
  *      />
@@ -157,11 +158,11 @@ export const Button = ({
       alignItems="center"
       bg={getButtonColors().bg}
       borderColor={getButtonColors().border}
-      borderRadius={8}
-      borderWidth={1}
+      borderRadius={moderateScale(8)}
+      borderWidth={moderateScale(1)}
       disabled={disabled || isLoading}
       flexDirection="row"
-      height={48}
+      height={moderateScale(48)}
       justifyContent="center"
       opacity={renderOpacity()}
       rippleColor={getButtonColors().ripple}
@@ -176,7 +177,7 @@ export const Button = ({
               color={color || getButtonColors().color}
               fontFamily={fontFamily || theme.fonts.sf500}
               fontSize={fontSize}
-              mx={2}
+              mx={moderateScale(2)}
               textAlign="center"
               {...labelStyle}
             >
@@ -191,7 +192,7 @@ export const Button = ({
             color={color || getButtonColors().color}
             fontFamily={fontFamily || theme.fonts.sf500}
             fontSize={fontSize}
-            mx={2}
+            mx={moderateScale(2)}
             textAlign="center"
             {...labelStyle}
           >

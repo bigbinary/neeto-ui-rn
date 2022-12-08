@@ -3,6 +3,7 @@ import { Animated } from "react-native";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Touchable } from "@components";
@@ -36,7 +37,9 @@ import { Container, Touchable } from "@components";
 
 export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   const theme = useContext(ThemeContext);
-  const animatedPosition = useRef(new Animated.Value(value ? 1 : 0)).current;
+  const animatedPosition = useRef(
+    new Animated.Value(value ? moderateScale(1) : 0)
+  ).current;
 
   useEffect(() => {
     startAnimation();
@@ -44,7 +47,7 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
 
   const startAnimation = () => {
     Animated.timing(animatedPosition, {
-      toValue: value ? 20 : 0,
+      toValue: value ? moderateScale(18) : 0,
       duration: 300,
       useNativeDriver: false,
     }).start();
@@ -61,28 +64,28 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   return (
     <Touchable
       bg={containerBg}
-      borderRadius={70}
+      borderRadius={moderateScale(70)}
       disabled={disabled}
-      height={24}
+      height={moderateScale(24)}
       justifyContent="center"
       opacity={disabled ? 0.5 : 1}
-      px={1}
-      width={44}
+      px={moderateScale(5)}
+      width={moderateScale(44)}
       onPress={() => onValueChange(!value)}
     >
       <Animated.View style={{ transform: [{ translateX: animatedPosition }] }}>
         <Container
           alignItems="center"
           bg="background.white"
-          borderRadius={8}
-          height={16}
+          borderRadius={moderateScale(8)}
+          height={moderateScale(16)}
           justifyContent="center"
-          width={16}
+          width={moderateScale(16)}
         >
           <Icon
             color={iconColor}
             name={`ri-${value ? "check" : "close"}-line`}
-            size={12}
+            size={moderateScale(12)}
           />
         </Container>
       </Animated.View>

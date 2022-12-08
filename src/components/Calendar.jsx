@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import { Calendar as RNCalender } from "react-native-calendars";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 /**
@@ -41,7 +42,7 @@ export const Calendar = ({ selectedDate, ...rest }) => {
   return (
     <RNCalender
       current={selectedDate}
-      firstDay={1}
+      firstDay={moderateScale(1)}
       key={selectedDate}
       markedDates={{
         [dayjs(selectedDate).format("YYYY-MM-DD")]: {
@@ -57,7 +58,7 @@ export const Calendar = ({ selectedDate, ...rest }) => {
         },
         "stylesheet.calendar.header": {
           week: {
-            marginVertical: 10,
+            marginVertical: moderateScale(10),
             flexDirection: "row",
             justifyContent: "space-around",
             alignItems: "center",
@@ -81,10 +82,10 @@ export const Calendar = ({ selectedDate, ...rest }) => {
           base: {
             alignItems: "center",
             justifyContent: "center",
-            height: 26,
-            width: 26,
-            borderRadius: 5,
-            borderWidth: 1,
+            height: moderateScale(26),
+            width: moderateScale(26),
+            borderRadius: moderateScale(5),
+            borderWidth: moderateScale(1),
             borderColor: "transparent",
           },
           today: {

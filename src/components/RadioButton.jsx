@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import Proptypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography, Touchable } from "@components";
@@ -24,6 +25,7 @@ import { Container, Typography, Touchable } from "@components";
  *  ## Usage
  * ```js
  * import * as React from "react";
+ * import { moderateScale } from "react-native-size-matters";
  * import { Container, RadioButton } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
@@ -33,18 +35,18 @@ import { Container, Typography, Touchable } from "@components";
  *  return (
  *    <Container>
  *      <RadioButton
- *        mt={2}
+ *        mt={moderateScale(2)}
  *        selected={selected1}
  *        onSelect={() => setSelected1(prev => !prev)}
  *        label={`Radio button marked as ${!selected1 ? "un" : ""}selected`}
  *      />
  *      <RadioButton
- *        mt={3}
+ *        mt={moderateScale(3)}
  *        selected={selected2}
  *        onSelect={() => setSelected2(prev => !prev)}
  *        label={`Radio button marked as ${!selected2 ? "un" : ""}selected`}
  *      />
- *      <RadioButton mt={3} disabled label="Disabled Radio button" />
+ *      <RadioButton mt={moderateScale(3)} disabled label="Disabled Radio button" />
  *    </Container>
  *  );
  * }
@@ -70,7 +72,7 @@ export const RadioButton = ({
   };
 
   const selectedProps = {
-    borderWidth: 4,
+    borderWidth: moderateScale(4),
     borderColor: theme.colors.background.base,
     labelProps: {
       fontFamily: theme.fonts.sf500,
@@ -79,7 +81,7 @@ export const RadioButton = ({
   };
 
   const unselectedProps = {
-    borderWidth: 2,
+    borderWidth: moderateScale(2),
     borderColor: theme.colors.border.secondary,
     labelProps: {
       fontFamily: theme.fonts.sf400,
@@ -97,9 +99,9 @@ export const RadioButton = ({
     >
       <Container
         bg={theme.colors.background.white}
-        borderRadius={8}
-        height={16}
-        width={16}
+        borderRadius={moderateScale(8)}
+        height={moderateScale(16)}
+        width={moderateScale(16)}
         {...(selected && selectedProps)}
         {...(!selected && unselectedProps)}
         {...(disabled && disabledProps)}
@@ -108,7 +110,7 @@ export const RadioButton = ({
       <Typography
         flex={1}
         fontSize="m"
-        ml={2}
+        ml={moderateScale(8)}
         {...(selected && selectedProps.labelProps)}
         {...(!selected && unselectedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}

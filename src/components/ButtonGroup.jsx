@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Container, Typography, Touchable } from "@components";
 
@@ -45,18 +46,18 @@ export const ButtonGroup = ({
     alignSelf="center"
     border="1px solid"
     borderColor={activeColor}
-    borderRadius={2}
+    borderRadius={moderateScale(2)}
     flexDirection="row"
     justifyContent="space-between"
-    my={3}
+    my={moderateScale(3)}
     {...wrapperStyle}
   >
     {buttonItems.map(item => (
       <Touchable
         bg={item === currentActiveBtn ? activeColor : inActiveColor}
         key={item}
-        p={2}
-        px={3}
+        p={moderateScale(2)}
+        px={moderateScale(3)}
         onPress={() => {
           if (item !== currentActiveBtn) {
             onPress(item);

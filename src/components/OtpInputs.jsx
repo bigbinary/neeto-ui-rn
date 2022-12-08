@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { InteractionManager, Keyboard } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
   flexbox,
@@ -35,13 +36,13 @@ const styles = {
     position: "absolute",
   },
   defaultContainerStyles: {
-    margin: 2,
-    borderRadius: 8,
+    margin: moderateScale(2),
+    borderRadius: moderateScale(8),
     backgroundColor: theme.colors.background.white,
     justifyContent: "center",
     alignItems: "center",
-    minHeight: 42,
-    minWidth: 42,
+    minHeight: moderateScale(42),
+    minWidth: moderateScale(42),
   },
   defaultTextStyles: {
     fontSize: theme.fontSizes.xl,
@@ -67,7 +68,7 @@ const styles = {
  * return (
  *   <Container flex={1} justifyContent="center" alignItems="center">
  *      <OtpInputs code={code} numberOfInputs={6} handleChange={setCode} />
- *      <Typography py={10} fontSize="xl">
+ *      <Typography py={moderateScale(10)} fontSize="xl">
  *        {`Your entered OTP is ${code}`}
  *      </Typography>
  *    </Container>
@@ -108,12 +109,16 @@ export const OtpInputs = ({
           .fill()
           .map((_number, index) => (
             <Container
-              borderWidth={code.length - 1 === index ? 1.5 : 1}
               key={index}
               borderColor={
                 code.length - 1 === index
                   ? theme.colors.border.purple500
                   : theme.colors.border.secondary
+              }
+              borderWidth={
+                code.length - 1 === index
+                  ? moderateScale(1.5)
+                  : moderateScale(1)
               }
               {...styles.defaultContainerStyles}
               {...containerStyles}

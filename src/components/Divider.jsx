@@ -2,6 +2,7 @@ import * as React from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import { flexbox, space, color, layout } from "styled-system";
 
@@ -21,7 +22,7 @@ import { flexbox, space, color, layout } from "styled-system";
  * export default function Main(){
  *  return (
  *   <Container>
- *     <Divider orientation="vertical" thickness={1}/>
+ *     <Divider orientation="vertical" thickness={moderateScale(1)}/>
  *   </Container>
  *  );
  * }
@@ -55,7 +56,7 @@ export const Divider = ({ thickness, orientation, bg, ...rest }) => {
 Divider.defaultProps = {
   bg: "background.grey400",
   orientation: "horizontal",
-  thickness: 1,
+  thickness: moderateScale(1),
 };
 
 Divider.propTypes = {

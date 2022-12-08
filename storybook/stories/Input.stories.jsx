@@ -200,7 +200,7 @@ export const Inputs = () => (
   </>
 );
 
-export const InputDemo = args => {
+const InputDemo = args => {
   const [value, setValue] = React.useState(args.value);
 
   return <Input {...args} value={value} onChangeText={setValue} />;

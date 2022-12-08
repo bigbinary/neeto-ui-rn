@@ -1,3 +1,5 @@
+import { moderateScale } from "react-native-size-matters";
+
 const defaultColors = {
   white: "#ffffff",
   base: "#4557F8",
@@ -102,19 +104,20 @@ const baseTheme = {
   },
   lineHeights: [24],
   fontSizes: {
-    "4xs": 10,
-    "3xs": 11,
-    "2xs": 12,
-    xs: 13,
-    s: 14,
-    m: 15,
-    l: 16,
-    xl: 17,
-    "2xl": 18,
-    "3xl": 20,
-    "4xl": 22,
-    "5xl": 30,
+    "4xs": moderateScale(10),
+    "3xs": moderateScale(11),
+    "2xs": moderateScale(12),
+    xs: moderateScale(13),
+    s: moderateScale(14),
+    m: moderateScale(15),
+    l: moderateScale(16),
+    xl: moderateScale(17),
+    "2xl": moderateScale(18),
+    "3xl": moderateScale(20),
+    "4xl": moderateScale(22),
+    "5xl": moderateScale(30),
   },
+  space: new Array(100).fill(0).map((_, index) => index + 1),
 };
 
 //aliases

@@ -13,12 +13,13 @@ import { Container } from "@components";
 import { useKeyboard } from "../hooks/useKeyboard";
 
 /**
- *ParentView wraps the childrens with SafeAreaview.
+ *ParentView wraps the children with SafeAreaView.
  *
  *  ## Usage
  * ```js
- *import * as React from "react";
- *import { Typography, ParentView } from "@bigbinary/neetoui-rn";
+ * import * as React from "react";
+ * import { moderateScale } from "react-native-size-matters";
+ * import { Typography, ParentView } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {
  *  return (

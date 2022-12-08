@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 
 import { Container, Touchable, Typography } from "@components";
 import { theme } from "@theme";
@@ -67,7 +68,7 @@ export const TopBar = ({
 
   return (
     <Container
-      height={50}
+      height={moderateScale(50)}
       style={[styles.defaultTabContainerStyle, tabContainerStyle]}
     >
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -114,14 +115,14 @@ export const TopBar = ({
 const styles = StyleSheet.create({
   defaultActiveContainerStyle: {
     backgroundColor: theme.colors.background.grey800,
-    marginHorizontal: 10,
-    paddingHorizontal: 10,
-    marginVertical: 5,
-    borderRadius: 5,
+    marginHorizontal: moderateScale(10),
+    paddingHorizontal: moderateScale(10),
+    marginVertical: moderateScale(5),
+    borderRadius: moderateScale(5),
   },
   defaultInActiveTabContainerStyle: {
     backgroundColor: theme.colors.background.white,
-    marginHorizontal: 20,
+    marginHorizontal: moderateScale(20),
   },
   defaultActiveTabTextStyle: {
     color: theme.colors.font.white,

@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 import PropTypes from "prop-types";
+import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   flexbox,
@@ -27,6 +28,7 @@ import {
 import { Button, Container } from "@components";
 
 import { theme } from "../theme";
+import { isAndroid } from "../utils/utils";
 
 const TextInput = styled.TextInput`
   ${flexbox}
@@ -142,14 +144,6 @@ export const Input = ({
       duration: 300,
       useNativeDriver: false,
     }).start();
-
-    !!label &&
-      inputRef.current &&
-      inputRef.current.setNativeProps({
-        style: {
-          top: isFocused ? 10 : 0,
-        },
-      });
   };
 
   const handleStyles = useCallback(isFocused => {
@@ -160,18 +154,20 @@ export const Input = ({
           : isFocused
           ? colors.border.purple500
           : colors.border.grey400,
-        borderWidth: errorMessage || isFocused ? 1.5 : 1,
+        borderWidth:
+          errorMessage || isFocused ? moderateScale(1.5) : moderateScale(1),
       });
   }, []);
 
   const labelStyles = {
+    paddingLeft: isAndroid() ? moderateScale(4) : 0,
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [17, 13],
+      outputRange: [moderateScale(17), moderateScale(13)],
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [14, 6],
+      outputRange: [moderateScale(16), moderateScale(6)],
     }),
   };
 
@@ -195,21 +191,20 @@ export const Input = ({
         <View
           alignItems="center"
           borderColor={errorMessage ? "border.danger" : "border.grey400"}
-          borderRadius={8}
-          borderWidth={noBorder ? 0 : 1}
+          borderRadius={moderateScale(8)}
+          borderWidth={noBorder ? 0 : moderateScale(1)}
           flexDirection="row"
           justifyContent="space-between"
-          ref={containerRef}
-          {...(!rest.inputProps?.multiline && { height: 58 })}
           overflow="hidden"
+          ref={containerRef}
           {...containerProps}
         >
           {!!PrefixIcon && (
-            <View pl={2}>
+            <View pl={moderateScale(8)}>
               <PrefixIcon />
             </View>
           )}
-          <View flex={1} left={10}>
+          <View flex={1} left={moderateScale(10)}>
             {!!label && (
               <AnimatedLabel
                 color={disabled ? "font.grey400" : "font.grey600"}
@@ -225,12 +220,11 @@ export const Input = ({
               autoFocus={autoFocus}
               color={disabled ? "font.grey500" : "font.primary"}
               editable={!disabled}
-              fontSize={17}
+              fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
-              mt={10}
-              pb={3}
-              pr={3}
-              pt={1}
+              paddingVertical={0}
+              pb={moderateScale(8)}
+              pt={label ? moderateScale(22) : moderateScale(12)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
@@ -256,15 +250,15 @@ export const Input = ({
                     bg="background.white"
                     flexDirection="row"
                     justifyContent="flex-end"
-                    p={2}
-                    pr={20}
+                    p={moderateScale(2)}
+                    pr={moderateScale(20)}
                     width={width}
                   >
                     <Button
-                      height={30}
+                      height={moderateScale(30)}
                       label="Done"
                       labelStyle={styles.doneButtonStyle}
-                      left={10}
+                      left={moderateScale(10)}
                       variant="text"
                       onPress={() => {
                         Keyboard.dismiss();
@@ -275,14 +269,14 @@ export const Input = ({
               )}
           </View>
           {!!SuffixIcon && (
-            <View px={2}>
+            <View px={moderateScale(2)}>
               <SuffixIcon />
             </View>
           )}
         </View>
       </TouchableWithoutFeedback>
       {!!errorMessage && (
-        <Typography color="font.danger" pt={2}>
+        <Typography color="font.danger" pt={moderateScale(2)}>
           {errorMessage}
         </Typography>
       )}
