@@ -26,8 +26,7 @@ import { Container, Typography, Touchable } from "@components";
  *  ## Usage
  * ```js
  * import * as React from "react";
-import { moderateScale } from "react-native-size-matters";
-
+ * import { moderateScale } from "react-native-size-matters";
  * import { Container, CheckBox } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {

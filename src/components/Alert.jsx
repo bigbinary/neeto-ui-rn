@@ -69,8 +69,7 @@ let rootLevelRef = null;
  *  ## Usage
  * ```js
  *import * as React from "react";
-import { moderateScale } from "react-native-size-matters";
-
+ *import { moderateScale } from "react-native-size-matters";
  *import { Alert } from "@bigbinary/neetoui-rn";
  *export function App(props) {
  *  return (
@@ -82,8 +81,7 @@ import { moderateScale } from "react-native-size-matters";
  *}
  *
  *import * as React from "react";
-import { moderateScale } from "react-native-size-matters";
-
+ *import { moderateScale } from "react-native-size-matters";
  *import { Alert, Button } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {

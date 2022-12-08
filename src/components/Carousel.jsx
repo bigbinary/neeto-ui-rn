@@ -28,8 +28,7 @@ const { width } = Dimensions.get("screen");
  *  ## Usage
  * ```js
  * import * as React from "react";
-import { moderateScale } from "react-native-size-matters";
-
+ * import { moderateScale } from "react-native-size-matters";
  * import { Carousel } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {

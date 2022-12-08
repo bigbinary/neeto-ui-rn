@@ -124,8 +124,7 @@ ToastComponent.propTypes = {
  *
  *
  *import * as React from "react";
-import { moderateScale } from "react-native-size-matters";
-
+ *import { moderateScale } from "react-native-size-matters";
  *import { Toast, Container, Button } from "@bigbinary/neetoui-rn";
  *
  *export default function Main() {
