@@ -67,7 +67,7 @@ const styles = {
  * const [code, setCode] = useState("");
  * return (
  *   <Container flex={1} justifyContent="center" alignItems="center">
- *      <OtpInputs code={code} numberOfInputs={moderateScale(6)} handleChange={setCode} />
+ *      <OtpInputs code={code} numberOfInputs={6} handleChange={setCode} />
  *      <Typography py={moderateScale(10)} fontSize="xl">
  *        {`Your entered OTP is ${code}`}
  *      </Typography>

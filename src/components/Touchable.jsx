@@ -3,7 +3,6 @@ import * as React from "react";
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
 import Ripple from "react-native-material-ripple";
-import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
   flexbox,
@@ -50,7 +49,7 @@ const StyledRipple = styled(Ripple)`
  *       width="100px"
  *       height="30px"
  *       rippleOpacity = {0.09}
- *       rippleDuration = {moderateScale(600)}
+ *       rippleDuration = {600}
  *       rippleContainerBorderRadius = {moderateScale(50)}
  *     >
  *       <Typography fontSize="10px">This is wrapped in Touchable component</Typography>
@@ -69,7 +68,7 @@ export const Touchable = React.forwardRef((props, ref) => {
     <StyledRipple
       ref={ref}
       rippleContainerBorderRadius={rest.borderRadius ? rest.borderRadius : 0}
-      rippleDuration={moderateScale(600)}
+      rippleDuration={600}
       rippleOpacity={0.09}
       style={shadowStyles}
       {...rest}

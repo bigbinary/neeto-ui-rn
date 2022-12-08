@@ -256,7 +256,7 @@ export const Select = ({
             <Icon
               color="grey"
               name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-              size="20"
+              size={moderateScale(20)}
             />
           )}
         </Container>

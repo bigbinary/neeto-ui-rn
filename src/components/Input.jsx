@@ -154,7 +154,8 @@ export const Input = ({
           : isFocused
           ? colors.border.purple500
           : colors.border.grey400,
-        borderWidth: errorMessage || isFocused ? 1.5 : moderateScale(1),
+        borderWidth:
+          errorMessage || isFocused ? moderateScale(1.5) : moderateScale(1),
       });
   }, []);
 
