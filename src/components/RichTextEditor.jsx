@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Image } from "react-native";
 
 import PropTypes from "prop-types";
 import {
@@ -10,7 +11,7 @@ import Icon from "react-native-remix-icon";
 import styled from "styled-components/native";
 import { space, flexbox, border, layout } from "styled-system";
 
-import { Container, Typography } from "@components";
+import { Container, Typography, Touchable } from "@components";
 import { useKeyboard } from "@hooks";
 
 import { theme } from "../theme";
@@ -86,6 +87,9 @@ export const RichTextEditor = ({
   toolbarProps,
   toolbarStyle,
   onSend,
+  attachments,
+  onAttachment,
+  onDelete,
   ...rest
 }) => {
   const richTextRef = useRef();
@@ -96,6 +100,8 @@ export const RichTextEditor = ({
 
   const computeToolbarActions = () => {
     const actionItems = [];
+    actionItems.push("attachment");
+
     toolbarActions?.map(actionItem => {
       actionItems.push(actions[actionItem]);
     });
@@ -113,6 +119,13 @@ export const RichTextEditor = ({
       borderRadius: borderStyle.radius ?? defaultBorderStyle.radius,
       overflow: "hidden",
     },
+  };
+
+  const attachmentStyle = {
+    width: 40,
+    height: 45,
+    borderRadius: 5,
+    opacity: 0.75,
   };
 
   return (
@@ -145,6 +158,37 @@ export const RichTextEditor = ({
           }}
           {...combinedEditorProps}
         />
+        {attachments.length ? (
+          <Container>
+            <ScrollView horizontal py={2}>
+              {attachments.map(data => (
+                <Container key={Math.random()} mx={1}>
+                  <Touchable
+                    position="absolute"
+                    right={0}
+                    top={0}
+                    zIndex={10}
+                    onPress={() => {
+                      onDelete(data);
+                    }}
+                  >
+                    <Icon
+                      color={theme.colors.font.danger}
+                      name="close-circle-line"
+                      size={20}
+                    />
+                  </Touchable>
+                  <Image
+                    style={attachmentStyle}
+                    source={{
+                      uri: data.url,
+                    }}
+                  />
+                </Container>
+              ))}
+            </ScrollView>
+          </Container>
+        ) : null}
         {showToolbar && (
           <RichToolbar
             actions={computeToolbarActions()}
@@ -155,6 +199,7 @@ export const RichTextEditor = ({
             }}
             {...RichTextEditor.defaultProps.toolbarProps}
             {...toolbarProps}
+            attachment={onAttachment}
             customAction={onSend}
             iconMap={{
               ["customAction"]: data => (
@@ -163,6 +208,9 @@ export const RichTextEditor = ({
                   name="send-plane-2-fill"
                   size={20}
                 />
+              ),
+              ["attachment"]: data => (
+                <Icon color={data.tintColor} name="attachment-line" size={20} />
               ),
             }}
           />
@@ -198,6 +246,7 @@ RichTextEditor.defaultProps = {
     backgroundColor: theme.colors.border.primary,
   },
   iconMap: PropTypes.object,
+  attachments: [],
 };
 
 RichTextEditor.propTypes = {
@@ -241,4 +290,17 @@ RichTextEditor.propTypes = {
    * callback for the send action
    */
   onSend: PropTypes.func,
+
+  /**
+   * Array of attachments
+   */
+  attachments: PropTypes.array,
+  /**
+   * callback when attachment icon is pressed
+   */
+  onAttachment: PropTypes.func,
+  /**
+   * callback to delete an attachment
+   */
+  onDelete: PropTypes.func,
 };

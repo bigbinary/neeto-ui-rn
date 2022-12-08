@@ -453,6 +453,9 @@ type RichTextEditorProps = {
   toolbarProps?: RichToolbarProps;
   toolbarStyle?: ViewStyle;
   onSend?: () => void;
+  attachments?: Array;
+  onAttachment?: () => void;
+  onDelete?: (val: object) => void;
 };
 
 interface SearchBarProps extends ViewProps {

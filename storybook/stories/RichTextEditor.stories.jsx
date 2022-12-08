@@ -11,6 +11,7 @@ export default RichTextEditorStories;
 
 export const RichTextEditorComponent = () => {
   const [errorMessage, setErrorMessage] = useState(null);
+  const [attachments, setAttachments] = useState([]);
 
   const toolbarProps = {};
   const toolbarStyle = {};
@@ -39,6 +40,7 @@ export const RichTextEditorComponent = () => {
   return (
     <Container flex={1}>
       <RichTextEditor
+        attachments={attachments}
         borderStyle={borderStyle}
         editorProps={editorProps}
         errorMessage={errorMessage}
@@ -57,8 +59,21 @@ export const RichTextEditorComponent = () => {
           "redo",
         ]}
         onChange={handleOnChange}
-        onSend={() => {
-          console.log("Sending");
+        onSend={() => {}}
+        onAttachment={() =>
+          setTimeout(() => {
+            setAttachments(prev => [
+              ...prev,
+              {
+                url: "https://randomwordgenerator.com/img/picture-generator/57e7d54b4a5ba814f1dc8460962e33791c3ad6e04e5074417c2e7dd3974ec4_640.jpg",
+              },
+            ]);
+          }, 1000)
+        }
+        onDelete={() => {
+          const oldData = [...attachments];
+          oldData.splice(0, 1);
+          setAttachments(oldData);
         }}
       />
     </Container>
