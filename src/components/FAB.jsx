@@ -53,14 +53,14 @@ export const FAB = ({ Icon, bg, disabled, variant, onPress, ...rest }) => {
       width: 0,
       height: moderateScale(2),
     },
-    shadowOpacity: moderateScale(0.25),
+    shadowOpacity: 0.25,
     shadowRadius: moderateScale(3.84),
-    elevation: moderateScale(5),
+    elevation: 5,
   };
 
   let style = rest.style || {};
   if (disabled) {
-    style = { ...style, opacity: moderateScale(0.5) };
+    style = { ...style, opacity: 0.5 };
   }
 
   return (

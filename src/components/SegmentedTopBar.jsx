@@ -18,9 +18,9 @@ const defaultShadowStyle = {
     width: 0,
     height: moderateScale(2),
   },
-  shadowOpacity: moderateScale(0.23),
+  shadowOpacity: 0.23,
   shadowRadius: moderateScale(2.62),
-  elevation: moderateScale(4),
+  elevation: 4,
 };
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants

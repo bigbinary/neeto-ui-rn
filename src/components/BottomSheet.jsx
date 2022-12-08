@@ -72,7 +72,7 @@ const Title = ({
       </Container>
       {canSearch && (
         <SearchBar
-          debounceDelay={moderateScale(200)}
+          debounceDelay={200}
           placeholder="Search"
           showCancelButton={false}
           onChangeText={setSearchText}

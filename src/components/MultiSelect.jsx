@@ -86,8 +86,8 @@ const MultiSelectItem = ({
       borderRadius={moderateScale(12)}
       flexDirection="row"
       justifyContent="space-between"
-      mr={4}
-      mt={4}
+      mr={moderateScale(4)}
+      mt={moderateScale(4)}
       px={moderateScale(10)}
       py={moderateScale(4)}
       {...multiSelectedItemContainerStyle}
@@ -109,7 +109,7 @@ const MultiSelectItem = ({
           <Icon
             color={theme.colors.font.grey800}
             name="ri-close-line"
-            size="20"
+            size={moderateScale(20)}
           />
         </TouchableWithoutFeedback>
       )}
@@ -364,7 +364,7 @@ export const MultiSelect = ({
           >
             <AnimatedLabel
               position="absolute"
-              zIndex={moderateScale(1)}
+              zIndex={1}
               style={[
                 animatedStyles,
                 { marginLeft: moderateScale(2), ...labelStyle },

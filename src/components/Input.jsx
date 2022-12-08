@@ -211,7 +211,7 @@ export const Input = ({
                 color={disabled ? "font.grey400" : "font.grey600"}
                 position="absolute"
                 style={labelStyles}
-                zIndex={moderateScale(1)}
+                zIndex={1}
               >
                 {label}
               </AnimatedLabel>
@@ -231,7 +231,7 @@ export const Input = ({
               textAlignVertical={textAlignVertical}
               top={0}
               value={value}
-              zIndex={moderateScale(2)}
+              zIndex={2}
               onChangeText={onChangeText}
               onBlur={() => {
                 onBlur();

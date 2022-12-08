@@ -83,8 +83,8 @@ export const styles = StyleSheet.create({
       width: 0,
       height: moderateScale(2),
     },
-    shadowOpacity: moderateScale(0.25),
+    shadowOpacity: 0.25,
     shadowRadius: moderateScale(3.84),
-    elevation: moderateScale(5),
+    elevation: 5,
   },
 });
