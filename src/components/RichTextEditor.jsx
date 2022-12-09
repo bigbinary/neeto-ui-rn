@@ -145,6 +145,7 @@ export const RichTextEditor = ({
       >
         <RichEditor
           androidLayerType="software"
+          autoCapitalize="sentences"
           placeholder={placeholderText}
           ref={richTextRef}
           useContainer={false}

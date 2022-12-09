@@ -42,7 +42,7 @@ export const Calendar = ({ selectedDate, ...rest }) => {
   return (
     <RNCalender
       current={selectedDate}
-      firstDay={moderateScale(1)}
+      firstDay={1}
       key={selectedDate}
       markedDates={{
         [dayjs(selectedDate).format("YYYY-MM-DD")]: {
