@@ -216,7 +216,7 @@ export const Input = ({
               </AnimatedLabel>
             )}
             <TextInput
-              autoCapitalize="none"
+              autoCapitalize
               autoFocus={autoFocus}
               color={disabled ? "font.grey500" : "font.primary"}
               editable={!disabled}
