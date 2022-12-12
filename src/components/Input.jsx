@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import PropTypes from "prop-types";
-import { moderateScale } from "react-native-size-matters";
+import { moderateScale as scaleItem } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   flexbox,
@@ -146,6 +146,8 @@ export const Input = ({
     }).start();
   };
 
+  const moderateScale = scaleFactor => Math.floor(scaleItem(scaleFactor));
+
   const handleStyles = useCallback(isFocused => {
     containerRef.current &&
       containerRef.current.setNativeProps({
@@ -168,7 +170,7 @@ export const Input = ({
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [moderateScale(16), moderateScale(6)],
+      outputRange: [moderateScale(15), moderateScale(6)],
     }),
   };
 
@@ -225,14 +227,16 @@ export const Input = ({
               inputAccessoryViewID={label}
               paddingVertical={0}
               pb={moderateScale(4)}
+              pt={!label ? moderateScale(5) : 0}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
+              right={0}
               textAlignVertical={textAlignVertical}
               top={0}
               value={value}
               zIndex={2}
               style={{
-                marginTop: label ? moderateScale(22) : moderateScale(8),
+                marginTop: label ? moderateScale(22) : 0,
                 marginBottom: rest.inputProps?.multiline
                   ? moderateScale(10)
                   : 0,
