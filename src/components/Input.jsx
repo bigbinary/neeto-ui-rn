@@ -160,6 +160,7 @@ export const Input = ({
   }, []);
 
   const labelStyles = {
+    zIndex: 100,
     paddingLeft: isAndroid() ? moderateScale(4) : 0,
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
@@ -200,7 +201,7 @@ export const Input = ({
           {...containerProps}
         >
           {!!PrefixIcon && (
-            <View pl={moderateScale(8)}>
+            <View pl={moderateScale(10)}>
               <PrefixIcon />
             </View>
           )}
@@ -223,14 +224,19 @@ export const Input = ({
               fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
               paddingVertical={0}
-              pb={moderateScale(8)}
-              pt={label ? moderateScale(22) : moderateScale(12)}
+              pb={moderateScale(4)}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
               top={0}
               value={value}
               zIndex={2}
+              style={{
+                marginTop: label ? moderateScale(22) : moderateScale(8),
+                marginBottom: rest.inputProps?.multiline
+                  ? moderateScale(10)
+                  : 0,
+              }}
               onChangeText={onChangeText}
               onBlur={() => {
                 onBlur();
@@ -269,7 +275,7 @@ export const Input = ({
               )}
           </View>
           {!!SuffixIcon && (
-            <View px={moderateScale(2)}>
+            <View pr={moderateScale(10)}>
               <SuffixIcon />
             </View>
           )}
