@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 import PropTypes from "prop-types";
-import { moderateScale } from "react-native-size-matters";
+import { moderateScale as scaleItem } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
   flexbox,
@@ -146,6 +146,8 @@ export const Input = ({
     }).start();
   };
 
+  const moderateScale = scaleFactor => Math.floor(scaleItem(scaleFactor));
+
   const handleStyles = useCallback(isFocused => {
     containerRef.current &&
       containerRef.current.setNativeProps({
@@ -160,6 +162,7 @@ export const Input = ({
   }, []);
 
   const labelStyles = {
+    zIndex: 100,
     paddingLeft: isAndroid() ? moderateScale(4) : 0,
     fontSize: animatedController.interpolate({
       inputRange: [0, 1],
@@ -167,7 +170,7 @@ export const Input = ({
     }),
     top: animatedController.interpolate({
       inputRange: [0, 1],
-      outputRange: [moderateScale(16), moderateScale(6)],
+      outputRange: [moderateScale(15), moderateScale(6)],
     }),
   };
 
@@ -200,7 +203,7 @@ export const Input = ({
           {...containerProps}
         >
           {!!PrefixIcon && (
-            <View pl={moderateScale(8)}>
+            <View pl={moderateScale(10)}>
               <PrefixIcon />
             </View>
           )}
@@ -222,15 +225,22 @@ export const Input = ({
               editable={!disabled}
               fontSize={moderateScale(17)}
               inputAccessoryViewID={label}
+              paddingRight={moderateScale(20)}
               paddingVertical={0}
-              pb={moderateScale(8)}
-              pt={label ? moderateScale(22) : moderateScale(12)}
+              pb={moderateScale(4)}
+              pt={!label ? moderateScale(5) : 0}
               ref={inputRef}
               returnKeyType={rest.inputProps?.multiline ? "default" : "done"}
               textAlignVertical={textAlignVertical}
               top={0}
               value={value}
               zIndex={2}
+              style={{
+                marginTop: label ? moderateScale(22) : 0,
+                marginBottom: rest.inputProps?.multiline
+                  ? moderateScale(10)
+                  : 0,
+              }}
               onChangeText={onChangeText}
               onBlur={() => {
                 onBlur();
@@ -269,7 +279,7 @@ export const Input = ({
               )}
           </View>
           {!!SuffixIcon && (
-            <View px={moderateScale(2)}>
+            <View pr={moderateScale(10)}>
               <SuffixIcon />
             </View>
           )}

@@ -79,6 +79,10 @@ export const Inputs = () => (
       <Input label="Email" value="" onChangeText={() => {}} />
     </Container>
     <Container mb={20}>
+      <Typography py={2}>Without Label</Typography>
+      <Input value="" onChangeText={() => {}} />
+    </Container>
+    <Container mb={20}>
       <Typography py={2}>Focused Input</Typography>
       <Input autoFocus label="Email" value="" onChangeText={() => {}} />
     </Container>
@@ -187,9 +191,14 @@ export const Inputs = () => (
     <Container mb={20}>
       <Typography py={2}>Input With Multiline Content</Typography>
       <Input
-        inputProps={{ multiline: true }}
+        inputProps={{ multiline: true, height: 100 }}
         label="Message"
         value="Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit.
+          In sagittis scelerisque euismod. 
+          Vivamus efficitur libero ut fermentum elementum.
+          Aenean scelerisque sed augue quis vestibulum. 
+          
           consectetur adipiscing elit.
           In sagittis scelerisque euismod. 
           Vivamus efficitur libero ut fermentum elementum.
