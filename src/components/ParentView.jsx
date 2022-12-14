@@ -87,7 +87,7 @@ export const ParentView = ({
                   ) === -1
                 ) {
                   Keyboard.dismiss();
-                  rest?.onOutsideTap();
+                  rest?.onOutsideTap && rest?.onOutsideTap();
                 }
               },
             }
