@@ -223,6 +223,23 @@ export const RichTextEditor = ({
           {errorMessage}
         </Typography>
       )}
+      <RichEditor
+        androidLayerType="software"
+        autoCapitalize="sentences"
+        placeholder={placeholderText}
+        ref={richTextRef}
+        useContainer={false}
+        onChange={onChange}
+        onBlur={() => {
+          setToolbarVisible(false);
+          editorProps?.onBlurFn();
+        }}
+        onFocus={() => {
+          setToolbarVisible(true);
+          editorProps?.onFocusFn();
+        }}
+        {...editorProps}
+      />
       {children}
     </ScrollView>
   );
