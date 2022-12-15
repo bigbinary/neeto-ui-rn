@@ -2,7 +2,6 @@ import * as React from "react";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
-import Ripple from "react-native-material-ripple";
 import styled from "styled-components/native";
 import {
   flexbox,
@@ -12,6 +11,8 @@ import {
   color,
   layout,
 } from "styled-system";
+
+import Ripple from "./Ripple";
 
 import { getShadowStyles } from "../utils/utils";
 

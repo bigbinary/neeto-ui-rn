@@ -40,7 +40,6 @@ import {
   ToastShowParams,
   ToastConfig,
 } from "react-native-toast-message";
-import { RippleProps } from "react-native-material-ripple";
 import { FastImageProps } from "react-native-fast-image";
 
 import { theme as themeDef } from "./src/theme";
@@ -106,7 +105,7 @@ interface TouchableOpacityProps
     ButtonStyleProps {
   children?: React.ReactNode;
 }
-interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
+interface TouchableProps extends StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
 }
 
