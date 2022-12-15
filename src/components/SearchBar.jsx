@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Animated, TouchableWithoutFeedback } from "react-native";
+import { Dimensions, TouchableWithoutFeedback } from "react-native";
 
 import PropTypes from "prop-types";
+import Animated, {
+  Easing,
+  interpolate,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
@@ -14,7 +21,7 @@ import {
   color,
 } from "styled-system";
 
-import { Container, Button } from "@components";
+import { Container, Touchable, Typography } from "@components";
 import { useDebounce } from "@hooks";
 import { theme } from "@theme";
 
@@ -49,6 +56,9 @@ const TextInput = styled.TextInput`
  * ```
  */
 
+const { width: screenWidth } = Dimensions.get("window");
+const buttonSize = moderateScale(screenWidth * 0.19);
+
 export const SearchBar = ({
   placeholder = "Search",
   onChangeText = () => {},
@@ -64,32 +74,28 @@ export const SearchBar = ({
     searchText.trim(),
     Number(debounceDelay)
   );
-  const buttonWidthController = useRef(new Animated.Value(0)).current;
-  const buttonOpacityController = useRef(new Animated.Value(0)).current;
+  const buttonWidthController = useSharedValue(0);
+  const buttonOpacityController = useSharedValue(0);
 
   useEffect(() => {
     onChangeText(debouncedSearchTextValue);
   }, [debouncedSearchTextValue, onChangeText]);
 
   const animateSearchInput = val => {
-    Animated.sequence([
-      Animated.timing(buttonOpacityController, {
-        toValue: val,
-        duration: 350,
-        useNativeDriver: false,
-      }),
-      Animated.timing(buttonWidthController, {
-        toValue: val,
-        duration: 200,
-        useNativeDriver: false,
-      }),
-    ]).start();
+    buttonWidthController.value = withTiming(val, {
+      easing: Easing.linear,
+      duration: 200,
+    });
+
+    buttonOpacityController.value = withTiming(val, {
+      easing: Easing.linear,
+      duration: 100,
+    });
   };
 
-  const cancelButtonWidth = buttonWidthController.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, 60],
-  });
+  const cancelButtonStyle = useAnimatedStyle(() => ({
+    width: interpolate(buttonWidthController.value, [0, 1], [0, buttonSize]),
+  }));
 
   const onCancelHandle = () => {
     animateSearchInput(0);
@@ -117,7 +123,7 @@ export const SearchBar = ({
           height={moderateScale(42)}
           {...containerProps}
         >
-          <Container px={moderateScale(10)}>
+          <Container px={moderateScale(8)}>
             <Icon
               color={theme.colors.font.grey600}
               name="ri-search-line"
@@ -129,6 +135,7 @@ export const SearchBar = ({
             color="font.primary"
             flex={1}
             fontSize={moderateScale(16)}
+            padding={0}
             placeholder={placeholder}
             placeholderTextColor={theme.colors.font.grey600}
             ref={inputRef}
@@ -149,18 +156,22 @@ export const SearchBar = ({
         <Animated.View
           style={{
             opacity: buttonOpacityController,
-            width: cancelButtonWidth,
             alignItems: "flex-end",
             justifyContent: "center",
+            ...cancelButtonStyle,
           }}
         >
-          <Button
-            height={moderateScale(20)}
-            label="Cancel"
-            labelStyle={{ mx: 0 }}
-            variant="text"
+          <Touchable
+            flex={1}
+            height={moderateScale(42)}
+            justifyContent="center"
+            px={moderateScale(8)}
             onPress={onCancelHandle}
-          />
+          >
+            <Typography fontFamily={theme.fonts.sf500} numberOfLines={1}>
+              Cancel
+            </Typography>
+          </Touchable>
         </Animated.View>
       )}
     </Container>
