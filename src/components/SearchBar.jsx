@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Dimensions, TouchableWithoutFeedback } from "react-native";
+import { Dimensions, TouchableWithoutFeedback, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import Animated, {
@@ -74,27 +74,28 @@ export const SearchBar = ({
     searchText.trim(),
     Number(debounceDelay)
   );
-  const buttonWidthController = useSharedValue(0);
-  const buttonOpacityController = useSharedValue(0);
+  const buttonWidth = useSharedValue(0);
+  const buttonOpacity = useSharedValue(0);
 
   useEffect(() => {
     onChangeText(debouncedSearchTextValue);
   }, [debouncedSearchTextValue, onChangeText]);
 
   const animateSearchInput = val => {
-    buttonWidthController.value = withTiming(val, {
+    buttonWidth.value = withTiming(val, {
       easing: Easing.linear,
       duration: 200,
     });
 
-    buttonOpacityController.value = withTiming(val, {
+    buttonOpacity.value = withTiming(val, {
       easing: Easing.linear,
       duration: 100,
     });
   };
 
   const cancelButtonStyle = useAnimatedStyle(() => ({
-    width: interpolate(buttonWidthController.value, [0, 1], [0, buttonSize]),
+    width: interpolate(buttonWidth.value, [0, 1], [0, buttonSize]),
+    opacity: buttonOpacity.value,
   }));
 
   const onCancelHandle = () => {
@@ -153,16 +154,9 @@ export const SearchBar = ({
         </Container>
       </TouchableWithoutFeedback>
       {showCancelButton && (
-        <Animated.View
-          style={{
-            opacity: buttonOpacityController,
-            alignItems: "flex-end",
-            justifyContent: "center",
-            ...cancelButtonStyle,
-          }}
-        >
+        <Animated.View style={[styles.cancelButtonWrapper, cancelButtonStyle]}>
           <Touchable
-            flex={1}
+            flexGrow={1}
             height={moderateScale(42)}
             justifyContent="center"
             px={moderateScale(8)}
@@ -177,6 +171,13 @@ export const SearchBar = ({
     </Container>
   );
 };
+
+const styles = StyleSheet.create({
+  cancelButtonWrapper: {
+    alignItems: "flex-end",
+    justifyContent: "center",
+  },
+});
 
 SearchBar.propTypes = {
   /**
