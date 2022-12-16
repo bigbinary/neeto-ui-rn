@@ -85,7 +85,7 @@ export const Button = ({
 }) => {
   const theme = useContext(ThemeContext);
   const width = variant === "text" || variant === "danger-text" ? null : "100%";
-  const rippleVisibleOutsideContainer =
+  const rippleOutsideContainer =
     variant === "text" || variant === "danger-text";
 
   const getButtonColors = () => {
@@ -168,7 +168,7 @@ export const Button = ({
       justifyContent="center"
       opacity={renderOpacity()}
       rippleColor={getButtonColors().ripple}
-      rippleVisibleOutsideContainer={rippleVisibleOutsideContainer}
+      rippleOutsideContainer={rippleOutsideContainer}
       width={width}
       {...rest}
     >

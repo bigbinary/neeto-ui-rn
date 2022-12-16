@@ -6,7 +6,6 @@ import {
   Platform,
   I18nManager,
   StyleSheet,
-  Pressable,
 } from "react-native";
 
 import PropTypes from "prop-types";
@@ -18,7 +17,7 @@ const radius = moderateScale(10);
 
 export default class Ripple extends PureComponent {
   static defaultProps = {
-    ...Pressable.defaultProps,
+    ...TouchableWithoutFeedback.defaultProps,
 
     rippleColor: "rgb(0, 0, 0)",
     rippleOpacity: 0.3,
@@ -28,7 +27,7 @@ export default class Ripple extends PureComponent {
     rippleCentered: false,
     rippleSequential: false,
     rippleFades: true,
-    rippleVisibleOutsideContainer: false,
+    rippleOutsideContainer: false,
     disabled: false,
 
     onRippleAnimation: (animation, onComplete) => animation.start(onComplete),
@@ -36,7 +35,7 @@ export default class Ripple extends PureComponent {
 
   static propTypes = {
     ...Animated.View.propTypes,
-    ...Pressable.propTypes,
+    ...TouchableWithoutFeedback.propTypes,
 
     rippleColor: PropTypes.string,
     rippleOpacity: PropTypes.number,
@@ -46,7 +45,7 @@ export default class Ripple extends PureComponent {
     rippleCentered: PropTypes.bool,
     rippleSequential: PropTypes.bool,
     rippleFades: PropTypes.bool,
-    rippleVisibleOutsideContainer: PropTypes.bool,
+    rippleOutsideContainer: PropTypes.bool,
     disabled: PropTypes.bool,
 
     onRippleAnimation: PropTypes.func,
@@ -217,6 +216,7 @@ export default class Ripple extends PureComponent {
       pressRetentionOffset,
       children,
       rippleContainerBorderRadius,
+      rippleOutsideContainer,
       testID,
       nativeID,
       accessible,
@@ -254,10 +254,7 @@ export default class Ripple extends PureComponent {
         <Animated.View {...props} collapsable={false} pointerEvents="box-only">
           {children}
           <View
-            style={[
-              styles.container(this.props.rippleVisibleOutsideContainer),
-              containerStyle,
-            ]}
+            style={[styles.container(rippleOutsideContainer), containerStyle]}
           >
             {ripples.map(this.renderRipple)}
           </View>
@@ -268,10 +265,10 @@ export default class Ripple extends PureComponent {
 }
 
 const styles = StyleSheet.create({
-  container: rippleVisibleOutsideContainer => ({
+  container: rippleOutsideContainer => ({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: "transparent",
-    overflow: rippleVisibleOutsideContainer ? "visible" : "hidden",
+    overflow: rippleOutsideContainer ? "visible" : "hidden",
   }),
   ripple: {
     width: radius * 2,

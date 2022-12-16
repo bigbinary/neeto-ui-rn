@@ -62,18 +62,11 @@ const StyledRipple = styled(Ripple)`
  */
 
 export const Touchable = React.forwardRef((props, ref) => {
-  const { children, elevation, ...rest } = props;
+  const { children, elevation, rippleConfig, ...rest } = props;
   const shadowStyles = elevation ? getShadowStyles(elevation) : {};
 
   return (
-    <StyledRipple
-      ref={ref}
-      rippleContainerBorderRadius={rest.borderRadius ? rest.borderRadius : 0}
-      rippleDuration={600}
-      rippleOpacity={0.09}
-      style={shadowStyles}
-      {...rest}
-    >
+    <StyledRipple ref={ref} style={shadowStyles} {...rest} {...rippleConfig}>
       {children}
     </StyledRipple>
   );
@@ -89,6 +82,7 @@ Touchable.propTypes = {
 
   children: PropTypes.node,
   elevation: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  rippleConfig: Ripple.propTypes,
 };
 
 Touchable.displayName = "Touchable";
