@@ -54,7 +54,7 @@ export const SocialButton = ({
       disabled={disabled}
       height={moderateScale(48)}
       justifyContent="center"
-      rippleColor={theme.colors.background.grey800}
+      rippleConfig={{ color: theme.colors.background.grey800 }}
       width="100%"
       {...rest}
     >

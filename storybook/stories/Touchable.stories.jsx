@@ -18,7 +18,7 @@ export const Touchables = () => (
       bg="background.secondary"
       height="30px"
       justifyContent="center"
-      rippleContainerBorderRadius={50}
+      rippleConfig={{ containerBorderRadius: 50 }}
       width="100px"
     >
       <Typography fontSize="14px">Touchable</Typography>
@@ -30,7 +30,7 @@ export const Touchables = () => (
       height="30px"
       justifyContent="center"
       mt={10}
-      rippleContainerBorderRadius={50}
+      rippleConfig={{ containerBorderRadius: 50 }}
       width="200px"
     >
       <Typography fontSize="14px">Touchable with elevation</Typography>

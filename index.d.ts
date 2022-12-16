@@ -105,8 +105,22 @@ interface TouchableOpacityProps
     ButtonStyleProps {
   children?: React.ReactNode;
 }
+
+interface RipplePropTypes {
+  isCentered?: boolean;
+  isSequential?: boolean;
+  shouldFade?: boolean;
+  shouldOverflowContainer?: boolean;
+  color?: string;
+  opacity?: number;
+  duration?: number;
+  size?: number;
+  containerBorderRadius?: number;
+}
+
 interface TouchableProps extends StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
+  rippleConfig?: RipplePropTypes;
 }
 
 interface AccordionProps extends ViewProps {
