@@ -63,19 +63,37 @@ const StyledRipple = styled(Ripple)`
  *
  */
 
+const defaultRippleConfig = {
+  rippleCentered: false,
+  rippleSequential: false,
+  rippleFades: true,
+  rippleOutsideContainer: false,
+  rippleColor: "#000",
+  rippleOpacity: 0.09,
+  rippleDuration: 600,
+  rippleSize: 0,
+  rippleContainerBorderRadius: 0,
+};
+
 export const Touchable = React.forwardRef((props, ref) => {
   const { children, elevation, rippleConfig, ...rest } = props;
   const shadowStyles = elevation ? getShadowStyles(elevation) : {};
 
   const rippleProps = {
-    rippleCentered: rippleConfig.isCentered,
-    rippleSequential: rippleConfig.isSequential,
-    rippleFades: rippleConfig.shouldFade,
-    rippleOutsideContainer: rippleConfig.shouldOverflowContainer,
-    rippleColor: rippleConfig.color,
-    rippleOpacity: rippleConfig.opacity,
-    rippleDuration: rippleConfig.duration,
-    rippleSize: rippleConfig.size,
+    ...defaultRippleConfig,
+    rippleCentered:
+      rippleConfig?.isCentered ?? defaultRippleConfig.rippleCentered,
+    rippleSequential:
+      rippleConfig?.isSequential ?? defaultRippleConfig.rippleSequential,
+    rippleFades: rippleConfig?.shouldFade ?? defaultRippleConfig.rippleFades,
+    rippleOutsideContainer:
+      rippleConfig?.shouldOverflowContainer ??
+      defaultRippleConfig.rippleOutsideContainer,
+    rippleColor: rippleConfig?.color ?? defaultRippleConfig.rippleColor,
+    rippleOpacity: rippleConfig?.opacity ?? defaultRippleConfig.rippleOpacity,
+    rippleDuration:
+      rippleConfig?.duration ?? defaultRippleConfig.rippleDuration,
+    rippleSize: rippleConfig?.size ?? defaultRippleConfig.rippleSize,
     rippleContainerBorderRadius: rest.borderRadius ? rest.borderRadius : 0,
   };
 
@@ -107,20 +125,6 @@ Touchable.propTypes = {
     size: PropTypes.number,
     containerBorderRadius: PropTypes.number,
   }),
-};
-
-Touchable.defaultProps = {
-  rippleConfig: {
-    isCentered: false,
-    isSequential: false,
-    shouldFade: true,
-    shouldOverflowContainer: false,
-    color: "#000",
-    opacity: 0.09,
-    duration: 600,
-    size: 0,
-    containerBorderRadius: 0,
-  },
 };
 
 Touchable.displayName = "Touchable";

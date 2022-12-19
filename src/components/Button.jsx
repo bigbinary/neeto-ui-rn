@@ -85,8 +85,6 @@ export const Button = ({
 }) => {
   const theme = useContext(ThemeContext);
   const width = variant === "text" || variant === "danger-text" ? null : "100%";
-  const shouldOverflowContainer =
-    variant === "text" || variant === "danger-text";
 
   const getButtonColors = () => {
     switch (variant) {
@@ -167,11 +165,9 @@ export const Button = ({
       height={moderateScale(48)}
       justifyContent="center"
       opacity={renderOpacity()}
+      px={width === null ? moderateScale(8) : undefined}
+      rippleConfig={{ color: getButtonColors().ripple }}
       width={width}
-      rippleConfig={{
-        color: getButtonColors().ripple,
-        shouldOverflowContainer,
-      }}
       {...rest}
     >
       {isLoading ? (
@@ -182,7 +178,7 @@ export const Button = ({
               color={color || getButtonColors().color}
               fontFamily={fontFamily || theme.fonts.sf500}
               fontSize={fontSize}
-              mx={moderateScale(2)}
+              ml={moderateScale(8)}
               textAlign="center"
               {...labelStyle}
             >
