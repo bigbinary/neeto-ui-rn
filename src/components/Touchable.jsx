@@ -82,18 +82,17 @@ export const Touchable = React.forwardRef((props, ref) => {
   const rippleProps = {
     ...defaultRippleConfig,
     rippleCentered:
-      rippleConfig?.isCentered ?? defaultRippleConfig.rippleCentered,
+      rippleConfig.isCentered ?? defaultRippleConfig.rippleCentered,
     rippleSequential:
-      rippleConfig?.isSequential ?? defaultRippleConfig.rippleSequential,
-    rippleFades: rippleConfig?.shouldFade ?? defaultRippleConfig.rippleFades,
+      rippleConfig.isSequential ?? defaultRippleConfig.rippleSequential,
+    rippleFades: rippleConfig.shouldFade ?? defaultRippleConfig.rippleFades,
     rippleOutsideContainer:
-      rippleConfig?.shouldOverflowContainer ??
+      rippleConfig.shouldOverflowContainer ??
       defaultRippleConfig.rippleOutsideContainer,
-    rippleColor: rippleConfig?.color ?? defaultRippleConfig.rippleColor,
-    rippleOpacity: rippleConfig?.opacity ?? defaultRippleConfig.rippleOpacity,
-    rippleDuration:
-      rippleConfig?.duration ?? defaultRippleConfig.rippleDuration,
-    rippleSize: rippleConfig?.size ?? defaultRippleConfig.rippleSize,
+    rippleColor: rippleConfig.color ?? defaultRippleConfig.rippleColor,
+    rippleOpacity: rippleConfig.opacity ?? defaultRippleConfig.rippleOpacity,
+    rippleDuration: rippleConfig.duration ?? defaultRippleConfig.rippleDuration,
+    rippleSize: rippleConfig.size ?? defaultRippleConfig.rippleSize,
     rippleContainerBorderRadius: rest.borderRadius ? rest.borderRadius : 0,
   };
 
@@ -125,6 +124,10 @@ Touchable.propTypes = {
     size: PropTypes.number,
     containerBorderRadius: PropTypes.number,
   }),
+};
+
+Touchable.defaultProps = {
+  rippleConfig: {},
 };
 
 Touchable.displayName = "Touchable";
