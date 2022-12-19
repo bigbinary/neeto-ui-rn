@@ -40,7 +40,6 @@ import {
   ToastShowParams,
   ToastConfig,
 } from "react-native-toast-message";
-import { RippleProps } from "react-native-material-ripple";
 import { FastImageProps } from "react-native-fast-image";
 
 import { theme as themeDef } from "./src/theme";
@@ -106,8 +105,22 @@ interface TouchableOpacityProps
     ButtonStyleProps {
   children?: React.ReactNode;
 }
-interface TouchableProps extends RippleProps, StyleProps, ButtonStyleProps {
+
+interface RipplePropTypes {
+  isCentered?: boolean;
+  isSequential?: boolean;
+  shouldFade?: boolean;
+  shouldOverflowContainer?: boolean;
+  color?: string;
+  opacity?: number;
+  duration?: number;
+  size?: number;
+  containerBorderRadius?: number;
+}
+
+interface TouchableProps extends StyleProps, ButtonStyleProps {
   children?: React.ReactNode;
+  rippleConfig?: RipplePropTypes;
 }
 
 interface AccordionProps extends ViewProps {

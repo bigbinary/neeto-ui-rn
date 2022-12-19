@@ -165,7 +165,8 @@ export const Button = ({
       height={moderateScale(48)}
       justifyContent="center"
       opacity={renderOpacity()}
-      rippleColor={getButtonColors().ripple}
+      px={width === null ? moderateScale(8) : undefined}
+      rippleConfig={{ color: getButtonColors().ripple }}
       width={width}
       {...rest}
     >
@@ -177,7 +178,7 @@ export const Button = ({
               color={color || getButtonColors().color}
               fontFamily={fontFamily || theme.fonts.sf500}
               fontSize={fontSize}
-              mx={moderateScale(2)}
+              ml={moderateScale(8)}
               textAlign="center"
               {...labelStyle}
             >
