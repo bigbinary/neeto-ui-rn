@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useWindowDimensions } from "react-native";
 
 import PropTypes from "prop-types";
@@ -16,9 +16,21 @@ import WarningIcon from "@assets/icons/warning.svg";
 import { Container, Typography, Card, Touchable } from "@components";
 import { defaultToasterConfig } from "@config";
 
-const ToastComponent = ({ type, text1, text2, hide }) => {
+let timer;
+const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
   const theme = useContext(ThemeContext);
   const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    if (isVisible) {
+      timer = setTimeout(() => {
+        hide();
+      }, 4000);
+    }
+
+    return;
+  }, [isVisible, hide]);
+
   const Icon = () => {
     switch (type) {
       case "success":
@@ -46,6 +58,9 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
       mx={moderateScale(10)}
       px={moderateScale(10)}
       width={width - moderateScale(20)}
+      onPressIn={() => {
+        clearTimeout(timer);
+      }}
     >
       <Container
         alignItems="center"
@@ -84,7 +99,10 @@ const ToastComponent = ({ type, text1, text2, hide }) => {
           bottom: moderateScale(5),
           left: moderateScale(5),
         }}
-        onPress={hide}
+        onPress={() => {
+          clearTimeout(timer);
+          hide();
+        }}
       >
         <CloseIcon color={theme.colors.font.grey500} name="ri-close-line" />
       </Touchable>
@@ -97,6 +115,7 @@ ToastComponent.propTypes = {
   text1: PropTypes.string,
   text2: PropTypes.string,
   hide: PropTypes.func,
+  isVisible: PropTypes.bool,
 };
 
 /**
@@ -158,6 +177,7 @@ export const Toast = ({ toasterConfig, ...rest }) => {
   return (
     <T
       {...rest}
+      autoHide={false}
       config={{ ...defaultToasterConfig, ...customConfig, ...toasterConfig }}
       position="top"
     />
