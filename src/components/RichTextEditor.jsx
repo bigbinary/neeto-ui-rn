@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Image } from "react-native";
 
 import PropTypes from "prop-types";
@@ -39,7 +39,6 @@ export const ScrollView = styled.ScrollView.attrs(() => ({
  *  ## Usage
  * ```js
  * import * as React from "react";
- * import { moderateScale } from "react-native-size-matters";
  * import { Container, RichTextEditor, theme } from "@bigbinary/neetoui-rn";
  *
  * export default function Main() {
@@ -91,13 +90,17 @@ export const RichTextEditor = ({
   attachments,
   onAttachment,
   onDelete,
+  inline,
   ...rest
 }) => {
   const richTextRef = useRef();
   const keyboardHeight = useKeyboard();
   const [toolbarVisible, setToolbarVisible] = useState(false);
   const showToolbar = keyboardHeight > 0 && toolbarVisible;
-  const defaultBorderStyle = RichTextEditor.defaultProps.borderStyle;
+
+  useEffect(() => {
+    if (editorProps?.ref) throw Error("ref is not allowed in editorprops");
+  }, []);
 
   const computeToolbarActions = () => {
     const actionItems = [];
@@ -107,8 +110,8 @@ export const RichTextEditor = ({
       actionItems.push(actions[actionItem]);
     });
 
-    if (onSend) {
-      actionItems.push("customAction");
+    if (onSend && !inline) {
+      actionItems.push("onSend");
     }
 
     return actionItems;
@@ -117,8 +120,7 @@ export const RichTextEditor = ({
   const combinedEditorProps = {
     ...editorProps,
     containerStyle: {
-      borderRadius: borderStyle.radius ?? defaultBorderStyle.radius,
-      overflow: "hidden",
+      borderRadius: borderStyle.borderRadius,
     },
   };
 
@@ -130,93 +132,114 @@ export const RichTextEditor = ({
   };
 
   return (
-    <ScrollView {...rest?.editorWrapperStyle}>
-      <Container
-        borderRadius={borderStyle.radius ?? defaultBorderStyle.radius}
-        borderStyle={borderStyle.style ?? defaultBorderStyle.style}
-        borderWidth={borderStyle.width ?? defaultBorderStyle.width}
-        flex={1}
-        pd={8}
-        borderColor={
-          !errorMessage
-            ? borderStyle.color ?? defaultBorderStyle.color
-            : theme.colors.border.danger
-        }
-      >
-        <RichEditor
-          androidLayerType="software"
-          autoCapitalize="sentences"
-          placeholder={placeholderText}
-          ref={richTextRef}
-          useContainer={false}
-          onChange={onChange}
-          onBlur={() => {
-            setToolbarVisible(false);
-            editorProps?.onBlurFn();
-          }}
-          onFocus={() => {
-            setToolbarVisible(true);
-            editorProps?.onFocusFn();
-          }}
-          {...combinedEditorProps}
-        />
-        {attachments.length ? (
-          <Container>
-            <ScrollView horizontal py={2}>
-              {attachments.map(data => (
-                <Container key={Math.random()} mx={1}>
-                  <Touchable
-                    position="absolute"
-                    right={0}
-                    top={0}
-                    zIndex={10}
-                    onPress={() => {
-                      onDelete(data);
-                    }}
-                  >
-                    <Icon
-                      color={theme.colors.font.danger}
-                      name="close-circle-line"
-                      size={20}
+    <>
+      <Container alignItems="center" flexDirection="row">
+        <Container
+          {...borderStyle}
+          flex={1}
+          overflow="hidden"
+          pd={8}
+          borderColor={
+            !errorMessage ? borderStyle.borderColor : theme.colors.border.danger
+          }
+        >
+          <ScrollView>
+            <Container flex={1} {...rest?.editorWrapperStyle}>
+              <RichEditor
+                androidLayerType="software"
+                placeholder={placeholderText}
+                ref={richTextRef}
+                useContainer={false}
+                onChange={onChange}
+                onBlur={() => {
+                  setToolbarVisible(false);
+                  editorProps?.onBlurFn();
+                }}
+                onFocus={() => {
+                  setToolbarVisible(true);
+                  editorProps?.onFocusFn();
+                }}
+                {...combinedEditorProps}
+              />
+            </Container>
+          </ScrollView>
+          {attachments.length ? (
+            <Container>
+              <ScrollView horizontal py={2}>
+                {attachments.map(data => (
+                  <Container key={Math.random()} mx={1}>
+                    <Touchable
+                      position="absolute"
+                      right={0}
+                      top={0}
+                      zIndex={10}
+                      onPress={() => {
+                        onDelete(data);
+                      }}
+                    >
+                      <Icon
+                        color={theme.colors.font.danger}
+                        name="close-circle-line"
+                        size={20}
+                      />
+                    </Touchable>
+                    <Image
+                      style={attachmentStyle}
+                      source={{
+                        uri: data.url,
+                      }}
                     />
-                  </Touchable>
-                  <Image
-                    style={attachmentStyle}
-                    source={{
-                      uri: data.url,
-                    }}
+                  </Container>
+                ))}
+              </ScrollView>
+            </Container>
+          ) : null}
+          {showToolbar && (
+            <RichToolbar
+              actions={computeToolbarActions()}
+              editor={richTextRef}
+              style={{
+                ...RichTextEditor.defaultProps.toolbarStyle,
+                ...toolbarStyle,
+              }}
+              {...RichTextEditor.defaultProps.toolbarProps}
+              {...toolbarProps}
+              attachment={onAttachment}
+              iconMap={{
+                ["onSend"]: data => (
+                  <Icon
+                    color={data.tintColor}
+                    name="send-plane-2-fill"
+                    size={20}
                   />
-                </Container>
-              ))}
-            </ScrollView>
-          </Container>
-        ) : null}
-        {showToolbar && (
-          <RichToolbar
-            actions={computeToolbarActions()}
-            editor={richTextRef}
-            style={{
-              ...RichTextEditor.defaultProps.toolbarStyle,
-              ...toolbarStyle,
-            }}
-            {...RichTextEditor.defaultProps.toolbarProps}
-            {...toolbarProps}
-            attachment={onAttachment}
-            customAction={onSend}
-            iconMap={{
-              ["customAction"]: data => (
-                <Icon
-                  color={data.tintColor}
-                  name="send-plane-2-fill"
-                  size={20}
-                />
-              ),
-              ["attachment"]: data => (
-                <Icon color={data.tintColor} name="attachment-line" size={20} />
-              ),
-            }}
-          />
-        )}
+                ),
+                ["attachment"]: data => (
+                  <Icon
+                    color={data.tintColor}
+                    name="attachment-line"
+                    size={20}
+                  />
+                ),
+              }}
+              onSend={onSend}
+            />
+          )}
+        </Container>
+        <Container>
+          {onSend && inline && (
+            <Touchable
+              hitSlop={{ top: 5, right: 5, bottom: 5, left: 5 }}
+              px={2}
+              onPress={onSend}
+            >
+              <Icon
+                color={theme.colors.font.grey500}
+                name="send-plane-2-fill"
+                size={20}
+              />
+            </Touchable>
+          )}
+        </Container>
       </Container>
       {!!errorMessage && (
         <Typography color="font.danger" pt={2}>
@@ -224,7 +247,7 @@ export const RichTextEditor = ({
         </Typography>
       )}
       {children}
-    </ScrollView>
+    </>
   );
 };
 
@@ -233,10 +256,10 @@ RichTextEditor.defaultProps = {
   editorProps: {},
   errorMessage: null,
   borderStyle: {
-    radius: 8,
-    color: "transparent",
-    style: "solid",
-    width: 1,
+    borderRadius: 8,
+    borderColor: theme.colors.border.grey400,
+    borderStyle: "solid",
+    borderWidth: 1,
   },
   toolbarProps: {
     selectedIconTint: theme.buttons.solid.backgroundColor,
@@ -249,6 +272,7 @@ RichTextEditor.defaultProps = {
   },
   iconMap: PropTypes.object,
   attachments: [],
+  inline: false,
 };
 
 RichTextEditor.propTypes = {
@@ -305,4 +329,8 @@ RichTextEditor.propTypes = {
    * callback to delete an attachment
    */
   onDelete: PropTypes.func,
+  /**
+   * flag to show the send button inline with editor
+   */
+  inline: PropTypes.bool,
 };

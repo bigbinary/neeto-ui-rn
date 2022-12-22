@@ -438,10 +438,10 @@ interface PopoverItemProps {
 }
 
 interface BorderStyle {
-  color?: string;
-  width?: number;
-  radius?: number;
-  style?: "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset" | "none" | "hidden";
+  borderColor?: string;
+  borderWidth?: number;
+  borderRadius?: number;
+  borderStyle?: "dotted" | "dashed" | "solid" | "double" | "groove" | "ridge" | "inset" | "outset" | "none" | "hidden";
 }
 
 type RNPopoverProps = typeof RNPopover.propTypes;
@@ -475,6 +475,7 @@ type RichTextEditorProps = {
   attachments?: Array;
   onAttachment?: () => void;
   onDelete?: (val: object) => void;
+  inline?: boolean;
 };
 
 interface SearchBarProps extends ViewProps {
