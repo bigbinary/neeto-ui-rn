@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Keyboard, StatusBar } from "react-native";
+import React, { createRef, useContext } from "react";
+import { Keyboard, StatusBar, StyleSheet, TextInput } from "react-native";
 
 import PropTypes from "prop-types";
 import {
@@ -64,6 +64,7 @@ export const ParentView = ({
     statusBarColors[barStyle] || statusBarColors["default"];
 
   const insets = useSafeAreaInsets();
+  const hiddenTextInputRef = createRef();
 
   return (
     <SafeAreaView
@@ -72,6 +73,11 @@ export const ParentView = ({
       style={{ backgroundColor: statusBarColor }}
     >
       <StatusBar backgroundColor={statusBarColor} barStyle={barStyle} />
+      <TextInput
+        ref={hiddenTextInputRef}
+        style={styles.hidden}
+        underlineColorAndroid="transparent"
+      />
       <Container
         {...(shouldDismissKeyboardOnTap
           ? {
@@ -86,8 +92,8 @@ export const ParentView = ({
                     "TextInput"
                   ) === -1
                 ) {
+                  hiddenTextInputRef.current.focus();
                   Keyboard.dismiss();
-                  rest?.onOutsideTap && rest?.onOutsideTap();
                 }
               },
             }
@@ -137,8 +143,12 @@ ParentView.propTypes = {
    * Dismiss keyboard on tap
    */
   shouldDismissKeyboardOnTap: PropTypes.bool,
-  /**
-   * On outside tap event handler
-   */
-  onOutsideTap: PropTypes.func,
 };
+
+const styles = StyleSheet.create({
+  hidden: {
+    height: 0,
+    margin: 0,
+    padding: 0,
+  },
+});

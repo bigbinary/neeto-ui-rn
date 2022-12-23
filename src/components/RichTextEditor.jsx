@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Image } from "react-native";
 
 import PropTypes from "prop-types";
 import {
@@ -13,6 +12,8 @@ import { space, flexbox, border, layout } from "styled-system";
 
 import { Container, Typography, Touchable } from "@components";
 import { useKeyboard } from "@hooks";
+
+import { AttachmentList } from "./AttachmentList";
 
 import { theme } from "../theme";
 
@@ -90,13 +91,15 @@ export const RichTextEditor = ({
   attachments,
   onAttachment,
   onDelete,
+  alwaysShowToolbar,
   inline,
   ...rest
 }) => {
   const richTextRef = useRef();
   const keyboardHeight = useKeyboard();
   const [toolbarVisible, setToolbarVisible] = useState(false);
-  const showToolbar = keyboardHeight > 0 && toolbarVisible;
+  const showToolbar =
+    (keyboardHeight > 0 && toolbarVisible) || alwaysShowToolbar;
 
   useEffect(() => {
     if (editorProps?.ref) throw Error("ref is not allowed in editorprops");
@@ -104,6 +107,10 @@ export const RichTextEditor = ({
 
   const computeToolbarActions = () => {
     const actionItems = [];
+
+    Object.keys(toolbarProps.iconMap).forEach(key => {
+      actionItems.push(key);
+    });
     actionItems.push("attachment");
 
     toolbarActions?.map(actionItem => {
@@ -122,13 +129,6 @@ export const RichTextEditor = ({
     containerStyle: {
       borderRadius: borderStyle.borderRadius,
     },
-  };
-
-  const attachmentStyle = {
-    width: 40,
-    height: 45,
-    borderRadius: 5,
-    opacity: 0.75,
   };
 
   return (
@@ -163,37 +163,9 @@ export const RichTextEditor = ({
               />
             </Container>
           </ScrollView>
-          {attachments.length ? (
-            <Container>
-              <ScrollView horizontal py={2}>
-                {attachments.map(data => (
-                  <Container key={Math.random()} mx={1}>
-                    <Touchable
-                      position="absolute"
-                      right={0}
-                      top={0}
-                      zIndex={10}
-                      onPress={() => {
-                        onDelete(data);
-                      }}
-                    >
-                      <Icon
-                        color={theme.colors.font.danger}
-                        name="close-circle-line"
-                        size={20}
-                      />
-                    </Touchable>
-                    <Image
-                      style={attachmentStyle}
-                      source={{
-                        uri: data.url,
-                      }}
-                    />
-                  </Container>
-                ))}
-              </ScrollView>
-            </Container>
-          ) : null}
+          {attachments.length > 0 && (
+            <AttachmentList attachments={attachments} onDelete={onDelete} />
+          )}
           {showToolbar && (
             <RichToolbar
               actions={computeToolbarActions()}
@@ -206,6 +178,7 @@ export const RichTextEditor = ({
               {...toolbarProps}
               attachment={onAttachment}
               iconMap={{
+                ...toolbarProps.iconMap,
                 ["onSend"]: data => (
                   <Icon
                     color={data.tintColor}
@@ -333,4 +306,8 @@ RichTextEditor.propTypes = {
    * flag to show the send button inline with editor
    */
   inline: PropTypes.bool,
+  /**
+   * flag to always show toolbar
+   */
+  alwaysShowToolbar: PropTypes.bool,
 };

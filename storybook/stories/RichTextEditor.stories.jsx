@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ScrollView } from "react-native";
 
+import Icon from "react-native-remix-icon";
+
 import { Container, RichTextEditor, Typography } from "@components";
 import { theme } from "@theme";
 
@@ -12,9 +14,23 @@ export default RichTextEditorStories;
 
 export const RichTextEditorComponent = () => {
   const [errorMessage, setErrorMessage] = useState(null);
-  const [attachments, setAttachments] = useState([]);
+  const [attachments, setAttachments] = useState([
+    {
+      uri: "https://randomwordgenerator.com/img/picture-generator/57e7d54b4a5ba814f1dc8460962e33791c3ad6e04e5074417c2e7dd3974ec4_640.jpg",
+      isUploading: true,
+    },
+  ]);
 
-  const toolbarProps = {};
+  const toolbarProps = {
+    cannedResponses: () => {
+      alert("sam");
+    },
+    iconMap: {
+      ["cannedResponses"]: data => (
+        <Icon color={data.tintColor} name="file-list-line" size={20} />
+      ),
+    },
+  };
   const toolbarStyle = {};
   const editorProps = {
     initialContentHTML: "Rich Text Component...",
@@ -105,7 +121,12 @@ export const RichTextEditorComponent = () => {
             setAttachments(prev => [
               ...prev,
               {
-                url: "https://randomwordgenerator.com/img/picture-generator/57e7d54b4a5ba814f1dc8460962e33791c3ad6e04e5074417c2e7dd3974ec4_640.jpg",
+                uri: "https://randomwordgenerator.com/img/picture-generator/57e7d54b4a5ba814f1dc8460962e33791c3ad6e04e5074417c2e7dd3974ec4_640.jpg",
+                isUploading: true,
+              },
+              {
+                uri: "https://randomwordgenerator.com/img/picture-generator/57e7d54b4a5ba814f1dc8460962e33791c3ad6e04e5074417c2e7dd3974ec4_640.jpg",
+                isUploading: false,
               },
             ]);
           }, 1000)
