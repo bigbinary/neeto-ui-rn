@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     width: moderateScale(10),
     height: moderateScale(10),
     borderRadius: moderateScale(5),
-    marginRight: moderateScale(8),
+    marginHorizontal: moderateScale(4),
     backgroundColor: "#2F3941",
   },
   inactiveDotStyle: {
