@@ -317,6 +317,14 @@ type InputProps = {
   textAlignVertical?: string;
 };
 
+type InputEmailChipProps = {
+  disabled?: boolean;
+  label?: string;
+  initialEmails?: Array<string>;
+  delimiters?: Array<string>;
+  onUpdate?: (emails: Array<string>) => void;
+}
+
 interface ListItemProps extends ViewProps {
   LeftComponent?: React.FC;
   label: string;
@@ -555,6 +563,7 @@ export const FAB: React.FC<FabProps>;
 export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
+export const InputEmailChip: React.FC<InputEmailChipProps>;
 export const ListItem: React.FC<ListItemProps>;
 export const Loader: React.FC<LoaderProps>;
 export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;

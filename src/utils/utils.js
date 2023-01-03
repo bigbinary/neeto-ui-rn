@@ -25,3 +25,32 @@ export const getShadowStyles = (elevation = 0) => {
 };
 
 export const isAndroid = () => Platform.OS === "android";
+
+export const isValidEmail = email =>
+  String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+
+export const charsForRegex = chars => chars?.join("|") || "";
+
+export const endsWithChars = (text, chars) => {
+  const regex = `(${charsForRegex(chars)})$`;
+
+  return text.match(regex);
+};
+
+export const trimChars = (text, chars) => {
+  const charsRegex = charsForRegex(chars);
+
+  const startRegexPattern = `^(${charsRegex})+`;
+  const endRegexPattern = `(${charsRegex})+$`;
+
+  const startRegex = new RegExp(startRegexPattern);
+  const endRegex = new RegExp(endRegexPattern);
+
+  const trimmedText = text.replace(startRegex, "").replace(endRegex, "");
+
+  return trimmedText;
+};

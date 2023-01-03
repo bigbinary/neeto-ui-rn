@@ -47,6 +47,7 @@ const getStories = () => {
     require("../storybook/stories/FAB.stories.jsx"),
     require("../storybook/stories/FlashList.stories.jsx"),
     require("../storybook/stories/Input.stories.jsx"),
+    require("../storybook/stories/InputEmailChip.stories.jsx"),
     require("../storybook/stories/ListItem.stories.jsx"),
     require("../storybook/stories/Loader.stories.jsx"),
     require("../storybook/stories/MultiSelect.stories.jsx"),
