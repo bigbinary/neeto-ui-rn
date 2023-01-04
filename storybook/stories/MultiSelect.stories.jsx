@@ -55,12 +55,22 @@ export const MultiSelects = () => {
     }, 2000);
   };
 
+  const createMultiselectItem = ({ searchText }) => (
+    <Button
+      isLoading={isLoading}
+      label={`Create Tag: ${searchText}`}
+      loadingText=""
+      onPress={() => simulateAPICall(searchText)}
+    />
+  );
+
   return (
     <>
       <Alert />
       <MultiSelect
         isSearchable
         showCreateOption
+        CreateItemComponent={createMultiselectItem}
         label="Multi Select"
         labelExtractor={item => item?.name}
         options={sData}
@@ -68,12 +78,6 @@ export const MultiSelects = () => {
         showCreateOptionLoader={isLoading}
         value={selectedOptions}
         valueExtractor={item => item?.id}
-        CreateItemComponent={({ searchText }) => (
-          <Button
-            label="Create Tag"
-            onPress={() => simulateAPICall(searchText)}
-          />
-        )}
         onPressCreateOption={simulateAPICall}
         onSelect={setSelectedOptions}
       />

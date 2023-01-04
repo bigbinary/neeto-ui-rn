@@ -83,7 +83,7 @@ export const BottomSheetDemo = args => {
           fontSize="l"
           py={50}
         >
-          Selected Item: {selectedItem}
+          Selected Item: {selectedItem.label}
         </Typography>
       )}
     </Container>

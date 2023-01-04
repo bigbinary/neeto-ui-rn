@@ -177,7 +177,7 @@ interface BadgeProps extends ViewProps {
 
 interface BottomSheetProps extends ViewProps {
   showCreateOption?: boolean;
-  CreateItemComponent?: React.ReactNode;
+  CreateItemComponent?: React.FC;
   showCreateOptionLoader?: boolean;
   createSearchedOptionLabelStyle?: TextProps;
   createOptionLabel?: string;

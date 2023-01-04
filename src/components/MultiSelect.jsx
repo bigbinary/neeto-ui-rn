@@ -337,7 +337,6 @@ export const MultiSelect = ({
   const animatedStyles = useAnimatedStyle(() => ({
     top: interpolate(animatedLabelValue.value, [0, 1], [7, -5]),
     fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
-    color: "font.grey600",
   }));
 
   return (
@@ -363,6 +362,7 @@ export const MultiSelect = ({
             justifyContent="space-between"
           >
             <AnimatedLabel
+              color="font.grey600"
               position="absolute"
               zIndex={1}
               style={[
@@ -566,7 +566,7 @@ MultiSelect.propTypes = {
   /**
    * Component that renders when searched item doesn't exists
    */
-  CreateItemComponent: PropTypes.node,
+  CreateItemComponent: PropTypes.func,
   /**
    * Flag will disable the selection of the item
    */
