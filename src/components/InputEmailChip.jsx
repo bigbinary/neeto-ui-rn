@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
@@ -27,8 +27,10 @@ export const InputEmailChip = ({
   delimiters = [" ", ","],
 }) => {
   const theme = useContext(ThemeContext);
+  const inputRef = useRef();
 
   const [textValue, setTextValue] = useState("");
+  const [shouldShowInput, setShouldShowInput] = useState(false);
   const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
 
   const handleKeyPress = event => {
@@ -59,7 +61,19 @@ export const InputEmailChip = ({
     checkAndUpdateEmails(text);
   };
 
-  const handleTouchStart = () => setEmailIndexForDeletion(-1);
+  const handleInputTouchStart = () => setEmailIndexForDeletion(-1);
+
+  const handleTouchStart = () => {
+    if (disabled) return;
+
+    if (!inputRef.current?.isFocused()) {
+      inputRef.current?.focus();
+    }
+  };
+
+  const handleOnFocus = () => setShouldShowInput(true);
+
+  const handleOnBlur = () => setShouldShowInput(false);
 
   const checkAndUpdateEmails = text => {
     const emailCandidate = trimChars(text, delimiters);
@@ -100,7 +114,12 @@ export const InputEmailChip = ({
   };
 
   return (
-    <Container flexDirection="row" width="100%">
+    <Container
+      flexDirection="row"
+      minHeight={moderateScale(30)}
+      width="100%"
+      onTouchStart={handleTouchStart}
+    >
       {!!label && (
         <Typography
           color={disabled ? "font.grey400" : "font.grey600"}
@@ -139,7 +158,11 @@ export const InputEmailChip = ({
             flex={1}
             justifyContent="center"
             minWidth={moderateScale(160)}
-            pt={Platform.select({ ios: gap, android: moderateScale(10) })}
+            paddingTop={Platform.select({
+              ios: gap,
+              android: moderateScale(10),
+            })}
+            {...(shouldShowInput ? {} : { height: 0 })}
           >
             <Input
               noBorder
@@ -147,9 +170,12 @@ export const InputEmailChip = ({
               value={textValue}
               inputProps={{
                 ...inputProps,
+                ref: inputRef,
                 onKeyPress: handleKeyPress,
                 onSubmitEditing: handleSubmitEditing,
-                onTouchStart: handleTouchStart,
+                onTouchStart: handleInputTouchStart,
+                onFocus: handleOnFocus,
+                onBlur: handleOnBlur,
               }}
               onChangeText={handleTextChange}
             />
