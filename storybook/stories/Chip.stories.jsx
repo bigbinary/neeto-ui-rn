@@ -17,8 +17,7 @@ const ChipStories = {
   component: Chip,
   args: {
     variant: variants[0],
-    label:
-      "Chip ComponentChip ComponentChip ComponentChip ComponentChip ComponentChip Component",
+    label: "Chip Component",
     isDisabled: false,
     labelColor: labelColors[0],
     closeIconBackground: iconBackground[1],

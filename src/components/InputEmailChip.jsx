@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
@@ -14,8 +15,8 @@ const chipWrapperStyle = {
   pt: gap,
 };
 
-const chipContainerStyle = readyForDeletion => ({
-  borderColor: readyForDeletion ? "border.danger" : "border.grey200",
+const getChipContainerStyle = isReadyForDeletion => ({
+  borderColor: isReadyForDeletion ? "border.danger" : "border.grey200",
 });
 
 export const InputEmailChip = ({
@@ -31,7 +32,7 @@ export const InputEmailChip = ({
   const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
 
   const handleKeyPress = event => {
-    const { key } = event?.nativeEvent || {};
+    const { key } = event.nativeEvent || {};
 
     if (textValue === "" && key === "Backspace" && emails.length > 0) {
       if (emailIndexForDeletion === -1) {
@@ -44,7 +45,7 @@ export const InputEmailChip = ({
   };
 
   const handleSubmitEditing = event => {
-    const { text } = event?.nativeEvent || {};
+    const { text } = event.nativeEvent || {};
     checkAndUpdateEmails(text);
   };
 
@@ -58,10 +59,7 @@ export const InputEmailChip = ({
     checkAndUpdateEmails(text);
   };
 
-  const handleTouchStart = () => {
-    if (emailIndexForDeletion === -1) return;
-    setEmailIndexForDeletion(-1);
-  };
+  const handleTouchStart = () => setEmailIndexForDeletion(-1);
 
   const checkAndUpdateEmails = text => {
     const emailCandidate = trimChars(text, delimiters);
@@ -96,6 +94,7 @@ export const InputEmailChip = ({
     autoCapitalize: "none",
     keyboardType: "email-address",
     padding: 0,
+    minHeight: moderateScale(26),
     selectionColor:
       emailIndexForDeletion === -1 ? theme.colors.font.base : "transparent",
   };
@@ -107,7 +106,10 @@ export const InputEmailChip = ({
           color={disabled ? "font.grey400" : "font.grey600"}
           fontSize="xs"
           mr={moderateScale(8)}
-          pt={moderateScale(8)}
+          mt={Platform.select({
+            android: moderateScale(10),
+            ios: moderateScale(8),
+          })}
         >
           {label}
         </Typography>
@@ -124,7 +126,7 @@ export const InputEmailChip = ({
             <Chip
               isDisabled={disabled}
               label={email}
-              containerStyle={chipContainerStyle(
+              containerStyle={getChipContainerStyle(
                 index === emailIndexForDeletion
               )}
               onClose={disabled ? null : () => removeEmail({ email })}
@@ -136,8 +138,8 @@ export const InputEmailChip = ({
             alignItems="center"
             flex={1}
             justifyContent="center"
-            minWidth={moderateScale(100)}
-            pt={gap}
+            minWidth={moderateScale(160)}
+            pt={Platform.select({ ios: gap, android: moderateScale(10) })}
           >
             <Input
               noBorder
