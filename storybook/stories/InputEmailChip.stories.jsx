@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { InputEmailChip, Container, Typography } from "@components";
 
@@ -6,7 +6,7 @@ const InputEmailChipMetaData = {
   title: "InputEmailChip",
   component: InputEmailChipDemo,
   argTypes: {
-    initialEmails: {
+    emails: {
       control: {
         type: "array",
       },
@@ -24,11 +24,12 @@ export default InputEmailChipMetaData;
 
 const Template = args => {
   const { title, ...rest } = args;
+  const [emails, setEmails] = useState(args.emails || []);
 
   return (
     <Container mb={20}>
       <Typography color="font.grey800">{title}</Typography>
-      <InputEmailChip {...rest} />
+      <InputEmailChip {...rest} emails={emails} onUpdate={setEmails} />
     </Container>
   );
 };
@@ -36,20 +37,20 @@ const Template = args => {
 export const InputEmailChipDemo = () => (
   <>
     <Template
-      initialEmails={["oliver@example.com", "john@example.com"]}
+      emails={["oliver@example.com", "john@example.com"]}
       label="Emails"
-      title="initialEmails & label"
+      title="emails & label"
     />
     <Template
-      initialEmails={["oliver@example.com", "john@example.com"]}
-      title="initialEmails Only"
+      emails={["oliver@example.com", "john@example.com"]}
+      title="emails Only"
     />
     <Template label="Emails" title="label only" />
     <Template
       disabled
-      initialEmails={["oliver@example.com", "john@example.com"]}
+      emails={["oliver@example.com", "john@example.com"]}
       label="Emails"
-      title="disabled with initialEmails & label"
+      title="disabled with emails & label"
     />
   </>
 );

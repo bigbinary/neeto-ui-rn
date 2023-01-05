@@ -21,13 +21,12 @@ const chipContainerStyle = readyForDeletion => ({
 export const InputEmailChip = ({
   disabled,
   label,
-  initialEmails,
+  emails = [],
   onUpdate,
   delimiters = [" ", ","],
 }) => {
   const theme = useContext(ThemeContext);
 
-  const [emails, setEmails] = useState(initialEmails || []);
   const [textValue, setTextValue] = useState("");
   const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
 
@@ -73,7 +72,6 @@ export const InputEmailChip = ({
       !emails.includes(emailCandidate) // Unique email
     ) {
       const _emails = [...emails, emailCandidate];
-      setEmails(_emails);
       setTextValue("");
       onUpdate && onUpdate(_emails);
     } else {
@@ -87,7 +85,6 @@ export const InputEmailChip = ({
     if (indexOfEmail !== -1) {
       const _emails = [...emails];
       _emails.splice(indexOfEmail, 1);
-      setEmails(_emails);
       onUpdate && onUpdate(_emails);
     }
   };
@@ -171,9 +168,9 @@ InputEmailChip.propTypes = {
    */
   label: PropTypes.string,
   /**
-   * Array of emails to be set initially
+   * Array of emails to be set
    */
-  initialEmails: PropTypes.arrayOf(PropTypes.string),
+  emails: PropTypes.arrayOf(PropTypes.string),
   /**
    * Characters to be used for separating emails while entering
    * By default `,`, ` ` and enter/done triggers chip creation for the entered email.

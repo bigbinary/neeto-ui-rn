@@ -320,7 +320,7 @@ type InputProps = {
 type InputEmailChipProps = {
   disabled?: boolean;
   label?: string;
-  initialEmails?: Array<string>;
+  emails?: Array<string>;
   delimiters?: Array<string>;
   onUpdate?: (emails: Array<string>) => void;
 }
