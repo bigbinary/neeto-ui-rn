@@ -123,6 +123,7 @@ export const InputEmailChip = ({
     <Container
       flexDirection="row"
       minHeight={moderateScale(30)}
+      py={moderateScale(2)}
       width="100%"
       onTouchStart={handleTouchStart}
     >
@@ -144,7 +145,6 @@ export const InputEmailChip = ({
         flex={1}
         flexDirection="row"
         flexWrap="wrap"
-        pb={gap}
       >
         {emails.map((email, index) => (
           <Container key={email} {...chipWrapperStyle}>
@@ -166,7 +166,7 @@ export const InputEmailChip = ({
             minWidth={moderateScale(160)}
             paddingTop={Platform.select({
               ios: gap,
-              android: moderateScale(10),
+              android: moderateScale(7),
             })}
             {...(shouldShowInput ? {} : { height: 0 })}
           >
