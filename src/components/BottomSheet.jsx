@@ -403,7 +403,7 @@ BottomSheet.propTypes = {
   /**
    * Component that renders when searched item doesn't exists
    */
-  CreateItemComponent: PropTypes.node,
+  CreateItemComponent: PropTypes.func,
   /**
    * To customize empty options placeholder text style.
    */

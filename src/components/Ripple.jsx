@@ -37,6 +37,7 @@ export default class Ripple extends PureComponent {
     ...Animated.View.propTypes,
     ...TouchableWithoutFeedback.propTypes,
 
+    children: PropTypes.node.isRequired,
     rippleColor: PropTypes.string,
     rippleOpacity: PropTypes.number,
     rippleDuration: PropTypes.number,

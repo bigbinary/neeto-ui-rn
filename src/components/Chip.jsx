@@ -1,10 +1,10 @@
-import * as React from "react";
+import React from "react";
 
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 
-import { Typography, Touchable } from "@components";
+import { Typography, Touchable, Container } from "@components";
 
 const variantStyleObj = {
   solid: {
@@ -13,7 +13,7 @@ const variantStyleObj = {
   outlined: {
     bg: "background.white",
     border: "1px solid",
-    borderColor: "border.grey400",
+    borderColor: "border.grey200",
   },
 };
 
@@ -51,6 +51,12 @@ const variantStyleObj = {
  *
  */
 
+const commonContainerStyle = {
+  alignItems: "center",
+  borderRadius: moderateScale(20),
+  flexDirection: "row",
+};
+
 export const Chip = ({
   label,
   LeftIcon,
@@ -66,33 +72,42 @@ export const Chip = ({
   containerStyle,
   closeIconContainerStyle,
 }) => (
-  <Touchable
-    alignItems="center"
-    borderRadius={moderateScale(20)}
-    disabled={!onChipPress || isDisabled}
-    flexDirection="row"
-    p={moderateScale(2)}
-    onPress={onChipPress}
+  <Container
+    {...commonContainerStyle}
     {...(variant && variantStyleObj[variant])}
     {...(isDisabled && { opacity: 0.5 })}
     {...containerStyle}
+    m={0}
+    p={0}
   >
-    {LeftIcon && <LeftIcon />}
-    <Typography color={labelColor} fontFamily="sf400" mx={moderateScale(2)}>
-      {label}
-    </Typography>
+    <Touchable
+      disabled={!onChipPress || isDisabled}
+      overflow="hidden"
+      px={moderateScale(4)}
+      py={moderateScale(2)}
+      onPress={onChipPress}
+      {...commonContainerStyle}
+      {...containerStyle}
+    >
+      {LeftIcon && <LeftIcon />}
+      <Typography color={labelColor} fontFamily="sf400" mx={moderateScale(2)}>
+        {label}
+      </Typography>
+    </Touchable>
     {onClose && (
-      <Touchable
+      <Container
         bg={closeIconBackground}
-        borderRadius={moderateScale(10)}
-        disabled={isDisabled}
-        onPress={onClose}
+        borderRadius={closeIconSize}
+        m={moderateScale(3)}
+        p={moderateScale(1)}
         {...closeIconContainerStyle}
       >
-        <Icon color={closeIconColor} name={closeIcon} size={closeIconSize} />
-      </Touchable>
+        <Touchable disabled={isDisabled} onPress={onClose}>
+          <Icon color={closeIconColor} name={closeIcon} size={closeIconSize} />
+        </Touchable>
+      </Container>
     )}
-  </Touchable>
+  </Container>
 );
 
 Chip.defaultProps = {

@@ -39,3 +39,4 @@ export { AnimatedImage } from "./AnimatedImage";
 export { NotificationPreferenceList } from "./NotificationPreferenceList";
 export { OrganizationItem } from "./OrganizationItem";
 export { Loader } from "./Loader";
+export { InputEmailChip } from "./InputEmailChip";
