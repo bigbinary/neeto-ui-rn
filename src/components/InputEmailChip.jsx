@@ -36,23 +36,25 @@ export const InputEmailChip = ({
   const handleKeyPress = event => {
     const { key } = event.nativeEvent || {};
 
-    if (textValue === "" && key === "Backspace" && emails.length > 0) {
-      if (emailIndexForDeletion === -1) {
-        setEmailIndexForDeletion(emails.length - 1);
-      } else {
-        removeEmail({ lastOne: true });
-        setEmailIndexForDeletion(-1);
-      }
+    if (!(textValue === "" && key === "Backspace" && emails.length > 0)) return;
+
+    if (emailIndexForDeletion === -1) {
+      setEmailIndexForDeletion(emails.length - 1);
+    } else {
+      removeEmail({ lastOne: true });
+      setEmailIndexForDeletion(-1);
     }
   };
 
   const handleSubmitEditing = event => {
     const { text } = event.nativeEvent || {};
+    setEmailIndexForDeletion(-1);
     checkAndUpdateEmails(text);
   };
 
   const handleTextChange = text => {
     if (!endsWithChars(text, delimiters)) {
+      setEmailIndexForDeletion(-1);
       setTextValue(text);
 
       return;
@@ -73,7 +75,11 @@ export const InputEmailChip = ({
 
   const handleOnFocus = () => setShouldShowInput(true);
 
-  const handleOnBlur = () => setShouldShowInput(false);
+  const handleOnBlur = () => {
+    if (textValue.trim() === "") {
+      setShouldShowInput(false);
+    }
+  };
 
   const checkAndUpdateEmails = text => {
     const emailCandidate = trimChars(text, delimiters);
