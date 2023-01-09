@@ -58,7 +58,7 @@ const getStories = () => {
     require("../storybook/stories/OnBoarding.stories.jsx"),
     require("../storybook/stories/OrganizationItem.stories.jsx"),
     require("../storybook/stories/OtpInputs.stories.jsx"),
-    // require("../storybook/stories/Popover.stories.jsx"),
+    require("../storybook/stories/Popover.stories.jsx"),
     require("../storybook/stories/RadioButton.stories.jsx"),
     require("../storybook/stories/RichTextEditor.stories.jsx"),
     require("../storybook/stories/SearchBar.stories.jsx"),

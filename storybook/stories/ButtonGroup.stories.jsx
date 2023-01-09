@@ -5,7 +5,7 @@ import { theme } from "@theme";
 
 const buttonItems = ["Button1", "Button2"];
 const backgroundColors = Object.keys(theme.colors.background).map(
-  color => `background.${color}`,
+  color => `background.${color}`
 );
 const fontSizes = Object.keys(theme.fontSizes);
 

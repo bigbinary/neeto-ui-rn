@@ -60,7 +60,7 @@
     "react-native-gesture-handler": "^2.4.0",
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
-    "react-native-popover-view": "^4.1.0",
+    "react-native-popover-view": "^5.1.7",
     "react-native-remix-icon": "^0.3.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-size-matters": "^0.4.0",
