@@ -9,6 +9,8 @@ import { Container, Button, Toast, Popover } from "@components";
 const PopoverStories = {
   title: "PopOver",
   component: Popover,
+  argTypes: {},
+  args: {},
 };
 
 export default PopoverStories;

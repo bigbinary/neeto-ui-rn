@@ -24,7 +24,10 @@ if (parameters) {
   addParameters(parameters);
 }
 
-argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
+// temporary fix for https://github.com/storybookjs/react-native/issues/327 whilst the issue is investigated
+try {
+  argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
+} catch {}
 
 const getStories = () => {
   return [
@@ -55,7 +58,7 @@ const getStories = () => {
     require("../storybook/stories/OnBoarding.stories.jsx"),
     require("../storybook/stories/OrganizationItem.stories.jsx"),
     require("../storybook/stories/OtpInputs.stories.jsx"),
-    require("../storybook/stories/Popover.stories.jsx"),
+    // require("../storybook/stories/Popover.stories.jsx"),
     require("../storybook/stories/RadioButton.stories.jsx"),
     require("../storybook/stories/RichTextEditor.stories.jsx"),
     require("../storybook/stories/SearchBar.stories.jsx"),
