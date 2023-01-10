@@ -69,142 +69,149 @@ export const BUTTON_VARIANTS = Object.freeze({
  *
  */
 
-export const Button = ({
-  variant,
-  label,
-  labelStyle,
-  RightIcon,
-  LeftIcon,
-  disabled,
-  isLoading,
-  loadingText,
-  fontFamily,
-  color,
-  fontSize,
-  ...rest
-}) => {
-  const theme = useContext(ThemeContext);
-  const width = variant === "text" || variant === "danger-text" ? null : "100%";
+export const Button = React.forwardRef(
+  (
+    {
+      variant,
+      label,
+      labelStyle,
+      RightIcon,
+      LeftIcon,
+      disabled,
+      isLoading,
+      loadingText,
+      fontFamily,
+      color,
+      fontSize,
+      ...rest
+    },
+    ref
+  ) => {
+    const theme = useContext(ThemeContext);
+    const width =
+      variant === "text" || variant === "danger-text" ? null : "100%";
 
-  const getButtonColors = () => {
-    switch (variant) {
-      case BUTTON_VARIANTS.SOLID:
-        return {
-          bg: theme.colors.background[disabled ? "grey400" : "base"],
-          border: theme.colors.background[disabled ? "grey400" : "base"],
-          color: theme.colors.background.white,
-          ripple: "white",
-        };
-      case BUTTON_VARIANTS.SECONDARY:
-        return {
-          bg: "transparent",
-          border: theme.colors.background.base,
-          color: theme.colors.font.base,
-          ripple: theme.colors.background.base,
-        };
-      case BUTTON_VARIANTS.TEXT:
-        return {
-          bg: "transparent",
-          border: "transparent",
-          color: theme.colors.font.primary,
-          ripple: theme.colors.background.grey800,
-        };
-      case BUTTON_VARIANTS.DANGER:
-        return {
-          bg: theme.colors.background.danger,
-          border: theme.colors.background.danger,
-          color: theme.colors.background.white,
-          ripple: "white",
-        };
-      case BUTTON_VARIANTS.DANGER_INVERSE:
-        return {
-          bg: theme.colors.background.white,
-          border: theme.colors.background.danger,
-          color: theme.colors.background.danger,
-          ripple: theme.colors.background.grey800,
-        };
-      case BUTTON_VARIANTS.DANGER_TEXT:
-        return {
-          bg: "transparent",
-          border: "transparent",
-          color: theme.colors.background.danger,
-          ripple: theme.colors.background.grey800,
-        };
-      default:
-        return {
-          bg: theme.colors.background[disabled ? "grey400" : "base"],
-          border: theme.colors.background[disabled ? "grey400" : "base"],
-          color: theme.colors.background.white,
-          ripple: "white",
-        };
-    }
-  };
+    const getButtonColors = () => {
+      switch (variant) {
+        case BUTTON_VARIANTS.SOLID:
+          return {
+            bg: theme.colors.background[disabled ? "grey400" : "base"],
+            border: theme.colors.background[disabled ? "grey400" : "base"],
+            color: theme.colors.background.white,
+            ripple: "white",
+          };
+        case BUTTON_VARIANTS.SECONDARY:
+          return {
+            bg: "transparent",
+            border: theme.colors.background.base,
+            color: theme.colors.font.base,
+            ripple: theme.colors.background.base,
+          };
+        case BUTTON_VARIANTS.TEXT:
+          return {
+            bg: "transparent",
+            border: "transparent",
+            color: theme.colors.font.primary,
+            ripple: theme.colors.background.grey800,
+          };
+        case BUTTON_VARIANTS.DANGER:
+          return {
+            bg: theme.colors.background.danger,
+            border: theme.colors.background.danger,
+            color: theme.colors.background.white,
+            ripple: "white",
+          };
+        case BUTTON_VARIANTS.DANGER_INVERSE:
+          return {
+            bg: theme.colors.background.white,
+            border: theme.colors.background.danger,
+            color: theme.colors.background.danger,
+            ripple: theme.colors.background.grey800,
+          };
+        case BUTTON_VARIANTS.DANGER_TEXT:
+          return {
+            bg: "transparent",
+            border: "transparent",
+            color: theme.colors.background.danger,
+            ripple: theme.colors.background.grey800,
+          };
+        default:
+          return {
+            bg: theme.colors.background[disabled ? "grey400" : "base"],
+            border: theme.colors.background[disabled ? "grey400" : "base"],
+            color: theme.colors.background.white,
+            ripple: "white",
+          };
+      }
+    };
 
-  const renderOpacity = () => {
-    if (
-      ["secondary", "danger", "danger-inverse", "danger-text"].includes(
-        variant
-      ) &&
-      disabled
-    ) {
-      return 0.5;
-    }
+    const renderOpacity = () => {
+      if (
+        ["secondary", "danger", "danger-inverse", "danger-text"].includes(
+          variant
+        ) &&
+        disabled
+      ) {
+        return 0.5;
+      }
 
-    return 1;
-  };
+      return 1;
+    };
 
-  return (
-    <Touchable
-      alignItems="center"
-      bg={getButtonColors().bg}
-      borderColor={getButtonColors().border}
-      borderRadius={moderateScale(8)}
-      borderWidth={moderateScale(1)}
-      disabled={disabled || isLoading}
-      flexDirection="row"
-      height={moderateScale(48)}
-      justifyContent="center"
-      opacity={renderOpacity()}
-      px={width === null ? moderateScale(8) : undefined}
-      rippleConfig={{ color: getButtonColors().ripple }}
-      width={width}
-      {...rest}
-    >
-      {isLoading ? (
-        <Container flexDirection="row">
-          <Loader color={getButtonColors().color} />
-          {!!loadingText && (
+    return (
+      <Touchable
+        alignItems="center"
+        bg={getButtonColors().bg}
+        borderColor={getButtonColors().border}
+        borderRadius={moderateScale(8)}
+        borderWidth={moderateScale(1)}
+        disabled={disabled || isLoading}
+        flexDirection="row"
+        height={moderateScale(48)}
+        justifyContent="center"
+        opacity={renderOpacity()}
+        px={width === null ? moderateScale(8) : undefined}
+        ref={ref}
+        rippleConfig={{ color: getButtonColors().ripple }}
+        width={width}
+        {...rest}
+      >
+        {isLoading ? (
+          <Container flexDirection="row">
+            <Loader color={getButtonColors().color} />
+            {!!loadingText && (
+              <Typography
+                color={color || getButtonColors().color}
+                fontFamily={fontFamily || theme.fonts.sf500}
+                fontSize={fontSize}
+                ml={moderateScale(8)}
+                textAlign="center"
+                {...labelStyle}
+              >
+                {loadingText}
+              </Typography>
+            )}
+          </Container>
+        ) : (
+          <>
+            {LeftIcon && <LeftIcon />}
             <Typography
               color={color || getButtonColors().color}
               fontFamily={fontFamily || theme.fonts.sf500}
               fontSize={fontSize}
-              ml={moderateScale(8)}
+              mx={moderateScale(2)}
               textAlign="center"
               {...labelStyle}
             >
-              {loadingText}
+              {label}
             </Typography>
-          )}
-        </Container>
-      ) : (
-        <>
-          {LeftIcon && <LeftIcon />}
-          <Typography
-            color={color || getButtonColors().color}
-            fontFamily={fontFamily || theme.fonts.sf500}
-            fontSize={fontSize}
-            mx={moderateScale(2)}
-            textAlign="center"
-            {...labelStyle}
-          >
-            {label}
-          </Typography>
-          {RightIcon && <RightIcon />}
-        </>
-      )}
-    </Touchable>
-  );
-};
+            {RightIcon && <RightIcon />}
+          </>
+        )}
+      </Touchable>
+    );
+  }
+);
 
 Button.defaultProps = {
   variant: "solid",
@@ -261,3 +268,4 @@ Button.propTypes = {
   color: PropTypes.string,
   fontSize: PropTypes.string,
 };
+Button.displayName = "Button";

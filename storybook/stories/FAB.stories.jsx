@@ -20,7 +20,7 @@ const FABStories = {
     disabled: {
       options: [true, false],
     },
-    onPress: { action: "pressed the button" },
+    onClick: { action: "pressed the button" },
   },
   parameters: {
     notes: "Checkout the different props in controls section",

@@ -43,7 +43,6 @@ const ButtonGroupStories = {
     wrapperStyle: {
       control: { type: "object" },
     },
-    onPress: { action: "pressed the button" },
   },
   parameters: {
     notes:

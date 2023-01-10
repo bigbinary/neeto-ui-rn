@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
          <item name="android:colorControlActivated">#3A79DF</item>
          <item name="android:textColorHighlight">#D6E2F1</item>
+         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
     </style>
 
 </resources>
