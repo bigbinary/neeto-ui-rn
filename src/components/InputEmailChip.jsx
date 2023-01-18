@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { Platform } from "react-native";
+import { Platform, StyleSheet, TextInput } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
@@ -125,7 +125,6 @@ export const InputEmailChip = ({
       minHeight={moderateScale(30)}
       py={moderateScale(2)}
       width="100%"
-      onTouchStart={handleTouchStart}
     >
       {!!label && (
         <Typography
@@ -168,7 +167,7 @@ export const InputEmailChip = ({
               ios: gap,
               android: moderateScale(7),
             })}
-            {...(shouldShowInput ? {} : { height: 0 })}
+            {...(shouldShowInput || emails.length === 0 ? {} : { height: 0 })}
           >
             <Input
               noBorder
@@ -188,13 +187,29 @@ export const InputEmailChip = ({
           </Container>
         )}
       </Container>
+      <TextInput
+        editable={false}
+        style={styles.touchableTextInputWrapper}
+        onTouchStart={handleTouchStart}
+      />
     </Container>
   );
 };
 
+const styles = StyleSheet.create({
+  touchableTextInputWrapper: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "transparent",
+  },
+});
+
 InputEmailChip.propTypes = {
   /**
-   * Label for the input field
+   * Disable input component
    */
   disabled: PropTypes.bool,
   /**
