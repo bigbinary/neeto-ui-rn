@@ -97,6 +97,7 @@ export const SelectButton = ({
         color="font.primary"
         flex={1}
         fontSize="m"
+        lineHeight={`${moderateScale(22)}px`}
         {...(selected && selectedProps.labelProps)}
         {...(!selected && unselectedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}
