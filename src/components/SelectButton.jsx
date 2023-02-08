@@ -10,10 +10,10 @@ import { Typography, Touchable } from "@components";
 /**
  *
  * <div class="screenshots">
- *   <img src="screenshots/SelectButton/SelectButton.png" />
+ *   <img src="screenshots/selectButton/selectButton.png" />
  * </div>
  *
- * This component supports below props categories from [styled-system ](/styled-system).
+ * This component supports below props categories from [styled-system](/styled-system).
  * <ul>
  * <li>flexbox</li>
  * <li>space</li>
