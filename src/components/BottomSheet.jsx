@@ -14,6 +14,8 @@ import {
   Loader,
 } from "@components";
 
+import { Divider } from "./Divider";
+
 import { theme } from "../theme";
 
 const Title = ({
@@ -174,6 +176,8 @@ export const BottomSheet = ({
   selectedItem,
   onBackdropPress,
   searchBarProps,
+  shouldHideKeyboardOnScrollBegin = true,
+  shouldShowItemSeparator = false,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -253,6 +257,12 @@ export const BottomSheet = ({
               data={generateData()}
               initialNumToRender={data.length}
               keyExtractor={(_item, index) => index}
+              keyboardShouldPersistTaps="handled"
+              ItemSeparatorComponent={
+                shouldShowItemSeparator ? (
+                  <Divider bg="background.grey200" />
+                ) : null
+              }
               ListFooterComponent={
                 <Container>
                   {children}
@@ -324,7 +334,9 @@ export const BottomSheet = ({
                   }}
                 />
               )}
-              onScrollBeginDrag={Keyboard.dismiss}
+              onScrollBeginDrag={
+                shouldHideKeyboardOnScrollBegin && Keyboard.dismiss
+              }
             />
           )}
         </Container>
@@ -449,6 +461,8 @@ BottomSheet.propTypes = {
   ContentRow: PropTypes.elementType,
   contentType: PropTypes.oneOf(["checkbox", null]),
   canSearch: PropTypes.bool,
+  shouldHideKeyboardOnScrollBegin: PropTypes.bool,
+  shouldShowItemSeparator: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({

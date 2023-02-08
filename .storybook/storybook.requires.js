@@ -64,6 +64,7 @@ const getStories = () => {
     require("../storybook/stories/SearchBar.stories.jsx"),
     require("../storybook/stories/SegmentedTopBar.stories.jsx"),
     require("../storybook/stories/Select.stories.jsx"),
+    require("../storybook/stories/SelectButton.stories.jsx"),
     require("../storybook/stories/SocialButton.stories.jsx"),
     require("../storybook/stories/ToastMessage.stories.jsx"),
     require("../storybook/stories/ToggleSwitch.stories.jsx"),
