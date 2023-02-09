@@ -39,4 +39,3 @@ export { NotificationPreferenceList } from "./NotificationPreferenceList";
 export { OrganizationItem } from "./OrganizationItem";
 export { Loader } from "./Loader";
 export { InputEmailChip } from "./InputEmailChip";
-export { SelectButton } from "./SelectButton";

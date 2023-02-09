@@ -282,14 +282,12 @@ export const MultiSelect = ({
     );
 
     return (
-      <Container py={moderateScale(12)}>
-        <CheckBox
-          checked={itemIndex !== -1}
-          disabled={disabled}
-          label={item?.label || labelExtractor(item, index) || item}
-          onSelect={onPress}
-        />
-      </Container>
+      <CheckBox
+        checked={itemIndex !== -1}
+        disabled={disabled}
+        label={item?.label || labelExtractor(item, index) || item}
+        onSelect={onPress}
+      />
     );
   };
 
@@ -402,9 +400,10 @@ export const MultiSelect = ({
                       borderRadius={moderateScale(12)}
                       flexDirection="row"
                       justifyContent="space-between"
-                      m={moderateScale(1)}
-                      px={moderateScale(3)}
-                      py={moderateScale(1)}
+                      mr={moderateScale(4)}
+                      mt={moderateScale(4)}
+                      px={moderateScale(10)}
+                      py={moderateScale(4)}
                       {...moreItemLabelContainerStyle}
                     >
                       <Typography {...moreItemLabelStyle}>
@@ -431,6 +430,7 @@ export const MultiSelect = ({
         </Container>
       </TouchableWithoutFeedback>
       <BottomSheet
+        shouldShowItemSeparator
         ContentRow={CheckBoxContent}
         CreateItemComponent={CreateItemComponent}
         NoResultsComponent={NoResultsComponent}

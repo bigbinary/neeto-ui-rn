@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 
 import Proptypes from "prop-types";
+import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Typography, Touchable } from "@components";
+import { Typography, Touchable } from "@components";
 
 /**
  *
@@ -59,7 +60,7 @@ export const RadioButton = ({
   onSelect,
   disabled,
   label,
-  radioButtonStyle,
+  selectIconStyle,
   labelStyle,
   ...rest
 }) => {
@@ -94,23 +95,15 @@ export const RadioButton = ({
       alignItems="center"
       disabled={disabled}
       flexDirection="row"
+      py={moderateScale(8)}
       onPress={onSelect}
       {...rest}
     >
-      <Container
-        bg={theme.colors.background.white}
-        borderRadius={moderateScale(8)}
-        height={moderateScale(16)}
-        width={moderateScale(16)}
-        {...(selected && selectedProps)}
-        {...(!selected && unselectedProps)}
-        {...(disabled && disabledProps)}
-        {...radioButtonStyle}
-      />
       <Typography
+        color="font.primary"
         flex={1}
         fontSize="m"
-        ml={moderateScale(8)}
+        lineHeight={`${moderateScale(22)}px`}
         {...(selected && selectedProps.labelProps)}
         {...(!selected && unselectedProps.labelProps)}
         {...(disabled && disabledProps.labelProps)}
@@ -118,6 +111,12 @@ export const RadioButton = ({
       >
         {label}
       </Typography>
+      <Icon
+        color={theme.colors.font.primary}
+        name={selected ? "ri-radio-button-line" : "checkbox-blank-circle-line"}
+        size={moderateScale(20)}
+        {...selectIconStyle}
+      />
     </Touchable>
   );
 };
@@ -142,7 +141,7 @@ RadioButton.propTypes = {
   /**
    * Customize radio button style.
    */
-  radioButtonStyle: Proptypes.object,
+  selectIconStyle: Proptypes.object,
   /**
    * Customize label style.
    */

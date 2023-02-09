@@ -462,19 +462,6 @@ interface RadioButtonProps extends TouchableProps {
   labelStyle?: TextProps;
 }
 
-interface SelectButtonProps extends TouchableProps {
-  selected: boolean;
-  onSelect: () => void;
-  disabled?: boolean;
-  label?: string;
-  selectIconStyle?: {
-    size: number;
-    color: typeof theme.colors.font;
-    name: string;
-  };
-  labelStyle?: TextProps;
-}
-
 type RichTextEditorProps = {
   onChange: (val: string) => void;
   placeholderText?: string;
@@ -578,7 +565,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps>;
 export const ScrollView: React.FC<ScrollViewProps>;
 export const SearchBar: React.FC<SearchBarProps>;
 export const SegmentedTopBar: React.FC<SegmentedTopBarProps>;
-export const SelectButton: React.FC<SelectButtonProps>;
 export const SocialButton: React.FC<SocialButtonProps>;
 export const Toast: React.FC<ToastProps> & {
   show?: (params: ToastShowParams) => void;
