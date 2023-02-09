@@ -430,7 +430,6 @@ export const MultiSelect = ({
         </Container>
       </TouchableWithoutFeedback>
       <BottomSheet
-        shouldShowItemSeparator
         ContentRow={CheckBoxContent}
         CreateItemComponent={CreateItemComponent}
         NoResultsComponent={NoResultsComponent}

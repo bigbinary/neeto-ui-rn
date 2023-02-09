@@ -112,7 +112,7 @@ export const BottomSheets = args => {
   // Text Content
   const TextContent = ({ item: { label }, bg, onPress, isSelected }) =>
     !!label && (
-      <Touchable bg={bg} borderRadius={20} py={12} onPress={onPress}>
+      <Touchable bg={bg} borderRadius={20} py={8} onPress={onPress}>
         <Typography
           color={isSelected ? "font.grey800" : "font.grey700"}
           fontFamily={isSelected ? "sf700" : "sf400"}
@@ -126,25 +126,16 @@ export const BottomSheets = args => {
   // Radio Button
   const RadioContent = ({ item: { label }, onPress, isSelected }) =>
     !!label && (
-      <Container py={12}>
-        <RadioButton
-          label={label}
-          labelPosition="right"
-          selected={isSelected}
-          onSelect={onPress}
-        />
-      </Container>
+      <RadioButton label={label} selected={isSelected} onSelect={onPress} />
     );
 
   const CheckBoxContent = ({ item: { label, value }, onPress }) =>
     !!label && (
-      <Container py={12}>
-        <CheckBox
-          checked={selectedValues.indexOf(value) !== -1}
-          label={label}
-          onSelect={onPress}
-        />
-      </Container>
+      <CheckBox
+        checked={selectedValues.indexOf(value) !== -1}
+        label={label}
+        onSelect={onPress}
+      />
     );
 
   TextContent.propTypes = {
