@@ -257,7 +257,6 @@ interface CheckBoxProps extends TouchableProps {
   onSelect: () => void;
   disabled?: boolean;
   label?: string;
-  checkboxStyle?: ViewProps;
   checkIconStyle?: any;
   labelStyle?: TextProps;
 }
@@ -325,7 +324,7 @@ type InputEmailChipProps = {
   emails?: Array<string>;
   delimiters?: Array<string>;
   onUpdate?: (emails: Array<string>) => void;
-}
+};
 
 interface ListItemProps extends ViewProps {
   LeftComponent?: React.FC;
@@ -468,7 +467,11 @@ interface SelectButtonProps extends TouchableProps {
   onSelect: () => void;
   disabled?: boolean;
   label?: string;
-  selectIconStyle?: { size: number; color: typeof theme.colors.font; name: string };
+  selectIconStyle?: {
+    size: number;
+    color: typeof theme.colors.font;
+    name: string;
+  };
   labelStyle?: TextProps;
 }
 
@@ -508,20 +511,6 @@ interface SegmentedTopBarProps extends MaterialTopTabBarProps {
   navigation?: NavigationProps;
   height?: number;
   descriptors?: object;
-}
-
-interface SelectProps
-  extends Omit<MultiSelectProps, "selectedValue" | "deletedValue"> {
-  value: any;
-  placeholder?: string;
-  emptyOptionsPlaceHolder?: string;
-  itemLabelStyle?: TextProps;
-  selectedItemContainerStyle?: ViewProps;
-  selectedItemLabelStyle?: TextProps;
-  searchInputContainerStyle?: ViewProps;
-  searchInputStyle?: TextInputProps;
-  emptyOptionsContainerStyle?: ViewProps;
-  emptyOptionsLabelStyle?: TextProps;
 }
 
 interface SocialButtonProps extends TouchableProps {
@@ -589,7 +578,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps>;
 export const ScrollView: React.FC<ScrollViewProps>;
 export const SearchBar: React.FC<SearchBarProps>;
 export const SegmentedTopBar: React.FC<SegmentedTopBarProps>;
-export const Select: React.FC<SelectProps>;
 export const SelectButton: React.FC<SelectButtonProps>;
 export const SocialButton: React.FC<SocialButtonProps>;
 export const Toast: React.FC<ToastProps> & {
