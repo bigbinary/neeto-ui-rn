@@ -70,7 +70,7 @@ const Title = ({
       </Container>
       {canSearch && (
         <SearchBar
-          containerProps={{ mt: moderateScale(8) }}
+          containerProps={{ mt: moderateScale(16) }}
           debounceDelay={200}
           placeholder="Search"
           showCancelButton={false}
