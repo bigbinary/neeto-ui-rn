@@ -65,7 +65,7 @@ const StyledRipple = styled(Ripple)`
 
 const defaultRippleConfig = {
   rippleCentered: false,
-  rippleSequential: false,
+  rippleSequential: true,
   rippleFades: true,
   rippleOutsideContainer: false,
   rippleColor: "#000",

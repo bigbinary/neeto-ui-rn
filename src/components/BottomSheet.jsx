@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { StyleSheet, FlatList, Keyboard } from "react-native";
 
 import PropTypes from "prop-types";
@@ -49,11 +49,7 @@ const Title = ({
       }}
       {...titleContainerStyle}
     >
-      <Container
-        flexDirection="row"
-        justifyContent="space-between"
-        mb={moderateScale(16)}
-      >
+      <Container flexDirection="row" justifyContent="space-between">
         {title && (
           <Typography textStyle="modalHeader" {...titleTextStyle}>
             {title}
@@ -74,6 +70,7 @@ const Title = ({
       </Container>
       {canSearch && (
         <SearchBar
+          containerProps={{ mt: moderateScale(16) }}
           debounceDelay={200}
           placeholder="Search"
           showCancelButton={false}
@@ -177,15 +174,17 @@ export const BottomSheet = ({
   onBackdropPress,
   searchBarProps,
   shouldHideKeyboardOnScrollBegin = true,
-  shouldShowItemSeparator = false,
+  shouldShowItemSeparator = true,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
 
-  const getLabel = (item, index) =>
-    item?.label || labelExtractor(item, index) || item;
+  const getLabel = useCallback(
+    (item, index) => item?.label || labelExtractor(item, index) || item,
+    [labelExtractor]
+  );
 
-  const generateData = () => {
+  const generatedData = useMemo(() => {
     if (searchText.length) {
       return data.filter(item =>
         getLabel(item).toLowerCase().includes(searchText.toLowerCase())
@@ -193,16 +192,16 @@ export const BottomSheet = ({
     }
 
     return data;
-  };
+  }, [data, getLabel, searchText]);
 
-  const hideCreateComponent = () => {
-    const filteredItemCount = generateData().filter(
+  const shouldHideCreateComponent = useMemo(() => {
+    const filteredItemCount = generatedData.filter(
       data =>
         getLabel(data).toLocaleLowerCase() === searchText.toLocaleLowerCase()
     ).length;
 
     return filteredItemCount > 0;
-  };
+  }, [generatedData, getLabel, searchText]);
 
   const checkIsSelected = item => {
     const itemValue = item?.value || valueExtractor(item) || item;
@@ -254,10 +253,11 @@ export const BottomSheet = ({
           )}
           {data && (
             <FlatList
-              data={generateData()}
+              data={generatedData}
               initialNumToRender={data.length}
               keyExtractor={(_item, index) => index}
               keyboardShouldPersistTaps="handled"
+              showsVerticalScrollIndicator={false}
               ItemSeparatorComponent={
                 shouldShowItemSeparator ? (
                   <Divider bg="background.grey200" />
@@ -267,7 +267,7 @@ export const BottomSheet = ({
                 <Container>
                   {children}
                   {!!searchText &&
-                    !generateData().length &&
+                    !generatedData.length &&
                     !showCreateOption &&
                     (NoResultsComponent ? (
                       <NoResultsComponent />
@@ -289,7 +289,7 @@ export const BottomSheet = ({
                       </Container>
                     ))}
                   {!disabled &&
-                    !hideCreateComponent() &&
+                    !shouldHideCreateComponent &&
                     (showCreateOptionLoader ? (
                       <Loader color={theme.colors.background.base} />
                     ) : (

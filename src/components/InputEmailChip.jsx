@@ -66,8 +66,6 @@ export const InputEmailChip = ({
   const handleInputTouchStart = () => setEmailIndexForDeletion(-1);
 
   const handleTouchStart = () => {
-    if (disabled) return;
-
     if (!inputRef.current?.isFocused()) {
       inputRef.current?.focus();
     }
@@ -79,6 +77,10 @@ export const InputEmailChip = ({
     if (textValue.trim() === "") {
       setShouldShowInput(false);
     }
+  };
+
+  const handleOnEndEditing = event => {
+      checkAndUpdateEmails(event.nativeEvent.text);
   };
 
   const checkAndUpdateEmails = text => {
@@ -181,17 +183,21 @@ export const InputEmailChip = ({
                 onTouchStart: handleInputTouchStart,
                 onFocus: handleOnFocus,
                 onBlur: handleOnBlur,
+                onEndEditing: handleOnEndEditing,
               }}
               onChangeText={handleTextChange}
             />
           </Container>
         )}
       </Container>
-      <TextInput
-        editable={false}
-        style={styles.touchableTextInputWrapper}
-        onTouchStart={handleTouchStart}
-      />
+      {!disabled && (
+        <TextInput
+          editable={false}
+          pointerEvents={shouldShowInput ? "box-none" : "auto"}
+          style={styles.touchableTextInputWrapper}
+          onTouchStart={handleTouchStart}
+        />
+      )}
     </Container>
   );
 };
@@ -203,7 +209,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "transparent",
   },
 });
 
