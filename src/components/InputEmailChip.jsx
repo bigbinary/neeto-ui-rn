@@ -80,9 +80,7 @@ export const InputEmailChip = ({
   };
 
   const handleOnEndEditing = event => {
-    if (event?.nativeEvent?.text) {
-      checkAndUpdateEmails(event?.nativeEvent?.text);
-    }
+      checkAndUpdateEmails(event.nativeEvent.text);
   };
 
   const checkAndUpdateEmails = text => {
