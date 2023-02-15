@@ -82,6 +82,7 @@ import {
  *
  */
 
+const lineHeight = moderateScale(22);
 export const NotificationPreferenceList = ({
   isLoading,
   data,
@@ -104,14 +105,18 @@ export const NotificationPreferenceList = ({
         <Typography
           color="font.grey600"
           fontSize="2xl"
-          lineHeight={`${moderateScale(22)}px`}
+          lineHeight={`${lineHeight}px`}
           {...titleProps}
         >
           {title}
         </Typography>
       )}
       {isLoading && (
-        <Container mx={moderateScale(8)}>
+        <Container
+          height={lineHeight}
+          justifyContent="center"
+          mx={moderateScale(8)}
+        >
           <Loader />
         </Container>
       )}
