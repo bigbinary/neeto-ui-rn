@@ -3,7 +3,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Container, Typography, Divider, ToggleSwitch } from "@components";
+import {
+  Container,
+  Typography,
+  Divider,
+  ToggleSwitch,
+  Loader,
+} from "@components";
 
 /**
  *
@@ -77,62 +83,81 @@ import { Container, Typography, Divider, ToggleSwitch } from "@components";
  */
 
 export const NotificationPreferenceList = ({
+  isLoading,
   data,
   itemWrapperProps,
   itemContainerProps,
   labelContainerProps,
   labelProps,
+  title,
+  titleProps,
   ...rest
 }) => (
-  <Container
-    bg="background.secondary"
-    borderRadius={moderateScale(8)}
-    {...rest}
-  >
-    {data?.map((item, index) => {
-      const { label, enabled, onSwitch, LeftIcon } = item;
-      const isLastItem = index === data.length - 1;
+  <Container width="100%">
+    <Container
+      alignItems="center"
+      flexDirection="row"
+      pb={moderateScale(8)}
+      pt={moderateScale(16)}
+    >
+      {!!title && (
+        <Typography
+          color="font.grey600"
+          fontSize="2xl"
+          lineHeight={`${moderateScale(22)}px`}
+          {...titleProps}
+        >
+          {title}
+        </Typography>
+      )}
+      {isLoading && (
+        <Container mx={moderateScale(8)}>
+          <Loader />
+        </Container>
+      )}
+    </Container>
+    <Container
+      bg="background.secondary"
+      borderRadius={moderateScale(8)}
+      {...rest}
+    >
+      {data?.map((item, index) => {
+        const { label, enabled, onSwitch, LeftIcon } = item;
+        const isLastItem = index === data.length - 1;
 
-      return (
-        <Container key={index} px={moderateScale(12)} {...itemWrapperProps}>
-          <Container
-            alignItems="center"
-            flexDirection="row"
-            justifyContent="space-between"
-            py={moderateScale(15)}
-            {...itemContainerProps}
-          >
+        return (
+          <Container key={index} px={moderateScale(16)} {...itemWrapperProps}>
             <Container
               alignItems="center"
               flexDirection="row"
-              pr={moderateScale(15)}
-              width="85%"
-              {...labelContainerProps}
+              justifyContent="space-between"
+              py={moderateScale(12)}
+              {...itemContainerProps}
             >
-              {LeftIcon && (
-                <Container mr={moderateScale(10)}>
-                  <LeftIcon />
-                </Container>
-              )}
-              <Typography
-                color="font.grey800"
-                fontFamily="sf400"
-                fontSize="l"
-                {...labelProps}
+              <Container
+                alignItems="center"
+                flexDirection="row"
+                {...labelContainerProps}
               >
-                {label}
-              </Typography>
+                {LeftIcon && (
+                  <Container mr={moderateScale(10)}>
+                    <LeftIcon />
+                  </Container>
+                )}
+                <Typography fontSize="l" mr={moderateScale(10)} {...labelProps}>
+                  {label}
+                </Typography>
+              </Container>
+              <ToggleSwitch
+                value={enabled}
+                onValueChange={() => onSwitch(item, index)}
+              />
             </Container>
-            <ToggleSwitch
-              mt={moderateScale(4)}
-              value={enabled}
-              onValueChange={() => onSwitch(item, index)}
-            />
+            {!isLastItem && <Divider bg="background.grey300" />}
           </Container>
-          {!isLastItem && <Divider bg="background.grey300" />}
-        </Container>
-      );
-    })}
+        );
+      })}
+    </Container>
   </Container>
 );
 
@@ -157,4 +182,16 @@ NotificationPreferenceList.propTypes = {
    * Customize item label
    */
   labelProps: PropTypes.object,
+  /**
+   * Title value.
+   */
+  title: PropTypes.string,
+  /**
+   * Customize title style.
+   */
+  titleProps: PropTypes.string,
+  /**
+   * Show loader
+   */
+  isLoading: PropTypes.bool,
 };
