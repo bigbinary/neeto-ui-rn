@@ -104,7 +104,7 @@ export const NotificationPreferenceList = ({
       {!!title && (
         <Typography
           color="font.grey600"
-          fontSize="2xl"
+          fontSize="m"
           lineHeight={`${lineHeight}px`}
           {...titleProps}
         >
