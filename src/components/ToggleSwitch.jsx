@@ -67,6 +67,7 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
       borderRadius={moderateScale(70)}
       disabled={disabled}
       height={moderateScale(24)}
+      hitSlop={10}
       justifyContent="center"
       opacity={disabled ? 0.5 : 1}
       px={moderateScale(5)}

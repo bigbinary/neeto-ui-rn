@@ -349,6 +349,9 @@ interface NotificationPreferenceListProps extends ViewProps {
   itemContainerProps?: ViewProps;
   labelContainerProps?: ViewProps;
   labelProps?: TypographyProps;
+  title?: string;
+  titleProps?: TypographyProps;
+  isLoading?: boolean;
 }
 
 interface MultiSelectConfirmationAlertObjProps {

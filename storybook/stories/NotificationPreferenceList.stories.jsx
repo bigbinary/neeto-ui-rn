@@ -64,7 +64,13 @@ export const NotificationPreferenceListComponent = () => {
 
   return (
     <Container alignItems="center" flex={1} justifyContent="center">
-      {data && <NotificationPreferenceList data={data} />}
+      {data && (
+        <NotificationPreferenceList
+          isLoading
+          data={data}
+          title="Notifications"
+        />
+      )}
     </Container>
   );
 };
