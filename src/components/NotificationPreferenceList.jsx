@@ -99,7 +99,7 @@ export const NotificationPreferenceList = ({
       alignItems="center"
       flexDirection="row"
       pb={moderateScale(8)}
-      pt={moderateScale(16)}
+      pt={moderateScale(20)}
     >
       {!!title && (
         <Typography
@@ -141,15 +141,21 @@ export const NotificationPreferenceList = ({
             >
               <Container
                 alignItems="center"
+                flex={1}
                 flexDirection="row"
                 {...labelContainerProps}
               >
                 {LeftIcon && (
-                  <Container mr={moderateScale(10)}>
+                  <Container mr={moderateScale(8)}>
                     <LeftIcon />
                   </Container>
                 )}
-                <Typography fontSize="l" mr={moderateScale(10)} {...labelProps}>
+                <Typography
+                  flex={1}
+                  fontSize="l"
+                  mr={moderateScale(8)}
+                  {...labelProps}
+                >
                   {label}
                 </Typography>
               </Container>
