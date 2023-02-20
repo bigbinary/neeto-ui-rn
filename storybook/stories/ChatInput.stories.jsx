@@ -1,6 +1,8 @@
 import React from "react";
 
-import { ChatInput } from "@components";
+import { moderateScale } from "react-native-size-matters";
+
+import { ChatInput, Typography, Container } from "@components";
 
 const keyBoardTypes = [
   "default",
@@ -72,15 +74,26 @@ export const ChatInputs = args => {
   const [value, setValue] = React.useState("");
 
   return (
-    <ChatInput
-      value={value}
-      onChangeText={setValue}
-      onCannedResponse={() => {
-        alert("On Canned Response");
-      }}
-      onForward={() => {
-        alert("On Forward");
-      }}
-    />
+    <Container>
+      <Typography> Desk Example</Typography>
+      <ChatInput
+        value={value}
+        onChangeText={setValue}
+        onCannedResponse={() => {
+          alert("On Canned Response");
+        }}
+        onForward={() => {
+          alert("On Forward");
+        }}
+      />
+      <Typography pt={moderateScale(20)}> Chat Example</Typography>
+      <ChatInput
+        value={value}
+        onChangeText={setValue}
+        onCannedResponse={() => {
+          alert("On Canned Response");
+        }}
+      />
+    </Container>
   );
 };

@@ -64,6 +64,7 @@ const colors = {
     parentView: "#ffffff",
     primary: "#ffffff",
     secondary: "#F6F6FA",
+    oldLace: "#FDF6E5",
     ...defaultColors,
     ...greyVariants,
     ...lightBlueVariants,
