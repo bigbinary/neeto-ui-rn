@@ -80,7 +80,8 @@ export const ChatInputs = args => {
       </Container>
       <Container align-self="end">
         <ChatInput
-          attachmentCount={5}
+          shouldShowEmailFields
+          attachmentsCount={2}
           toEmails="oliver@example.com"
           value={value}
           Attachments={
