@@ -44,6 +44,7 @@ const getStories = () => {
     require("../storybook/stories/Calendar.stories.jsx"),
     require("../storybook/stories/Card.stories.jsx"),
     require("../storybook/stories/Carousel.stories.jsx"),
+    require("../storybook/stories/ChatInput.stories.jsx"),
     require("../storybook/stories/CheckBox.stories.jsx"),
     require("../storybook/stories/Chip.stories.jsx"),
     require("../storybook/stories/Divider.stories.jsx"),
