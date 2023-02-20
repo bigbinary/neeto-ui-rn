@@ -89,14 +89,17 @@ IconButton.propTypes = {
 const placeholders = {
   reply: "Type here to reply...",
   note: "Add note here...",
+  forward: "Type here to forward...",
 };
 
 const labels = {
   reply: "Reply",
   note: "Add note",
+  forward: "Forward",
 };
 
 export const EmailFields = ({
+  shouldShowEmailFields,
   setIsEmailFieldsVisible,
   isEmailFieldsVisible,
   ccEmails,
@@ -113,6 +116,8 @@ export const EmailFields = ({
     (ccEmails.trim() ? ccEmails.split(",") : []).length +
     (bccEmails.trim() ? bccEmails.split(",") : []).length -
     1;
+
+  if (!shouldShowEmailFields) return null;
 
   return isEmailFieldsVisible ? (
     <Container pb={moderateScale(10)}>
@@ -176,6 +181,7 @@ export const EmailFields = ({
 };
 
 EmailFields.propTypes = {
+  shouldShowEmailFields: PropTypes.bool,
   isEmailFieldsVisible: PropTypes.any,
   setIsEmailFieldsVisible: PropTypes.any,
   ccEmails: PropTypes.any,
@@ -186,7 +192,59 @@ EmailFields.propTypes = {
   setToEmails: PropTypes.any,
 };
 
+const AttachmentsView = ({
+  isAttachmentsVisible,
+  setIsAttachmentsVisible,
+  Attachments,
+  attachmentsCount,
+}) =>
+  //
+
+  isAttachmentsVisible ? (
+    <>{Attachments}</>
+  ) : (
+    <>
+      {attachmentsCount > 0 && (
+        <Container
+          alignItems="flex-start"
+          flexDirection="row"
+          flexWrap="wrap"
+          onTouchStart={() => setIsAttachmentsVisible(true)}
+        >
+          <Container
+            alignSelf="flex-start"
+            bg="background.oldLace"
+            borderRadius={moderateScale(20)}
+            flexDirection="row"
+            flexGrow={0}
+            px={4}
+          >
+            <Typography fontSize="3xs">Attachments</Typography>
+          </Container>
+          <Container
+            alignSelf="flex-start"
+            bg="background.oldLace"
+            borderRadius={moderateScale(20)}
+            flexDirection="row"
+            flexGrow={0}
+            px={4}
+          >
+            <Typography fontSize="3xs">+{attachmentsCount}</Typography>
+          </Container>
+        </Container>
+      )}
+    </>
+  );
+
+AttachmentsView.propTypes = {
+  isAttachmentsVisible: PropTypes.any,
+  setIsAttachmentsVisible: PropTypes.any,
+  Attachments: PropTypes.any,
+  attachmentsCount: PropTypes.any,
+};
+
 export const ChatInput = ({
+  shouldShowEmailFields,
   value = "",
   onChangeText = () => {},
   onForward,
@@ -203,7 +261,7 @@ export const ChatInput = ({
   const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
 
   const isReplyOptionSelected = selectedOption === "reply";
-  const isNotesOptionSelected = selectedOption === "notes";
+  const isNoteOptionSelected = selectedOption === "note";
   const isForwardOptionSelected = selectedOption === "forward";
 
   const [toEmails, setToEmails] = useState(initialToEmails ?? "");
@@ -223,7 +281,7 @@ export const ChatInput = ({
       reply: () => {
         onReply({ toEmails, ccEmails, bccEmails });
       },
-      notes: () => {
+      note: () => {
         onAddNote({ toEmails, ccEmails, bccEmails });
       },
       forward: () => {
@@ -236,7 +294,7 @@ export const ChatInput = ({
     <Container>
       <Divider />
       <Container
-        bg={isNotesOptionSelected ? "background.oldLace" : "transparent"}
+        bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
         p={5}
         pt={0}
         px={16}
@@ -250,6 +308,7 @@ export const ChatInput = ({
             setCcEmails={setCcEmails}
             setIsEmailFieldsVisible={setIsEmailFieldsVisible}
             setToEmails={setToEmails}
+            shouldShowEmailFields={shouldShowEmailFields}
             toEmails={toEmails}
           />
           <Container flexDirection="row" justifyContent="space-between">
@@ -257,7 +316,7 @@ export const ChatInput = ({
               multiline
               flex={1}
               placeholder={placeholders[selectedOption]}
-              py={moderateScale(10)}
+              py={moderateScale(12)}
               value={value}
               onChangeText={onChangeText}
               onFocus={() => {
@@ -278,41 +337,12 @@ export const ChatInput = ({
               }}
             />
           </Container>
-          {isAttachmentsVisible ? (
-            <>{Attachments}</>
-          ) : (
-            <>
-              {attachmentsCount > 0 && (
-                <Container
-                  alignItems="flex-start"
-                  flexDirection="row"
-                  flexWrap="wrap"
-                  onTouchStart={() => setIsAttachmentsVisible(true)}
-                >
-                  <Container
-                    alignSelf="flex-start"
-                    bg="background.oldLace"
-                    borderRadius={moderateScale(20)}
-                    flexDirection="row"
-                    flexGrow={0}
-                    px={4}
-                  >
-                    <Typography fontSize="3xs">Attachments</Typography>
-                  </Container>
-                  <Container
-                    alignSelf="flex-start"
-                    bg="background.oldLace"
-                    borderRadius={moderateScale(20)}
-                    flexDirection="row"
-                    flexGrow={0}
-                    px={4}
-                  >
-                    <Typography fontSize="3xs">+{attachmentsCount}</Typography>
-                  </Container>
-                </Container>
-              )}
-            </>
-          )}
+          <AttachmentsView
+            Attachments={Attachments}
+            attachmentsCount={attachmentsCount}
+            isAttachmentsVisible={isAttachmentsVisible}
+            setIsAttachmentsVisible={setIsAttachmentsVisible}
+          />
           <Container
             alignItems="center"
             flexDirection="row"
@@ -331,7 +361,7 @@ export const ChatInput = ({
               />
               <IconButton
                 Icon={NoteSVG}
-                opacity={isNotesOptionSelected ? 1 : 0.5}
+                opacity={isNoteOptionSelected ? 1 : 0.5}
                 onPress={() => {
                   setIsEmailFieldsVisible(false);
                   setSelectedOption("note");
@@ -354,13 +384,13 @@ export const ChatInput = ({
                   onPress={onCannedResponse}
                 />
               )}
-              {onCannedResponse && (
-                <IconButton
-                  Icon={AttachmentSVG}
-                  opacity={0.5}
-                  onPress={onCannedResponse}
-                />
-              )}
+              <IconButton
+                Icon={AttachmentSVG}
+                opacity={0.5}
+                onPress={() => {
+                  setIsAttachmentsVisible(true);
+                }}
+              />
             </Container>
             <Touchable onPress={onActionHandler}>
               <Typography color="font.grey500" fontFamily="sf600">
@@ -378,6 +408,7 @@ ChatInput.propTypes = {
   /**
    * The text to use for the floating label.
    */
+  shouldShowEmailFields: PropTypes.bool,
   toEmails: PropTypes.any,
   bccEmails: PropTypes.any,
   ccEmails: PropTypes.any,
