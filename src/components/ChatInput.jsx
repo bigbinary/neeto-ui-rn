@@ -19,6 +19,7 @@ import {
   Touchable,
   InputEmailChip,
   Typography,
+  Button,
 } from "@components";
 
 import AttachmentSVG from "../../assets/icons/attachment.svg";
@@ -252,8 +253,11 @@ export const ChatInput = ({
   toEmails: initialToEmails,
   onReply = () => {},
   onAddNote = () => {},
+  onAttachment = () => {},
   attachmentsCount,
   Attachments,
+  showCannedResponsesFor = ["reply"],
+  disabled,
   ...rest
 }) => {
   const [selectedOption, setSelectedOption] = useState("reply");
@@ -270,7 +274,7 @@ export const ChatInput = ({
 
   useEffect(() => {
     if (isReplyOptionSelected) {
-      setToEmails(initialToEmails);
+      setToEmails(initialToEmails ?? "");
     } else {
       setToEmails("");
     }
@@ -292,7 +296,7 @@ export const ChatInput = ({
 
   return (
     <Container>
-      <Divider />
+      <Divider bg="background.grey200" thickness={moderateScale(0.5)} />
       <Container
         bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
         p={5}
@@ -377,26 +381,30 @@ export const ChatInput = ({
                   }}
                 />
               )}
-              {onCannedResponse && (
-                <IconButton
-                  Icon={CannedResponseSVG}
-                  opacity={0.5}
-                  onPress={onCannedResponse}
-                />
-              )}
+              {onCannedResponse &&
+                showCannedResponsesFor.includes(selectedOption) && (
+                  <IconButton
+                    Icon={CannedResponseSVG}
+                    opacity={0.5}
+                    onPress={onCannedResponse}
+                  />
+                )}
               <IconButton
                 Icon={AttachmentSVG}
                 opacity={0.5}
                 onPress={() => {
+                  onAttachment();
                   setIsAttachmentsVisible(true);
                 }}
               />
             </Container>
-            <Touchable onPress={onActionHandler}>
-              <Typography color="font.grey500" fontFamily="sf600">
-                {labels[selectedOption]}
-              </Typography>
-            </Touchable>
+            <Button
+              disabled={disabled}
+              label={labels[selectedOption]}
+              my={9}
+              variant="text"
+              onPress={onActionHandler}
+            />
           </Container>
         </Container>
       </Container>
@@ -413,14 +421,17 @@ ChatInput.propTypes = {
   bccEmails: PropTypes.any,
   ccEmails: PropTypes.any,
 
+  showCannedResponsesFor: PropTypes.any,
   onReply: PropTypes.any,
   onAddNote: PropTypes.any,
+  onAttachment: PropTypes.any,
   attachmentsCount: PropTypes.any,
   Attachments: PropTypes.any,
 
   /**
    * The text to use for the floating label.
    */
+  disabled: PropTypes.bool,
   label: PropTypes.string,
   /**
    * Holds the current value of the Input.
@@ -445,7 +456,6 @@ ChatInput.propTypes = {
   /**
    * If true, user won't be able to interact with the component.
    */
-  disabled: PropTypes.bool,
   /**
    * If true, shows border on focus.
    */
