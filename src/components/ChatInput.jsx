@@ -67,6 +67,7 @@ export const IconButton = ({ Icon, ...rest }) => (
   <Touchable
     alignItems="center"
     height={moderateScale(22)}
+    px={moderateScale(15)}
     width={moderateScale(22)}
     {...rest}
   >
@@ -83,65 +84,77 @@ const placeholders = {
   note: "Add note here...",
 };
 
+const labels = {
+  reply: "Reply",
+  note: "Add note",
+};
+
 export const ChatInput = ({
   value = "",
   onChangeText = () => {},
-  onForward = () => {},
-  onCannedResponse = () => {},
+  onForward,
+  onCannedResponse,
   ...rest
 }) => {
   const [selectedOption, setSelectedOption] = useState("reply");
   const isReplyOptionSelected = selectedOption === "reply";
 
   return (
-    <Container bg={isReplyOptionSelected ? "transparent" : "#FDF6E5"} p={5}>
+    <Container>
       <Divider />
       <Container
-        flexDirection="row"
-        justifyContent="space-between"
-        pt={moderateScale(12)}
-      >
-        <TextInput
-          multiline
-          flex={1}
-          placeholder={placeholders[selectedOption]}
-          value={value}
-          onChangeText={onChangeText}
-          {...rest}
-        />
-        <IconButton Icon={ExpandSVG} pt={moderateScale(8)} />
-      </Container>
-      <Container
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="space-between"
-        mt={moderateScale(16)}
+        bg={isReplyOptionSelected ? "transparent" : "background.oldLace"}
+        p={5}
+        pt={0}
       >
         <Container
           flexDirection="row"
           justifyContent="space-between"
-          width={moderateScale(120)}
+          pt={moderateScale(8)}
         >
-          <IconButton
-            Icon={ReplySVG}
-            opacity={isReplyOptionSelected ? 1 : 0.5}
-            onPress={() => setSelectedOption("reply")}
+          <TextInput
+            multiline
+            flex={1}
+            placeholder={placeholders[selectedOption]}
+            value={value}
+            onChangeText={onChangeText}
+            {...rest}
           />
-          <IconButton
-            Icon={NoteSVG}
-            opacity={isReplyOptionSelected ? 0.5 : 1}
-            onPress={() => setSelectedOption("note")}
-          />
-          <IconButton Icon={ForwardSVG} opacity={0.5} onPress={onForward} />
-          <IconButton
-            Icon={CannedResponseSVG}
-            opacity={0.5}
-            onPress={onCannedResponse}
-          />
+          <IconButton Icon={ExpandSVG} pt={moderateScale(8)} />
         </Container>
-        <Typography color="font.grey500" fontFamily="sf600">
-          Reply
-        </Typography>
+        <Container
+          alignItems="center"
+          flexDirection="row"
+          justifyContent="space-between"
+          mt={moderateScale(16)}
+        >
+          <Container flexDirection="row" justifyContent="space-between">
+            <IconButton
+              Icon={ReplySVG}
+              opacity={isReplyOptionSelected ? 1 : 0.5}
+              pl={10}
+              onPress={() => setSelectedOption("reply")}
+            />
+            <IconButton
+              Icon={NoteSVG}
+              opacity={isReplyOptionSelected ? 0.5 : 1}
+              onPress={() => setSelectedOption("note")}
+            />
+            {onForward && (
+              <IconButton Icon={ForwardSVG} opacity={0.5} onPress={onForward} />
+            )}
+            {onCannedResponse && (
+              <IconButton
+                Icon={CannedResponseSVG}
+                opacity={0.5}
+                onPress={onCannedResponse}
+              />
+            )}
+          </Container>
+          <Typography color="font.grey500" fontFamily="sf600">
+            {labels[selectedOption]}
+          </Typography>
+        </Container>
       </Container>
     </Container>
   );
