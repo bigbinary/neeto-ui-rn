@@ -80,7 +80,7 @@ export const InputEmailChip = ({
   };
 
   const handleOnEndEditing = event => {
-      checkAndUpdateEmails(event.nativeEvent.text);
+    checkAndUpdateEmails(event.nativeEvent.text);
   };
 
   const checkAndUpdateEmails = text => {
@@ -123,6 +123,7 @@ export const InputEmailChip = ({
 
   return (
     <Container
+      // bg="red"
       flexDirection="row"
       minHeight={moderateScale(30)}
       py={moderateScale(2)}
@@ -132,7 +133,9 @@ export const InputEmailChip = ({
         <Typography
           color={disabled ? "font.grey400" : "font.grey600"}
           fontSize="xs"
-          mr={moderateScale(8)}
+          mr={moderateScale(2)}
+          textAlign="right"
+          width={moderateScale(40)}
           mt={Platform.select({
             android: moderateScale(10),
             ios: moderateScale(8),
@@ -184,6 +187,8 @@ export const InputEmailChip = ({
                 onFocus: handleOnFocus,
                 onBlur: handleOnBlur,
                 onEndEditing: handleOnEndEditing,
+                borderBottomWidth: 2,
+                borderColor: "background.grey200",
               }}
               onChangeText={handleTextChange}
             />

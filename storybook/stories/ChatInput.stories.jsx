@@ -1,8 +1,6 @@
 import React from "react";
 
-import { moderateScale } from "react-native-size-matters";
-
-import { ChatInput, Typography, Container } from "@components";
+import { ChatInput, Typography, AnimatedImage, Container } from "@components";
 
 const keyBoardTypes = [
   "default",
@@ -71,29 +69,39 @@ const ChatInputMetaData = {
 export default ChatInputMetaData;
 
 export const ChatInputs = args => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState(
+    "Hey Oliver, We are working on this issue. We will keep you update"
+  );
 
   return (
-    <Container>
-      <Typography> Desk Example</Typography>
-      <ChatInput
-        value={value}
-        onChangeText={setValue}
-        onCannedResponse={() => {
-          alert("On Canned Response");
-        }}
-        onForward={() => {
-          alert("On Forward");
-        }}
-      />
-      <Typography pt={moderateScale(20)}> Chat Example</Typography>
-      <ChatInput
-        value={value}
-        onChangeText={setValue}
-        onCannedResponse={() => {
-          alert("On Canned Response");
-        }}
-      />
+    <Container flex={1}>
+      <Container alignItems="center" flex={1} justifyContent="center">
+        <Typography> Desk Example</Typography>
+      </Container>
+      <Container align-self="end">
+        <ChatInput
+          attachmentCount={5}
+          toEmails="oliver@example.com"
+          value={value}
+          Attachments={
+            <Container alignItems="flex-start">
+              <AnimatedImage
+                imageHeight={30}
+                imageUrl="https://picsum.photos/255/139"
+                imageWidth={30}
+                resizeMode="cover"
+              />
+            </Container>
+          }
+          onChangeText={setValue}
+          onCannedResponse={() => {
+            alert("On Canned Response");
+          }}
+          onForward={() => {
+            alert("On Forward");
+          }}
+        />
+      </Container>
     </Container>
   );
 };
