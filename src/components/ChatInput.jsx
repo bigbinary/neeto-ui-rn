@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
@@ -13,8 +13,15 @@ import {
   color,
 } from "styled-system";
 
-import { Container, Divider, Touchable, Typography } from "@components";
+import {
+  Container,
+  Divider,
+  Touchable,
+  InputEmailChip,
+  Typography,
+} from "@components";
 
+import AttachmentSVG from "../../assets/icons/attachment.svg";
 import CannedResponseSVG from "../../assets/icons/canned-response.svg";
 import ExpandSVG from "../../assets/icons/expand.svg";
 import ForwardSVG from "../../assets/icons/forward.svg";
@@ -67,7 +74,7 @@ export const IconButton = ({ Icon, ...rest }) => (
   <Touchable
     alignItems="center"
     height={moderateScale(22)}
-    px={moderateScale(15)}
+    px={moderateScale(18)}
     width={moderateScale(22)}
     {...rest}
   >
@@ -89,71 +96,278 @@ const labels = {
   note: "Add note",
 };
 
+export const EmailFields = ({
+  setIsEmailFieldsVisible,
+  isEmailFieldsVisible,
+  ccEmails,
+  toEmails,
+  bccEmails,
+  setBccEmails,
+  setCcEmails,
+  setToEmails,
+}) => {
+  const firstToEmail = (toEmails.trim() ? toEmails.split(",") : [])[0] ?? "";
+
+  const totalEmailsMinus1 =
+    (toEmails.trim() ? toEmails.split(",") : []).length +
+    (ccEmails.trim() ? ccEmails.split(",") : []).length +
+    (bccEmails.trim() ? bccEmails.split(",") : []).length -
+    1;
+
+  return isEmailFieldsVisible ? (
+    <Container pb={moderateScale(10)}>
+      <InputEmailChip
+        disabled={false}
+        emails={toEmails.trim() ? toEmails.split(",") : []}
+        label="To:"
+        py={2}
+        onUpdate={emails => {
+          setToEmails(emails.join(","));
+        }}
+      />
+      <InputEmailChip
+        disabled={false}
+        emails={ccEmails.trim() ? ccEmails.split(",") : []}
+        label="Cc:"
+        onUpdate={emails => {
+          setCcEmails(emails.join(","));
+        }}
+      />
+      <InputEmailChip
+        disabled={false}
+        emails={bccEmails.trim() ? bccEmails.split(",") : []}
+        label="Bcc:"
+        onUpdate={emails => {
+          setBccEmails(emails.join(","));
+        }}
+      />
+    </Container>
+  ) : (
+    <Container alignItems="flex-start" flexDirection="row" flexWrap="wrap">
+      {toEmails.length > 0 && (
+        <>
+          <Container
+            alignSelf="flex-start"
+            bg="background.oldLace"
+            borderRadius={moderateScale(20)}
+            flexDirection="row"
+            flexGrow={0}
+            px={4}
+            onTouchStart={() => setIsEmailFieldsVisible(true)}
+          >
+            <Typography fontSize="3xs">To:{firstToEmail}</Typography>
+          </Container>
+          {totalEmailsMinus1 > 1 && (
+            <Container
+              alignSelf="flex-start"
+              bg="background.oldLace"
+              borderRadius={moderateScale(20)}
+              flexDirection="row"
+              flexGrow={0}
+              px={4}
+            >
+              <Typography fontSize="3xs">+{totalEmailsMinus1}</Typography>
+            </Container>
+          )}
+        </>
+      )}
+    </Container>
+  );
+};
+
+EmailFields.propTypes = {
+  isEmailFieldsVisible: PropTypes.any,
+  setIsEmailFieldsVisible: PropTypes.any,
+  ccEmails: PropTypes.any,
+  toEmails: PropTypes.any,
+  bccEmails: PropTypes.any,
+  setBccEmails: PropTypes.any,
+  setCcEmails: PropTypes.any,
+  setToEmails: PropTypes.any,
+};
+
 export const ChatInput = ({
   value = "",
   onChangeText = () => {},
   onForward,
   onCannedResponse,
+  toEmails: initialToEmails,
+  onReply = () => {},
+  onAddNote = () => {},
+  attachmentsCount,
+  Attachments,
   ...rest
 }) => {
   const [selectedOption, setSelectedOption] = useState("reply");
+  const [isEmailFieldsVisible, setIsEmailFieldsVisible] = useState(false);
+  const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
+
   const isReplyOptionSelected = selectedOption === "reply";
+  const isNotesOptionSelected = selectedOption === "notes";
+  const isForwardOptionSelected = selectedOption === "forward";
+
+  const [toEmails, setToEmails] = useState(initialToEmails ?? "");
+  const [ccEmails, setCcEmails] = useState("");
+  const [bccEmails, setBccEmails] = useState("");
+
+  useEffect(() => {
+    if (isReplyOptionSelected) {
+      setToEmails(initialToEmails);
+    } else {
+      setToEmails("");
+    }
+  }, [isReplyOptionSelected]);
+
+  const onActionHandler = useCallback(() => {
+    ({
+      reply: () => {
+        onReply({ toEmails, ccEmails, bccEmails });
+      },
+      notes: () => {
+        onAddNote({ toEmails, ccEmails, bccEmails });
+      },
+      forward: () => {
+        onForward({ toEmails, ccEmails, bccEmails });
+      },
+    }[selectedOption]());
+  }, [onAddNote, onForward, onReply]);
 
   return (
     <Container>
       <Divider />
       <Container
-        bg={isReplyOptionSelected ? "transparent" : "background.oldLace"}
+        bg={isNotesOptionSelected ? "background.oldLace" : "transparent"}
         p={5}
         pt={0}
+        px={16}
       >
-        <Container
-          flexDirection="row"
-          justifyContent="space-between"
-          pt={moderateScale(8)}
-        >
-          <TextInput
-            multiline
-            flex={1}
-            placeholder={placeholders[selectedOption]}
-            value={value}
-            onChangeText={onChangeText}
-            {...rest}
+        <Container pt={moderateScale(8)}>
+          <EmailFields
+            bccEmails={bccEmails}
+            ccEmails={ccEmails}
+            isEmailFieldsVisible={isEmailFieldsVisible}
+            setBccEmails={setBccEmails}
+            setCcEmails={setCcEmails}
+            setIsEmailFieldsVisible={setIsEmailFieldsVisible}
+            setToEmails={setToEmails}
+            toEmails={toEmails}
           />
-          <IconButton Icon={ExpandSVG} pt={moderateScale(8)} />
-        </Container>
-        <Container
-          alignItems="center"
-          flexDirection="row"
-          justifyContent="space-between"
-          mt={moderateScale(16)}
-        >
           <Container flexDirection="row" justifyContent="space-between">
-            <IconButton
-              Icon={ReplySVG}
-              opacity={isReplyOptionSelected ? 1 : 0.5}
-              pl={10}
-              onPress={() => setSelectedOption("reply")}
+            <TextInput
+              multiline
+              flex={1}
+              placeholder={placeholders[selectedOption]}
+              py={moderateScale(10)}
+              value={value}
+              onChangeText={onChangeText}
+              onFocus={() => {
+                setIsEmailFieldsVisible(false);
+              }}
+              onTouchStart={() => {
+                setIsAttachmentsVisible(false);
+                setIsEmailFieldsVisible(false);
+              }}
+              {...rest}
             />
             <IconButton
-              Icon={NoteSVG}
-              opacity={isReplyOptionSelected ? 0.5 : 1}
-              onPress={() => setSelectedOption("note")}
+              Icon={ExpandSVG}
+              pt={moderateScale(8)}
+              onPress={() => {
+                setIsEmailFieldsVisible(!isEmailFieldsVisible);
+                setIsAttachmentsVisible(!isEmailFieldsVisible);
+              }}
             />
-            {onForward && (
-              <IconButton Icon={ForwardSVG} opacity={0.5} onPress={onForward} />
-            )}
-            {onCannedResponse && (
-              <IconButton
-                Icon={CannedResponseSVG}
-                opacity={0.5}
-                onPress={onCannedResponse}
-              />
-            )}
           </Container>
-          <Typography color="font.grey500" fontFamily="sf600">
-            {labels[selectedOption]}
-          </Typography>
+          {isAttachmentsVisible ? (
+            <>{Attachments}</>
+          ) : (
+            <>
+              {attachmentsCount > 0 && (
+                <Container
+                  alignItems="flex-start"
+                  flexDirection="row"
+                  flexWrap="wrap"
+                  onTouchStart={() => setIsAttachmentsVisible(true)}
+                >
+                  <Container
+                    alignSelf="flex-start"
+                    bg="background.oldLace"
+                    borderRadius={moderateScale(20)}
+                    flexDirection="row"
+                    flexGrow={0}
+                    px={4}
+                  >
+                    <Typography fontSize="3xs">Attachments</Typography>
+                  </Container>
+                  <Container
+                    alignSelf="flex-start"
+                    bg="background.oldLace"
+                    borderRadius={moderateScale(20)}
+                    flexDirection="row"
+                    flexGrow={0}
+                    px={4}
+                  >
+                    <Typography fontSize="3xs">+{attachmentsCount}</Typography>
+                  </Container>
+                </Container>
+              )}
+            </>
+          )}
+          <Container
+            alignItems="center"
+            flexDirection="row"
+            justifyContent="space-between"
+            mt={moderateScale(16)}
+          >
+            <Container flexDirection="row" justifyContent="space-between">
+              <IconButton
+                Icon={ReplySVG}
+                opacity={isReplyOptionSelected ? 1 : 0.5}
+                pl={10}
+                onPress={() => {
+                  setIsEmailFieldsVisible(false);
+                  setSelectedOption("reply");
+                }}
+              />
+              <IconButton
+                Icon={NoteSVG}
+                opacity={isNotesOptionSelected ? 1 : 0.5}
+                onPress={() => {
+                  setIsEmailFieldsVisible(false);
+                  setSelectedOption("note");
+                }}
+              />
+              {onForward && (
+                <IconButton
+                  Icon={ForwardSVG}
+                  opacity={isForwardOptionSelected ? 1 : 0.5}
+                  onPress={() => {
+                    setIsEmailFieldsVisible(true);
+                    setSelectedOption("forward");
+                  }}
+                />
+              )}
+              {onCannedResponse && (
+                <IconButton
+                  Icon={CannedResponseSVG}
+                  opacity={0.5}
+                  onPress={onCannedResponse}
+                />
+              )}
+              {onCannedResponse && (
+                <IconButton
+                  Icon={AttachmentSVG}
+                  opacity={0.5}
+                  onPress={onCannedResponse}
+                />
+              )}
+            </Container>
+            <Touchable onPress={onActionHandler}>
+              <Typography color="font.grey500" fontFamily="sf600">
+                {labels[selectedOption]}
+              </Typography>
+            </Touchable>
+          </Container>
         </Container>
       </Container>
     </Container>
@@ -161,6 +375,18 @@ export const ChatInput = ({
 };
 
 ChatInput.propTypes = {
+  /**
+   * The text to use for the floating label.
+   */
+  toEmails: PropTypes.any,
+  bccEmails: PropTypes.any,
+  ccEmails: PropTypes.any,
+
+  onReply: PropTypes.any,
+  onAddNote: PropTypes.any,
+  attachmentsCount: PropTypes.any,
+  Attachments: PropTypes.any,
+
   /**
    * The text to use for the floating label.
    */
