@@ -276,18 +276,57 @@ export const ChatInput = ({
 };
 
 ChatInput.propTypes = {
+  /**
+   * If true, Shows to, cc and bcc email inputs.
+   */
   shouldShowEmailFields: PropTypes.bool,
+  /**
+   * Value to make input component controllable.
+   */
   value: PropTypes.string,
+  /**
+   * Callback to be called when the input text changes.
+   */
   onChangeText: PropTypes.func,
+  /**
+   * Callback to be called on click of forward icon.
+   */
   onForward: PropTypes.func,
+  /**
+   * Callback to be called on click of canned responses icon.
+   */
   onCannedResponse: PropTypes.func,
+  /**
+   * Emailst list seperated by comma.
+   */
   toEmails: PropTypes.string,
+  /**
+   * Callback to be called on click of reply icon.
+   */
   onReply: PropTypes.func,
+  /**
+   * Callback to be called on click of add note icon.
+   */
   onAddNote: PropTypes.func,
+  /**
+   * Callback to be called on click of attachment icon.
+   */
   onAttachment: PropTypes.func,
+  /**
+   * Count of attachments.
+   */
   attachmentsCount: PropTypes.number,
+  /**
+   * Component to render attachemnts.
+   */
   Attachments: PropTypes.any,
+  /**
+   * Array for options to show canned responses. Example: ["reply","notes","forward"]
+   */
   showCannedResponsesFor: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * If true, Disables the reply, forward and add note button.
+   */
   disabled: PropTypes.bool,
 };
 

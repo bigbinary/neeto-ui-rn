@@ -89,12 +89,12 @@ export const EmailFields = ({
 
 EmailFields.propTypes = {
   shouldShowEmailFields: PropTypes.bool,
-  isEmailFieldsVisible: PropTypes.any,
-  setIsEmailFieldsVisible: PropTypes.any,
-  ccEmails: PropTypes.any,
-  toEmails: PropTypes.any,
-  bccEmails: PropTypes.any,
-  setBccEmails: PropTypes.any,
-  setCcEmails: PropTypes.any,
-  setToEmails: PropTypes.any,
+  isEmailFieldsVisible: PropTypes.bool,
+  setIsEmailFieldsVisible: PropTypes.func,
+  ccEmails: PropTypes.string,
+  toEmails: PropTypes.string,
+  bccEmails: PropTypes.string,
+  setBccEmails: PropTypes.func,
+  setCcEmails: PropTypes.func,
+  setToEmails: PropTypes.func,
 };

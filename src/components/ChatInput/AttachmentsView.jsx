@@ -11,10 +11,8 @@ export const AttachmentsView = ({
   Attachments,
   attachmentsCount,
 }) =>
-  //
-
   isAttachmentsVisible ? (
-    <>{Attachments}</>
+    Attachments
   ) : (
     <>
       {attachmentsCount > 0 && (
@@ -50,8 +48,8 @@ export const AttachmentsView = ({
   );
 
 AttachmentsView.propTypes = {
-  isAttachmentsVisible: PropTypes.any,
-  setIsAttachmentsVisible: PropTypes.any,
+  isAttachmentsVisible: PropTypes.bool,
+  setIsAttachmentsVisible: PropTypes.func,
   Attachments: PropTypes.any,
-  attachmentsCount: PropTypes.any,
+  attachmentsCount: PropTypes.number,
 };
