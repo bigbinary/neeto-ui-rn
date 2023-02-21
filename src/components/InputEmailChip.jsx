@@ -124,7 +124,6 @@ export const InputEmailChip = ({
 
   return (
     <Container
-      // bg="red"
       flexDirection="row"
       minHeight={moderateScale(30)}
       py={moderateScale(2)}
