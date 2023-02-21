@@ -25,6 +25,7 @@ export const InputEmailChip = ({
   emails = [],
   onUpdate,
   delimiters = [" ", ","],
+  ...rest
 }) => {
   const theme = useContext(ThemeContext);
   const inputRef = useRef();
@@ -123,19 +124,18 @@ export const InputEmailChip = ({
 
   return (
     <Container
-      // bg="red"
       flexDirection="row"
       minHeight={moderateScale(30)}
       py={moderateScale(2)}
       width="100%"
+      {...rest}
     >
       {!!label && (
         <Typography
           color={disabled ? "font.grey400" : "font.grey600"}
           fontSize="xs"
-          mr={moderateScale(2)}
-          textAlign="right"
-          width={moderateScale(40)}
+          textAlign="left"
+          width={moderateScale(30)}
           mt={Platform.select({
             android: moderateScale(10),
             ios: moderateScale(8),
@@ -155,9 +155,10 @@ export const InputEmailChip = ({
             <Chip
               isDisabled={disabled}
               label={email}
-              containerStyle={getChipContainerStyle(
-                index === emailIndexForDeletion
-              )}
+              containerStyle={{
+                ...getChipContainerStyle(index === emailIndexForDeletion),
+                height: moderateScale(25),
+              }}
               onClose={disabled ? null : () => removeEmail({ email })}
             />
           </Container>

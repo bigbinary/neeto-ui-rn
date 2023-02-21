@@ -32,7 +32,6 @@ export const EmailFields = ({
         disabled={false}
         emails={toEmails.trim() ? toEmails.split(",") : []}
         label="To:"
-        py={2}
         onUpdate={emails => {
           setToEmails(emails.join(","));
         }}
