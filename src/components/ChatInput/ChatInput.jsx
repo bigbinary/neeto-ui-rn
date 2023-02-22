@@ -225,7 +225,6 @@ export const ChatInput = ({
     selectedOption,
     toEmails,
   ]);
-  alert(isLoading);
 
   const shouldExpandAndMinimizeButton = attachmentsCount > 0 || toEmails;
 
