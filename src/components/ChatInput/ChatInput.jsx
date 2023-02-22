@@ -141,7 +141,6 @@ export const ChatInput = ({
     selectedOption,
     toEmails,
   ]);
-  alert(isLoading);
 
   return (
     <Container>

@@ -10,10 +10,11 @@ export const LineLoader = ({ isLoading, height = moderateScale(1.5) }) => {
 
   return (
     <ContentLoader
-      animate={Boolean(isLoading)}
+      animate={isLoading}
       foregroundColor={theme.colors.background.base}
       height={height}
       interval={0}
+      key={Boolean(isLoading)}
       speed={1}
       width="100%"
       backgroundColor={
