@@ -40,3 +40,4 @@ export { OrganizationItem } from "./OrganizationItem";
 export { ChatInput } from "./ChatInput/ChatInput";
 export { Loader } from "./Loader";
 export { InputEmailChip } from "./InputEmailChip";
+export { LineLoader } from "./LineLoader";

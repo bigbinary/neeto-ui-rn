@@ -94,6 +94,7 @@ export const Buttons = () => (
       my={9}
     />
     <Button label="Text Button" my={9} variant="text" />
+    <Button disabled label="Text Button" my={9} variant="text" />
     <Button
       label="Left Icon Text Button"
       my={9}

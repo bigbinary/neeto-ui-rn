@@ -20,7 +20,7 @@ import ForwardSVG from "@assets/icons/forward.svg";
 import MinimizeSVG from "@assets/icons/minimize.svg";
 import NoteSVG from "@assets/icons/note.svg";
 import ReplySVG from "@assets/icons/reply.svg";
-import { Container, Divider, Button } from "@components";
+import { Container, Divider, LineLoader, Button } from "@components";
 
 import { AttachmentsView } from "./AttachmentsView";
 import { EmailFields } from "./EmailFields";
@@ -95,6 +95,7 @@ export const ChatInput = ({
   Attachments,
   showCannedResponsesFor = ["reply"],
   disabled,
+  isLoading,
   ...rest
 }) => {
   const inputRef = useRef();
@@ -140,9 +141,11 @@ export const ChatInput = ({
     selectedOption,
     toEmails,
   ]);
+  alert(isLoading);
 
   return (
     <Container>
+      <LineLoader isLoading={isLoading} />
       <Divider bg="background.grey200" thickness={moderateScale(0.5)} />
       <Container
         bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
@@ -276,6 +279,10 @@ export const ChatInput = ({
 };
 
 ChatInput.propTypes = {
+  /**
+   * If true, Shows loader
+   */
+  isLoading: PropTypes.bool,
   /**
    * If true, Shows to, cc and bcc email inputs.
    */
