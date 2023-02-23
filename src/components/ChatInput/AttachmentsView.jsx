@@ -12,7 +12,7 @@ export const AttachmentsView = ({
   attachmentsCount,
 }) =>
   isAttachmentsVisible ? (
-    Attachments
+    attachmentsCount !== 0 && Attachments
   ) : (
     <>
       {attachmentsCount > 0 && (

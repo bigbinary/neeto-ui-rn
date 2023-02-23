@@ -296,7 +296,11 @@ export const ChatInput = ({
                 Icon={AttachmentSVG}
                 opacity={0.5}
                 onPress={() => {
-                  onAttachment();
+                  if (!isAttachmentsVisible && attachmentsCount > 0) {
+                    // When attachments are not visible but there are few attachments then we no need to show the upload modal.
+                  } else {
+                    onAttachment();
+                  }
                   setIsAttachmentsVisible(true);
                 }}
               />
