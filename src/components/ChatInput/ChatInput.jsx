@@ -28,47 +28,6 @@ import { IconButton } from "./IconButton";
 
 import { theme } from "../../theme";
 
-const TextInput = styled.TextInput`
-  ${flexbox}
-  ${space}
-  ${border}
-  ${buttonStyle}
-  ${typography}
-  ${color}
-`;
-
-/**
- * Input component allow users to input custom text entries with a keyboard.
- * This component supports below props categories from [styled-system ](/styled-system).
- * <ul>
- * <li>flexbox</li>
- * <li>space</li>
- * <li>border</li>
- * <li>buttonStyle</li>
- * <li>brandLeft</li>
- * <li>typography</li>
- * </ul>
- *
- * <div class="screenshots">
- *   <img src="screenshots/inputs/inputs.png" />
- * </div>
- *
- *  ## Usage
- * ```js
- * import * as React from 'react';
- * import { Input, Container } from '@bigbinary/neetoui-rn';
- *
- * export default function Main() {
- *  return (
- *    <Container>
- *     <Input value="Oliver Smith" onChangeText={()=>{}} label="Name" />
- *    </Container>
- *  );
- * }
- * ```
- *
- */
-
 const placeholders = {
   reply: "Type here to reply...",
   note: "Add note here...",
@@ -80,6 +39,75 @@ const labels = {
   note: "Add note",
   forward: "Forward",
 };
+
+const TextInput = styled.TextInput`
+  ${flexbox}
+  ${space}
+  ${border}
+  ${buttonStyle}
+  ${typography}
+  ${color}
+`;
+/**
+ * ChatInput component supports various options like `reply`, `add note` and `forward`.
+ * This component supports below props categories from [styled-system ](/styled-system).
+ * <ul>
+ * <li>flexbox</li>
+ * <li>space</li>
+ * <li>border</li>
+ * <li>buttonStyle</li>
+ * <li>brandLeft</li>
+ * <li>typography</li>
+ * </ul>
+ *
+ * <div class="screenshots">
+ *   <img src="screenshots/chatInput/chatInput.png" />
+ * </div>
+ *
+ * ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { Typography, ChatInput, Container } from '@bigbinary/neetoui-rn';
+ *
+ * export default function Main() {
+ *  const [value, setValue] = React.useState(
+ *    "Hey Oliver, We are working on this issue. We will keep you update");
+ *
+ *  return (
+ *    <Container flex={1}>
+ *      <Container alignItems="center" flex={1} justifyContent="center">
+ *        <Typography> Desk Example</Typography>
+ *      </Container>
+ *      <Container align-self="end">
+ *        <ChatInput
+ *          shouldShowEmailFields
+ *          attachmentsCount={2}
+ *          toEmails="oliver@example.com"
+ *          value={value}
+ *          Attachments={
+ *            <Container alignItems="flex-start">
+ *              <AnimatedImage
+ *                imageHeight={30}
+ *                imageUrl="https://picsum.photos/255/139"
+ *                imageWidth={30}
+ *                resizeMode="cover"
+ *              />
+ *            </Container>
+ *          }
+ *          onChangeText={setValue}
+ *          onCannedResponse={() => {
+ *            alert("On Canned Response");
+ *          }}
+ *          onForward={() => {
+ *            alert("On Forward");
+ *          }}
+ *        />
+ *      </Container>
+ *    </Container>
+ *  );
+ * }
+ * ```
+ */
 
 export const ChatInput = ({
   shouldShowEmailFields,
@@ -96,7 +124,7 @@ export const ChatInput = ({
   showCannedResponsesFor = ["reply"],
   disabled,
   isLoading,
-  onOptionChange,
+  onOptionChange = () => {},
   initialSelectedOption = "reply",
   ...rest
 }) => {
