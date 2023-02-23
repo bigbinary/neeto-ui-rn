@@ -96,11 +96,13 @@ export const ChatInput = ({
   showCannedResponsesFor = ["reply"],
   disabled,
   isLoading,
+  onOptionChange,
+  initialSelectedOption = "reply",
   ...rest
 }) => {
   const inputRef = useRef();
 
-  const [selectedOption, setSelectedOption] = useState("reply");
+  const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
   const [isEmailFieldsVisible, setIsEmailFieldsVisible] = useState(false);
   const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
 
@@ -111,6 +113,14 @@ export const ChatInput = ({
   const [toEmails, setToEmails] = useState(initialToEmails ?? "");
   const [ccEmails, setCcEmails] = useState("");
   const [bccEmails, setBccEmails] = useState("");
+
+  useEffect(() => {
+    onOptionChange(selectedOption);
+  }, [selectedOption]);
+
+  useEffect(() => {
+    setSelectedOption(initialSelectedOption);
+  }, [initialSelectedOption]);
 
   useEffect(() => {
     if (isReplyOptionSelected) {
@@ -145,7 +155,7 @@ export const ChatInput = ({
   return (
     <Container>
       <LineLoader isLoading={isLoading} />
-      <Divider bg="background.grey200" thickness={moderateScale(0.5)} />
+      <Divider bg="background.grey400" thickness={moderateScale(0.5)} />
       <Container
         bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
         p={5}
@@ -290,6 +300,14 @@ ChatInput.propTypes = {
    * Value to make input component controllable.
    */
   value: PropTypes.string,
+  /**
+   * To set the initial selected option
+   */
+  initialSelectedOption: PropTypes.string,
+  /**
+   * Callback to be called when user selection option.
+   */
+  onOptionChange: PropTypes.func,
   /**
    * Callback to be called when the input text changes.
    */
