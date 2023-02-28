@@ -3,7 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Container, InputEmailChip, Typography } from "@components";
+import { Container, InputEmailChip } from "@components";
+
+import { Badge } from "./Badge";
 
 export const EmailFields = ({
   shouldShowEmailFields,
@@ -54,32 +56,16 @@ export const EmailFields = ({
       />
     </Container>
   ) : (
-    <Container alignItems="flex-start" flexDirection="row" flexWrap="wrap">
+    <Container
+      alignItems="flex-start"
+      flexDirection="row"
+      flexWrap="wrap"
+      onTouchStart={() => setIsEmailFieldsVisible(true)}
+    >
       {toEmails.length > 0 && (
         <>
-          <Container
-            alignSelf="flex-start"
-            bg="background.oldLace"
-            borderRadius={moderateScale(20)}
-            flexDirection="row"
-            flexGrow={0}
-            px={4}
-            onTouchStart={() => setIsEmailFieldsVisible(true)}
-          >
-            <Typography fontSize="3xs">To:{firstToEmail}</Typography>
-          </Container>
-          {totalEmailsMinus1 > 1 && (
-            <Container
-              alignSelf="flex-start"
-              bg="background.oldLace"
-              borderRadius={moderateScale(20)}
-              flexDirection="row"
-              flexGrow={0}
-              px={4}
-            >
-              <Typography fontSize="3xs">+{totalEmailsMinus1}</Typography>
-            </Container>
-          )}
+          <Badge text={`To ${firstToEmail}`} />
+          {totalEmailsMinus1 > 1 && <Badge text={`+ ${totalEmailsMinus1}`} />}
         </>
       )}
     </Container>

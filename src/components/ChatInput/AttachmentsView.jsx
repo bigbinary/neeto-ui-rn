@@ -1,9 +1,10 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import { moderateScale } from "react-native-size-matters";
 
-import { Container, Typography } from "@components";
+import { Container } from "@components";
+
+import { Badge } from "./Badge";
 
 export const AttachmentsView = ({
   isAttachmentsVisible,
@@ -22,26 +23,8 @@ export const AttachmentsView = ({
           flexWrap="wrap"
           onTouchStart={() => setIsAttachmentsVisible(true)}
         >
-          <Container
-            alignSelf="flex-start"
-            bg="background.oldLace"
-            borderRadius={moderateScale(20)}
-            flexDirection="row"
-            flexGrow={0}
-            px={4}
-          >
-            <Typography fontSize="3xs">Attachments</Typography>
-          </Container>
-          <Container
-            alignSelf="flex-start"
-            bg="background.oldLace"
-            borderRadius={moderateScale(20)}
-            flexDirection="row"
-            flexGrow={0}
-            px={4}
-          >
-            <Typography fontSize="3xs">+{attachmentsCount}</Typography>
-          </Container>
+          <Badge text="Attachments" />
+          <Badge text={`+ ${attachmentsCount}`} />
         </Container>
       )}
     </>
