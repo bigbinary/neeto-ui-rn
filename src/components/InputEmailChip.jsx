@@ -135,7 +135,7 @@ export const InputEmailChip = ({
           color={disabled ? "font.grey400" : "font.grey600"}
           fontSize="xs"
           textAlign="left"
-          width={moderateScale(30)}
+          width={moderateScale(40)}
           mt={Platform.select({
             android: moderateScale(10),
             ios: moderateScale(8),
@@ -179,6 +179,9 @@ export const InputEmailChip = ({
               noBorder
               disabled={disabled}
               value={textValue}
+              containerProps={{
+                borderRadius: 0,
+              }}
               inputProps={{
                 ...inputProps,
                 ref: inputRef,
@@ -188,7 +191,7 @@ export const InputEmailChip = ({
                 onFocus: handleOnFocus,
                 onBlur: handleOnBlur,
                 onEndEditing: handleOnEndEditing,
-                borderBottomWidth: 2,
+                borderBottomWidth: moderateScale(2),
                 borderColor: "background.grey200",
               }}
               onChangeText={handleTextChange}

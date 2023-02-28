@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useCallback, useState } from "react";
-import { StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
@@ -20,7 +19,7 @@ import ForwardSVG from "@assets/icons/forward.svg";
 import MinimizeSVG from "@assets/icons/minimize.svg";
 import NoteSVG from "@assets/icons/note.svg";
 import ReplySVG from "@assets/icons/reply.svg";
-import { Container, Divider, LineLoader, Button } from "@components";
+import { Container, LineLoader, Button } from "@components";
 
 import { AttachmentsView } from "./AttachmentsView";
 import { EmailFields } from "./EmailFields";
@@ -34,10 +33,17 @@ const placeholders = {
   forward: "Type here to forward...",
 };
 
+// eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
+const OPTION_TYPES = {
+  REPLY: "REPLY",
+  NOTE: "NOTE",
+  FORWARD: "FORWARD",
+};
+
 const labels = {
-  reply: "Reply",
-  note: "Add note",
-  forward: "Forward",
+  [OPTION_TYPES.REPLY]: "Reply",
+  [OPTION_TYPES.NOTE]: "Add note",
+  [OPTION_TYPES.FORWARD]: "Forward",
 };
 
 const TextInput = styled.TextInput`
@@ -49,7 +55,7 @@ const TextInput = styled.TextInput`
   ${color}
 `;
 /**
- * ChatInput component supports various options like `reply`, `add note` and `forward`.
+ * ChatInput component supports various options like `REPLY`, `NOTE` and `FORWARD`.
  * This component supports below props categories from [styled-system ](/styled-system).
  * <ul>
  * <li>flexbox</li>
@@ -121,11 +127,11 @@ export const ChatInput = ({
   onAttachment = () => {},
   attachmentsCount,
   Attachments,
-  showCannedResponsesFor = ["reply"],
+  showCannedResponsesFor = [OPTION_TYPES.REPLY],
   disabled,
-  isLoading,
+  isLoading = true,
   onOptionChange = () => {},
-  initialSelectedOption = "reply",
+  initialSelectedOption = OPTION_TYPES.REPLY,
   ...rest
 }) => {
   const inputRef = useRef();
@@ -134,9 +140,9 @@ export const ChatInput = ({
   const [isEmailFieldsVisible, setIsEmailFieldsVisible] = useState(false);
   const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
 
-  const isReplyOptionSelected = selectedOption === "reply";
-  const isNoteOptionSelected = selectedOption === "note";
-  const isForwardOptionSelected = selectedOption === "forward";
+  const isReplyOptionSelected = selectedOption === OPTION_TYPES.REPLY;
+  const isNoteOptionSelected = selectedOption === OPTION_TYPES.NOTE;
+  const isForwardOptionSelected = selectedOption === OPTION_TYPES.FORWARD;
 
   const [toEmails, setToEmails] = useState(initialToEmails ?? "");
   const [ccEmails, setCcEmails] = useState("");
@@ -158,15 +164,55 @@ export const ChatInput = ({
     }
   }, [initialToEmails, isReplyOptionSelected]);
 
+  const showEmailFieldsAndAttachments = () => {
+    setIsAttachmentsVisible(true);
+    setIsEmailFieldsVisible(true);
+  };
+
+  const hideEmailFieldsAndAttachments = () => {
+    setIsAttachmentsVisible(false);
+    setIsEmailFieldsVisible(false);
+  };
+
+  const onReplyClickHandler = () => {
+    hideEmailFieldsAndAttachments();
+    inputRef.current.focus();
+    setSelectedOption(OPTION_TYPES.REPLY);
+  };
+
+  const onAddNoteClickHandler = () => {
+    hideEmailFieldsAndAttachments();
+    inputRef.current.focus();
+    setIsEmailFieldsVisible(false);
+    setSelectedOption(OPTION_TYPES.NOTE);
+  };
+
+  const onAddForwardClickHandler = () => {
+    inputRef.current.focus();
+    setIsEmailFieldsVisible(true);
+    setIsAttachmentsVisible(false);
+    setSelectedOption(OPTION_TYPES.FORWARD);
+  };
+
+  const onAddAttachmentsClickHandler = () => {
+    if (!isAttachmentsVisible && attachmentsCount > 0) {
+      // When attachments are not visible but there are few attachments then we no need to show the upload modal.
+    } else {
+      onAttachment();
+    }
+    setIsEmailFieldsVisible(false);
+    setIsAttachmentsVisible(true);
+  };
+
   const onActionHandler = useCallback(() => {
     ({
-      reply: () => {
+      [OPTION_TYPES.REPLY]: () => {
         onReply({ toEmails, ccEmails, bccEmails });
       },
-      note: () => {
+      [OPTION_TYPES.NOTE]: () => {
         onAddNote({ toEmails, ccEmails, bccEmails });
       },
-      forward: () => {
+      [OPTION_TYPES.FORWARD]: () => {
         onForward({ toEmails, ccEmails, bccEmails });
       },
     }[selectedOption]());
@@ -182,13 +228,15 @@ export const ChatInput = ({
 
   return (
     <Container>
-      <LineLoader isLoading={isLoading} />
-      <Divider bg="background.grey400" thickness={moderateScale(0.5)} />
+      <LineLoader
+        backgroundColor={theme.colors.background.grey400}
+        isLoading={isLoading}
+      />
       <Container
         bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
-        p={5}
+        p={moderateScale(5)}
         pt={0}
-        px={16}
+        px={moderateScale(16)}
       >
         <Container pt={moderateScale(8)}>
           <EmailFields
@@ -211,32 +259,20 @@ export const ChatInput = ({
               ref={inputRef}
               value={value}
               onChangeText={onChangeText}
-              onFocus={() => {
-                setIsEmailFieldsVisible(false);
-              }}
-              onTouchStart={() => {
-                setIsAttachmentsVisible(false);
-                setIsEmailFieldsVisible(false);
-              }}
+              onTouchStart={hideEmailFieldsAndAttachments}
               {...rest}
             />
             {isEmailFieldsVisible || isAttachmentsVisible ? (
               <IconButton
                 Icon={MinimizeSVG}
                 pt={moderateScale(8)}
-                onPress={() => {
-                  setIsEmailFieldsVisible(false);
-                  setIsAttachmentsVisible(false);
-                }}
+                onPress={hideEmailFieldsAndAttachments}
               />
             ) : (
               <IconButton
                 Icon={ExpandSVG}
                 pt={moderateScale(8)}
-                onPress={() => {
-                  setIsEmailFieldsVisible(true);
-                  setIsAttachmentsVisible(true);
-                }}
+                onPress={showEmailFieldsAndAttachments}
               />
             )}
           </Container>
@@ -256,34 +292,26 @@ export const ChatInput = ({
               <IconButton
                 Icon={ReplySVG}
                 opacity={isReplyOptionSelected ? 1 : 0.5}
-                pl={10}
-                onPress={() => {
-                  inputRef.current.focus();
-                  setIsEmailFieldsVisible(false);
-                  setSelectedOption("reply");
-                }}
+                pl={moderateScale(10)}
+                onPress={onReplyClickHandler}
               />
               <IconButton
                 Icon={NoteSVG}
                 opacity={isNoteOptionSelected ? 1 : 0.5}
-                onPress={() => {
-                  inputRef.current.focus();
-                  setIsEmailFieldsVisible(false);
-                  setSelectedOption("note");
-                }}
+                onPress={onAddNoteClickHandler}
               />
               {onForward && (
                 <IconButton
                   Icon={ForwardSVG}
                   opacity={isForwardOptionSelected ? 1 : 0.5}
-                  onPress={() => {
-                    inputRef.current.focus();
-                    setIsEmailFieldsVisible(true);
-                    setSelectedOption("forward");
-                  }}
+                  onPress={onAddForwardClickHandler}
                 />
               )}
-              <Container bg="background.grey400" mx={5} p={0.4} />
+              <Container
+                bg="background.grey400"
+                mx={moderateScale(5)}
+                p={moderateScale(0.4)}
+              />
               {onCannedResponse &&
                 showCannedResponsesFor.includes(selectedOption) && (
                   <IconButton
@@ -295,19 +323,12 @@ export const ChatInput = ({
               <IconButton
                 Icon={AttachmentSVG}
                 opacity={0.5}
-                onPress={() => {
-                  if (!isAttachmentsVisible && attachmentsCount > 0) {
-                    // When attachments are not visible but there are few attachments then we no need to show the upload modal.
-                  } else {
-                    onAttachment();
-                  }
-                  setIsAttachmentsVisible(true);
-                }}
+                onPress={onAddAttachmentsClickHandler}
               />
             </Container>
             <Button
               disabled={disabled}
-              height={30}
+              height={moderateScale(30)}
               label={labels[selectedOption]}
               variant="text"
               onPress={onActionHandler}
@@ -335,7 +356,7 @@ ChatInput.propTypes = {
   /**
    * To set the initial selected option
    */
-  initialSelectedOption: PropTypes.string,
+  initialSelectedOption: PropTypes.oneOf(Object.values(OPTION_TYPES)),
   /**
    * Callback to be called when user selection option.
    */
@@ -353,7 +374,7 @@ ChatInput.propTypes = {
    */
   onCannedResponse: PropTypes.func,
   /**
-   * Emailst list seperated by comma.
+   * Email list separated by comma.
    */
   toEmails: PropTypes.string,
   /**
@@ -373,7 +394,7 @@ ChatInput.propTypes = {
    */
   attachmentsCount: PropTypes.number,
   /**
-   * Component to render attachemnts.
+   * Component to render attachments.
    */
   Attachments: PropTypes.any,
   /**
@@ -385,10 +406,3 @@ ChatInput.propTypes = {
    */
   disabled: PropTypes.bool,
 };
-
-export const styles = StyleSheet.create({
-  doneButtonStyle: {
-    fontFamily: "sf700",
-    color: theme.colors.font.base,
-  },
-});
