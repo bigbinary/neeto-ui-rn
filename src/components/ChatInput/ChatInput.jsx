@@ -226,6 +226,8 @@ export const ChatInput = ({
     toEmails,
   ]);
 
+  const shouldExpandAndMinimizeButton = attachmentsCount > 0 || toEmails;
+
   return (
     <Container>
       <LineLoader
@@ -262,19 +264,26 @@ export const ChatInput = ({
               onTouchStart={hideEmailFieldsAndAttachments}
               {...rest}
             />
-            {isEmailFieldsVisible || isAttachmentsVisible ? (
-              <IconButton
-                Icon={MinimizeSVG}
-                pt={moderateScale(8)}
-                onPress={hideEmailFieldsAndAttachments}
-              />
-            ) : (
-              <IconButton
-                Icon={ExpandSVG}
-                pt={moderateScale(8)}
-                onPress={showEmailFieldsAndAttachments}
-              />
-            )}
+            <Container alignSelf="center">
+              {shouldExpandAndMinimizeButton &&
+                (isEmailFieldsVisible || isAttachmentsVisible ? (
+                  <IconButton
+                    Icon={MinimizeSVG}
+                    height={moderateScale(30)}
+                    pt={moderateScale(8)}
+                    width={moderateScale(30)}
+                    onPress={hideEmailFieldsAndAttachments}
+                  />
+                ) : (
+                  <IconButton
+                    Icon={ExpandSVG}
+                    height={moderateScale(30)}
+                    pt={moderateScale(8)}
+                    width={moderateScale(30)}
+                    onPress={showEmailFieldsAndAttachments}
+                  />
+                ))}
+            </Container>
           </Container>
           <AttachmentsView
             Attachments={Attachments}
@@ -330,7 +339,11 @@ export const ChatInput = ({
               disabled={disabled}
               height={moderateScale(30)}
               label={labels[selectedOption]}
+              pr={0}
               variant="text"
+              labelStyle={{
+                mx: moderateScale(0),
+              }}
               onPress={onActionHandler}
             />
           </Container>

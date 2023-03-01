@@ -1,9 +1,10 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 import { moderateScale } from "react-native-size-matters";
 
-import { Container, InputEmailChip } from "@components";
+import { InputEmailChip } from "@components";
 
 import { Badge } from "./Badge";
 
@@ -29,7 +30,11 @@ export const EmailFields = ({
   if (!shouldShowEmailFields) return null;
 
   return isEmailFieldsVisible ? (
-    <Container pb={moderateScale(10)}>
+    <Animated.View
+      entering={FadeInDown}
+      key={isEmailFieldsVisible}
+      pb={moderateScale(10)}
+    >
       <InputEmailChip
         disabled={false}
         emails={toEmails.trim() ? toEmails.split(",") : []}
@@ -54,12 +59,14 @@ export const EmailFields = ({
           setBccEmails(emails.join(","));
         }}
       />
-    </Container>
+    </Animated.View>
   ) : (
-    <Container
+    <Animated.View
       alignItems="flex-start"
+      entering={FadeInUp}
       flexDirection="row"
       flexWrap="wrap"
+      key={isEmailFieldsVisible}
       onTouchStart={() => setIsEmailFieldsVisible(true)}
     >
       {toEmails.length > 0 && (
@@ -68,7 +75,7 @@ export const EmailFields = ({
           {totalEmailsMinus1 > 1 && <Badge text={`+ ${totalEmailsMinus1}`} />}
         </>
       )}
-    </Container>
+    </Animated.View>
   );
 };
 

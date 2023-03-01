@@ -1,8 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-
-import { Container } from "@components";
+import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated";
 
 import { Badge } from "./Badge";
 
@@ -13,19 +12,25 @@ export const AttachmentsView = ({
   attachmentsCount,
 }) =>
   isAttachmentsVisible ? (
-    attachmentsCount !== 0 && Attachments
+    attachmentsCount !== 0 && (
+      <Animated.View entering={FadeInUp} key={isAttachmentsVisible}>
+        {Attachments}
+      </Animated.View>
+    )
   ) : (
     <>
       {attachmentsCount > 0 && (
-        <Container
+        <Animated.View
           alignItems="flex-start"
+          entering={FadeInDown}
           flexDirection="row"
           flexWrap="wrap"
+          key={isAttachmentsVisible}
           onTouchStart={() => setIsAttachmentsVisible(true)}
         >
           <Badge text="Attachments" />
           <Badge text={`+ ${attachmentsCount}`} />
-        </Container>
+        </Animated.View>
       )}
     </>
   );
