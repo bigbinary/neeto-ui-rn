@@ -12,7 +12,7 @@ export const Badge = ({ text, isNoteOptionSelected }) => (
     borderRadius={moderateScale(20)}
     flexDirection="row"
     flexGrow={0}
-    px={4}
+    px={moderateScale(4)}
   >
     <Typography fontSize="3xs">{text}</Typography>
   </Container>
