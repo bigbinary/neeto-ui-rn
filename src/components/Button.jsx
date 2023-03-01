@@ -147,9 +147,13 @@ export const Button = React.forwardRef(
 
     const renderOpacity = () => {
       if (
-        ["secondary", "danger", "danger-inverse", "danger-text"].includes(
-          variant
-        ) &&
+        [
+          "text",
+          "secondary",
+          "danger",
+          "danger-inverse",
+          "danger-text",
+        ].includes(variant) &&
         disabled
       ) {
         return 0.5;

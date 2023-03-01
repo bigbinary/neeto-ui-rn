@@ -318,6 +318,32 @@ type InputProps = {
   textAlignVertical?: string;
 };
 
+type ChatInputProps = {
+  isLoading?: boolean;
+  shouldShowEmailFields?: boolean;
+  value: string;
+  initialSelectedOption?: "REPLY" | "NOTE" | "FORWARD";
+  onOptionChange?: (option: string) => void;
+  onChangeText: (text: string) => void;
+  onForward?: () => void;
+  onCannedResponse?:  () => void;
+  toEmails?: string;
+  onReply?: () => void;
+  onAddNote?: () => void;
+  onAttachment?: () => void;
+  attachmentsCount?: number;
+  Attachments?:  React.FC;
+  showCannedResponsesFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
+  disabled?: boolean;
+};
+
+type LineLoaderProps = {
+  backgroundColor?: string,
+  foregroundColor?: string,
+  height?: number,
+  isLoading?: boolean;
+};
+
 type InputEmailChipProps = {
   disabled?: boolean;
   label?: string;
@@ -554,6 +580,8 @@ export const FlashList: React.FC<FlashListProps>;
 export const FlatList: React.FC<FlatListProps>;
 export const Input: React.FC<InputProps>;
 export const InputEmailChip: React.FC<InputEmailChipProps>;
+export const ChatInput: React.FC<ChatInputProps>;
+export const LineLoader: React.FC<LineLoaderProps>;
 export const ListItem: React.FC<ListItemProps>;
 export const Loader: React.FC<LoaderProps>;
 export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
