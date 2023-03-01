@@ -5,10 +5,10 @@ import { moderateScale } from "react-native-size-matters";
 
 import { Container, Typography } from "@components";
 
-export const Badge = ({ text }) => (
+export const Badge = ({ text, isNoteOptionSelected }) => (
   <Container
     alignSelf="flex-start"
-    bg="background.oldLace"
+    bg={isNoteOptionSelected ? "white" : "background.oldLace"}
     borderRadius={moderateScale(20)}
     flexDirection="row"
     flexGrow={0}
@@ -20,4 +20,5 @@ export const Badge = ({ text }) => (
 
 Badge.propTypes = {
   text: PropTypes.string,
+  isNoteOptionSelected: PropTypes.bool,
 };

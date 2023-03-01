@@ -289,6 +289,7 @@ export const ChatInput = ({
             Attachments={Attachments}
             attachmentsCount={attachmentsCount}
             isAttachmentsVisible={isAttachmentsVisible}
+            isNoteOptionSelected={isNoteOptionSelected}
             setIsAttachmentsVisible={setIsAttachmentsVisible}
           />
           <Container

@@ -10,6 +10,7 @@ export const AttachmentsView = ({
   setIsAttachmentsVisible,
   Attachments,
   attachmentsCount,
+  isNoteOptionSelected,
 }) =>
   isAttachmentsVisible ? (
     attachmentsCount !== 0 && (
@@ -28,8 +29,14 @@ export const AttachmentsView = ({
           key={isAttachmentsVisible}
           onTouchStart={() => setIsAttachmentsVisible(true)}
         >
-          <Badge text="Attachments" />
-          <Badge text={`+ ${attachmentsCount}`} />
+          <Badge
+            isNoteOptionSelected={isNoteOptionSelected}
+            text="Attachments"
+          />
+          <Badge
+            isNoteOptionSelected={isNoteOptionSelected}
+            text={`+ ${attachmentsCount}`}
+          />
         </Animated.View>
       )}
     </>
@@ -40,4 +47,5 @@ AttachmentsView.propTypes = {
   setIsAttachmentsVisible: PropTypes.func,
   Attachments: PropTypes.any,
   attachmentsCount: PropTypes.number,
+  isNoteOptionSelected: PropTypes.bool,
 };
