@@ -12,19 +12,34 @@ export const EmailFields = ({
   shouldShowEmailFields,
   setIsEmailFieldsVisible,
   isEmailFieldsVisible,
-  ccEmails,
   toEmails,
+  toEmailsForForward,
+  ccEmails,
   bccEmails,
+  setToEmails,
+  setToEmailsForForward,
   setBccEmails,
   setCcEmails,
-  setToEmails,
+  isReplyOptionSelected,
+  isNoteOptionSelected,
+  isForwardOptionSelected,
 }) => {
-  const firstToEmail = (toEmails.trim() ? toEmails.split(",") : [])[0] ?? "";
+  const firstToEmail = isReplyOptionSelected
+    ? toEmails[0]
+    : toEmailsForForward[0];
+
+  let badge = "";
+  if (firstToEmail) {
+    badge = `To ${firstToEmail}`;
+  } else if (isForwardOptionSelected) {
+    badge = "Click here to enter email id.";
+  }
 
   const totalEmailsMinus1 =
-    (toEmails.trim() ? toEmails.split(",") : []).length +
-    (ccEmails.trim() ? ccEmails.split(",") : []).length +
-    (bccEmails.trim() ? bccEmails.split(",") : []).length -
+    toEmails.length +
+    toEmailsForForward.length +
+    ccEmails.length +
+    bccEmails.length -
     1;
 
   if (!shouldShowEmailFields) return null;
@@ -35,29 +50,33 @@ export const EmailFields = ({
       key={isEmailFieldsVisible}
       pb={moderateScale(10)}
     >
+      {isReplyOptionSelected && (
+        <InputEmailChip
+          disabled
+          emails={toEmails}
+          label="To:"
+          onUpdate={setToEmails}
+        />
+      )}
+      {isForwardOptionSelected && (
+        <InputEmailChip
+          disabled={false}
+          emails={toEmailsForForward}
+          label="To:"
+          onUpdate={setToEmailsForForward}
+        />
+      )}
       <InputEmailChip
         disabled={false}
-        emails={toEmails.trim() ? toEmails.split(",") : []}
-        label="To:"
-        onUpdate={emails => {
-          setToEmails(emails.join(","));
-        }}
-      />
-      <InputEmailChip
-        disabled={false}
-        emails={ccEmails.trim() ? ccEmails.split(",") : []}
+        emails={ccEmails}
         label="Cc:"
-        onUpdate={emails => {
-          setCcEmails(emails.join(","));
-        }}
+        onUpdate={setCcEmails}
       />
       <InputEmailChip
         disabled={false}
-        emails={bccEmails.trim() ? bccEmails.split(",") : []}
+        emails={bccEmails}
         label="Bcc:"
-        onUpdate={emails => {
-          setBccEmails(emails.join(","));
-        }}
+        onUpdate={setBccEmails}
       />
     </Animated.View>
   ) : (
@@ -67,11 +86,17 @@ export const EmailFields = ({
       flexDirection="row"
       flexWrap="wrap"
       key={isEmailFieldsVisible}
+      style={
+        isNoteOptionSelected && {
+          height: moderateScale(0),
+          width: moderateScale(0),
+        }
+      }
       onTouchStart={() => setIsEmailFieldsVisible(true)}
     >
       {toEmails.length > 0 && (
         <>
-          <Badge text={`To ${firstToEmail}`} />
+          <Badge text={badge} />
           {totalEmailsMinus1 > 1 && <Badge text={`+ ${totalEmailsMinus1}`} />}
         </>
       )}
@@ -83,10 +108,15 @@ EmailFields.propTypes = {
   shouldShowEmailFields: PropTypes.bool,
   isEmailFieldsVisible: PropTypes.bool,
   setIsEmailFieldsVisible: PropTypes.func,
-  ccEmails: PropTypes.string,
-  toEmails: PropTypes.string,
-  bccEmails: PropTypes.string,
+  ccEmails: PropTypes.arrayOf(PropTypes.string),
+  toEmails: PropTypes.arrayOf(PropTypes.string),
+  toEmailsForForward: PropTypes.arrayOf(PropTypes.string),
+  bccEmails: PropTypes.arrayOf(PropTypes.string),
   setBccEmails: PropTypes.func,
   setCcEmails: PropTypes.func,
   setToEmails: PropTypes.func,
+  setToEmailsForForward: PropTypes.func,
+  isReplyOptionSelected: PropTypes.bool,
+  isNoteOptionSelected: PropTypes.bool,
+  isForwardOptionSelected: PropTypes.bool,
 };

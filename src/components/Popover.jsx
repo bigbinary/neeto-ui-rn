@@ -7,7 +7,7 @@ import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import { flexbox, space, border, color, layout } from "styled-system";
 
-import { Typography } from "@components";
+import { Typography, Divider } from "@components";
 
 export const TouchableOpacity = styled.TouchableOpacity`
   ${space}
@@ -17,32 +17,45 @@ export const TouchableOpacity = styled.TouchableOpacity`
   ${layout}
 `;
 
-const PopOverItem = ({ item, onPress, fontFamily, fontSize }) => {
+const PopOverItem = ({
+  item,
+  onPress,
+  fontFamily,
+  fontSize,
+  shouldShowDivider,
+}) => {
   const { Icon, label, labelProps } = item;
 
   return (
-    <TouchableOpacity
-      alignItems="center"
-      flexDirection="row"
-      p={moderateScale(2)}
-      px={moderateScale(3)}
-      onPress={onPress}
-    >
-      <Icon />
-      <Typography
-        fontColor="font.primary"
-        fontFamily={fontFamily}
-        fontSize={fontSize}
-        px={moderateScale(2)}
-        {...labelProps}
+    <>
+      <TouchableOpacity
+        alignItems="center"
+        flexDirection="row"
+        p={moderateScale(2)}
+        px={moderateScale(8)}
+        py={moderateScale(8)}
+        onPress={onPress}
       >
-        {label}
-      </Typography>
-    </TouchableOpacity>
+        <Icon />
+        <Typography
+          fontColor="font.primary"
+          fontFamily={fontFamily}
+          fontSize={fontSize}
+          px={moderateScale(2)}
+          {...labelProps}
+        >
+          {label}
+        </Typography>
+      </TouchableOpacity>
+      {shouldShowDivider && (
+        <Divider backgroundColor="background.grey200" mx={moderateScale(8)} />
+      )}
+    </>
   );
 };
 
 PopOverItem.propTypes = {
+  shouldShowDivider: PropTypes.bool,
   item: PropTypes.object,
   onPress: PropTypes.func,
   fontFamily: PropTypes.string,
@@ -171,6 +184,7 @@ export const Popover = ({
           fontSize={fontSize}
           item={item}
           key={index}
+          shouldShowDivider={index !== data.length - 1}
           onPress={() => {
             popoverRef?.current?.setState({ isVisible: false });
             onPressItemRef.current = item.onPress;
@@ -201,5 +215,8 @@ Popover.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  popoverStyle: { borderRadius: moderateScale(15), padding: moderateScale(5) },
+  popoverStyle: {
+    borderRadius: moderateScale(10),
+    padding: moderateScale(5),
+  },
 });

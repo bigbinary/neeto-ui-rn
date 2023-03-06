@@ -1,6 +1,14 @@
-import React, { useEffect, useRef, useCallback, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useCallback,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 
 import PropTypes from "prop-types";
+import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
@@ -19,7 +27,7 @@ import ForwardSVG from "@assets/icons/forward.svg";
 import MinimizeSVG from "@assets/icons/minimize.svg";
 import NoteSVG from "@assets/icons/note.svg";
 import ReplySVG from "@assets/icons/reply.svg";
-import { Container, LineLoader, Button } from "@components";
+import { Container, LineLoader, Popover, Button } from "@components";
 
 import { AttachmentsView } from "./AttachmentsView";
 import { EmailFields } from "./EmailFields";
@@ -115,245 +123,317 @@ const TextInput = styled.TextInput`
  * ```
  */
 
-export const ChatInput = ({
-  shouldShowEmailFields,
-  value = "",
-  onChangeText = () => {},
-  onForward,
-  onCannedResponse,
-  toEmails: initialToEmails,
-  onReply = () => {},
-  onAddNote = () => {},
-  onAttachment = () => {},
-  attachmentsCount,
-  Attachments,
-  showCannedResponsesFor = [OPTION_TYPES.REPLY],
-  disabled,
-  isLoading = true,
-  onOptionChange = () => {},
-  initialSelectedOption = OPTION_TYPES.REPLY,
-  ...rest
-}) => {
-  const inputRef = useRef();
+export const ChatInput = forwardRef(
+  (
+    {
+      shouldShowEmailFields,
+      showReplyMenuOptions,
+      value = "",
+      onChangeText = () => {},
+      onForward,
+      onCannedResponse,
+      toEmails: initialToEmails,
+      onReply = () => {},
+      onAddNote = () => {},
+      onAttachment = () => {},
+      attachmentsCount,
+      Attachments,
+      showCannedResponsesFor = [OPTION_TYPES.REPLY],
+      disabled,
+      isLoading = true,
+      onOptionChange = () => {},
+      initialSelectedOption = OPTION_TYPES.REPLY,
+      ...rest
+    },
+    ref
+  ) => {
+    const inputRef = useRef();
 
-  const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
-  const [isEmailFieldsVisible, setIsEmailFieldsVisible] = useState(false);
-  const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
+    const [selectedOption, setSelectedOption] = useState(initialSelectedOption);
+    const [isEmailFieldsVisible, setIsEmailFieldsVisible] = useState(false);
+    const [isAttachmentsVisible, setIsAttachmentsVisible] = useState(false);
 
-  const isReplyOptionSelected = selectedOption === OPTION_TYPES.REPLY;
-  const isNoteOptionSelected = selectedOption === OPTION_TYPES.NOTE;
-  const isForwardOptionSelected = selectedOption === OPTION_TYPES.FORWARD;
+    const isReplyOptionSelected = selectedOption === OPTION_TYPES.REPLY;
+    const isNoteOptionSelected = selectedOption === OPTION_TYPES.NOTE;
+    const isForwardOptionSelected = selectedOption === OPTION_TYPES.FORWARD;
 
-  const [toEmails, setToEmails] = useState(initialToEmails ?? "");
-  const [ccEmails, setCcEmails] = useState("");
-  const [bccEmails, setBccEmails] = useState("");
+    const [toEmails, setToEmails] = useState(initialToEmails ?? []);
+    const [toEmailsForForward, setToEmailsForForward] = useState([]);
+    const [ccEmails, setCcEmails] = useState([]);
+    const [bccEmails, setBccEmails] = useState([]);
 
-  useEffect(() => {
-    onOptionChange(selectedOption);
-  }, [selectedOption]);
-
-  useEffect(() => {
-    setSelectedOption(initialSelectedOption);
-  }, [initialSelectedOption]);
-
-  useEffect(() => {
-    if (isReplyOptionSelected) {
-      setToEmails(initialToEmails ?? "");
-    } else {
-      setToEmails("");
-    }
-  }, [initialToEmails, isReplyOptionSelected]);
-
-  const showEmailFieldsAndAttachments = () => {
-    setIsAttachmentsVisible(true);
-    setIsEmailFieldsVisible(true);
-  };
-
-  const hideEmailFieldsAndAttachments = () => {
-    setIsAttachmentsVisible(false);
-    setIsEmailFieldsVisible(false);
-  };
-
-  const onReplyClickHandler = () => {
-    hideEmailFieldsAndAttachments();
-    inputRef.current.focus();
-    setSelectedOption(OPTION_TYPES.REPLY);
-  };
-
-  const onAddNoteClickHandler = () => {
-    hideEmailFieldsAndAttachments();
-    inputRef.current.focus();
-    setIsEmailFieldsVisible(false);
-    setSelectedOption(OPTION_TYPES.NOTE);
-  };
-
-  const onAddForwardClickHandler = () => {
-    inputRef.current.focus();
-    setIsEmailFieldsVisible(true);
-    setIsAttachmentsVisible(false);
-    setSelectedOption(OPTION_TYPES.FORWARD);
-  };
-
-  const onAddAttachmentsClickHandler = () => {
-    if (!isAttachmentsVisible && attachmentsCount > 0) {
-      // When attachments are not visible but there are few attachments then we no need to show the upload modal.
-    } else {
-      onAttachment();
-    }
-    setIsEmailFieldsVisible(false);
-    setIsAttachmentsVisible(true);
-  };
-
-  const onActionHandler = useCallback(() => {
-    ({
-      [OPTION_TYPES.REPLY]: () => {
-        onReply({ toEmails, ccEmails, bccEmails });
+    const moreReplyOptions = [
+      {
+        label: "Send and set as closed",
+        Icon: () => null,
+        onPress: () => {
+          onReply({ toEmails, ccEmails, bccEmails, status: "closed" });
+        },
       },
-      [OPTION_TYPES.NOTE]: () => {
-        onAddNote({ toEmails, ccEmails, bccEmails });
+      {
+        label: "Send and set as waiting on customer",
+        Icon: () => null,
+        onPress: () => {
+          onReply({
+            toEmails,
+            ccEmails,
+            bccEmails,
+            status: "waiting_on_customer",
+          });
+        },
       },
-      [OPTION_TYPES.FORWARD]: () => {
-        onForward({ toEmails, ccEmails, bccEmails });
-      },
-    }[selectedOption]());
-  }, [
-    bccEmails,
-    ccEmails,
-    onAddNote,
-    onForward,
-    onReply,
-    selectedOption,
-    toEmails,
-  ]);
+    ];
 
-  const shouldExpandAndMinimizeButton = attachmentsCount > 0 || toEmails;
+    useImperativeHandle(
+      ref,
+      () => ({
+        clearEmailFields: () => {
+          setToEmails(initialToEmails ?? []);
+          setToEmailsForForward([]);
+          setCcEmails([]);
+          setBccEmails([]);
+          inputRef.current.blur();
+        },
+      }),
+      [initialToEmails, isReplyOptionSelected]
+    );
 
-  return (
-    <Container>
-      <LineLoader
-        backgroundColor={theme.colors.background.grey400}
-        isLoading={isLoading}
-      />
-      <Container
-        bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
-        p={moderateScale(5)}
-        pt={0}
-        px={moderateScale(16)}
-      >
-        <Container pt={moderateScale(8)}>
-          <EmailFields
-            bccEmails={bccEmails}
-            ccEmails={ccEmails}
-            isEmailFieldsVisible={isEmailFieldsVisible}
-            setBccEmails={setBccEmails}
-            setCcEmails={setCcEmails}
-            setIsEmailFieldsVisible={setIsEmailFieldsVisible}
-            setToEmails={setToEmails}
-            shouldShowEmailFields={shouldShowEmailFields}
-            toEmails={toEmails}
-          />
-          <Container flexDirection="row" justifyContent="space-between">
-            <TextInput
-              multiline
-              flex={1}
-              placeholder={placeholders[selectedOption]}
-              py={moderateScale(12)}
-              ref={inputRef}
-              value={value}
-              onChangeText={onChangeText}
-              onTouchStart={hideEmailFieldsAndAttachments}
-              {...rest}
+    useEffect(() => {
+      onOptionChange(selectedOption);
+    }, [selectedOption]);
+
+    useEffect(() => {
+      setSelectedOption(initialSelectedOption);
+    }, [initialSelectedOption]);
+
+    useEffect(() => {
+      setToEmails(initialToEmails ?? []);
+    }, [initialToEmails]);
+
+    const showEmailFieldsAndAttachments = () => {
+      setIsAttachmentsVisible(true);
+      setIsEmailFieldsVisible(true);
+    };
+
+    const hideEmailFieldsAndAttachments = () => {
+      setIsAttachmentsVisible(false);
+      setIsEmailFieldsVisible(false);
+    };
+
+    const onReplyClickHandler = () => {
+      hideEmailFieldsAndAttachments();
+      inputRef.current.focus();
+      setSelectedOption(OPTION_TYPES.REPLY);
+    };
+
+    const onAddNoteClickHandler = () => {
+      hideEmailFieldsAndAttachments();
+      inputRef.current.focus();
+      setIsEmailFieldsVisible(false);
+      setSelectedOption(OPTION_TYPES.NOTE);
+    };
+
+    const onAddForwardClickHandler = () => {
+      inputRef.current.focus();
+      setIsEmailFieldsVisible(true);
+      setIsAttachmentsVisible(false);
+      setSelectedOption(OPTION_TYPES.FORWARD);
+    };
+
+    const onAddAttachmentsClickHandler = () => {
+      if (!isAttachmentsVisible && attachmentsCount > 0) {
+        // When attachments are not visible but there are few attachments then we no need to show the upload modal.
+      } else {
+        onAttachment();
+      }
+      setIsEmailFieldsVisible(false);
+      setIsAttachmentsVisible(true);
+    };
+
+    const onActionHandler = useCallback(() => {
+      ({
+        [OPTION_TYPES.REPLY]: () => {
+          onReply({ toEmails, ccEmails, bccEmails });
+        },
+        [OPTION_TYPES.NOTE]: () => {
+          onAddNote({ toEmails, ccEmails, bccEmails });
+        },
+        [OPTION_TYPES.FORWARD]: () => {
+          onForward({ toEmails, ccEmails, bccEmails });
+        },
+      }[selectedOption]());
+    }, [
+      bccEmails,
+      ccEmails,
+      onAddNote,
+      onForward,
+      onReply,
+      selectedOption,
+      toEmails,
+    ]);
+
+    const shouldExpandAndMinimizeButton = attachmentsCount > 0 || toEmails;
+    const shouldDisableWhenForwardAndToFieldMissing =
+      isForwardOptionSelected && toEmailsForForward.length === 0;
+
+    return (
+      <Container>
+        <LineLoader
+          backgroundColor={theme.colors.background.grey400}
+          isLoading={isLoading}
+        />
+        <Container
+          bg={isNoteOptionSelected ? "background.oldLace" : "transparent"}
+          p={moderateScale(5)}
+          pt={0}
+          px={moderateScale(16)}
+        >
+          <Container pt={moderateScale(8)}>
+            <EmailFields
+              bccEmails={bccEmails}
+              ccEmails={ccEmails}
+              isEmailFieldsVisible={isEmailFieldsVisible}
+              isForwardOptionSelected={isForwardOptionSelected}
+              isNoteOptionSelected={isNoteOptionSelected}
+              isReplyOptionSelected={isReplyOptionSelected}
+              setBccEmails={setBccEmails}
+              setCcEmails={setCcEmails}
+              setIsEmailFieldsVisible={setIsEmailFieldsVisible}
+              setToEmails={setToEmails}
+              setToEmailsForForward={setToEmailsForForward}
+              shouldShowEmailFields={shouldShowEmailFields}
+              toEmails={toEmails}
+              toEmailsForForward={toEmailsForForward}
             />
-            <Container alignSelf="center">
-              {shouldExpandAndMinimizeButton &&
-                (isEmailFieldsVisible || isAttachmentsVisible ? (
-                  <IconButton
-                    Icon={MinimizeSVG}
-                    height={moderateScale(30)}
-                    pt={moderateScale(8)}
-                    width={moderateScale(30)}
-                    onPress={hideEmailFieldsAndAttachments}
-                  />
-                ) : (
-                  <IconButton
-                    Icon={ExpandSVG}
-                    height={moderateScale(30)}
-                    pt={moderateScale(8)}
-                    width={moderateScale(30)}
-                    onPress={showEmailFieldsAndAttachments}
-                  />
-                ))}
-            </Container>
-          </Container>
-          <AttachmentsView
-            Attachments={Attachments}
-            attachmentsCount={attachmentsCount}
-            isAttachmentsVisible={isAttachmentsVisible}
-            isNoteOptionSelected={isNoteOptionSelected}
-            setIsAttachmentsVisible={setIsAttachmentsVisible}
-          />
-          <Container
-            alignItems="center"
-            flexDirection="row"
-            justifyContent="space-between"
-            mt={moderateScale(10)}
-          >
             <Container flexDirection="row" justifyContent="space-between">
-              <IconButton
-                Icon={ReplySVG}
-                opacity={isReplyOptionSelected ? 1 : 0.5}
-                pl={moderateScale(10)}
-                onPress={onReplyClickHandler}
+              <TextInput
+                multiline
+                flex={1}
+                placeholder={placeholders[selectedOption]}
+                py={moderateScale(12)}
+                ref={inputRef}
+                value={value}
+                onChangeText={onChangeText}
+                onTouchStart={hideEmailFieldsAndAttachments}
+                {...rest}
               />
-              <IconButton
-                Icon={NoteSVG}
-                opacity={isNoteOptionSelected ? 1 : 0.5}
-                onPress={onAddNoteClickHandler}
-              />
-              {onForward && (
+              <Container alignSelf="center">
+                {shouldExpandAndMinimizeButton &&
+                  (isEmailFieldsVisible || isAttachmentsVisible ? (
+                    <IconButton
+                      Icon={MinimizeSVG}
+                      height={moderateScale(30)}
+                      pt={moderateScale(8)}
+                      width={moderateScale(30)}
+                      onPress={hideEmailFieldsAndAttachments}
+                    />
+                  ) : (
+                    <IconButton
+                      Icon={ExpandSVG}
+                      height={moderateScale(30)}
+                      pt={moderateScale(8)}
+                      width={moderateScale(30)}
+                      onPress={showEmailFieldsAndAttachments}
+                    />
+                  ))}
+              </Container>
+            </Container>
+            <AttachmentsView
+              Attachments={Attachments}
+              attachmentsCount={attachmentsCount}
+              isAttachmentsVisible={isAttachmentsVisible}
+              isNoteOptionSelected={isNoteOptionSelected}
+              setIsAttachmentsVisible={setIsAttachmentsVisible}
+            />
+            <Container
+              alignItems="center"
+              flexDirection="row"
+              justifyContent="space-between"
+              mt={moderateScale(10)}
+            >
+              <Container flexDirection="row" justifyContent="space-between">
                 <IconButton
-                  Icon={ForwardSVG}
-                  opacity={isForwardOptionSelected ? 1 : 0.5}
-                  onPress={onAddForwardClickHandler}
+                  Icon={ReplySVG}
+                  opacity={isReplyOptionSelected ? 1 : 0.5}
+                  pl={moderateScale(10)}
+                  onPress={onReplyClickHandler}
                 />
-              )}
-              <Container
-                bg="background.grey400"
-                mx={moderateScale(5)}
-                p={moderateScale(0.4)}
-              />
-              {onCannedResponse &&
-                showCannedResponsesFor.includes(selectedOption) && (
+                <IconButton
+                  Icon={NoteSVG}
+                  opacity={isNoteOptionSelected ? 1 : 0.5}
+                  onPress={onAddNoteClickHandler}
+                />
+                {onForward && (
                   <IconButton
-                    Icon={CannedResponseSVG}
-                    opacity={0.5}
-                    onPress={onCannedResponse}
+                    Icon={ForwardSVG}
+                    opacity={isForwardOptionSelected ? 1 : 0.5}
+                    onPress={onAddForwardClickHandler}
                   />
                 )}
-              <IconButton
-                Icon={AttachmentSVG}
-                opacity={0.5}
-                onPress={onAddAttachmentsClickHandler}
-              />
+                <Container
+                  bg="background.grey400"
+                  mx={moderateScale(5)}
+                  p={moderateScale(0.4)}
+                />
+                {onCannedResponse &&
+                  showCannedResponsesFor.includes(selectedOption) && (
+                    <IconButton
+                      Icon={CannedResponseSVG}
+                      opacity={0.5}
+                      onPress={onCannedResponse}
+                    />
+                  )}
+                <IconButton
+                  Icon={AttachmentSVG}
+                  opacity={0.5}
+                  onPress={onAddAttachmentsClickHandler}
+                />
+              </Container>
+              <Container alignItems="center" flexDirection="row">
+                <Button
+                  height={moderateScale(30)}
+                  label={labels[selectedOption]}
+                  pr={0}
+                  variant="text"
+                  disabled={
+                    shouldDisableWhenForwardAndToFieldMissing || disabled
+                  }
+                  labelStyle={{
+                    mx: moderateScale(0),
+                  }}
+                  onPress={onActionHandler}
+                />
+                {showReplyMenuOptions && isReplyOptionSelected && (
+                  <Popover
+                    data={moreReplyOptions}
+                    from={
+                      <Button
+                        disabled={disabled}
+                        height={moderateScale(30)}
+                        label=""
+                        p={0}
+                        variant="text"
+                        RightIcon={() => (
+                          <Icon
+                            color={theme.colors.background.grey800}
+                            name="ri-arrow-down-s-line"
+                            size={moderateScale(30)}
+                          />
+                        )}
+                      />
+                    }
+                  />
+                )}
+              </Container>
             </Container>
-            <Button
-              disabled={disabled}
-              height={moderateScale(30)}
-              label={labels[selectedOption]}
-              pr={0}
-              variant="text"
-              labelStyle={{
-                mx: moderateScale(0),
-              }}
-              onPress={onActionHandler}
-            />
           </Container>
         </Container>
       </Container>
-    </Container>
-  );
-};
+    );
+  }
+);
 
+ChatInput.displayName = "ChatInput";
 ChatInput.propTypes = {
   /**
    * If true, Shows loader
@@ -363,6 +443,10 @@ ChatInput.propTypes = {
    * If true, Shows to, cc and bcc email inputs.
    */
   shouldShowEmailFields: PropTypes.bool,
+  /**
+   * If true, Shows reply menu options
+   */
+  showReplyMenuOptions: PropTypes.bool,
   /**
    * Value to make input component controllable.
    */
@@ -390,7 +474,7 @@ ChatInput.propTypes = {
   /**
    * Email list separated by comma.
    */
-  toEmails: PropTypes.string,
+  toEmails: PropTypes.arrayOf(PropTypes.string),
   /**
    * Callback to be called on click of reply icon.
    */
