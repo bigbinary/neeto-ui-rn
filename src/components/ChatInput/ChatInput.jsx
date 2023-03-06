@@ -309,8 +309,10 @@ export const ChatInput = forwardRef(
               <TextInput
                 multiline
                 flex={1}
+                maxHeight={moderateScale(150)}
+                my={moderateScale(12)}
+                overflow="hidden"
                 placeholder={placeholders[selectedOption]}
-                py={moderateScale(12)}
                 ref={inputRef}
                 value={value}
                 onChangeText={onChangeText}
