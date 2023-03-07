@@ -500,7 +500,9 @@ ChatInput.propTypes = {
   /**
    * Array for options to show canned responses. Example: ["reply","notes","forward"]
    */
-  showCannedResponsesFor: PropTypes.arrayOf(PropTypes.string),
+  showCannedResponsesFor: PropTypes.arrayOf(
+    PropTypes.oneOf(Object.values(OPTION_TYPES))
+  ),
   /**
    * If true, Disables the reply, forward and add note button.
    */
