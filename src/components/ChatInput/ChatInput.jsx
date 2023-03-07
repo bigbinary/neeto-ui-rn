@@ -170,18 +170,6 @@ export const ChatInput = forwardRef(
           onReply({ toEmails, ccEmails, bccEmails, status: "closed" });
         },
       },
-      {
-        label: "Send and set as waiting on customer",
-        Icon: () => null,
-        onPress: () => {
-          onReply({
-            toEmails,
-            ccEmails,
-            bccEmails,
-            status: "waiting_on_customer",
-          });
-        },
-      },
     ];
 
     useImperativeHandle(
@@ -272,7 +260,9 @@ export const ChatInput = forwardRef(
       toEmails,
     ]);
 
-    const shouldExpandAndMinimizeButton = attachmentsCount > 0 || toEmails;
+    const shouldShowExpandAndMinimizeButton =
+      attachmentsCount > 0 || toEmails.length > 0;
+
     const shouldDisableWhenForwardAndToFieldMissing =
       isForwardOptionSelected && toEmailsForForward.length === 0;
 
@@ -320,7 +310,7 @@ export const ChatInput = forwardRef(
                 {...rest}
               />
               <Container alignSelf="center">
-                {shouldExpandAndMinimizeButton &&
+                {shouldShowExpandAndMinimizeButton &&
                   (isEmailFieldsVisible || isAttachmentsVisible ? (
                     <IconButton
                       Icon={MinimizeSVG}
