@@ -22,8 +22,8 @@ const greyVariants = {
   grey400: "#c2c8cc",
   grey500: "#87929d",
   grey600: "#68737d",
-  grey700: "#49545C",
-  grey800: "#2f3941",
+  grey700: "#2f3941",
+  grey800: "#1f1f1f",
 };
 
 const darkBlueVariant = {
