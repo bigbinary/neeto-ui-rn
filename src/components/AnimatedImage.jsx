@@ -128,7 +128,7 @@ AnimatedImage.propTypes = {
   /**
    * Height for image.
    */
-  imageHeight: PropTypes.number,
+  imageHeight: PropTypes.number | PropTypes.string,
   /**
    * Width for image.
    */
@@ -136,5 +136,5 @@ AnimatedImage.propTypes = {
   /**
    * Url to display the Image. It accepts a standard React Native Image source prop Or a function that returns an Image.
    */
-  imageUrl: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
 };

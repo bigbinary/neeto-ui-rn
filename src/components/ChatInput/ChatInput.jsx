@@ -108,7 +108,7 @@ const labels = {
  * ```
  */
 
-const convertToMentions = suggestions => value => {
+const convertToMentions = ({ suggestions, value }) => {
   const mentionsRegex = new RegExp(/@[^)]*\)/g);
   let html = `<p>${value}</p>`;
   const allMentions = html.matchAll(mentionsRegex);
@@ -126,8 +126,8 @@ const convertToMentions = suggestions => value => {
     spanNode.setAttribute("data-id", id);
     spanNode.setAttribute("data-label", suggestion.name);
     spanNode.set_content(`@${suggestion.name}`);
-    const finalNodeString = rootNode.toString();
-    html = html.replace(mention, finalNodeString);
+    const rootNodeString = rootNode.toString();
+    html = html.replace(mention, rootNodeString);
   }
 
   return html;
@@ -263,7 +263,7 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
-            html: convertToMentions(suggestions)(value),
+            html: convertToMentions({ suggestions, value }),
           });
         },
         [OPTION_TYPES.FORWARD]: () => {
@@ -522,6 +522,7 @@ ChatInput.propTypes = {
     PropTypes.shape({
       name: PropTypes.string,
       imageUrl: PropTypes.string,
+      id: PropTypes.string,
     })
   ),
 };
