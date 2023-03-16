@@ -109,7 +109,7 @@ const labels = {
  */
 
 const convertToMentions = ({ suggestions, value }) => {
-  const mentionsRegex = new RegExp(/@[^\s)]*\)/g);
+  const mentionsRegex = new RegExp(/@\[[^\s)]*\)/g);
   let html = `<p>${value}</p>`;
   const allMentions = html.matchAll(mentionsRegex);
 
