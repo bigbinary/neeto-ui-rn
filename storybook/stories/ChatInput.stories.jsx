@@ -22,6 +22,33 @@ export const ChatInputs = () => {
     "Hey Oliver, We are working on this issue. We will keep you update"
   );
 
+  const suggestions = [
+    {
+      id: "1",
+      name: "Oliver Smith",
+      key: "Oliver Smith",
+      imageUrl: "https://picsum.photos/100",
+    },
+    {
+      id: "2",
+      name: "Andy neeto",
+      key: "mention2",
+      imageUrl: "https://picsum.photos/100",
+    },
+    {
+      id: "3",
+      name: "This is an example of a long name, very long name.",
+      key: "mention1",
+      imageUrl: "https://picsum.photos/100",
+    },
+    {
+      id: "4",
+      name: "This is an example of a long name, very long name.",
+      key: "mention1",
+      imageUrl: "https://picsum.photos/100",
+    },
+  ];
+
   return (
     <Container flex={1}>
       <Container alignItems="center" flex={1} justifyContent="center">
@@ -38,6 +65,7 @@ export const ChatInputs = () => {
           showReplyMenuOptions
           attachmentsCount={2}
           ref={chatInputRef}
+          suggestions={suggestions}
           toEmails={["oliver@example.com"]}
           value={value}
           Attachments={

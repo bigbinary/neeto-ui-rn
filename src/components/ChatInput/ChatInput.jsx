@@ -7,18 +7,10 @@ import React, {
   useImperativeHandle,
 } from "react";
 
+import { parse } from "node-html-parser";
 import PropTypes from "prop-types";
 import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
-import styled from "styled-components/native";
-import {
-  flexbox,
-  space,
-  border,
-  buttonStyle,
-  typography,
-  color,
-} from "styled-system";
 
 import AttachmentSVG from "@assets/icons/attachment.svg";
 import CannedResponseSVG from "@assets/icons/canned-response.svg";
@@ -32,14 +24,9 @@ import { Container, LineLoader, Popover, Button } from "@components";
 import { AttachmentsView } from "./AttachmentsView";
 import { EmailFields } from "./EmailFields";
 import { IconButton } from "./IconButton";
+import { MentionsInputWrapper } from "./MentionsInputWrapper";
 
 import { theme } from "../../theme";
-
-const placeholders = {
-  reply: "Type here to reply...",
-  note: "Add note here...",
-  forward: "Type here to forward...",
-};
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const OPTION_TYPES = {
@@ -48,20 +35,18 @@ const OPTION_TYPES = {
   FORWARD: "FORWARD",
 };
 
+const placeholders = {
+  [OPTION_TYPES.REPLY]: "Type here to reply…",
+  [OPTION_TYPES.NOTE]: "Add note here…",
+  [OPTION_TYPES.FORWARD]: "Type here to forward…",
+};
+
 const labels = {
   [OPTION_TYPES.REPLY]: "Reply",
   [OPTION_TYPES.NOTE]: "Add note",
   [OPTION_TYPES.FORWARD]: "Forward",
 };
 
-const TextInput = styled.TextInput`
-  ${flexbox}
-  ${space}
-  ${border}
-  ${buttonStyle}
-  ${typography}
-  ${color}
-`;
 /**
  * ChatInput component supports various options like `REPLY`, `NOTE` and `FORWARD`.
  * This component supports below props categories from [styled-system ](/styled-system).
@@ -123,6 +108,31 @@ const TextInput = styled.TextInput`
  * ```
  */
 
+const convertToMentions = suggestions => value => {
+  const mentionsRegex = new RegExp(/@[^)]*\)/g);
+  let html = `<p>${value}</p>`;
+  const allMentions = html.matchAll(mentionsRegex);
+
+  for (const mentionObject of allMentions) {
+    const mention = mentionObject[0];
+    const id = /\((.*)\)/.exec(mention)[1];
+
+    const suggestion = suggestions.find(suggestion => suggestion.id === id);
+
+    const rootNode = parse("<span></span>");
+    const spanNode = rootNode.querySelector("span");
+
+    spanNode.setAttribute("data-type", "mention");
+    spanNode.setAttribute("data-id", id);
+    spanNode.setAttribute("data-label", suggestion.name);
+    spanNode.set_content(`@${suggestion.name}`);
+    const finalNodeString = rootNode.toString();
+    html = html.replace(mention, finalNodeString);
+  }
+
+  return html;
+};
+
 export const ChatInput = forwardRef(
   (
     {
@@ -143,6 +153,7 @@ export const ChatInput = forwardRef(
       isLoading = true,
       onOptionChange = () => {},
       initialSelectedOption = OPTION_TYPES.REPLY,
+      suggestions,
       ...rest
     },
     ref
@@ -241,10 +252,20 @@ export const ChatInput = forwardRef(
     const onActionHandler = useCallback(() => {
       ({
         [OPTION_TYPES.REPLY]: () => {
-          onReply({ toEmails, ccEmails, bccEmails });
+          onReply({
+            toEmails,
+            ccEmails,
+            bccEmails,
+            html: convertToMentions(suggestions)(value),
+          });
         },
         [OPTION_TYPES.NOTE]: () => {
-          onAddNote({ toEmails, ccEmails, bccEmails });
+          onAddNote({
+            toEmails,
+            ccEmails,
+            bccEmails,
+            html: convertToMentions(suggestions)(value),
+          });
         },
         [OPTION_TYPES.FORWARD]: () => {
           onForward({ toEmails, ccEmails, bccEmails });
@@ -257,7 +278,9 @@ export const ChatInput = forwardRef(
       onForward,
       onReply,
       selectedOption,
+      suggestions,
       toEmails,
+      value,
     ]);
 
     const shouldShowExpandAndMinimizeButton =
@@ -296,16 +319,12 @@ export const ChatInput = forwardRef(
               toEmailsForForward={toEmailsForForward}
             />
             <Container flexDirection="row" justifyContent="space-between">
-              <TextInput
-                multiline
-                flex={1}
-                maxHeight={moderateScale(150)}
-                my={moderateScale(12)}
-                overflow="hidden"
+              <MentionsInputWrapper
                 placeholder={placeholders[selectedOption]}
                 ref={inputRef}
+                suggestions={suggestions}
                 value={value}
-                onChangeText={onChangeText}
+                onChange={onChangeText}
                 onTouchStart={hideEmailFieldsAndAttachments}
                 {...rest}
               />
@@ -497,4 +516,13 @@ ChatInput.propTypes = {
    * If true, Disables the reply, forward and add note button.
    */
   disabled: PropTypes.bool,
+  /**
+   * List of mentions
+   */
+  suggestions: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      imageUrl: PropTypes.string,
+    })
+  ),
 };
