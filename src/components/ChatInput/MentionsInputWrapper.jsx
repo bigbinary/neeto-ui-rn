@@ -115,6 +115,7 @@ export const MentionsInputWrapper = forwardRef(
         partTypes={[
           {
             isInsertSpaceAfterMention: true,
+            allowedSpacesCount: 0,
             trigger: "@",
             renderSuggestions,
             textStyle: {
