@@ -26,25 +26,21 @@ export const ChatInputs = () => {
     {
       id: "1",
       name: "Oliver Smith",
-      key: "Oliver Smith",
       imageUrl: "https://picsum.photos/100",
     },
     {
       id: "2",
       name: "Andy neeto",
-      key: "mention2",
       imageUrl: "https://picsum.photos/100",
     },
     {
       id: "3",
       name: "This is an example of a long name, very long name.",
-      key: "mention1",
       imageUrl: "https://picsum.photos/100",
     },
     {
       id: "4",
       name: "This is an example of a long name, very long name.",
-      key: "mention1",
       imageUrl: "https://picsum.photos/100",
     },
   ];

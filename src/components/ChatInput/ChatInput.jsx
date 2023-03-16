@@ -256,7 +256,6 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
-            html: convertToMentions(suggestions)(value),
           });
         },
         [OPTION_TYPES.NOTE]: () => {
