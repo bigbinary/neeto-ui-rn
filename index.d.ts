@@ -335,6 +335,11 @@ type ChatInputProps = {
   Attachments?:  React.FC;
   showCannedResponsesFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
   disabled?: boolean;
+  suggestions: Array<{
+    name: string
+    imageUrl: string
+    id: string
+  }>;
 };
 
 type LineLoaderProps = {
