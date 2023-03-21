@@ -24,13 +24,11 @@ export const MentionsInputWrapper = forwardRef(
     const mentionsListHeight = visibleMentionsCount * heightOfMention;
 
     const renderSuggestions = ({ keyword, onSuggestionPress }) => {
+      if (!shouldShowSuggestions) return null;
+
       if (keyword === null) {
-        if (visibleMentionsCount !== false) setVisibleMentionsCount(false);
+        if (visibleMentionsCount !== 0) setVisibleMentionsCount(0);
 
-        return null;
-      }
-
-      if (!shouldShowSuggestions) {
         return null;
       }
 
