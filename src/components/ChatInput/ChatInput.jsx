@@ -108,7 +108,7 @@ const labels = {
  * ```
  */
 
-const convertToMentionsToHTMLAndPlainText = ({ suggestions, value }) => {
+const convertMentionsToHTMLAndPlainText = ({ suggestions, value }) => {
   const mentionsRegex = new RegExp(/@\[[^)]*\)/g);
   let html = `<p>${value}</p>`;
   let plainText = value;
@@ -188,7 +188,7 @@ export const ChatInput = forwardRef(
             ccEmails,
             bccEmails,
             status: "closed",
-            ...convertToMentionsToHTMLAndPlainText({ suggestions, value }),
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
       },
@@ -267,7 +267,7 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
-            ...convertToMentionsToHTMLAndPlainText({ suggestions, value }),
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
         [OPTION_TYPES.NOTE]: () => {
@@ -275,7 +275,7 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
-            ...convertToMentionsToHTMLAndPlainText({ suggestions, value }),
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
         [OPTION_TYPES.FORWARD]: () => {
@@ -283,7 +283,7 @@ export const ChatInput = forwardRef(
             toEmails: toEmailsForForward,
             ccEmails,
             bccEmails,
-            ...convertToMentionsToHTMLAndPlainText({ suggestions, value }),
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
       }[selectedOption]());
