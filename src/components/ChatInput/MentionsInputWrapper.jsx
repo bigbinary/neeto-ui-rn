@@ -16,7 +16,7 @@ import {
 } from "@components";
 
 export const MentionsInputWrapper = forwardRef(
-  ({ suggestions, ...rest }, ref) => {
+  ({ suggestions, shouldShowSuggestions, ...rest }, ref) => {
     const [visibleMentionsCount, setVisibleMentionsCount] = useState(0);
     const theme = useContext(ThemeContext);
 
@@ -27,6 +27,10 @@ export const MentionsInputWrapper = forwardRef(
       if (keyword === null) {
         if (visibleMentionsCount !== false) setVisibleMentionsCount(false);
 
+        return null;
+      }
+
+      if (!shouldShowSuggestions) {
         return null;
       }
 
@@ -106,6 +110,7 @@ export const MentionsInputWrapper = forwardRef(
     return (
       <MentionInput
         inputRef={ref}
+        suggestions={suggestions}
         containerStyle={[
           styles.mentionsTextInputStyle,
           {
@@ -140,6 +145,7 @@ const styles = StyleSheet.create({
 });
 
 MentionsInputWrapper.propTypes = {
+  shouldShowSuggestions: PropTypes.bool,
   suggestions: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,

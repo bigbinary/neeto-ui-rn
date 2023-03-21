@@ -74,6 +74,7 @@ export const ChatInputs = () => {
               />
             </Container>
           }
+          onAddNote={console.log}
           onChangeText={setValue}
           onCannedResponse={() => {
             alert("On Canned Response");
