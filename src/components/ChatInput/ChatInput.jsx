@@ -280,7 +280,7 @@ export const ChatInput = forwardRef(
         },
         [OPTION_TYPES.FORWARD]: () => {
           onForward({
-            toEmails,
+            toEmails: toEmailsForForward,
             ccEmails,
             bccEmails,
             ...convertToMentionsToHTMLAndPlainText({ suggestions, value }),
