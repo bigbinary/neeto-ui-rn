@@ -334,6 +334,7 @@ type ChatInputProps = {
   attachmentsCount?: number;
   Attachments?:  React.FC;
   showCannedResponsesFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
+  showSuggestionsFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
   disabled?: boolean;
   suggestions: Array<{
     name: string

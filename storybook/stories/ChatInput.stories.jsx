@@ -74,13 +74,18 @@ export const ChatInputs = () => {
               />
             </Container>
           }
-          onAddNote={console.log}
           onChangeText={setValue}
+          onAddNote={() => {
+            alert("On Add Note");
+          }}
           onCannedResponse={() => {
             alert("On Canned Response");
           }}
           onForward={() => {
             alert("On Forward");
+          }}
+          onReply={() => {
+            alert("On Reply");
           }}
         />
       </Container>
