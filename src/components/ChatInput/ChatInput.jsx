@@ -108,9 +108,10 @@ const labels = {
  * ```
  */
 
-const convertToMentions = ({ suggestions, value }) => {
+const convertMentionsToHTMLAndPlainText = ({ suggestions, value }) => {
   const mentionsRegex = new RegExp(/@\[[^)]*\)/g);
   let html = `<p>${value}</p>`;
+  let plainText = value;
   const allMentions = html.matchAll(mentionsRegex);
 
   for (const mentionObject of allMentions) {
@@ -128,9 +129,12 @@ const convertToMentions = ({ suggestions, value }) => {
     spanNode.set_content(`@${suggestion.name}`);
     const rootNodeString = rootNode.toString();
     html = html.replace(mention, rootNodeString);
+
+    const plainTextMention = `@${suggestion.name}`;
+    plainText = plainText.replace(mention, plainTextMention);
   }
 
-  return html;
+  return { html, plainText };
 };
 
 export const ChatInput = forwardRef(
@@ -149,6 +153,7 @@ export const ChatInput = forwardRef(
       attachmentsCount,
       Attachments,
       showCannedResponsesFor = [OPTION_TYPES.REPLY],
+      showSuggestionsFor = [OPTION_TYPES.NOTE],
       disabled,
       isLoading = true,
       onOptionChange = () => {},
@@ -178,7 +183,13 @@ export const ChatInput = forwardRef(
         label: "Send and set as closed",
         Icon: () => null,
         onPress: () => {
-          onReply({ toEmails, ccEmails, bccEmails, status: "closed" });
+          onReply({
+            toEmails,
+            ccEmails,
+            bccEmails,
+            status: "closed",
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
+          });
         },
       },
     ];
@@ -256,6 +267,7 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
         [OPTION_TYPES.NOTE]: () => {
@@ -263,11 +275,16 @@ export const ChatInput = forwardRef(
             toEmails,
             ccEmails,
             bccEmails,
-            html: convertToMentions({ suggestions, value }),
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
         [OPTION_TYPES.FORWARD]: () => {
-          onForward({ toEmails, ccEmails, bccEmails });
+          onForward({
+            toEmails: toEmailsForForward,
+            ccEmails,
+            bccEmails,
+            ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
+          });
         },
       }[selectedOption]());
     }, [
@@ -323,6 +340,9 @@ export const ChatInput = forwardRef(
                 ref={inputRef}
                 suggestions={suggestions}
                 value={value}
+                shouldShowSuggestions={showSuggestionsFor.includes(
+                  selectedOption
+                )}
                 onChange={onChangeText}
                 onTouchStart={hideEmailFieldsAndAttachments}
                 {...rest}
@@ -506,9 +526,15 @@ ChatInput.propTypes = {
    */
   Attachments: PropTypes.any,
   /**
-   * Array for options to show canned responses. Example: ["reply","notes","forward"]
+   * Array for options to show canned responses. Example: ["REPLY","NOTES","FORWARD"]
    */
   showCannedResponsesFor: PropTypes.arrayOf(
+    PropTypes.oneOf(Object.values(OPTION_TYPES))
+  ),
+  /**
+   * Array for options to show suggestions. Example: ["REPLY","NOTES","FORWARD"]
+   */
+  showSuggestionsFor: PropTypes.arrayOf(
     PropTypes.oneOf(Object.values(OPTION_TYPES))
   ),
   /**
