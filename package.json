@@ -10,7 +10,7 @@
     "ios": "yarn prestart && react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "build": "babel src --out-dir lib",
+    "build": "rm -rf lib && babel src --out-dir lib",
     "lint": "eslint .",
     "format": "prettier --write .",
     "flow": "flow",
