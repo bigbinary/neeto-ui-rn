@@ -326,27 +326,27 @@ type ChatInputProps = {
   onOptionChange?: (option: string) => void;
   onChangeText: (text: string) => void;
   onForward?: () => void;
-  onCannedResponse?:  () => void;
+  onCannedResponse?: () => void;
   toEmails?: string;
   onReply?: () => void;
   onAddNote?: () => void;
   onAttachment?: () => void;
   attachmentsCount?: number;
-  Attachments?:  React.FC;
+  Attachments?: React.FC;
   showCannedResponsesFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
   showSuggestionsFor?: Array<"REPLY" | "NOTE" | "FORWARD">;
   disabled?: boolean;
   suggestions: Array<{
-    name: string
-    imageUrl: string
-    id: string
+    name: string;
+    imageUrl: string;
+    id: string;
   }>;
 };
 
 type LineLoaderProps = {
-  backgroundColor?: string,
-  foregroundColor?: string,
-  height?: number,
+  backgroundColor?: string;
+  foregroundColor?: string;
+  height?: number;
   isLoading?: boolean;
 };
 
@@ -526,10 +526,6 @@ interface NavigationProps {
 }
 interface SegmentedTopBarProps extends MaterialTopTabBarProps {
   state?: SegmentedTopBarStateProps;
-  inactiveSegmentStyle?: ViewStyle;
-  activeSegmentStyle?: ViewStyle;
-  activeTextStyle?: TouchableProps;
-  inactiveTextStyle?: TouchableProps;
   navigation?: NavigationProps;
   height?: number;
   descriptors?: object;
