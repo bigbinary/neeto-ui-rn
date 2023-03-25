@@ -57,11 +57,14 @@ const styles = StyleSheet.create({
     top: spacing / 2,
     borderRadius: moderateScale(6),
     backgroundColor: theme.colors.background.primary,
-    elevation: 5,
     shadowColor: theme.colors.background.base,
-    shadowOffset: { width: spacing / 2, height: spacing / 2 },
-    shadowOpacity: 1,
-    shadowRadius: spacing / 2,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });
 

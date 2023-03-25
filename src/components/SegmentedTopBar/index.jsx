@@ -10,7 +10,7 @@ import { StyleSheet, View } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Container } from "@components";
+import { theme } from "@theme";
 
 import { Indicator } from "./Indicator";
 import { Tab } from "./Tab";
@@ -91,30 +91,28 @@ export const SegmentedTopBar = ({
   }, [measures.length]);
 
   return (
-    <Container
-      bg="background.secondary"
-      borderRadius={moderateScale(6)}
-      mx={moderateScale(16)}
-    >
-      <View height={height} ref={containerRef} style={styles.container}>
-        {measures.length > 0 && <Indicator measure={measures[index]} />}
-        {tabsData.map(({ label, value, ref }) => (
-          <Tab
-            flex={tabsData.length > 3 ? label.length : 1}
-            key={value}
-            label={label}
-            navigation={navigation}
-            ref={ref}
-            value={value}
-          />
-        ))}
-      </View>
-    </Container>
+    <View height={height} ref={containerRef} style={styles.container}>
+      {measures.length > 0 && <Indicator measure={measures[index]} />}
+      {tabsData.map(({ label, value, ref }) => (
+        <Tab
+          flex={tabsData.length > 3 ? label.length : 1}
+          key={value}
+          label={label}
+          navigation={navigation}
+          ref={ref}
+          value={value}
+        />
+      ))}
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flexDirection: "row" },
+  container: {
+    flexDirection: "row",
+    borderRadius: moderateScale(6),
+    backgroundColor: theme.colors.background.secondary,
+  },
 });
 
 SegmentedTopBar.propTypes = {
