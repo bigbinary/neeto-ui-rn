@@ -4,7 +4,7 @@ import { flexbox, space, border, color, layout } from "styled-system";
 export const ScrollView = styled.ScrollView.attrs(() => ({
   keyboardShouldPersistTaps: "handled",
   showsVerticalScrollIndicator: false,
-  contentContainerStyle: { flex: 1 },
+  contentContainerStyle: { flexGrow: 1 },
 }))`
   ${flexbox}
   ${space}
