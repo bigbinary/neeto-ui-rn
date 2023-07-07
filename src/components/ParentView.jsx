@@ -48,7 +48,11 @@ export const ParentView = ({
   const keyboardHeight = useKeyboard();
 
   const safeAreaViewProps = {
-    edges: [topInset && "top", rightInset && "right", leftInset && "left"],
+    edges: [
+      ...(topInset ? ["top"] : []),
+      ...(rightInset ? ["right"] : []),
+      ...(leftInset ? ["left"] : []),
+    ],
   };
 
   const newBackgroundColor =
