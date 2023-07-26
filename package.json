@@ -12,6 +12,7 @@
     "test": "jest",
     "build": "rm -rf lib && babel src --out-dir lib",
     "lint": "eslint .",
+    "pod": "pod-install",
     "format": "prettier --write .",
     "flow": "flow",
     "prestart": "sb-rn-get-stories",
