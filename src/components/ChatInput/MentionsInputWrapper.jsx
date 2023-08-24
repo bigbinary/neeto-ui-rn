@@ -108,6 +108,7 @@ export const MentionsInputWrapper = forwardRef(
     return (
       <MentionInput
         inputRef={ref}
+        placeholderTextColor={theme.colors.font.grey400}
         style={{ color: theme.colors.font.grey800 }}
         suggestions={suggestions}
         containerStyle={[
