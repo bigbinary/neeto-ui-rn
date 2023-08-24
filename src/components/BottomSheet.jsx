@@ -175,6 +175,7 @@ export const BottomSheet = ({
   searchBarProps,
   shouldHideKeyboardOnScrollBegin = true,
   shouldShowItemSeparator = true,
+  flatListRef,
   ...rest
 }) => {
   const [searchText, setSearchText] = useState("");
@@ -257,6 +258,7 @@ export const BottomSheet = ({
               initialNumToRender={data.length}
               keyExtractor={(_item, index) => index}
               keyboardShouldPersistTaps="handled"
+              ref={flatListRef}
               showsVerticalScrollIndicator={false}
               ItemSeparatorComponent={
                 shouldShowItemSeparator ? (
@@ -463,6 +465,7 @@ BottomSheet.propTypes = {
   canSearch: PropTypes.bool,
   shouldHideKeyboardOnScrollBegin: PropTypes.bool,
   shouldShowItemSeparator: PropTypes.bool,
+  flatListRef: PropTypes.object,
 };
 
 const styles = StyleSheet.create({
