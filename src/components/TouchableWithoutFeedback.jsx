@@ -20,8 +20,8 @@ const TouchableWithoutFeedback = ({ onPress, onPressIn, ...props }) => {
   function _onPress(e) {
     const { pageX, pageY } = e.nativeEvent;
 
-    const absX = Math.abs(_touchActivatePositionRef.current.pageX - pageX);
-    const absY = Math.abs(_touchActivatePositionRef.current.pageY - pageY);
+    const absX = Math.abs(_touchActivatePositionRef?.current?.pageX - pageX);
+    const absY = Math.abs(_touchActivatePositionRef?.current?.pageY - pageY);
 
     const dragged = absX > 2 || absY > 2;
     if (!dragged) {
