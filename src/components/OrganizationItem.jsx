@@ -1,4 +1,5 @@
 import React from "react";
+import { Linking } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
@@ -69,6 +70,7 @@ export const OrganizationItem = ({
       color="font.grey"
       fontFamily="sf500"
       fontSize="m"
+      onPress={() => Linking.openURL(`https://${subdomain}`)}
       {...subdomainProps}
     >
       {subdomain}
