@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, TouchableWithoutFeedback } from "react-native";
 
 import PropTypes from "prop-types";
@@ -9,10 +9,8 @@ import Animated, {
   interpolate,
   Extrapolation,
 } from "react-native-reanimated";
-import Icon from "react-native-remix-icon";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
-import { ThemeContext } from "styled-components/native";
 
 import { Container, Typography } from "@components";
 
@@ -22,10 +20,9 @@ const TabElement = ({
   label,
   tabBarActiveTintColor,
   tabBarInactiveTintColor,
-  icon,
+  icon: Icon,
   size,
 }) => {
-  const theme = useContext(ThemeContext);
   const offset = useSharedValue(isFocused ? 1 : 0);
 
   useEffect(() => {
@@ -70,10 +67,20 @@ const TabElement = ({
           width={moderateScale(48)}
         >
           <Animated.View style={[styles.iconContainer, animatedStyles]}>
-            <Icon color={theme.colors.font.grey500} name={icon} size={size} />
+            <Icon
+              size={size}
+              color={
+                isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor
+              }
+            />
           </Animated.View>
           <Animated.View style={[styles.iconContainer, animatedStyles2]}>
-            <Icon color={theme.colors.font.base} name={icon} size={size} />
+            <Icon
+              size={size}
+              color={
+                isFocused ? tabBarActiveTintColor : tabBarInactiveTintColor
+              }
+            />
           </Animated.View>
         </Container>
         <Typography
@@ -214,7 +221,7 @@ TabElement.propTypes = {
   label: PropTypes.string,
   tabBarActiveTintColor: PropTypes.string,
   tabBarInactiveTintColor: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.elementType,
   size: PropTypes.number,
 };
 
