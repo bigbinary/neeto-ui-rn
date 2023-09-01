@@ -221,7 +221,7 @@ TabElement.propTypes = {
   label: PropTypes.string,
   tabBarActiveTintColor: PropTypes.string,
   tabBarInactiveTintColor: PropTypes.string,
-  icon: PropTypes.any,
+  icon: PropTypes.elementType,
   size: PropTypes.number,
 };
 
