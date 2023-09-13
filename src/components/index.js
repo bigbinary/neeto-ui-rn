@@ -41,3 +41,5 @@ export { ChatInput } from "./ChatInput/ChatInput";
 export { Loader } from "./Loader";
 export { InputEmailChip } from "./InputEmailChip";
 export { LineLoader } from "./LineLoader";
+export { ActionIcon } from "./ActionIcon";
+export { NotificationIcon } from "./NotificationIcon";
