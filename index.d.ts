@@ -48,7 +48,7 @@ import { BUTTON_VARIANTS } from "./src/components/Button";
 type addPrefixToObject<
   TObject extends object,
   TPrefix extends string
-  > = `${TPrefix}${keyof TObject}`;
+> = `${TPrefix}${keyof TObject}`;
 
 const theme: {
   colors: {
@@ -66,11 +66,11 @@ const theme: {
 
 interface StyleProps
   extends FlexboxProps,
-  SpaceProps,
-  BorderProps,
-  ColorProps,
-  LayoutProps,
-  PositionProps {
+    SpaceProps,
+    BorderProps,
+    ColorProps,
+    LayoutProps,
+    PositionProps {
   borderColor?: typeof theme.colors.border;
   borderTopColor?: typeof theme.colors.border;
   borderBottomColor?: typeof theme.colors.border;
@@ -94,15 +94,15 @@ interface TextProps extends RNTextProps, StyleProps, TypographyProps {
 }
 interface TextInputProps
   extends RNTextInputAndroidProps,
-  RNTextInputIOSProps,
-  StyleProps,
-  TypographyProps { }
-interface FlatListProps extends RNFlatListProps, StyleProps { }
-interface ScrollViewProps extends RNScrollViewProps, StyleProps { }
+    RNTextInputIOSProps,
+    StyleProps,
+    TypographyProps {}
+interface FlatListProps extends RNFlatListProps, StyleProps {}
+interface ScrollViewProps extends RNScrollViewProps, StyleProps {}
 interface TouchableOpacityProps
   extends RNTouchableOpacityProps,
-  StyleProps,
-  ButtonStyleProps {
+    StyleProps,
+    ButtonStyleProps {
   children?: React.ReactNode;
 }
 
@@ -561,8 +561,8 @@ type TopBarProps = {
 
 type NotificationIconProps = {
   unreadCount: number;
-  onPress: () => void
-}
+  onPress: () => void;
+};
 
 type ActionIconProps = {
   isLoading: boolean;
@@ -572,8 +572,12 @@ type ActionIconProps = {
   color: typeof theme.colors.font;
   disabled: boolean;
   label?: string;
-  iconProps: { size?: number; color?: typeof theme.colors.font; viewBox: string }
-}
+  iconProps: {
+    size?: number;
+    color?: typeof theme.colors.font;
+    viewBox: string;
+  };
+};
 
 export const Accordion: React.FC<AccordionProps>;
 export const ActionIcon: React.FC<ActionIconProps>;
