@@ -559,7 +559,28 @@ type TopBarProps = {
   tabContainerStyle?: ViewStyle;
 };
 
+type NotificationIconProps = {
+  unreadCount: number;
+  onPress: () => void;
+};
+
+type ActionIconProps = {
+  isLoading: boolean;
+  icon: () => React.ReactNode;
+  onPress: () => void;
+  size: number;
+  color: typeof theme.colors.font;
+  disabled: boolean;
+  label?: string;
+  iconProps: {
+    size?: number;
+    color?: typeof theme.colors.font;
+    viewBox: string;
+  };
+};
+
 export const Accordion: React.FC<AccordionProps>;
+export const ActionIcon: React.FC<ActionIconProps>;
 export const Alert: React.FC<AlertProps> & {
   show?: (params: AlertShowParams) => void;
 };
@@ -587,6 +608,7 @@ export const LineLoader: React.FC<LineLoaderProps>;
 export const ListItem: React.FC<ListItemProps>;
 export const Loader: React.FC<LoaderProps>;
 export const NotificationPreferenceList: React.FC<NotificationPreferenceListProps>;
+export const NotificationIcon: React.FC<NotificationIconProps>;
 export const MultiSelect: React.FC<MultiSelectProps>;
 export const OnBoarding: React.FC<OnBoardingProps>;
 export const OrganizationItem: React.FC<OrganizationItemProps>;
