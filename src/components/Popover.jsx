@@ -90,7 +90,6 @@ PopOverItem.propTypes = {
  * import * as React from 'react';
  * import { Text } from "react-native";
  * import { Container, Button, Popover } from '@bigbinary/neetoui-rn';
- * import Icon from "react-native-remix-icon";
  * import { ThemeContext } from "styled-components/native";
  *
  * export default function Main(){

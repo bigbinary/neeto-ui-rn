@@ -51,6 +51,7 @@
     "react-native-webview": "11.14.4"
   },
   "dependencies": {
+    "@bigbinary/neeto-icons-rn": "^1.0.3",
     "@react-native-community/hooks": "^2.8.1",
     "@shopify/flash-list": "^1.2.0",
     "@styled-system/prop-types": "^5.1.5",
@@ -63,7 +64,6 @@
     "react-native-modal": "^13.0.0",
     "react-native-pell-rich-editor": "^1.8.6",
     "react-native-popover-view": "^5.1.7",
-    "react-native-remix-icon": "^0.3.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-size-matters": "^0.4.0",
     "react-native-snap-carousel": "4.0.0-beta.6",

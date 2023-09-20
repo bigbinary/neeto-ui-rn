@@ -1,18 +1,15 @@
 import React from "react";
 import { Pressable, StyleSheet } from "react-native";
 
-import Icon from "react-native-remix-icon";
+import { Close } from "@bigbinary/neeto-icons-rn";
+import { moderateScale } from "react-native-size-matters";
 import Toast, { BaseToast } from "react-native-toast-message";
 
 import { theme } from "@theme";
 
 const CloseButton = () => (
   <Pressable style={styles.closeButtonStyle} onPress={Toast.hide}>
-    <Icon
-      color={theme.colors.background.white}
-      name="ri-close-fill"
-      size={25}
-    />
+    <Close color={theme.colors.background.white} size={moderateScale(22)} />
   </Pressable>
 );
 

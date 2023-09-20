@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
+import { Radio, RadioInactive } from "@bigbinary/neeto-icons-rn";
 import Proptypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
@@ -90,6 +90,8 @@ export const RadioButton = ({
     },
   };
 
+  const Icon = selected ? Radio : RadioInactive;
+
   return (
     <Touchable
       alignItems="center"
@@ -113,8 +115,7 @@ export const RadioButton = ({
       </Typography>
       <Icon
         color={theme.colors.font.primary}
-        name={selected ? "ri-radio-button-line" : "checkbox-blank-circle-line"}
-        size={moderateScale(20)}
+        size={moderateScale(22)}
         {...selectIconStyle}
       />
     </Touchable>

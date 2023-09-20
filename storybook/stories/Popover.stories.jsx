@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Text } from "react-native";
 
-import Icon from "react-native-remix-icon";
+import { Search } from "@bigbinary/neeto-icons-rn";
 import { ThemeContext } from "styled-components/native";
 
 import { Container, Button, Toast, Popover } from "@components";
@@ -21,13 +21,7 @@ export const Popovers = () => {
   const data = [
     {
       label: "Search Product",
-      Icon: () => (
-        <Icon
-          color={theme.colors.background.grey800}
-          name="ri-search-line"
-          size={20}
-        />
-      ),
+      Icon: () => <Search color={theme.colors.background.grey800} size={20} />,
       onPress: () => {
         Toast.show({
           type: "success",
@@ -38,13 +32,7 @@ export const Popovers = () => {
     },
     {
       label: "Create Product",
-      Icon: () => (
-        <Icon
-          color={theme.colors.background.grey800}
-          name="ri-search-line"
-          size={20}
-        />
-      ),
+      Icon: () => <Search color={theme.colors.background.grey800} size={20} />,
       onPress: () => {
         Toast.show({
           type: "success",

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Icon from "react-native-remix-icon";
+import { Plus } from "@bigbinary/neeto-icons-rn";
 
 import { Button, Container } from "@components";
 import { theme } from "@theme";
@@ -84,12 +84,12 @@ export const Buttons = () => (
     />
     <Button label="Danger Plain Button" my={9} variant="danger-text" />
     <Button
-      LeftIcon={() => <Icon color="white" name="ri-add-line" size={16} />}
+      LeftIcon={() => <Plus color="white" size={16} />}
       label="Left Icon Button"
       my={9}
     />
     <Button
-      RightIcon={() => <Icon color="white" name="ri-add-line" size={16} />}
+      RightIcon={() => <Plus color="white" size={16} />}
       label="Right Icon Button"
       my={9}
     />
@@ -107,9 +107,7 @@ export const Buttons = () => (
       label="Right Icon Text Button"
       my={9}
       variant="text"
-      RightIcon={() => (
-        <Icon color={theme.fonts.primary} name="ri-add-line" size={16} />
-      )}
+      RightIcon={() => <Plus color={theme.fonts.primary} size={16} />}
     />
     <Button
       isLoading
@@ -117,9 +115,7 @@ export const Buttons = () => (
       loadingText="Loading with text variant..."
       my={9}
       variant="text"
-      RightIcon={() => (
-        <Icon color={theme.fonts.primary} name="ri-add-line" size={16} />
-      )}
+      RightIcon={() => <Plus color={theme.fonts.primary} size={16} />}
     />
   </Container>
 );
