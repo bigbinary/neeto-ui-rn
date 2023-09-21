@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Icon from "react-native-remix-icon";
+import { Notification } from "@bigbinary/neeto-icons-rn";
 import { ThemeContext } from "styled-components/native";
 
 import { NotificationPreferenceList, Container } from "@components";
@@ -52,11 +52,7 @@ export const NotificationPreferenceListComponent = () => {
         enabled: false,
         onSwitch: handleSwitch,
         LeftIcon: () => (
-          <Icon
-            color={theme.colors.font.secondary}
-            name="ri-notification-2-line"
-            size={20}
-          />
+          <Notification color={theme.colors.font.secondary} size={20} />
         ),
       },
     ]);

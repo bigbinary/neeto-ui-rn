@@ -129,7 +129,6 @@ interface AccordionProps extends ViewProps {
   noBorder?: boolean;
   onStateChanged?: (isExpanded: boolean) => void;
   iconProp?: {
-    name?: string;
     Label?: () => React.ReactNode;
     size?: number;
     color?: string;

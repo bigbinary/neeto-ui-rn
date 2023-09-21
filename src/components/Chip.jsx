@@ -1,7 +1,7 @@
 import React from "react";
 
+import { Close } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 
 import { Typography, Touchable, Container } from "@components";
@@ -68,7 +68,8 @@ export const Chip = ({
   onChipPress,
   isDisabled,
   closeIconSize,
-  closeIcon,
+  closeIcon: CloseIcon,
+  closeIconProps,
   containerStyle,
   closeIconContainerStyle,
 }) => (
@@ -103,7 +104,11 @@ export const Chip = ({
         {...closeIconContainerStyle}
       >
         <Touchable disabled={isDisabled} onPress={onClose}>
-          <Icon color={closeIconColor} name={closeIcon} size={closeIconSize} />
+          <CloseIcon
+            color={closeIconColor}
+            size={closeIconSize}
+            {...closeIconProps}
+          />
         </Touchable>
       </Container>
     )}
@@ -115,9 +120,10 @@ Chip.defaultProps = {
   labelColor: "font.primary",
   closeIconBackground: "background.grey500",
   closeIconColor: "white",
+  closeIconProps: { viewBox: "0 0 25 25" },
   isDisabled: false,
   closeIconSize: moderateScale(14),
-  closeIcon: "ri-close-fill",
+  closeIcon: Close,
 };
 
 Chip.propTypes = {
@@ -154,9 +160,13 @@ Chip.propTypes = {
    */
   closeIconSize: PropTypes.number,
   /**
-   * Close icon name can be specified if default one needs to changed. Only supports remixIcons.
+   * Close icon can be specified if default one needs to changed. Only supports neeto-icons.
    */
-  closeIcon: PropTypes.string,
+  closeIcon: PropTypes.elementType,
+  /**
+   * Add additional customization to close icon.
+   */
+  closeIconProps: PropTypes.object,
   /**
    * Expects a function to execute on chip press.
    */

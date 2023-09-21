@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Keyboard, TouchableWithoutFeedback } from "react-native";
 
+import { Close, Up, Down } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
 import Animated, {
   interpolate,
@@ -8,7 +9,6 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
@@ -106,10 +106,10 @@ const MultiSelectItem = ({
           disabled={disabled}
           onPress={handleItemUnSelection}
         >
-          <Icon
+          <Close
             color={theme.colors.font.grey800}
-            name="ri-close-line"
-            size={moderateScale(20)}
+            size={moderateScale(18)}
+            viewBox="0 0 25 20"
           />
         </TouchableWithoutFeedback>
       )}
@@ -337,6 +337,8 @@ export const MultiSelect = ({
     fontSize: interpolate(animatedLabelValue.value, [0, 1], [17, 13]),
   }));
 
+  const OpenCloseIcon = showDropdown ? Up : Down;
+
   return (
     <Container {...containerStyle}>
       <TouchableWithoutFeedback
@@ -419,11 +421,7 @@ export const MultiSelect = ({
               {isLoading ? (
                 <Loader color={theme.colors.background.base} />
               ) : (
-                <Icon
-                  color="grey"
-                  name={`arrow-${showDropdown ? "up" : "down"}-s-line`}
-                  size={moderateScale(20)}
-                />
+                <OpenCloseIcon color="grey" size={moderateScale(20)} />
               )}
             </Container>
           </Container>

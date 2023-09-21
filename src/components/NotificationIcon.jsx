@@ -3,7 +3,8 @@ import React from "react";
 import { Notification } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
 
-import { Container, ActionIcon } from "@components";
+import { ActionIcon } from "./ActionIcon";
+import { Container } from "./Container";
 
 export const NotificationIcon = ({ unreadCount = 0, onPress = () => {} }) => (
   <Container>

@@ -7,8 +7,8 @@ import React, {
 } from "react";
 import { Animated, StyleSheet } from "react-native";
 
+import { Down } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import styled, { ThemeContext } from "styled-components/native";
 import {
@@ -122,7 +122,7 @@ export const Accordion = React.forwardRef(
     },
     ref
   ) => {
-    const { name, Label, size, color } = iconProp;
+    const { Label, size, color } = iconProp;
     const theme = useContext(ThemeContext);
     const [isExpanded, setIsExpanded] = useState(false);
     const animationController = useRef(
@@ -190,9 +190,8 @@ export const Accordion = React.forwardRef(
                 }}
               >
                 <Container>
-                  <Icon
+                  <Down
                     color={color ?? theme.colors.font.grey700}
-                    name={name ?? "ri-arrow-down-s-line"}
                     size={size ?? moderateScale(24)}
                   />
                 </Container>

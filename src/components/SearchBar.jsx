@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Dimensions, TouchableWithoutFeedback, StyleSheet } from "react-native";
 
+import { Search } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
 import Animated, {
   Easing,
@@ -9,7 +10,6 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
@@ -125,10 +125,9 @@ export const SearchBar = ({
           {...containerProps}
         >
           <Container px={moderateScale(8)}>
-            <Icon
+            <Search
               color={theme.colors.font.grey600}
-              name="ri-search-line"
-              size={moderateScale(20)}
+              size={moderateScale(22)}
             />
           </Container>
           <TextInput
