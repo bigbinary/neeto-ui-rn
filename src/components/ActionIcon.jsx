@@ -3,8 +3,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Loader, Typography, Touchable } from "@components";
 import { theme } from "@theme";
+
+import { Loader } from "./Loader";
+import { Touchable } from "./Touchable";
+import { Typography } from "./Typography";
 
 export const ActionIcon = ({
   isLoading = false,

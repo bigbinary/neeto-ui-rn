@@ -7,18 +7,20 @@ import React, {
   useImperativeHandle,
 } from "react";
 
+import {
+  ChatBubble,
+  Notes,
+  Attachment,
+  Forward,
+  CannedResponses,
+  Down,
+} from "@bigbinary/neeto-icons-rn";
 import { parse } from "node-html-parser";
 import PropTypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 
-import AttachmentSVG from "@assets/icons/attachment.svg";
-import CannedResponseSVG from "@assets/icons/canned-response.svg";
 import ExpandSVG from "@assets/icons/expand.svg";
-import ForwardSVG from "@assets/icons/forward.svg";
 import MinimizeSVG from "@assets/icons/minimize.svg";
-import NoteSVG from "@assets/icons/note.svg";
-import ReplySVG from "@assets/icons/reply.svg";
 import { Container, LineLoader, Popover, Button } from "@components";
 
 import { AttachmentsView } from "./AttachmentsView";
@@ -383,19 +385,24 @@ export const ChatInput = forwardRef(
             >
               <Container flexDirection="row" justifyContent="space-between">
                 <IconButton
-                  Icon={ReplySVG}
+                  Icon={ChatBubble}
                   opacity={isReplyOptionSelected ? 1 : 0.5}
                   pl={moderateScale(10)}
+                  iconProps={{
+                    viewBox: "0 0 37 37",
+                    size: moderateScale(30),
+                    color: theme.colors.font.grey500,
+                  }}
                   onPress={onReplyClickHandler}
                 />
                 <IconButton
-                  Icon={NoteSVG}
+                  Icon={Notes}
                   opacity={isNoteOptionSelected ? 1 : 0.5}
                   onPress={onAddNoteClickHandler}
                 />
                 {onForward && (
                   <IconButton
-                    Icon={ForwardSVG}
+                    Icon={Forward}
                     opacity={isForwardOptionSelected ? 1 : 0.5}
                     onPress={onAddForwardClickHandler}
                   />
@@ -408,13 +415,17 @@ export const ChatInput = forwardRef(
                 {onCannedResponse &&
                   showCannedResponsesFor.includes(selectedOption) && (
                     <IconButton
-                      Icon={CannedResponseSVG}
+                      Icon={CannedResponses}
                       opacity={0.5}
+                      iconProps={{
+                        viewBox: "0 0 38 38",
+                        size: moderateScale(30),
+                      }}
                       onPress={onCannedResponse}
                     />
                   )}
                 <IconButton
-                  Icon={AttachmentSVG}
+                  Icon={Attachment}
                   opacity={0.5}
                   onPress={onAddAttachmentsClickHandler}
                 />
@@ -444,10 +455,9 @@ export const ChatInput = forwardRef(
                         p={0}
                         variant="text"
                         RightIcon={() => (
-                          <Icon
+                          <Down
                             color={theme.colors.background.grey800}
-                            name="ri-arrow-down-s-line"
-                            size={moderateScale(30)}
+                            size={moderateScale(22)}
                           />
                         )}
                       />

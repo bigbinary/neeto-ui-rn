@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Animated } from "react-native";
 
+import { Check, Close } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
@@ -61,6 +61,8 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
     ? theme.colors.background.purple500
     : theme.colors.font.grey500;
 
+  const Icon = value ? Check : Close;
+
   return (
     <Touchable
       bg={containerBg}
@@ -85,8 +87,8 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
         >
           <Icon
             color={iconColor}
-            name={`ri-${value ? "check" : "close"}-line`}
-            size={moderateScale(12)}
+            size={moderateScale(18)}
+            viewBox={value ? "0 0 22 27" : "0 0 25 25"}
           />
         </Container>
       </Animated.View>

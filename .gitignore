@@ -39,6 +39,8 @@ npm-debug.log
 yarn-error.log
 lib/
 
+lib/
+
 # BUCK
 buck-out/
 \.buckd/

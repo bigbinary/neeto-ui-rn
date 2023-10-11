@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 
+import {
+  Checkbox as CheckboxIcon,
+  CheckboxInactive,
+} from "@bigbinary/neeto-icons-rn";
 import Proptypes from "prop-types";
-import Icon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
@@ -82,6 +85,8 @@ export const CheckBox = ({
     },
   };
 
+  const Icon = checked ? CheckboxIcon : CheckboxInactive;
+
   return (
     <Touchable
       alignItems="center"
@@ -105,8 +110,7 @@ export const CheckBox = ({
       </Typography>
       <Icon
         color={theme.colors.font.primary}
-        name={checked ? "checkbox-line" : "checkbox-blank-line"}
-        size={moderateScale(20)}
+        size={moderateScale(22)}
         {...checkIconStyle}
       />
     </Touchable>

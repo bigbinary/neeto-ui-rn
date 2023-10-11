@@ -2,9 +2,9 @@ import * as React from "react";
 import { useContext, useEffect } from "react";
 import { useWindowDimensions } from "react-native";
 
+import { Close } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
 import DeviceInfo from "react-native-device-info";
-import CloseIcon from "react-native-remix-icon";
 import { moderateScale } from "react-native-size-matters";
 import T from "react-native-toast-message";
 import { ThemeContext } from "styled-components/native";
@@ -104,7 +104,7 @@ const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
           hide();
         }}
       >
-        <CloseIcon color={theme.colors.font.grey500} name="ri-close-line" />
+        <Close color={theme.colors.font.grey500} size={moderateScale(22)} />
       </Touchable>
     </Card>
   );

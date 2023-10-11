@@ -1,7 +1,6 @@
 import React from "react";
 
-import Icon from "react-native-remix-icon";
-
+import { EmailSent, Down } from "@bigbinary/neeto-icons-rn";
 import { Input, Container, Typography } from "@components";
 
 import { theme } from "../../src/theme";
@@ -124,11 +123,7 @@ export const Inputs = () => (
         value=""
         PrefixIcon={() => (
           <Container flexDirection="row">
-            <Icon
-              color={theme.colors.background.grey600}
-              name="ri-mail-line"
-              size={22}
-            />
+            <EmailSent color={theme.colors.background.grey600} size={22} />
           </Container>
         )}
         onChangeText={() => {}}
@@ -141,11 +136,7 @@ export const Inputs = () => (
         value=""
         SuffixIcon={() => (
           <Container flexDirection="row">
-            <Icon
-              color={theme.colors.background.grey600}
-              name="ri-arrow-down-s-line"
-              size={22}
-            />
+            <Down color={theme.colors.background.grey600} size={22} />
           </Container>
         )}
         onChangeText={() => {}}
@@ -159,20 +150,12 @@ export const Inputs = () => (
           value="oliver@example.com"
           PrefixIcon={() => (
             <Container flexDirection="row">
-              <Icon
-                color={theme.colors.background.grey600}
-                name="ri-mail-line"
-                size={22}
-              />
+              <EmailSent color={theme.colors.background.grey600} size={22} />
             </Container>
           )}
           SuffixIcon={() => (
             <Container flexDirection="row">
-              <Icon
-                color={theme.colors.background.grey600}
-                name="ri-arrow-down-s-line"
-                size={22}
-              />
+              <Down color={theme.colors.background.grey600} size={22} />
             </Container>
           )}
           onChangeText={() => {}}
