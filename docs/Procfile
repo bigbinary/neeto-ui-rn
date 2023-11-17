@@ -1,2 +1,2 @@
 release: yarn -v
-web: yarn start
+web: cd docs && yarn start
