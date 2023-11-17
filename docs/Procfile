@@ -1,2 +1,2 @@
 release: yarn -v
-web: yarn serve
+web: yarn start
