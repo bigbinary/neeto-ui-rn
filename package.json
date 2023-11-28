@@ -30,7 +30,6 @@
   },
   "files": [
     "lib",
-    "src",
     "react-native.config.js",
     "index.d.ts",
     "assets"
