@@ -30,6 +30,10 @@ jobs:
         run: (gh release create v${{ steps.package-version.outputs.current-version}} --generate-notes) || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete docs/components folder
+        run: rm -rf docs/components
+      - name: Copy src/components to docs
+        run: cp -R src/components docs/
       - name: "Publish"
         uses: JS-DevTools/npm-publish@v1
         with:
