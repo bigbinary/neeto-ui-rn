@@ -6,13 +6,14 @@ const webpack = require("webpack");
 const appDirectory = path.resolve(__dirname);
 
 const babelLoaderConfiguration = {
-  test: /\.js/,
+  test: [/\.js$/, /\.jsx$/, /\.ts$/],
   include: [
     path.resolve(__dirname, "index.web.js"),
     path.resolve(__dirname, "App.web.js"),
     path.resolve(__dirname, "src"),
     path.resolve(__dirname, "./storybook/stories"),
     path.resolve(__dirname, "./.storybook/preview.js"),
+    path.resolve(__dirname, "./node_modules/@bigbinary/neeto-icons-rn"),
     path.resolve(__dirname, "./node_modules/react-native-modal-selector"),
     path.resolve(__dirname, "./node_modules/react-native-swipe-gestures"),
     path.resolve(__dirname, "./node_modules/react-native-modal"),
@@ -23,6 +24,7 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, "./node_modules/react-native-svg"),
     path.resolve(__dirname, "./node_modules/react-native-svg-transformer"),
     path.resolve(__dirname, "./node_modules/react-native-toast-message"),
+    path.resolve(__dirname, "./node_modules/react-native-fast-image"),
     path.resolve(
       __dirname,
       "./node_modules/react-native-keyboard-aware-scroll-view"
@@ -82,7 +84,7 @@ module.exports = {
     filename: "rnw.bundle.js",
   },
   resolve: {
-    extensions: [".web.tsx", ".web.ts", ".tsx", ".ts", ".web.js", ".js"],
+    extensions: [".web.tsx", ".web.ts", ".tsx", ".ts", ".web.js", ".js", ".jsx"],
     alias: {
       "react-native$": "react-native-web",
     },

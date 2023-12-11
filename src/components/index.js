@@ -43,3 +43,6 @@ export { InputEmailChip } from "./InputEmailChip";
 export { LineLoader } from "./LineLoader";
 export { ActionIcon } from "./ActionIcon";
 export { NotificationIcon } from "./NotificationIcon";
+export { MentionsInputWrapper } from "./ChatInput/MentionsInputWrapper";
+export { Ripple } from "./Ripple";
+export { default as TouchableWithoutFeedback } from "./TouchableWithoutFeedback";

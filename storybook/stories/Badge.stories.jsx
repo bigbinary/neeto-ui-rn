@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Badge, Container } from "@components";
-import { Typography } from "@components/Typography";
+import { Typography } from "@components";
 
 import { theme } from "../../src/theme";
 
