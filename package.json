@@ -23,7 +23,7 @@
     "storybook-web": "yarn prestart && ./node_modules/@storybook/react/bin/index.js",
     "get-stories": "sb-rn-get-stories --config-path=./.storybook",
     "preweb": "yarn get-stories",
-    "web": "yarn prestart && webpack serve --mode=development --config webpack.config.js",
+    "storybook": "yarn prestart && webpack serve --mode=development --config webpack.config.js",
     "prepare": "husky install",
     "yalc:publish": "yarn build && rm -rf ~/.yalc/packages && yalc publish --private",
     "postinstall": "patch-package"
