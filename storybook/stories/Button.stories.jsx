@@ -100,7 +100,7 @@ export const Buttons = () => (
       my={9}
       variant="text"
       LeftIcon={() => (
-        <Icon color={theme.fonts.primary} name="ri-add-line" size={16} />
+        <Plus color={theme.fonts.primary} name="ri-add-line" size={16} />
       )}
     />
     <Button

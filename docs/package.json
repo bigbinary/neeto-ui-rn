@@ -6,8 +6,8 @@
   "author": "BigBinary",
   "license": "MIT",
   "scripts": {
-    "start": "component-docs serve",
-    "build": "component-docs build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider component-docs serve",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider component-docs build",
     "clean": "del dist/",
     "prestart": "yarn clean"
   },

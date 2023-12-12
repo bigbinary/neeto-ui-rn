@@ -20,8 +20,8 @@ global.STORIES = [
 
 import "@storybook/addon-ondevice-notes/register";
 import "@storybook/addon-ondevice-controls/register";
-import "@storybook/addon-ondevice-backgrounds/register";
 import "@storybook/addon-ondevice-actions/register";
+import "@storybook/addon-docs/register";
 
 import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs";
 
@@ -52,7 +52,7 @@ const getStories = () => {
     "./storybook/stories/_Home.stories.jsx": require("../storybook/stories/_Home.stories.jsx"),
     "./storybook/stories/Accordion.stories.jsx": require("../storybook/stories/Accordion.stories.jsx"),
     "./storybook/stories/Alert.stories.jsx": require("../storybook/stories/Alert.stories.jsx"),
-    "./storybook/stories/AnimatedImage.stories.jsx": require("../storybook/stories/AnimatedImage.stories.jsx"),
+    // "./storybook/stories/AnimatedImage.stories.jsx": require("../storybook/stories/AnimatedImage.stories.jsx"),
     "./storybook/stories/Avatar.stories.jsx": require("../storybook/stories/Avatar.stories.jsx"),
     "./storybook/stories/Badge.stories.jsx": require("../storybook/stories/Badge.stories.jsx"),
     "./storybook/stories/BottomSheet.stories.jsx": require("../storybook/stories/BottomSheet.stories.jsx"),
