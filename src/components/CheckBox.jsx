@@ -8,8 +8,8 @@ import Proptypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Typography, Touchable } from "@components";
-
+import { Touchable } from "./Touchable";
+import { Typography } from "./Typography";
 /**
  *
  * <div class="screenshots">
@@ -67,6 +67,7 @@ export const CheckBox = ({
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
+
   const disabledProps = {
     labelProps: {
       color: theme.colors.font.grey400,
@@ -76,12 +77,14 @@ export const CheckBox = ({
   const checkedProps = {
     labelProps: {
       fontFamily: theme.fonts.sf600,
+      color: theme.colors.font.primary,
     },
   };
 
   const unCheckedProps = {
     labelProps: {
       fontFamily: theme.fonts.sf400,
+      color: theme.colors.font.grey400,
     },
   };
 

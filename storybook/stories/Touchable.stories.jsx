@@ -38,4 +38,10 @@ export const Touchables = () => (
   </>
 );
 
-export const TouchableDemo = args => <Touchable {...args} />;
+export const TouchableDemo = args => <Touchable alignItems="center"
+  bg="background.secondary"
+  height="30px"
+  justifyContent="center"
+  rippleConfig={{ containerBorderRadius: 50 }}
+  width="100px" {...args} ><Typography fontSize="14px">Touchable</Typography>
+</Touchable>;
