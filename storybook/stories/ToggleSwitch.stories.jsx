@@ -14,8 +14,29 @@ const ToggleSwitchStories = {
     },
   },
   parameters: {
-    notes: "Checkout the different props in controls section",
-  },
+    notes: `
+ToggleSwitch component is a simple switch toggle component describes what is being switched ON/OFF.
+
+![image](assets/screenshots/toggleswitch/switchstyles.png)
+
+## Usage
+
+>import * as React, {useState} from 'react';
+>import { Typography, Container } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  const [switchOne, setSwitchOne] = useState(true);
+>
+> return (
+>    <Container>
+>     <ToggleSwitch
+>      value={switchOne}
+>      setValue={() => setSwitchOne(prevValue => !prevValue)}
+>     />
+>   </Container>
+>  );
+> }
+`},
 };
 
 export default ToggleSwitchStories;

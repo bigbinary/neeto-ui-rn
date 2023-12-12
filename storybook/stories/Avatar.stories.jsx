@@ -41,6 +41,30 @@ const AvatarStories = {
       },
     },
   },
+  parameters: {
+    notes: `
+Avatars can be used to represent people in a graphical way.
+
+![image](assets/screenshots/avatar/images.png)
+
+![image](assets/screenshots/avatar/texts.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Typography, Avatar } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  return (
+>    <Container>
+>      <Avatar
+>        variant={"medium"}
+>        name="Oliver Smith"
+>      />
+>   </Container>
+>  );
+> }
+`}
 };
 export default AvatarStories;
 

@@ -11,6 +11,45 @@ import { theme } from "@theme";
 
 const AccordionStories = {
   title: "Accordions",
+  parameters: {
+    notes: `
+A component used to display an expandable list item.
+
+![image](assets/screenshots/accordion/accordion.png)
+
+## Usage \n
+
+>import * as React from 'react';
+>import { Container, Accordion } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  return (
+>    <Container>
+>     <Accordion
+>         header={() => (
+>           <Container flexDirection="row" alignItems="center">
+>             <Typography bg="#00BA8829" color="font.primary" p={moderateScale(1)}>
+>               Open
+>             </Typography>
+>             <Typography px={moderateScale(2)}>Low</Typography>
+>           </Container>
+>         )}
+>         iconProp={{
+>           IconLabel: () => (
+>             <Typography color="font.danger">Collapse</Typography>
+>           ),
+>           iconColor: theme.colors.font.danger,
+>         }}
+>       >
+>         <Container my={moderateScale(2)} p={moderateScale(3)} bg="background.grey100" borderRadius={moderateScale(8)}>
+>           <Typography color="font.primary">Body Content</Typography>
+>         </Container>
+>       </Accordion>
+>    </Container>
+>  );
+> }
+`
+  }
 };
 export default AccordionStories;
 

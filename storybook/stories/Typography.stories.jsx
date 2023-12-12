@@ -68,6 +68,42 @@ const TypographyStories = {
   },
   parameters: {
     layout: "padded",
+    notes: `
+Typography component is a primitive text component which is built on top of styled-system.
+
+This component supports below props categories from [styled-system ](/styled-system).
+
+- space
+- layout
+- flexbox
+- typography
+- color
+- textStyle
+\n
+
+![image](assets/screenshots/typography/colors.png)
+
+![image](assets/screenshots/typography/fontfamilies.png)
+
+![image](assets/screenshots/typography/fontsizes.png)
+
+![image](assets/screenshots/typography/textstyles.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Typography, Container } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  return (
+>    <Container>
+>     <Typography>
+>         This is basic example of Typography
+>      </Typography>
+>     </Container>
+>  );
+> }
+`
   },
 };
 export default TypographyStories;

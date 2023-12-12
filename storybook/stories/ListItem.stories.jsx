@@ -16,9 +16,27 @@ const ListItemMetaData = {
     },
   },
   parameters: {
-    notes:
-      "Checkout the supported control/actions in control and actions section respectively.",
-  },
+    notes:`
+ListItems are components that displays a label with different values like string, toggle, button etc.
+
+![image](assets/screenshots/listitem/listItemStyles.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Container, ListItem, Typography } from '@bigbinary/neetoui-rn';
+>export default function Main() {
+> return (
+>   <Container>
+>     <ListItem
+>       LeftComponent={() => <Typography mr={moderateScale(2)}>📣</Typography>}
+>       label="Organization"
+>       value={() => <Typography>Bigbinary</Typography>}
+>     />
+>   </Container>
+> );
+>}
+`},
 };
 
 export default ListItemMetaData;

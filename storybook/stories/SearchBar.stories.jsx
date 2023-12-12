@@ -38,6 +38,24 @@ const SearchBarMetaData = {
     keyboardType: keyBoardTypes[0],
     debounceDelay: 1000,
   },
+  parameters:{notes: `
+SearchBars are used to search or filter items.
+
+![image](assets/screenshots/searchbar/searchbar.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Container, SearchBar } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  return (
+>    <Container>
+>      <SearchBar placeholder="Search" onChangeText={() => {}} />
+>   </Container>
+>  );
+> }  
+`}
 };
 
 export default SearchBarMetaData;

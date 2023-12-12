@@ -29,6 +29,49 @@ const RadioButtonStories = {
     selected: false,
     label: "Radio button demo",
   },
+  parameters: {notes: `
+
+![image](assets/screenshots/radioButton/radioButton.png)
+
+This component supports below props categories from styled-system.
+
+- flexbox
+- space
+- border
+- layout
+- color
+- buttonStyle
+\n
+
+## Usage
+
+>import * as React from "react";
+>import { moderateScale } from "react-native-size-matters";
+>import { Container, RadioButton } from "@bigbinary/neetoui-rn";
+>
+>export default function Main() {
+>  const [selected1, setSelected1] = useState(true);
+>  const [selected2, setSelected2] = useState(false);
+>
+>  return (
+>    <Container>
+>      <RadioButton
+>        mt={moderateScale(2)}
+>        selected={selected1}
+>        onSelect={() => setSelected1(prev => !prev)}
+>        label="Radio button"
+>      />
+>      <RadioButton
+>        mt={moderateScale(3)}
+>        selected={selected2}
+>        onSelect={() => setSelected2(prev => !prev)}
+>        label="Radio button"
+>      />
+>      <RadioButton mt={moderateScale(3)} disabled label="Disabled Radio button" />
+>    </Container>
+>  );
+> }
+`}
 };
 
 export default RadioButtonStories;

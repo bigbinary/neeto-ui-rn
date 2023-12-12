@@ -7,6 +7,40 @@ const TouchableMetaData = {
   component: TouchableDemo,
   argTypes: {},
   args: {},
+  parameters: { notes: `
+Touchable component is a wrapper over Ripple.
+
+This component supports below props categories from styled-system.
+
+- flexbox
+- space
+- border
+- layout
+- color
+- buttonStyle
+\n
+## Usage
+
+>import * as React from 'react';
+>import { Touchable, Typography } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  return (
+>     <Touchable
+>       bg="background.primary"
+>       width="100px"
+>       height="30px"
+>       rippleConfig={{
+>          opacity: 0.09,
+>          duration: 600,
+>          containerBorderRadius: moderateScale(50),
+>       }}
+>     >
+>       <Typography fontSize="10px">This is wrapped in Touchable component</Typography>
+>     </Touchable>
+>  );
+> }
+`}
 };
 
 export default TouchableMetaData;

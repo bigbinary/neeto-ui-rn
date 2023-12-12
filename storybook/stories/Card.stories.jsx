@@ -8,38 +8,32 @@ const CardMetaData = {
   argTypes: {},
   args: {},
   parameters: {
-    notes: `
-     This component is wrapper over Container component. \n\n
-     This component supports below props categories from [styled-system ](/styled-system). \n\n
- 
-  <ul>
-  <li>flexbox</li>
-  <li>space</li>
-  <li>border</li>
-  <li>color</li>
-  <li>layout</li>
-  </ul>
- 
-  <div class="screenshots">
-    <img src="screenshots/card/shadows.png" />
-  </div>
- 
-   ## Usage\n\n
+    notes:`
+This component is wrapper over Container component.
 
-   \`\`\`js
-  import * as React from 'react';
-  import { Card, Typography } from '@bigbinary/neetoui-rn';
- 
-  export default function Main() {
-   return (
-      <Card height="100px" width="100px" bg="background.danger" elevation={moderateScale(8)}>
-        <Typography fontSize="14px">Card</Typography>
-      </Card>
-   );
-  }
-  \`\`\`
- *
-    `,
+This component supports below props categories from styled-system. \n\n
+
+- flexbox
+- space
+- border
+- color
+- layout
+
+![image](assets/screenshots/card/shadows.png)
+
+## Usage 
+
+>import * as React from 'react';
+>import { Card, Typography } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+> return (
+>   <Card height="100px" width="100px" bg="background.danger" elevation={moderateScale(8)}>
+>     <Typography fontSize="14px">Card</Typography>
+>   </Card>
+>  );
+>}
+`,
   },
 };
 

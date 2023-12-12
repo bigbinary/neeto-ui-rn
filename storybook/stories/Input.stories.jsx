@@ -67,6 +67,33 @@ const InputMetaData = {
       secureTextEntry: false,
     },
   },
+  parameters: {
+    notes: `
+Input component allow users to input custom text entries with a keyboard.
+
+This component supports below props categories from styled-system.
+
+- flexbox
+- space
+- border
+- buttonStyle
+- brandLeft
+- typography
+
+![image](assets/screenshots/inputs/inputs.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Input, Container } from '@bigbinary/neetoui-rn';
+>export default function Main() {
+>   return (
+>     <Container>
+>      <Input value="Oliver Smith" onChangeText={()=>{}} label="Name" />
+>   </Container>
+> );
+>}
+`}
 };
 
 export default InputMetaData;

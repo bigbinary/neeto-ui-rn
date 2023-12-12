@@ -27,6 +27,54 @@ const ToastMessage = {
       },
     },
   },
+  parameters: { notes: `
+Toast component is a wrapper over 
+  
+https://github.com/calintamas/react-native-toast-message.
+
+![image](assets/screenshots/toast/toast-1.png)
+
+![image](assets/screenshots/toast/toast-2.png)
+
+![image](assets/screenshots/toast/toast-3.png)
+
+![image](assets/screenshots/toast/toast-4.png)
+
+## Usage
+
+>import { Toast } from "@bigbinary/neetoui-rn";
+>
+>export function App(props) {
+>  return (
+>    <>
+>      // Render at root component.
+>      <Toast />
+>    </>
+>  );
+>}
+
+
+>import * as React from "react";
+>import { moderateScale } from "react-native-size-matters";
+>import { Toast, Container, Button } from "@bigbinary/neetoui-rn";
+>
+>export default function Main() {
+>  return (
+>    <Container>
+>      <Button
+>        label="Error Test"
+>        onPress={() => {
+>          Toast.show({
+>           type: "error",
+>            text1: "Yay!",
+>            text2: "Have a nice day! 😄",
+>          });
+>        }}
+>      />
+>    </Container>
+>  );
+>}
+`}
 };
 export default ToastMessage;
 

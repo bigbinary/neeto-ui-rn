@@ -29,6 +29,47 @@ const CheckBoxStories = {
     checked: false,
     label: "Checkbox demo",
   },
+  parameters:{
+    notes: `
+This component supports below props categories from styled-system.
+
+- flexbox
+- space
+- border
+- layout
+- color
+- buttonStyle
+
+![image](assets/screenshots/checkbox/checkbox.png)
+
+## Usage
+
+>import * as React from "react";
+>import { moderateScale } from "react-native-size-matters";
+>import { Container, CheckBox } from "@bigbinary/neetoui-rn";
+>
+>export default function Main() {
+>  const [checked, setChecked] = useState(true);
+>
+>  return (
+>    <Container>
+>      <CheckBox
+>        mt={moderateScale(2)}
+>        checked={checked1}
+>        onSelect={() => setChecked1(prev => !prev)}
+>        label="Checkbox"
+>      />
+>      <CheckBox
+>        mt={moderateScale(3)}
+>        checked={checked2}
+>        onSelect={() => setChecked2(prev => !prev)}
+>        label="Checkbox"
+>      />
+>      <CheckBox mt={moderateScale(3)} disabled label="Disabled checkbox" />
+>    </Container>
+>  );
+> }
+`}
 };
 
 export default CheckBoxStories;
