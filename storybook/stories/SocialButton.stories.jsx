@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { SocialButton, Container } from "@components";
-import { ThemeContext } from "styled-components/native";
-import useSystemTheme from 'react-use-system-theme';
 
 const ButtonMetaData = {
   title: "SocialButtons",
@@ -32,15 +30,10 @@ Buttons are touchable elements used to interact with the screen and to trigger a
 export default ButtonMetaData;
 
 export const SocialButtons = () => {
-  const systemTheme = useSystemTheme();
-  const theme = useContext(ThemeContext);
-
-  const labelStyleProp = (systemTheme === "dark" && { labelStyle: { color: theme.colors.font.grey200 } })
-
   return (
     <Container alignItems="center" flex={1}>
-      <SocialButton {...labelStyleProp} my={9} variant="apple" />
-      <SocialButton {...labelStyleProp} variant="google" />
+      <SocialButton my={9} variant="apple" />
+      <SocialButton variant="google" />
     </Container>
   )
 };

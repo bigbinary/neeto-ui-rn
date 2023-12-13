@@ -25,7 +25,7 @@ const ButtonMetaData = {
     variant: {
       options: variants,
       control: {
-        type: "select",
+        type: "radio",
       },
     },
     disabled: {
@@ -41,7 +41,7 @@ const ButtonMetaData = {
     onPress: { action: "pressed the button" },
   },
   parameters: {
-    notes:`
+    notes: `
 Buttons are touchable elements used to interact with the screen and to trigger an action.
 
 ![image](assets/screenshots/button/button.png)
@@ -92,11 +92,16 @@ export default function Main() {
 
 export default ButtonMetaData;
 
-export const ButtonDemo = args => (
+export const ButtonDemo = args => {
+  console.log({args})
+  
+  return (
   <Container alignItems="center" flex={1} justifyContent="center">
-    <Button {...args} />
+    <Button
+      {...args}
+    />
   </Container>
-);
+)};
 
 export const Buttons = () => (
   <Container alignItems="center" flex={1}>

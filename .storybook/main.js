@@ -14,6 +14,7 @@ module.exports = {
     "@storybook/addon-ondevice-notes",
     "@storybook/addon-ondevice-controls",
     "@storybook/addon-ondevice-actions",
+    "@storybook/addon-backgrounds",
   ],
   core: {
     builder: "@storybook/builder-webpack5",

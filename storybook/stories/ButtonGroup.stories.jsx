@@ -28,11 +28,11 @@ const ButtonGroupStories = {
     },
     activeColor: {
       options: backgroundColors,
-      control: { type: "select" },
+      control: { type: "radio" },
     },
     inActiveColor: {
       options: backgroundColors,
-      control: { type: "select" },
+      control: { type: "radio" },
     },
     buttonStyle: {
       control: { type: "object" },

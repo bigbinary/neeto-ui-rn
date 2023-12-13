@@ -1,7 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import useSystemTheme from 'react-use-system-theme';
-import { ThemeContext } from "styled-components/native";
-
+import React, { useEffect, useState } from "react";
 import {
   FlashList as FlashListComponent,
   Container,
@@ -61,8 +58,6 @@ export default FlashListStories;
 export const FlashList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [lData, setLData] = useState([]);
-  const systemTheme = useSystemTheme();
-  const theme = useContext(ThemeContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -91,8 +86,8 @@ export const FlashList = () => {
           px={3}
           py={2}
         >
-          <Typography {...(systemTheme === "dark" && { color: theme.colors.font.grey200 })}>{item.title}</Typography>
-          <Typography {...(systemTheme === "dark" && { color: theme.colors.font.grey200 })}>{item.description}</Typography>
+          <Typography>{item.title}</Typography>
+          <Typography>{item.description}</Typography>
         </Container>
       )}
     />

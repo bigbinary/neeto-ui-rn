@@ -1321,6 +1321,11 @@
   resolved "https://registry.yarnpkg.com/@bigbinary/eslint-plugin-neeto/-/eslint-plugin-neeto-1.1.38.tgz#8355f37565007d76594d95cc5f61c119633baa65"
   integrity sha512-2eJfMY28gS8lov4C/ogPAyO4WRAFpa9MYERo2ehgrZu1j3gXRt3efmwNRcfOd6l//Gq7UGk8YURsB5VVqQrntA==
 
+"@bigbinary/neeto-cist@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@bigbinary/neeto-cist/-/neeto-cist-1.0.6.tgz#cf9e34910a765e6cb946503c0bf7ab1632ef8e17"
+  integrity sha512-UebvniTSUyNYOIZMiNSDpV4HqHtwvYfaUaE3+C4ZBSY44csUCRgwOeD0njU3rQpE5eAL+e6KYsV9moRz4/uc0g==
+
 "@bigbinary/neeto-commons-frontend@^2.0.129":
   version "2.1.39"
   resolved "https://registry.yarnpkg.com/@bigbinary/neeto-commons-frontend/-/neeto-commons-frontend-2.1.39.tgz#47e99d4c9330f5de7db59d68e2697b6be167b36b"
@@ -14306,11 +14311,6 @@ react-transition-group@^4.3.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
-
-react-use-system-theme@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-use-system-theme/-/react-use-system-theme-1.1.1.tgz#90f21cc8182fec86e22584ce5c11d54d1f1decc3"
-  integrity sha512-Mlohol/QkEIbIKt8lXJP0iVvRAgOMml2iZ+bwvE1KpQFAG5DKJGFjZmEqebdj7WCu24u+34kpMtFDGMb4+5uSA==
 
 react@18.1.0:
   version "18.1.0"
