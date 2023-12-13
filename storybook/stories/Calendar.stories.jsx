@@ -32,7 +32,9 @@ Calendar component built on top of
 >  );
 > }
 
-Checkout [react-native-calendars](https://github.com/wix/react-native-calendars) package for all the available props
+Checkout [react-native-calendars](https://github.com/wix/react-native-calendars) 
+
+package for all the available props
 `
   }
 };
