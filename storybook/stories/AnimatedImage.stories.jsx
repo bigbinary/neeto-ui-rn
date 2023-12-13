@@ -25,16 +25,15 @@ AnimatedImage can be used to display a placeholder before image is loaded with a
 >import * as React from 'react';
 >import { Typography, Avatar } from '@bigbinary/neetoui-rn';
 >
->
->export default function Main() {
 
+>export default function Main() {
 > return (
 >   <Container>
->    <AnimatedImage
->     imageHeight={}
->     imageWidth={}
->     imageUrl=''
->    />
+>     <AnimatedImage
+>      imageHeight={23}
+>      imageWidth={23}
+>      imageUrl='/example'
+>     />
 >  </Container>
 >  );
 >}
