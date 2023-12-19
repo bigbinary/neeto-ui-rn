@@ -25,7 +25,8 @@ import {
   position,
 } from "styled-system";
 
-import { Button, Container } from "@components";
+import { Button } from "./Button";
+import { Container } from "./Container";
 
 import { theme } from "../theme";
 import { isAndroid } from "../utils/utils";
@@ -150,7 +151,7 @@ export const Input = ({
 
   const handleStyles = useCallback(isFocused => {
     containerRef.current &&
-      containerRef.current.setNativeProps({
+      containerRef.current?.setNativeProps?.({
         borderColor: errorMessage
           ? colors.border.danger
           : isFocused

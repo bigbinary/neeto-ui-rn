@@ -5,6 +5,43 @@ import { MultiSelect, Button, Alert } from "@components";
 const MultiSelectStories = {
   title: "MultiSelect",
   component: MultiSelect,
+  parameters: {
+    notes: `
+MultiSelect can be used to select multiple options from a list of options.
+
+![image](assets/screenshots/multiSelect/multiSelect.png)
+
+## Usage
+
+### Import and use MultiSelect component.
+
+>import * as React, { useState } from 'react';
+>import { MultiSelect, Container } from '@bigbinary/neetoui-rn';
+>
+>const OPTIONS = [
+>  {
+>    label: "Option 1",
+>    value: "option_1"
+>  },
+>  {
+>    label: "Option 2",
+>    value: "option_2"
+>  },
+> ]
+
+>export default function Main() {
+>  const [selectedOptions, setSelectedOptions] = useState([])
+>
+>  return (
+>    <MultiSelect
+>      label="Select"
+>      options={OPTIONS}
+>      value={selectedOptions}
+>      onSelect={setSelectedOptions}
+>    />
+> );
+> }
+`}
 };
 
 export default MultiSelectStories;

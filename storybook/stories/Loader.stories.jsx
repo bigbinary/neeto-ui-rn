@@ -6,6 +6,24 @@ import { theme } from "@theme";
 const LoaderStories = {
   title: "Loaders",
   component: Loader,
+  parameters: {
+    notes: `
+Component is used to show a loading indication to user.
+
+![image](assets/screenshots/loaders/loaders.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Container, Loader } from '@bigbinary/neetoui-rn';
+>export default function Main() {
+>  return (
+>    <Container>
+>      <Loader size='l'/>
+>    </Container>
+>  )
+>}
+`}
 };
 
 export default LoaderStories;

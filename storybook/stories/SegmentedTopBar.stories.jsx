@@ -10,6 +10,41 @@ const SegmentedTopBarMetaData = {
   component: SegmentedTopBar,
   argTypes: {},
   args: {},
+  parameters: { notes: `
+A Segment Picker component that provides toggling between two or more views.
+
+![image](assets/screenshots/toptabbar/toptabbar-1.png)
+
+![image](assets/screenshots/toptabbar/toptabbar-2.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+>import { NavigationContainer } from "@react-navigation/native";
+>
+>import { SegmentedTopBar } from '@bigbinary/neetoui-rn';
+>
+>const Tab = createMaterialTopTabNavigator();
+>
+>export default function Main(){
+>  return (
+>    <NavigationContainer>
+>      <Tab.Navigator tabBar={props => <SegmentedTopBar {...props} />} >
+>        <Tab.Screen
+>          name="Home"
+>          component={HomeScreen}
+>        />
+>
+>        <Tab.Screen
+>          name="Settings"
+>          component={SettingsScreen}
+>        />
+>      </Tab.Navigator>
+>    </NavigationContainer>
+>  );
+> }
+`}
 };
 
 export default SegmentedTopBarMetaData;

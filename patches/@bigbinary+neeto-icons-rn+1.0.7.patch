@@ -1,0 +1,15 @@
+diff --git a/node_modules/@bigbinary/neeto-icons-rn/package.json b/node_modules/@bigbinary/neeto-icons-rn/package.json
+index ea55bb9..58b4386 100644
+--- a/node_modules/@bigbinary/neeto-icons-rn/package.json
++++ b/node_modules/@bigbinary/neeto-icons-rn/package.json
+@@ -20,9 +20,7 @@
+     "./misc": {
+       "import": "./dist/misc"
+     },
+-    ".": {
+-      "import": "./dist/icons"
+-    }
++    ".": "./dist/icons"
+   },
+   "devDependencies": {},
+   "dependencies": {},

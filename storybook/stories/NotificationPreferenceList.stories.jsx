@@ -8,6 +8,72 @@ import { NotificationPreferenceList, Container } from "@components";
 const NotificationPreferenceListMetaData = {
   title: "NotificationPreferenceList",
   component: NotificationPreferenceList,
+  parameters: {
+    notes: `
+Buttons are touchable elements used to interact with the screen and to trigger an action.
+
+![image](assets/screenshots/notificationPreferenceList/notificationPreferenceList.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Container, NotificationPreferenceList } from '@bigbinary/neetoui-rn';
+
+>export default function Main() {
+>  const [data, setData] = useState([]);
+> 
+>  const handleSwitch = (item, index) => {
+>    setData(prevData => {
+>      const newData = [...prevData];
+>      newData[index].enabled = !newData[index].enabled;
+>      return newData;
+>    });
+>  };
+>    
+>  useEffect(() => {
+>    setData([
+>      {
+>        label: "Preference 1",
+>        enabled: true,
+>        onSwitch: handleSwitch,
+>      },
+>      {
+>        label: "Preference 2",
+>        enabled: true,
+>       onSwitch: handleSwitch,
+>      },
+>      {
+>        label: "Preference 3",
+>        enabled: false,
+>        onSwitch: handleSwitch,
+>      },
+>      {
+>        label: "Preference 4",
+>        enabled: false,
+>        onSwitch: handleSwitch,
+>      },
+>      {
+>        label: "Preference 5",
+>        enabled: false,
+>        onSwitch: handleSwitch,
+>        LeftIcon: () => (
+>          <Icon
+>            name="ri-notification-2-line"
+>            size={moderateScale(20)}
+>            color={theme.colors.font.secondary}
+>          />
+>        ),
+>      },
+>    ]);
+>  }, []);
+>   
+>  return (
+>    <Container flex={1} alignItems="center" justifyContent="center">
+>      {data && <NotificationPreferenceList data={data} />}
+>    </Container>
+>  );
+> }
+`}
 };
 
 export default NotificationPreferenceListMetaData;

@@ -15,7 +15,7 @@ import TouchableWithoutFeedback from "./TouchableWithoutFeedback";
 
 const radius = moderateScale(10);
 
-export default class Ripple extends PureComponent {
+export class Ripple extends PureComponent {
   static defaultProps = {
     ...TouchableWithoutFeedback.defaultProps,
 

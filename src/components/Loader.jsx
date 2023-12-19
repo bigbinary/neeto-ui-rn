@@ -13,8 +13,9 @@ import Animated, {
 import { moderateScale } from "react-native-size-matters";
 import Svg, { Circle } from "react-native-svg";
 
-import { Container } from "@components";
 import { theme } from "@theme";
+
+import { Container } from "./Container";
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const LOADER_WIDTH = {
@@ -88,7 +89,7 @@ export const Loader = ({ color, size }) => {
   return (
     <Container alignItems="center" justifyContent="center">
       <Animated.View style={animatedStyles}>
-        <Svg height={width} width={width}>
+        <Svg fill="none" height={width} width={width}>
           <AnimatedCircle
             animatedProps={animatedProps}
             cx={width / 2}

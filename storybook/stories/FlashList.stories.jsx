@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import {
   FlashList as FlashListComponent,
   Container,

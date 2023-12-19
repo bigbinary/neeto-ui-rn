@@ -6,15 +6,12 @@ import Modal from "react-native-modal";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { moderateScale } from "react-native-size-matters";
 
-import {
-  Typography,
-  Container,
-  Touchable,
-  SearchBar,
-  Loader,
-} from "@components";
-
+import { Container } from "./Container";
 import { Divider } from "./Divider";
+import { Loader } from "./Loader";
+import { SearchBar } from "./SearchBar";
+import { Touchable } from "./Touchable";
+import { Typography } from "./Typography";
 
 import { theme } from "../theme";
 

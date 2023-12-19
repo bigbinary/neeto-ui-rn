@@ -5,7 +5,8 @@ import Proptypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Typography, Touchable } from "@components";
+import { Touchable } from "./Touchable";
+import { Typography } from "./Typography";
 
 /**
  *

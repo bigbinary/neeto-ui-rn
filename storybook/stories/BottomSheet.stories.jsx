@@ -37,7 +37,41 @@ const TypographyStories = {
   },
   parameters: {
     layout: "padded",
-  },
+    notes: `
+BottomSheet can be used to select an item from list of items like a DropDown
+
+![image](assets/screenshots/bottomsheet/bottomsheet.png)
+
+## Usage
+
+>import React, { useState } from 'react';
+>import { Container, BottomSheet } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>  const [isBottomSheetVisible, setBottomSheetVisibility] = useState(false);
+>  const [selectedItem, setSelectedItem] = useState(null);
+>  const data = ["neeto-ui-rn", "neeto-desk-rn", "neeto-hq"];
+>
+>  return (
+>    <Container>
+>     <BottomSheet
+>       maxHeight={moderateScale(200)}
+>       isVisible={isBottomSheetVisible}
+>       hide={() => {
+>         setBottomSheetVisibility(false);
+>       }}
+>       onItemPress={({item}) => {
+>        setSelectedItem(item);
+>       }}
+>       title="PROJECT"
+>       data={data}
+>       selectedItem={selectedItem}
+>       ContentRow={() => <CustomComponent />}
+>      />
+>   </Container>
+>  );
+> }
+`},
 };
 export default TypographyStories;
 

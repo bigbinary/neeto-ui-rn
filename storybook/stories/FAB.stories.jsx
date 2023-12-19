@@ -23,8 +23,37 @@ const FABStories = {
     onClick: { action: "pressed the button" },
   },
   parameters: {
-    notes: "Checkout the different props in controls section",
-  },
+    notes: `
+FAB component is a floating action button which represents the primary action in an application and is built on top of styled-system.
+
+This component supports below props categories from styled-system.
+
+- space
+- layout
+- flexbox
+- color
+- textStyle
+- buttonStyle
+
+![image](assets/screenshots/fab/buttonstyles.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { FAB, Container, Typography } from '@bigbinary/neetoui-rn';
+>
+> export default function Main() {
+>  return (
+>    <Container>
+>        <FAB
+>          Icon={() => {
+>            return <Typography>🔔</Typography>;
+>          }}
+>        />
+>     </Container>
+>  );
+>}    
+`},
 };
 
 export default FABStories;

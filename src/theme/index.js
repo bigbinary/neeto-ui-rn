@@ -104,6 +104,10 @@ const baseTheme = {
     sf700: "SFProText-Bold",
   },
   lineHeights: [24],
+  text: {
+    primaryColor: colors.font.base,
+    color: colors.font.base,
+  },
   fontSizes: {
     "4xs": moderateScale(10),
     "3xs": moderateScale(11),
@@ -159,6 +163,7 @@ export const theme = {
       color: baseTheme.colors.font.base,
     },
     text: {
+      primaryColor: baseTheme.colors.font.base,
       color: baseTheme.colors.font.base,
     },
   },

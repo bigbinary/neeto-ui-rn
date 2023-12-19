@@ -12,6 +12,32 @@ const AnimatedImageStories = {
     imageHeight: 255,
     imageWidth: 255,
   },
+  parameters: {
+    notes: `
+AnimatedImage can be used to display a placeholder before image is loaded with animation.
+
+![image](assets/screenshots/avatar/images.png)
+
+![image](assets/screenshots/avatar/texts.png)
+
+## Usage 
+
+>import * as React from 'react';
+>import { Typography, Avatar } from '@bigbinary/neetoui-rn';
+>
+
+>export default function Main() {
+> return (
+>   <Container>
+>     <AnimatedImage
+>      imageHeight={23}
+>      imageWidth={23}
+>      imageUrl='/example'
+>     />
+>  </Container>
+>  );
+>}
+`}
 };
 export default AnimatedImageStories;
 

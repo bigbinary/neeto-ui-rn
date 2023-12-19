@@ -86,9 +86,34 @@ const ChipStories = {
     },
   },
   parameters: {
-    notes:
-      "Checkout the supported controls/actions in controls and actions section respectively.",
-  },
+    notes:`
+Chips are compact elements that represent an input, attribute, or action.
+
+![image](assets/screenshots/chip/chip.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Chip, Container, Typography } from '@bigbinary/neetoui-rn';
+>
+>export default function Main(){
+>  return (
+>   <Container>
+>     <Chip
+>      label="Outlined Chip"
+>      LeftIcon={() => <Typography>📣</Typography>}
+>      variant="outlined"
+>      onChipPress={() => {
+>       alert("Chip pressed");
+>      }}
+>      onClose={() => {
+>        alert("On Close clicked");
+>       }}
+>    />
+>   </Container>
+>  );
+> }
+`},
 };
 
 export default ChipStories;

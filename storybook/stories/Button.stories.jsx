@@ -25,7 +25,7 @@ const ButtonMetaData = {
     variant: {
       options: variants,
       control: {
-        type: "select",
+        type: "radio",
       },
     },
     disabled: {
@@ -41,18 +41,67 @@ const ButtonMetaData = {
     onPress: { action: "pressed the button" },
   },
   parameters: {
-    notes:
-      "Checkout the supported control/actions in control and actions section respectively.",
+    notes: `
+Buttons are touchable elements used to interact with the screen and to trigger an action.
+
+![image](assets/screenshots/button/button.png)
+
+## Usage
+
+import * as React from 'react';
+import { Button, Container } from '@bigbinary/neetoui-rn';
+
+export default function Main() {
+  return (
+    <Container>
+      <Button my={moderateScale(9)} label="Button1" />
+      <Button my={moderateScale(9)} disabled label="Disabled Button2" />
+      <Button
+        my={moderateScale(9)}
+        LeftIcon={() => <Icon name="ri-add-line" color="white" size={moderateScale(16)} />}
+        label="Left Icon Button"
+      />
+      <Button
+        my={moderateScale(9)}
+        RightIcon={() => <Icon name="ri-add-line" color="white" size={moderateScale(16)} />}
+        label="Right Icon Button"
+      />
+      <Button my={moderateScale(9)} variant="text" label="Text Button" />
+      <Button
+        my={moderateScale(9)}
+        variant="text"
+        LeftIcon={() => (
+          <Icon name="ri-add-line" color={theme.fonts.primary} size={moderateScale(16)} />
+        )}
+        label="Left Icon Text Button"
+      />
+      <Button
+        my={moderateScale(9)}
+        variant="text"
+        RightIcon={() => (
+          <Icon name="ri-add-line" color={theme.fonts.primary} size={moderateScale(16)} />
+        )}
+        label="Right Icon Text Button"
+      />
+    </Container>
+  );
+ }
+    `,
   },
 };
 
 export default ButtonMetaData;
 
-export const ButtonDemo = args => (
+export const ButtonDemo = args => {
+  console.log({args})
+  
+  return (
   <Container alignItems="center" flex={1} justifyContent="center">
-    <Button {...args} />
+    <Button
+      {...args}
+    />
   </Container>
-);
+)};
 
 export const Buttons = () => (
   <Container alignItems="center" flex={1}>
@@ -100,7 +149,7 @@ export const Buttons = () => (
       my={9}
       variant="text"
       LeftIcon={() => (
-        <Icon color={theme.fonts.primary} name="ri-add-line" size={16} />
+        <Plus color={theme.fonts.primary} name="ri-add-line" size={16} />
       )}
     />
     <Button

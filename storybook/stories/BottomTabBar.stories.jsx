@@ -11,6 +11,69 @@ const BottomTabBarMetaData = {
   component: BottomTabBar,
   argTypes: {},
   args: {},
+  parameters: {
+    notes: `
+BottomTabBar is animated custom tabbar component which needs to used along with 
+
+[React Navigation & Bottom Tabs Navigator](https://reactnavigation.org/docs/bottom-tab-navigator/)
+
+![image](assets/screenshots/bottomTabBar/bottomTabBar-1.png)
+
+![image](assets/screenshots/bottomTabBar/bottomTabBar-2.png)
+
+
+## Usage
+
+>import * as React from 'react';
+>import { Typography, BottomTabBar  } from '@bigbinary/neetoui-rn';
+>import { NavigationContainer } from '@react-navigation/native';
+>import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+>import { ThemeContext } from "styled-components/native";
+>import { moderateScale } from "react-native-size-matters";
+>
+>const Tab = createBottomTabNavigator();
+>
+>const HomeScreen = () => {
+>  return (
+>   <Typography fontSize="14px">Home Screen</Typography>
+>  )
+>}
+>
+>const SettingsScreen = () => {
+>   return (
+>     <Typography fontSize="14px">Settings Screen</Typography>
+>   )
+> }
+
+>export default function Main() {
+>  const theme = useContext(ThemeContext);
+>  return (
+>    <Tab.Navigator
+>      screenOptions={{
+>        tabBarActiveTintColor: theme.colors.background.base,
+>        tabBarInactiveTintColor: theme.colors.background.grey500,
+>      }}
+>      tabBar={props => <BottomTabBar {...props} />}
+>    >
+>      <Tab.Screen name="Home" component={HomeScreen}
+>        options={{
+>          customTabBarProps: {
+>            icon: "home-5-line",
+>            size: moderateScale(26),
+>          },
+>        }}
+>      />
+>      <Tab.Screen name="Settings" component={SettingsScreen}
+>        options={{
+>          customTabBarProps: {
+>            icon: "user-3-line",
+>            size: moderateScale(26),
+>          },
+>        }} />
+>    </Tab.Navigator>
+>  );
+> }
+`}
 };
 
 export default BottomTabBarMetaData;

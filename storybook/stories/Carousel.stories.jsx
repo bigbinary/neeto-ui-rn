@@ -5,6 +5,31 @@ import { Carousel, Container } from "@components";
 const CarouselStories = {
   title: "Carousel",
   component: CarouselStories,
+  parameters: {
+    notes: `
+![image](assets/screenshots/carousel/carousel.png)
+ 
+This component supports below props categories from styled-system.
+
+- flexbox
+- space
+- border
+- color
+- layout
+- buttonStyle
+\n
+## Usage
+
+>import * as React from "react";
+>import { moderateScale } from "react-native-size-matters";
+>import { Carousel } from "@bigbinary/neetoui-rn";
+>    
+>export default function Main() {
+>  return (
+>     <Carousel itemArray={[{url:"http"}]} />
+>  );
+> }
+`}
 };
 
 export default CarouselStories;

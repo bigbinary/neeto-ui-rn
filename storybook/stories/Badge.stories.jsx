@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Badge, Container } from "@components";
-import { Typography } from "@components/Typography";
+import { Typography } from "@components";
 
 import { theme } from "../../src/theme";
 
@@ -56,6 +56,38 @@ const BadgeMetaData = {
       },
     },
   },
+  parameters:{
+    notes: `
+This component supports below props categories from styled-system.
+   
+- flexbox
+- space
+- border
+- color
+- layout
+
+![image](assets/screenshots/badge/badges.png)
+    
+## Usage
+
+>import * as React from 'react';
+>import { Badge, Container } from '@bigbinary/neetoui-rn';
+>
+>export default function Main() {
+>return (
+>    <Container>
+>       <Badge
+>          content="test"
+>          size={moderateScale(32)}
+>          fontSize="12px"
+>          badgeColor="background.secondary"
+>          color="font.secondary"
+>        />
+>    </Container>
+>  );
+> }
+`
+  }
 };
 
 export default BadgeMetaData;

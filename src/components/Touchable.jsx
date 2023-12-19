@@ -12,7 +12,7 @@ import {
   layout,
 } from "styled-system";
 
-import Ripple from "./Ripple";
+import { Ripple } from "./Ripple";
 
 import { getShadowStyles } from "../utils/utils";
 

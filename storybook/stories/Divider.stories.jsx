@@ -33,8 +33,24 @@ const DividerStories = {
     },
   },
   parameters: {
-    notes: "Checkout the different props in controls section",
-  },
+    notes: `
+Divider is a separator line that can be used between two different sections.
+
+![image](assets/screenshots/divider/divider.png)
+
+## Usage
+
+>import * as React from 'react';
+>import { Divider } from '@bigbinary/neetoui-rn';
+>
+>export default function Main(){
+>  return (
+>   <Container>
+>     <Divider orientation="vertical" thickness={moderateScale(1)}/>
+>   </Container>
+>  );
+> }
+`},
 };
 
 export default DividerStories;
