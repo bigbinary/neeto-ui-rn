@@ -3,7 +3,8 @@ import { moderateScale } from "react-native-size-matters";
 const defaultColors = {
   white: "#ffffff",
   base: "#4557F8",
-  danger: "#D95D4E",
+  danger: "#D7373F",
+  success: "#268E6C",
   menubackground: "#F6F6FA",
 };
 

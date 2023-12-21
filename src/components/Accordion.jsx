@@ -20,7 +20,7 @@ import {
   layout,
 } from "styled-system";
 
-import { Container } from "@components";
+import { Container } from "./Container";
 
 const TouchableOpacity = styled.TouchableOpacity`
   ${buttonStyle}
@@ -154,6 +154,11 @@ export const Accordion = React.forwardRef(
       outputRange: ["0rad", `${Math.PI}rad`],
     });
 
+    const marginTop = animationController.interpolate({
+      inputRange: [0, 1],
+      outputRange: [moderateScale(10), moderateScale(-2)],
+    });
+
     return (
       <Container
         {...(!noBorder && {
@@ -181,20 +186,20 @@ export const Accordion = React.forwardRef(
               alignItems="center"
               flexDirection="row"
               justifyContent="center"
+              minHeight={moderateScale(40)}
             >
               {Label && <Label />}
               <Animated.View
                 style={{
-                  alignItems: "flex-end",
+                  alignItems: "center",
+                  marginTop,
                   transform: [{ rotateZ: arrowAngle }],
                 }}
               >
-                <Container>
-                  <Down
-                    color={color ?? theme.colors.font.grey700}
-                    size={size ?? moderateScale(24)}
-                  />
-                </Container>
+                <Down
+                  color={color ?? theme.colors.font.grey700}
+                  size={size ?? moderateScale(40)}
+                />
               </Animated.View>
             </Container>
           )}
