@@ -5,8 +5,10 @@ import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Typography, Touchable, Container, Loader } from "@components";
-
+import { Container } from "./Container";
+import { Loader } from "./Loader";
+import { Touchable } from "./Touchable";
+import { Typography } from "./Typography";
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 export const BUTTON_VARIANTS = Object.freeze({
   SOLID: "solid",
@@ -203,6 +205,8 @@ export const Button = React.forwardRef(
               color={color || getButtonColors().color}
               fontFamily={fontFamily || theme.fonts.sf500}
               fontSize={fontSize}
+              ml={LeftIcon ? moderateScale(4) : 0}
+              mr={RightIcon ? moderateScale(4) : 0}
               mx={moderateScale(2)}
               textAlign="center"
               {...labelStyle}

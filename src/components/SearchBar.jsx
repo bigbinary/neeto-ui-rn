@@ -1,15 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Dimensions, TouchableWithoutFeedback, StyleSheet } from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 
-import { Search } from "@bigbinary/neeto-icons-rn";
+import { Close, Search } from "@bigbinary/neeto-icons-rn";
 import PropTypes from "prop-types";
-import Animated, {
-  Easing,
-  interpolate,
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
+import { Easing, useSharedValue, withTiming } from "react-native-reanimated";
 import { moderateScale } from "react-native-size-matters";
 import styled from "styled-components/native";
 import {
@@ -21,9 +15,11 @@ import {
   color,
 } from "styled-system";
 
-import { Container, Touchable, Typography } from "@components";
 import { useDebounce } from "@hooks";
 import { theme } from "@theme";
+
+import { Container } from "./Container";
+import { Touchable } from "./Touchable";
 
 const TextInput = styled.TextInput`
   ${flexbox}
@@ -55,9 +51,6 @@ const TextInput = styled.TextInput`
  * }
  * ```
  */
-
-const { width: screenWidth } = Dimensions.get("window");
-const buttonSize = moderateScale(screenWidth * 0.19);
 
 export const SearchBar = ({
   placeholder = "Search",
@@ -93,13 +86,7 @@ export const SearchBar = ({
     });
   };
 
-  const cancelButtonStyle = useAnimatedStyle(() => ({
-    width: interpolate(buttonWidth.value, [0, 1], [0, buttonSize]),
-    opacity: buttonOpacity.value,
-  }));
-
   const onCancelHandle = () => {
-    animateSearchInput(0);
     setSearchText("");
     inputRef.current.blur();
     onCancel();
@@ -150,33 +137,27 @@ export const SearchBar = ({
             }}
             {...searchbarProps}
           />
+          {showCancelButton && (
+            <Container>
+              <Touchable
+                flexGrow={1}
+                height={moderateScale(42)}
+                justifyContent="center"
+                px={moderateScale(8)}
+                onPress={onCancelHandle}
+              >
+                <Close
+                  color={theme.colors.font.grey600}
+                  size={moderateScale(22)}
+                />
+              </Touchable>
+            </Container>
+          )}
         </Container>
       </TouchableWithoutFeedback>
-      {showCancelButton && (
-        <Animated.View style={[styles.cancelButtonWrapper, cancelButtonStyle]}>
-          <Touchable
-            flexGrow={1}
-            height={moderateScale(42)}
-            justifyContent="center"
-            px={moderateScale(8)}
-            onPress={onCancelHandle}
-          >
-            <Typography fontFamily={theme.fonts.sf500} numberOfLines={1}>
-              Cancel
-            </Typography>
-          </Touchable>
-        </Animated.View>
-      )}
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  cancelButtonWrapper: {
-    alignItems: "flex-end",
-    justifyContent: "center",
-  },
-});
 
 SearchBar.propTypes = {
   /**

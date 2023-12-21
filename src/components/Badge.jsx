@@ -3,7 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Typography, Container } from "@components";
+import { Container } from "./Container";
+import { Typography } from "./Typography";
 
 /**
  *
@@ -58,7 +59,7 @@ export const Badge = ({
       borderRadius={moderateScale(15)}
       justifyContent="center"
       px={moderateScale(6)}
-      py={moderateScale(1)}
+      py={moderateScale(2)}
       {...rest}
     >
       {!!content && (

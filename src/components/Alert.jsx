@@ -4,7 +4,9 @@ import { StyleSheet } from "react-native";
 import Modal from "react-native-modal";
 import { moderateScale } from "react-native-size-matters";
 
-import { Typography, Container, Button } from "@components";
+import { Button } from "./Button";
+import { Container } from "./Container";
+import { Typography } from "./Typography";
 
 const useAlertHook = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -172,7 +174,12 @@ export const Alert = () => {
         padding={moderateScale(18)}
         width="90%"
       >
-        <Typography color="font.grey800" fontFamily="sf600" fontSize="3xl">
+        <Typography
+          color="font.grey800"
+          fontFamily="sf600"
+          fontSize="3xl"
+          textAlign="center"
+        >
           {title}
         </Typography>
         <Container alignItems="center" justifyContent="center">

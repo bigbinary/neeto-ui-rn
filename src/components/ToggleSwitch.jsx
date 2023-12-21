@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Touchable } from "@components";
+import { Container } from "./Container";
+import { Touchable } from "./Touchable";
 
 /**
  * ToggleSwitch component is a simple switch toggle component describes what is being switched ON/OFF.
@@ -54,11 +55,11 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   };
 
   const containerBg = value
-    ? theme.colors.background.purple500
+    ? theme.colors.background.success
     : "background.grey300";
 
   const iconColor = value
-    ? theme.colors.background.purple500
+    ? theme.colors.background.success
     : theme.colors.font.grey500;
 
   const Icon = value ? Check : Close;
@@ -66,29 +67,29 @@ export const ToggleSwitch = ({ value, onValueChange, disabled }) => {
   return (
     <Touchable
       bg={containerBg}
-      borderRadius={moderateScale(70)}
+      borderRadius={moderateScale(75)}
       disabled={disabled}
-      height={moderateScale(24)}
+      height={moderateScale(28)}
       hitSlop={10}
       justifyContent="center"
       opacity={disabled ? 0.5 : 1}
       px={moderateScale(5)}
-      width={moderateScale(44)}
+      width={moderateScale(50)}
       onPress={() => onValueChange(!value)}
     >
       <Animated.View style={{ transform: [{ translateX: animatedPosition }] }}>
         <Container
           alignItems="center"
           bg="background.white"
-          borderRadius={moderateScale(8)}
+          borderRadius={moderateScale(10)}
           height={moderateScale(16)}
           justifyContent="center"
           width={moderateScale(16)}
         >
           <Icon
             color={iconColor}
-            size={moderateScale(18)}
-            viewBox={value ? "0 0 22 27" : "0 0 25 25"}
+            size={moderateScale(16)}
+            viewBox={value ? "0 0 25 27" : "0 0 25 25"}
           />
         </Container>
       </Animated.View>

@@ -4,7 +4,8 @@ import { Linking } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 
-import { Container, Typography } from "@components";
+import { Container } from "./Container";
+import { Typography } from "./Typography";
 
 /**
  *
@@ -58,7 +59,7 @@ export const OrganizationItem = ({
       </Typography>
     </Container>
     <Typography
-      color="font.grey"
+      color="font.grey700"
       fontFamily="sf500"
       fontSize="m"
       mt="8px"
@@ -67,7 +68,7 @@ export const OrganizationItem = ({
       {name}
     </Typography>
     <Typography
-      color="font.grey"
+      color="font.grey700"
       fontFamily="sf500"
       fontSize="m"
       onPress={() => Linking.openURL(`https://${subdomain}`)}
