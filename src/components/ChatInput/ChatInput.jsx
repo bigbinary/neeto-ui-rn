@@ -14,6 +14,7 @@ import {
   Forward,
   CannedResponses,
   Down,
+  SendPlane,
 } from "@bigbinary/neeto-icons-rn";
 import { parse } from "node-html-parser";
 import PropTypes from "prop-types";
@@ -21,7 +22,6 @@ import { moderateScale } from "react-native-size-matters";
 
 import ExpandSVG from "@assets/icons/expand.svg";
 import MinimizeSVG from "@assets/icons/minimize.svg";
-import { Container, LineLoader, Popover, Button } from "@components";
 
 import { AttachmentsView } from "./AttachmentsView";
 import { EmailFields } from "./EmailFields";
@@ -29,6 +29,10 @@ import { IconButton } from "./IconButton";
 import { MentionsInputWrapper } from "./MentionsInputWrapper";
 
 import { theme } from "../../theme";
+import { Button } from "../Button";
+import { Container } from "../Container";
+import { LineLoader } from "../LineLoader";
+import { Popover } from "../Popover";
 
 // eslint-disable-next-line @bigbinary/neeto/no-dangling-constants
 const OPTION_TYPES = {
@@ -44,7 +48,6 @@ const placeholders = {
 };
 
 const labels = {
-  [OPTION_TYPES.REPLY]: "Reply",
   [OPTION_TYPES.NOTE]: "Add note",
   [OPTION_TYPES.FORWARD]: "Forward",
 };
@@ -288,7 +291,7 @@ export const ChatInput = forwardRef(
             ...convertMentionsToHTMLAndPlainText({ suggestions, value }),
           });
         },
-      }[selectedOption]());
+      })[selectedOption]();
     }, [
       bccEmails,
       ccEmails,
@@ -311,6 +314,7 @@ export const ChatInput = forwardRef(
       <Container>
         <LineLoader
           backgroundColor={theme.colors.background.grey400}
+          height={moderateScale(1)}
           isLoading={isLoading}
         />
         <Container
@@ -391,7 +395,9 @@ export const ChatInput = forwardRef(
                   iconProps={{
                     viewBox: "0 0 37 37",
                     size: moderateScale(30),
-                    color: theme.colors.font.grey500,
+                    color: isReplyOptionSelected
+                      ? theme.colors.font.grey700
+                      : theme.colors.font.grey500,
                   }}
                   onPress={onReplyClickHandler}
                 />
@@ -433,9 +439,19 @@ export const ChatInput = forwardRef(
               <Container alignItems="center" flexDirection="row">
                 <Button
                   height={moderateScale(30)}
-                  label={labels[selectedOption]}
+                  label={labels[selectedOption] ?? ""}
                   pr={0}
                   variant="text"
+                  RightIcon={
+                    selectedOption === OPTION_TYPES.REPLY
+                      ? () => (
+                          <SendPlane
+                            color={theme.colors.font.primary}
+                            size={moderateScale(22)}
+                          />
+                        )
+                      : null
+                  }
                   disabled={
                     shouldDisableWhenForwardAndToFieldMissing || disabled
                   }
