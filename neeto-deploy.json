@@ -1,0 +1,10 @@
+{
+  "name": "neetoUIRN",
+  "displayName": "neetoUIRN",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
