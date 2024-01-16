@@ -1,2 +1,2 @@
 release: yarn -v
-web: yarn run storybook-web
+web: yarn run storybook
