@@ -57,7 +57,7 @@ export const OnBoarding = ({
 
   const handleOnPress = () => {
     if (activeIndex !== slides.length - 1) {
-      setTimeout(() => onBoardingRef.current.snapToNext(), 250);
+      setTimeout(() => onBoardingRef.current?.snapToNext(), 250);
       setActiveIndex(onBoardingRef.current._activeItem);
     } else onComplete();
   };
