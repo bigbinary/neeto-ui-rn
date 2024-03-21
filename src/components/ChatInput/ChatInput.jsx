@@ -227,9 +227,7 @@ export const ChatInput = forwardRef(
 
     const showEmailFieldsAndAttachments = () => {
       setIsAttachmentsVisible(true);
-      isNoteOptionSelected
-        ? setIsEmailFieldsVisible(false)
-        : setIsEmailFieldsVisible(true);
+      !isNoteOptionSelected && setIsEmailFieldsVisible(true);
     };
 
     const hideEmailFieldsAndAttachments = () => {

@@ -8,7 +8,7 @@ import { flexbox, space, border, color, layout } from "styled-system";
 
 import { theme } from "@theme";
 
-import { getShadowStyles } from "../utils/utils";
+import { getShadowStyles } from "../utils";
 
 const StyledTouchableOpacity = styled(TouchableOpacity)`
   ${flexbox}
