@@ -5,10 +5,10 @@ import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import Chip from "./Chip";
-import Container from "./Container";
-import Input from "./Input";
-import Typography from "./Typography";
+import { Chip } from "./Chip";
+import { Container } from "./Container";
+import { Input } from "./Input";
+import { Typography } from "./Typography";
 
 import { endsWithChars, trimChars, isValidEmail } from "../utils";
 
