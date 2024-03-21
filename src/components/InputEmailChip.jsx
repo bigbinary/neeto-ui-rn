@@ -12,16 +12,6 @@ import { Typography } from "./Typography";
 
 import { endsWithChars, trimChars, isValidEmail } from "../utils";
 
-const gap = moderateScale(4);
-
-const chipWrapperStyle = {
-  pt: gap,
-};
-
-const getChipContainerStyle = isReadyForDeletion => ({
-  borderColor: isReadyForDeletion ? "border.danger" : "border.grey200",
-});
-
 export const InputEmailChip = ({
   disabled,
   label,
@@ -30,11 +20,20 @@ export const InputEmailChip = ({
   delimiters = [" ", ","],
   ...rest
 }) => {
+  const [textValue, setTextValue] = useState("");
+  const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
+
   const theme = useContext(ThemeContext);
   const inputRef = useRef();
 
-  const [textValue, setTextValue] = useState("");
-  const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
+  const gap = moderateScale(4);
+  const chipWrapperStyle = {
+    pt: gap,
+  };
+
+  const getChipContainerStyle = isReadyForDeletion => ({
+    borderColor: isReadyForDeletion ? "border.danger" : "border.grey200",
+  });
 
   const handleKeyPress = event => {
     const { key } = event.nativeEvent || {};
