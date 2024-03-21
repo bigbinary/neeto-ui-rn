@@ -227,7 +227,9 @@ export const ChatInput = forwardRef(
 
     const showEmailFieldsAndAttachments = () => {
       setIsAttachmentsVisible(true);
-      setIsEmailFieldsVisible(true);
+      isNoteOptionSelected
+        ? setIsEmailFieldsVisible(false)
+        : setIsEmailFieldsVisible(true);
     };
 
     const hideEmailFieldsAndAttachments = () => {
@@ -305,7 +307,7 @@ export const ChatInput = forwardRef(
     ]);
 
     const shouldShowExpandAndMinimizeButton =
-      attachmentsCount > 0 || toEmails.length > 0;
+      attachmentsCount > 0 || (toEmails.length > 0 && !isNoteOptionSelected);
 
     const shouldDisableWhenForwardAndToFieldMissing =
       isForwardOptionSelected && toEmailsForForward.length === 0;
@@ -353,9 +355,9 @@ export const ChatInput = forwardRef(
                 onTouchStart={hideEmailFieldsAndAttachments}
                 {...rest}
               />
-              <Container alignSelf="center">
-                {shouldShowExpandAndMinimizeButton &&
-                  (isEmailFieldsVisible || isAttachmentsVisible ? (
+              {shouldShowExpandAndMinimizeButton && (
+                <Container alignSelf="center">
+                  {isEmailFieldsVisible || isAttachmentsVisible ? (
                     <IconButton
                       Icon={MinimizeSVG}
                       height={moderateScale(30)}
@@ -371,8 +373,9 @@ export const ChatInput = forwardRef(
                       width={moderateScale(30)}
                       onPress={showEmailFieldsAndAttachments}
                     />
-                  ))}
-              </Container>
+                  )}
+                </Container>
+              )}
             </Container>
             <AttachmentsView
               Attachments={Attachments}
