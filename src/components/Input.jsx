@@ -29,7 +29,7 @@ import { Button } from "./Button";
 import { Container } from "./Container";
 
 import { theme } from "../theme";
-import { isAndroid } from "../utils/utils";
+import { isAndroid } from "../utils";
 
 const TextInput = styled.TextInput`
   ${flexbox}

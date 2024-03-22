@@ -14,7 +14,7 @@ import {
 
 import { Ripple } from "./Ripple";
 
-import { getShadowStyles } from "../utils/utils";
+import { getShadowStyles } from "../utils";
 
 const StyledRipple = styled(Ripple)`
   ${buttonStyle}

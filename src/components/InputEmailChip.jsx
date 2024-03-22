@@ -1,23 +1,16 @@
 import React, { useContext, useRef, useState } from "react";
-import { Platform, StyleSheet, TextInput } from "react-native";
+import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
-import { Container, Chip, Input, Typography } from "@components";
+import { Chip } from "./Chip";
+import { Container } from "./Container";
+import { Input } from "./Input";
+import { Typography } from "./Typography";
 
-import { endsWithChars, trimChars, isValidEmail } from "../utils/utils";
-
-const gap = moderateScale(4);
-
-const chipWrapperStyle = {
-  pt: gap,
-};
-
-const getChipContainerStyle = isReadyForDeletion => ({
-  borderColor: isReadyForDeletion ? "border.danger" : "border.grey200",
-});
+import { endsWithChars, trimChars, isValidEmail } from "../utils";
 
 export const InputEmailChip = ({
   disabled,
@@ -27,12 +20,20 @@ export const InputEmailChip = ({
   delimiters = [" ", ","],
   ...rest
 }) => {
+  const [textValue, setTextValue] = useState("");
+  const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
+
   const theme = useContext(ThemeContext);
   const inputRef = useRef();
 
-  const [textValue, setTextValue] = useState("");
-  const [shouldShowInput, setShouldShowInput] = useState(false);
-  const [emailIndexForDeletion, setEmailIndexForDeletion] = useState(-1);
+  const gap = moderateScale(4);
+  const chipWrapperStyle = {
+    pt: gap,
+  };
+
+  const getChipContainerStyle = isReadyForDeletion => ({
+    borderColor: isReadyForDeletion ? "border.danger" : "border.grey200",
+  });
 
   const handleKeyPress = event => {
     const { key } = event.nativeEvent || {};
@@ -66,20 +67,6 @@ export const InputEmailChip = ({
 
   const handleInputTouchStart = () => setEmailIndexForDeletion(-1);
 
-  const handleTouchStart = () => {
-    if (!inputRef.current?.isFocused()) {
-      inputRef.current?.focus();
-    }
-  };
-
-  const handleOnFocus = () => setShouldShowInput(true);
-
-  const handleOnBlur = () => {
-    if (textValue.trim() === "") {
-      setShouldShowInput(false);
-    }
-  };
-
   const handleOnEndEditing = event => {
     checkAndUpdateEmails(event.nativeEvent.text);
   };
@@ -111,6 +98,7 @@ export const InputEmailChip = ({
   };
 
   const inputProps = {
+    autoComplete: "off",
     autoCorrect: false,
     fontSize: "xs",
     returnKeyType: "done",
@@ -173,7 +161,6 @@ export const InputEmailChip = ({
               ios: gap,
               android: moderateScale(7),
             })}
-            {...(shouldShowInput || emails.length === 0 ? {} : { height: 0 })}
           >
             <Input
               noBorder
@@ -188,8 +175,6 @@ export const InputEmailChip = ({
                 onKeyPress: handleKeyPress,
                 onSubmitEditing: handleSubmitEditing,
                 onTouchStart: handleInputTouchStart,
-                onFocus: handleOnFocus,
-                onBlur: handleOnBlur,
                 onEndEditing: handleOnEndEditing,
                 borderBottomWidth: moderateScale(2),
                 borderColor: "background.grey200",
@@ -199,27 +184,9 @@ export const InputEmailChip = ({
           </Container>
         )}
       </Container>
-      {!disabled && (
-        <TextInput
-          editable={false}
-          pointerEvents={shouldShowInput ? "box-none" : "auto"}
-          style={styles.touchableTextInputWrapper}
-          onTouchStart={handleTouchStart}
-        />
-      )}
     </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  touchableTextInputWrapper: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
 
 InputEmailChip.propTypes = {
   /**
