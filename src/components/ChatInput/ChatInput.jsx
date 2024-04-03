@@ -432,8 +432,11 @@ export const ChatInput = forwardRef(
                     />
                   )}
                 <IconButton
+                  {...(isLoading && {
+                    iconProps: { color: "grey" },
+                  })}
                   Icon={Attachment}
-                  opacity={0.5}
+                  disabled={isLoading}
                   onPress={onAddAttachmentsClickHandler}
                 />
               </Container>
