@@ -22,7 +22,11 @@ import {
   position,
 } from "styled-system";
 
-import { BottomSheet, CheckBox, Container, Alert, Loader } from "@components";
+import { Alert } from "./Alert";
+import { BottomSheet } from "./BottomSheet";
+import { CheckBox } from "./CheckBox";
+import { Container } from "./Container";
+import { Loader } from "./Loader";
 
 const Typography = styled.Text`
   ${textStyle}
@@ -421,7 +425,10 @@ export const MultiSelect = ({
               {isLoading ? (
                 <Loader color={theme.colors.background.base} />
               ) : (
-                <OpenCloseIcon color="grey" size={moderateScale(20)} />
+                <OpenCloseIcon
+                  color={theme.colors.background.grey800}
+                  size={moderateScale(20)}
+                />
               )}
             </Container>
           </Container>
