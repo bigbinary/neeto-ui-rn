@@ -4,7 +4,7 @@ import {
   Checkbox as CheckboxIcon,
   CheckboxInactive,
 } from "@bigbinary/neeto-icons-rn";
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
 import { ThemeContext } from "styled-components/native";
 
@@ -64,6 +64,7 @@ export const CheckBox = ({
   label,
   checkIconStyle,
   labelStyle,
+  required,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -87,6 +88,7 @@ export const CheckBox = ({
       color: theme.colors.font.grey400,
     },
   };
+  const updatedLabel = required ? `${label}*` : label;
 
   const Icon = checked ? CheckboxIcon : CheckboxInactive;
 
@@ -109,7 +111,7 @@ export const CheckBox = ({
         {...(disabled && disabledProps.labelProps)}
         {...labelStyle}
       >
-        {label}
+        {updatedLabel}
       </Typography>
       <Icon
         color={theme.colors.font.primary}
@@ -124,30 +126,35 @@ CheckBox.propTypes = {
   /**
    * Whether checkbox is checked or not.
    */
-  checked: Proptypes.bool.isRequired,
+  checked: PropTypes.bool.isRequired,
   /**
    * Function to execute on press.
    */
-  onSelect: Proptypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
   /**
    * To disable the component.
    */
-  disabled: Proptypes.bool,
+  disabled: PropTypes.bool,
   /**
    * Text label to be shown with radio button.
    */
-  label: Proptypes.string,
+  label: PropTypes.string,
   /**
    * Customize check icon style.
    */
-  checkIconStyle: Proptypes.object,
+  checkIconStyle: PropTypes.object,
   /**
    * Customize label style.
    */
-  labelStyle: Proptypes.object,
+  labelStyle: PropTypes.object,
+  /**
+   * To add required label
+   */
+  required: PropTypes.bool,
 };
 
 CheckBox.defaultProps = {
   checked: false,
   onSelect: () => {},
+  required: false,
 };

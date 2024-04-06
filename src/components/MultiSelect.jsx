@@ -211,6 +211,7 @@ export const MultiSelect = ({
   onBackdropPress,
   searchBarProps,
   confirmationAlertObj,
+  required,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -237,6 +238,8 @@ export const MultiSelect = ({
 
       return formatStr(optionLabel).includes(formatStr(searchQuery));
     });
+
+  const updatedLabel = required ? `${label}*` : label;
 
   const isOptionsEmpty = !options || options?.length === 0;
   const isSearchedOptionsEmpty =
@@ -374,7 +377,7 @@ export const MultiSelect = ({
                 { marginLeft: moderateScale(2), ...labelStyle },
               ]}
             >
-              {label}
+              {updatedLabel}
             </AnimatedLabel>
             {!multipleOptionsSelected && <Container />}
             {multipleOptionsSelected && (
@@ -615,6 +618,10 @@ MultiSelect.propTypes = {
    * Object to update the searchbar component
    */
   searchBarProps: PropTypes.object,
+  /**
+   * To add required label
+   */
+  required: PropTypes.bool,
 };
 
 MultiSelect.defaultProps = {
@@ -635,4 +642,5 @@ MultiSelect.defaultProps = {
   onBackdropPress: () => {},
   searchBarProps: {},
   confirmationAlertObj: {},
+  required: false,
 };
