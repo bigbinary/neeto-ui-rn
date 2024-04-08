@@ -102,7 +102,7 @@ const AnimatedLabel = Animated.createAnimatedComponent(Typography);
 export const Input = ({
   label,
   value = "",
-  required = false,
+  isRequiredLabel = false,
   onChangeText = () => {},
   onBlur = () => {},
   errorMessage = null,
@@ -122,7 +122,7 @@ export const Input = ({
   const containerRef = useRef();
   const animatedController = useRef(new Animated.Value(0)).current;
 
-  const updatedLabel = required ? `${label}*` : label;
+  const updatedLabel = isRequiredLabel ? `${label}*` : label;
 
   useEffect(() => {
     if (autoFocus) {
@@ -354,7 +354,7 @@ Input.propTypes = {
   /**
    * To add required label
    */
-  required: PropTypes.bool,
+  isRequiredLabel: PropTypes.bool,
 };
 
 export const styles = StyleSheet.create({

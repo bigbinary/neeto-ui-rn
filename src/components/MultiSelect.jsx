@@ -211,7 +211,7 @@ export const MultiSelect = ({
   onBackdropPress,
   searchBarProps,
   confirmationAlertObj,
-  required,
+  isRequiredLabel,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -239,7 +239,7 @@ export const MultiSelect = ({
       return formatStr(optionLabel).includes(formatStr(searchQuery));
     });
 
-  const updatedLabel = required ? `${label}*` : label;
+  const updatedLabel = isRequiredLabel ? `${label}*` : label;
 
   const isOptionsEmpty = !options || options?.length === 0;
   const isSearchedOptionsEmpty =
@@ -621,7 +621,7 @@ MultiSelect.propTypes = {
   /**
    * To add required label
    */
-  required: PropTypes.bool,
+  isRequiredLabel: PropTypes.bool,
 };
 
 MultiSelect.defaultProps = {
@@ -642,5 +642,5 @@ MultiSelect.defaultProps = {
   onBackdropPress: () => {},
   searchBarProps: {},
   confirmationAlertObj: {},
-  required: false,
+  isRequiredLabel: false,
 };

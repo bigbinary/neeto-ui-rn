@@ -64,7 +64,7 @@ export const CheckBox = ({
   label,
   checkIconStyle,
   labelStyle,
-  required,
+  isRequiredLabel,
   ...rest
 }) => {
   const theme = useContext(ThemeContext);
@@ -88,7 +88,7 @@ export const CheckBox = ({
       color: theme.colors.font.grey400,
     },
   };
-  const updatedLabel = required ? `${label}*` : label;
+  const updatedLabel = isRequiredLabel ? `${label}*` : label;
 
   const Icon = checked ? CheckboxIcon : CheckboxInactive;
 
@@ -150,11 +150,11 @@ CheckBox.propTypes = {
   /**
    * To add required label
    */
-  required: PropTypes.bool,
+  isRequiredLabel: PropTypes.bool,
 };
 
 CheckBox.defaultProps = {
   checked: false,
   onSelect: () => {},
-  required: false,
+  isRequiredLabel: false,
 };
