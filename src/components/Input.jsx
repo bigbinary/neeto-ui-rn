@@ -102,6 +102,7 @@ const AnimatedLabel = Animated.createAnimatedComponent(Typography);
 export const Input = ({
   label,
   value = "",
+  isRequiredLabel = false,
   onChangeText = () => {},
   onBlur = () => {},
   errorMessage = null,
@@ -120,6 +121,8 @@ export const Input = ({
   const inputRef = useRef();
   const containerRef = useRef();
   const animatedController = useRef(new Animated.Value(0)).current;
+
+  const updatedLabel = isRequiredLabel ? `${label}*` : label;
 
   useEffect(() => {
     if (autoFocus) {
@@ -216,7 +219,7 @@ export const Input = ({
                 style={labelStyles}
                 zIndex={1}
               >
-                {label}
+                {updatedLabel}
               </AnimatedLabel>
             )}
             <TextInput
@@ -348,6 +351,10 @@ Input.propTypes = {
    * Show Input AccessoryView on iOS
    */
   showInputAccessoryView: PropTypes.bool,
+  /**
+   * To add required label
+   */
+  isRequiredLabel: PropTypes.bool,
 };
 
 export const styles = StyleSheet.create({
