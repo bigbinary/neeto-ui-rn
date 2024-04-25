@@ -1,7 +1,6 @@
 import React, {
   useEffect,
   useRef,
-  useCallback,
   useState,
   forwardRef,
   useImperativeHandle,
@@ -265,7 +264,7 @@ export const ChatInput = forwardRef(
       setIsAttachmentsVisible(true);
     };
 
-    const onActionHandler = useCallback(() => {
+    const onActionHandler = () => {
       ({
         [OPTION_TYPES.REPLY]: () => {
           onReply({
@@ -292,17 +291,7 @@ export const ChatInput = forwardRef(
           });
         },
       })[selectedOption]();
-    }, [
-      bccEmails,
-      ccEmails,
-      onAddNote,
-      onForward,
-      onReply,
-      selectedOption,
-      suggestions,
-      toEmails,
-      value,
-    ]);
+    };
 
     const shouldShowExpandAndMinimizeButton =
       attachmentsCount > 0 || (toEmails.length > 0 && !isNoteOptionSelected);
@@ -350,7 +339,6 @@ export const ChatInput = forwardRef(
                   selectedOption
                 )}
                 onChange={onChangeText}
-                onTouchStart={hideEmailFieldsAndAttachments}
                 {...rest}
               />
               {shouldShowExpandAndMinimizeButton && (
@@ -462,7 +450,10 @@ export const ChatInput = forwardRef(
                   labelStyle={{
                     mx: moderateScale(0),
                   }}
-                  onPress={onActionHandler}
+                  onPress={() => {
+                    onActionHandler();
+                    hideEmailFieldsAndAttachments();
+                  }}
                 />
                 {showReplyMenuOptions && isReplyOptionSelected && (
                   <Popover
