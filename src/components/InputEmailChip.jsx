@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Platform } from "react-native";
 
 import PropTypes from "prop-types";
@@ -109,6 +109,17 @@ export const InputEmailChip = ({
     selectionColor:
       emailIndexForDeletion === -1 ? theme.colors.font.base : "transparent",
   };
+
+  useEffect(
+    () => () => {
+      setTextValue(prevTextValue => {
+        checkAndUpdateEmails(prevTextValue);
+
+        return prevTextValue;
+      });
+    },
+    []
+  );
 
   return (
     <Container
