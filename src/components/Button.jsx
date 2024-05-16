@@ -238,7 +238,7 @@ Button.propTypes = {
   /**
    * Takes the text that needs to be displayed inside the button.
    */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /**
    * Supported Type: 'text' | 'solid'
    * You can change the mode to adjust the styling.
