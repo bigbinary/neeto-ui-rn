@@ -201,18 +201,20 @@ export const Button = React.forwardRef(
         ) : (
           <>
             {LeftIcon && <LeftIcon />}
-            <Typography
-              color={color || getButtonColors().color}
-              fontFamily={fontFamily || theme.fonts.sf500}
-              fontSize={fontSize}
-              ml={LeftIcon ? moderateScale(4) : 0}
-              mr={RightIcon ? moderateScale(4) : 0}
-              mx={moderateScale(2)}
-              textAlign="center"
-              {...labelStyle}
-            >
-              {label}
-            </Typography>
+            {label?.length > 0 && (
+              <Typography
+                color={color || getButtonColors().color}
+                fontFamily={fontFamily || theme.fonts.sf500}
+                fontSize={fontSize}
+                ml={LeftIcon ? moderateScale(4) : 0}
+                mr={RightIcon ? moderateScale(4) : 0}
+                mx={moderateScale(2)}
+                textAlign="center"
+                {...labelStyle}
+              >
+                {label}
+              </Typography>
+            )}
             {RightIcon && <RightIcon />}
           </>
         )}
