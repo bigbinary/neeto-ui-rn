@@ -260,7 +260,6 @@ export const ChatInput = forwardRef(
       } else {
         onAttachment();
       }
-      setIsEmailFieldsVisible(false);
       setIsAttachmentsVisible(true);
     };
 
