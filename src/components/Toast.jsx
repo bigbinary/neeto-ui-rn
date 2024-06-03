@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useWindowDimensions } from "react-native";
 
 import { Close } from "@bigbinary/neeto-icons-rn";
@@ -13,23 +13,29 @@ import ErrorIcon from "@assets/icons/error.svg";
 import InfoIcon from "@assets/icons/info.svg";
 import SuccessIcon from "@assets/icons/success.svg";
 import WarningIcon from "@assets/icons/warning.svg";
+// eslint-disable-next-line import/no-cycle
 import { Container, Typography, Card, Touchable } from "@components";
 import { defaultToasterConfig } from "@config";
 
-let timer;
 const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
   const theme = useContext(ThemeContext);
   const { width } = useWindowDimensions();
 
-  useEffect(() => {
-    if (isVisible) {
-      timer = setTimeout(() => {
-        hide();
-      }, 4000);
-    }
+  const timerRef = useRef(null);
 
-    return;
-  }, [isVisible, hide]);
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const timeoutDuration =
+      type === "error" && text2.length >= 25 ? 10000 : 4000;
+    timerRef.current = setTimeout(hide, timeoutDuration);
+
+    () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [isVisible, type, text2, hide]);
 
   const Icon = () => {
     switch (type) {
@@ -59,7 +65,7 @@ const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
       px={moderateScale(10)}
       width={width - moderateScale(20)}
       onPressIn={() => {
-        clearTimeout(timer);
+        clearTimeout(timerRef.current);
       }}
     >
       <Container
@@ -100,7 +106,7 @@ const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
           left: moderateScale(5),
         }}
         onPress={() => {
-          clearTimeout(timer);
+          clearTimeout(timerRef.current);
           hide();
         }}
       >
