@@ -6,8 +6,8 @@ import { styled } from "linaria/react";
 import { Link, Header } from "component-docs/components";
 
 import color from "color";
-import GooglePlayIcon from "../../components/google-play-icon";
-import IphoneIcon from "../../components/iphone-icon";
+import GooglePlayIcon from "../../assets/icons/google-play-icon";
+import IphoneIcon from "../../assets/icons/iphone-icon";
 import Content from "./components/Content";
 // import GithubIcon from "../../components/github-icon";
 
