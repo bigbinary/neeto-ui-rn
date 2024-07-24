@@ -27,7 +27,7 @@ const ToastComponent = ({ type, text1, text2, hide, isVisible }) => {
     if (!isVisible) return;
 
     const timeoutDuration =
-      type === "error" && text2.length >= 25 ? 10000 : 4000;
+      type === "error" && text2?.length >= 25 ? 10000 : 4000;
     timerRef.current = setTimeout(hide, timeoutDuration);
 
     () => {
