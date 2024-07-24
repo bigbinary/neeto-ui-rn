@@ -194,6 +194,11 @@ Toast.show = T.show;
 Toast.hide = T.hide;
 
 Toast.propTypes = {
+  text1: "",
+  text2: "",
+};
+
+Toast.propTypes = {
   /**
    * configuration
    */
