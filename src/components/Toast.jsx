@@ -193,7 +193,7 @@ export const Toast = ({ toasterConfig, ...rest }) => {
 Toast.show = T.show;
 Toast.hide = T.hide;
 
-Toast.propTypes = {
+Toast.defaultProps = {
   text1: "",
   text2: "",
 };
