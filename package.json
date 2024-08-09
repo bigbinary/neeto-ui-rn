@@ -1,7 +1,7 @@
 {
   "name": "@bigbinary/neetoui-rn",
   "version": "0.0.288",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "author": "BigBinary",
   "license": "MIT",
   "description": "The neetoUI-RN library drives the experience in all neeto product's React Native applications built at BigBinary.",
@@ -10,7 +10,7 @@
     "ios": "yarn prestart && react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "build": "rm -rf lib && babel src --out-dir lib",
+    "build": "rm -rf dist && babel src --out-dir dist",
     "lint": "eslint .",
     "format": "prettier --write .",
     "flow": "flow",
@@ -29,7 +29,7 @@
     "postinstall": "patch-package"
   },
   "files": [
-    "lib",
+    "dist",
     "react-native.config.js",
     "index.d.ts",
     "assets"
