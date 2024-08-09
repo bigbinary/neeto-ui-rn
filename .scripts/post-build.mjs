@@ -25,3 +25,4 @@ function copyToBuildFolder(srcBase, folders) {
 }
 
 createPackageFile();
+copyToBuildFolder(".", ["react-native.config.js", "index.d.ts"]);

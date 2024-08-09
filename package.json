@@ -1,7 +1,7 @@
 {
   "name": "@bigbinary/neetoui-rn",
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": ".",
   "author": "BigBinary",
   "license": "MIT",
   "description": "The neetoUI-RN library drives the experience in all neeto product's React Native applications built at BigBinary.",
@@ -28,15 +28,9 @@
     "preweb": "yarn get-stories",
     "storybook": "yarn prestart && BABEL_ENV=production webpack serve --mode=production --config webpack.config.js",
     "prepare": "husky install",
-    "yalc:publish": "yarn build && yalc publish --private",
+    "yalc:publish": "yarn build && yalc publish dist",
     "postinstall": "patch-package"
   },
-  "files": [
-    "dist",
-    "react-native.config.js",
-    "index.d.ts",
-    "assets"
-  ],
   "lint-staged": {
     "src/**/*.{js,es6,jsx,ts,tsx}|storybook/stories**/*.js|.storybook/preview.js|.storybook/main.js|.storybook/Storybook.js": [
       "./node_modules/prettier/bin-prettier.js --write",
