@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Platform } from "react-native"; // Added Platform import for Android-specific fixes
+import { Platform } from "react-native";
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -15,7 +15,8 @@ import {
   system,
 } from "styled-system";
 
-// Enhanced Text component with Android-specific fixes
+import { theme } from "../theme";
+
 export const Text = styled.Text`
   ${textStyle}
   ${space}
@@ -31,20 +32,10 @@ export const Text = styled.Text`
     },
     textTransform: { property: "textTransform", cssProperty: "textTransform" },
   })}
-
-  /* Android-specific fixes for text rendering */
-  /* 1. Disable default font padding on Android to prevent descender clipping */
-  /* 2. Ensure text is vertically centered */
-  /* 3. Ensure proper line height for descenders */
   ${Platform.select({
     android: `
       include-font-padding: false;
       text-align-vertical: center;
-      line-height: ${props => {
-        const fontSize = props.fontSize || 16;
-
-        return `${Math.floor(fontSize * 1.3)}px`;
-      }};
     `,
     ios: "",
   })}
@@ -95,25 +86,52 @@ export const Text = styled.Text`
 
 export const Typography = ({
   children,
-  lineHeightMultiplier = 1.3, // New prop to control line height
+  fontSize,
+  lineHeightMultiplier = 1.3,
+  style,
   ...rest
-}) => (
-  <Text
-    {...rest}
-    // Android-specific text rendering properties
-    android_hyphenationFrequency="full"
-    textBreakStrategy="simple"
-    style={[
-      // Dynamic line height calculation for Android
-      Platform.OS === "android" && {
-        lineHeight: Math.floor((rest.fontSize || 16) * lineHeightMultiplier),
-      },
-      rest.style,
-    ]}
-  >
-    {children}
-  </Text>
-);
+}) => {
+  const parseSize = size => {
+    if (typeof size === "number") return size;
+
+    if (typeof size === "string") {
+      // Check if it's a theme token
+      const themeSize = theme.fontSizes[size];
+      if (themeSize !== undefined) {
+        return themeSize;
+      }
+
+      const parsed = parseFloat(size);
+
+      return isNaN(parsed) ? theme.fontSizes.s : parsed;
+    }
+
+    return theme.fontSizes.s;
+  };
+
+  const calculatedLineHeight = React.useMemo(() => {
+    const size = parseSize(fontSize || rest.fontSize || theme.fontSizes.s);
+
+    return Math.floor(size * lineHeightMultiplier);
+  }, [fontSize, rest.fontSize, lineHeightMultiplier]);
+
+  return (
+    <Text
+      android_hyphenationFrequency="full"
+      fontSize={fontSize}
+      textBreakStrategy="simple"
+      {...rest}
+      style={[
+        Platform.OS === "android" && {
+          lineHeight: calculatedLineHeight,
+        },
+        style,
+      ]}
+    >
+      {children}
+    </Text>
+  );
+};
 
 Typography.propTypes = {
   ...propTypes.space,
@@ -123,12 +141,12 @@ Typography.propTypes = {
   ...propTypes.color,
   ...propTypes.textStyle,
   children: PropTypes.node,
-  // New prop type for line height control
+  fontSize: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   lineHeightMultiplier: PropTypes.number,
+  style: PropTypes.object,
 };
 
 Typography.defaultProps = {
   textStyle: "defaultTextStyle",
-  // Default value for line height multiplier
   lineHeightMultiplier: 1.3,
 };
