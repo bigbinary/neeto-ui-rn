@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Platform } from "react-native"; // Added Platform import for Android-specific fixes
 
 import propTypes from "@styled-system/prop-types";
 import PropTypes from "prop-types";
@@ -14,6 +15,7 @@ import {
   system,
 } from "styled-system";
 
+// Enhanced Text component with Android-specific fixes
 export const Text = styled.Text`
   ${textStyle}
   ${space}
@@ -28,6 +30,23 @@ export const Text = styled.Text`
       cssProperty: "textDecoration",
     },
     textTransform: { property: "textTransform", cssProperty: "textTransform" },
+  })}
+
+  /* Android-specific fixes for text rendering */
+  /* 1. Disable default font padding on Android to prevent descender clipping */
+  /* 2. Ensure text is vertically centered */
+  /* 3. Ensure proper line height for descenders */
+  ${Platform.select({
+    android: `
+      include-font-padding: false;
+      text-align-vertical: center;
+      line-height: ${props => {
+        const fontSize = props.fontSize || 16;
+
+        return `${Math.floor(fontSize * 1.3)}px`;
+      }};
+    `,
+    ios: "",
   })}
 `;
 
@@ -74,8 +93,26 @@ export const Text = styled.Text`
  * @extends StyledSystems props /styled-system
  */
 
-export const Typography = ({ children, ...rest }) => (
-  <Text {...rest}>{children}</Text>
+export const Typography = ({
+  children,
+  lineHeightMultiplier = 1.3, // New prop to control line height
+  ...rest
+}) => (
+  <Text
+    {...rest}
+    // Android-specific text rendering properties
+    android_hyphenationFrequency="full"
+    textBreakStrategy="simple"
+    style={[
+      // Dynamic line height calculation for Android
+      Platform.OS === "android" && {
+        lineHeight: Math.floor((rest.fontSize || 16) * lineHeightMultiplier),
+      },
+      rest.style,
+    ]}
+  >
+    {children}
+  </Text>
 );
 
 Typography.propTypes = {
@@ -86,8 +123,12 @@ Typography.propTypes = {
   ...propTypes.color,
   ...propTypes.textStyle,
   children: PropTypes.node,
+  // New prop type for line height control
+  lineHeightMultiplier: PropTypes.number,
 };
 
 Typography.defaultProps = {
   textStyle: "defaultTextStyle",
+  // Default value for line height multiplier
+  lineHeightMultiplier: 1.3,
 };
