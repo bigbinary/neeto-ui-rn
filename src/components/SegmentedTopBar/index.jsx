@@ -42,11 +42,13 @@ import { Tab } from "./Tab";
  *        <Tab.Screen
  *          name="Home"
  *          component={HomeScreen}
+ *          options={{ count: 8 }}
  *        />
  *
  *        <Tab.Screen
  *          name="Settings"
  *          component={SettingsScreen}
+ *          options={{ count: 10 }}
  *        />
  *      </Tab.Navigator>
  *    </NavigationContainer>
@@ -70,10 +72,11 @@ export const SegmentedTopBar = ({
       routes.map(({ key, name }) => {
         const { options } = descriptors[key];
         const label = options.tabBarLabel ?? options.title ?? name;
+        const count = options.count;
 
-        return { label, value: name, ref: createRef() };
+        return { label, value: name, ref: createRef(), count };
       }),
-    []
+    [descriptors, routes]
   );
 
   useLayoutEffect(() => {
@@ -93,8 +96,9 @@ export const SegmentedTopBar = ({
   return (
     <View height={height} ref={containerRef} style={styles.container}>
       {measures.length > 0 && <Indicator measure={measures[index]} />}
-      {tabsData.map(({ label, value, ref }) => (
+      {tabsData.map(({ label, value, ref, count }) => (
         <Tab
+          count={count}
           flex={tabsData.length > 3 ? label.length : 1}
           key={value}
           label={label}
@@ -124,5 +128,5 @@ SegmentedTopBar.propTypes = {
 
 SegmentedTopBar.defaultProps = {
   tabs: [],
-  height: moderateScale(36),
+  height: moderateScale(48),
 };
