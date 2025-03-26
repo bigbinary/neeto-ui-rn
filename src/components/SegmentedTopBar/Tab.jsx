@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import PropTypes from "prop-types";
 import { moderateScale } from "react-native-size-matters";
@@ -16,7 +16,13 @@ export const Tab = forwardRef(
     return (
       <View
         ref={ref}
-        style={{ flex, minWidth: count !== undefined && moderateScale(56) }}
+        style={[
+          styles.container,
+          {
+            flex,
+            minWidth: count !== undefined ? moderateScale(56) : undefined,
+          },
+        ]}
       >
         <Touchable
           alignItems="center"
@@ -48,6 +54,12 @@ export const Tab = forwardRef(
   }
 );
 
+const styles = StyleSheet.create({
+  container: {
+    height: "100%",
+  },
+});
+
 Tab.displayName = "Tab";
 
 Tab.propTypes = {
@@ -56,4 +68,8 @@ Tab.propTypes = {
   value: PropTypes.string.isRequired,
   navigation: PropTypes.object,
   count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
+
+Tab.defaultProps = {
+  flex: 1,
 };
