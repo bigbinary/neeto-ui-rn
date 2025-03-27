@@ -64,8 +64,8 @@ export const SegmentedTopBar = ({
   descriptors,
 }) => {
   const containerRef = useRef();
-
   const [measures, setMeasures] = useState([]);
+  const [prevRoutesLength, setPrevRoutesLength] = useState(routes.length);
 
   const tabsData = useMemo(
     () =>
@@ -79,27 +79,71 @@ export const SegmentedTopBar = ({
     [descriptors, routes]
   );
 
+  // Reset measures when routes length changes to force re-measure
   useLayoutEffect(() => {
-    const _measures = [];
+    if (prevRoutesLength !== routes.length) {
+      setMeasures([]);
+      setPrevRoutesLength(routes.length);
+    }
+  }, [routes.length, prevRoutesLength]);
 
-    tabsData.forEach(({ ref }) => {
-      ref.current.measureLayout(containerRef.current, (x, y, width, height) => {
-        _measures.push({ x, y, width, height });
+  // Measure tab elements
+  useLayoutEffect(() => {
+    let isMounted = true;
 
-        if (_measures.length === tabsData.length) {
-          setMeasures(_measures);
+    // Ensure the DOM is ready
+    const timerId = setTimeout(() => {
+      if (!isMounted || !containerRef.current) return;
+
+      const _measures = [];
+
+      tabsData.forEach(({ ref }) => {
+        if (ref.current && containerRef.current) {
+          ref.current.measureLayout(
+            containerRef.current,
+            (x, y, width, height) => {
+              if (!isMounted) return;
+
+              _measures.push({ x, y, width, height });
+
+              if (_measures.length === tabsData.length) {
+                setMeasures(_measures);
+              }
+            },
+            () => {
+              // eslint-disable-next-line no-console
+              console.warn("Failed to measure tab element");
+            }
+          );
         }
       });
-    });
-  }, [measures.length]);
+    }, 50);
+
+    return () => {
+      isMounted = false;
+      clearTimeout(timerId);
+    };
+  }, [tabsData, routes.length]);
+
+  const getTabFlex = label => {
+    // When we have 4 tabs, use equal flex to ensure they fit properly
+    if (routes.length > 3) {
+      return 1;
+    }
+
+    // For 3 or fewer tabs, use label length as flex to make them proportional
+    return label.length;
+  };
 
   return (
     <View height={height} ref={containerRef} style={styles.container}>
-      {measures.length > 0 && <Indicator measure={measures[index]} />}
-      {tabsData.map(({ label, value, ref, count }) => (
+      {measures.length > 0 && index < measures.length && measures[index] && (
+        <Indicator measure={measures[index]} />
+      )}
+      {tabsData.map(({ label, value, ref, count }, i) => (
         <Tab
           count={count}
-          flex={tabsData.length > 3 ? label.length : 1}
+          flex={getTabFlex(label, i)}
           key={value}
           label={label}
           navigation={navigation}
